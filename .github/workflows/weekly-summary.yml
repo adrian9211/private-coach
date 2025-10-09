@@ -1,0 +1,42 @@
+name: Weekly Summary Automation
+
+on:
+  schedule:
+    # Run every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  generate-weekly-summary:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Generate weekly summaries
+      run: |
+        # Call Supabase Edge Function to generate weekly summaries
+        curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{"action": "generate_weekly_summary"}' \
+          ${{ secrets.SUPABASE_URL }}/functions/v1/weekly-summary
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+    
+    - name: Send notification
+      if: always()
+      run: |
+        echo "Weekly summary generation completed"
+        # Add notification logic here (email, Slack, etc.)

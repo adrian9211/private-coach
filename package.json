@@ -1,0 +1,51 @@
+{
+  "name": "Personal Cycling Coach",
+  "version": "1.0.0",
+  "description": "A modern serverless web application for analyzing cycling activities and generating personalized workout recommendations",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "start": "npm run start --workspace=apps/web",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "type-check": "npm run type-check --workspaces",
+    "setup": "npm install && npm run setup --workspaces",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "supabase:functions:serve": "supabase functions serve",
+    "supabase:functions:deploy": "supabase functions deploy"
+  },
+  "keywords": [
+    "cycling",
+    "fitness",
+    "ai",
+    "workout",
+    "analysis",
+    "garmin",
+    "fit-files",
+    "nextjs",
+    "supabase",
+    "openai"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/personal-cycling-coach.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/personal-cycling-coach/issues"
+  },
+  "homepage": "https://github.com/your-username/personal-cycling-coach#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@10.2.4",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
