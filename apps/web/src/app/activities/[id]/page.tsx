@@ -105,7 +105,14 @@ export default function ActivityDetailPage() {
         body: { activityId: activity.id }
       })
 
-      if (error) throw error
+      if (error) {
+        console.error('Function error:', error)
+        throw new Error(error.message || 'Failed to decode activity')
+      }
+
+      if (!data) {
+        throw new Error('No data returned from decode function')
+      }
 
       // Create downloadable CSV files
       const csvSections = data
@@ -127,7 +134,7 @@ export default function ActivityDetailPage() {
       
     } catch (error) {
       console.error('Error decoding activity:', error)
-      alert('Failed to decode activity. Please try again.')
+      alert(`Failed to decode activity: ${error.message || 'Unknown error'}`)
     } finally {
       setDecodingCsv(false)
     }

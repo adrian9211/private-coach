@@ -21,14 +21,34 @@ serve(async (req) => {
   try {
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',
       { global: { headers: { Authorization: req.headers.get('Authorization')! } } }
     )
 
-    const { activityId } = await req.json()
+    // Parse request body with error handling
+    let requestBody
+    try {
+      requestBody = await req.json()
+    } catch (e) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid JSON in request body' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
+    }
 
-    if (!activityId) {
-      throw new Error('Activity ID is required')
+    const { activityId } = requestBody
+
+    if (!activityId || typeof activityId !== 'string') {
+      return new Response(
+        JSON.stringify({ error: 'Valid Activity ID is required' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
     }
 
     // 1. Fetch activity metadata to get the file path
@@ -38,7 +58,26 @@ serve(async (req) => {
       .eq('id', activityId)
       .single()
 
-    if (activityError) throw activityError
+    if (activityError) {
+      console.error('Database error:', activityError)
+      return new Response(
+        JSON.stringify({ error: 'Database error: ' + activityError.message }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
+    }
+
+    if (!activity) {
+      return new Response(
+        JSON.stringify({ error: 'Activity not found' }),
+        { 
+          status: 404, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
+    }
 
     // 2. Download the FIT file from storage
     const storagePath = activity.metadata?.storagePath || `${activity.user_id}/${activity.file_name}`
@@ -46,14 +85,29 @@ serve(async (req) => {
       .from('activity-files')
       .download(storagePath)
 
-    if (downloadError) throw downloadError
+    if (downloadError) {
+      console.error('Storage error:', downloadError)
+      return new Response(
+        JSON.stringify({ error: 'Storage error: ' + downloadError.message }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
+    }
 
     const arrayBuffer = await fileData.arrayBuffer()
 
     // 3. Decode the FIT file
     const stream = Stream.fromArrayBuffer(arrayBuffer)
     if (!Decoder.isFIT(stream)) {
-      throw new Error('Invalid FIT file.')
+      return new Response(
+        JSON.stringify({ error: 'Invalid FIT file format' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
     }
 
     const decoder = new Decoder(stream)
@@ -72,9 +126,10 @@ serve(async (req) => {
     });
 
   } catch (error) {
+    console.error('Unexpected error:', error)
     return new Response(JSON.stringify({ error: error.message }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      status: 400,
+      status: 500,
     })
   }
 })
