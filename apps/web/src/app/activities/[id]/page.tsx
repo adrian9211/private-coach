@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import { supabase } from '@/lib/supabase'
 import { UserMenu } from '@/components/auth/user-menu'
+import JSZip from 'jszip'
 
 interface ActivityData {
   id: string
@@ -37,6 +38,7 @@ export default function ActivityDetailPage() {
   const { user, loading } = useAuth()
   const [activity, setActivity] = useState<ActivityData | null>(null)
   const [loadingActivity, setLoadingActivity] = useState(true)
+  const [decodingCsv, setDecodingCsv] = useState(false)
 
   useEffect(() => {
     if (!loading && !user) {
@@ -92,6 +94,43 @@ export default function ActivityDetailPage() {
 
   const formatHeartRate = (bpm: number) => {
     return `${bpm} bpm`
+  }
+
+  const handleDecodeToCsv = async () => {
+    if (!activity) return
+    
+    setDecodingCsv(true)
+    try {
+      const { data, error } = await supabase.functions.invoke('decode-activity', {
+        body: { activityId: activity.id }
+      })
+
+      if (error) throw error
+
+      // Create downloadable CSV files
+      const csvSections = data
+      const zip = new JSZip()
+      
+      for (const [sectionName, csvContent] of Object.entries(csvSections)) {
+        zip.file(`${sectionName}.csv`, csvContent as string)
+      }
+      
+      const zipBlob = await zip.generateAsync({ type: 'blob' })
+      const url = URL.createObjectURL(zipBlob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `${activity.file_name.replace('.fit', '')}_decoded.zip`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+      
+    } catch (error) {
+      console.error('Error decoding activity:', error)
+      alert('Failed to decode activity. Please try again.')
+    } finally {
+      setDecodingCsv(false)
+    }
   }
 
   if (loading || loadingActivity) {
@@ -161,6 +200,26 @@ export default function ActivityDetailPage() {
               }`}>
                 {activity.status.charAt(0).toUpperCase() + activity.status.slice(1)}
               </span>
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={handleDecodeToCsv}
+                disabled={decodingCsv || activity.status !== 'processed'}
+                className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                  decodingCsv || activity.status !== 'processed'
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                }`}
+              >
+                {decodingCsv ? (
+                  <div className="flex items-center gap-2">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                    Decoding...
+                  </div>
+                ) : (
+                  'Decode to CSV'
+                )}
+              </button>
             </div>
           </div>
         </div>
