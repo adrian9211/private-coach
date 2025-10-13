@@ -12,19 +12,13 @@ export function UserMenu() {
 
   const handleSignOut = async () => {
     setIsLoggingOut(true)
-    try {
-      const { error } = await signOut()
-      if (error) {
-        console.error('Sign out error:', error)
-      } else {
-        setIsOpen(false)
-        router.push('/') // Redirect to main page after logout
-      }
-    } catch (err) {
-      console.error('Sign out error:', err)
-    } finally {
+    const { error } = await signOut()
+    if (error) {
+      console.error('Sign out error:', error)
       setIsLoggingOut(false)
     }
+    // The redirect is now handled in the signOut function itself
+    // No need to setIsLoggingOut(false) on success, as the component will unmount
   }
 
   if (!user) return null

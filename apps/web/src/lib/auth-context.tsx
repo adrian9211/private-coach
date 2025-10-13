@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { User, Session, AuthError } from '@supabase/supabase-js'
 import { supabase } from '@/lib/supabase'
+import { useRouter } from 'next/navigation'
 
 interface AuthContextType {
   user: User | null
@@ -16,28 +17,21 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
-  const [session, setSession] = useState<Session | null>(null)
-  const [loading, setLoading] = useState(true)
+export function AuthProvider({ session: serverSession, children }: { session: Session | null, children: React.ReactNode }) {
+  const [user, setUser] = useState<User | null>(serverSession?.user ?? null)
+  const [session, setSession] = useState<Session | null>(serverSession)
+  const [loading, setLoading] = useState(false) // No longer loading by default
+  const router = useRouter() // Get the router instance
 
   useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
-
-    // Listen for auth changes
+    // No need to fetch initial session, it's passed from the server
+    
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
       setSession(session)
       setUser(session?.user ?? null)
-      setLoading(false)
-
-      // Create user profile if new user signs up
+      
       if (event === 'SIGNED_IN' && session?.user) {
         await createUserProfile(session.user)
       }
@@ -103,6 +97,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = async () => {
     const { error } = await supabase.auth.signOut()
+    if (!error) {
+      router.push('/auth/signin') // Redirect to sign-in page
+      router.refresh() // Force a server-side re-render
+    }
     return { error }
   }
 

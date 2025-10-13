@@ -1,74 +1,22 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useAuth } from '@/lib/auth-context'
-import { supabase } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
+import { format } from 'date-fns'
+import { Database } from '@/lib/supabase-types'
 
-interface ActivitySummary {
-  totalActivities: number
-  totalDistance: number
-  totalDuration: number
-  totalCalories: number
-  avgPower: number
-  avgHeartRate: number
-  avgSpeed: number
-  recentActivities: any[]
+type Activity = Database['public']['Tables']['activities']['Row']
+type ActivitySummary = Database['public']['Views']['activity_summaries']['Row']
+
+interface DashboardOverviewProps {
+  summary: ActivitySummary;
+  recentActivities: Activity[];
 }
 
-export function DashboardOverview() {
-  const { user } = useAuth()
+export function DashboardOverview({ summary, recentActivities }: DashboardOverviewProps) {
   const router = useRouter()
-  const [summary, setSummary] = useState<ActivitySummary | null>(null)
-  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    if (user) {
-      fetchDashboardData()
-    }
-  }, [user])
-
-  const fetchDashboardData = async () => {
-    try {
-      const { data: activities, error } = await supabase
-        .from('activities')
-        .select('*')
-        .eq('user_id', user?.id)
-        .eq('status', 'processed')
-        .order('upload_date', { ascending: false })
-
-      if (error) throw error
-
-      const processedActivities = activities.filter(a => a.data?.summary)
-      
-      const totalDistance = processedActivities.reduce((sum, a) => sum + (a.data.summary.totalDistance || 0), 0)
-      const totalDuration = processedActivities.reduce((sum, a) => sum + (a.data.summary.duration || 0), 0)
-      const totalCalories = processedActivities.reduce((sum, a) => sum + (a.data.summary.totalCalories || 0), 0)
-      const avgPower = processedActivities.length > 0 ? 
-        processedActivities.reduce((sum, a) => sum + (a.data.summary.avgPower || 0), 0) / processedActivities.length : 0
-      const avgHeartRate = processedActivities.length > 0 ? 
-        processedActivities.reduce((sum, a) => sum + (a.data.summary.avgHeartRate || 0), 0) / processedActivities.length : 0
-      const avgSpeed = processedActivities.length > 0 ? 
-        processedActivities.reduce((sum, a) => sum + (a.data.summary.avgSpeed || 0), 0) / processedActivities.length : 0
-
-      setSummary({
-        totalActivities: processedActivities.length,
-        totalDistance,
-        totalDuration,
-        totalCalories,
-        avgPower: Math.round(avgPower),
-        avgHeartRate: Math.round(avgHeartRate),
-        avgSpeed: Math.round(avgSpeed * 10) / 10,
-        recentActivities: processedActivities.slice(0, 5)
-      })
-    } catch (error) {
-      console.error('Error fetching dashboard data:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const formatDuration = (seconds: number) => {
+  const formatDuration = (seconds: number | null): string => {
+    if (seconds === null) return '0m'
     const hours = Math.floor(seconds / 3600)
     const minutes = Math.floor((seconds % 3600) / 60)
     
@@ -78,30 +26,25 @@ export function DashboardOverview() {
     return `${minutes}m`
   }
 
-  const formatDistance = (km: number) => {
+  const formatDistance = (km: number | null): string => {
+    if (km === null) return '0.0 km'
     if (km >= 1000) {
       return `${(km / 1000).toFixed(1)}k km`
     }
     return `${km.toFixed(1)} km`
   }
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[...Array(4)].map((_, i) => (
-          <div key={i} className="bg-white rounded-lg shadow-lg p-6 animate-pulse">
-            <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-            <div className="h-8 bg-gray-200 rounded w-1/2"></div>
-          </div>
-        ))}
-      </div>
-    )
-  }
-
-  if (!summary) {
+  // This check is for a brand new user with no activities at all.
+  if (summary.total_activities === 0 && (!recentActivities || recentActivities.length === 0)) {
     return (
       <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-        <p className="text-gray-600">No activity data available</p>
+        <p className="text-gray-600">No activity data available. Upload your first activity to get started!</p>
+        <button
+          onClick={() => router.push('/upload')}
+          className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 font-medium"
+        >
+          Upload Activity
+        </button>
       </div>
     )
   }
@@ -114,7 +57,7 @@ export function DashboardOverview() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Total Distance</p>
-              <p className="text-3xl font-bold text-blue-600">{formatDistance(summary.totalDistance)}</p>
+              <p className="text-3xl font-bold text-blue-600">{formatDistance(summary.total_distance)}</p>
             </div>
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +71,7 @@ export function DashboardOverview() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Total Time</p>
-              <p className="text-3xl font-bold text-green-600">{formatDuration(summary.totalDuration)}</p>
+              <p className="text-3xl font-bold text-green-600">{formatDuration(summary.total_duration)}</p>
             </div>
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
               <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +85,7 @@ export function DashboardOverview() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Avg Power</p>
-              <p className="text-3xl font-bold text-orange-600">{summary.avgPower}W</p>
+              <p className="text-3xl font-bold text-orange-600">{Math.round(summary.avg_power || 0)}W</p>
             </div>
             <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
               <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +99,7 @@ export function DashboardOverview() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Activities</p>
-              <p className="text-3xl font-bold text-purple-600">{summary.totalActivities}</p>
+              <p className="text-3xl font-bold text-purple-600">{summary.total_activities}</p>
             </div>
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
               <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,7 +111,7 @@ export function DashboardOverview() {
       </div>
 
       {/* Recent Activities */}
-      {summary.recentActivities.length > 0 && (
+      {recentActivities && recentActivities.length > 0 && (
         <div className="bg-white rounded-lg shadow-lg p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-gray-900">Recent Activities</h2>
@@ -181,7 +124,7 @@ export function DashboardOverview() {
           </div>
           
           <div className="space-y-4">
-            {summary.recentActivities.map((activity) => (
+            {recentActivities.map((activity) => (
               <div 
                 key={activity.id} 
                 className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer transition-colors"
@@ -196,7 +139,7 @@ export function DashboardOverview() {
                   <div>
                     <h3 className="font-medium text-gray-900">{activity.file_name}</h3>
                     <p className="text-sm text-gray-600">
-                      {new Date(activity.upload_date).toLocaleDateString()}
+                      {activity.upload_date ? format(new Date(activity.upload_date), 'PP') : 'N/A'}
                     </p>
                   </div>
                 </div>
@@ -204,19 +147,19 @@ export function DashboardOverview() {
                 <div className="flex items-center space-x-6 text-sm">
                   <div className="text-center">
                     <div className="font-semibold text-blue-600">
-                      {activity.data.summary.totalDistance.toFixed(1)} km
+                      {(activity.total_distance || 0).toFixed(1)} km
                     </div>
                     <div className="text-gray-500">Distance</div>
                   </div>
                   <div className="text-center">
                     <div className="font-semibold text-green-600">
-                      {formatDuration(activity.data.summary.duration)}
+                      {formatDuration(activity.total_timer_time || 0)}
                     </div>
                     <div className="text-gray-500">Duration</div>
                   </div>
                   <div className="text-center">
                     <div className="font-semibold text-orange-600">
-                      {activity.data.summary.avgPower}W
+                      {Math.round(activity.avg_power || 0)}W
                     </div>
                     <div className="text-gray-500">Avg Power</div>
                   </div>
