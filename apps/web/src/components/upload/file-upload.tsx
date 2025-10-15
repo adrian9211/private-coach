@@ -51,6 +51,8 @@ export function FileUpload({ onUploadComplete }: FileUploadProps) {
     }
 
     console.log('User found:', user.id)
+    console.log('Supabase client:', supabase)
+    console.log('Supabase storage:', supabase.storage)
 
     const validationError = validateFile(file)
     if (validationError) {
@@ -73,25 +75,27 @@ export function FileUpload({ onUploadComplete }: FileUploadProps) {
 
       // Upload to Supabase Storage
       setUploadStatus('Uploading file...')
-      console.log('Uploading to storage bucket:', fileName)
-      
-      // Add timeout to prevent hanging
-      const uploadPromise = supabase.storage
+      console.log('Uploading to storage bucket activity-files with path:', fileName)
+
+      // Pick a conservative content type. FIT is often validated as vendor type.
+      const contentType = fileExtension === '.fit'
+        ? 'application/vnd.ant.fit'
+        : fileExtension === '.gpx'
+          ? 'application/gpx+xml'
+          : fileExtension === '.tcx'
+            ? 'application/tcx+xml'
+            : 'application/octet-stream'
+
+      // Upload the actual file directly
+      console.log('Uploading FIT file directly...')
+      const { data: uploadData, error: uploadError } = await supabase.storage
         .from('activity-files')
         .upload(fileName, file, {
           cacheControl: '3600',
-          upsert: false
+          upsert: false,
+          contentType
         })
       
-      const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Upload timeout after 30 seconds')), 30000)
-      )
-      
-      const { data: uploadData, error: uploadError } = await Promise.race([
-        uploadPromise,
-        timeoutPromise
-      ])
-
       console.log('Storage upload result:', { uploadData, uploadError })
 
       if (uploadError) {
@@ -99,7 +103,12 @@ export function FileUpload({ onUploadComplete }: FileUploadProps) {
         
         // Check if it's a bucket not found error
         if (uploadError.message.includes('Bucket not found') || uploadError.message.includes('does not exist')) {
-          throw new Error('Storage bucket not found. Please contact support to set up file storage.')
+          throw new Error("Storage bucket 'activity-files' not found. Create it in Supabase Storage with private access and allowed MIME types for FIT files.")
+        }
+        
+        // Common RLS policy error hint
+        if (uploadError.message.toLowerCase().includes('policy') || uploadError.message.toLowerCase().includes('permission')) {
+          throw new Error("Upload blocked by Storage RLS policy. Ensure policies allow INSERT to 'activity-files' when path starts with your user id.")
         }
         
         throw new Error(`Upload failed: ${uploadError.message}`)

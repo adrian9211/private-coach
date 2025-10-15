@@ -22,11 +22,10 @@ export function SignInForm() {
     
     if (error) {
       setError(error.message)
-    } else {
-      router.push('/dashboard')
+      setLoading(false)
     }
-    
-    setLoading(false)
+    // Don't manually redirect - let the auth context handle it via onAuthStateChange
+    // The loading state will be cleared when the component unmounts due to redirect
   }
 
   return (

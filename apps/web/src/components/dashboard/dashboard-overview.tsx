@@ -15,8 +15,8 @@ interface DashboardOverviewProps {
 export function DashboardOverview({ summary, recentActivities }: DashboardOverviewProps) {
   const router = useRouter()
 
-  const formatDuration = (seconds: number | null): string => {
-    if (seconds === null) return '0m'
+  const formatDuration = (seconds: number | null | undefined): string => {
+    if (seconds === null || seconds === undefined) return '0m'
     const hours = Math.floor(seconds / 3600)
     const minutes = Math.floor((seconds % 3600) / 60)
     
@@ -26,8 +26,8 @@ export function DashboardOverview({ summary, recentActivities }: DashboardOvervi
     return `${minutes}m`
   }
 
-  const formatDistance = (km: number | null): string => {
-    if (km === null) return '0.0 km'
+  const formatDistance = (km: number | null | undefined): string => {
+    if (km === null || km === undefined) return '0.0 km'
     if (km >= 1000) {
       return `${(km / 1000).toFixed(1)}k km`
     }

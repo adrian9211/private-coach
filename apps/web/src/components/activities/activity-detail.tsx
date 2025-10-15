@@ -16,6 +16,7 @@ export function ActivityDetail({ activityId }: ActivityDetailProps) {
   const [analysis, setAnalysis] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [isDecoding, setIsDecoding] = useState(false)
 
   useEffect(() => {
     if (user) {
@@ -83,6 +84,44 @@ export function ActivityDetail({ activityId }: ActivityDetailProps) {
   const formatSpeed = (mps: number): string => {
     const kmh = mps * 3.6
     return `${kmh.toFixed(1)} km/h`
+  }
+
+  const handleDecodeToCsv = async () => {
+    setIsDecoding(true)
+    try {
+      const { data, error } = await supabase.functions.invoke('decode-activity', {
+        body: { activityId },
+      })
+
+      if (error) throw error
+
+      // Combine CSV sections into one file
+      let combinedCsv = ''
+      for (const section in data) {
+        combinedCsv += `--- ${section.toUpperCase()} ---\n`
+        combinedCsv += data[section]
+        combinedCsv += '\n\n'
+      }
+
+      // Trigger download
+      const blob = new Blob([combinedCsv], { type: 'text/csv;charset=utf-8;' })
+      const link = document.createElement('a')
+      if (link.href) {
+        URL.revokeObjectURL(link.href)
+      }
+      const url = URL.createObjectURL(blob)
+      link.href = url
+      link.setAttribute('download', `${activity.file_name}.csv`)
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+    } catch (err) {
+      console.error('Error decoding file:', err)
+      setError('Failed to decode FIT file.')
+    } finally {
+      setIsDecoding(false)
+    }
   }
 
   if (loading) {
@@ -197,6 +236,15 @@ export function ActivityDetail({ activityId }: ActivityDetailProps) {
           </pre>
         </div>
       )}
+      <div className="mt-6">
+        <button
+          onClick={handleDecodeToCsv}
+          disabled={isDecoding}
+          className="bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 disabled:opacity-50"
+        >
+          {isDecoding ? 'Decoding...' : 'Decode to CSV'}
+        </button>
+      </div>
     </div>
   )
 }

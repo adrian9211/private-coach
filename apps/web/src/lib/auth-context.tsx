@@ -29,16 +29,25 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
+      console.log('Auth state change:', event, session?.user?.id)
       setSession(session)
       setUser(session?.user ?? null)
       
       if (event === 'SIGNED_IN' && session?.user) {
         await createUserProfile(session.user)
+        // Redirect to dashboard after successful sign-in
+        router.push('/dashboard')
+        router.refresh()
+      } else if (event === 'SIGNED_OUT') {
+        // Clear loading state and redirect
+        setLoading(false)
+        router.push('/auth/signin')
+        router.refresh()
       }
     })
 
     return () => subscription.unsubscribe()
-  }, [])
+  }, [router])
 
   const createUserProfile = async (user: User) => {
     try {
@@ -96,12 +105,47 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
   }
 
   const signOut = async () => {
-    const { error } = await supabase.auth.signOut()
-    if (!error) {
-      router.push('/auth/signin') // Redirect to sign-in page
-      router.refresh() // Force a server-side re-render
+    try {
+      setLoading(true) // Set loading state
+      
+      // Clear local state immediately for better UX
+      setUser(null)
+      setSession(null)
+      
+      // Clear the session from Supabase client locally (no network call)
+      try {
+        // Clear all Supabase-related storage
+        if (typeof window !== 'undefined') {
+          // Clear all localStorage items that start with 'sb-'
+          Object.keys(localStorage).forEach(key => {
+            if (key.startsWith('sb-')) {
+              localStorage.removeItem(key)
+            }
+          })
+          // Clear all sessionStorage items that start with 'sb-'
+          Object.keys(sessionStorage).forEach(key => {
+            if (key.startsWith('sb-')) {
+              sessionStorage.removeItem(key)
+            }
+          })
+        }
+        
+        // Try to clear the session from Supabase client
+        await supabase.auth.signOut({ scope: 'local' })
+      } catch (e) {
+        console.warn('Failed to clear local session:', e)
+      }
+      
+      // Don't manually redirect - let the auth context handle it via onAuthStateChange
+      // The redirect will happen automatically when the auth state changes
+      
+      return { error: null }
+    } catch (error) {
+      console.error('Sign out error:', error)
+      return { error: error as AuthError }
+    } finally {
+      setLoading(false) // Always clear loading state
     }
-    return { error }
   }
 
   const resetPassword = async (email: string) => {

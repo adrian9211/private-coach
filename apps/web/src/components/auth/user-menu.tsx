@@ -12,13 +12,21 @@ export function UserMenu() {
 
   const handleSignOut = async () => {
     setIsLoggingOut(true)
-    const { error } = await signOut()
-    if (error) {
-      console.error('Sign out error:', error)
-      setIsLoggingOut(false)
+    try {
+      const { error } = await signOut()
+      if (error) {
+        console.error('Sign out error:', error)
+        // Don't reset loading state on error - let the redirect happen
+        // The component will unmount anyway
+      }
+      // The redirect is handled in the signOut function itself
+    } catch (error) {
+      console.error('Unexpected sign out error:', error)
+      // Even on unexpected errors, don't reset loading state
+      // The redirect should still happen
     }
-    // The redirect is now handled in the signOut function itself
-    // No need to setIsLoggingOut(false) on success, as the component will unmount
+    // Note: We don't setIsLoggingOut(false) because the component will unmount
+    // when the redirect happens, so the loading state doesn't matter
   }
 
   if (!user) return null

@@ -157,11 +157,38 @@ serve(async (req) => {
     const processedData = await processFitFile(arrayBuffer, activity.file_name)
     console.log('Processing completed successfully')
 
+    // Generate CSV files and upload to storage
+    try {
+      await generateAndUploadCSV(processedData, activity, supabaseClient)
+      console.log('CSV files generated and uploaded successfully')
+    } catch (csvError) {
+      console.warn('Failed to generate CSV files:', csvError)
+      // Continue processing even if CSV generation fails
+    }
+
     // Merge new metadata with existing metadata
     const updatedMetadata = {
       ...activity.metadata,
       ...processedData.metadata
     }
+
+    // Prepare GPS track data
+    const gpsTrack = processedData.records
+      ?.filter(record => record.positionLat && record.positionLong)
+      ?.map(record => ({
+        timestamp: record.timestamp,
+        lat: record.positionLat,
+        long: record.positionLong,
+        distance: record.distance,
+        speed: record.speed,
+        heartRate: record.heartRate,
+        power: record.power,
+        cadence: record.cadence,
+        altitude: record.altitude,
+        temperature: record.temperature,
+        grade: record.grade,
+        resistance: record.resistance
+      })) || []
 
     // Update activity with processed data
     const { error: updateError } = await supabaseClient
@@ -171,7 +198,7 @@ serve(async (req) => {
         processed_date: new Date().toISOString(),
         data: processedData,
         metadata: updatedMetadata,
-        // Populate new summary fields
+        // Populate existing summary fields
         sport: processedData.metadata.sport,
         device: processedData.metadata.device,
         start_time: processedData.metadata.startTime,
@@ -187,6 +214,16 @@ serve(async (req) => {
         avg_cadence: processedData.summary.avgCadence,
         max_cadence: processedData.summary.maxCadence,
         total_ascent: processedData.summary.elevationGain,
+        // Populate new additional fields
+        sub_sport: processedData.sessions?.[0]?.subSport || null,
+        total_elapsed_time: processedData.sessions?.[0]?.totalElapsedTime || null,
+        total_descent: processedData.sessions?.[0]?.totalDescent || null,
+        min_temperature: processedData.sessions?.[0]?.minTemperature || null,
+        max_temperature: processedData.sessions?.[0]?.maxTemperature || null,
+        avg_temperature: processedData.summary.temperature || null,
+        processing_method: 'fit-sdk-full',
+        processed_at: new Date().toISOString(),
+        gps_track: gpsTrack
       })
       .eq('id', activityId)
 
@@ -553,6 +590,99 @@ async function processFitFile(arrayBuffer: ArrayBuffer, fileName: string) {
   } catch (error) {
     console.error('Error processing FIT file:', error)
     throw new Error(`Failed to process FIT file: ${error.message}`)
+  }
+}
+
+// Generate CSV files from processed data and upload to storage
+async function generateAndUploadCSV(processedData: any, activity: any, supabaseClient: any) {
+  console.log('Starting CSV generation...')
+  
+  // Helper function to convert array of objects to CSV
+  const convertToCSV = (data: any[], headers: string[]): string => {
+    if (data.length === 0) return headers.join(',') + '\n'
+    
+    const csvRows = [headers.join(',')]
+    
+    for (const row of data) {
+      const values = headers.map(header => {
+        const value = row[header]
+        if (value === null || value === undefined) return ''
+        if (typeof value === 'string' && value.includes(',')) {
+          return `"${value}"`
+        }
+        return value
+      })
+      csvRows.push(values.join(','))
+    }
+    
+    return csvRows.join('\n')
+  }
+  
+  // Generate CSV for each data type
+  const csvFiles: { [key: string]: string } = {}
+  
+  // Records CSV (GPS and sensor data)
+  if (processedData.records && processedData.records.length > 0) {
+    const recordHeaders = Object.keys(processedData.records[0])
+    csvFiles['records'] = convertToCSV(processedData.records, recordHeaders)
+  }
+  
+  // Laps CSV
+  if (processedData.laps && processedData.laps.length > 0) {
+    const lapHeaders = Object.keys(processedData.laps[0])
+    csvFiles['laps'] = convertToCSV(processedData.laps, lapHeaders)
+  }
+  
+  // Sessions CSV
+  if (processedData.sessions && processedData.sessions.length > 0) {
+    const sessionHeaders = Object.keys(processedData.sessions[0])
+    csvFiles['sessions'] = convertToCSV(processedData.sessions, sessionHeaders)
+  }
+  
+  // Summary CSV
+  if (processedData.summary) {
+    csvFiles['summary'] = convertToCSV([processedData.summary], Object.keys(processedData.summary))
+  }
+  
+  // Metadata CSV
+  if (processedData.metadata) {
+    csvFiles['metadata'] = convertToCSV([processedData.metadata], Object.keys(processedData.metadata))
+  }
+  
+  // Upload each CSV file to the activity-csv-files bucket
+  const userId = activity.user_id
+  const activityId = activity.id
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+  
+  // Create a service role client for storage operations
+  const serviceClient = createClient(
+    Deno.env.get('SUPABASE_URL') ?? '',
+    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '',
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
+  )
+  
+  for (const [fileType, csvContent] of Object.entries(csvFiles)) {
+    const fileName = `${userId}/${activityId}_${fileType}_${timestamp}.csv`
+    const csvBlob = new Blob([csvContent], { type: 'text/csv' })
+    
+    const { error: uploadError } = await serviceClient.storage
+      .from('activity-csv-files')
+      .upload(fileName, csvBlob, {
+        contentType: 'text/csv',
+        upsert: false
+      })
+    
+    if (uploadError) {
+      console.error(`Failed to upload ${fileType} CSV:`, uploadError)
+      throw new Error(`Failed to upload ${fileType} CSV: ${uploadError.message}`)
+    }
+    
+    console.log(`Uploaded ${fileType} CSV: ${fileName}`)
   }
 }
 

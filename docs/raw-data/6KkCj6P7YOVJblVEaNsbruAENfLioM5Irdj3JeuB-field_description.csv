@@ -1,0 +1,5 @@
+developer_data_index,field_definition_number,fit_base_type_id,field_name,units,native_mesg_num
+0,0,string,UUID,String,session
+0,1,string,Title,String,session
+0,2,uint32,CurrentRouteId,Int,session
+0,3,sint8,IsEvent,Bool,session

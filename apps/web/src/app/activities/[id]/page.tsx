@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import { supabase } from '@/lib/supabase'
 import { UserMenu } from '@/components/auth/user-menu'
+import { GPSViewer } from '@/components/gps-viewer'
 import JSZip from 'jszip'
 
 interface ActivityData {
@@ -134,7 +135,8 @@ export default function ActivityDetailPage() {
       
     } catch (error) {
       console.error('Error decoding activity:', error)
-      alert(`Failed to decode activity: ${error.message || 'Unknown error'}`)
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+      alert(`Failed to decode activity: ${errorMessage}`)
     } finally {
       setDecodingCsv(false)
     }
@@ -365,6 +367,13 @@ export default function ActivityDetailPage() {
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">Processing Activity</h2>
             <p className="text-gray-600">Your FIT file is being processed. This may take a few moments.</p>
+          </div>
+        )}
+
+        {/* GPS Track Viewer */}
+        {activity.status === 'processed' && (
+          <div className="mt-8">
+            <GPSViewer activityId={activity.id} />
           </div>
         )}
       </div>

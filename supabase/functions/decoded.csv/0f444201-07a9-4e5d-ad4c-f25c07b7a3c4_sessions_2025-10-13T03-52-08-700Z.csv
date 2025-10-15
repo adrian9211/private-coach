@@ -1,0 +1,2 @@
+timestamp,startTime,totalElapsedTime,totalTimerTime,totalDistance,totalCalories,avgSpeed,maxSpeed,avgHeartRate,maxHeartRate,avgPower,maxPower,avgCadence,maxCadence,sport,subSport,totalAscent,totalDescent,minTemperature,maxTemperature
+2025-09-30T16:19:37.000Z,2025-09-30T16:19:37.000Z,2547,2547,20868.67,367,8.193,0,161,180,144,172,67,80,cycling,virtualActivity,42,0,,

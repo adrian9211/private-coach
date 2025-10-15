@@ -16,12 +16,12 @@ export default async function DashboardPage() {
     redirect('/auth/signin')
   }
 
-  // Fetch summary data (snake_case)
+  // Fetch summary data (snake_case) - handle case where view doesn't exist or has no data
   const { data: summaryData, error: summaryError } = await supabase
     .from('activity_summaries')
     .select('*')
     .eq('user_id', session.user.id)
-    .single()
+    .maybeSingle() // Use maybeSingle() instead of single() to handle 0 rows gracefully
 
   // Fetch recent activities (snake_case)
   const { data: recentActivities, error: activitiesError } = await supabase
@@ -29,7 +29,7 @@ export default async function DashboardPage() {
     .select('*')
     .eq('user_id', session.user.id)
     .eq('status', 'processed')
-    .order('start_time', { ascending: false })
+    .order('upload_date', { ascending: false })
     .limit(5)
 
   if (summaryError || activitiesError) {
