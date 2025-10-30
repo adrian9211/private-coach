@@ -95,7 +95,7 @@ export function GPSViewer({ activityId }: { activityId: string }) {
   const validPoints = gpsPoints.filter(point => point.lat && point.long)
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6">
       <h3 className="text-xl font-semibold text-gray-900 mb-4">
         GPS Track - {activity.file_name}
       </h3>

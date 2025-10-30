@@ -62,6 +62,18 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
     { key: 'Z7', label: 'Neuromuscular', min: Math.round(ftp * 1.51), max: Math.round(ftp * 3.00), color: '#FFE4E6' },
   ] : null
 
+  const [zoneDurations, setZoneDurations] = useState<Record<string, number>>({})
+
+  const formatSeconds = (totalSeconds: number): string => {
+    const s = Math.max(0, Math.floor(totalSeconds))
+    const hours = Math.floor(s / 3600)
+    const minutes = Math.floor((s % 3600) / 60)
+    const seconds = s % 60
+    if (hours > 0) return `${hours}h ${minutes}m`
+    if (minutes > 0) return `${minutes}m ${seconds}s`
+    return `${seconds}s`
+  }
+
   useEffect(() => {
     if (!activity.gps_track || activity.gps_track.length === 0) return
 
@@ -122,6 +134,33 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
     })
   }, [activity.gps_track])
 
+  // Compute time in power zones using consecutive timestamps
+  useEffect(() => {
+    if (!ftp || !powerZones || !activity.gps_track || activity.gps_track.length < 2) {
+      setZoneDurations({})
+      return
+    }
+
+    const durations: Record<string, number> = {}
+    powerZones.forEach(z => { durations[z.key] = 0 })
+
+    const track = activity.gps_track
+      .filter(p => p && p.timestamp)
+      .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime())
+
+    for (let i = 1; i < track.length; i++) {
+      const prev = track[i - 1]
+      const curr = track[i]
+      const dt = (new Date(curr.timestamp).getTime() - new Date(prev.timestamp).getTime()) / 1000
+      if (!isFinite(dt) || dt <= 0) continue
+      const power = typeof prev.power === 'number' ? prev.power : 0
+      const zone = powerZones.find(z => power >= z.min && power <= z.max) || powerZones[0]
+      durations[zone.key] += dt
+    }
+
+    setZoneDurations(durations)
+  }, [ftp, powerZones, activity.gps_track])
+
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload
@@ -154,7 +193,7 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6">
       <h3 className="text-xl font-semibold text-gray-900 mb-4">
         Elevation Profile - {activity.file_name}
       </h3>
@@ -288,9 +327,9 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
         </div>
         
         {/* Power Profile */}
-        <div>
+        <div className="lg:col-span-2">
           <h4 className="text-lg font-medium text-gray-800 mb-3">Power Profile</h4>
-          <div className="h-48">
+          <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={chartData.filter(d => d.power > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
@@ -326,12 +365,20 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
             </ResponsiveContainer>
           </div>
           {ftp && powerZones && (
-            <div className="mt-3 grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+            <div className="mt-4 space-y-2 text-xs">
               {powerZones.map(z => (
-                <div key={z.key} className="flex items-center gap-2">
-                  <span className="inline-block w-3 h-3 rounded" style={{ backgroundColor: z.color }} />
-                  <span className="text-gray-700 font-medium">{z.key}</span>
-                  <span className="text-gray-500">{z.label} ({z.min}-{z.max} W)</span>
+                <div key={z.key} className="flex items-center justify-between rounded border border-gray-200 px-2 py-1">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="inline-block w-3 h-3 rounded" style={{ backgroundColor: z.color }} />
+                    <span className="text-gray-700 font-medium">{z.key}</span>
+                    <span className="text-gray-500 truncate">{z.label}</span>
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <span className="text-gray-500 whitespace-nowrap">{z.min}-{z.max} W</span>
+                    {zoneDurations[z.key] !== undefined && (
+                      <span className="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 whitespace-nowrap">{formatSeconds(zoneDurations[z.key])}</span>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
