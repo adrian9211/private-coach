@@ -139,7 +139,7 @@ export function DashboardOverview({ summary, recentActivities }: DashboardOvervi
                   <div>
                     <h3 className="font-medium text-gray-900">{activity.file_name}</h3>
                     <p className="text-sm text-gray-600">
-                      {activity.upload_date ? format(new Date(activity.upload_date), 'PP') : 'N/A'}
+                      {(activity.start_time || activity.upload_date) ? format(new Date((activity.start_time || activity.upload_date) as string), 'PP') : 'N/A'}
                     </p>
                   </div>
                 </div>

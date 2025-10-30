@@ -33,10 +33,30 @@ export function GPSViewer({ activityId }: { activityId: string }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [selectedPoint, setSelectedPoint] = useState<GPSPoint | null>(null)
+  const [ftp, setFtp] = useState<number | null>(null)
 
   useEffect(() => {
     fetchActivity()
   }, [activityId])
+
+  useEffect(() => {
+    const fetchFtp = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select('preferences')
+          .maybeSingle()
+        if (error) throw error
+        const prefs = data?.preferences || {}
+        if (prefs.ftp && typeof prefs.ftp === 'number') {
+          setFtp(prefs.ftp)
+        }
+      } catch (e) {
+        // ignore ftp load errors silently
+      }
+    }
+    fetchFtp()
+  }, [])
 
   const fetchActivity = async () => {
     try {
@@ -87,7 +107,7 @@ export function GPSViewer({ activityId }: { activityId: string }) {
 
       {/* Elevation Profile */}
       <div className="mb-6">
-        <ElevationProfile activity={activity} />
+        <ElevationProfile activity={activity} ftp={ftp ?? undefined} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

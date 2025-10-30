@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
+import { MapErrorBoundary } from './map-error-boundary'
 
 // Dynamically import the entire map component to avoid SSR issues
 const DynamicMap = dynamic(() => import('./map-component'), { 
@@ -42,34 +43,61 @@ export function InteractiveMap({ activity }: InteractiveMapProps) {
   const [routePoints, setRoutePoints] = useState<[number, number][]>([])
   const [startPoint, setStartPoint] = useState<[number, number] | null>(null)
   const [endPoint, setEndPoint] = useState<[number, number] | null>(null)
+  const [mapError, setMapError] = useState<string | null>(null)
 
   useEffect(() => {
     setIsClient(true)
   }, [])
 
   useEffect(() => {
-    if (activity.gps_track && activity.gps_track.length > 0) {
-      const validPoints = activity.gps_track.filter(point => point.lat && point.long)
-      
-      if (validPoints.length > 0) {
-        // Convert coordinates
-        const convertedPoints = validPoints.map(point => {
-          const latDegrees = point.lat * (180 / Math.pow(2, 31))
-          const longDegrees = point.long * (180 / Math.pow(2, 31))
-          return [latDegrees, longDegrees] as [number, number]
-        })
+    try {
+      if (activity.gps_track && activity.gps_track.length > 0) {
+        const validPoints = activity.gps_track.filter(point => 
+          point.lat && 
+          point.long && 
+          typeof point.lat === 'number' && 
+          typeof point.long === 'number' &&
+          !isNaN(point.lat) && 
+          !isNaN(point.long)
+        )
+        
+        if (validPoints.length > 0) {
+          // Convert coordinates with validation
+          const convertedPoints = validPoints.map(point => {
+            const latDegrees = point.lat * (180 / Math.pow(2, 31))
+            const longDegrees = point.long * (180 / Math.pow(2, 31))
+            
+            // Validate converted coordinates
+            if (isNaN(latDegrees) || isNaN(longDegrees) || 
+                latDegrees < -90 || latDegrees > 90 || 
+                longDegrees < -180 || longDegrees > 180) {
+              throw new Error(`Invalid coordinates: lat=${latDegrees}, long=${longDegrees}`)
+            }
+            
+            return [latDegrees, longDegrees] as [number, number]
+          })
 
-        setRoutePoints(convertedPoints)
-        
-        // Set start and end points
-        setStartPoint(convertedPoints[0])
-        setEndPoint(convertedPoints[convertedPoints.length - 1])
-        
-        // Calculate center point
-        const avgLat = convertedPoints.reduce((sum, point) => sum + point[0], 0) / convertedPoints.length
-        const avgLong = convertedPoints.reduce((sum, point) => sum + point[1], 0) / convertedPoints.length
-        setMapCenter([avgLat, avgLong])
+          setRoutePoints(convertedPoints)
+          
+          // Set start and end points
+          setStartPoint(convertedPoints[0])
+          setEndPoint(convertedPoints[convertedPoints.length - 1])
+          
+          // Calculate center point
+          const avgLat = convertedPoints.reduce((sum, point) => sum + point[0], 0) / convertedPoints.length
+          const avgLong = convertedPoints.reduce((sum, point) => sum + point[1], 0) / convertedPoints.length
+          setMapCenter([avgLat, avgLong])
+          
+          setMapError(null) // Clear any previous errors
+        } else {
+          setMapError('No valid GPS coordinates found')
+        }
+      } else {
+        setMapError('No GPS track data available')
       }
+    } catch (error) {
+      console.error('Error processing GPS data:', error)
+      setMapError(error instanceof Error ? error.message : 'Error processing GPS data')
     }
   }, [activity.gps_track])
 
@@ -106,15 +134,29 @@ export function InteractiveMap({ activity }: InteractiveMapProps) {
         )}
       </div>
 
-      <div className="h-96 w-full rounded-lg overflow-hidden border">
-        <DynamicMap
-          center={mapCenter}
-          routePoints={routePoints}
-          startPoint={startPoint}
-          endPoint={endPoint}
-          activity={activity}
-        />
-      </div>
+      {mapError ? (
+        <div className="h-96 w-full rounded-lg border border-red-200 bg-red-50 flex items-center justify-center">
+          <div className="text-center text-red-600">
+            <div className="text-lg font-semibold mb-2">Map Error</div>
+            <div className="text-sm">{mapError}</div>
+            <div className="text-xs mt-2 text-red-500">
+              The map cannot be displayed due to invalid GPS data.
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="h-96 w-full rounded-lg overflow-hidden border">
+          <MapErrorBoundary>
+            <DynamicMap
+              center={mapCenter}
+              routePoints={routePoints}
+              startPoint={startPoint}
+              endPoint={endPoint}
+              activity={activity}
+            />
+          </MapErrorBoundary>
+        </div>
+      )}
 
       <div className="mt-4 text-sm text-gray-600">
         <p><strong>Map Features:</strong></p>

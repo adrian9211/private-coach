@@ -130,14 +130,44 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
           })
         }
         
-        // Try to clear the session from Supabase client
+        // Clear the session from Supabase client (local scope)
         await supabase.auth.signOut({ scope: 'local' })
       } catch (e) {
         console.warn('Failed to clear local session:', e)
       }
       
-      // Don't manually redirect - let the auth context handle it via onAuthStateChange
-      // The redirect will happen automatically when the auth state changes
+      // Also clear the auth cookie on the server to prevent re-hydration with a valid session
+      try {
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 5000)
+        await fetch('/auth/signout', {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal,
+        }).catch(() => {})
+        clearTimeout(timeoutId)
+      } catch (e) {
+        console.warn('Server signout request failed:', e)
+      }
+      
+      // Ensure redirect even if onAuthStateChange doesn't fire
+      try {
+        router.push('/auth/signin')
+        router.refresh()
+        // Hard navigation fallback in case router is stuck
+        if (typeof window !== 'undefined') {
+          setTimeout(() => {
+            if (window.location.pathname !== '/auth/signin') {
+              window.location.replace('/auth/signin')
+            }
+          }, 300)
+        }
+      } catch (e) {
+        if (typeof window !== 'undefined') {
+          window.location.replace('/auth/signin')
+        }
+      }
       
       return { error: null }
     } catch (error) {

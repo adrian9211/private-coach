@@ -29,6 +29,7 @@ export default async function DashboardPage() {
     .select('*')
     .eq('user_id', session.user.id)
     .eq('status', 'processed')
+    .order('start_time', { ascending: false, nullsFirst: false })
     .order('upload_date', { ascending: false })
     .limit(5)
 

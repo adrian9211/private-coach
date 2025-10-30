@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart, ReferenceArea, ReferenceLine } from 'recharts'
 
 interface GPSPoint {
   timestamp: string
@@ -28,6 +28,7 @@ interface Activity {
 
 interface ElevationProfileProps {
   activity: Activity
+  ftp?: number
 }
 
 interface ChartDataPoint {
@@ -41,7 +42,7 @@ interface ChartDataPoint {
   time: string
 }
 
-export function ElevationProfile({ activity }: ElevationProfileProps) {
+export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
   const [chartData, setChartData] = useState<ChartDataPoint[]>([])
   const [stats, setStats] = useState({
     totalAscent: 0,
@@ -50,6 +51,16 @@ export function ElevationProfile({ activity }: ElevationProfileProps) {
     minAltitude: 0,
     avgGrade: 0
   })
+
+  const powerZones = ftp ? [
+    { key: 'Z1', label: 'Active Recovery', min: 0, max: Math.round(ftp * 0.55), color: '#D1FAE5' },
+    { key: 'Z2', label: 'Endurance', min: Math.round(ftp * 0.56), max: Math.round(ftp * 0.75), color: '#E0F2FE' },
+    { key: 'Z3', label: 'Tempo', min: Math.round(ftp * 0.76), max: Math.round(ftp * 0.90), color: '#FDE68A' },
+    { key: 'Z4', label: 'Threshold', min: Math.round(ftp * 0.91), max: Math.round(ftp * 1.05), color: '#FECACA' },
+    { key: 'Z5', label: 'VO2max', min: Math.round(ftp * 1.06), max: Math.round(ftp * 1.20), color: '#E9D5FF' },
+    { key: 'Z6', label: 'Anaerobic', min: Math.round(ftp * 1.21), max: Math.round(ftp * 1.50), color: '#FBCFE8' },
+    { key: 'Z7', label: 'Neuromuscular', min: Math.round(ftp * 1.51), max: Math.round(ftp * 3.00), color: '#FFE4E6' },
+  ] : null
 
   useEffect(() => {
     if (!activity.gps_track || activity.gps_track.length === 0) return
@@ -275,6 +286,57 @@ export function ElevationProfile({ activity }: ElevationProfileProps) {
             </ResponsiveContainer>
           </div>
         </div>
+        
+        {/* Power Profile */}
+        <div>
+          <h4 className="text-lg font-medium text-gray-800 mb-3">Power Profile</h4>
+          <div className="h-48">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={chartData.filter(d => d.power > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                <XAxis 
+                  dataKey="distance" 
+                  stroke="#6B7280"
+                  fontSize={12}
+                  tickFormatter={(value) => `${value.toFixed(1)} km`}
+                />
+                <YAxis 
+                  stroke="#6B7280"
+                  fontSize={12}
+                  tickFormatter={(value) => `${value} W`}
+                />
+                <Tooltip 
+                  formatter={(value: any) => [`${Math.round(value as number)} W`, 'Power']}
+                  labelFormatter={(label) => `Distance: ${label.toFixed(2)} km`}
+                />
+                {ftp && powerZones && powerZones.map(zone => (
+                  <ReferenceArea key={zone.key} y1={zone.min} y2={zone.max} strokeOpacity={0} fill={zone.color} fillOpacity={0.35} />
+                ))}
+                {ftp && (
+                  <ReferenceLine y={ftp} stroke="#7C3AED" strokeDasharray="4 4" label={{ position: 'right', value: `FTP ${ftp}W`, fill: '#7C3AED', fontSize: 12 }} />
+                )}
+                <Line 
+                  type="monotone" 
+                  dataKey="power" 
+                  stroke="#8B5CF6" 
+                  strokeWidth={2}
+                  dot={false}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          {ftp && powerZones && (
+            <div className="mt-3 grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+              {powerZones.map(z => (
+                <div key={z.key} className="flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 rounded" style={{ backgroundColor: z.color }} />
+                  <span className="text-gray-700 font-medium">{z.key}</span>
+                  <span className="text-gray-500">{z.label} ({z.min}-{z.max} W)</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Chart Info */}
@@ -284,7 +346,7 @@ export function ElevationProfile({ activity }: ElevationProfileProps) {
           <li>Interactive hover tooltips with detailed data</li>
           <li>Distance-based x-axis (kilometers)</li>
           <li>Elevation profile with gradient fill</li>
-          <li>Speed and heart rate profiles</li>
+          <li>Speed, heart rate, and power profiles</li>
           <li>Responsive design for all screen sizes</li>
         </ul>
       </div>

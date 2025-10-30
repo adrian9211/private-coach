@@ -2,19 +2,74 @@
 
 import { useAuth } from '@/lib/auth-context'
 import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { UserMenu } from '@/components/auth/user-menu'
 import { ChangePasswordForm } from '@/components/auth/change-password-form'
+import { supabase } from '@/lib/supabase'
 
 export default function SettingsPage() {
   const { user, loading } = useAuth()
   const router = useRouter()
+  const [ftp, setFtp] = useState<string>('')
+  const [savingFtp, setSavingFtp] = useState(false)
+  const [loadError, setLoadError] = useState<string | null>(null)
+  const [saveError, setSaveError] = useState<string | null>(null)
+  const [successMsg, setSuccessMsg] = useState<string | null>(null)
+  const [preferences, setPreferences] = useState<any | null>(null)
 
   useEffect(() => {
     if (!loading && !user) {
       router.push('/auth/signin')
     }
   }, [user, loading, router])
+
+  useEffect(() => {
+    const loadPreferences = async () => {
+      if (!user) return
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select('preferences')
+          .eq('id', user.id)
+          .maybeSingle()
+        if (error) throw error
+        const prefs = data?.preferences || {}
+        setPreferences(prefs)
+        if (prefs.ftp) setFtp(String(prefs.ftp))
+      } catch (err: any) {
+        setLoadError(err.message || 'Failed to load preferences')
+      }
+    }
+    loadPreferences()
+  }, [user])
+
+  const handleSaveFtp = async () => {
+    if (!user) return
+    setSavingFtp(true)
+    setSaveError(null)
+    setSuccessMsg(null)
+    try {
+      const ftpNum = parseInt(ftp, 10)
+      if (isNaN(ftpNum) || ftpNum <= 0) {
+        setSaveError('Please enter a valid FTP in watts')
+        setSavingFtp(false)
+        return
+      }
+      const nextPrefs = { ...(preferences || {}), ftp: ftpNum }
+      const { error } = await supabase
+        .from('users')
+        .update({ preferences: nextPrefs })
+        .eq('id', user.id)
+      if (error) throw error
+      setPreferences(nextPrefs)
+      setSuccessMsg('FTP saved')
+    } catch (err: any) {
+      setSaveError(err.message || 'Failed to save FTP')
+    } finally {
+      setSavingFtp(false)
+      setTimeout(() => setSuccessMsg(null), 2000)
+    }
+  }
 
   if (loading) {
     return (
@@ -104,6 +159,33 @@ export default function SettingsPage() {
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Preferences</h3>
             <div className="space-y-4">
+              {/* FTP */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Functional Threshold Power (FTP)</label>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    value={ftp}
+                    onChange={(e) => setFtp(e.target.value)}
+                    placeholder="e.g. 250"
+                    className="w-40 border rounded-md px-3 py-2 text-sm"
+                    min={1}
+                  />
+                  <span className="text-sm text-gray-600">watts</span>
+                  <button
+                    onClick={handleSaveFtp}
+                    disabled={savingFtp}
+                    className="bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700 text-sm disabled:opacity-50"
+                  >
+                    {savingFtp ? 'Saving...' : 'Save'}
+                  </button>
+                </div>
+                {loadError && <div className="text-sm text-red-600 mt-1">{loadError}</div>}
+                {saveError && <div className="text-sm text-red-600 mt-1">{saveError}</div>}
+                {successMsg && <div className="text-sm text-green-600 mt-1">{successMsg}</div>}
+              </div>
+
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="text-sm font-medium text-gray-900">Email Notifications</h4>

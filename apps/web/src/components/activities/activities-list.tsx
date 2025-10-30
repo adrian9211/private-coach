@@ -10,6 +10,7 @@ interface Activity {
   file_name: string
   file_size: number
   upload_date: string
+  start_time?: string | null
   processed_date: string | null
   status: 'uploaded' | 'processing' | 'processed' | 'failed'
   metadata: any
@@ -154,7 +155,7 @@ export function ActivitiesList({ initialActivities }: { initialActivities: Activ
                           </div>
                           <div>
                             <div className="text-sm font-medium text-gray-900">{activity.file_name}</div>
-                            <div className="text-xs text-gray-500">{formatDate(activity.upload_date)}</div>
+                            <div className="text-xs text-gray-500">{formatDate((activity.start_time || activity.upload_date) as string)}</div>
                           </div>
                         </div>
                       </td>

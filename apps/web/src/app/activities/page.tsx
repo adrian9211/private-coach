@@ -19,6 +19,7 @@ export default async function ActivitiesPage() {
     .from('activities')
     .select('*')
     .eq('user_id', session.user.id)
+    .order('start_time', { ascending: false, nullsFirst: false })
     .order('upload_date', { ascending: false })
 
   if (error) {
