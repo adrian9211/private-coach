@@ -13,9 +13,13 @@ export default function SettingsPage() {
   const [ftp, setFtp] = useState<string>('')
   const [weight, setWeight] = useState<string>('')
   const [vo2Max, setVo2Max] = useState<string>('')
+  const [trainingGoals, setTrainingGoals] = useState<string>('')
+  const [weeklyHours, setWeeklyHours] = useState<string>('')
   const [savingFtp, setSavingFtp] = useState(false)
   const [savingWeight, setSavingWeight] = useState(false)
   const [savingVo2Max, setSavingVo2Max] = useState(false)
+  const [savingGoals, setSavingGoals] = useState(false)
+  const [savingHours, setSavingHours] = useState(false)
   const [loadError, setLoadError] = useState<string | null>(null)
   const [saveError, setSaveError] = useState<string | null>(null)
   const [saveErrorField, setSaveErrorField] = useState<'ftp' | 'weight' | 'vo2' | null>(null)
@@ -32,10 +36,10 @@ export default function SettingsPage() {
     const loadPreferences = async () => {
       if (!user) return
       try {
-        // Try to select weight_kg and vo2_max, but fallback to basic query if columns don't exist
+        // Try to select all performance and goal fields, but fallback to basic query if columns don't exist
         const { data, error } = await supabase
           .from('users')
-          .select('preferences, weight_kg, vo2_max')
+          .select('preferences, weight_kg, vo2_max, training_goals, weekly_training_hours')
           .eq('id', user.id)
           .maybeSingle()
         
@@ -61,9 +65,11 @@ export default function SettingsPage() {
         const prefs = data?.preferences || {}
         setPreferences(prefs)
         if (prefs.ftp) setFtp(String(prefs.ftp))
-        // Safely access weight_kg and vo2_max (they might not exist in the response)
+        // Safely access weight_kg, vo2_max, goals, and hours (they might not exist in the response)
         if (data && 'weight_kg' in data && data.weight_kg) setWeight(String(data.weight_kg))
         if (data && 'vo2_max' in data && data.vo2_max) setVo2Max(String(data.vo2_max))
+        if (data && 'training_goals' in data && data.training_goals) setTrainingGoals(data.training_goals)
+        if (data && 'weekly_training_hours' in data && data.weekly_training_hours) setWeeklyHours(String(data.weekly_training_hours))
       } catch (err: any) {
         console.error('Error loading preferences:', err)
         setLoadError(err.message || 'Failed to load preferences')
@@ -218,6 +224,97 @@ export default function SettingsPage() {
       setSaveErrorField('vo2')
     } finally {
       setSavingVo2Max(false)
+      setTimeout(() => {
+        setSuccessMsg(null)
+        setSaveError(null)
+        setSaveErrorField(null)
+      }, 3000)
+    }
+  }
+
+  const handleSaveGoals = async () => {
+    if (!user) {
+      console.error('Cannot save goals: user not available')
+      return
+    }
+    setSavingGoals(true)
+    setSaveError(null)
+    setSaveErrorField(null)
+    setSuccessMsg(null)
+    try {
+      console.log('Saving training goals:', trainingGoals, 'for user:', user.id)
+      const { error } = await supabase
+        .from('users')
+        .update({ training_goals: trainingGoals || null })
+        .eq('id', user.id)
+      
+      console.log('Update response - error:', error)
+      if (error) {
+        console.error('Error saving goals:', error)
+        if (error.message?.includes('training_goals') || error.code === '42703') {
+          setSaveError('Training goals column not found. Please apply the database migration first.')
+          setSaveErrorField(null)
+        } else {
+          throw error
+        }
+      } else {
+        setSuccessMsg('Training goals saved')
+        console.log('Training goals saved successfully')
+      }
+    } catch (err: any) {
+      console.error('Exception saving goals:', err)
+      setSaveError(err.message || 'Failed to save training goals')
+    } finally {
+      setSavingGoals(false)
+      setTimeout(() => {
+        setSuccessMsg(null)
+        setSaveError(null)
+        setSaveErrorField(null)
+      }, 3000)
+    }
+  }
+
+  const handleSaveHours = async () => {
+    if (!user) {
+      console.error('Cannot save weekly hours: user not available')
+      return
+    }
+    setSavingHours(true)
+    setSaveError(null)
+    setSaveErrorField(null)
+    setSuccessMsg(null)
+    try {
+      const hoursNum = parseFloat(weeklyHours)
+      console.log('Saving weekly hours:', hoursNum, 'for user:', user.id)
+      if (weeklyHours && (isNaN(hoursNum) || hoursNum < 0 || hoursNum > 40)) {
+        setSaveError('Please enter a valid number of hours between 0-40')
+        setSavingHours(false)
+        return
+      }
+      console.log('Updating weekly_training_hours:', hoursNum || null)
+      const { error } = await supabase
+        .from('users')
+        .update({ weekly_training_hours: hoursNum || null })
+        .eq('id', user.id)
+      
+      console.log('Update response - error:', error)
+      if (error) {
+        console.error('Error saving weekly hours:', error)
+        if (error.message?.includes('weekly_training_hours') || error.code === '42703') {
+          setSaveError('Weekly hours column not found. Please apply the database migration first.')
+          setSaveErrorField(null)
+        } else {
+          throw error
+        }
+      } else {
+        setSuccessMsg('Weekly training hours saved')
+        console.log('Weekly training hours saved successfully')
+      }
+    } catch (err: any) {
+      console.error('Exception saving weekly hours:', err)
+      setSaveError(err.message || 'Failed to save weekly training hours')
+    } finally {
+      setSavingHours(false)
       setTimeout(() => {
         setSuccessMsg(null)
         setSaveError(null)
@@ -437,6 +534,82 @@ export default function SettingsPage() {
               </div>
 
               {loadError && <div className="text-sm text-red-600 mt-1">{loadError}</div>}
+            </div>
+          </div>
+
+          {/* Training Goals & Availability */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Training Goals & Availability</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              Help your AI coach understand your objectives and time constraints for personalized recommendations.
+            </p>
+            <div className="space-y-4">
+              {/* Training Goals */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Your Training Goals
+                </label>
+                <textarea
+                  value={trainingGoals}
+                  onChange={(e) => setTrainingGoals(e.target.value)}
+                  placeholder="e.g., Improve FTP/kg to 4.0 W/kg, complete a century ride, prepare for upcoming race..."
+                  className="w-full border rounded-md px-3 py-2 text-sm min-h-[100px]"
+                  rows={4}
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  Describe your cycling goals, aspirations, and what you want to achieve. This helps the AI coach tailor recommendations.
+                </p>
+                <button
+                  onClick={handleSaveGoals}
+                  disabled={savingGoals}
+                  className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm disabled:opacity-50"
+                >
+                  {savingGoals ? 'Saving...' : 'Save Goals'}
+                </button>
+                {saveError && !saveErrorField && successMsg && (
+                  <div className="text-sm text-green-600 mt-1">{successMsg}</div>
+                )}
+                {saveError && !saveErrorField && !successMsg && (
+                  <div className="text-sm text-red-600 mt-1">{saveError}</div>
+                )}
+              </div>
+
+              {/* Weekly Training Hours */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Achievable Training Hours Per Week
+                </label>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="number"
+                    inputMode="decimal"
+                    value={weeklyHours}
+                    onChange={(e) => setWeeklyHours(e.target.value)}
+                    placeholder="e.g. 8"
+                    className="w-32 border rounded-md px-3 py-2 text-sm"
+                    min={0}
+                    max={40}
+                    step="0.5"
+                  />
+                  <span className="text-sm text-gray-600">hours/week</span>
+                  <button
+                    onClick={handleSaveHours}
+                    disabled={savingHours}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm disabled:opacity-50"
+                  >
+                    {savingHours ? 'Saving...' : 'Save'}
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500 mt-1">
+                  Realistic number of hours you can dedicate to training each week. Critical for time-optimized workout recommendations.
+                </p>
+                {saveError && !saveErrorField && (
+                  <div className="text-sm text-red-600 mt-1">{saveError}</div>
+                )}
+                {successMsg && !saveErrorField && (
+                  <div className="text-sm text-green-600 mt-1">{successMsg}</div>
+                )}
+              </div>
             </div>
           </div>
 

@@ -51,23 +51,50 @@ export default function MapComponent({
 }: MapComponentProps) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<L.Map | null>(null)
+  const layersRef = useRef<L.Layer[]>([])
+  const isInitializedRef = useRef(false)
 
   useEffect(() => {
-    if (!mapRef.current || mapInstanceRef.current) return
+    if (!mapRef.current) return
 
     // Add a small delay to ensure DOM is ready
     const initMap = () => {
       try {
-        if (!mapRef.current || mapInstanceRef.current) return
+        if (!mapRef.current) return
+
+        // Clean up existing map if it exists
+        if (mapInstanceRef.current) {
+          try {
+            // Remove all layers first
+            mapInstanceRef.current.eachLayer((layer) => {
+              try {
+                mapInstanceRef.current?.removeLayer(layer)
+              } catch (e) {
+                // Ignore errors during cleanup
+              }
+            })
+            mapInstanceRef.current.remove()
+          } catch (e) {
+            console.warn('Error cleaning up existing map:', e)
+          }
+          mapInstanceRef.current = null
+          layersRef.current = []
+        }
+
+        // Verify container still exists
+        if (!mapRef.current) return
 
         // Initialize map with error handling
         const map = L.map(mapRef.current, {
           preferCanvas: true,
           zoomControl: true,
-          attributionControl: true
+          attributionControl: true,
+          fadeAnimation: false, // Prevent animation issues during updates
+          zoomAnimation: false // Prevent animation issues during updates
         }).setView(center, 13)
         
         mapInstanceRef.current = map
+        isInitializedRef.current = true
 
         // Add tile layer with error handling
         const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -77,28 +104,38 @@ export default function MapComponent({
         })
         
         tileLayer.addTo(map)
+        layersRef.current.push(tileLayer)
 
         // Add route line
-        if (routePoints.length > 1) {
+        if (routePoints.length > 1 && mapInstanceRef.current && mapRef.current) {
           try {
             const polyline = L.polyline(routePoints, {
               color: 'blue',
               weight: 4,
               opacity: 0.8
             }).addTo(map)
+            layersRef.current.push(polyline)
             
             // Fit map to route bounds with error handling
-            const bounds = polyline.getBounds()
-            if (bounds.isValid()) {
-              map.fitBounds(bounds, { padding: [20, 20] })
-            }
+            setTimeout(() => {
+              if (mapInstanceRef.current && mapRef.current) {
+                try {
+                  const bounds = polyline.getBounds()
+                  if (bounds.isValid()) {
+                    mapInstanceRef.current.fitBounds(bounds, { padding: [20, 20] })
+                  }
+                } catch (e) {
+                  console.warn('Error fitting bounds:', e)
+                }
+              }
+            }, 50)
           } catch (error) {
             console.warn('Error adding route line:', error)
           }
         }
 
         // Add start marker
-        if (startPoint && activity.gps_track && activity.gps_track.length > 0) {
+        if (startPoint && activity.gps_track && activity.gps_track.length > 0 && mapInstanceRef.current && mapRef.current) {
           try {
             const startIcon = L.divIcon({
               className: 'custom-div-icon',
@@ -108,6 +145,7 @@ export default function MapComponent({
             })
             
             const startMarker = L.marker(startPoint, { icon: startIcon }).addTo(map)
+            layersRef.current.push(startMarker)
             const firstPoint = activity.gps_track[0]
             startMarker.bindPopup(`
               <div style="font-size: 12px;">
@@ -123,7 +161,7 @@ export default function MapComponent({
         }
 
         // Add end marker
-        if (endPoint && endPoint !== startPoint && activity.gps_track && activity.gps_track.length > 0) {
+        if (endPoint && endPoint !== startPoint && activity.gps_track && activity.gps_track.length > 0 && mapInstanceRef.current && mapRef.current) {
           try {
             const endIcon = L.divIcon({
               className: 'custom-div-icon',
@@ -133,6 +171,7 @@ export default function MapComponent({
             })
             
             const endMarker = L.marker(endPoint, { icon: endIcon }).addTo(map)
+            layersRef.current.push(endMarker)
             const lastPoint = activity.gps_track[activity.gps_track.length - 1]
             endMarker.bindPopup(`
               <div style="font-size: 12px;">
@@ -149,8 +188,12 @@ export default function MapComponent({
 
         // Force map to invalidate size after initialization
         setTimeout(() => {
-          if (mapInstanceRef.current) {
-            mapInstanceRef.current.invalidateSize()
+          if (mapInstanceRef.current && mapRef.current) {
+            try {
+              mapInstanceRef.current.invalidateSize()
+            } catch (e) {
+              console.warn('Error invalidating size:', e)
+            }
           }
         }, 100)
 
@@ -158,8 +201,14 @@ export default function MapComponent({
         console.error('Error initializing map:', error)
         // Clean up on error
         if (mapInstanceRef.current) {
-          mapInstanceRef.current.remove()
+          try {
+            mapInstanceRef.current.remove()
+          } catch (e) {
+            // Ignore cleanup errors
+          }
           mapInstanceRef.current = null
+          layersRef.current = []
+          isInitializedRef.current = false
         }
       }
     }
@@ -171,11 +220,27 @@ export default function MapComponent({
       clearTimeout(timeoutId)
       if (mapInstanceRef.current) {
         try {
-          mapInstanceRef.current.remove()
+          // Remove all layers first to prevent Leaflet from accessing removed DOM elements
+          layersRef.current.forEach(layer => {
+            try {
+              if (mapInstanceRef.current) {
+                mapInstanceRef.current.removeLayer(layer)
+              }
+            } catch (e) {
+              // Ignore individual layer removal errors
+            }
+          })
+          layersRef.current = []
+          
+          // Then remove the map
+          if (mapInstanceRef.current) {
+            mapInstanceRef.current.remove()
+          }
         } catch (error) {
           console.warn('Error removing map:', error)
         }
         mapInstanceRef.current = null
+        isInitializedRef.current = false
       }
     }
   }, [center, routePoints, startPoint, endPoint, activity])

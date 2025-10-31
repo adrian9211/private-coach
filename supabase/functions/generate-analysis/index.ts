@@ -103,10 +103,10 @@ serve(async (req) => {
       )
     }
 
-    // Get user preferences, weight, and VO2 max
+    // Get user preferences, weight, VO2 max, goals, and training availability
     const { data: user, error: userError } = await supabaseClient
       .from('users')
-      .select('preferences, weight_kg, vo2_max')
+      .select('preferences, weight_kg, vo2_max, training_goals, weekly_training_hours')
       .eq('id', activity.user_id)
       .single()
 
@@ -127,6 +127,8 @@ serve(async (req) => {
       ? (ftp / weightKg).toFixed(2)
       : null
     const vo2Max = user.vo2_max
+    const trainingGoals = user.training_goals
+    const weeklyHours = user.weekly_training_hours
 
     // Get user's activity history for context and trend analysis
     const { data: recentActivities, error: historyError } = await supabaseClient
@@ -168,6 +170,8 @@ serve(async (req) => {
       weightKg: weightKg,
       ftpPerKg: ftpPerKg, // Power-to-weight ratio (W/kg) - critical cycling performance metric
       vo2Max: vo2Max, // Maximum oxygen uptake (ml/kg/min) - crucial for aerobic capacity analysis
+      trainingGoals: trainingGoals, // User's stated training goals
+      weeklyTrainingHours: weeklyHours, // Available training time per week
     }
 
     // Generate AI analysis using Gemini API
@@ -217,24 +221,46 @@ ${activity.data?.summary?.avgPower && activity.data.summary.avgPower > 0 ? `
 - Analyze consistency of effort and training value without power data
 `}
 
-**ATHLETE PERFORMANCE METRICS (CRITICAL FOR ANALYSIS):**
+**ATHLETE PERFORMANCE METRICS (CRITICAL FOR ANALYSIS - ANALYZE THESE THOROUGHLY):**
 ${ftpPerKg ? `
-- **FTP/kg: ${ftpPerKg} W/kg** - Power-to-weight ratio (${ftp}W ÷ ${weightKg}kg)
-  - This is THE critical cycling performance metric - use it to assess relative performance
-  - Compare workout power outputs to FTP and analyze power-to-weight implications
-  - For indoor workouts: Calculate workout intensity as % of FTP (e.g., ${activity.data?.summary?.avgPower ? `${Math.round((activity.data.summary.avgPower / ftp) * 100)}%` : 'calculate'} of FTP)
-  - For climbing/elevation: Power-to-weight becomes even more critical
+- **FTP/kg: ${ftpPerKg} W/kg** - Power-to-weight ratio (${ftp}W ÷ ${weightKg}kg) ⚡ CRITICAL METRIC
+  - **MANDATORY ANALYSIS:** This is THE most important cycling performance metric - analyze it in detail
+  - Compare workout power outputs to FTP/kg threshold - is athlete training at appropriate intensity?
+  - For indoor workouts: Calculate workout intensity as % of FTP (${activity.data?.summary?.avgPower ? `${Math.round((activity.data.summary.avgPower / ftp) * 100)}%` : 'calculate'} of FTP)
+  - Calculate workout power-to-weight: ${activity.data?.summary?.avgPower && weightKg ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg` : 'N/A'}
+  - Is current FTP/kg appropriate for athlete's goals? How does it compare to elite levels?
+  - For climbing/elevation: Power-to-weight is THE determining factor - analyze thoroughly
+  - **REQUIRED:** Provide specific recommendations on how to improve FTP/kg if below athlete's potential
 ` : ftp ? `
 - **FTP: ${ftp}W** (weight not provided - cannot calculate FTP/kg)
   - Calculate workout intensity as % of FTP
-` : '⚠️ NO FTP SET - Cannot perform power-to-weight or intensity zone analysis'}
+  - ⚠️ **URGENT:** Encourage athlete to enter weight to enable FTP/kg analysis - this is critical
+` : '⚠️ NO FTP SET - Cannot perform power-to-weight or intensity zone analysis. This severely limits analysis quality.'}
 ${vo2Max ? `
-- **VO2 Max: ${vo2Max} ml/kg/min** - Maximum aerobic capacity
-  - Use this to assess if current training is optimizing aerobic development
-  - Compare current workout intensity to VO2 max capacity
-  - Identify if training zones align with aerobic potential
+- **VO2 Max: ${vo2Max} ml/kg/min** - Maximum aerobic capacity 🫁 CRITICAL METRIC
+  - **MANDATORY ANALYSIS:** Analyze if current training is optimizing aerobic development relative to VO2 max
   - VO2 max context: ${vo2Max >= 55 ? 'Elite level' : vo2Max >= 50 ? 'Very high' : vo2Max >= 45 ? 'High' : vo2Max >= 40 ? 'Above average' : 'Average'} aerobic capacity
-` : '⚠️ NO VO2 MAX PROVIDED - Cannot assess aerobic capacity optimization. Encourage entering VO2 max from Garmin for better analysis.'}
+  - Compare workout heart rate zones to VO2 max capacity - is athlete training in optimal zones?
+  - ${activity.data?.summary?.avgHeartRate ? `Current workout avg HR: ${activity.data.summary.avgHeartRate} bpm - what % of VO2 max does this represent?` : 'Analyze HR data relative to VO2 max capacity'}
+  - Is training intensity aligned with VO2 max potential? Are they under-training or over-training relative to capacity?
+  - **REQUIRED:** Provide specific recommendations on aerobic development based on VO2 max
+  - Analyze if FTP/kg is appropriate for VO2 max level - elite VO2 max should support higher FTP/kg
+` : '⚠️ NO VO2 MAX PROVIDED - Cannot assess aerobic capacity optimization. Encourage entering VO2 max from Garmin - this is critical for comprehensive analysis.'}
+${trainingGoals ? `
+- **ATHLETE GOALS:** ${trainingGoals}
+  - **MANDATORY:** ALL recommendations must align with these stated goals
+  - Assess if current workout is helping achieve these goals
+  - Provide specific recommendations on how this workout contributes to or detracts from goal achievement
+  - Modify all advice to directly support these goals
+` : '⚠️ NO TRAINING GOALS PROVIDED - Recommend athlete enters goals in profile for personalized coaching'}
+${weeklyHours ? `
+- **TRAINING TIME AVAILABILITY: ${weeklyHours} hours/week**
+  - **MANDATORY:** ALL recommendations must respect this time constraint
+  - Calculate if current workout duration is appropriate for available time
+  - Suggest optimal workout distribution across available hours
+  - Prioritize time-efficient training methods
+  - Avoid recommending workouts that exceed realistic time allocation
+` : '⚠️ NO WEEKLY HOURS PROVIDED - Recommend athlete enters available training hours for time-optimized recommendations'}
 
 **CRITICAL RPE ANALYSIS (if provided):**
 ${activity.rpe ? `
@@ -311,19 +337,36 @@ ${activity.data?.summary?.avgPower ? `
 - Were intervals structured effectively?
 - Could similar adaptations be achieved in less time?
 ${ftpPerKg ? `
-- **POWER-TO-WEIGHT ANALYSIS:**
-  - Workout avg: ${(activity.data.summary.avgPower / parseFloat(weightKg)).toFixed(2)} W/kg vs FTP/kg: ${ftpPerKg} W/kg
-  - ${activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) ? '⚠️ HIGH intensity - above FTP/kg threshold' : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.9 ? 'Threshold zone - appropriate for FTP work' : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.7 ? 'Tempo zone' : 'Endurance zone'}
-  - For climbing/weight-dependent efforts: Compare power-to-weight ratio to FTP/kg
+- **COMPREHENSIVE POWER-TO-WEIGHT ANALYSIS (MANDATORY):**
+  - Workout avg power-to-weight: ${(activity.data.summary.avgPower / parseFloat(weightKg)).toFixed(2)} W/kg vs FTP/kg: ${ftpPerKg} W/kg
+  - Intensity percentage: ${((activity.data.summary.avgPower / weightKg / parseFloat(ftpPerKg)) * 100).toFixed(0)}% of FTP/kg
+  - Intensity assessment: ${activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) ? `⚠️ HIGH intensity - above FTP/kg threshold` : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.9 ? `Threshold zone - appropriate for FTP work` : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.7 ? `Tempo zone` : `Endurance zone`}
+  - **REQUIRED ANALYSIS:** How does current FTP/kg (${ftpPerKg} W/kg) compare to athlete's potential? Elite amateurs: 3.5-4.5 W/kg, pros: 4.5-6.0+ W/kg
+  - For climbing/weight-dependent efforts: Power-to-weight is THE determining factor - analyze thoroughly
+  - Provide specific FTP/kg improvement recommendations based on current level and goals
+` : ''}
+${vo2Max && activity.data?.summary?.avgHeartRate ? `
+- **COMPREHENSIVE VO2 MAX & AEROBIC CAPACITY ANALYSIS (MANDATORY):**
+  - VO2 max: ${vo2Max} ml/kg/min (${vo2Max >= 55 ? 'Elite' : vo2Max >= 50 ? 'Very high' : vo2Max >= 45 ? 'High' : vo2Max >= 40 ? 'Above average' : 'Average'} aerobic capacity)
+  - Workout avg HR: ${activity.data.summary.avgHeartRate} bpm - analyze what % of VO2 max this represents
+  - **REQUIRED:** Is training intensity aligned with VO2 max potential? Are zones optimal?
+  - **REQUIRED:** Does FTP/kg match VO2 max level? High VO2 max should support higher FTP/kg - analyze this relationship
+  - Provide specific aerobic development recommendations based on VO2 max
+` : vo2Max ? `
+- **VO2 MAX ANALYSIS:** ${vo2Max} ml/kg/min - assess if HR data (when available) aligns with aerobic potential
 ` : ''}
 ` : `
 - Analyze heart rate distribution without power data
 - Was effort consistent? Could structure be improved?
 - How can outdoor training be optimized when time is limited?
-${vo2Max ? `
-- **AEROBIC CAPACITY ANALYSIS:**
-  - VO2 max: ${vo2Max} ml/kg/min - assess if HR zones align with aerobic potential
+${vo2Max && activity.data?.summary?.avgHeartRate ? `
+- **COMPREHENSIVE VO2 MAX & AEROBIC CAPACITY ANALYSIS (MANDATORY):**
+  - VO2 max: ${vo2Max} ml/kg/min (${vo2Max >= 55 ? 'Elite' : vo2Max >= 50 ? 'Very high' : vo2Max >= 45 ? 'High' : vo2Max >= 40 ? 'Above average' : 'Average'} aerobic capacity)
+  - Workout avg HR: ${activity.data.summary.avgHeartRate} bpm - analyze what % of VO2 max this represents
   - Is training optimizing aerobic development relative to VO2 max capacity?
+  - Provide specific recommendations based on VO2 max level
+` : vo2Max ? `
+- **VO2 MAX ANALYSIS:** ${vo2Max} ml/kg/min - assess if HR zones align with aerobic potential
 ` : ''}
 `}
 
@@ -333,19 +376,44 @@ ${activity.rpe ? `
 - Recommendations for next session timing and intensity
 ` : 'Encourage RPE logging for better recovery assessment'}
 
-## Next Session Recommendations (Time-Limited Focus)
+## Next Session Recommendations (Goal-Aligned & Time-Optimized)
+${trainingGoals ? `
+**ALIGN WITH ATHLETE GOALS:** "${trainingGoals}"
+` : ''}
+${weeklyHours ? `
+**RESPECT TIME CONSTRAINT:** ${weeklyHours} hours/week available
+` : ''}
 [Specific, actionable recommendations:
-- Duration recommendation
-- Intensity zones to target
+- Duration recommendation ${weeklyHours ? `(considering ${weeklyHours} hours/week total)` : ''}
+- Intensity zones to target ${ftpPerKg ? `(FTP/kg: ${ftpPerKg} W/kg)` : ''} ${vo2Max ? `(VO2 max: ${vo2Max} ml/kg/min)` : ''}
 - Indoor vs outdoor suggestion
-- How to maximize benefit in available time]
+- How to maximize benefit in available time
+${trainingGoals ? `- Direct connection to achieving: "${trainingGoals}"` : ''}
+${ftpPerKg && vo2Max ? `- Specific FTP/kg and VO2 max development recommendations` : ''}]
 
-**REMEMBER:** Be CRITICAL but CONSTRUCTIVE. The athlete has limited time - help them optimize every minute.`
+**CRITICAL REQUIREMENTS FOR YOUR RESPONSE:**
+1. **MUST be COMPREHENSIVE** - Your analysis should be 1000+ words minimum. Short, generic responses are unacceptable.
+2. **MUST address EVERY section above** - Do not skip sections or give brief summaries.
+3. **MUST use DATA** - Reference specific numbers, percentages, comparisons to history.
+4. **MUST be SPECIFIC** - Vague statements like "good workout" or "could improve" are not helpful. Give exact details.
+5. **MUST be ANALYTICAL** - Show your reasoning. Explain WHY something is suboptimal, not just that it is.
+6. **MUST compare to HISTORY** - Always reference how this compares to the athlete's training history.
+7. **MUST provide ACTIONABLE recommendations** - Not general advice, but specific, time-optimized suggestions.
+
+**RESPONSE FORMAT:**
+- Start each section with the exact heading (## Performance Comparison vs History 📊, etc.)
+- Fill each section with detailed analysis (minimum 200 words per section)
+- Use specific numbers and comparisons
+- Be thorough - this athlete needs comprehensive coaching feedback
+
+**DO NOT:** Give short responses, skip sections, use generic language, or provide vague recommendations.
+
+**REMEMBER:** Be CRITICAL but CONSTRUCTIVE. The athlete has limited time - help them optimize every minute. Provide a COMPREHENSIVE analysis that demonstrates deep understanding of their training data and history.`
             }]
           }],
           generationConfig: {
             temperature: 0.3, // Lower temperature for more analytical, less creative responses
-            maxOutputTokens: 4000, // Higher limit for deep reasoning
+            maxOutputTokens: 8000, // Higher limit for comprehensive deep reasoning analysis
             topP: 0.8,
             topK: 40,
           }
@@ -368,10 +436,29 @@ ${activity.rpe ? `
     }
     
     const analysis = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || 'Analysis could not be generated'
+    const finishReason = geminiData.candidates?.[0]?.finishReason
+    const tokenCount = analysis.length
+    
+    console.log(`Analysis received: ${tokenCount} characters, finishReason: ${finishReason}`)
     
     if (!analysis || analysis === 'Analysis could not be generated') {
       console.error('No analysis text in Gemini response:', JSON.stringify(geminiData))
       throw new Error('Gemini API returned empty analysis')
+    }
+    
+    // Warn if response seems too short or was truncated
+    if (tokenCount < 500) {
+      console.warn(`WARNING: Analysis is very short (${tokenCount} chars). This may indicate an issue.`)
+    }
+    
+    if (finishReason === 'MAX_TOKENS' || finishReason === 'LENGTH') {
+      console.warn(`WARNING: Response was truncated due to ${finishReason}. Consider increasing maxOutputTokens.`)
+    }
+    
+    if (finishReason === 'STOP') {
+      console.log('Response completed normally (STOP)')
+    } else {
+      console.log(`Response finish reason: ${finishReason}`)
     }
 
     // Parse the analysis and structure it
