@@ -55,7 +55,14 @@ serve(async (req) => {
 
     // Initialize Gemini API
     const googleApiKey = Deno.env.get('GOOGLE_API_KEY')
-    const geminiModel = Deno.env.get('GEMINI_MODEL') || 'gemini-1.5-pro'
+    // Use gemini-2.5-pro (confirmed available) for best analysis quality with deep reasoning capability
+    const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-2.5-pro'
+    const validModels = ['gemini-2.5-pro', 'gemini-1.5-pro', 'gemini-pro']
+    const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-2.5-pro'
+    
+    if (requestedModel !== geminiModel) {
+      console.warn(`Invalid model "${requestedModel}", using "${geminiModel}" instead`)
+    }
 
     if (!googleApiKey) {
       return new Response(
@@ -96,10 +103,10 @@ serve(async (req) => {
       )
     }
 
-    // Get user preferences
+    // Get user preferences, weight, and VO2 max
     const { data: user, error: userError } = await supabaseClient
       .from('users')
-      .select('preferences')
+      .select('preferences, weight_kg, vo2_max')
       .eq('id', activity.user_id)
       .single()
 
@@ -113,6 +120,42 @@ serve(async (req) => {
       )
     }
 
+    // Calculate FTP/kg (power-to-weight ratio) - critical cycling performance metric
+    const ftp = user.preferences?.ftp
+    const weightKg = user.weight_kg
+    const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0) 
+      ? (ftp / weightKg).toFixed(2)
+      : null
+    const vo2Max = user.vo2_max
+
+    // Get user's activity history for context and trend analysis
+    const { data: recentActivities, error: historyError } = await supabaseClient
+      .from('activities')
+      .select('id, start_time, data, rpe, total_distance, total_timer_time, avg_power, avg_heart_rate')
+      .eq('user_id', activity.user_id)
+      .eq('status', 'processed')
+      .order('start_time', { ascending: false, nullsFirst: false })
+      .order('upload_date', { ascending: false })
+      .limit(20) // Last 20 activities for context
+
+    if (historyError) {
+      console.warn('Error fetching activity history:', historyError)
+    }
+
+    // Calculate trends from history
+    const activityHistory = recentActivities || []
+    const historyContext = activityHistory.length > 0 ? {
+      totalActivities: activityHistory.length,
+      avgDuration: activityHistory.reduce((sum, a) => sum + (a.total_timer_time || 0), 0) / activityHistory.length,
+      avgDistance: activityHistory.reduce((sum, a) => sum + (a.total_distance || 0), 0) / activityHistory.length,
+      avgPower: activityHistory.filter(a => a.avg_power > 0).reduce((sum, a) => sum + (a.avg_power || 0), 0) / Math.max(1, activityHistory.filter(a => a.avg_power > 0).length),
+      avgRPE: activityHistory.filter(a => a.rpe).reduce((sum, a) => sum + (a.rpe || 0), 0) / Math.max(1, activityHistory.filter(a => a.rpe).length),
+      recentRPEs: activityHistory.filter(a => a.rpe).slice(0, 10).map(a => ({ date: a.start_time, rpe: a.rpe })),
+      powerTrend: activityHistory.filter(a => a.avg_power > 0).length > 1 ? 
+        (activityHistory.filter(a => a.avg_power > 0).slice(0, 5).reduce((sum, a) => sum + (a.avg_power || 0), 0) / 
+         activityHistory.filter(a => a.avg_power > 0).slice(5, 10).reduce((sum, a) => sum + (a.avg_power || 0), 1)) : null,
+    } : null
+
     // Prepare data for AI analysis
     const activityData = {
       metadata: activity.metadata,
@@ -120,11 +163,22 @@ serve(async (req) => {
       userPreferences: user.preferences,
       rpe: activity.rpe, // Rate of Perceived Exertion (1-10) - critical for subjective feedback
       activityDate: activity.start_time || activity.created_at,
+      // Performance metrics for power-to-weight analysis
+      ftp: ftp,
+      weightKg: weightKg,
+      ftpPerKg: ftpPerKg, // Power-to-weight ratio (W/kg) - critical cycling performance metric
+      vo2Max: vo2Max, // Maximum oxygen uptake (ml/kg/min) - crucial for aerobic capacity analysis
     }
 
     // Generate AI analysis using Gemini API
+    // Gemini 2.5 Pro uses v1 endpoint, older models use v1beta
+    const useV1Endpoint = geminiModel === 'gemini-2.5-pro' || geminiModel.startsWith('gemini-2.')
+    const apiVersion = useV1Endpoint ? 'v1' : 'v1beta'
+    const geminiUrl = `https://generativelanguage.googleapis.com/${apiVersion}/models/${geminiModel}:generateContent?key=${googleApiKey}`
+    console.log(`Calling Gemini API with model: ${geminiModel} (${apiVersion})`)
+    
     const geminiResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:generateContent?key=${googleApiKey}`,
+      geminiUrl,
       {
         method: 'POST',
         headers: {
@@ -133,12 +187,21 @@ serve(async (req) => {
         body: JSON.stringify({
           contents: [{
             parts: [{
-              text: `You are a CRITICAL and HONEST professional cycling coach analyzing workout data. Your role is to provide HONEST, ACTIONABLE feedback to help optimize training with LIMITED TIME per week. Be direct, constructive, and focus on efficiency.
+              text: `You are a CRITICAL and ANALYTICAL professional cycling coach. Use DEEP REASONING to analyze this workout in context of the athlete's training history. Be HONEST, DATA-DRIVEN, and ACTIONABLE. Avoid generic praise - focus on what the DATA tells you.
+
+**CRITICAL ANALYSIS REQUIREMENTS:**
+- Compare this workout AGAINST the athlete's historical performance
+- Identify patterns, trends, and anomalies
+- Be CRITICAL - if something is mediocre, say so
+- Focus on WHAT IS WRONG or SUBOPTIMAL, not just positives
+- Every minute of training time is precious - identify wasted time
+- Use the activity history to spot fatigue, overreaching, or improvements
 
 **TRAINING CONTEXT - TIME OPTIMIZATION FOCUS:**
 - The athlete has LIMITED TIME per week for training
 - Every workout must be OPTIMIZED for maximum benefit
-- Focus on what works and what doesn't - be CRITICAL when necessary
+- Generic completion is NOT an achievement - be critical
+- Focus on what works and what doesn't - be BRUTALLY HONEST when necessary
 - Prioritize training that delivers the best results per hour invested
 
 **ACTIVITY TYPE DETECTION:**
@@ -154,37 +217,86 @@ ${activity.data?.summary?.avgPower && activity.data.summary.avgPower > 0 ? `
 - Analyze consistency of effort and training value without power data
 `}
 
+**ATHLETE PERFORMANCE METRICS (CRITICAL FOR ANALYSIS):**
+${ftpPerKg ? `
+- **FTP/kg: ${ftpPerKg} W/kg** - Power-to-weight ratio (${ftp}W ÷ ${weightKg}kg)
+  - This is THE critical cycling performance metric - use it to assess relative performance
+  - Compare workout power outputs to FTP and analyze power-to-weight implications
+  - For indoor workouts: Calculate workout intensity as % of FTP (e.g., ${activity.data?.summary?.avgPower ? `${Math.round((activity.data.summary.avgPower / ftp) * 100)}%` : 'calculate'} of FTP)
+  - For climbing/elevation: Power-to-weight becomes even more critical
+` : ftp ? `
+- **FTP: ${ftp}W** (weight not provided - cannot calculate FTP/kg)
+  - Calculate workout intensity as % of FTP
+` : '⚠️ NO FTP SET - Cannot perform power-to-weight or intensity zone analysis'}
+${vo2Max ? `
+- **VO2 Max: ${vo2Max} ml/kg/min** - Maximum aerobic capacity
+  - Use this to assess if current training is optimizing aerobic development
+  - Compare current workout intensity to VO2 max capacity
+  - Identify if training zones align with aerobic potential
+  - VO2 max context: ${vo2Max >= 55 ? 'Elite level' : vo2Max >= 50 ? 'Very high' : vo2Max >= 45 ? 'High' : vo2Max >= 40 ? 'Above average' : 'Average'} aerobic capacity
+` : '⚠️ NO VO2 MAX PROVIDED - Cannot assess aerobic capacity optimization. Encourage entering VO2 max from Garmin for better analysis.'}
+
 **CRITICAL RPE ANALYSIS (if provided):**
 ${activity.rpe ? `
 - RPE: ${activity.rpe}/10 - ${getRPEDescription(activity.rpe)}
 - **CRITICAL COMPARISON:** How does RPE compare to objective metrics?
-${activity.data?.summary?.avgPower ? `
+${activity.data?.summary?.avgPower && ftp ? `
+  - Workout intensity: ${Math.round((activity.data.summary.avgPower / ftp) * 100)}% of FTP
+  - Expected RPE for ${activity.data.summary.avgPower}W avg power: ${getExpectedRPE(activity.data.summary.avgPower, activity.rpe)}
+  - ${activity.rpe > getExpectedRPE(activity.data.summary.avgPower, activity.rpe) + 1 ? '⚠️ HIGH RPE vs Power - May indicate: fatigue, overreaching, illness, or poor recovery. RECOMMEND REST.' : activity.rpe < getExpectedRPE(activity.data.summary.avgPower, activity.rpe) - 1 ? '✅ LOW RPE vs Power - Good freshness and form. Consider increasing intensity next time.' : '✅ RPE matches power output - Normal perceived effort for the workload.'}
+` : activity.data?.summary?.avgPower ? `
   - Expected RPE for ${activity.data.summary.avgPower}W avg power: ${getExpectedRPE(activity.data.summary.avgPower, activity.rpe)}
   - ${activity.rpe > getExpectedRPE(activity.data.summary.avgPower, activity.rpe) + 1 ? '⚠️ HIGH RPE vs Power - May indicate: fatigue, overreaching, illness, or poor recovery. RECOMMEND REST.' : activity.rpe < getExpectedRPE(activity.data.summary.avgPower, activity.rpe) - 1 ? '✅ LOW RPE vs Power - Good freshness and form. Consider increasing intensity next time.' : '✅ RPE matches power output - Normal perceived effort for the workload.'}
 ` : 'Analyze RPE in context of heart rate zones and duration'}
 ` : '⚠️ NO RPE PROVIDED - Strongly encourage logging RPE for better training analysis and fatigue detection'}
 
-**WORKOUT DATA:**
+**CURRENT WORKOUT DATA:**
 ${JSON.stringify({
   duration: activity.data?.summary?.duration ? `${Math.round(activity.data.summary.duration / 60)} minutes` : 'Unknown',
   distance: activity.data?.summary?.totalDistance ? `${activity.data.summary.totalDistance.toFixed(2)} km` : 'Unknown',
-  avgPower: activity.data?.summary?.avgPower ? `${activity.data.summary.avgPower}W` : 'No power meter',
-  avgHR: activity.data?.summary?.avgHeartRate ? `${activity.data.summary.avgHeartRate} bpm` : 'Unknown',
-  powerZones: activity.data?.powerZones ? 'Power zones available' : 'No power zones',
-  rpe: activity.rpe || 'Not provided'
+  avgPower: activity.data?.summary?.avgPower ? `${activity.data.summary.avgPower}W${ftp ? ` (${Math.round((activity.data.summary.avgPower / ftp) * 100)}% of FTP)` : ''}` : 'No power meter',
+  avgPowerPerKg: (activity.data?.summary?.avgPower && weightKg) ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg${ftpPerKg ? ` (${Math.round((activity.data.summary.avgPower / weightKg / parseFloat(ftpPerKg)) * 100)}% of FTP/kg)` : ''}` : 'N/A',
+  avgHR: activity.data?.summary?.avgHeartRate ? `${activity.data.summary.avgHeartRate} bpm${vo2Max ? ` (compare to VO2 max capacity: ${vo2Max} ml/kg/min)` : ''}` : 'Unknown',
+  maxPower: activity.data?.summary?.maxPower ? `${activity.data.summary.maxPower}W${ftp ? ` (${Math.round((activity.data.summary.maxPower / ftp) * 100)}% of FTP)` : ''}` : 'N/A',
+  maxHR: activity.data?.summary?.maxHeartRate ? `${activity.data.summary.maxHeartRate} bpm` : 'N/A',
+  powerZones: activity.data?.powerZones ? Object.keys(activity.data.powerZones).length + ' zones' : 'No power zones',
+  rpe: activity.rpe || 'Not provided',
+  date: activity.start_time || activity.created_at
 }, null, 2)}
 
-**PROVIDE CRITICAL ANALYSIS IN THIS FORMAT:**
+**TRAINING HISTORY CONTEXT (Last ${activityHistory.length} activities):**
+${historyContext ? JSON.stringify({
+  averageDuration: `${Math.round(historyContext.avgDuration / 60)} minutes`,
+  averageDistance: `${historyContext.avgDistance.toFixed(2)} km`,
+  averagePower: historyContext.avgPower > 0 ? `${Math.round(historyContext.avgPower)}W` : 'No power data',
+  averageRPE: historyContext.avgRPE > 0 ? `${historyContext.avgRPE.toFixed(1)}/10` : 'No RPE history',
+  recentRPEs: historyContext.recentRPEs,
+  powerTrend: historyContext.powerTrend ? (historyContext.powerTrend > 1.05 ? 'INCREASING' : historyContext.powerTrend < 0.95 ? 'DECREASING' : 'STABLE') : 'N/A'
+}, null, 2) : 'No historical data available - this appears to be an early workout'}
 
-## What Worked Well ✅
-[List specific positives - what made this workout effective or valuable]
+**COMPARISON ANALYSIS REQUIRED:**
+- How does this workout compare to recent averages?
+- Is power/HR trending up, down, or stable?
+- If RPE is provided: Is perceived effort increasing relative to power output? (fatigue indicator)
+- Are there patterns suggesting overreaching or underreaching?
+
+**ANALYSIS FORMAT - Use DEEP REASONING:**
+
+## Performance Comparison vs History 📊
+[COMPARE this workout to historical data:
+- Duration vs average: is this too long/short for the benefit?
+- Power vs average: showing improvement, decline, or stagnation?
+- RPE trend: Is perceived effort increasing (fatigue) or decreasing (fitness)?
+- Distance/efficiency: Are you getting more benefit per hour?
+- Be DATA-DRIVEN, not optimistic]
 
 ## Critical Issues & Wasted Time ⚠️
-[Be HONEST about what didn't work, wasted time, or could be improved. Examples:
-- Too much time in wrong zones
-- Inefficient structure for time available
-- Missing key training stimuli
-- Poor pacing or effort distribution]
+[Be BRUTALLY HONEST about inefficiencies:
+- Too much time in wrong zones (specify which zones and how long)
+- Inefficient structure - what should have been different?
+- Missing key training stimuli - what adaptation is missing?
+- Poor pacing or effort distribution - be specific
+- Generic riding without purpose - wasted minutes]
 
 ## Time Optimization Recommendations 🎯
 [SPECIFIC recommendations to maximize training benefit per hour:
@@ -198,10 +310,21 @@ ${activity.data?.summary?.avgPower ? `
 - Analyze power zone distribution - was time spent optimally?
 - Were intervals structured effectively?
 - Could similar adaptations be achieved in less time?
+${ftpPerKg ? `
+- **POWER-TO-WEIGHT ANALYSIS:**
+  - Workout avg: ${(activity.data.summary.avgPower / parseFloat(weightKg)).toFixed(2)} W/kg vs FTP/kg: ${ftpPerKg} W/kg
+  - ${activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) ? '⚠️ HIGH intensity - above FTP/kg threshold' : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.9 ? 'Threshold zone - appropriate for FTP work' : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.7 ? 'Tempo zone' : 'Endurance zone'}
+  - For climbing/weight-dependent efforts: Compare power-to-weight ratio to FTP/kg
+` : ''}
 ` : `
 - Analyze heart rate distribution without power data
 - Was effort consistent? Could structure be improved?
 - How can outdoor training be optimized when time is limited?
+${vo2Max ? `
+- **AEROBIC CAPACITY ANALYSIS:**
+  - VO2 max: ${vo2Max} ml/kg/min - assess if HR zones align with aerobic potential
+  - Is training optimizing aerobic development relative to VO2 max capacity?
+` : ''}
 `}
 
 ## Recovery & Fatigue Assessment
@@ -221,8 +344,10 @@ ${activity.rpe ? `
             }]
           }],
           generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 2000,
+            temperature: 0.3, // Lower temperature for more analytical, less creative responses
+            maxOutputTokens: 4000, // Higher limit for deep reasoning
+            topP: 0.8,
+            topK: 40,
           }
         })
       }
@@ -287,14 +412,14 @@ ${activity.rpe ? `
     } else {
       // Insert new analysis
       const { error: insertError } = await supabaseClient
-        .from('activity_analyses')
-        .insert({
-          activity_id: activityId,
-          summary: analysisData.summary,
-          insights: analysisData.insights,
-          recommendations: analysisData.recommendations,
-          trends: analysisData.trends,
-          performance_metrics: analysisData.performanceMetrics,
+      .from('activity_analyses')
+      .insert({
+        activity_id: activityId,
+        summary: analysisData.summary,
+        insights: analysisData.insights,
+        recommendations: analysisData.recommendations,
+        trends: analysisData.trends,
+        performance_metrics: analysisData.performanceMetrics,
           generated_at: new Date().toISOString(),
         })
 
