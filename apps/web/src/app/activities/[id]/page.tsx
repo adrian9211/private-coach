@@ -1,11 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import { supabase } from '@/lib/supabase'
 import { UserMenu } from '@/components/auth/user-menu'
 import { GPSViewer } from '@/components/gps-viewer'
+import { RPEFeedback } from '@/components/activities/rpe-feedback'
+import { AIAnalysisTab } from '@/components/activities/ai-analysis-tab'
 
 interface ActivityData {
   id: string
@@ -30,29 +32,24 @@ interface ActivityData {
     records: any[]
   }
   created_at: string
+  rpe?: number | null
 }
 
 export default function ActivityDetailPage() {
-  const { id } = useParams()
+  const params = useParams()
+  const id = Array.isArray(params.id) ? params.id[0] : params.id
   const router = useRouter()
   const { user, loading } = useAuth()
   const [activity, setActivity] = useState<ActivityData | null>(null)
   const [loadingActivity, setLoadingActivity] = useState(true)
+  const [isNavigating, setIsNavigating] = useState(false)
+  const [activeTab, setActiveTab] = useState<'overview' | 'analysis'>('overview')
 
-  useEffect(() => {
-    if (!loading && !user) {
-      router.push('/auth/signin')
-    }
-  }, [user, loading, router])
-
-  useEffect(() => {
-    if (user && id) {
-      fetchActivity()
-    }
-  }, [user, id])
-
-  const fetchActivity = async () => {
+  const fetchActivity = useCallback(async () => {
+    if (!id) return
+    
     try {
+      setLoadingActivity(true)
       const { data, error } = await supabase
         .from('activities')
         .select('*')
@@ -66,7 +63,39 @@ export default function ActivityDetailPage() {
     } finally {
       setLoadingActivity(false)
     }
-  }
+  }, [id])
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/auth/signin')
+    }
+  }, [user, loading, router])
+
+  useEffect(() => {
+    if (user && id) {
+      fetchActivity()
+    }
+  }, [user, id, fetchActivity])
+
+  const handleBackNavigation = useCallback((e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+    
+    if (isNavigating) return // Prevent multiple clicks
+    
+    setIsNavigating(true)
+    
+    try {
+      // Try router.push first (preferred for Next.js)
+      router.push('/activities')
+    } catch (error) {
+      console.error('Router navigation failed, using window.location:', error)
+      // Fallback to window.location if router.push fails
+      window.location.href = '/activities'
+    }
+  }, [router, isNavigating])
 
   const formatDuration = (seconds: number) => {
     const hours = Math.floor(seconds / 3600)
@@ -112,8 +141,8 @@ export default function ActivityDetailPage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Activity Not Found</h1>
           <button
-            onClick={() => router.push('/activities')}
-            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700"
+            onClick={handleBackNavigation}
+            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700"
           >
             Back to Activities
           </button>
@@ -127,14 +156,17 @@ export default function ActivityDetailPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm">
+      <nav className="bg-white shadow-sm relative z-[100]" style={{ pointerEvents: 'auto' }}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <button
-              onClick={() => router.push('/activities')}
-              className="text-blue-600 hover:text-blue-800 font-medium"
+              type="button"
+              onClick={handleBackNavigation}
+              className="text-blue-600 hover:text-blue-800 font-medium transition-colors relative z-[101] cursor-pointer"
+              style={{ pointerEvents: 'auto' }}
+              disabled={isNavigating}
             >
-              ← Back to Activities
+              {isNavigating ? 'Loading...' : '← Back to Activities'}
             </button>
             <h1 className="text-xl font-bold text-gray-900">Activity Details</h1>
           </div>
@@ -165,6 +197,37 @@ export default function ActivityDetailPage() {
 
         {activity.status === 'processed' && summary && (
           <>
+            {/* Tabs */}
+            <div className="bg-white rounded-lg shadow-lg mb-6">
+              <div className="border-b border-gray-200">
+                <nav className="flex -mb-px">
+                  <button
+                    onClick={() => setActiveTab('overview')}
+                    className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
+                      activeTab === 'overview'
+                        ? 'border-blue-600 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    Overview
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('analysis')}
+                    className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
+                      activeTab === 'analysis'
+                        ? 'border-blue-600 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    AI Coach Analysis
+                  </button>
+                </nav>
+              </div>
+            </div>
+
+            {/* Tab Content */}
+            {activeTab === 'overview' && (
+              <>
             {/* Key Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
@@ -289,6 +352,29 @@ export default function ActivityDetailPage() {
                 </div>
               </div>
             </div>
+
+            {/* RPE Feedback */}
+            {activity.status === 'processed' && (
+              <div className="mb-8">
+                <RPEFeedback 
+                  activityId={activity.id} 
+                  initialRPE={activity.rpe}
+                />
+              </div>
+            )}
+
+            {/* GPS Track Viewer */}
+            {activity.status === 'processed' && (
+              <div className="mt-8">
+                <GPSViewer activityId={activity.id} />
+              </div>
+            )}
+              </>
+            )}
+
+            {activeTab === 'analysis' && (
+              <AIAnalysisTab activityId={activity.id} activity={activity} />
+            )}
           </>
         )}
 
@@ -297,13 +383,6 @@ export default function ActivityDetailPage() {
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">Processing Activity</h2>
             <p className="text-gray-600">Your FIT file is being processed. This may take a few moments.</p>
-          </div>
-        )}
-
-        {/* GPS Track Viewer */}
-        {activity.status === 'processed' && (
-          <div className="mt-8">
-            <GPSViewer activityId={activity.id} />
           </div>
         )}
       </div>

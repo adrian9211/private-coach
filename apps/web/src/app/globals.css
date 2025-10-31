@@ -61,4 +61,19 @@
   }
 }
 
+/* Ensure navigation stays above Leaflet maps */
+nav[class*="shadow-sm"] {
+  z-index: 100 !important;
+  position: relative !important;
+}
+
+/* Ensure Leaflet maps don't block navigation */
+.leaflet-container {
+  z-index: 1 !important;
+}
+
+.leaflet-control-container {
+  z-index: 2 !important;
+}
+
 
