@@ -31,16 +31,19 @@ export default async function ActivitiesPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Navigation */}
       <nav className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <a href="/dashboard" className="text-blue-600 hover:text-blue-800 font-medium">
-              ← Back to Dashboard
+        <div className="container mx-auto px-4 py-3 sm:py-4">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+            <div className="flex items-center space-x-2 sm:space-x-4 min-w-0">
+              <a href="/dashboard" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base whitespace-nowrap">
+                ← Back
+              </a>
+              <h1 className="text-lg sm:text-xl font-bold text-gray-900 truncate">My Activities</h1>
+            </div>
+            <a href="/upload" className="bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-md hover:bg-blue-700 font-medium text-sm sm:text-base text-center whitespace-nowrap">
+              <span className="hidden sm:inline">Upload New Activity</span>
+              <span className="sm:hidden">Upload</span>
             </a>
-            <h1 className="text-xl font-bold text-gray-900">My Activities</h1>
           </div>
-          <a href="/upload" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 font-medium">
-            Upload New Activity
-          </a>
         </div>
       </nav>
 

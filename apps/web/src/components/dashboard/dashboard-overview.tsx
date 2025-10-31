@@ -112,56 +112,55 @@ export function DashboardOverview({ summary, recentActivities }: DashboardOvervi
 
       {/* Recent Activities */}
       {recentActivities && recentActivities.length > 0 && (
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-gray-900">Recent Activities</h2>
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+          <div className="flex items-center justify-between mb-4 sm:mb-6">
+            <h2 className="text-lg sm:text-xl font-bold text-gray-900">Recent Activities</h2>
             <button
               onClick={() => router.push('/activities')}
-              className="text-blue-600 hover:text-blue-800 font-medium"
+              className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base"
             >
               View All
             </button>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {recentActivities.map((activity) => (
               <div 
                 key={activity.id} 
-                className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer transition-colors"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer transition-colors"
                 onClick={() => router.push(`/activities/${activity.id}`)}
               >
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center mb-3 sm:mb-0 flex-1 min-w-0">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">{activity.file_name}</h3>
-                    <p className="text-sm text-gray-600">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm sm:text-base font-medium text-gray-900">
                       {(activity.start_time || activity.upload_date) ? format(new Date((activity.start_time || activity.upload_date) as string), 'PP') : 'N/A'}
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-6 text-sm">
+                <div className="grid grid-cols-3 gap-2 sm:flex sm:items-center sm:space-x-4 sm:space-y-0 text-sm">
                   <div className="text-center">
-                    <div className="font-semibold text-blue-600">
+                    <div className="font-semibold text-blue-600 text-xs sm:text-sm">
                       {(activity.total_distance || 0).toFixed(1)} km
                     </div>
-                    <div className="text-gray-500">Distance</div>
+                    <div className="text-gray-500 text-xs">Distance</div>
                   </div>
                   <div className="text-center">
-                    <div className="font-semibold text-green-600">
+                    <div className="font-semibold text-green-600 text-xs sm:text-sm">
                       {formatDuration(activity.total_timer_time || 0)}
                     </div>
-                    <div className="text-gray-500">Duration</div>
+                    <div className="text-gray-500 text-xs">Duration</div>
                   </div>
                   <div className="text-center">
-                    <div className="font-semibold text-orange-600">
+                    <div className="font-semibold text-orange-600 text-xs sm:text-sm">
                       {Math.round(activity.avg_power || 0)}W
                     </div>
-                    <div className="text-gray-500">Avg Power</div>
+                    <div className="text-gray-500 text-xs">Avg Power</div>
                   </div>
                 </div>
               </div>

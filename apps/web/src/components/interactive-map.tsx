@@ -109,6 +109,20 @@ export function InteractiveMap({ activity }: InteractiveMapProps) {
     return speed ? `${(speed * 3.6).toFixed(1)} km/h` : 'N/A'
   }
 
+  const formatActivityDate = (startTime?: string): string => {
+    if (!startTime) return 'Activity'
+    try {
+      const date = new Date(startTime)
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      })
+    } catch {
+      return 'Activity'
+    }
+  }
+
   if (!isClient) {
     return (
       <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6">
@@ -123,7 +137,7 @@ export function InteractiveMap({ activity }: InteractiveMapProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6">
       <h3 className="text-xl font-semibold text-gray-900 mb-4">
-        Interactive Route Map - {activity.file_name}
+        Interactive Route Map - {formatActivityDate(activity.start_time)}
       </h3>
       
       <div className="mb-4 text-sm text-gray-600">

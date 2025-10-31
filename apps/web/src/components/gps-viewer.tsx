@@ -87,6 +87,20 @@ export function GPSViewer({ activityId }: { activityId: string }) {
     return new Date(timestamp).toLocaleTimeString()
   }
 
+  const formatActivityDate = (startTime?: string): string => {
+    if (!startTime) return 'Activity'
+    try {
+      const date = new Date(startTime)
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      })
+    } catch {
+      return 'Activity'
+    }
+  }
+
   if (loading) return <div className="p-4">Loading GPS data...</div>
   if (error) return <div className="p-4 text-red-600">Error: {error}</div>
   if (!activity || !activity.gps_track) return <div className="p-4">No GPS data available</div>
@@ -97,7 +111,7 @@ export function GPSViewer({ activityId }: { activityId: string }) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6">
       <h3 className="text-xl font-semibold text-gray-900 mb-4">
-        GPS Track - {activity.file_name}
+        GPS Track - {formatActivityDate(activity.start_time)}
       </h3>
       
       {/* Interactive Map */}

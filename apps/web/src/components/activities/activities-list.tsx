@@ -127,10 +127,75 @@ export function ActivitiesList({ initialActivities }: { initialActivities: Activ
         </div>
       ) : (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200">
+          <div className="px-4 sm:px-6 py-4 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">{activities.length} {activities.length === 1 ? 'Activity' : 'Activities'}</h2>
           </div>
-          <div className="overflow-x-auto">
+          
+          {/* Mobile Card View */}
+          <div className="md:hidden divide-y divide-gray-200">
+            {activities.map((activity) => {
+              const summary = activity.data?.summary || {}
+              return (
+                <div key={activity.id} className="p-4 hover:bg-gray-50">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center flex-1 min-w-0">
+                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="text-sm font-medium text-gray-900 truncate">{formatDate((activity.start_time || activity.upload_date) as string)}</div>
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium mt-1 ${getStatusColor(activity.status)}`}>
+                          {getStatusIcon(activity.status)}
+                          <span className="ml-1 capitalize">{activity.status}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-3 mb-3">
+                    <div>
+                      <div className="text-xs text-gray-500">Distance</div>
+                      <div className="text-sm font-medium text-gray-900">{summary.totalDistance ? `${summary.totalDistance.toFixed(2)} km` : '-'}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">Duration</div>
+                      <div className="text-sm font-medium text-gray-900">{summary.duration ? formatDuration(summary.duration) : '-'}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">Avg Power</div>
+                      <div className="text-sm font-medium text-gray-900">{summary.avgPower ? `${Math.round(summary.avgPower)}W` : '-'}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">Avg HR</div>
+                      <div className="text-sm font-medium text-gray-900">{summary.avgHeartRate ? `${Math.round(summary.avgHeartRate)} bpm` : '-'}</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-3 pt-2 border-t border-gray-200">
+                    {activity.status === 'processed' ? (
+                      <button onClick={() => router.push(`/activities/${activity.id}`)} className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm font-medium">
+                        View Analysis
+                      </button>
+                    ) : activity.status === 'failed' ? (
+                      <button className="flex-1 bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 text-sm font-medium">
+                        Retry
+                      </button>
+                    ) : null}
+                    <button 
+                      onClick={() => handleDelete(activity.id)} 
+                      disabled={deletingId === activity.id} 
+                      className="px-4 py-2 border border-red-300 text-red-600 rounded-md hover:bg-red-50 disabled:opacity-50 text-sm font-medium"
+                    >
+                      {deletingId === activity.id ? 'Deleting...' : 'Delete'}
+                    </button>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Desktop Table View */}
+          <div className="hidden md:block overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>

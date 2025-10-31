@@ -74,6 +74,20 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
     return `${seconds}s`
   }
 
+  const formatActivityDate = (startTime?: string): string => {
+    if (!startTime) return 'Activity'
+    try {
+      const date = new Date(startTime)
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      })
+    } catch {
+      return 'Activity'
+    }
+  }
+
   useEffect(() => {
     if (!activity.gps_track || activity.gps_track.length === 0) return
 
@@ -181,9 +195,9 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
 
   if (chartData.length === 0) {
     return (
-      <div className="bg-white rounded-lg shadow-lg p-6">
+      <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6">
         <h3 className="text-xl font-semibold text-gray-900 mb-4">
-          Elevation Profile - {activity.file_name}
+          Elevation Profile - {formatActivityDate(activity.start_time)}
         </h3>
         <div className="text-center py-8 text-gray-600">
           No elevation data available for this activity.
@@ -195,7 +209,7 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-3 sm:p-4 md:p-6">
       <h3 className="text-xl font-semibold text-gray-900 mb-4">
-        Elevation Profile - {activity.file_name}
+        Elevation Profile - {formatActivityDate(activity.start_time)}
       </h3>
 
       {/* Elevation Statistics */}
