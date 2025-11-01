@@ -82,30 +82,44 @@ export function WeeklySummary({ activities, currentMonth, userId, userFtp }: Wee
       let totalPower = 0
       let powerCount = 0
 
+      // Type guard for data with summary
+      const getSummary = (data: any): any => {
+        if (data && typeof data === 'object' && 'summary' in data) {
+          return data.summary
+        }
+        return null
+      }
+
       weekActivities.forEach((activity) => {
-        const summary = activity.data?.summary || {}
+        const summary = getSummary(activity.data)
+        const safeSummary = summary && typeof summary === 'object' ? summary : {}
         
         // Duration
-        const duration = activity.total_timer_time || summary.duration || 0
-        totalTime += duration
+        const summaryDuration = 'duration' in safeSummary ? safeSummary.duration : null
+        const duration = activity.total_timer_time || (typeof summaryDuration === 'number' ? summaryDuration : 0) || 0
+        totalTime += typeof duration === 'number' ? duration : 0
 
         // Distance
-        const distance = activity.total_distance || summary.totalDistance || 0
-        totalDistance += distance
+        const summaryDistance = 'totalDistance' in safeSummary ? safeSummary.totalDistance : null
+        const distance = activity.total_distance || (typeof summaryDistance === 'number' ? summaryDistance : 0) || 0
+        totalDistance += typeof distance === 'number' ? distance : 0
 
         // Calories
-        const calories = activity.total_calories || summary.totalCalories || 0
-        totalCalories += calories
+        const summaryCalories = 'totalCalories' in safeSummary ? safeSummary.totalCalories : null
+        const calories = activity.total_calories || (typeof summaryCalories === 'number' ? summaryCalories : 0) || 0
+        totalCalories += typeof calories === 'number' ? calories : 0
 
         // Power and TSS
-        const power = activity.avg_power || summary.avgPower || 0
-        if (power > 0) {
+        const summaryPower = 'avgPower' in safeSummary ? safeSummary.avgPower : null
+        const power = activity.avg_power || (typeof summaryPower === 'number' ? summaryPower : 0) || 0
+        if (power > 0 && typeof power === 'number') {
           totalPower += power
           powerCount++
           
           // Calculate TSS if FTP is available
-          if (userFtp && duration > 0) {
-            const normalizedPower = summary.normalizedPower || power // Use normalized power if available, else avg power
+          if (userFtp && duration > 0 && typeof duration === 'number') {
+            const summaryNormalizedPower = 'normalizedPower' in safeSummary ? safeSummary.normalizedPower : null
+            const normalizedPower = (typeof summaryNormalizedPower === 'number' ? summaryNormalizedPower : power) // Use normalized power if available, else avg power
             totalTSS += calculateTSS(duration, normalizedPower, userFtp)
           }
         }

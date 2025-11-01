@@ -155,23 +155,40 @@ export function CalendarView({ userId }: CalendarViewProps) {
     return activitiesByDate[dateKey] || []
   }
 
+  // Type guard for data with summary
+  const getSummary = (data: any): any => {
+    if (data && typeof data === 'object' && 'summary' in data) {
+      return data.summary
+    }
+    return null
+  }
+
   const getTotalDistance = (dayActivities: Activity[]): number => {
     return dayActivities.reduce((sum, act) => {
-      const dist = act.total_distance || act.data?.summary?.totalDistance || 0
+      const summary = getSummary(act.data)
+      const dist = act.total_distance || (summary && typeof summary === 'object' && 'totalDistance' in summary ? summary.totalDistance : null) || 0
       return sum + (typeof dist === 'number' ? dist : 0)
     }, 0)
   }
 
   const getTotalDuration = (dayActivities: Activity[]): number => {
     return dayActivities.reduce((sum, act) => {
-      const dur = act.total_timer_time || act.data?.summary?.duration || 0
+      const summary = getSummary(act.data)
+      const dur = act.total_timer_time || (summary && typeof summary === 'object' && 'duration' in summary ? summary.duration : null) || 0
       return sum + (typeof dur === 'number' ? dur : 0)
     }, 0)
   }
 
   const getAvgPower = (dayActivities: Activity[]): number => {
     const powers = dayActivities
-      .map(act => act.avg_power || act.data?.summary?.avgPower)
+      .map(act => {
+        if (act.avg_power) return act.avg_power
+        const summary = getSummary(act.data)
+        if (summary && typeof summary === 'object' && 'avgPower' in summary) {
+          return summary.avgPower
+        }
+        return null
+      })
       .filter((p): p is number => typeof p === 'number' && p > 0)
     
     if (powers.length === 0) return 0
@@ -344,7 +361,12 @@ export function CalendarView({ userId }: CalendarViewProps) {
           
           <div className="space-y-3">
             {getDayActivities(selectedDate).map((activity) => {
-              const summary = activity.data?.summary || {}
+              const summary = getSummary(activity.data)
+              const safeSummary = summary && typeof summary === 'object' ? summary : {}
+              const totalDistance = (safeSummary as any)?.totalDistance
+              const duration = (safeSummary as any)?.duration
+              const avgPower = (safeSummary as any)?.avgPower
+              
               return (
                 <div
                   key={activity.id}
@@ -369,37 +391,25 @@ export function CalendarView({ userId }: CalendarViewProps) {
                       </div>
                       <div className="space-y-2">
                         <div className="grid grid-cols-3 gap-2 text-xs sm:text-sm">
-                          {summary.totalDistance && (
+                          {totalDistance && typeof totalDistance === 'number' && (
                             <div>
                               <span className="text-gray-500">Distance:</span>{' '}
-                              <span className="font-semibold text-blue-600">{summary.totalDistance.toFixed(1)} km</span>
+                              <span className="font-semibold text-blue-600">{totalDistance.toFixed(1)} km</span>
                             </div>
                           )}
-                          {summary.duration && (
+                          {duration && typeof duration === 'number' && (
                             <div>
                               <span className="text-gray-500">Duration:</span>{' '}
-                              <span className="font-semibold text-green-600">{formatDuration(summary.duration)}</span>
+                              <span className="font-semibold text-green-600">{formatDuration(duration)}</span>
                             </div>
                           )}
-                          {summary.avgPower && (
+                          {avgPower && typeof avgPower === 'number' && (
                             <div>
                               <span className="text-gray-500">Avg Power:</span>{' '}
-                              <span className="font-semibold text-orange-600">{Math.round(summary.avgPower)}W</span>
+                              <span className="font-semibold text-orange-600">{Math.round(avgPower)}W</span>
                             </div>
                           )}
                         </div>
-                        {/* Power Zone Chart for individual activity */}
-                        {userFtp && (activity.gps_track || activity.data?.gps_track || summary.avgPower) && (
-                          <div>
-                            <div className="text-[10px] text-gray-500 mb-1">Power Zones:</div>
-                            <PowerZoneChart 
-                              activities={[activity]} 
-                              ftp={userFtp}
-                              maxWidth={300}
-                              maxHeight={10}
-                            />
-                          </div>
-                        )}
                       </div>
                     </div>
                   </div>
