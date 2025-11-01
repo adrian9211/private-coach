@@ -2,7 +2,7 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { UserMenu } from '@/components/auth/user-menu'
-import { DashboardOverview } from '@/components/dashboard/dashboard-overview'
+import { DashboardTabs } from '@/components/dashboard/dashboard-tabs'
 import { Database } from '@/lib/supabase' // Corrected import path
 
 export default async function DashboardPage() {
@@ -68,9 +68,10 @@ export default async function DashboardPage() {
           <p className="text-gray-600">Here's your cycling performance overview</p>
         </div>
 
-        <DashboardOverview
+        <DashboardTabs
           summary={summary}
           recentActivities={recentActivities || []}
+          userId={session.user.id}
         />
 
         {/* Quick Actions */}
