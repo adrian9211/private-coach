@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import { format } from 'date-fns'
+import { ActivityClassificationBadge } from './activity-classification-badge'
 
 interface Activity {
   id: string
@@ -21,11 +22,31 @@ export function ActivitiesList({ initialActivities }: { initialActivities: Activ
   const [activities, setActivities] = useState(initialActivities)
   const [error, setError] = useState<string | null>(null)
   const [deletingId, setDeletingId] = useState<string | null>(null)
+  const [ftp, setFtp] = useState<number | null>(null)
   const router = useRouter()
 
   useEffect(() => {
     setActivities(initialActivities)
   }, [initialActivities])
+
+  useEffect(() => {
+    const fetchFtp = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select('preferences')
+          .maybeSingle()
+        if (error) throw error
+        const prefs = data?.preferences || {}
+        if (prefs.ftp && typeof prefs.ftp === 'number') {
+          setFtp(prefs.ftp)
+        }
+      } catch (e) {
+        // Ignore FTP load errors
+      }
+    }
+    fetchFtp()
+  }, [])
 
   useEffect(() => {
     const channel = supabase
@@ -144,10 +165,15 @@ export function ActivitiesList({ initialActivities }: { initialActivities: Activ
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="text-sm font-medium text-gray-900 truncate">{formatDate((activity.start_time || activity.upload_date) as string)}</div>
-                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium mt-1 ${getStatusColor(activity.status)}`}>
-                          {getStatusIcon(activity.status)}
-                          <span className="ml-1 capitalize">{activity.status}</span>
-                        </span>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${getStatusColor(activity.status)}`}>
+                            {getStatusIcon(activity.status)}
+                            <span className="ml-1 capitalize">{activity.status}</span>
+                          </span>
+                          {activity.status === 'processed' && (
+                            <ActivityClassificationBadge activity={activity as any} ftp={ftp} compact />
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -220,7 +246,12 @@ export function ActivitiesList({ initialActivities }: { initialActivities: Activ
                           </div>
                           <div>
                             <div className="text-sm font-medium text-gray-900">{activity.file_name}</div>
-                            <div className="text-xs text-gray-500">{formatDate((activity.start_time || activity.upload_date) as string)}</div>
+                            <div className="flex items-center gap-2 mt-1">
+                              <div className="text-xs text-gray-500">{formatDate((activity.start_time || activity.upload_date) as string)}</div>
+                              {activity.status === 'processed' && (
+                                <ActivityClassificationBadge activity={activity as any} ftp={ftp} compact />
+                              )}
+                            </div>
                           </div>
                         </div>
                       </td>

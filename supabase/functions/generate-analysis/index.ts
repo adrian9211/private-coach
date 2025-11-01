@@ -35,6 +35,112 @@ function getExpectedRPE(avgPower: number, reportedRPE: number): number {
   return 9
 }
 
+// Calculate activity classification from power zone distribution
+function calculateActivityClassification(
+  activity: any,
+  ftp: number | null
+): { name: string; distribution: { z1z2: number; z3z4: number; z5plus: number }; base: number } | null {
+  if (!ftp || !activity.data) return null
+
+  const gpsTrack = activity.gps_track || activity.data?.gps_track || activity.data?.records || []
+  if (!Array.isArray(gpsTrack) || gpsTrack.length < 2) return null
+
+  const powerZones = [
+    { key: 'Z1', minPercent: 0, maxPercent: 55 },
+    { key: 'Z2', minPercent: 56, maxPercent: 75 },
+    { key: 'Z3', minPercent: 76, maxPercent: 90 },
+    { key: 'Z4', minPercent: 91, maxPercent: 105 },
+    { key: 'Z5', minPercent: 106, maxPercent: 120 },
+    { key: 'Z6', minPercent: 121, maxPercent: 150 },
+    { key: 'Z7', minPercent: 151, maxPercent: 300 },
+  ]
+
+  const zoneTotals: Record<string, number> = {}
+  powerZones.forEach(z => { zoneTotals[z.key] = 0 })
+
+  const track = gpsTrack
+    .filter((p: any) => p && (p.timestamp || p.time))
+    .sort((a: any, b: any) => {
+      const timeA = a.timestamp || a.time || 0
+      const timeB = b.timestamp || b.time || 0
+      return new Date(timeA).getTime() - new Date(timeB).getTime()
+    })
+
+  let totalTime = 0
+
+  for (let i = 1; i < track.length; i++) {
+    const prev = track[i - 1]
+    const curr = track[i]
+    const prevTime = prev.timestamp || prev.time
+    const currTime = curr.timestamp || curr.time
+    
+    if (!prevTime || !currTime) continue
+    
+    const dt = (new Date(currTime).getTime() - new Date(prevTime).getTime()) / 1000
+    
+    if (!isFinite(dt) || dt <= 0 || dt > 300) continue
+    
+    const power = typeof prev.power === 'number' && prev.power > 0 ? prev.power : 0
+    
+    if (power > 0) {
+      const zone = powerZones.find(z => {
+        const minWatts = Math.round(ftp * z.minPercent / 100)
+        const maxWatts = z.maxPercent >= 300 ? Infinity : Math.round(ftp * z.maxPercent / 100)
+        return power >= minWatts && power <= maxWatts
+      })
+      
+      if (zone) {
+        zoneTotals[zone.key] += dt
+        totalTime += dt
+      }
+    }
+  }
+
+  if (totalTime === 0) return null
+
+  const zoneTimes = powerZones.map(zone => ({
+    zone: zone.key,
+    percentage: (zoneTotals[zone.key] / totalTime) * 100
+  })).filter(z => z.percentage > 0)
+
+  const z1z2 = zoneTimes.filter(z => z.zone === 'Z1' || z.zone === 'Z2').reduce((sum, z) => sum + z.percentage, 0)
+  const z3z4 = zoneTimes.filter(z => z.zone === 'Z3' || z.zone === 'Z4').reduce((sum, z) => sum + z.percentage, 0)
+  const z5plus = zoneTimes.filter(z => ['Z5', 'Z6', 'Z7'].includes(z.zone)).reduce((sum, z) => sum + z.percentage, 0)
+  
+  const distribution = { z1z2, z3z4, z5plus }
+  const base = (z3z4 + z5plus) > 0 ? (z1z2 / (z3z4 + z5plus)) : (z1z2 > 0 ? 999 : 0)
+
+  // Classify
+  const classifications = [
+    { name: 'Polarized', distribution: { z1z2: 80, z3z4: 5, z5plus: 15 } },
+    { name: 'Pyramidal', distribution: { z1z2: 75, z3z4: 20, z5plus: 5 } },
+    { name: 'Threshold', distribution: { z1z2: 50, z3z4: 40, z5plus: 10 } },
+    { name: 'HIIT', distribution: { z1z2: 50, z3z4: 10, z5plus: 40 } },
+  ]
+
+  let bestMatch = { name: 'Mixed', match: 0 }
+
+  classifications.forEach(classification => {
+    const distance = Math.sqrt(
+      Math.pow(distribution.z1z2 - classification.distribution.z1z2, 2) +
+      Math.pow(distribution.z3z4 - classification.distribution.z3z4, 2) +
+      Math.pow(distribution.z5plus - classification.distribution.z5plus, 2)
+    )
+    
+    const match = Math.max(0, 100 - (distance * 2))
+    
+    if (match > bestMatch.match) {
+      bestMatch = { name: classification.name, match: Math.round(match) }
+    }
+  })
+
+  return {
+    name: bestMatch.match >= 50 ? bestMatch.name : 'Mixed',
+    distribution,
+    base
+  }
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -220,6 +326,55 @@ ${activity.data?.summary?.avgPower && activity.data.summary.avgPower > 0 ? `
 - Outdoor training provides variable terrain, mental freshness, and skill development
 - Analyze consistency of effort and training value without power data
 `}
+${activityClassification ? `
+- **ACTIVITY CLASSIFICATION: ${activityClassification.name}** (Base: ${activityClassification.base.toFixed(2)})
+  - Zone Distribution: ${activityClassification.distribution.z1z2.toFixed(1)}% Z1+2 (Low), ${activityClassification.distribution.z3z4.toFixed(1)}% Z3+4 (Medium), ${activityClassification.distribution.z5plus.toFixed(1)}% Z5+ (High)
+  - **TRAINING PROTOCOL ANALYSIS REQUIRED:**
+    ${activityClassification.name === 'Polarized' ? `
+    - **POLARIZED TRAINING** (80/5/15 model - Seiler & Tonnessen research)
+      - This workout follows the polarized model: 80% low intensity, 5% moderate, 15% high intensity
+      - Research shows this model is highly effective for endurance athletes
+      - Low-intensity base building is crucial for aerobic development
+      - High-intensity intervals should be very hard but brief
+      - **ANALYZE:** Is this distribution optimal for athlete's goals? Is the 80% truly easy enough?
+      - **RECOMMEND:** Maintain polarized approach, but ensure low intensity is truly easy (Zone 1-2, <65% FTP)
+    ` : activityClassification.name === 'Pyramidal' ? `
+    - **PYRAMIDAL TRAINING** (75/20/5 model)
+      - Traditional model with more moderate intensity than polarized
+      - Good for athletes transitioning from base building to structured training
+      - Moderate intensity (Zone 3-4) builds aerobic power but is less time-efficient than polarized
+      - **ANALYZE:** Is too much time in moderate zone (gray zone) limiting adaptation?
+      - **RECOMMEND:** Consider transitioning to polarized model for better adaptation per hour, or increase high-intensity work
+    ` : activityClassification.name === 'Threshold' ? `
+    - **THRESHOLD TRAINING** (50/40/10 model)
+      - Heavy focus on Zone 4 (FTP threshold) training
+      - Can be effective short-term but risks plateau and overreaching
+      - Threshold work is mentally and physically demanding
+      - **ANALYZE:** Is athlete over-emphasizing threshold? Risk of stagnation?
+      - **RECOMMEND:** Balance with more low-intensity (recovery) and occasional high-intensity (VO2 max) work
+    ` : activityClassification.name === 'HIIT' ? `
+    - **HIGH-INTENSITY INTERVAL TRAINING (HIIT)** (50/10/40 model)
+      - Heavy emphasis on high-intensity work (40% in Z5+)
+      - Effective for time-limited athletes but requires careful recovery
+      - Risk of overreaching if not balanced with low-intensity work
+      - **ANALYZE:** Is athlete recovering properly? Is low-intensity portion adequate?
+      - **RECOMMEND:** Ensure 50% easy recovery rides, monitor fatigue closely, prevent burnout
+    ` : `
+    - **MIXED/UNIQUE TRAINING PATTERN**
+      - Distribution doesn't clearly match standard models
+      - **ANALYZE:** What training adaptations is this targeting? Is distribution intentional or random?
+      - **RECOMMEND:** Identify primary training goal and align distribution with proven protocols
+    `}
+  - **MANDATORY:** Research cycling training protocols (Seiler's Polarized, Pyramidal, Threshold, HIIT models)
+  - **MANDATORY:** When recommending next trainings, consider this activity type and suggest complementary workouts
+  - **MANDATORY:** Explain how this classification relates to athlete's goals and training protocols
+` : activity.data?.summary?.avgPower ? `
+- **Power data available but classification cannot be calculated** (FTP may not be set)
+- Analyze power zone distribution manually and compare to training protocols
+` : `
+- **No power data** - Classification based on intensity zones not available
+- Analyze based on heart rate zones and perceived effort
+`}
 
 **ATHLETE PERFORMANCE METRICS (CRITICAL FOR ANALYSIS - ANALYZE THESE THOROUGHLY):**
 ${ftpPerKg ? `
@@ -383,13 +538,42 @@ ${trainingGoals ? `
 ${weeklyHours ? `
 **RESPECT TIME CONSTRAINT:** ${weeklyHours} hours/week available
 ` : ''}
-[Specific, actionable recommendations:
+${activityClassification ? `
+**CONSIDER ACTIVITY TYPE:** This workout was classified as **${activityClassification.name}** training
+- **MANDATORY:** Recommend complementary workouts based on training periodization protocols
+- Research-based recommendations from cycling science (Seiler, Laursen, etc.)
+` : ''}
+[Specific, actionable recommendations based on RESEARCH-BASED CYCLING TRAINING PROTOCOLS:
+- **Activity Type Strategy:** ${activityClassification ? `Since this was ${activityClassification.name} training, recommend:` : 'Recommend activity type:'}
+  ${activityClassification?.name === 'Polarized' ? `
+    - Next session: Easy recovery ride (Zone 1-2, 60-75% of FTP) OR high-intensity intervals if 48h+ recovery
+    - Maintain 80/5/15 distribution across weekly training
+    - High-intensity sessions: 4-8x 3-5min @ 105-120% FTP with 2-3min recovery, or 30/30s intervals
+  ` : activityClassification?.name === 'Pyramidal' ? `
+    - Next session: Easy recovery OR threshold work if building FTP
+    - Consider transitioning to polarized model for better adaptation efficiency
+    - If continuing pyramidal: Balance moderate work with more low-intensity recovery
+  ` : activityClassification?.name === 'Threshold' ? `
+    - Next session: Easy recovery ride MANDATORY - threshold work requires recovery
+    - Add more low-intensity work (Zone 1-2) to prevent overreaching
+    - Balance with VO2 max intervals 1-2x per week
+  ` : activityClassification?.name === 'HIIT' ? `
+    - Next session: Easy recovery ride MANDATORY - high-intensity demands recovery
+    - Ensure 50%+ of weekly training is low-intensity (Zone 1-2)
+    - Monitor fatigue closely - HIIT is demanding
+  ` : `
+    - Analyze what training stimulus is missing
+    - Recommend workout that addresses gaps in training distribution
+  `}
 - Duration recommendation ${weeklyHours ? `(considering ${weeklyHours} hours/week total)` : ''}
 - Intensity zones to target ${ftpPerKg ? `(FTP/kg: ${ftpPerKg} W/kg)` : ''} ${vo2Max ? `(VO2 max: ${vo2Max} ml/kg/min)` : ''}
-- Indoor vs outdoor suggestion
+- Specific power targets ${ftp ? `(${Math.round(ftp * 0.6)}-${Math.round(ftp * 1.2)}W range)` : ''}
+- Indoor vs outdoor suggestion based on time efficiency
 - How to maximize benefit in available time
 ${trainingGoals ? `- Direct connection to achieving: "${trainingGoals}"` : ''}
-${ftpPerKg && vo2Max ? `- Specific FTP/kg and VO2 max development recommendations` : ''}]
+${ftpPerKg && vo2Max ? `- Specific FTP/kg and VO2 max development recommendations based on current levels` : ''}
+${activityClassification ? `- Training periodization: How does this ${activityClassification.name} session fit into weekly/monthly plan?` : ''}
+- Reference cycling training science: Seiler's polarized model, periodization principles, training zones research]
 
 **CRITICAL REQUIREMENTS FOR YOUR RESPONSE:**
 1. **MUST be COMPREHENSIVE** - Your analysis should be 1000+ words minimum. Short, generic responses are unacceptable.

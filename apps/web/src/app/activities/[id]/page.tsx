@@ -8,12 +8,14 @@ import { UserMenu } from '@/components/auth/user-menu'
 import { GPSViewer } from '@/components/gps-viewer'
 import { RPEFeedback } from '@/components/activities/rpe-feedback'
 import { AIAnalysisTab } from '@/components/activities/ai-analysis-tab'
+import { PowerZoneAnalysis } from '@/components/activities/power-zone-analysis'
 
 interface ActivityData {
   id: string
   file_name: string
   status: string
   metadata: any
+  gps_track?: any[] | null
   data: {
     summary: {
       totalDistance: number
@@ -30,6 +32,7 @@ interface ActivityData {
     powerZones: any
     heartRateZones: any
     records: any[]
+    gps_track?: any[]
   }
   created_at: string
   rpe?: number | null
@@ -44,6 +47,7 @@ export default function ActivityDetailPage() {
   const [loadingActivity, setLoadingActivity] = useState(true)
   const [isNavigating, setIsNavigating] = useState(false)
   const [activeTab, setActiveTab] = useState<'overview' | 'analysis'>('overview')
+  const [ftp, setFtp] = useState<number | null>(null)
 
   const fetchActivity = useCallback(async () => {
     if (!id) return
@@ -76,6 +80,29 @@ export default function ActivityDetailPage() {
       fetchActivity()
     }
   }, [user, id, fetchActivity])
+
+  useEffect(() => {
+    const fetchFtp = async () => {
+      if (!user) return
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select('preferences')
+          .eq('id', user.id)
+          .maybeSingle()
+        if (error) throw error
+        const prefs = data?.preferences || {}
+        if (prefs.ftp && typeof prefs.ftp === 'number') {
+          setFtp(prefs.ftp)
+        }
+      } catch (e) {
+        console.warn('Error fetching FTP:', e)
+      }
+    }
+    if (user) {
+      fetchFtp()
+    }
+  }, [user])
 
   const handleBackNavigation = useCallback((e?: React.MouseEvent) => {
     if (e) {
@@ -352,6 +379,13 @@ export default function ActivityDetailPage() {
                 </div>
               </div>
             </div>
+
+            {/* Power Zone Analysis */}
+            {activity.status === 'processed' && (activity.gps_track || activity.data?.gps_track || activity.data?.records) && (
+              <div className="mb-8">
+                <PowerZoneAnalysis activity={activity as any} ftp={ftp} />
+              </div>
+            )}
 
             {/* RPE Feedback */}
             {activity.status === 'processed' && (

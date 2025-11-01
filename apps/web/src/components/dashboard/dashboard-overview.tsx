@@ -1,8 +1,11 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { format } from 'date-fns'
 import { Database } from '@/lib/supabase-types'
+import { supabase } from '@/lib/supabase'
+import { ActivityClassificationBadge } from '@/components/activities/activity-classification-badge'
 
 type Activity = Database['public']['Tables']['activities']['Row']
 type ActivitySummary = Database['public']['Views']['activity_summaries']['Row']
@@ -14,6 +17,26 @@ interface DashboardOverviewProps {
 
 export function DashboardOverview({ summary, recentActivities }: DashboardOverviewProps) {
   const router = useRouter()
+  const [ftp, setFtp] = useState<number | null>(null)
+
+  useEffect(() => {
+    const fetchFtp = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('users')
+          .select('preferences')
+          .maybeSingle()
+        if (error) throw error
+        const prefs = data?.preferences || {}
+        if (prefs.ftp && typeof prefs.ftp === 'number') {
+          setFtp(prefs.ftp)
+        }
+      } catch (e) {
+        // Ignore FTP load errors
+      }
+    }
+    fetchFtp()
+  }, [])
 
   const formatDuration = (seconds: number | null | undefined): string => {
     if (seconds === null || seconds === undefined) return '0m'
@@ -34,20 +57,6 @@ export function DashboardOverview({ summary, recentActivities }: DashboardOvervi
     return `${km.toFixed(1)} km`
   }
 
-  // This check is for a brand new user with no activities at all.
-  if (summary.total_activities === 0 && (!recentActivities || recentActivities.length === 0)) {
-    return (
-      <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-        <p className="text-gray-600">No activity data available. Upload your first activity to get started!</p>
-        <button
-          onClick={() => router.push('/upload')}
-          className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 font-medium"
-        >
-          Upload Activity
-        </button>
-      </div>
-    )
-  }
 
   return (
     <div className="space-y-6">
@@ -140,6 +149,11 @@ export function DashboardOverview({ summary, recentActivities }: DashboardOvervi
                     <p className="text-sm sm:text-base font-medium text-gray-900">
                       {(activity.start_time || activity.upload_date) ? format(new Date((activity.start_time || activity.upload_date) as string), 'PP') : 'N/A'}
                     </p>
+                    {activity.status === 'processed' && (
+                      <div className="mt-1">
+                        <ActivityClassificationBadge activity={activity as any} ftp={ftp} compact />
+                      </div>
+                    )}
                   </div>
                 </div>
                 

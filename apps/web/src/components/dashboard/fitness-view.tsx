@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { supabase } from '@/lib/supabase'
 import { format, subDays, startOfDay, parseISO } from 'date-fns'
 import { Database } from '@/lib/supabase-types'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart, ReferenceLine } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart, ReferenceLine, ComposedChart } from 'recharts'
 
 type Activity = Database['public']['Tables']['activities']['Row']
 
@@ -334,64 +334,28 @@ export function FitnessView({ userId, userFtp, userWeight }: FitnessViewProps) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Charts Section */}
-        <div className="lg:col-span-3 space-y-6">
-          {/* Fitness and Fatigue Chart */}
+        {/* Combined Chart Section */}
+        <div className="lg:col-span-3">
+          {/* Combined Fitness, Fatigue, Form, and Weight Chart */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Training Load</h3>
-            <ResponsiveContainer width="100%" height={200}>
-              <AreaChart data={fitnessData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                <XAxis 
-                  dataKey="date" 
-                  tickFormatter={(value) => format(parseISO(value), 'MMM d')}
-                  stroke="#6B7280"
-                  fontSize={12}
-                />
-                <YAxis 
-                  label={{ value: 'Training load per day', angle: -90, position: 'insideLeft' }}
-                  stroke="#6B7280"
-                  fontSize={12}
-                />
-                <Tooltip 
-                  labelFormatter={(value) => format(parseISO(value), 'PP')}
-                  contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '6px' }}
-                />
-                <Legend />
-                <Area 
-                  type="monotone" 
-                  dataKey="fatigue" 
-                  name="Fatigue" 
-                  stroke="#9333EA" 
-                  fill="#9333EA" 
-                  fillOpacity={0.3}
-                  strokeWidth={2}
-                />
-                <Area 
-                  type="monotone" 
-                  dataKey="fitness" 
-                  name="Fitness" 
-                  stroke="#3B82F6" 
-                  fill="#3B82F6" 
-                  fillOpacity={0.3}
-                  strokeWidth={2}
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-
-          {/* Form Chart */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Form</h3>
-            <ResponsiveContainer width="100%" height={200}>
-              <AreaChart data={fitnessData}>
+            <h3 className="text-sm font-semibold text-gray-700 mb-2">Fitness Overview</h3>
+            <ResponsiveContainer width="100%" height={500}>
+              <ComposedChart data={fitnessData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <defs>
+                  <linearGradient id="fitnessGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
+                  </linearGradient>
+                  <linearGradient id="fatigueGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#9333EA" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#9333EA" stopOpacity={0} />
+                  </linearGradient>
                   <linearGradient id="formGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#EF4444" stopOpacity={0.3} />
-                    <stop offset="25%" stopColor="#F59E0B" stopOpacity={0.3} />
-                    <stop offset="50%" stopColor="#6B7280" stopOpacity={0.3} />
-                    <stop offset="75%" stopColor="#60A5FA" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#10B981" stopOpacity={0.3} />
+                    <stop offset="0%" stopColor="#EF4444" stopOpacity={0.2} />
+                    <stop offset="25%" stopColor="#F59E0B" stopOpacity={0.2} />
+                    <stop offset="50%" stopColor="#6B7280" stopOpacity={0.2} />
+                    <stop offset="75%" stopColor="#60A5FA" stopOpacity={0.2} />
+                    <stop offset="100%" stopColor="#10B981" stopOpacity={0.2} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
@@ -399,73 +363,98 @@ export function FitnessView({ userId, userFtp, userWeight }: FitnessViewProps) {
                   dataKey="date" 
                   tickFormatter={(value) => format(parseISO(value), 'MMM d')}
                   stroke="#6B7280"
-                  fontSize={12}
+                  fontSize={11}
+                  angle={-45}
+                  textAnchor="end"
+                  height={60}
                 />
                 <YAxis 
-                  label={{ value: 'Form', angle: -90, position: 'insideLeft' }}
+                  yAxisId="left"
+                  label={{ value: 'Training Load / Form', angle: -90, position: 'insideLeft' }}
                   stroke="#6B7280"
-                  fontSize={12}
+                  fontSize={11}
                 />
+                {userWeight && (
+                  <YAxis 
+                    yAxisId="right"
+                    orientation="right"
+                    label={{ value: 'Weight (kg)', angle: 90, position: 'insideRight' }}
+                    stroke="#059669"
+                    fontSize={11}
+                    domain={['dataMin - 2', 'dataMax + 2']}
+                  />
+                )}
                 <Tooltip 
                   labelFormatter={(value) => format(parseISO(value), 'PP')}
                   formatter={(value: number, name: string) => {
-                    const formValue = typeof value === 'number' ? value : 0
-                    return [`${formValue.toFixed(1)} (${getFormLabel(formValue)})`, 'Form']
+                    if (name === 'Form') {
+                      const formValue = typeof value === 'number' ? value : 0
+                      return [`${formValue.toFixed(1)} (${getFormLabel(formValue)})`, 'Form']
+                    }
+                    if (name === 'Weight') {
+                      return [`${value} kg`, 'Weight']
+                    }
+                    return [value.toFixed(1), name]
                   }}
                   contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '6px' }}
                 />
-                <ReferenceLine y={0} stroke="#6B7280" strokeDasharray="2 2" />
-                <ReferenceLine y={15} stroke="#10B981" strokeDasharray="2 2" strokeOpacity={0.5} />
-                <ReferenceLine y={5} stroke="#60A5FA" strokeDasharray="2 2" strokeOpacity={0.5} />
-                <ReferenceLine y={-5} stroke="#6B7280" strokeDasharray="2 2" strokeOpacity={0.5} />
-                <ReferenceLine y={-15} stroke="#F59E0B" strokeDasharray="2 2" strokeOpacity={0.5} />
+                <Legend />
+                {/* Form zone reference areas */}
+                <ReferenceLine yAxisId="left" y={0} stroke="#6B7280" strokeDasharray="2 2" strokeOpacity={0.4} />
+                <ReferenceLine yAxisId="left" y={15} stroke="#10B981" strokeDasharray="2 2" strokeOpacity={0.3} />
+                <ReferenceLine yAxisId="left" y={5} stroke="#60A5FA" strokeDasharray="2 2" strokeOpacity={0.3} />
+                <ReferenceLine yAxisId="left" y={-5} stroke="#6B7280" strokeDasharray="2 2" strokeOpacity={0.3} />
+                <ReferenceLine yAxisId="left" y={-15} stroke="#F59E0B" strokeDasharray="2 2" strokeOpacity={0.3} />
+                {/* Fitness Area */}
                 <Area 
                   type="monotone" 
-                  dataKey="form" 
-                  stroke="#6B7280"
-                  fill="url(#formGradient)"
+                  yAxisId="left"
+                  dataKey="fitness" 
+                  name="Fitness" 
+                  stroke="#3B82F6" 
+                  fill="url(#fitnessGradient)"
                   strokeWidth={2}
                   dot={false}
                 />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-
-          {/* Weight Chart (if available) */}
-          {userWeight && (
-            <div>
-              <h3 className="text-sm font-semibold text-gray-700 mb-2">Weight</h3>
-              <ResponsiveContainer width="100%" height={150}>
-                <LineChart data={fitnessData.filter(d => d.weight)}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                  <XAxis 
-                    dataKey="date" 
-                    tickFormatter={(value) => format(parseISO(value), 'MMM d')}
-                    stroke="#6B7280"
-                    fontSize={12}
-                  />
-                  <YAxis 
-                    label={{ value: 'Weight (kg)', angle: -90, position: 'insideLeft' }}
-                    stroke="#6B7280"
-                    fontSize={12}
-                    domain={['dataMin - 2', 'dataMax + 2']}
-                  />
-                  <Tooltip 
-                    labelFormatter={(value) => format(parseISO(value), 'PP')}
-                    formatter={(value: number) => [`${value} kg`, 'Weight']}
-                    contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '6px' }}
-                  />
+                {/* Fatigue Area */}
+                <Area 
+                  type="monotone" 
+                  yAxisId="left"
+                  dataKey="fatigue" 
+                  name="Fatigue" 
+                  stroke="#9333EA" 
+                  fill="url(#fatigueGradient)"
+                  strokeWidth={2}
+                  dot={false}
+                />
+                {/* Form Line */}
+                <Line 
+                  type="monotone" 
+                  yAxisId="left"
+                  dataKey="form" 
+                  name="Form"
+                  stroke="#6B7280"
+                  strokeWidth={2}
+                  dot={{ r: 0 }}
+                  activeDot={{ r: 4, fill: '#6B7280' }}
+                  connectNulls
+                />
+                {/* Weight Line (if available) */}
+                {userWeight && (
                   <Line 
                     type="monotone" 
+                    yAxisId="right"
                     dataKey="weight" 
+                    name="Weight"
                     stroke="#059669" 
                     strokeWidth={2}
                     dot={false}
+                    connectNulls
                   />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          )}
+                )}
+              </ComposedChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
         {/* Current Metrics Sidebar */}
