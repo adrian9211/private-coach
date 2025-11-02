@@ -63,8 +63,19 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
     setAnalysis(null)
 
     try {
+      // Delete existing analysis first to ensure fresh generation
+      try {
+        await supabase
+          .from('activity_analyses')
+          .delete()
+          .eq('activity_id', activityId)
+      } catch (deleteError) {
+        // Ignore delete errors - it's okay if no analysis exists
+        console.log('No existing analysis to delete or delete failed:', deleteError)
+      }
+
       const { data, error: invokeError } = await supabase.functions.invoke('generate-analysis', {
-        body: { activityId },
+        body: { activityId, forceRegenerate: true },
       })
 
       if (invokeError) {
@@ -82,32 +93,19 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
         throw new Error(data.message || data.error || 'Failed to generate analysis')
       }
 
-      // Wait a moment for database to update, then reload
-      await new Promise(resolve => setTimeout(resolve, 1000))
-
-      // Retry loading from database (with retries in case DB is slow to update)
-      let loadedAnalysis = null
-      for (let attempt = 0; attempt < 3; attempt++) {
-        loadedAnalysis = await loadExistingAnalysis()
-        if (loadedAnalysis) break
-        // Wait a bit longer before next attempt
-        await new Promise(resolve => setTimeout(resolve, 500))
-      }
-
-      // If we still don't have it from DB, use the response directly as fallback
-      if (!loadedAnalysis) {
-        if (data?.analysis?.summary) {
-          setAnalysis(data.analysis.summary)
-        } else if (data?.summary) {
-          setAnalysis(data.summary)
+      // Use the response directly from the function (it's always fresh)
+      if (data?.analysis?.summary) {
+        setAnalysis(data.analysis.summary)
+      } else if (data?.summary) {
+        setAnalysis(data.summary)
+      } else {
+        // Fallback: try loading from database after a short delay
+        await new Promise(resolve => setTimeout(resolve, 1500))
+        const loadedAnalysis = await loadExistingAnalysis()
+        if (loadedAnalysis) {
+          setAnalysis(loadedAnalysis)
         } else {
-          console.warn('No analysis found in database or response, but function succeeded')
-          // Still try one more time after a longer wait
-          await new Promise(resolve => setTimeout(resolve, 2000))
-          const finalAttempt = await loadExistingAnalysis()
-          if (!finalAttempt) {
-            throw new Error('Analysis was generated but could not be retrieved. Please refresh the page.')
-          }
+          throw new Error('Analysis was generated but could not be retrieved. Please refresh the page.')
         }
       }
     } catch (err: any) {

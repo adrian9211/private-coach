@@ -180,7 +180,7 @@ serve(async (req) => {
       )
     }
 
-    const { activityId } = await req.json()
+    const { activityId, forceRegenerate } = await req.json()
 
     if (!activityId) {
       return new Response(
@@ -190,6 +190,20 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
         }
       )
+    }
+
+    // If forceRegenerate is true, delete existing analysis to ensure fresh generation
+    if (forceRegenerate) {
+      const { error: deleteError } = await supabaseClient
+        .from('activity_analyses')
+        .delete()
+        .eq('activity_id', activityId)
+      
+      if (deleteError) {
+        console.log('Note: Could not delete existing analysis (may not exist):', deleteError)
+      } else {
+        console.log('Deleted existing analysis for fresh regeneration')
+      }
     }
 
     // Get activity data
@@ -236,6 +250,9 @@ serve(async (req) => {
     const vo2Max = user.vo2_max
     const trainingGoals = user.training_goals
     const weeklyHours = user.weekly_training_hours
+
+    // Calculate activity classification BEFORE building the prompt
+    const activityClassification = calculateActivityClassification(activity, ftp)
 
     // Get user's activity history for context and trend analysis
     const { data: recentActivities, error: historyError } = await supabaseClient
