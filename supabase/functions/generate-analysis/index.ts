@@ -227,11 +227,12 @@ serve(async (req) => {
     }
 
     // Calculate FTP/kg (power-to-weight ratio) - critical cycling performance metric
-    const ftp = user.preferences?.ftp
-    const weightKg = user.weight_kg
+    const ftp = typeof user.preferences?.ftp === 'number' ? user.preferences.ftp : null
+    const weightKg = typeof user.weight_kg === 'number' ? user.weight_kg : null
     const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0) 
-      ? (ftp / weightKg).toFixed(2)
+      ? Number((ftp / weightKg).toFixed(2))
       : null
+    const ftpPerKgString = ftpPerKg ? ftpPerKg.toFixed(2) : null
     const vo2Max = user.vo2_max
     const trainingGoals = user.training_goals
     const weeklyHours = user.weekly_training_hours
@@ -274,7 +275,7 @@ serve(async (req) => {
       // Performance metrics for power-to-weight analysis
       ftp: ftp,
       weightKg: weightKg,
-      ftpPerKg: ftpPerKg, // Power-to-weight ratio (W/kg) - critical cycling performance metric
+      ftpPerKg: ftpPerKgString, // Power-to-weight ratio (W/kg) - critical cycling performance metric
       vo2Max: vo2Max, // Maximum oxygen uptake (ml/kg/min) - crucial for aerobic capacity analysis
       trainingGoals: trainingGoals, // User's stated training goals
       weeklyTrainingHours: weeklyHours, // Available training time per week
@@ -297,22 +298,23 @@ serve(async (req) => {
         body: JSON.stringify({
           contents: [{
             parts: [{
-              text: `You are a CRITICAL and ANALYTICAL professional cycling coach. Use DEEP REASONING to analyze this workout in context of the athlete's training history. Be HONEST, DATA-DRIVEN, and ACTIONABLE. Avoid generic praise - focus on what the DATA tells you.
+              text: `You are a KNOWLEDGEABLE and ANALYTICAL professional cycling coach with deep expertise in exercise physiology, training periodization, and performance analysis. Use DEEP REASONING grounded in cycling science (Seiler, Coggan, Allen, Laursen, and other leading researchers) to analyze this workout in context of the athlete's training history, current fitness level, and goals.
 
-**CRITICAL ANALYSIS REQUIREMENTS:**
-- Compare this workout AGAINST the athlete's historical performance
-- Identify patterns, trends, and anomalies
-- Be CRITICAL - if something is mediocre, say so
-- Focus on WHAT IS WRONG or SUBOPTIMAL, not just positives
-- Every minute of training time is precious - identify wasted time
-- Use the activity history to spot fatigue, overreaching, or improvements
+**ANALYSIS APPROACH - RESEARCH-BASED COACHING:**
+- Base your analysis on established cycling training science and research
+- Compare this workout AGAINST the athlete's historical performance to identify trends and patterns
+- Consider the athlete's current performance level (FTP/kg, VO2 max) when providing feedback and context
+- Be BALANCED - acknowledge achievements while identifying improvement opportunities with specific, actionable guidance
+- Every minute of training time is valuable - identify optimization opportunities based on training science
+- Use the activity history to detect signs of fatigue, overreaching, or positive fitness adaptations
+- Reference established training protocols from research (polarized training, periodization, zone-based training)
 
 **TRAINING CONTEXT - TIME OPTIMIZATION FOCUS:**
 - The athlete has LIMITED TIME per week for training
-- Every workout must be OPTIMIZED for maximum benefit
-- Generic completion is NOT an achievement - be critical
-- Focus on what works and what doesn't - be BRUTALLY HONEST when necessary
-- Prioritize training that delivers the best results per hour invested
+- Every workout should be OPTIMIZED for maximum benefit relative to available time
+- Provide constructive, actionable feedback - identify what's working well and what could be improved
+- Balance honest analysis with encouragement appropriate to the athlete's performance level
+- Prioritize training methods with highest return on investment (based on Seiler's polarized model and periodization research)
 
 **ACTIVITY TYPE DETECTION:**
 ${activity.data?.summary?.avgPower && activity.data.summary.avgPower > 0 ? `
@@ -378,14 +380,43 @@ ${activityClassification ? `
 
 **ATHLETE PERFORMANCE METRICS (CRITICAL FOR ANALYSIS - ANALYZE THESE THOROUGHLY):**
 ${ftpPerKg ? `
-- **FTP/kg: ${ftpPerKg} W/kg** - Power-to-weight ratio (${ftp}W ÷ ${weightKg}kg) ⚡ CRITICAL METRIC
-  - **MANDATORY ANALYSIS:** This is THE most important cycling performance metric - analyze it in detail
-  - Compare workout power outputs to FTP/kg threshold - is athlete training at appropriate intensity?
-  - For indoor workouts: Calculate workout intensity as % of FTP (${activity.data?.summary?.avgPower ? `${Math.round((activity.data.summary.avgPower / ftp) * 100)}%` : 'calculate'} of FTP)
-  - Calculate workout power-to-weight: ${activity.data?.summary?.avgPower && weightKg ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg` : 'N/A'}
-  - Is current FTP/kg appropriate for athlete's goals? How does it compare to elite levels?
-  - For climbing/elevation: Power-to-weight is THE determining factor - analyze thoroughly
-  - **REQUIRED:** Provide specific recommendations on how to improve FTP/kg if below athlete's potential
+- **FTP/kg: ${ftpPerKgString} W/kg** - Power-to-weight ratio (${ftp}W ÷ ${weightKg}kg) ⚡ CRITICAL METRIC
+  - **PERFORMANCE LEVEL CONTEXT (Research-Based):**
+    ${ftpPerKg >= 5.0 ? `
+    - **World Tour Professional Level** (≥5.0 W/kg): Comparable to professional peloton riders (Coyle et al., 1991; Padilla et al., 2000). These athletes maintain exceptional power-to-weight ratios essential for competitive cycling at the highest level. Typical range: 5.0-6.5+ W/kg for sustained efforts.
+    - Analysis perspective: This is elite performance. Acknowledge the high level of fitness and provide nuanced, professional-level training insights. Focus on optimization and fine-tuning rather than basic improvements.
+    ` : ftpPerKg >= 4.5 ? `
+    - **Elite/Professional Level** (4.5-4.99 W/kg): Represents elite amateur and professional-level performance (Schumacher & Mueller, 2002). These athletes demonstrate exceptional aerobic capacity and muscular efficiency. Competitive at national/international amateur level.
+    - Analysis perspective: Recognize this as elite performance. Provide sophisticated training recommendations appropriate for high-level athletes. Focus on advanced periodization and performance optimization.
+    ` : ftpPerKg >= 4.0 ? `
+    - **Very Strong Amateur Level** (4.0-4.49 W/kg): Excellent fitness level, typically competitive in Category 1-2 races or strong local racing (Allen & Coggan, 2010). Demonstrates well-developed aerobic and muscular systems. Top 5-10% of recreational cyclists.
+    - Analysis perspective: Acknowledge strong performance level. Provide training insights for high-performing amateurs. Focus on targeted improvements and advanced training concepts.
+    ` : ftpPerKg >= 3.5 ? `
+    - **Strong Amateur Level** (3.5-3.99 W/kg): Solid fitness foundation, competitive in Category 3-4 racing (Seiler, 2010). Represents good aerobic development and training consistency. Top 10-20% of recreational cyclists.
+    - Analysis perspective: Recognize good fitness level. Provide balanced feedback acknowledging achievements while suggesting targeted improvements. Focus on structured training and continued development.
+    ` : ftpPerKg >= 3.0 ? `
+    - **Good Recreational Level** (3.0-3.49 W/kg): Solid recreational fitness with consistent training (Seiler & Kjerland, 2006). Demonstrates good aerobic base and regular training habits. Competitive in local group rides and category 5 races.
+    - Analysis perspective: Acknowledge solid progress. Provide encouraging feedback while identifying specific improvement areas. Focus on training consistency and structured workouts.
+    ` : ftpPerKg >= 2.5 ? `
+    - **Recreational Level** (2.5-2.99 W/kg): Developing fitness with regular training participation (Coggan & Allen, 2012). Represents foundational aerobic development. Suitable for longer recreational rides and entry-level group cycling.
+    - Analysis perspective: Encourage continued training and consistency. Provide clear, achievable recommendations for improvement. Focus on building aerobic base and establishing training routine.
+    ` : `
+    - **Beginner/Developing Level** (<2.5 W/kg): Early stages of cycling fitness development (Baron, 2001). Represents foundational fitness building. Normal for new cyclists or those returning to training after a break.
+    - Analysis perspective: Be supportive and encouraging. Recognize that this is a development phase and focus on building consistency, basic fitness, and proper training habits. Celebrate small improvements and provide clear, simple recommendations.
+    `}
+  - **RESEARCH CONTEXT:** Power-to-weight ratio is the primary determinant of climbing performance (Di Prampero et al., 1979). Elite climbers typically maintain 5.5-6.5+ W/kg, while strong amateurs range 3.5-4.5 W/kg. Time trial and flat terrain performance is more dependent on absolute power (W) rather than W/kg.
+  - **MANDATORY ANALYSIS:** 
+    - Compare workout power outputs to FTP/kg threshold - is athlete training at appropriate intensity?
+    - For indoor workouts: Calculate workout intensity as % of FTP (${activity.data?.summary?.avgPower && ftp ? `${Math.round((activity.data.summary.avgPower / ftp) * 100)}%` : 'calculate'} of FTP)
+    - Calculate workout power-to-weight: ${activity.data?.summary?.avgPower && weightKg ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg (${((activity.data.summary.avgPower / weightKg) / ftpPerKg * 100).toFixed(0)}% of FTP/kg)` : 'N/A'}
+    - For climbing/elevation efforts: Power-to-weight is THE determining factor - analyze thoroughly relative to performance level
+    - For flat/time trial efforts: Consider absolute power (W) as primary factor, though W/kg remains relevant
+  - **REQUIRED FEEDBACK TONE:** 
+    - Provide contextually appropriate analysis based on performance level
+    - Acknowledge achievements while identifying realistic improvement opportunities
+    - Use encouraging, supportive language for developing athletes
+    - Provide sophisticated insights for elite performers
+    - Balance honest assessment with motivational guidance
 ` : ftp ? `
 - **FTP: ${ftp}W** (weight not provided - cannot calculate FTP/kg)
   - Calculate workout intensity as % of FTP
@@ -436,7 +467,7 @@ ${JSON.stringify({
   duration: activity.data?.summary?.duration ? `${Math.round(activity.data.summary.duration / 60)} minutes` : 'Unknown',
   distance: activity.data?.summary?.totalDistance ? `${activity.data.summary.totalDistance.toFixed(2)} km` : 'Unknown',
   avgPower: activity.data?.summary?.avgPower ? `${activity.data.summary.avgPower}W${ftp ? ` (${Math.round((activity.data.summary.avgPower / ftp) * 100)}% of FTP)` : ''}` : 'No power meter',
-  avgPowerPerKg: (activity.data?.summary?.avgPower && weightKg) ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg${ftpPerKg ? ` (${Math.round((activity.data.summary.avgPower / weightKg / parseFloat(ftpPerKg)) * 100)}% of FTP/kg)` : ''}` : 'N/A',
+  avgPowerPerKg: (activity.data?.summary?.avgPower && weightKg) ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg${ftpPerKg ? ` (${Math.round((activity.data.summary.avgPower / weightKg / ftpPerKg) * 100)}% of FTP/kg)` : ''}` : 'N/A',
   avgHR: activity.data?.summary?.avgHeartRate ? `${activity.data.summary.avgHeartRate} bpm${vo2Max ? ` (compare to VO2 max capacity: ${vo2Max} ml/kg/min)` : ''}` : 'Unknown',
   maxPower: activity.data?.summary?.maxPower ? `${activity.data.summary.maxPower}W${ftp ? ` (${Math.round((activity.data.summary.maxPower / ftp) * 100)}% of FTP)` : ''}` : 'N/A',
   maxHR: activity.data?.summary?.maxHeartRate ? `${activity.data.summary.maxHeartRate} bpm` : 'N/A',
@@ -464,20 +495,20 @@ ${historyContext ? JSON.stringify({
 **ANALYSIS FORMAT - Use DEEP REASONING:**
 
 ## Performance Comparison vs History 📊
-[COMPARE this workout to historical data:
-- Duration vs average: is this too long/short for the benefit?
-- Power vs average: showing improvement, decline, or stagnation?
-- RPE trend: Is perceived effort increasing (fatigue) or decreasing (fitness)?
-- Distance/efficiency: Are you getting more benefit per hour?
-- Be DATA-DRIVEN, not optimistic]
+[COMPARE this workout to historical data using quantitative analysis:
+- Duration vs average: Is this workout length appropriate for the training stimulus?
+- Power vs average: Is power output showing improvement, decline, or stagnation? (reference % changes)
+- RPE trend: Is perceived effort increasing (potential fatigue) or decreasing (improving fitness)?
+- Distance/efficiency: Are you getting more training benefit per hour invested?
+- Provide DATA-DRIVEN insights with specific metrics and comparisons]
 
-## Critical Issues & Wasted Time ⚠️
-[Be BRUTALLY HONEST about inefficiencies:
-- Too much time in wrong zones (specify which zones and how long)
-- Inefficient structure - what should have been different?
-- Missing key training stimuli - what adaptation is missing?
-- Poor pacing or effort distribution - be specific
-- Generic riding without purpose - wasted minutes]
+## Training Efficiency Analysis 📈
+[Identify optimization opportunities based on training science:
+- Power zone distribution: Are zones utilized optimally according to polarized/pyramidal training principles?
+- Training structure: Could intervals or session design be improved based on research?
+- Missing training stimuli: What key adaptations might be missing based on current training pattern?
+- Pacing and effort distribution: Analyze power/HR distribution relative to training goals
+- Training purpose: Is the session structured with clear training objectives aligned with periodization?]
 
 ## Time Optimization Recommendations 🎯
 [SPECIFIC recommendations to maximize training benefit per hour:
@@ -491,14 +522,23 @@ ${activity.data?.summary?.avgPower ? `
 - Analyze power zone distribution - was time spent optimally?
 - Were intervals structured effectively?
 - Could similar adaptations be achieved in less time?
-${ftpPerKg ? `
+${ftpPerKg && weightKg ? `
 - **COMPREHENSIVE POWER-TO-WEIGHT ANALYSIS (MANDATORY):**
-  - Workout avg power-to-weight: ${(activity.data.summary.avgPower / parseFloat(weightKg)).toFixed(2)} W/kg vs FTP/kg: ${ftpPerKg} W/kg
-  - Intensity percentage: ${((activity.data.summary.avgPower / weightKg / parseFloat(ftpPerKg)) * 100).toFixed(0)}% of FTP/kg
-  - Intensity assessment: ${activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) ? `⚠️ HIGH intensity - above FTP/kg threshold` : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.9 ? `Threshold zone - appropriate for FTP work` : activity.data.summary.avgPower / weightKg > parseFloat(ftpPerKg) * 0.7 ? `Tempo zone` : `Endurance zone`}
-  - **REQUIRED ANALYSIS:** How does current FTP/kg (${ftpPerKg} W/kg) compare to athlete's potential? Elite amateurs: 3.5-4.5 W/kg, pros: 4.5-6.0+ W/kg
-  - For climbing/weight-dependent efforts: Power-to-weight is THE determining factor - analyze thoroughly
-  - Provide specific FTP/kg improvement recommendations based on current level and goals
+  - Workout avg power-to-weight: ${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg vs FTP/kg: ${ftpPerKgString} W/kg
+  - Intensity percentage: ${((activity.data.summary.avgPower / weightKg / ftpPerKg) * 100).toFixed(0)}% of FTP/kg
+  - Intensity assessment: ${activity.data.summary.avgPower / weightKg > ftpPerKg ? `⚠️ HIGH intensity - above FTP/kg threshold` : activity.data.summary.avgPower / weightKg > ftpPerKg * 0.9 ? `Threshold zone - appropriate for FTP work` : activity.data.summary.avgPower / weightKg > ftpPerKg * 0.7 ? `Tempo zone` : `Endurance zone`}
+  - **REQUIRED ANALYSIS:** 
+    - Current FTP/kg (${ftpPerKgString} W/kg) performance context: ${ftpPerKg >= 5.0 ? 'World Tour Professional level (≥5.0 W/kg) - comparable to professional peloton riders' : ftpPerKg >= 4.5 ? 'Elite/Professional level (4.5-4.99 W/kg) - elite amateur and professional performance' : ftpPerKg >= 4.0 ? 'Very Strong Amateur (4.0-4.49 W/kg) - excellent fitness, top 5-10% of recreational cyclists' : ftpPerKg >= 3.5 ? 'Strong Amateur (3.5-3.99 W/kg) - solid fitness, top 10-20% recreational level' : ftpPerKg >= 3.0 ? 'Good Recreational (3.0-3.49 W/kg) - solid fitness with consistent training' : ftpPerKg >= 2.5 ? 'Recreational (2.5-2.99 W/kg) - developing fitness with regular training' : 'Beginner/Developing (<2.5 W/kg) - foundational fitness building phase'}
+    - Research-based performance benchmarks (Seiler, 2010; Coggan & Allen, 2012): Elite amateurs typically achieve 3.5-4.5 W/kg, professional cyclists 4.5-6.5+ W/kg, with world-class climbers exceeding 6.0 W/kg
+    - For climbing/weight-dependent efforts: Power-to-weight is THE primary determining factor (Di Prampero et al., 1979) - analyze thoroughly relative to athlete's current level
+    - For flat/time trial efforts: Consider both absolute power (W) and power-to-weight, with absolute power being more critical on flat terrain
+  - **IMPROVEMENT RECOMMENDATIONS:**
+    - Provide realistic, research-based recommendations appropriate to current performance level
+    - For developing athletes (<3.5 W/kg): Focus on aerobic base building, consistency, and progressive overload
+    - For intermediate athletes (3.5-4.5 W/kg): Introduce structured intervals, polarized training, and advanced periodization
+    - For elite athletes (≥4.5 W/kg): Focus on fine-tuning, advanced periodization, and race-specific preparation
+    - Reference training science: Seiler's polarized model, periodization principles, and zone-based training protocols
+    - Be encouraging and supportive while providing honest, data-driven insights
 ` : ''}
 ${vo2Max && activity.data?.summary?.avgHeartRate ? `
 - **COMPREHENSIVE VO2 MAX & AEROBIC CAPACITY ANALYSIS (MANDATORY):**

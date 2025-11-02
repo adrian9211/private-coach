@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { supabase } from '@/lib/supabase'
 
 interface AIAnalysisTabProps {
@@ -8,18 +8,29 @@ interface AIAnalysisTabProps {
   activity: any
 }
 
+interface ChatMessage {
+  role: 'user' | 'assistant'
+  content: string
+  timestamp: Date
+}
+
 export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
   const [analysis, setAnalysis] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [showChat, setShowChat] = useState(false)
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
+  const [chatInput, setChatInput] = useState('')
+  const [sendingMessage, setSendingMessage] = useState(false)
+  const chatEndRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // Try to load existing analysis
     loadExistingAnalysis()
   }, [activityId])
 
-  const loadExistingAnalysis = async () => {
+  const loadExistingAnalysis = async (): Promise<string | null> => {
     try {
       const { data, error: fetchError } = await supabase
         .from('activity_analyses')
@@ -35,9 +46,12 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
 
       if (data?.summary) {
         setAnalysis(data.summary)
+        return data.summary
       }
+      return null
     } catch (err: any) {
       console.error('Error loading analysis:', err)
+      return null
     }
   }
 
@@ -45,6 +59,7 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
     setIsGenerating(true)
     setLoading(true)
     setError(null)
+    // Clear existing analysis immediately when regenerating
     setAnalysis(null)
 
     try {
@@ -67,14 +82,33 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
         throw new Error(data.message || data.error || 'Failed to generate analysis')
       }
 
-      if (data?.analysis?.summary) {
-        setAnalysis(data.analysis.summary)
-        await loadExistingAnalysis() // Reload to get formatted version
-      } else if (data?.summary) {
-        // Sometimes the summary is at the top level
-        setAnalysis(data.summary)
-      } else {
-        throw new Error(data.message || 'No analysis generated in response')
+      // Wait a moment for database to update, then reload
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
+      // Retry loading from database (with retries in case DB is slow to update)
+      let loadedAnalysis = null
+      for (let attempt = 0; attempt < 3; attempt++) {
+        loadedAnalysis = await loadExistingAnalysis()
+        if (loadedAnalysis) break
+        // Wait a bit longer before next attempt
+        await new Promise(resolve => setTimeout(resolve, 500))
+      }
+
+      // If we still don't have it from DB, use the response directly as fallback
+      if (!loadedAnalysis) {
+        if (data?.analysis?.summary) {
+          setAnalysis(data.analysis.summary)
+        } else if (data?.summary) {
+          setAnalysis(data.summary)
+        } else {
+          console.warn('No analysis found in database or response, but function succeeded')
+          // Still try one more time after a longer wait
+          await new Promise(resolve => setTimeout(resolve, 2000))
+          const finalAttempt = await loadExistingAnalysis()
+          if (!finalAttempt) {
+            throw new Error('Analysis was generated but could not be retrieved. Please refresh the page.')
+          }
+        }
       }
     } catch (err: any) {
       console.error('Error generating analysis:', err)
@@ -101,6 +135,76 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
   }
 
   const isIndoorActivity = activity?.data?.summary?.avgPower && activity.data.summary.avgPower > 0
+
+  // Scroll chat to bottom when new messages arrive
+  useEffect(() => {
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [chatMessages])
+
+  const handleSendMessage = async (e?: React.FormEvent) => {
+    if (e) {
+      e.preventDefault()
+    }
+
+    if (!chatInput.trim() || sendingMessage) return
+
+    const userMessage = chatInput.trim()
+    setChatInput('')
+    setSendingMessage(true)
+    setError(null)
+
+    // Add user message to chat
+    const newUserMessage: ChatMessage = {
+      role: 'user',
+      content: userMessage,
+      timestamp: new Date()
+    }
+    setChatMessages(prev => [...prev, newUserMessage])
+
+    try {
+      // Prepare conversation history (last 10 messages)
+      const history = chatMessages.slice(-10).map(msg => ({
+        role: msg.role,
+        content: msg.content
+      }))
+
+      const { data, error: invokeError } = await supabase.functions.invoke('ai-coach-chat', {
+        body: { 
+          activityId,
+          message: userMessage,
+          conversationHistory: history
+        },
+      })
+
+      if (invokeError) {
+        throw new Error(invokeError.message || 'Failed to send message')
+      }
+
+      if (data?.error) {
+        throw new Error(data.message || data.error || 'Failed to get response')
+      }
+
+      if (data?.response) {
+        const assistantMessage: ChatMessage = {
+          role: 'assistant',
+          content: data.response,
+          timestamp: new Date()
+        }
+        setChatMessages(prev => [...prev, assistantMessage])
+      } else {
+        throw new Error('No response from AI coach')
+      }
+    } catch (err: any) {
+      console.error('Error sending message:', err)
+      setError(err.message || 'Failed to send message. Please try again.')
+      // Remove the user message if sending failed
+      setChatMessages(prev => prev.slice(0, -1))
+    } finally {
+      setSendingMessage(false)
+    }
+  }
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
@@ -203,7 +307,7 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
             </div>
           </div>
           
-          <div className="mt-4 flex gap-3">
+          <div className="mt-4 flex gap-3 flex-wrap">
             <button
               onClick={generateAnalysis}
               disabled={isGenerating}
@@ -211,6 +315,77 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
             >
               {isGenerating ? 'Regenerating...' : '↻ Regenerate Analysis'}
             </button>
+            <button
+              onClick={() => setShowChat(!showChat)}
+              className="text-green-600 hover:text-green-800 text-sm font-medium"
+            >
+              {showChat ? '✕ Close Chat' : '💬 Ask Follow-up Question'}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Follow-up Chat Interface */}
+      {showChat && analysis && (
+        <div className="mt-6 border-t border-gray-200 pt-6">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Ask AI Coach</h4>
+          <div className="bg-gray-50 rounded-lg border border-gray-200 p-4" style={{ maxHeight: '500px', display: 'flex', flexDirection: 'column' }}>
+            {/* Chat Messages */}
+            <div className="flex-1 overflow-y-auto mb-4 space-y-3 max-h-96">
+              {chatMessages.length === 0 ? (
+                <div className="text-center text-gray-500 py-8">
+                  <p className="text-sm">Start a conversation with your AI coach</p>
+                  <p className="text-xs mt-2">Ask questions about your activity, training, or get clarification on the analysis</p>
+                </div>
+              ) : (
+                chatMessages.map((msg, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[80%] rounded-lg px-4 py-2 ${
+                        msg.role === 'user'
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-white text-gray-800 border border-gray-200'
+                      }`}
+                    >
+                      <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                    </div>
+                  </div>
+                ))
+              )}
+              {sendingMessage && (
+                <div className="flex justify-start">
+                  <div className="bg-white rounded-lg px-4 py-2 border border-gray-200">
+                    <div className="flex items-center gap-2">
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                      <span className="text-sm text-gray-600">AI Coach is thinking...</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div ref={chatEndRef} />
+            </div>
+
+            {/* Chat Input */}
+            <form onSubmit={handleSendMessage} className="flex gap-2">
+              <input
+                type="text"
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                placeholder="Ask a follow-up question..."
+                className="flex-1 border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                disabled={sendingMessage}
+              />
+              <button
+                type="submit"
+                disabled={!chatInput.trim() || sendingMessage}
+                className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium"
+              >
+                Send
+              </button>
+            </form>
           </div>
         </div>
       )}
