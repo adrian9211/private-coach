@@ -69,6 +69,23 @@ export default function ActivityDetailPage() {
     }
   }, [id])
 
+  // Refetch on tab focus to avoid stale loading
+  useEffect(() => {
+    const onFocus = () => {
+      if (user && id) {
+        fetchActivity()
+      }
+    }
+    window.addEventListener('focus', onFocus)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') onFocus()
+    })
+    return () => {
+      window.removeEventListener('focus', onFocus)
+      document.removeEventListener('visibilitychange', onFocus as any)
+    }
+  }, [user, id, fetchActivity])
+
   useEffect(() => {
     if (!loading && !user) {
       router.push('/auth/signin')
@@ -153,10 +170,24 @@ export default function ActivityDetailPage() {
 
   if (loading || loadingActivity) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading activity...</p>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        {/* Keep navbar visible */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={handleBackNavigation}
+              className="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              ← Home
+            </button>
+            <div className="text-sm text-gray-500">Loading activity…</div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center py-16">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading activity...</p>
+          </div>
         </div>
       </div>
     )

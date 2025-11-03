@@ -140,8 +140,8 @@ ${analysis?.summary || 'No previous analysis available'}
       body: JSON.stringify({
         contents: contents,
         generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 2000,
+          temperature: 0.6,
+          maxOutputTokens: 8000,
           topP: 0.8,
           topK: 40,
         }
@@ -155,6 +155,31 @@ ${analysis?.summary || 'No previous analysis available'}
 
     const geminiData = await geminiResponse.json()
     const response = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || 'I apologize, but I could not generate a response.'
+
+    // Persist messages to database
+    try {
+      // Insert user message
+      await supabaseClient
+        .from('activity_chat_messages')
+        .insert({
+          activity_id: activityId,
+          user_id: activity.user_id,
+          role: 'user',
+          content: String(message).slice(0, 10000),
+        })
+
+      // Insert assistant response
+      await supabaseClient
+        .from('activity_chat_messages')
+        .insert({
+          activity_id: activityId,
+          user_id: activity.user_id,
+          role: 'assistant',
+          content: String(response).slice(0, 50000),
+        })
+    } catch (e) {
+      console.warn('Failed to persist chat messages:', e)
+    }
 
     return new Response(
       JSON.stringify({ 

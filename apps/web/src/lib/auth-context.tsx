@@ -49,6 +49,27 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
     return () => subscription.unsubscribe()
   }, [router])
 
+  // Refresh session and rehydrate when tab becomes visible to prevent stuck loading
+  useEffect(() => {
+    const handleVisibility = async () => {
+      if (document.visibilityState === 'visible') {
+        try {
+          const { data: refreshed } = await supabase.auth.getSession()
+          setSession(refreshed.session)
+          setUser(refreshed.session?.user ?? null)
+        } catch (e) {
+          console.warn('Failed to refresh session on visibilitychange', e)
+        }
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+    window.addEventListener('focus', handleVisibility)
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibility)
+      window.removeEventListener('focus', handleVisibility)
+    }
+  }, [])
+
   const createUserProfile = async (user: User) => {
     try {
       const { error } = await supabase

@@ -25,6 +25,33 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
   const [sendingMessage, setSendingMessage] = useState(false)
   const chatEndRef = useRef<HTMLDivElement>(null)
 
+  // Load existing chat history when chat opens
+  useEffect(() => {
+    const loadChatHistory = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('activity_chat_messages')
+          .select('role, content, created_at')
+          .eq('activity_id', activityId)
+          .order('created_at', { ascending: true })
+          
+        if (!error && Array.isArray(data)) {
+          const msgs = data.map((m: any) => ({
+            role: m.role === 'assistant' ? 'assistant' : 'user',
+            content: m.content as string,
+            timestamp: new Date(m.created_at)
+          })) as ChatMessage[]
+          setChatMessages(msgs)
+        }
+      } catch (e) {
+        console.warn('Failed to load chat history', e)
+      }
+    }
+    if (showChat) {
+      loadChatHistory()
+    }
+  }, [showChat, activityId])
+
   useEffect(() => {
     // Try to load existing analysis
     loadExistingAnalysis()
