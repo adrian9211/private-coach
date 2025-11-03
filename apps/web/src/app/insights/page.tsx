@@ -28,7 +28,10 @@ export default function InsightsPage() {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      if (!user) return
+      if (!user) {
+        setLoadingUserData(false)
+        return
+      }
 
       try {
         setLoadingUserData(true)
@@ -40,6 +43,7 @@ export default function InsightsPage() {
 
         if (error) {
           console.error('Error fetching user data:', error)
+          setLoadingUserData(false)
           return
         }
 
@@ -77,6 +81,20 @@ export default function InsightsPage() {
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading insights...</p>
+          <p className="text-xs text-gray-400 mt-2">
+            {loading ? 'Loading user data...' : loadingUserData ? 'Fetching preferences...' : 'Ready'}
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  // Don't render if user is not available
+  if (!user?.id) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-600">Please sign in to view insights</p>
         </div>
       </div>
     )
@@ -128,7 +146,7 @@ export default function InsightsPage() {
         {/* AI Recommendations */}
         <div className="mt-8">
           <AIRecommendations
-            userId={user?.id || ''}
+            userId={user.id}
             userFtp={userFtp}
             userWeight={userWeight}
             userVo2Max={userVo2Max}

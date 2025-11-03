@@ -7,11 +7,14 @@ const corsHeaders = {
 }
 
 serve(async (req) => {
+  console.log('generate-insights: Request received', { method: req.method, url: req.url })
+  
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
   try {
+    console.log('generate-insights: Processing request')
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_ANON_KEY') ?? '',
@@ -30,14 +33,19 @@ serve(async (req) => {
       )
     }
 
-    const { userId } = await req.json()
+    const body = await req.json()
+    console.log('generate-insights: Request body', body)
+    const { userId } = body
 
     if (!userId) {
+      console.error('generate-insights: No userId provided')
       return new Response(
         JSON.stringify({ error: 'User ID is required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       )
     }
+
+    console.log('generate-insights: Processing for userId:', userId)
 
     // Get user data
     const { data: user, error: userError } = await supabaseClient
@@ -355,6 +363,39 @@ Provide comprehensive insights in the following structure:
     }
 
     const recommendations = data.candidates[0].content.parts[0].text
+
+    // Save insights to database for caching
+    const dataSnapshot = {
+      totalActivities,
+      totalDistance,
+      totalTime,
+      avgPower,
+      avgHeartRate,
+      recentActivitiesCount: recentActivities.length,
+      fitness,
+      fatigue,
+      form,
+      powerZoneDistribution,
+      generatedAt: new Date().toISOString(),
+    }
+
+    const { error: upsertError } = await supabaseClient
+      .from('user_insights')
+      .upsert({
+        user_id: userId,
+        recommendations,
+        data_snapshot: dataSnapshot,
+        generated_at: new Date().toISOString(),
+      }, {
+        onConflict: 'user_id',
+      })
+
+    if (upsertError) {
+      console.error('Error saving insights to database:', upsertError)
+      // Continue anyway - return the recommendations even if save fails
+    } else {
+      console.log('generate-insights: Successfully saved insights to database')
+    }
 
     return new Response(
       JSON.stringify({ recommendations }),
