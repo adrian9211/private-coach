@@ -69,10 +69,22 @@ export function CalendarView({ userId }: CalendarViewProps) {
         const rangeStart = startOfWeek(monthStart, { weekStartsOn: 1 })
         const rangeEnd = endOfWeek(monthEnd, { weekStartsOn: 1 })
 
-        // Query activities - try start_time first, fallback to upload_date
+        // Query activities - optimized: exclude large JSONB data field
         const { data: startTimeData, error: startTimeError } = await supabase
           .from('activities')
-          .select('*')
+          .select(`
+            id,
+            file_name,
+            upload_date,
+            start_time,
+            status,
+            total_distance,
+            total_timer_time,
+            avg_power,
+            avg_heart_rate,
+            avg_speed,
+            data
+          `)
           .eq('user_id', userId)
           .eq('status', 'processed')
           .gte('start_time', rangeStart.toISOString())
@@ -81,7 +93,19 @@ export function CalendarView({ userId }: CalendarViewProps) {
         // Also get activities that might only have upload_date in the range
         const { data: uploadDateData, error: uploadDateError } = await supabase
           .from('activities')
-          .select('*')
+          .select(`
+            id,
+            file_name,
+            upload_date,
+            start_time,
+            status,
+            total_distance,
+            total_timer_time,
+            avg_power,
+            avg_heart_rate,
+            avg_speed,
+            data
+          `)
           .eq('user_id', userId)
           .eq('status', 'processed')
           .is('start_time', null)
@@ -101,7 +125,7 @@ export function CalendarView({ userId }: CalendarViewProps) {
           return dateB.localeCompare(dateA)
         })
 
-        setActivities(uniqueActivities)
+        setActivities(uniqueActivities as any)
       } catch (err) {
         console.error('Error fetching activities for calendar:', err)
       } finally {

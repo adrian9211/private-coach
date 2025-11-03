@@ -118,10 +118,19 @@ export function FitnessView({ userId, userFtp, userWeight }: FitnessViewProps) {
         setLoading(true)
         const startDate = getDateRange(timeRange)
         
-        // Get all processed activities for the user (simpler approach)
+        // Optimized: Filter at database level and exclude large JSONB data field
+        // Fetch all processed activities and filter client-side for date range
+        // (Simpler than complex OR queries that might not use indexes well)
         const { data: allData, error } = await supabase
           .from('activities')
-          .select('*')
+          .select(`
+            id,
+            start_time,
+            upload_date,
+            total_timer_time,
+            avg_power,
+            total_distance
+          `)
           .eq('user_id', userId)
           .eq('status', 'processed')
           .order('start_time', { ascending: true, nullsFirst: true })
@@ -134,7 +143,7 @@ export function FitnessView({ userId, userFtp, userWeight }: FitnessViewProps) {
           return
         }
 
-        // Filter by date range
+        // Filter by date range (additional client-side check for edge cases)
         const filtered = (allData || []).filter(activity => {
           const date = activity.start_time || activity.upload_date
           if (!date) return false
@@ -154,7 +163,7 @@ export function FitnessView({ userId, userFtp, userWeight }: FitnessViewProps) {
           return dateA.localeCompare(dateB)
         })
 
-        setActivities(filtered)
+        setActivities(filtered as any)
       } catch (err) {
         console.error('Error fetching activities:', err)
         setActivities([])

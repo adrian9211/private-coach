@@ -16,7 +16,8 @@ export default async function ActivitiesPage() {
   }
 
   // Optimize query: only select fields needed for list view
-  // Note: Still fetch 'data' field for classification badges, but it's smaller than full records
+  // Limit query to prevent timeouts with large datasets
+  // Note: Exclude 'data' field initially for better performance - classification can be lazy loaded
   const { data: activities, error } = await supabase
     .from('activities')
     .select(`
@@ -33,12 +34,12 @@ export default async function ActivitiesPage() {
       avg_power,
       avg_heart_rate,
       avg_speed,
-      rpe,
-      data
+      rpe
     `)
     .eq('user_id', session.user.id)
     .order('start_time', { ascending: false, nullsFirst: false })
     .order('upload_date', { ascending: false })
+    .limit(100) // Prevent timeout with large datasets
 
   if (error) {
     console.error('Error fetching activities:', error)

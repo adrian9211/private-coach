@@ -132,7 +132,7 @@ export default async function DashboardPage() {
                 <p className="text-sm text-gray-600">Get recommendations</p>
               </div>
             </div>
-            <a href="#" className="w-full text-center block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 font-medium">
+            <a href="/insights" className="w-full text-center block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 font-medium">
               View Insights
             </a>
           </div>
