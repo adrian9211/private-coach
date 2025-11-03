@@ -80,24 +80,57 @@ export function AIRecommendations({
 
       try {
         console.log('AIRecommendations: Loading cached insights for userId:', userId)
-        const { data, error } = await supabase
+        
+        // Add timeout wrapper - 8 second timeout
+        const queryPromise = supabase
           .from('user_insights')
           .select('recommendations, generated_at')
           .eq('user_id', userId)
           .maybeSingle()
 
-        console.log('AIRecommendations: Query result', { data: !!data, error })
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Query timeout after 8s')), 8000)
+        )
+
+        let data: any = null
+        let error: any = null
+
+        try {
+          const result = await Promise.race([queryPromise, timeoutPromise]) as any
+          // If we get here, queryPromise won (not timeout)
+          data = result.data
+          error = result.error
+        } catch (timeoutErr: any) {
+          // Timeout won - treat as error
+          console.warn('AIRecommendations: Query timeout after 8s, generating new insights instead')
+          error = { message: 'Query timeout', code: 'TIMEOUT' }
+          data = null
+        }
+
+        console.log('AIRecommendations: Query result', { 
+          hasData: !!data, 
+          hasRecommendations: !!data?.recommendations,
+          generatedAt: data?.generated_at,
+          error: error?.message || error?.code,
+          errorDetails: error 
+        })
 
         if (error) {
           console.error('Error loading cached insights:', error)
           // If table doesn't exist, that's okay - we'll generate
           if (error.code === '42P01' || error.message?.includes('does not exist')) {
             console.log('AIRecommendations: user_insights table does not exist yet, generating new insights')
-            generateRecommendations()
+            // Don't generate immediately - wait a bit for migration to be applied
+            setTimeout(() => generateRecommendations(), 1000)
             return
           }
-          // For other errors, try generating anyway
-          console.log('AIRecommendations: Error loading cache, generating new insights')
+          // For timeout or other errors, try generating anyway
+          if (error.message?.includes('timeout')) {
+            console.log('AIRecommendations: Query timeout, trying to generate new insights')
+          } else {
+            console.log('AIRecommendations: Error loading cache, generating new insights')
+          }
+          // Generate new insights if cache load fails
           generateRecommendations()
           return
         }

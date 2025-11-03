@@ -27,22 +27,36 @@ export default function InsightsPage() {
   }, [user, loading, router])
 
   useEffect(() => {
+    // Timeout fallback to prevent infinite loading
+    const timeoutId = setTimeout(() => {
+      console.warn('InsightsPage: Timeout - forcing loadingUserData to false')
+      setLoadingUserData(false)
+    }, 10000) // 10 second timeout
+
     const fetchUserData = async () => {
       if (!user) {
+        console.log('InsightsPage: No user, setting loading to false')
+        clearTimeout(timeoutId)
         setLoadingUserData(false)
         return
       }
 
       try {
+        console.log('InsightsPage: Fetching user data for', user.id)
         setLoadingUserData(true)
+        
+        // Fetch user data - don't block page render if slow
         const { data, error } = await supabase
           .from('users')
           .select('preferences, weight_kg, vo2_max, training_goals, weekly_training_hours')
           .eq('id', user.id)
           .maybeSingle()
 
+        console.log('InsightsPage: User data fetched', { hasData: !!data, error: error?.message })
+
         if (error) {
           console.error('Error fetching user data:', error)
+          clearTimeout(timeoutId)
           setLoadingUserData(false)
           return
         }
@@ -65,31 +79,57 @@ export default function InsightsPage() {
             setWeeklyHours(data.weekly_training_hours)
           }
         }
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error loading user data:', err)
+        clearTimeout(timeoutId)
+        setLoadingUserData(false)
       } finally {
+        console.log('InsightsPage: Setting loadingUserData to false')
+        clearTimeout(timeoutId)
         setLoadingUserData(false)
       }
     }
 
-    fetchUserData()
-  }, [user])
+    if (user) {
+      fetchUserData()
+    } else {
+      // If no user after loading finishes, set to false
+      if (!loading) {
+        clearTimeout(timeoutId)
+        setLoadingUserData(false)
+      }
+    }
 
-  if (loading || loadingUserData) {
+    return () => {
+      clearTimeout(timeoutId)
+    }
+  }, [user, loading])
+
+  // Don't render if user is not available (after loading)
+  if (!loading && !user?.id) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading insights...</p>
-          <p className="text-xs text-gray-400 mt-2">
-            {loading ? 'Loading user data...' : loadingUserData ? 'Fetching preferences...' : 'Ready'}
-          </p>
+          <p className="text-gray-600">Please sign in to view insights</p>
         </div>
       </div>
     )
   }
 
-  // Don't render if user is not available
+  // Only block if we're waiting for auth (user), not user preferences
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading insights...</p>
+          <p className="text-xs text-gray-400 mt-2">Loading user data...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Don't render if user is not available (after loading)
   if (!user?.id) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
