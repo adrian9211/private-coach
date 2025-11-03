@@ -15,9 +15,27 @@ export default async function ActivitiesPage() {
     redirect('/auth/signin')
   }
 
+  // Optimize query: only select fields needed for list view
+  // Note: Still fetch 'data' field for classification badges, but it's smaller than full records
   const { data: activities, error } = await supabase
     .from('activities')
-    .select('*')
+    .select(`
+      id,
+      file_name,
+      file_size,
+      upload_date,
+      start_time,
+      processed_date,
+      status,
+      metadata,
+      total_distance,
+      total_timer_time,
+      avg_power,
+      avg_heart_rate,
+      avg_speed,
+      rpe,
+      data
+    `)
     .eq('user_id', session.user.id)
     .order('start_time', { ascending: false, nullsFirst: false })
     .order('upload_date', { ascending: false })

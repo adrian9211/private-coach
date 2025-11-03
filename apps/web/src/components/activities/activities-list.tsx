@@ -181,19 +181,27 @@ export function ActivitiesList({ initialActivities }: { initialActivities: Activ
                   <div className="grid grid-cols-2 gap-3 mb-3">
                     <div>
                       <div className="text-xs text-gray-500">Distance</div>
-                      <div className="text-sm font-medium text-gray-900">{summary.totalDistance ? `${summary.totalDistance.toFixed(2)} km` : '-'}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {summary.totalDistance ? `${summary.totalDistance.toFixed(2)} km` : activity.total_distance ? `${(activity.total_distance / 1000).toFixed(2)} km` : '-'}
+                      </div>
                     </div>
                     <div>
                       <div className="text-xs text-gray-500">Duration</div>
-                      <div className="text-sm font-medium text-gray-900">{summary.duration ? formatDuration(summary.duration) : '-'}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {summary.duration ? formatDuration(summary.duration) : activity.total_timer_time ? formatDuration(activity.total_timer_time) : '-'}
+                      </div>
                     </div>
                     <div>
                       <div className="text-xs text-gray-500">Avg Power</div>
-                      <div className="text-sm font-medium text-gray-900">{summary.avgPower ? `${Math.round(summary.avgPower)}W` : '-'}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {summary.avgPower ? `${Math.round(summary.avgPower)}W` : activity.avg_power ? `${Math.round(activity.avg_power)}W` : '-'}
+                      </div>
                     </div>
                     <div>
                       <div className="text-xs text-gray-500">Avg HR</div>
-                      <div className="text-sm font-medium text-gray-900">{summary.avgHeartRate ? `${Math.round(summary.avgHeartRate)} bpm` : '-'}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {summary.avgHeartRate ? `${Math.round(summary.avgHeartRate)} bpm` : activity.avg_heart_rate ? `${Math.round(activity.avg_heart_rate)} bpm` : '-'}
+                      </div>
                     </div>
                   </div>
                   
@@ -255,10 +263,18 @@ export function ActivitiesList({ initialActivities }: { initialActivities: Activ
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{summary.totalDistance ? `${summary.totalDistance.toFixed(2)} km` : '-'}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{summary.duration ? formatDuration(summary.duration) : '-'}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{summary.avgPower ? `${Math.round(summary.avgPower)}W` : '-'}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{summary.avgHeartRate ? `${Math.round(summary.avgHeartRate)} bpm` : '-'}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {summary.totalDistance ? `${summary.totalDistance.toFixed(2)} km` : activity.total_distance ? `${(activity.total_distance / 1000).toFixed(2)} km` : '-'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {summary.duration ? formatDuration(summary.duration) : activity.total_timer_time ? formatDuration(activity.total_timer_time) : '-'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {summary.avgPower ? `${Math.round(summary.avgPower)}W` : activity.avg_power ? `${Math.round(activity.avg_power)}W` : '-'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {summary.avgHeartRate ? `${Math.round(summary.avgHeartRate)} bpm` : activity.avg_heart_rate ? `${Math.round(activity.avg_heart_rate)} bpm` : '-'}
+                      </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(activity.status)}`}>
                           {getStatusIcon(activity.status)}
