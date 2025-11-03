@@ -15,7 +15,13 @@ interface Activity {
   processed_date: string | null
   status: 'uploaded' | 'processing' | 'processed' | 'failed'
   metadata: any
-  data: any
+  data?: any
+  total_distance?: number | null
+  total_timer_time?: number | null
+  avg_power?: number | null
+  avg_heart_rate?: number | null
+  avg_speed?: number | null
+  rpe?: number | null
 }
 
 export function ActivitiesList({ initialActivities }: { initialActivities: Activity[] }) {

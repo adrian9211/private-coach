@@ -86,7 +86,7 @@ export default async function DashboardPage() {
 
         <DashboardTabs
           summary={summary}
-          recentActivities={recentActivities || []}
+          recentActivities={(recentActivities || []) as any}
           userId={session.user.id}
         />
 
