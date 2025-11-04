@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { supabase } from '@/lib/supabase'
 
 interface ActivityFeedbackProps {
@@ -31,14 +31,15 @@ export function ActivityFeedback({
   onFeelingChange,
   onNotesChange 
 }: ActivityFeedbackProps) {
-  const [feeling, setFeeling] = useState<number | null>(initialFeeling || null)
-  const [selectedFeeling, setSelectedFeeling] = useState<number | null>(initialFeeling || null)
-  const [notes, setNotes] = useState<string>(initialNotes || '')
+  const [feeling, setFeeling] = useState<number | null>(initialFeeling ?? null)
+  const [selectedFeeling, setSelectedFeeling] = useState<number | null>(initialFeeling ?? null)
+  const [notes, setNotes] = useState<string>(initialNotes ?? '')
   const [savingFeeling, setSavingFeeling] = useState(false)
   const [savingNotes, setSavingNotes] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [successFeeling, setSuccessFeeling] = useState(false)
   const [successNotes, setSuccessNotes] = useState(false)
+  const notesTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     if (initialFeeling !== undefined) {
@@ -83,7 +84,7 @@ export function ActivityFeedback({
     }
   }
 
-  const handleNotesChange = async (newNotes: string) => {
+  const handleNotesChange = (newNotes: string) => {
     setNotes(newNotes)
     setError(null)
     setSuccessNotes(false)
@@ -93,8 +94,11 @@ export function ActivityFeedback({
     }
 
     // Debounce auto-save
-    clearTimeout((handleNotesChange as any).timeout)
-    ;(handleNotesChange as any).timeout = setTimeout(async () => {
+    if (notesTimeoutRef.current) {
+      clearTimeout(notesTimeoutRef.current)
+    }
+    
+    notesTimeoutRef.current = setTimeout(async () => {
       setSavingNotes(true)
       try {
         const { error: updateError } = await supabase
@@ -114,6 +118,15 @@ export function ActivityFeedback({
       }
     }, 1000) // Save 1 second after user stops typing
   }
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (notesTimeoutRef.current) {
+        clearTimeout(notesTimeoutRef.current)
+      }
+    }
+  }, [])
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">

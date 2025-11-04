@@ -321,10 +321,31 @@ serve(async (req) => {
             parts: [{
               text: `You are a KNOWLEDGEABLE and ANALYTICAL professional cycling coach with deep expertise in exercise physiology, training periodization, and performance analysis. Use DEEP REASONING grounded in cycling science (Seiler, Coggan, Allen, Laursen, and other leading researchers) to analyze this workout in context of the athlete's training history, current fitness level, and goals.
 
-**🔥 CRITICAL: USER FEEDBACK IS MANDATORY - YOU MUST ADDRESS IT**
-${activity.feeling ? `- **USER REPORTED FEELING:** ${activity.feeling}/10 (energy/well-being scale). YOU MUST EXPLICITLY MENTION THIS in your analysis. The user told you how tired they felt - this is CRUCIAL and cannot be ignored.` : ''}
-${activity.personal_notes ? `- **USER PROVIDED PERSONAL NOTES:** "${activity.personal_notes.substring(0, 200)}${activity.personal_notes.length > 200 ? '...' : ''}". YOU MUST EXPLICITLY QUOTE AND ANALYZE THIS in your analysis. The user shared their experience - this is CRUCIAL and must be addressed.` : ''}
-${activity.feeling || activity.personal_notes ? `- **YOU CANNOT SKIP, IGNORE, OR OMIT** user-provided feeling or personal notes. These are critical subjective feedback that must be explicitly mentioned and analyzed in your response. If you fail to address these, your analysis is incomplete.` : ''}
+**🔥🔥🔥 CRITICAL: USER FEEDBACK IS MANDATORY - YOU MUST ADDRESS IT IN YOUR RESPONSE 🔥🔥🔥**
+${activity.feeling !== null && activity.feeling !== undefined ? `
+- **USER REPORTED FEELING: ${activity.feeling}/10** (energy/well-being scale)
+- **YOU MUST EXPLICITLY STATE:** "You reported feeling ${activity.feeling}/10, which indicates ${activity.feeling <= 3 ? 'poor energy and significant fatigue' : activity.feeling <= 5 ? 'below average energy' : activity.feeling <= 7 ? 'good energy' : 'excellent energy'}."
+- **YOU MUST DISCUSS** how this feeling relates to your performance, RPE, and recovery in your analysis
+- **YOU MUST INCLUDE** this feeling score in your "Recovery & Fatigue Assessment" section
+- The user explicitly told you how tired/energetic they felt - this is CRUCIAL feedback that CANNOT be ignored or omitted
+` : ''}
+${activity.personal_notes && activity.personal_notes.trim().length > 0 ? `
+- **USER PROVIDED PERSONAL NOTES:** "${activity.personal_notes.substring(0, 300)}${activity.personal_notes.length > 300 ? '...' : ''}"
+- **YOU MUST EXPLICITLY QUOTE** relevant parts of these notes in your analysis
+- **YOU MUST STATE:** "In your personal notes, you mentioned: [quote relevant parts]"
+- **YOU MUST ANALYZE** these observations in context of objective metrics
+- **YOU MUST ADDRESS** any concerns, observations, or insights the user mentioned
+- The user shared their personal experience - this is CRUCIAL and must be addressed in your response
+` : ''}
+${(activity.feeling !== null && activity.feeling !== undefined) || (activity.personal_notes && activity.personal_notes.trim().length > 0) ? `
+- **⚠️⚠️⚠️ MANDATORY REQUIREMENT ⚠️⚠️⚠️**
+- **YOU CANNOT SKIP, IGNORE, OR OMIT** user-provided feeling or personal notes
+- **IF YOU FAIL TO EXPLICITLY MENTION** feeling and/or personal notes in your analysis, your response is INCOMPLETE
+- **YOU MUST INCLUDE** at least one sentence in your analysis that directly references the user's feeling score
+- **YOU MUST INCLUDE** at least one sentence in your analysis that directly quotes and discusses the user's personal notes
+- These are critical subjective feedback that must be explicitly mentioned and analyzed in your response
+- Start your analysis or recovery section by mentioning these explicitly
+` : ''}
 
 **ANALYSIS APPROACH - RESEARCH-BASED COACHING:**
 - Base your analysis on established cycling training science and research
@@ -640,16 +661,23 @@ ${vo2Max && activity.data?.summary?.avgHeartRate ? `
 `}
 
 ## Recovery & Fatigue Assessment
-${activity.rpe || activity.feeling ? `
-- **Recovery Assessment (MUST INCLUDE ALL PROVIDED METRICS):**
-${activity.rpe ? `  - **RPE:** ${activity.rpe}/10 - ${activity.rpe >= 7 ? 'HIGH effort - emphasize recovery needed' : activity.rpe >= 5 ? 'MODERATE effort - monitor recovery' : 'LOW effort - good recovery status'}` : ''}
-${activity.feeling ? `  - **Feeling:** ${activity.feeling}/10 - ${activity.feeling <= 3 ? 'POOR energy - STRONG REST RECOMMENDED. **YOU MUST EXPLICITLY MENTION:** The user reported feeling tired/exhausted (${activity.feeling}/10). This is a critical recovery indicator that must be addressed.' : activity.feeling <= 5 ? 'Below average energy - consider light recovery. **YOU MUST EXPLICITLY MENTION:** The user reported feeling below normal (${activity.feeling}/10).' : activity.feeling >= 8 ? 'EXCELLENT energy - optimal for training. **YOU MUST EXPLICITLY MENTION:** The user reported feeling great (${activity.feeling}/10).' : 'Good energy - normal training ready. **YOU MUST EXPLICITLY MENTION:** The user reported feeling okay (${activity.feeling}/10).'}` : ''}
-${activity.rpe && activity.feeling ? `
-  - **Combined Assessment:** ${activity.rpe >= 7 && activity.feeling <= 3 ? '⚠️ HIGH RPE (${activity.rpe}/10) + LOW Feeling (${activity.feeling}/10) = STRONG FATIGUE SIGNAL - REST REQUIRED. **YOU MUST EXPLICITLY STATE:** The user experienced high effort perception (${activity.rpe}/10) but reported feeling very tired (${activity.feeling}/10). This divergence is a critical recovery indicator that requires immediate attention.' : activity.rpe <= 5 && activity.feeling >= 8 ? '✅ LOW RPE (${activity.rpe}/10) + HIGH Feeling (${activity.feeling}/10) = EXCELLENT RECOVERY - Ready for intensity. **YOU MUST EXPLICITLY STATE:** The user felt easy effort (${activity.rpe}/10) with excellent energy (${activity.feeling}/10).' : 'Normal correlation between effort (RPE ${activity.rpe}/10) and well-being (Feeling ${activity.feeling}/10).'}
+${activity.rpe || (activity.feeling !== null && activity.feeling !== undefined) ? `
+- **Recovery Assessment (MUST INCLUDE ALL PROVIDED METRICS - START WITH USER FEEDBACK):**
+${activity.feeling !== null && activity.feeling !== undefined ? `
+  **🔥 START THIS SECTION BY STATING:**
+  "You reported feeling ${activity.feeling}/10 (${activity.feeling <= 3 ? 'poor energy - significant fatigue' : activity.feeling <= 5 ? 'below average energy' : activity.feeling <= 7 ? 'good energy' : 'excellent energy'}). This is a critical indicator of your recovery status and must be addressed."
+  - **Feeling:** ${activity.feeling}/10 - ${activity.feeling <= 3 ? 'POOR energy - STRONG REST RECOMMENDED. The user explicitly reported feeling tired/exhausted. This MUST be mentioned and analyzed.' : activity.feeling <= 5 ? 'Below average energy - recovery concern. The user reported feeling below normal. This MUST be mentioned.' : activity.feeling >= 8 ? 'EXCELLENT energy - optimal for training. The user reported feeling great. This MUST be mentioned.' : 'Good energy - normal training ready. The user reported feeling okay. This MUST be mentioned.'}
 ` : ''}
-${activity.personal_notes ? `
-  - **User's Personal Observations (MUST BE QUOTED AND ANALYZED):** "${activity.personal_notes}"
-  - **MANDATORY:** You must explicitly quote and discuss this user feedback in your recovery assessment. What did the user say about how they felt? Any concerns or insights mentioned? This is critical subjective context that metrics alone cannot capture.
+${activity.rpe ? `  - **RPE:** ${activity.rpe}/10 - ${activity.rpe >= 7 ? 'HIGH effort - emphasize recovery needed' : activity.rpe >= 5 ? 'MODERATE effort - monitor recovery' : 'LOW effort - good recovery status'}` : ''}
+${activity.rpe && activity.feeling !== null && activity.feeling !== undefined ? `
+  - **Combined Assessment:** ${activity.rpe >= 7 && activity.feeling <= 3 ? '⚠️ HIGH RPE (${activity.rpe}/10) + LOW Feeling (${activity.feeling}/10) = STRONG FATIGUE SIGNAL - REST REQUIRED. **YOU MUST EXPLICITLY STATE:** "Your RPE of ${activity.rpe}/10 combined with your feeling of ${activity.feeling}/10 indicates significant fatigue. This divergence is critical - you experienced high effort but reported feeling very tired. REST is REQUIRED."' : activity.rpe <= 5 && activity.feeling >= 8 ? '✅ LOW RPE (${activity.rpe}/10) + HIGH Feeling (${activity.feeling}/10) = EXCELLENT RECOVERY - Ready for intensity. **YOU MUST EXPLICITLY STATE:** "Your RPE of ${activity.rpe}/10 combined with your feeling of ${activity.feeling}/10 indicates excellent recovery and freshness."' : 'Normal correlation between effort (RPE ${activity.rpe}/10) and well-being (Feeling ${activity.feeling}/10).'}
+` : ''}
+${activity.personal_notes && activity.personal_notes.trim().length > 0 ? `
+  **🔥 USER'S PERSONAL OBSERVATIONS (MUST BE QUOTED IN THIS SECTION):**
+  - **YOU MUST START A PARAGRAPH WITH:** "In your personal notes, you mentioned: '[quote 1-2 sentences from: ${activity.personal_notes}]'"
+  - **YOU MUST ANALYZE:** What did the user say about how they felt? Any concerns or insights mentioned? 
+  - **YOU MUST DISCUSS:** How do these observations relate to the objective metrics (power, HR, RPE, feeling)?
+  - This is critical subjective context that metrics alone cannot capture - it MUST be addressed
 ` : ''}
 - **Recommendations** for next session timing and intensity based on recovery status and user feedback
 ` : 'Encourage RPE and Feeling logging for better recovery assessment'}
