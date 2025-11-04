@@ -7,6 +7,7 @@ import { supabase } from '@/lib/supabase'
 import { UserMenu } from '@/components/auth/user-menu'
 import { GPSViewer } from '@/components/gps-viewer'
 import { RPEFeedback } from '@/components/activities/rpe-feedback'
+import { ActivityFeedback } from '@/components/activities/activity-feedback'
 import { AIAnalysisTab } from '@/components/activities/ai-analysis-tab'
 import { PowerZoneAnalysis } from '@/components/activities/power-zone-analysis'
 
@@ -36,6 +37,8 @@ interface ActivityData {
   }
   created_at: string
   rpe?: number | null
+  feeling?: number | null
+  personal_notes?: string | null
 }
 
 export default function ActivityDetailPage() {
@@ -424,6 +427,17 @@ export default function ActivityDetailPage() {
                 <RPEFeedback 
                   activityId={activity.id} 
                   initialRPE={activity.rpe}
+                />
+              </div>
+            )}
+
+            {/* Activity Feedback (Feeling + Personal Notes) */}
+            {activity.status === 'processed' && (
+              <div className="mb-8">
+                <ActivityFeedback 
+                  activityId={activity.id}
+                  initialFeeling={activity.feeling}
+                  initialNotes={activity.personal_notes}
                 />
               </div>
             )}

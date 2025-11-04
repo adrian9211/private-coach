@@ -257,7 +257,7 @@ serve(async (req) => {
     // Get user's activity history for context and trend analysis
     const { data: recentActivities, error: historyError } = await supabaseClient
       .from('activities')
-      .select('id, start_time, data, rpe, total_distance, total_timer_time, avg_power, avg_heart_rate')
+      .select('id, start_time, data, rpe, feeling, total_distance, total_timer_time, avg_power, avg_heart_rate')
       .eq('user_id', activity.user_id)
       .eq('status', 'processed')
       .order('start_time', { ascending: false, nullsFirst: false })
@@ -276,7 +276,9 @@ serve(async (req) => {
       avgDistance: activityHistory.reduce((sum, a) => sum + (a.total_distance || 0), 0) / activityHistory.length,
       avgPower: activityHistory.filter(a => a.avg_power > 0).reduce((sum, a) => sum + (a.avg_power || 0), 0) / Math.max(1, activityHistory.filter(a => a.avg_power > 0).length),
       avgRPE: activityHistory.filter(a => a.rpe).reduce((sum, a) => sum + (a.rpe || 0), 0) / Math.max(1, activityHistory.filter(a => a.rpe).length),
+      avgFeeling: activityHistory.filter(a => a.feeling).reduce((sum, a) => sum + (a.feeling || 0), 0) / Math.max(1, activityHistory.filter(a => a.feeling).length),
       recentRPEs: activityHistory.filter(a => a.rpe).slice(0, 10).map(a => ({ date: a.start_time, rpe: a.rpe })),
+      recentFeelings: activityHistory.filter(a => a.feeling).slice(0, 10).map(a => ({ date: a.start_time, feeling: a.feeling })),
       powerTrend: activityHistory.filter(a => a.avg_power > 0).length > 1 ? 
         (activityHistory.filter(a => a.avg_power > 0).slice(0, 5).reduce((sum, a) => sum + (a.avg_power || 0), 0) / 
          activityHistory.filter(a => a.avg_power > 0).slice(5, 10).reduce((sum, a) => sum + (a.avg_power || 0), 1)) : null,
@@ -288,6 +290,8 @@ serve(async (req) => {
       data: activity.data,
       userPreferences: user.preferences,
       rpe: activity.rpe, // Rate of Perceived Exertion (1-10) - critical for subjective feedback
+      feeling: activity.feeling, // General well-being/energy level (1-10) - separate from RPE
+      personalNotes: activity.personal_notes, // User's personal experience and observations
       activityDate: activity.start_time || activity.created_at,
       // Performance metrics for power-to-weight analysis
       ftp: ftp,
@@ -479,6 +483,23 @@ ${activity.data?.summary?.avgPower && ftp ? `
 ` : 'Analyze RPE in context of heart rate zones and duration'}
 ` : '⚠️ NO RPE PROVIDED - Strongly encourage logging RPE for better training analysis and fatigue detection'}
 
+**FEELING & WELL-BEING ANALYSIS (if provided):**
+${activity.feeling ? `
+- Feeling: ${activity.feeling}/10 - ${activity.feeling <= 3 ? 'Poor energy/well-being' : activity.feeling <= 5 ? 'Below average energy' : activity.feeling <= 7 ? 'Good energy' : 'Excellent energy'}
+- **CRITICAL COMPARISON:** How does feeling compare to RPE and performance?
+${activity.rpe ? `
+  - RPE vs Feeling: ${activity.rpe > activity.feeling + 2 ? '⚠️ HIGH RPE with LOW Feeling - Strong indicator of fatigue, overreaching, or illness. RECOMMEND REST and recovery.' : activity.rpe < activity.feeling - 2 ? '✅ LOW RPE with HIGH Feeling - Excellent freshness, optimal training condition.' : '✅ RPE and Feeling align - Normal correlation between effort and well-being.'}
+` : 'Analyze feeling in context of workout performance and duration'}
+- **RECOVERY INDICATOR:** Low feeling (1-5) suggests poor recovery, even if performance was good. High feeling (8-10) indicates excellent recovery and readiness.
+` : '⚠️ NO FEELING PROVIDED - Encourage logging feeling for comprehensive recovery assessment'}
+
+**PERSONAL NOTES & EXPERIENCE:**
+${activity.personal_notes ? `
+- **USER OBSERVATIONS:** ${activity.personal_notes}
+- **MANDATORY:** Analyze these notes in context of objective metrics. Look for patterns, concerns, or insights the user mentioned.
+- Consider: What worked well? What was challenging? Any unusual conditions or sensations?
+` : 'No personal notes provided - Encourage user to log observations for better analysis'}
+
 **CURRENT WORKOUT DATA:**
 ${JSON.stringify({
   duration: activity.data?.summary?.duration ? `${Math.round(activity.data.summary.duration / 60)} minutes` : 'Unknown',
@@ -490,6 +511,8 @@ ${JSON.stringify({
   maxHR: activity.data?.summary?.maxHeartRate ? `${activity.data.summary.maxHeartRate} bpm` : 'N/A',
   powerZones: activity.data?.powerZones ? Object.keys(activity.data.powerZones).length + ' zones' : 'No power zones',
   rpe: activity.rpe || 'Not provided',
+  feeling: activity.feeling || 'Not provided',
+  personalNotes: activity.personal_notes || 'Not provided',
   date: activity.start_time || activity.created_at
 }, null, 2)}
 
@@ -507,7 +530,10 @@ ${historyContext ? JSON.stringify({
 - How does this workout compare to recent averages?
 - Is power/HR trending up, down, or stable?
 - If RPE is provided: Is perceived effort increasing relative to power output? (fatigue indicator)
+- If Feeling is provided: Is well-being/energy level declining? (recovery indicator)
+- RPE vs Feeling: Are they diverging? (High RPE + Low Feeling = strong fatigue signal)
 - Are there patterns suggesting overreaching or underreaching?
+- If personal notes provided: What patterns or concerns emerge from user observations?
 
 **ANALYSIS FORMAT - Use DEEP REASONING:**
 
@@ -516,7 +542,10 @@ ${historyContext ? JSON.stringify({
 - Duration vs average: Is this workout length appropriate for the training stimulus?
 - Power vs average: Is power output showing improvement, decline, or stagnation? (reference % changes)
 - RPE trend: Is perceived effort increasing (potential fatigue) or decreasing (improving fitness)?
+- Feeling trend: Is well-being improving or declining? (recovery indicator)
+- RPE vs Feeling correlation: Are they aligned or diverging? (divergence indicates fatigue)
 - Distance/efficiency: Are you getting more training benefit per hour invested?
+- Personal notes patterns: What recurring themes emerge from user observations?
 - Provide DATA-DRIVEN insights with specific metrics and comparisons]
 
 ## Training Efficiency Analysis 📈
@@ -583,10 +612,15 @@ ${vo2Max && activity.data?.summary?.avgHeartRate ? `
 `}
 
 ## Recovery & Fatigue Assessment
-${activity.rpe ? `
-- Based on RPE ${activity.rpe}/10: ${activity.rpe >= 7 ? 'HIGH effort - emphasize recovery needed' : activity.rpe >= 5 ? 'MODERATE effort - monitor recovery' : 'LOW effort - good recovery status'}
-- Recommendations for next session timing and intensity
-` : 'Encourage RPE logging for better recovery assessment'}
+${activity.rpe || activity.feeling ? `
+- Recovery Assessment:
+${activity.rpe ? `  - RPE ${activity.rpe}/10: ${activity.rpe >= 7 ? 'HIGH effort - emphasize recovery needed' : activity.rpe >= 5 ? 'MODERATE effort - monitor recovery' : 'LOW effort - good recovery status'}` : ''}
+${activity.feeling ? `  - Feeling ${activity.feeling}/10: ${activity.feeling <= 3 ? 'POOR energy - STRONG REST RECOMMENDED' : activity.feeling <= 5 ? 'Below average energy - consider light recovery' : activity.feeling >= 8 ? 'EXCELLENT energy - optimal for training' : 'Good energy - normal training ready'}` : ''}
+${activity.rpe && activity.feeling ? `
+  - Combined Assessment: ${activity.rpe >= 7 && activity.feeling <= 3 ? '⚠️ HIGH RPE + LOW Feeling = STRONG FATIGUE SIGNAL - REST REQUIRED' : activity.rpe <= 5 && activity.feeling >= 8 ? '✅ LOW RPE + HIGH Feeling = EXCELLENT RECOVERY - Ready for intensity' : 'Normal correlation between effort and well-being'}
+` : ''}
+- Recommendations for next session timing and intensity based on recovery status
+` : 'Encourage RPE and Feeling logging for better recovery assessment'}
 
 ## Next Session Recommendations (Goal-Aligned & Time-Optimized)
 ${trainingGoals ? `
