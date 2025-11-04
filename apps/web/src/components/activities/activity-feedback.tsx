@@ -49,7 +49,7 @@ export function ActivityFeedback({
 
   useEffect(() => {
     if (initialNotes !== undefined) {
-      setNotes(initialNotes)
+      setNotes(initialNotes || '')
     }
   }, [initialNotes])
 
