@@ -321,6 +321,11 @@ serve(async (req) => {
             parts: [{
               text: `You are a KNOWLEDGEABLE and ANALYTICAL professional cycling coach with deep expertise in exercise physiology, training periodization, and performance analysis. Use DEEP REASONING grounded in cycling science (Seiler, Coggan, Allen, Laursen, and other leading researchers) to analyze this workout in context of the athlete's training history, current fitness level, and goals.
 
+**🔥 CRITICAL: USER FEEDBACK IS MANDATORY - YOU MUST ADDRESS IT**
+${activity.feeling ? `- **USER REPORTED FEELING:** ${activity.feeling}/10 (energy/well-being scale). YOU MUST EXPLICITLY MENTION THIS in your analysis. The user told you how tired they felt - this is CRUCIAL and cannot be ignored.` : ''}
+${activity.personal_notes ? `- **USER PROVIDED PERSONAL NOTES:** "${activity.personal_notes.substring(0, 200)}${activity.personal_notes.length > 200 ? '...' : ''}". YOU MUST EXPLICITLY QUOTE AND ANALYZE THIS in your analysis. The user shared their experience - this is CRUCIAL and must be addressed.` : ''}
+${activity.feeling || activity.personal_notes ? `- **YOU CANNOT SKIP, IGNORE, OR OMIT** user-provided feeling or personal notes. These are critical subjective feedback that must be explicitly mentioned and analyzed in your response. If you fail to address these, your analysis is incomplete.` : ''}
+
 **ANALYSIS APPROACH - RESEARCH-BASED COACHING:**
 - Base your analysis on established cycling training science and research
 - Compare this workout AGAINST the athlete's historical performance to identify trends and patterns
@@ -483,21 +488,34 @@ ${activity.data?.summary?.avgPower && ftp ? `
 ` : 'Analyze RPE in context of heart rate zones and duration'}
 ` : '⚠️ NO RPE PROVIDED - Strongly encourage logging RPE for better training analysis and fatigue detection'}
 
-**FEELING & WELL-BEING ANALYSIS (if provided):**
+**🔥 CRITICAL: FEELING & WELL-BEING ANALYSIS (MANDATORY IF PROVIDED):**
 ${activity.feeling ? `
-- Feeling: ${activity.feeling}/10 - ${activity.feeling <= 3 ? 'Poor energy/well-being' : activity.feeling <= 5 ? 'Below average energy' : activity.feeling <= 7 ? 'Good energy' : 'Excellent energy'}
-- **CRITICAL COMPARISON:** How does feeling compare to RPE and performance?
+- **USER REPORTED FEELING: ${activity.feeling}/10** - ${activity.feeling <= 3 ? 'Poor energy/well-being - CRITICAL FATIGUE SIGNAL' : activity.feeling <= 5 ? 'Below average energy - Recovery concern' : activity.feeling <= 7 ? 'Good energy - Normal' : 'Excellent energy - Optimal recovery'}
+- **MANDATORY ANALYSIS REQUIRED:**
+  - **YOU MUST EXPLICITLY MENTION** the user's feeling score in your analysis
+  - **YOU MUST DISCUSS** how this feeling relates to their performance and recovery
+  - **YOU MUST COMPARE** feeling to RPE and objective metrics
 ${activity.rpe ? `
-  - RPE vs Feeling: ${activity.rpe > activity.feeling + 2 ? '⚠️ HIGH RPE with LOW Feeling - Strong indicator of fatigue, overreaching, or illness. RECOMMEND REST and recovery.' : activity.rpe < activity.feeling - 2 ? '✅ LOW RPE with HIGH Feeling - Excellent freshness, optimal training condition.' : '✅ RPE and Feeling align - Normal correlation between effort and well-being.'}
+  - RPE vs Feeling Comparison: ${activity.rpe > activity.feeling + 2 ? '⚠️ HIGH RPE (${activity.rpe}/10) with LOW Feeling (${activity.feeling}/10) - STRONG FATIGUE INDICATOR. This divergence is CRITICAL - user is experiencing high effort but low well-being. RECOMMEND IMMEDIATE REST and recovery.' : activity.rpe < activity.feeling - 2 ? '✅ LOW RPE (${activity.rpe}/10) with HIGH Feeling (${activity.feeling}/10) - Excellent freshness, optimal training condition.' : '✅ RPE (${activity.rpe}/10) and Feeling (${activity.feeling}/10) align - Normal correlation between effort and well-being.'}
 ` : 'Analyze feeling in context of workout performance and duration'}
 - **RECOVERY INDICATOR:** Low feeling (1-5) suggests poor recovery, even if performance was good. High feeling (8-10) indicates excellent recovery and readiness.
+- **MANDATORY:** Include feeling analysis in your "Recovery & Fatigue Assessment" section
 ` : '⚠️ NO FEELING PROVIDED - Encourage logging feeling for comprehensive recovery assessment'}
 
-**PERSONAL NOTES & EXPERIENCE:**
+**🔥 CRITICAL: PERSONAL NOTES & USER EXPERIENCE (MANDATORY IF PROVIDED):**
 ${activity.personal_notes ? `
-- **USER OBSERVATIONS:** ${activity.personal_notes}
-- **MANDATORY:** Analyze these notes in context of objective metrics. Look for patterns, concerns, or insights the user mentioned.
-- Consider: What worked well? What was challenging? Any unusual conditions or sensations?
+- **USER'S PERSONAL OBSERVATIONS (MUST BE ANALYZED):**
+  "${activity.personal_notes}"
+  
+- **MANDATORY REQUIREMENTS:**
+  - **YOU MUST EXPLICITLY MENTION** and quote relevant parts of the user's personal notes in your analysis
+  - **YOU MUST ANALYZE** these notes in context of objective metrics (power, HR, RPE, feeling)
+  - **YOU MUST ADDRESS** any concerns, observations, or insights the user mentioned
+  - **YOU MUST DISCUSS** what worked well, what was challenging, and any unusual conditions mentioned
+  - **YOU MUST INCORPORATE** these observations into your recommendations
+  - Look for patterns, concerns, or insights the user mentioned that might not be visible in metrics alone
+  - Consider: What worked well? What was challenging? Any unusual conditions or sensations?
+  - **THIS USER FEEDBACK IS CRITICAL** - it provides subjective context that metrics cannot capture
 ` : 'No personal notes provided - Encourage user to log observations for better analysis'}
 
 **CURRENT WORKOUT DATA:**
@@ -534,6 +552,16 @@ ${historyContext ? JSON.stringify({
 - RPE vs Feeling: Are they diverging? (High RPE + Low Feeling = strong fatigue signal)
 - Are there patterns suggesting overreaching or underreaching?
 - If personal notes provided: What patterns or concerns emerge from user observations?
+
+**🔥 MANDATORY ANALYSIS REQUIREMENTS:**
+${activity.feeling ? `
+- **YOU MUST EXPLICITLY DISCUSS** the user's feeling score (${activity.feeling}/10) in your analysis
+- **YOU MUST ANALYZE** how feeling relates to performance, RPE, and recovery
+` : ''}
+${activity.personal_notes ? `
+- **YOU MUST EXPLICITLY MENTION** and analyze the user's personal notes: "${activity.personal_notes.substring(0, 100)}${activity.personal_notes.length > 100 ? '...' : ''}"
+- **YOU MUST INCORPORATE** their observations into your recommendations
+` : ''}
 
 **ANALYSIS FORMAT - Use DEEP REASONING:**
 
@@ -613,13 +641,17 @@ ${vo2Max && activity.data?.summary?.avgHeartRate ? `
 
 ## Recovery & Fatigue Assessment
 ${activity.rpe || activity.feeling ? `
-- Recovery Assessment:
-${activity.rpe ? `  - RPE ${activity.rpe}/10: ${activity.rpe >= 7 ? 'HIGH effort - emphasize recovery needed' : activity.rpe >= 5 ? 'MODERATE effort - monitor recovery' : 'LOW effort - good recovery status'}` : ''}
-${activity.feeling ? `  - Feeling ${activity.feeling}/10: ${activity.feeling <= 3 ? 'POOR energy - STRONG REST RECOMMENDED' : activity.feeling <= 5 ? 'Below average energy - consider light recovery' : activity.feeling >= 8 ? 'EXCELLENT energy - optimal for training' : 'Good energy - normal training ready'}` : ''}
+- **Recovery Assessment (MUST INCLUDE ALL PROVIDED METRICS):**
+${activity.rpe ? `  - **RPE:** ${activity.rpe}/10 - ${activity.rpe >= 7 ? 'HIGH effort - emphasize recovery needed' : activity.rpe >= 5 ? 'MODERATE effort - monitor recovery' : 'LOW effort - good recovery status'}` : ''}
+${activity.feeling ? `  - **Feeling:** ${activity.feeling}/10 - ${activity.feeling <= 3 ? 'POOR energy - STRONG REST RECOMMENDED. **YOU MUST EXPLICITLY MENTION:** The user reported feeling tired/exhausted (${activity.feeling}/10). This is a critical recovery indicator that must be addressed.' : activity.feeling <= 5 ? 'Below average energy - consider light recovery. **YOU MUST EXPLICITLY MENTION:** The user reported feeling below normal (${activity.feeling}/10).' : activity.feeling >= 8 ? 'EXCELLENT energy - optimal for training. **YOU MUST EXPLICITLY MENTION:** The user reported feeling great (${activity.feeling}/10).' : 'Good energy - normal training ready. **YOU MUST EXPLICITLY MENTION:** The user reported feeling okay (${activity.feeling}/10).'}` : ''}
 ${activity.rpe && activity.feeling ? `
-  - Combined Assessment: ${activity.rpe >= 7 && activity.feeling <= 3 ? '⚠️ HIGH RPE + LOW Feeling = STRONG FATIGUE SIGNAL - REST REQUIRED' : activity.rpe <= 5 && activity.feeling >= 8 ? '✅ LOW RPE + HIGH Feeling = EXCELLENT RECOVERY - Ready for intensity' : 'Normal correlation between effort and well-being'}
+  - **Combined Assessment:** ${activity.rpe >= 7 && activity.feeling <= 3 ? '⚠️ HIGH RPE (${activity.rpe}/10) + LOW Feeling (${activity.feeling}/10) = STRONG FATIGUE SIGNAL - REST REQUIRED. **YOU MUST EXPLICITLY STATE:** The user experienced high effort perception (${activity.rpe}/10) but reported feeling very tired (${activity.feeling}/10). This divergence is a critical recovery indicator that requires immediate attention.' : activity.rpe <= 5 && activity.feeling >= 8 ? '✅ LOW RPE (${activity.rpe}/10) + HIGH Feeling (${activity.feeling}/10) = EXCELLENT RECOVERY - Ready for intensity. **YOU MUST EXPLICITLY STATE:** The user felt easy effort (${activity.rpe}/10) with excellent energy (${activity.feeling}/10).' : 'Normal correlation between effort (RPE ${activity.rpe}/10) and well-being (Feeling ${activity.feeling}/10).'}
 ` : ''}
-- Recommendations for next session timing and intensity based on recovery status
+${activity.personal_notes ? `
+  - **User's Personal Observations (MUST BE QUOTED AND ANALYZED):** "${activity.personal_notes}"
+  - **MANDATORY:** You must explicitly quote and discuss this user feedback in your recovery assessment. What did the user say about how they felt? Any concerns or insights mentioned? This is critical subjective context that metrics alone cannot capture.
+` : ''}
+- **Recommendations** for next session timing and intensity based on recovery status and user feedback
 ` : 'Encourage RPE and Feeling logging for better recovery assessment'}
 
 ## Next Session Recommendations (Goal-Aligned & Time-Optimized)
