@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import { supabase } from '@/lib/supabase'
@@ -51,55 +51,121 @@ export default function ActivityDetailPage() {
   const [isNavigating, setIsNavigating] = useState(false)
   const [activeTab, setActiveTab] = useState<'overview' | 'analysis'>('overview')
   const [ftp, setFtp] = useState<number | null>(null)
+  const fetchingRef = useRef(false)
 
   const fetchActivity = useCallback(async () => {
-    if (!id) return
+    if (!id) {
+      setLoadingActivity(false)
+      return
+    }
+
+    // Prevent multiple concurrent fetches
+    if (fetchingRef.current) {
+      console.log('Fetch already in progress, skipping...')
+      return
+    }
     
     try {
+      fetchingRef.current = true
       setLoadingActivity(true)
+      console.log('Fetching activity:', id)
       const { data, error } = await supabase
         .from('activities')
         .select('*')
         .eq('id', id)
         .single()
 
-      if (error) throw error
-      setActivity(data)
-    } catch (error) {
+      console.log('Activity fetch result:', { hasData: !!data, error })
+
+      if (error) {
+        console.error('Error fetching activity:', error)
+        throw error
+      }
+      
+      if (!data) {
+        console.error('No activity data returned')
+        setActivity(null)
+      } else {
+        console.log('Activity data set successfully:', { id: data.id, status: data.status, hasRpe: !!data.rpe, hasFeeling: !!data.feeling, hasNotes: !!data.personal_notes })
+        // Only update if activity changed or is null
+        setActivity((prev) => {
+          if (prev?.id === data.id) {
+            console.log('Activity already set, skipping update')
+            return prev
+          }
+          return data
+        })
+      }
+    } catch (error: any) {
       console.error('Error fetching activity:', error)
+      setActivity(null)
+      // Still clear loading to show error state
     } finally {
       setLoadingActivity(false)
+      fetchingRef.current = false
     }
   }, [id])
 
-  // Refetch on tab focus to avoid stale loading
+  // Refetch on tab focus ONLY if we don't have activity data
   useEffect(() => {
+    if (!user || !id || activity) return // Don't refetch if we have activity
+    
     const onFocus = () => {
-      if (user && id) {
+      // Only refetch if we don't have activity and we're not already fetching
+      if (!fetchingRef.current && !loadingActivity && !activity) {
+        console.log('Tab focus - refetching activity (no activity found)')
         fetchActivity()
       }
     }
     window.addEventListener('focus', onFocus)
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') onFocus()
-    })
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && !activity) {
+        onFocus()
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
     return () => {
       window.removeEventListener('focus', onFocus)
-      document.removeEventListener('visibilitychange', onFocus as any)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
-  }, [user, id, fetchActivity])
+  }, [user, id, fetchActivity, loadingActivity, activity])
 
   useEffect(() => {
+    // Timeout fallback to prevent infinite loading
+    const timeoutId = setTimeout(() => {
+      if (loadingActivity) {
+        console.warn('Activity loading timeout - forcing loading to false')
+        setLoadingActivity(false)
+        fetchingRef.current = false
+      }
+    }, 10000) // 10 second timeout
+
     if (!loading && !user) {
+      clearTimeout(timeoutId)
       router.push('/auth/signin')
+      return
     }
-  }, [user, loading, router])
+    
+    // If auth is done loading and we have an id, fetch the activity
+    // Only fetch if not already fetching AND we don't already have the activity
+    if (!loading && id && !fetchingRef.current && !activity) {
+      if (user) {
+        console.log('Initial fetch triggered (no activity yet)')
+        fetchActivity()
+      } else {
+        // Auth finished but no user - clear loading
+        setLoadingActivity(false)
+      }
+    } else if (activity) {
+      // We have activity, clear loading just in case
+      setLoadingActivity(false)
+      fetchingRef.current = false
+    }
 
-  useEffect(() => {
-    if (user && id) {
-      fetchActivity()
+    return () => {
+      clearTimeout(timeoutId)
     }
-  }, [user, id, fetchActivity])
+  }, [user, loading, router, id, fetchActivity, activity])
 
   useEffect(() => {
     const fetchFtp = async () => {
@@ -145,9 +211,16 @@ export default function ActivityDetailPage() {
   }, [router, isNavigating])
 
   const formatDuration = (seconds: number) => {
-    const hours = Math.floor(seconds / 3600)
-    const minutes = Math.floor((seconds % 3600) / 60)
-    const secs = seconds % 60
+    // Ensure we have a valid number and round to nearest second
+    const totalSeconds = Math.round(Number(seconds))
+    
+    if (isNaN(totalSeconds) || totalSeconds < 0) {
+      return '0:00'
+    }
+    
+    const hours = Math.floor(totalSeconds / 3600)
+    const minutes = Math.floor((totalSeconds % 3600) / 60)
+    const secs = totalSeconds % 60
     
     if (hours > 0) {
       return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
@@ -159,7 +232,68 @@ export default function ActivityDetailPage() {
     return `${km.toFixed(2)} km`
   }
 
-  const formatSpeed = (kmh: number) => {
+  const formatSpeed = (speed: number) => {
+    // Ensure we have a valid number
+    const speedValue = Number(speed)
+    
+    if (isNaN(speedValue) || speedValue < 0) {
+      return '0.0 km/h'
+    }
+    
+    // Normal cycling speeds are typically 10-80 km/h
+    // If speed > 100, there's likely a unit conversion issue
+    let kmh = speedValue
+    
+    // If value is unreasonably high (>100), it might be:
+    // 1. Already in m/s but stored incorrectly (needs * 3.6)
+    // 2. Double-converted (needs / 3.6)
+    // 3. Data error
+    
+    if (speedValue > 100) {
+      // Try dividing first (in case it was double-converted: m/s -> km/h -> km/h again)
+      const divided = speedValue / 3.6
+      if (divided <= 80 && divided > 0) {
+        // This looks like a reasonable speed after dividing - likely double conversion
+        kmh = divided
+        console.warn('Speed value > 100, dividing by 3.6 (likely double-converted):', speedValue, '->', kmh, 'km/h')
+      } else {
+        // Try multiplying (in case it's in m/s and wasn't converted)
+        const multiplied = speedValue * 3.6
+        if (multiplied > 200) {
+          // Still too high, try dividing
+          kmh = speedValue / 3.6
+          console.warn('Speed value > 100, attempting correction:', speedValue, '->', kmh, 'km/h')
+        } else {
+          kmh = multiplied
+        }
+      }
+    } else if (speedValue > 80 && speedValue <= 100) {
+      // Very high but theoretically possible (world record ~89 km/h)
+      // Keep as-is
+      kmh = speedValue
+    }
+    
+    // Final safety check - cap at reasonable maximum
+    if (kmh > 100) {
+      console.error('Speed value still too high after correction:', kmh, 'km/h - using calculated value from distance/duration')
+      // Try to calculate from distance and duration if available
+      if (activity?.data?.summary) {
+        const distance = activity.data.summary.totalDistance // in km
+        const duration = activity.data.summary.duration // in seconds
+        if (distance > 0 && duration > 0) {
+          const calculatedSpeed = (distance / duration) * 3600 // km/h
+          if (calculatedSpeed > 0 && calculatedSpeed <= 100) {
+            kmh = calculatedSpeed
+            console.log('Using calculated speed from distance/duration:', kmh, 'km/h')
+          }
+        }
+      }
+      // If still wrong, cap at 100
+      if (kmh > 100) {
+        kmh = Math.min(kmh, 100)
+      }
+    }
+    
     return `${kmh.toFixed(1)} km/h`
   }
 
@@ -171,7 +305,9 @@ export default function ActivityDetailPage() {
     return `${bpm} bpm`
   }
 
-  if (loading || loadingActivity) {
+  // Only show loading if auth is loading OR activity is loading (and user exists)
+  // Don't get stuck if auth finished but user is null
+  if (loading || (loadingActivity && user)) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         {/* Keep navbar visible */}
@@ -190,6 +326,9 @@ export default function ActivityDetailPage() {
           <div className="text-center">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading activity...</p>
+            {!loading && !user && (
+              <p className="mt-2 text-sm text-red-600">Redirecting to sign in...</p>
+            )}
           </div>
         </div>
       </div>

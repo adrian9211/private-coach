@@ -55,8 +55,8 @@ export function PerformanceTrends({ userId, userFtp, userWeight }: PerformanceTr
 
           const activityDate = new Date(date)
           const weekStart = format(startOfDay(activityDate), 'yyyy-MM-dd')
-          // Use ISO week for better grouping
-          const weekKey = format(activityDate, 'yyyy-\\WW')
+          // Use week of year with literal W, e.g., 2025-W45
+          const weekKey = format(activityDate, "yyyy-'W'ww")
 
           if (!weeklyData[weekKey]) {
             weeklyData[weekKey] = { powers: [], count: 0 }

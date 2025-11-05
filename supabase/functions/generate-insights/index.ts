@@ -83,6 +83,8 @@ serve(async (req) => {
         avg_heart_rate,
         avg_speed,
         rpe,
+        feeling,
+        personal_notes,
         data
       `)
       .eq('user_id', userId)
@@ -129,6 +131,31 @@ serve(async (req) => {
       const date = a.start_time || a.upload_date
       return date && new Date(date) >= thirtyDaysAgo
     })
+
+    // Subjective feedback aggregates
+    const activitiesWithRPE = allActivities.filter(a => typeof (a as any).rpe === 'number') as any[]
+    const activitiesWithFeeling = allActivities.filter(a => typeof (a as any).feeling === 'number') as any[]
+    const avgRPEAll = activitiesWithRPE.length > 0
+      ? activitiesWithRPE.reduce((sum, a) => sum + (a.rpe || 0), 0) / activitiesWithRPE.length
+      : 0
+    const avgFeelingAll = activitiesWithFeeling.length > 0
+      ? activitiesWithFeeling.reduce((sum, a) => sum + (a.feeling || 0), 0) / activitiesWithFeeling.length
+      : 0
+
+    const recentWithRPE = recentActivities.filter(a => typeof (a as any).rpe === 'number') as any[]
+    const recentWithFeeling = recentActivities.filter(a => typeof (a as any).feeling === 'number') as any[]
+    const avgRPERecent = recentWithRPE.length > 0
+      ? recentWithRPE.reduce((sum, a) => sum + (a.rpe || 0), 0) / recentWithRPE.length
+      : 0
+    const avgFeelingRecent = recentWithFeeling.length > 0
+      ? recentWithFeeling.reduce((sum, a) => sum + (a.feeling || 0), 0) / recentWithFeeling.length
+      : 0
+
+    // Sample recent personal notes (last 5) for context
+    const recentNotes = recentActivities
+      .map(a => (a as any).personal_notes)
+      .filter(n => typeof n === 'string' && n.trim().length > 0)
+      .slice(0, 5) as string[]
 
     // Calculate power zone distribution across all activities
     let powerZoneDistribution: Record<string, number> = {}
@@ -263,6 +290,11 @@ ${weeklyHours ? `- Available Training Time: ${weeklyHours} hours/week` : '- Avai
 - Average Power: ${avgPower > 0 ? `${Math.round(avgPower)}W${ftp ? ` (${Math.round((avgPower / ftp) * 100)}% of FTP)` : ''}` : 'No power data'}
 - Average Heart Rate: ${avgHeartRate > 0 ? `${Math.round(avgHeartRate)} bpm` : 'No HR data'}
 
+**SUBJECTIVE FEEDBACK (MANDATORY TO CONSIDER):**
+- RPE (all-time): ${avgRPEAll > 0 ? avgRPEAll.toFixed(1) + '/10' : 'No RPE logged'} | last 30d: ${avgRPERecent > 0 ? avgRPERecent.toFixed(1) + '/10' : 'N/A'}
+- Feeling (all-time): ${avgFeelingAll > 0 ? avgFeelingAll.toFixed(1) + '/10' : 'No feeling logged'} | last 30d: ${avgFeelingRecent > 0 ? avgFeelingRecent.toFixed(1) + '/10' : 'N/A'}
+${recentNotes.length > 0 ? `- Recent Notes (sample):\n${recentNotes.map(n => `  • ${n}`).join('\n')}` : '- Recent Notes: None'}
+
 ${ftp && ftp > 0 ? `**TRAINING LOAD:**
 - Fitness (CTL): ${fitness.toFixed(1)} TSS
 - Fatigue (ATL): ${fatigue.toFixed(1)} TSS
@@ -291,6 +323,7 @@ ${Object.entries(powerZoneDistribution)
    - Next training focus areas
 6. **FTP/kg Analysis**: ${ftpPerKg ? `Analyze ${ftpPerKg} W/kg performance level and provide context (amateur, competitive, elite, etc.)` : 'N/A - FTP or weight not set'}
 7. **VO2 Max Context**: ${vo2Max ? `Analyze ${vo2Max} ml/kg/min and its relationship to training capacity` : 'N/A - VO2 Max not set'}
+8. **Subjective Feedback Trends (MANDATORY)**: Explicitly analyze trends in RPE and Feeling (all-time vs last 30 days). If RPE is rising and Feeling is declining, flag fatigue/overreaching. If the user has provided notes, quote and incorporate them into long-term recommendations.
 
 **OUTPUT FORMAT:**
 Provide comprehensive insights in the following structure:

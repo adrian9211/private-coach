@@ -81,15 +81,16 @@ export function AIRecommendations({
       try {
         console.log('AIRecommendations: Loading cached insights for userId:', userId)
         
-        // Add timeout wrapper - 8 second timeout
+        // Add timeout wrapper - 20 second timeout (PostgREST cold starts can exceed 8s)
         const queryPromise = supabase
           .from('user_insights')
           .select('recommendations, generated_at')
           .eq('user_id', userId)
           .maybeSingle()
 
+        const TIMEOUT_MS = 20000
         const timeoutPromise = new Promise((_, reject) => 
-          setTimeout(() => reject(new Error('Query timeout after 8s')), 8000)
+          setTimeout(() => reject(new Error(`Query timeout after ${TIMEOUT_MS/1000}s`)), TIMEOUT_MS)
         )
 
         let data: any = null
@@ -102,7 +103,7 @@ export function AIRecommendations({
           error = result.error
         } catch (timeoutErr: any) {
           // Timeout won - treat as error
-          console.warn('AIRecommendations: Query timeout after 8s, generating new insights instead')
+          console.warn(`AIRecommendations: Query timeout after ${TIMEOUT_MS/1000}s, generating new insights instead`)
           error = { message: 'Query timeout', code: 'TIMEOUT' }
           data = null
         }
@@ -125,7 +126,7 @@ export function AIRecommendations({
             return
           }
           // For timeout or other errors, try generating anyway
-          if (error.message?.includes('timeout')) {
+          if (error.message?.toLowerCase()?.includes('timeout')) {
             console.log('AIRecommendations: Query timeout, trying to generate new insights')
           } else {
             console.log('AIRecommendations: Error loading cache, generating new insights')
