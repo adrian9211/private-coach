@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+        <link rel="stylesheet" href="https://mywhooshinfo.com/assets/main-D4Fjgi-M.css" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCX851PXQ8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-GCX851PXQ8');
+        </script>
+
+    <script>
+        // Function to read cookies
+        function getCookie(name) {
+            let value = "; " + document.cookie;
+            let parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        // Function to detect preferred theme
+        function detectPreferredTheme() {
+            return 'dark';
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // Immediately set the theme to avoid a flash of the wrong theme
+        (function () {
+            let theme = getCookie('theme'); // Check if the theme cookie is set
+            if (!theme) {
+                theme = detectPreferredTheme(); // Fallback to system theme if no cookie
+            }
+            document.documentElement.setAttribute('data-bs-theme', theme); // Set the theme on <html>
+        })();
+    </script>
+
+    <meta charset="utf-8">
+	<title>MyWhoosh INSCYD Power Performance Decoder | MyWhooshInfo</title>
+    <meta name="description" content="MyWhoosh INSCYD Power Performance Decoder - MyWhoosh workout - MyWhoosh has partnered with INSCYD to…">
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyWhooshInfo.com">
+    <meta property="og:title" content="MyWhoosh INSCYD Power Performance Decoder | MyWhooshInfo">
+    <meta property="og:description" content="MyWhoosh INSCYD Power Performance Decoder - MyWhoosh workout - MyWhoosh has partnered with INSCYD to…">
+    <meta property="og:image" content="https://mywhooshinfo.com/og.webp">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mywhooshinfo.com">
+    <meta name="twitter:title" content="MyWhoosh INSCYD Power Performance Decoder | MyWhooshInfo">
+    <meta name="twitter:description" content="MyWhoosh INSCYD Power Performance Decoder - MyWhoosh workout - MyWhoosh has partnered with INSCYD to…">
+    <meta name="twitter:image" content="https://mywhooshinfo.com/og.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<div id="snippet--flash">
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+    </div>
+</div>
+
+<main>
+    <div class="border-end sidebar p-3 overflow-scroll">
+        <div class="text-center py-lg-3 logo-header">
+            <a href="/">
+                <img src="/favicon.svg" alt="" style="height: 15px; width: 15px;"/> MyWhooshInfo
+            </a>
+            <a class="burger-menu" data-bs-toggle="collapse" href="#collapseMenu">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+        <div id="collapseMenu" class="collapse">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="/workouts/workout/mywhoosh-inscyd-power-performance-decoder?do=loginRedirect" data-bs-toggle="tooltip" data-bs-title="You will be redirected to mywhoosh.com to authorize. In case you click on Authorize and nothing happens, please logout and login to mywhoosh.com and retry." class="nav-link">
+                            <i class="material-icons">person</i> Log in
+                        </a>
+                    </li>
+                </ul>
+            <form action="/workouts/workout/mywhoosh-inscyd-power-performance-decoder" method="post" class="menu-search" id="frm-search">
+                <input type="text" name="name" placeholder="Search riders" class="form-control my-3 form-control" id="frm-search-name" />
+            <input type="hidden" name="_do" value="search-submit"></form>
+
+
+
+            <ul class="nav nav-pills mb-auto flex-column flex-nowrap">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="material-icons">dashboard</i> Homepage
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/" class="nav-link">
+                            <i class="material-icons">calendar_month</i> Events and Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/riders/riders" class="nav-link">
+                            <i class="material-icons">directions_bike</i> Riders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">
+                            <i class="material-icons">article</i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/leagues/" class="nav-link">
+                            <i class="material-icons">groups</i> Leagues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/clubs/" class="nav-link">
+                            <i class="material-icons">workspaces</i> Clubs
+                        </a>
+                    </li>
+                <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#workoutsCollapse" role="button">
+                            <i class="material-icons">show_chart</i> Workouts & Plans <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="show collapse"
+                                id="workoutsCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/workouts/" class="active nav-link">
+                                        <i class="material-icons">show_chart</i> Workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/video-workouts" class="nav-link">
+                                        <i class="material-icons">videocam</i> Video workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/training-plans" class="nav-link">
+                                        <i class="material-icons">calendar_month</i> Training plans
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/live-coaching" class="nav-link">
+                                        <i class="material-icons">live_tv</i> Live coaching
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#worldCollapse" role="button">
+                        <i class="material-icons">public</i> Worlds & Segments <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="worldCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/routes/worlds" class="nav-link">
+                                    <i class="material-icons">map</i> Worlds
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/routes/" class="nav-link">
+                                    <i class="material-icons">edit_road</i> Routes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/world-schedule" class="nav-link">
+                                    <i class="material-icons">language</i> World schedule
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/segments/" class="nav-link">
+                                    <i class="material-icons">route</i> Segments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/statistics/leaderboards" class="nav-link">
+                                    <i class="material-icons">query_stats</i> Overall leaderboards
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#achievementsCollapse" role="button">
+                        <i class="material-icons">emoji_events</i> Achievements <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="achievementsCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/achievements/" class="nav-link">
+                                    <i class="material-icons">emoji_events</i> All achievements
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/achievements/ranking" class="nav-link">
+                                    <i class="material-icons">bar_chart</i> Ranking
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#srcCollapse" role="button">
+                            <i class="material-icons">sports_score</i> Sunday Race Club <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="collapse"
+                                id="srcCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/statistics/categories" class="nav-link">
+                                        <i class="material-icons">bar_chart</i> Statistics
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/events/updowngrades" class="nav-link">
+                                        <i class="material-icons">swap_vert</i> SRC Up/Down grades
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-ranking" class="nav-link">
+                                        <i class="material-icons">star</i> SRC ranking
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-finals" class="nav-link">
+                                        <i class="material-icons">event</i> SRC Finals riders
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-top" class="nav-link">
+                                        <i class="material-icons">emoji_events</i> SRC Hall of Fame
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+
+            <div class="d-flex justify-content-between align-items-end">
+                <div class="list-group list-group-horizontal">
+                    <button data-power-display="w" class="active list-group-item fw-bold">
+                        watts
+                    </button>
+                    <button data-power-display="wkg" class="list-group-item fw-bold">
+                        w/kg
+                    </button>
+                </div>
+
+                <div class="light-switcher p-2 mt-3">
+                    <i data-light-mode="light" class="material-icons light-mode-button">light_mode</i>
+                    <i data-light-mode="dark" class="material-icons dark-mode-button">dark_mode</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div class="content">
+
+        <div class="py-lg-4 py-sm-2 px-lg-2 px-sm-1">
+            <div class="container-fluid">
+                <div class="min-vh-90">
+
+<nav aria-label="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/" itemprop="item">
+                <span itemprop="name">Workouts</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/category/5" itemprop="item">
+                <span itemprop="name">Testing</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+            <span itemprop="name">MyWhoosh INSCYD Power Performance Decoder</span>
+            <meta itemprop="position" content="3"/>
+        </li>
+    </ol>
+</nav>
+
+<div class="float-end">
+    <a href="/workouts/workout/mywhoosh-inscyd-power-performance-decoder?do=exportZwo" data-track-event-name="workoutDownload" data-track-event-data="&#123;&quot;workout&quot;:185}" class="btn-material-icon btn btn-primary btn-sm"><i class="material-icons">download</i> Download</a>
+</div>
+<h1>MyWhoosh INSCYD Power Performance Decoder</h1>
+
+<span class="badge bg-info">Duration 01:32:30</span>
+<span class="badge bg-info">TSS 39</span>
+<span class="badge bg-info">IF 0.51</span>
+    <span class="badge bg-info">Has instructions</span>
+<div class="row flex-lg-row flex-column-reverse">
+    <div class="col-lg-3">
+        <div class="vstack mt-3 workout-step-list gap-1 mb-2 fw-bold">
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background: linear-gradient(to right, var(--power-z1), var(--power-z2)">
+                        warmup 
+                        
+                        
+                        07:00 @
+                        45% FTP - 60% FTP
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        01:15 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        00:07 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        01:15 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        00:07 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        00:20 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        08:00 @
+                        55%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        02:10 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        00:21 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        12:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        03:00 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        15:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        06:00 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        20:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        10:00 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        05:55 @
+                        45%
+                        
+                    </div>
+        </div>
+            <button data-ftp-set class="btn btn-outline-primary">Enter FTP</button>
+    </div>
+    <div class="col-lg-9">
+        <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d042be4edf" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 52.972972972973,109.99999642372 52.972972972973,200 0,200" style="fill: url(#gradient_690d042be4edf)" /><path class="pz pz-0" d="M52.972972972973,125 L53.209459459459,127.2699524987 L53.445945945946,129.04508497187 L53.682432432432,129.93844170298 L53.918918918919,129.75528258148 L54.155405405405,128.53553390593 L54.391891891892,126.54508497187 L54.628378378378,124.2178276748 L54.864864864865,122.06107373854 L55.101351351351,120.54496737906 L55.337837837838,120 L55.574324324324,120.54496737906 L55.810810810811,122.06107373854 L56.047297297297,124.2178276748 L56.283783783784,126.54508497187 L56.52027027027,128.53553390593 L56.756756756757,129.75528258148 L56.993243243243,129.93844170298 L57.22972972973,129.04508497187 L57.466216216216,127.2699524987 L57.702702702703,125 L57.939189189189,122.7300475013 L58.175675675676,120.95491502813 L58.412162162162,120.06155829702 L58.648648648649,120.24471741852 L58.885135135135,121.46446609407 L59.121621621622,123.45491502813 L59.358108108108,125.7821723252 L59.594594594595,127.93892626146 L59.831081081081,129.45503262094 L60.067567567568,130 L60.304054054054,129.45503262094 L60.540540540541,127.93892626146 L60.777027027027,125.7821723252 L61.013513513514,123.45491502813 L61.25,121.46446609407 L61.486486486486,120.24471741852 L61.722972972973,120.06155829702 L61.959459459459,120.95491502813 L62.195945945946,122.7300475013 L62.432432432432,125 L62.432432432432,200 L52.972972972973,200 Z" class="freeride"><title>Free Ride</title></path><path class="pz pz-0" d="M62.432432432432,125 L62.454504504504,127.2699524987 L62.476576576577,129.04508497187 L62.498648648649,129.93844170298 L62.520720720721,129.75528258148 L62.542792792793,128.53553390593 L62.564864864865,126.54508497187 L62.586936936937,124.2178276748 L62.609009009009,122.06107373854 L62.631081081081,120.54496737906 L62.653153153153,120 L62.675225225225,120.54496737906 L62.697297297297,122.06107373854 L62.719369369369,124.2178276748 L62.741441441441,126.54508497187 L62.763513513514,128.53553390593 L62.785585585586,129.75528258148 L62.807657657658,129.93844170298 L62.82972972973,129.04508497187 L62.851801801802,127.2699524987 L62.873873873874,125 L62.895945945946,122.7300475013 L62.918018018018,120.95491502813 L62.94009009009,120.06155829702 L62.962162162162,120.24471741852 L62.984234234234,121.46446609407 L63.006306306306,123.45491502813 L63.028378378378,125.7821723252 L63.05045045045,127.93892626146 L63.072522522523,129.45503262094 L63.094594594595,130 L63.116666666667,129.45503262094 L63.138738738739,127.93892626146 L63.160810810811,125.7821723252 L63.182882882883,123.45491502813 L63.204954954955,121.46446609407 L63.227027027027,120.24471741852 L63.249099099099,120.06155829702 L63.271171171171,120.95491502813 L63.293243243243,122.7300475013 L63.315315315315,125 L63.315315315315,200 L62.432432432432,200 Z" class="freeride"><title>Free Ride</title></path><path class="pz pz-0" d="M63.315315315315,125 L63.551801801802,127.2699524987 L63.788288288288,129.04508497187 L64.024774774775,129.93844170298 L64.261261261261,129.75528258148 L64.497747747748,128.53553390593 L64.734234234234,126.54508497187 L64.970720720721,124.2178276748 L65.207207207207,122.06107373854 L65.443693693694,120.54496737906 L65.68018018018,120 L65.916666666667,120.54496737906 L66.153153153153,122.06107373854 L66.38963963964,124.2178276748 L66.626126126126,126.54508497187 L66.862612612613,128.53553390593 L67.099099099099,129.75528258148 L67.335585585586,129.93844170298 L67.572072072072,129.04508497187 L67.808558558559,127.2699524987 L68.045045045045,125 L68.281531531532,122.7300475013 L68.518018018018,120.95491502813 L68.754504504504,120.06155829702 L68.990990990991,120.24471741852 L69.227477477477,121.46446609407 L69.463963963964,123.45491502813 L69.70045045045,125.7821723252 L69.936936936937,127.93892626146 L70.173423423423,129.45503262094 L70.40990990991,130 L70.646396396396,129.45503262094 L70.882882882883,127.93892626146 L71.119369369369,125.7821723252 L71.355855855856,123.45491502813 L71.592342342342,121.46446609407 L71.828828828829,120.24471741852 L72.065315315315,120.06155829702 L72.301801801802,120.95491502813 L72.538288288288,122.7300475013 L72.774774774775,125 L72.774774774775,200 L63.315315315315,200 Z" class="freeride"><title>Free Ride</title></path><path class="pz pz-0" d="M72.774774774775,125 L72.796846846847,127.2699524987 L72.818918918919,129.04508497187 L72.840990990991,129.93844170298 L72.863063063063,129.75528258148 L72.885135135135,128.53553390593 L72.907207207207,126.54508497187 L72.929279279279,124.2178276748 L72.951351351351,122.06107373854 L72.973423423423,120.54496737906 L72.995495495495,120 L73.017567567568,120.54496737906 L73.03963963964,122.06107373854 L73.061711711712,124.2178276748 L73.083783783784,126.54508497187 L73.105855855856,128.53553390593 L73.127927927928,129.75528258148 L73.15,129.93844170298 L73.172072072072,129.04508497187 L73.194144144144,127.2699524987 L73.216216216216,125 L73.238288288288,122.7300475013 L73.26036036036,120.95491502813 L73.282432432432,120.06155829702 L73.304504504504,120.24471741852 L73.326576576577,121.46446609407 L73.348648648649,123.45491502813 L73.370720720721,125.7821723252 L73.392792792793,127.93892626146 L73.414864864865,129.45503262094 L73.436936936937,130 L73.459009009009,129.45503262094 L73.481081081081,127.93892626146 L73.503153153153,125.7821723252 L73.525225225225,123.45491502813 L73.547297297297,121.46446609407 L73.569369369369,120.24471741852 L73.591441441441,120.06155829702 L73.613513513514,120.95491502813 L73.635585585586,122.7300475013 L73.657657657658,125 L73.657657657658,200 L72.774774774775,200 Z" class="freeride"><title>Free Ride</title></path><path class="pz pz-0" d="M73.657657657658,125 L73.720720720721,127.2699524987 L73.783783783784,129.04508497187 L73.846846846847,129.93844170298 L73.90990990991,129.75528258148 L73.972972972973,128.53553390593 L74.036036036036,126.54508497187 L74.099099099099,124.2178276748 L74.162162162162,122.06107373854 L74.225225225225,120.54496737906 L74.288288288288,120 L74.351351351351,120.54496737906 L74.414414414414,122.06107373854 L74.477477477477,124.2178276748 L74.540540540541,126.54508497187 L74.603603603604,128.53553390593 L74.666666666667,129.75528258148 L74.72972972973,129.93844170298 L74.792792792793,129.04508497187 L74.855855855856,127.2699524987 L74.918918918919,125 L74.981981981982,122.7300475013 L75.045045045045,120.95491502813 L75.108108108108,120.06155829702 L75.171171171171,120.24471741852 L75.234234234234,121.46446609407 L75.297297297297,123.45491502813 L75.36036036036,125.7821723252 L75.423423423423,127.93892626146 L75.486486486486,129.45503262094 L75.54954954955,130 L75.612612612613,129.45503262094 L75.675675675676,127.93892626146 L75.738738738739,125.7821723252 L75.801801801802,123.45491502813 L75.864864864865,121.46446609407 L75.927927927928,120.24471741852 L75.990990990991,120.06155829702 L76.054054054054,120.95491502813 L76.117117117117,122.7300475013 L76.18018018018,125 L76.18018018018,200 L73.657657657658,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="76.18018018018" y="117.49999821186" width="60.540540540541" height="82.500001788139" class="pz pz-1" /><path class="pz pz-0" d="M136.72072072072,125 L137.13063063063,127.2699524987 L137.54054054054,129.04508497187 L137.95045045045,129.93844170298 L138.36036036036,129.75528258148 L138.77027027027,128.53553390593 L139.18018018018,126.54508497187 L139.59009009009,124.2178276748 L140,122.06107373854 L140.40990990991,120.54496737906 L140.81981981982,120 L141.22972972973,120.54496737906 L141.63963963964,122.06107373854 L142.04954954955,124.2178276748 L142.45945945946,126.54508497187 L142.86936936937,128.53553390593 L143.27927927928,129.75528258148 L143.68918918919,129.93844170298 L144.0990990991,129.04508497187 L144.50900900901,127.2699524987 L144.91891891892,125 L145.32882882883,122.7300475013 L145.73873873874,120.95491502813 L146.14864864865,120.06155829702 L146.55855855856,120.24471741852 L146.96846846847,121.46446609407 L147.37837837838,123.45491502813 L147.78828828829,125.7821723252 L148.1981981982,127.93892626146 L148.60810810811,129.45503262094 L149.01801801802,130 L149.42792792793,129.45503262094 L149.83783783784,127.93892626146 L150.24774774775,125.7821723252 L150.65765765766,123.45491502813 L151.06756756757,121.46446609407 L151.47747747748,120.24471741852 L151.88738738739,120.06155829702 L152.2972972973,120.95491502813 L152.70720720721,122.7300475013 L153.11711711712,125 L153.11711711712,200 L136.72072072072,200 Z" class="freeride"><title>Free Ride</title></path><path class="pz pz-0" d="M153.11711711712,125 L153.18333333333,127.2699524987 L153.24954954955,129.04508497187 L153.31576576577,129.93844170298 L153.38198198198,129.75528258148 L153.4481981982,128.53553390593 L153.51441441441,126.54508497187 L153.58063063063,124.2178276748 L153.64684684685,122.06107373854 L153.71306306306,120.54496737906 L153.77927927928,120 L153.8454954955,120.54496737906 L153.91171171171,122.06107373854 L153.97792792793,124.2178276748 L154.04414414414,126.54508497187 L154.11036036036,128.53553390593 L154.17657657658,129.75528258148 L154.24279279279,129.93844170298 L154.30900900901,129.04508497187 L154.37522522523,127.2699524987 L154.44144144144,125 L154.50765765766,122.7300475013 L154.57387387387,120.95491502813 L154.64009009009,120.06155829702 L154.70630630631,120.24471741852 L154.77252252252,121.46446609407 L154.83873873874,123.45491502813 L154.90495495495,125.7821723252 L154.97117117117,127.93892626146 L155.03738738739,129.45503262094 L155.1036036036,130 L155.16981981982,129.45503262094 L155.23603603604,127.93892626146 L155.30225225225,125.7821723252 L155.36846846847,123.45491502813 L155.43468468468,121.46446609407 L155.5009009009,120.24471741852 L155.56711711712,120.06155829702 L155.63333333333,120.95491502813 L155.69954954955,122.7300475013 L155.76576576577,125 L155.76576576577,200 L153.11711711712,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="155.76576576577" y="125" width="90.810810810811" height="75" class="pz pz-1" /><path class="pz pz-0" d="M246.57657657658,125 L247.14414414414,127.2699524987 L247.71171171171,129.04508497187 L248.27927927928,129.93844170298 L248.84684684685,129.75528258148 L249.41441441441,128.53553390593 L249.98198198198,126.54508497187 L250.54954954955,124.2178276748 L251.11711711712,122.06107373854 L251.68468468468,120.54496737906 L252.25225225225,120 L252.81981981982,120.54496737906 L253.38738738739,122.06107373854 L253.95495495495,124.2178276748 L254.52252252252,126.54508497187 L255.09009009009,128.53553390593 L255.65765765766,129.75528258148 L256.22522522523,129.93844170298 L256.79279279279,129.04508497187 L257.36036036036,127.2699524987 L257.92792792793,125 L258.4954954955,122.7300475013 L259.06306306306,120.95491502813 L259.63063063063,120.06155829702 L260.1981981982,120.24471741852 L260.76576576577,121.46446609407 L261.33333333333,123.45491502813 L261.9009009009,125.7821723252 L262.46846846847,127.93892626146 L263.03603603604,129.45503262094 L263.6036036036,130 L264.17117117117,129.45503262094 L264.73873873874,127.93892626146 L265.30630630631,125.7821723252 L265.87387387387,123.45491502813 L266.44144144144,121.46446609407 L267.00900900901,120.24471741852 L267.57657657658,120.06155829702 L268.14414414414,120.95491502813 L268.71171171171,122.7300475013 L269.27927927928,125 L269.27927927928,200 L246.57657657658,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="269.27927927928" y="125" width="113.51351351351" height="75" class="pz pz-1" /><path class="pz pz-0" d="M382.79279279279,125 L383.92792792793,127.2699524987 L385.06306306306,129.04508497187 L386.1981981982,129.93844170298 L387.33333333333,129.75528258148 L388.46846846847,128.53553390593 L389.6036036036,126.54508497187 L390.73873873874,124.2178276748 L391.87387387387,122.06107373854 L393.00900900901,120.54496737906 L394.14414414414,120 L395.27927927928,120.54496737906 L396.41441441441,122.06107373854 L397.54954954955,124.2178276748 L398.68468468468,126.54508497187 L399.81981981982,128.53553390593 L400.95495495495,129.75528258148 L402.09009009009,129.93844170298 L403.22522522523,129.04508497187 L404.36036036036,127.2699524987 L405.4954954955,125 L406.63063063063,122.7300475013 L407.76576576577,120.95491502813 L408.9009009009,120.06155829702 L410.03603603604,120.24471741852 L411.17117117117,121.46446609407 L412.30630630631,123.45491502813 L413.44144144144,125.7821723252 L414.57657657658,127.93892626146 L415.71171171171,129.45503262094 L416.84684684685,130 L417.98198198198,129.45503262094 L419.11711711712,127.93892626146 L420.25225225225,125.7821723252 L421.38738738739,123.45491502813 L422.52252252252,121.46446609407 L423.65765765766,120.24471741852 L424.79279279279,120.06155829702 L425.92792792793,120.95491502813 L427.06306306306,122.7300475013 L428.1981981982,125 L428.1981981982,200 L382.79279279279,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="428.1981981982" y="125" width="151.35135135135" height="75" class="pz pz-1" /><path class="pz pz-0" d="M579.54954954955,125 L581.44144144144,127.2699524987 L583.33333333333,129.04508497187 L585.22522522523,129.93844170298 L587.11711711712,129.75528258148 L589.00900900901,128.53553390593 L590.9009009009,126.54508497187 L592.79279279279,124.2178276748 L594.68468468468,122.06107373854 L596.57657657658,120.54496737906 L598.46846846847,120 L600.36036036036,120.54496737906 L602.25225225225,122.06107373854 L604.14414414414,124.2178276748 L606.03603603604,126.54508497187 L607.92792792793,128.53553390593 L609.81981981982,129.75528258148 L611.71171171171,129.93844170298 L613.6036036036,129.04508497187 L615.4954954955,127.2699524987 L617.38738738739,125 L619.27927927928,122.7300475013 L621.17117117117,120.95491502813 L623.06306306306,120.06155829702 L624.95495495495,120.24471741852 L626.84684684685,121.46446609407 L628.73873873874,123.45491502813 L630.63063063063,125.7821723252 L632.52252252252,127.93892626146 L634.41441441441,129.45503262094 L636.30630630631,130 L638.1981981982,129.45503262094 L640.09009009009,127.93892626146 L641.98198198198,125.7821723252 L643.87387387387,123.45491502813 L645.76576576577,121.46446609407 L647.65765765766,120.24471741852 L649.54954954955,120.06155829702 L651.44144144144,120.95491502813 L653.33333333333,122.7300475013 L655.22522522523,125 L655.22522522523,200 L579.54954954955,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="655.22522522523" y="132.50000178814" width="44.774774774775" height="67.499998211861" class="pz pz-1" /></svg>
+        <div class="mt-2"></div>
+        MyWhoosh has partnered with INSCYD to provide you with the most advanced tool to analyze your performance. The Power Performance Decoder test protocol will provide you with a complete metabolic performance profile. <br>
+<br>
+Your performance relies on more than just Anaerobic Threshold (FTP). Other areas to consider Aerobic Capacity (VO2max) and Anaerobic Capacity (Vlamax). This testing should not be carried out immediately after a hard training block. <br>
+<br>
+For better reliability, one or two rest days are ideal. <br>
+<br>
+NOTE: ERG mode MUST be on. It will automatically turn off for free-ride intervals.
+    </div>
+</div>
+
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <footer class="mt-4">
+                            Contact us: mywhooshinfo<span>(at)</span>gmail.com
+                            <br/>
+                            <a target="_blank" href="https://www.instagram.com/mywhooshinfo/"><img class="social-icon" src="/images/instagram.webp" alt="instagram" /> mywhooshinfo</a>
+                            <br/>
+                            <a target="_blank" href="https://www.mywhoosh.com/privacy-policy/" rel="nofollow">Privacy policy</a>
+                            <br/>
+                            &copy; 2024-2025 MyWhooshInfo.com. All rights reserved.
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</main>
+
+    <script src="https://mywhooshinfo.com/assets/main-BI-KlKk2.js" type="module" crossorigin></script>
+
+
+
+</body>
+</html>

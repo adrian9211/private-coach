@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+        <link rel="stylesheet" href="https://mywhooshinfo.com/assets/main-D4Fjgi-M.css" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCX851PXQ8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-GCX851PXQ8');
+        </script>
+
+    <script>
+        // Function to read cookies
+        function getCookie(name) {
+            let value = "; " + document.cookie;
+            let parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        // Function to detect preferred theme
+        function detectPreferredTheme() {
+            return 'dark';
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // Immediately set the theme to avoid a flash of the wrong theme
+        (function () {
+            let theme = getCookie('theme'); // Check if the theme cookie is set
+            if (!theme) {
+                theme = detectPreferredTheme(); // Fallback to system theme if no cookie
+            }
+            document.documentElement.setAttribute('data-bs-theme', theme); // Set the theme on <html>
+        })();
+    </script>
+
+    <meta charset="utf-8">
+	<title>30sec + Endurance #2 | MyWhooshInfo</title>
+    <meta name="description" content="30sec + Endurance #2 - MyWhoosh workout - Today we are going to burn up the…">
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyWhooshInfo.com">
+    <meta property="og:title" content="30sec + Endurance #2 | MyWhooshInfo">
+    <meta property="og:description" content="30sec + Endurance #2 - MyWhoosh workout - Today we are going to burn up the…">
+    <meta property="og:image" content="https://mywhooshinfo.com/og.webp">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mywhooshinfo.com">
+    <meta name="twitter:title" content="30sec + Endurance #2 | MyWhooshInfo">
+    <meta name="twitter:description" content="30sec + Endurance #2 - MyWhoosh workout - Today we are going to burn up the…">
+    <meta name="twitter:image" content="https://mywhooshinfo.com/og.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<div id="snippet--flash">
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+    </div>
+</div>
+
+<main>
+    <div class="border-end sidebar p-3 overflow-scroll">
+        <div class="text-center py-lg-3 logo-header">
+            <a href="/">
+                <img src="/favicon.svg" alt="" style="height: 15px; width: 15px;"/> MyWhooshInfo
+            </a>
+            <a class="burger-menu" data-bs-toggle="collapse" href="#collapseMenu">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+        <div id="collapseMenu" class="collapse">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="/workouts/workout/30sec-endurance-2-tfw9?do=loginRedirect" data-bs-toggle="tooltip" data-bs-title="You will be redirected to mywhoosh.com to authorize. In case you click on Authorize and nothing happens, please logout and login to mywhoosh.com and retry." class="nav-link">
+                            <i class="material-icons">person</i> Log in
+                        </a>
+                    </li>
+                </ul>
+            <form action="/workouts/workout/30sec-endurance-2-tfw9" method="post" class="menu-search" id="frm-search">
+                <input type="text" name="name" placeholder="Search riders" class="form-control my-3 form-control" id="frm-search-name" />
+            <input type="hidden" name="_do" value="search-submit"></form>
+
+
+
+            <ul class="nav nav-pills mb-auto flex-column flex-nowrap">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="material-icons">dashboard</i> Homepage
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/" class="nav-link">
+                            <i class="material-icons">calendar_month</i> Events and Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/riders/riders" class="nav-link">
+                            <i class="material-icons">directions_bike</i> Riders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">
+                            <i class="material-icons">article</i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/leagues/" class="nav-link">
+                            <i class="material-icons">groups</i> Leagues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/clubs/" class="nav-link">
+                            <i class="material-icons">workspaces</i> Clubs
+                        </a>
+                    </li>
+                <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#workoutsCollapse" role="button">
+                            <i class="material-icons">show_chart</i> Workouts & Plans <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="show collapse"
+                                id="workoutsCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/workouts/" class="active nav-link">
+                                        <i class="material-icons">show_chart</i> Workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/video-workouts" class="nav-link">
+                                        <i class="material-icons">videocam</i> Video workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/training-plans" class="nav-link">
+                                        <i class="material-icons">calendar_month</i> Training plans
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/live-coaching" class="nav-link">
+                                        <i class="material-icons">live_tv</i> Live coaching
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#worldCollapse" role="button">
+                        <i class="material-icons">public</i> Worlds & Segments <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="worldCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/routes/worlds" class="nav-link">
+                                    <i class="material-icons">map</i> Worlds
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/routes/" class="nav-link">
+                                    <i class="material-icons">edit_road</i> Routes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/world-schedule" class="nav-link">
+                                    <i class="material-icons">language</i> World schedule
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/segments/" class="nav-link">
+                                    <i class="material-icons">route</i> Segments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/statistics/leaderboards" class="nav-link">
+                                    <i class="material-icons">query_stats</i> Overall leaderboards
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#achievementsCollapse" role="button">
+                        <i class="material-icons">emoji_events</i> Achievements <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="achievementsCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/achievements/" class="nav-link">
+                                    <i class="material-icons">emoji_events</i> All achievements
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/achievements/ranking" class="nav-link">
+                                    <i class="material-icons">bar_chart</i> Ranking
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#srcCollapse" role="button">
+                            <i class="material-icons">sports_score</i> Sunday Race Club <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="collapse"
+                                id="srcCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/statistics/categories" class="nav-link">
+                                        <i class="material-icons">bar_chart</i> Statistics
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/events/updowngrades" class="nav-link">
+                                        <i class="material-icons">swap_vert</i> SRC Up/Down grades
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-ranking" class="nav-link">
+                                        <i class="material-icons">star</i> SRC ranking
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-finals" class="nav-link">
+                                        <i class="material-icons">event</i> SRC Finals riders
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-top" class="nav-link">
+                                        <i class="material-icons">emoji_events</i> SRC Hall of Fame
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+
+            <div class="d-flex justify-content-between align-items-end">
+                <div class="list-group list-group-horizontal">
+                    <button data-power-display="w" class="active list-group-item fw-bold">
+                        watts
+                    </button>
+                    <button data-power-display="wkg" class="list-group-item fw-bold">
+                        w/kg
+                    </button>
+                </div>
+
+                <div class="light-switcher p-2 mt-3">
+                    <i data-light-mode="light" class="material-icons light-mode-button">light_mode</i>
+                    <i data-light-mode="dark" class="material-icons dark-mode-button">dark_mode</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div class="content">
+
+        <div class="py-lg-4 py-sm-2 px-lg-2 px-sm-1">
+            <div class="container-fluid">
+                <div class="min-vh-90">
+
+<nav aria-label="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/" itemprop="item">
+                <span itemprop="name">Workouts</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/category/1000" itemprop="item">
+                <span itemprop="name">All training plan workouts</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+            <span itemprop="name">30sec + Endurance #2</span>
+            <meta itemprop="position" content="3"/>
+        </li>
+    </ol>
+</nav>
+
+<div class="float-end">
+    <a href="/workouts/workout/30sec-endurance-2-tfw9?do=exportZwo" data-track-event-name="workoutDownload" data-track-event-data="&#123;&quot;workout&quot;:10514}" class="btn-material-icon btn btn-primary btn-sm"><i class="material-icons">download</i> Download</a>
+</div>
+<h1>30sec + Endurance #2</h1>
+
+<span class="badge bg-info">Duration 01:29:30</span>
+<span class="badge bg-info">TSS 77</span>
+<span class="badge bg-info">IF 0.72</span>
+<div class="row flex-lg-row flex-column-reverse">
+    <div class="col-lg-3">
+        <div class="vstack mt-3 workout-step-list gap-1 mb-2 fw-bold">
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background: linear-gradient(to right, var(--power-z1), var(--power-z2)">
+                        warmup 
+                        
+                        
+                        05:30 @
+                        45% FTP - 70% FTP
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        01:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:30 @
+                        125%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        04:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:30 @
+                        130%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        04:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:30 @
+                        135%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        04:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:30 @
+                        140%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        04:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:30 @
+                        145%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        04:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:30 @
+                        145%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        01:00:00 @
+                        Free ride
+                        
+                    </div>
+        </div>
+            <button data-ftp-set class="btn btn-outline-primary">Enter FTP</button>
+    </div>
+    <div class="col-lg-9">
+        <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d06059c355" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.8250015378 43.016759776536,94.325006008148 43.016759776536,200 0,200" style="fill: url(#gradient_690d06059c355)" /><rect  rx="2" x="43.016759776536" y="124.32500422001" width="7.8212290502793" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="50.837988826816" y="11.825013160706" width="3.9106145251397" height="188.17498683929" class="pz pz-6" /><rect  rx="2" x="54.748603351955" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="86.033519553073" y="4.3250024318695" width="3.9106145251397" height="195.67499756813" class="pz pz-6" /><rect  rx="2" x="89.944134078212" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="121.22905027933" y="-3.1749904155731" width="3.9106145251397" height="203.17499041557" class="pz pz-6" /><rect  rx="2" x="125.13966480447" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="156.42458100559" y="-10.674983263016" width="3.9106145251397" height="210.67498326302" class="pz pz-6" /><rect  rx="2" x="160.33519553073" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="191.62011173184" y="-18.174993991852" width="3.9106145251397" height="218.17499399185" class="pz pz-6" /><rect  rx="2" x="195.53072625698" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="226.8156424581" y="-18.174993991852" width="3.9106145251397" height="218.17499399185" class="pz pz-6" /><path class="pz pz-0" d="M230.72625698324,125 L242.45810055866,127.2699524987 L254.18994413408,129.04508497187 L265.9217877095,129.93844170298 L277.65363128492,129.75528258148 L289.38547486034,128.53553390593 L301.11731843575,126.54508497187 L312.84916201117,124.2178276748 L324.58100558659,122.06107373854 L336.31284916201,120.54496737906 L348.04469273743,120 L359.77653631285,120.54496737906 L371.50837988827,122.06107373854 L383.24022346369,124.2178276748 L394.97206703911,126.54508497187 L406.70391061453,128.53553390593 L418.43575418994,129.75528258148 L430.16759776536,129.93844170298 L441.89944134078,129.04508497187 L453.6312849162,127.2699524987 L465.36312849162,125 L477.09497206704,122.7300475013 L488.82681564246,120.95491502813 L500.55865921788,120.06155829702 L512.2905027933,120.24471741852 L524.02234636872,121.46446609407 L535.75418994413,123.45491502813 L547.48603351955,125.7821723252 L559.21787709497,127.93892626146 L570.94972067039,129.45503262094 L582.68156424581,130 L594.41340782123,129.45503262094 L606.14525139665,127.93892626146 L617.87709497207,125.7821723252 L629.60893854749,123.45491502813 L641.34078212291,121.46446609407 L653.07262569832,120.24471741852 L664.80446927374,120.06155829702 L676.53631284916,120.95491502813 L688.26815642458,122.7300475013 L700,125 L700,200 L230.72625698324,200 Z" class="freeride"><title>Free Ride</title></path></svg>
+        <div class="mt-2"></div>
+        Today we are going to burn up the intramuscular glycogen early in the session and then continue with an endurance ride. By depleting this energy source early, the body is forced to adapt by becoming more efficient at utilising fats to produce the power. In this workout the 30 second efforts also act as part of your warm up. We quickly get into the action today! The remaining endurance ride is completed as a free-ride. Aim to keep your effort within zone 2 and 3 for the majority of your ride.
+    </div>
+</div>
+
+    <h2 class="mt-2">Similar workouts</h2>
+<div class="row">
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/20sec-endurance-1-9mj3">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        20sec + Endurance #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d0605a0d75" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.8250015378 45.742574257426,94.324997067451 45.742574257426,200 0,200" style="fill: url(#gradient_690d0605a0d75)" /><rect  rx="2" x="45.742574257426" y="124.32500422001" width="8.3168316831683" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="54.059405940594" y="11.824995279312" width="2.7722772277228" height="188.17500472069" class="pz pz-6" /><rect  rx="2" x="56.831683168317" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="90.09900990099" y="4.3250024318695" width="2.7722772277228" height="195.67499756813" class="pz pz-6" /><rect  rx="2" x="92.871287128713" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="126.13861386139" y="-3.1750082969666" width="2.7722772277228" height="203.17500829697" class="pz pz-6" /><rect  rx="2" x="128.91089108911" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="162.17821782178" y="-10.675001144409" width="2.7722772277228" height="210.67500114441" class="pz pz-6" /><rect  rx="2" x="164.9504950495" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="198.21782178218" y="-18.174993991852" width="2.7722772277228" height="218.17499399185" class="pz pz-6" /><path class="pz pz-0" d="M200.9900990099,125 L213.46534653465,127.2699524987 L225.94059405941,129.04508497187 L238.41584158416,129.93844170298 L250.89108910891,129.75528258148 L263.36633663366,128.53553390593 L275.84158415842,126.54508497187 L288.31683168317,124.2178276748 L300.79207920792,122.06107373854 L313.26732673267,120.54496737906 L325.74257425743,120 L338.21782178218,120.54496737906 L350.69306930693,122.06107373854 L363.16831683168,124.2178276748 L375.64356435644,126.54508497187 L388.11881188119,128.53553390593 L400.59405940594,129.75528258148 L413.06930693069,129.93844170298 L425.54455445545,129.04508497187 L438.0198019802,127.2699524987 L450.49504950495,125 L462.9702970297,122.7300475013 L475.44554455446,120.95491502813 L487.92079207921,120.06155829702 L500.39603960396,120.24471741852 L512.87128712871,121.46446609407 L525.34653465347,123.45491502813 L537.82178217822,125.7821723252 L550.29702970297,127.93892626146 L562.77227722772,129.45503262094 L575.24752475248,130 L587.72277227723,129.45503262094 L600.19801980198,127.93892626146 L612.67326732673,125.7821723252 L625.14851485149,123.45491502813 L637.62376237624,121.46446609407 L650.09900990099,120.24471741852 L662.57425742574,120.06155829702 L675.0495049505,120.95491502813 L687.52475247525,122.7300475013 L700,125 L700,200 L200.9900990099,200 Z" class="freeride"><title>Free Ride</title></path></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:24:10</span>
+                        <span>56TSS</span>
+                        <span>IF: 0.63</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/20sec-endurance-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        20sec + Endurance #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d0605a1868" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.8250015378 45.742574257426,94.324997067451 45.742574257426,200 0,200" style="fill: url(#gradient_690d0605a1868)" /><rect  rx="2" x="45.742574257426" y="124.32500422001" width="8.3168316831683" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="54.059405940594" y="11.824995279312" width="2.7722772277228" height="188.17500472069" class="pz pz-6" /><rect  rx="2" x="56.831683168317" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="90.09900990099" y="4.3250024318695" width="2.7722772277228" height="195.67499756813" class="pz pz-6" /><rect  rx="2" x="92.871287128713" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="126.13861386139" y="-3.1750082969666" width="2.7722772277228" height="203.17500829697" class="pz pz-6" /><rect  rx="2" x="128.91089108911" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="162.17821782178" y="-10.675001144409" width="2.7722772277228" height="210.67500114441" class="pz pz-6" /><rect  rx="2" x="164.9504950495" y="124.32500422001" width="33.267326732673" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="198.21782178218" y="-18.174993991852" width="2.7722772277228" height="218.17499399185" class="pz pz-6" /><path class="pz pz-0" d="M200.9900990099,125 L213.46534653465,127.2699524987 L225.94059405941,129.04508497187 L238.41584158416,129.93844170298 L250.89108910891,129.75528258148 L263.36633663366,128.53553390593 L275.84158415842,126.54508497187 L288.31683168317,124.2178276748 L300.79207920792,122.06107373854 L313.26732673267,120.54496737906 L325.74257425743,120 L338.21782178218,120.54496737906 L350.69306930693,122.06107373854 L363.16831683168,124.2178276748 L375.64356435644,126.54508497187 L388.11881188119,128.53553390593 L400.59405940594,129.75528258148 L413.06930693069,129.93844170298 L425.54455445545,129.04508497187 L438.0198019802,127.2699524987 L450.49504950495,125 L462.9702970297,122.7300475013 L475.44554455446,120.95491502813 L487.92079207921,120.06155829702 L500.39603960396,120.24471741852 L512.87128712871,121.46446609407 L525.34653465347,123.45491502813 L537.82178217822,125.7821723252 L550.29702970297,127.93892626146 L562.77227722772,129.45503262094 L575.24752475248,130 L587.72277227723,129.45503262094 L600.19801980198,127.93892626146 L612.67326732673,125.7821723252 L625.14851485149,123.45491502813 L637.62376237624,121.46446609407 L650.09900990099,120.24471741852 L662.57425742574,120.06155829702 L675.0495049505,120.95491502813 L687.52475247525,122.7300475013 L700,125 L700,200 L200.9900990099,200 Z" class="freeride"><title>Free Ride</title></path></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:24:10</span>
+                        <span>56TSS</span>
+                        <span>IF: 0.63</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/30sec-endurance-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        30sec + Endurance #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d0605a23ed" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.8250015378 45.294117647059,94.324997067451 45.294117647059,200 0,200" style="fill: url(#gradient_690d0605a23ed)" /><rect  rx="2" x="45.294117647059" y="124.32500422001" width="8.2352941176471" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="53.529411764706" y="11.824995279312" width="4.1176470588235" height="188.17500472069" class="pz pz-6" /><rect  rx="2" x="57.647058823529" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="90.588235294118" y="4.3250024318695" width="4.1176470588235" height="195.67499756813" class="pz pz-6" /><rect  rx="2" x="94.705882352941" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="127.64705882353" y="-3.1750082969666" width="4.1176470588235" height="203.17500829697" class="pz pz-6" /><rect  rx="2" x="131.76470588235" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="164.70588235294" y="-10.675001144409" width="4.1176470588235" height="210.67500114441" class="pz pz-6" /><rect  rx="2" x="168.82352941176" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="201.76470588235" y="-18.174993991852" width="4.1176470588235" height="218.17499399185" class="pz pz-6" /><path class="pz pz-0" d="M205.88235294118,125 L218.23529411765,127.2699524987 L230.58823529412,129.04508497187 L242.94117647059,129.93844170298 L255.29411764706,129.75528258148 L267.64705882353,128.53553390593 L280,126.54508497187 L292.35294117647,124.2178276748 L304.70588235294,122.06107373854 L317.05882352941,120.54496737906 L329.41176470588,120 L341.76470588235,120.54496737906 L354.11764705882,122.06107373854 L366.47058823529,124.2178276748 L378.82352941176,126.54508497187 L391.17647058824,128.53553390593 L403.52941176471,129.75528258148 L415.88235294118,129.93844170298 L428.23529411765,129.04508497187 L440.58823529412,127.2699524987 L452.94117647059,125 L465.29411764706,122.7300475013 L477.64705882353,120.95491502813 L490,120.06155829702 L502.35294117647,120.24471741852 L514.70588235294,121.46446609407 L527.05882352941,123.45491502813 L539.41176470588,125.7821723252 L551.76470588235,127.93892626146 L564.11764705882,129.45503262094 L576.47058823529,130 L588.82352941176,129.45503262094 L601.17647058824,127.93892626146 L613.52941176471,125.7821723252 L625.88235294118,123.45491502813 L638.23529411765,121.46446609407 L650.58823529412,120.24471741852 L662.94117647059,120.06155829702 L675.29411764706,120.95491502813 L687.64705882353,122.7300475013 L700,125 L700,200 L205.88235294118,200 Z" class="freeride"><title>Free Ride</title></path></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:25:00</span>
+                        <span>71TSS</span>
+                        <span>IF: 0.71</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/30sec-endurance-1-buhv">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        30sec + Endurance #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d0605a2ed3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.8250015378 45.294117647059,94.324997067451 45.294117647059,200 0,200" style="fill: url(#gradient_690d0605a2ed3)" /><rect  rx="2" x="45.294117647059" y="124.32500422001" width="8.2352941176471" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="53.529411764706" y="11.824995279312" width="4.1176470588235" height="188.17500472069" class="pz pz-6" /><rect  rx="2" x="57.647058823529" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="90.588235294118" y="4.3250024318695" width="4.1176470588235" height="195.67499756813" class="pz pz-6" /><rect  rx="2" x="94.705882352941" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="127.64705882353" y="-3.1750082969666" width="4.1176470588235" height="203.17500829697" class="pz pz-6" /><rect  rx="2" x="131.76470588235" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="164.70588235294" y="-10.675001144409" width="4.1176470588235" height="210.67500114441" class="pz pz-6" /><rect  rx="2" x="168.82352941176" y="124.32500422001" width="32.941176470588" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="201.76470588235" y="-18.174993991852" width="4.1176470588235" height="218.17499399185" class="pz pz-6" /><path class="pz pz-0" d="M205.88235294118,125 L218.23529411765,127.2699524987 L230.58823529412,129.04508497187 L242.94117647059,129.93844170298 L255.29411764706,129.75528258148 L267.64705882353,128.53553390593 L280,126.54508497187 L292.35294117647,124.2178276748 L304.70588235294,122.06107373854 L317.05882352941,120.54496737906 L329.41176470588,120 L341.76470588235,120.54496737906 L354.11764705882,122.06107373854 L366.47058823529,124.2178276748 L378.82352941176,126.54508497187 L391.17647058824,128.53553390593 L403.52941176471,129.75528258148 L415.88235294118,129.93844170298 L428.23529411765,129.04508497187 L440.58823529412,127.2699524987 L452.94117647059,125 L465.29411764706,122.7300475013 L477.64705882353,120.95491502813 L490,120.06155829702 L502.35294117647,120.24471741852 L514.70588235294,121.46446609407 L527.05882352941,123.45491502813 L539.41176470588,125.7821723252 L551.76470588235,127.93892626146 L564.11764705882,129.45503262094 L576.47058823529,130 L588.82352941176,129.45503262094 L601.17647058824,127.93892626146 L613.52941176471,125.7821723252 L625.88235294118,123.45491502813 L638.23529411765,121.46446609407 L650.58823529412,120.24471741852 L662.94117647059,120.06155829702 L675.29411764706,120.95491502813 L687.64705882353,122.7300475013 L700,125 L700,200 L205.88235294118,200 Z" class="freeride"><title>Free Ride</title></path></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:25:00</span>
+                        <span>71TSS</span>
+                        <span>IF: 0.71</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/30sec-endurance-2">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        30sec + Endurance #2
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d0605a39ed" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.8250015378 43.016759776536,94.324997067451 43.016759776536,200 0,200" style="fill: url(#gradient_690d0605a39ed)" /><rect  rx="2" x="43.016759776536" y="124.32500422001" width="7.8212290502793" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="50.837988826816" y="11.824995279312" width="3.9106145251397" height="188.17500472069" class="pz pz-6" /><rect  rx="2" x="54.748603351955" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="86.033519553073" y="4.3250024318695" width="3.9106145251397" height="195.67499756813" class="pz pz-6" /><rect  rx="2" x="89.944134078212" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="121.22905027933" y="-3.1750082969666" width="3.9106145251397" height="203.17500829697" class="pz pz-6" /><rect  rx="2" x="125.13966480447" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="156.42458100559" y="-10.675001144409" width="3.9106145251397" height="210.67500114441" class="pz pz-6" /><rect  rx="2" x="160.33519553073" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="191.62011173184" y="-18.174993991852" width="3.9106145251397" height="218.17499399185" class="pz pz-6" /><rect  rx="2" x="195.53072625698" y="124.32500422001" width="31.284916201117" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="226.8156424581" y="-18.174993991852" width="3.9106145251397" height="218.17499399185" class="pz pz-6" /><path class="pz pz-0" d="M230.72625698324,125 L242.45810055866,127.2699524987 L254.18994413408,129.04508497187 L265.9217877095,129.93844170298 L277.65363128492,129.75528258148 L289.38547486034,128.53553390593 L301.11731843575,126.54508497187 L312.84916201117,124.2178276748 L324.58100558659,122.06107373854 L336.31284916201,120.54496737906 L348.04469273743,120 L359.77653631285,120.54496737906 L371.50837988827,122.06107373854 L383.24022346369,124.2178276748 L394.97206703911,126.54508497187 L406.70391061453,128.53553390593 L418.43575418994,129.75528258148 L430.16759776536,129.93844170298 L441.89944134078,129.04508497187 L453.6312849162,127.2699524987 L465.36312849162,125 L477.09497206704,122.7300475013 L488.82681564246,120.95491502813 L500.55865921788,120.06155829702 L512.2905027933,120.24471741852 L524.02234636872,121.46446609407 L535.75418994413,123.45491502813 L547.48603351955,125.7821723252 L559.21787709497,127.93892626146 L570.94972067039,129.45503262094 L582.68156424581,130 L594.41340782123,129.45503262094 L606.14525139665,127.93892626146 L617.87709497207,125.7821723252 L629.60893854749,123.45491502813 L641.34078212291,121.46446609407 L653.07262569832,120.24471741852 L664.80446927374,120.06155829702 L676.53631284916,120.95491502813 L688.26815642458,122.7300475013 L700,125 L700,200 L230.72625698324,200 Z" class="freeride"><title>Free Ride</title></path></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:29:30</span>
+                        <span>77TSS</span>
+                        <span>IF: 0.72</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+</div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <footer class="mt-4">
+                            Contact us: mywhooshinfo<span>(at)</span>gmail.com
+                            <br/>
+                            <a target="_blank" href="https://www.instagram.com/mywhooshinfo/"><img class="social-icon" src="/images/instagram.webp" alt="instagram" /> mywhooshinfo</a>
+                            <br/>
+                            <a target="_blank" href="https://www.mywhoosh.com/privacy-policy/" rel="nofollow">Privacy policy</a>
+                            <br/>
+                            &copy; 2024-2025 MyWhooshInfo.com. All rights reserved.
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</main>
+
+    <script src="https://mywhooshinfo.com/assets/main-BI-KlKk2.js" type="module" crossorigin></script>
+
+
+
+</body>
+</html>

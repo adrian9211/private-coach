@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+        <link rel="stylesheet" href="https://mywhooshinfo.com/assets/main-D4Fjgi-M.css" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCX851PXQ8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-GCX851PXQ8');
+        </script>
+
+    <script>
+        // Function to read cookies
+        function getCookie(name) {
+            let value = "; " + document.cookie;
+            let parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        // Function to detect preferred theme
+        function detectPreferredTheme() {
+            return 'dark';
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // Immediately set the theme to avoid a flash of the wrong theme
+        (function () {
+            let theme = getCookie('theme'); // Check if the theme cookie is set
+            if (!theme) {
+                theme = detectPreferredTheme(); // Fallback to system theme if no cookie
+            }
+            document.documentElement.setAttribute('data-bs-theme', theme); // Set the theme on <html>
+        })();
+    </script>
+
+    <meta charset="utf-8">
+	<title>Strength Endurance #2 | MyWhooshInfo</title>
+    <meta name="description" content="Strength Endurance #2 - MyWhoosh workout - You focus on Strength Endurance work by…">
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyWhooshInfo.com">
+    <meta property="og:title" content="Strength Endurance #2 | MyWhooshInfo">
+    <meta property="og:description" content="Strength Endurance #2 - MyWhoosh workout - You focus on Strength Endurance work by…">
+    <meta property="og:image" content="https://mywhooshinfo.com/og.webp">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mywhooshinfo.com">
+    <meta name="twitter:title" content="Strength Endurance #2 | MyWhooshInfo">
+    <meta name="twitter:description" content="Strength Endurance #2 - MyWhoosh workout - You focus on Strength Endurance work by…">
+    <meta name="twitter:image" content="https://mywhooshinfo.com/og.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<div id="snippet--flash">
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+    </div>
+</div>
+
+<main>
+    <div class="border-end sidebar p-3 overflow-scroll">
+        <div class="text-center py-lg-3 logo-header">
+            <a href="/">
+                <img src="/favicon.svg" alt="" style="height: 15px; width: 15px;"/> MyWhooshInfo
+            </a>
+            <a class="burger-menu" data-bs-toggle="collapse" href="#collapseMenu">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+        <div id="collapseMenu" class="collapse">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="/workouts/workout/strength-endurance-2-22ov?do=loginRedirect" data-bs-toggle="tooltip" data-bs-title="You will be redirected to mywhoosh.com to authorize. In case you click on Authorize and nothing happens, please logout and login to mywhoosh.com and retry." class="nav-link">
+                            <i class="material-icons">person</i> Log in
+                        </a>
+                    </li>
+                </ul>
+            <form action="/workouts/workout/strength-endurance-2-22ov" method="post" class="menu-search" id="frm-search">
+                <input type="text" name="name" placeholder="Search riders" class="form-control my-3 form-control" id="frm-search-name" />
+            <input type="hidden" name="_do" value="search-submit"></form>
+
+
+
+            <ul class="nav nav-pills mb-auto flex-column flex-nowrap">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="material-icons">dashboard</i> Homepage
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/" class="nav-link">
+                            <i class="material-icons">calendar_month</i> Events and Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/riders/riders" class="nav-link">
+                            <i class="material-icons">directions_bike</i> Riders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">
+                            <i class="material-icons">article</i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/leagues/" class="nav-link">
+                            <i class="material-icons">groups</i> Leagues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/clubs/" class="nav-link">
+                            <i class="material-icons">workspaces</i> Clubs
+                        </a>
+                    </li>
+                <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#workoutsCollapse" role="button">
+                            <i class="material-icons">show_chart</i> Workouts & Plans <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="show collapse"
+                                id="workoutsCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/workouts/" class="active nav-link">
+                                        <i class="material-icons">show_chart</i> Workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/video-workouts" class="nav-link">
+                                        <i class="material-icons">videocam</i> Video workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/training-plans" class="nav-link">
+                                        <i class="material-icons">calendar_month</i> Training plans
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/live-coaching" class="nav-link">
+                                        <i class="material-icons">live_tv</i> Live coaching
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#worldCollapse" role="button">
+                        <i class="material-icons">public</i> Worlds & Segments <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="worldCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/routes/worlds" class="nav-link">
+                                    <i class="material-icons">map</i> Worlds
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/routes/" class="nav-link">
+                                    <i class="material-icons">edit_road</i> Routes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/world-schedule" class="nav-link">
+                                    <i class="material-icons">language</i> World schedule
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/segments/" class="nav-link">
+                                    <i class="material-icons">route</i> Segments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/statistics/leaderboards" class="nav-link">
+                                    <i class="material-icons">query_stats</i> Overall leaderboards
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#achievementsCollapse" role="button">
+                        <i class="material-icons">emoji_events</i> Achievements <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="achievementsCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/achievements/" class="nav-link">
+                                    <i class="material-icons">emoji_events</i> All achievements
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/achievements/ranking" class="nav-link">
+                                    <i class="material-icons">bar_chart</i> Ranking
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#srcCollapse" role="button">
+                            <i class="material-icons">sports_score</i> Sunday Race Club <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="collapse"
+                                id="srcCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/statistics/categories" class="nav-link">
+                                        <i class="material-icons">bar_chart</i> Statistics
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/events/updowngrades" class="nav-link">
+                                        <i class="material-icons">swap_vert</i> SRC Up/Down grades
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-ranking" class="nav-link">
+                                        <i class="material-icons">star</i> SRC ranking
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-finals" class="nav-link">
+                                        <i class="material-icons">event</i> SRC Finals riders
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-top" class="nav-link">
+                                        <i class="material-icons">emoji_events</i> SRC Hall of Fame
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+
+            <div class="d-flex justify-content-between align-items-end">
+                <div class="list-group list-group-horizontal">
+                    <button data-power-display="w" class="active list-group-item fw-bold">
+                        watts
+                    </button>
+                    <button data-power-display="wkg" class="list-group-item fw-bold">
+                        w/kg
+                    </button>
+                </div>
+
+                <div class="light-switcher p-2 mt-3">
+                    <i data-light-mode="light" class="material-icons light-mode-button">light_mode</i>
+                    <i data-light-mode="dark" class="material-icons dark-mode-button">dark_mode</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div class="content">
+
+        <div class="py-lg-4 py-sm-2 px-lg-2 px-sm-1">
+            <div class="container-fluid">
+                <div class="min-vh-90">
+
+<nav aria-label="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/" itemprop="item">
+                <span itemprop="name">Workouts</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/category/11" itemprop="item">
+                <span itemprop="name">Tempo</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+            <span itemprop="name">Strength Endurance #2</span>
+            <meta itemprop="position" content="3"/>
+        </li>
+    </ol>
+</nav>
+
+<div class="float-end">
+    <a href="/workouts/workout/strength-endurance-2-22ov?do=exportZwo" data-track-event-name="workoutDownload" data-track-event-data="&#123;&quot;workout&quot;:510}" class="btn-material-icon btn btn-primary btn-sm"><i class="material-icons">download</i> Download</a>
+</div>
+<h1>Strength Endurance #2</h1>
+
+<span class="badge bg-info">Duration 01:09:00</span>
+<span class="badge bg-info">TSS 64</span>
+<span class="badge bg-info">IF 0.75</span>
+    <span class="badge bg-info">Has instructions</span>
+    <span class="badge bg-info">Has RPM target</span>
+<div class="row flex-lg-row flex-column-reverse">
+    <div class="col-lg-3">
+        <div class="vstack mt-3 workout-step-list gap-1 mb-2 fw-bold">
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background: linear-gradient(to right, var(--power-z1), var(--power-z2)">
+                        warmup 
+                        
+                        
+                        06:00 @
+                        45% FTP - 70% FTP
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        01:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z5)">
+                        
+                        
+                        
+                        01:00 @
+                        109%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        02:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z4)">
+                        
+                        
+                        
+                        04:00 @
+                        90%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        03:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        15:00 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        05:00 @
+                        80%
+                         @ 65RPM
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        05:00 @
+                        80%
+                         @ 60RPM
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        05:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        05:00 @
+                        81%
+                         @ 65RPM
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        05:00 @
+                        80%
+                         @ 60RPM
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        05:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z5)">
+                        
+                        
+                        
+                        02:00 @
+                        109%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        05:00 @
+                        50%
+                        
+                    </div>
+        </div>
+            <button data-ftp-set class="btn btn-outline-primary">Enter FTP</button>
+    </div>
+    <div class="col-lg-9">
+        <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d055927bd9" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.79109841585 60.869565217391,94.324997067451 60.869565217391,200 0,200" style="fill: url(#gradient_690d055927bd9)" /><rect  rx="2" x="60.869565217391" y="124.32500422001" width="10.144927536232" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="71.014492753623" y="35.825008153915" width="10.144927536232" height="164.17499184608" class="pz pz-5" /><rect  rx="2" x="81.159420289855" y="124.32500422001" width="20.289855072464" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="101.44927536232" y="64.324998855591" width="40.579710144928" height="135.67500114441" class="pz pz-4" /><rect  rx="2" x="142.02898550725" y="124.32500422001" width="30.434782608696" height="75.674995779991" class="pz pz-1" /><path class="pz pz-0" d="M172.46376811594,125 L176.26811594203,127.2699524987 L180.07246376812,129.04508497187 L183.8768115942,129.93844170298 L187.68115942029,129.75528258148 L191.48550724638,128.53553390593 L195.28985507246,126.54508497187 L199.09420289855,124.2178276748 L202.89855072464,122.06107373854 L206.70289855072,120.54496737906 L210.50724637681,120 L214.3115942029,120.54496737906 L218.11594202899,122.06107373854 L221.92028985507,124.2178276748 L225.72463768116,126.54508497187 L229.52898550725,128.53553390593 L233.33333333333,129.75528258148 L237.13768115942,129.93844170298 L240.94202898551,129.04508497187 L244.74637681159,127.2699524987 L248.55072463768,125 L252.35507246377,122.7300475013 L256.15942028986,120.95491502813 L259.96376811594,120.06155829702 L263.76811594203,120.24471741852 L267.57246376812,121.46446609407 L271.3768115942,123.45491502813 L275.18115942029,125.7821723252 L278.98550724638,127.93892626146 L282.78985507246,129.45503262094 L286.59420289855,130 L290.39855072464,129.45503262094 L294.20289855072,127.93892626146 L298.00724637681,125.7821723252 L301.8115942029,123.45491502813 L305.61594202899,121.46446609407 L309.42028985507,120.24471741852 L313.22463768116,120.06155829702 L317.02898550725,120.95491502813 L320.83333333333,122.7300475013 L324.63768115942,125 L324.63768115942,200 L172.46376811594,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="324.63768115942" y="79.32500243187" width="50.724637681159" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="375.36231884058" y="79.32500243187" width="50.724637681159" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="426.08695652174" y="124.32500422001" width="50.724637681159" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="476.8115942029" y="78.596746921539" width="50.724637681159" height="121.40325307846" class="pz pz-3" /><rect  rx="2" x="527.53623188406" y="79.32500243187" width="50.724637681159" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="578.26086956522" y="124.32500422001" width="50.724637681159" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="628.98550724638" y="35.825008153915" width="20.289855072464" height="164.17499184608" class="pz pz-5" /><rect  rx="2" x="649.27536231884" y="124.32500422001" width="50.724637681159" height="75.674995779991" class="pz pz-1" /></svg>
+        <div class="mt-2"></div>
+        You focus on Strength Endurance work by completing steady, low cadence intervals. Strength Endurance increases crank torque and recruits more of your fast-twitch muscle fibres. <br>
+<br>
+After warming up and completing a period of endurance 'free-riding', you will complete 2 x 10 min Strength Endurance intervals. Finish the session with a high cadence of 2min Max Aerobic effort. Target cadence drops from 65 to 60rpm during the effort.
+    </div>
+</div>
+
+    <h2 class="mt-2">Similar workouts</h2>
+<div class="row">
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/strength-endurance-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Strength Endurance #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="117.49999821186" width="46.666666666667" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="46.666666666667" y="102.50000357628" width="35" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="81.666666666667" y="79.999998211861" width="23.333333333333" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="105" y="65.000003576279" width="23.333333333333" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="128.33333333333" y="116.82500243187" width="46.666666666667" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="175" y="88.999998569489" width="58.333333333333" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="233.33333333333" y="70.999997854233" width="23.333333333333" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="256.66666666667" y="117.49999821186" width="46.666666666667" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="303.33333333333" y="88.999998569489" width="58.333333333333" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="361.66666666667" y="70.999997854233" width="23.333333333333" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="385" y="116.82500243187" width="46.666666666667" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="431.66666666667" y="88.999998569489" width="58.333333333333" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="490" y="70.999997854233" width="23.333333333333" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="513.33333333333" y="124.32500422001" width="46.666666666667" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="560" y="88.999998569489" width="58.333333333333" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="618.33333333333" y="70.999997854233" width="23.333333333333" height="129.00000214577" class="pz pz-3" /><linearGradient id="gradient_690d05592a78f" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="641.66666666667,101.82499885559 700,162.5 700,200 641.66666666667,200" style="fill: url(#gradient_690d05592a78f)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:00:00</span>
+                        <span>49TSS</span>
+                        <span>IF: 0.71</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/strength-endurance-1-xt8a">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Strength Endurance #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d05592af39" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.13890141249 60.869565217391,94.324997067451 60.869565217391,200 0,200" style="fill: url(#gradient_690d05592af39)" /><rect  rx="2" x="60.869565217391" y="124.32500422001" width="10.144927536232" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="71.014492753623" y="35.825008153915" width="10.144927536232" height="164.17499184608" class="pz pz-5" /><rect  rx="2" x="81.159420289855" y="124.32500422001" width="20.289855072464" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="101.44927536232" y="64.324998855591" width="40.579710144928" height="135.67500114441" class="pz pz-4" /><rect  rx="2" x="142.02898550725" y="124.32500422001" width="30.434782608696" height="75.674995779991" class="pz pz-1" /><path class="pz pz-0" d="M172.46376811594,125 L176.26811594203,127.2699524987 L180.07246376812,129.04508497187 L183.8768115942,129.93844170298 L187.68115942029,129.75528258148 L191.48550724638,128.53553390593 L195.28985507246,126.54508497187 L199.09420289855,124.2178276748 L202.89855072464,122.06107373854 L206.70289855072,120.54496737906 L210.50724637681,120 L214.3115942029,120.54496737906 L218.11594202899,122.06107373854 L221.92028985507,124.2178276748 L225.72463768116,126.54508497187 L229.52898550725,128.53553390593 L233.33333333333,129.75528258148 L237.13768115942,129.93844170298 L240.94202898551,129.04508497187 L244.74637681159,127.2699524987 L248.55072463768,125 L252.35507246377,122.7300475013 L256.15942028986,120.95491502813 L259.96376811594,120.06155829702 L263.76811594203,120.24471741852 L267.57246376812,121.46446609407 L271.3768115942,123.45491502813 L275.18115942029,125.7821723252 L278.98550724638,127.93892626146 L282.78985507246,129.45503262094 L286.59420289855,130 L290.39855072464,129.45503262094 L294.20289855072,127.93892626146 L298.00724637681,125.7821723252 L301.8115942029,123.45491502813 L305.61594202899,121.46446609407 L309.42028985507,120.24471741852 L313.22463768116,120.06155829702 L317.02898550725,120.95491502813 L320.83333333333,122.7300475013 L324.63768115942,125 L324.63768115942,200 L172.46376811594,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="324.63768115942" y="79.32500243187" width="50.724637681159" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="375.36231884058" y="79.32500243187" width="50.724637681159" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="426.08695652174" y="124.32500422001" width="50.724637681159" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="476.8115942029" y="79.32500243187" width="50.724637681159" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="527.53623188406" y="79.32500243187" width="50.724637681159" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="578.26086956522" y="124.32500422001" width="50.724637681159" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="628.98550724638" y="35.825008153915" width="20.289855072464" height="164.17499184608" class="pz pz-5" /><rect  rx="2" x="649.27536231884" y="124.32500422001" width="50.724637681159" height="75.674995779991" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:09:00</span>
+                        <span>64TSS</span>
+                        <span>IF: 0.75</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/strength-endurance-2">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Strength Endurance #2
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="117.49999821186" width="43.75" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="43.75" y="102.50000357628" width="32.8125" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="76.5625" y="79.999998211861" width="21.875" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="98.4375" y="65.000003576279" width="21.875" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="120.3125" y="116.82500243187" width="43.75" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="164.0625" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="218.75" y="70.999997854233" width="32.8125" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="251.5625" y="117.49999821186" width="43.75" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="295.3125" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="350" y="70.999997854233" width="32.8125" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="382.8125" y="116.82500243187" width="43.75" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="426.5625" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="481.25" y="70.999997854233" width="32.8125" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="514.0625" y="124.32500422001" width="43.75" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="557.8125" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="612.5" y="70.999997854233" width="32.8125" height="129.00000214577" class="pz pz-3" /><linearGradient id="gradient_690d05592b70b" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="645.3125,101.82499885559 700,162.5 700,200 645.3125,200" style="fill: url(#gradient_690d05592b70b)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:04:00</span>
+                        <span>55TSS</span>
+                        <span>IF: 0.72</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/strength-endurance-3-zrjt">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Strength Endurance #3
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d05592beda" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.68234825134 53.164556962025,94.324997067451 53.164556962025,200 0,200" style="fill: url(#gradient_690d05592beda)" /><rect  rx="2" x="53.164556962025" y="124.32500422001" width="8.8607594936709" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="62.025316455696" y="35.825008153915" width="8.8607594936709" height="164.17499184608" class="pz pz-5" /><rect  rx="2" x="70.886075949367" y="124.32500422001" width="17.721518987342" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="88.607594936709" y="64.324998855591" width="35.443037974684" height="135.67500114441" class="pz pz-4" /><rect  rx="2" x="124.05063291139" y="124.32500422001" width="26.582278481013" height="75.674995779991" class="pz pz-1" /><path class="pz pz-0" d="M150.63291139241,125 L153.95569620253,127.2699524987 L157.27848101266,129.04508497187 L160.60126582278,129.93844170298 L163.92405063291,129.75528258148 L167.24683544304,128.53553390593 L170.56962025316,126.54508497187 L173.89240506329,124.2178276748 L177.21518987342,122.06107373854 L180.53797468354,120.54496737906 L183.86075949367,120 L187.1835443038,120.54496737906 L190.50632911392,122.06107373854 L193.82911392405,124.2178276748 L197.15189873418,126.54508497187 L200.4746835443,128.53553390593 L203.79746835443,129.75528258148 L207.12025316456,129.93844170298 L210.44303797468,129.04508497187 L213.76582278481,127.2699524987 L217.08860759494,125 L220.41139240506,122.7300475013 L223.73417721519,120.95491502813 L227.05696202532,120.06155829702 L230.37974683544,120.24471741852 L233.70253164557,121.46446609407 L237.0253164557,123.45491502813 L240.34810126582,125.7821723252 L243.67088607595,127.93892626146 L246.99367088608,129.45503262094 L250.3164556962,130 L253.63924050633,129.45503262094 L256.96202531646,127.93892626146 L260.28481012658,125.7821723252 L263.60759493671,123.45491502813 L266.93037974684,121.46446609407 L270.25316455696,120.24471741852 L273.57594936709,120.06155829702 L276.89873417722,120.95491502813 L280.22151898734,122.7300475013 L283.54430379747,125 L283.54430379747,200 L150.63291139241,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="283.54430379747" y="79.32500243187" width="44.303797468354" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="327.84810126582" y="79.32500243187" width="44.303797468354" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="372.15189873418" y="79.32500243187" width="44.303797468354" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="416.45569620253" y="124.32500422001" width="44.303797468354" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="460.75949367089" y="79.32500243187" width="44.303797468354" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="505.06329113924" y="79.32500243187" width="44.303797468354" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="549.36708860759" y="79.32500243187" width="44.303797468354" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="593.67088607595" y="124.32500422001" width="44.303797468354" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="637.9746835443" y="35.825008153915" width="17.721518987342" height="164.17499184608" class="pz pz-5" /><rect  rx="2" x="655.69620253165" y="124.32500422001" width="44.303797468354" height="75.674995779991" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:19:00</span>
+                        <span>75TSS</span>
+                        <span>IF: 0.76</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/strength-endurance-3">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Strength Endurance #3
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="117.49999821186" width="43.75" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="43.75" y="102.50000357628" width="32.8125" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="76.5625" y="79.999998211861" width="21.875" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="98.4375" y="65.000003576279" width="21.875" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="120.3125" y="116.82500243187" width="43.75" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="164.0625" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="218.75" y="56.824997067451" width="10.9375" height="143.17500293255" class="pz pz-4" /><rect  rx="2" x="229.6875" y="70.325002074242" width="21.875" height="129.67499792576" class="pz pz-3" /><rect  rx="2" x="251.5625" y="117.49999821186" width="43.75" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="295.3125" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="350" y="56.824997067451" width="10.9375" height="143.17500293255" class="pz pz-4" /><rect  rx="2" x="360.9375" y="70.999997854233" width="21.875" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="382.8125" y="116.82500243187" width="43.75" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="426.5625" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="481.25" y="70.999997854233" width="21.875" height="129.00000214577" class="pz pz-3" /><rect  rx="2" x="503.125" y="56.824997067451" width="10.9375" height="143.17500293255" class="pz pz-4" /><rect  rx="2" x="514.0625" y="124.32500422001" width="43.75" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="557.8125" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="612.5" y="70.325002074242" width="21.875" height="129.67499792576" class="pz pz-3" /><rect  rx="2" x="634.375" y="56.824997067451" width="10.9375" height="143.17500293255" class="pz pz-4" /><linearGradient id="gradient_690d05592c7a3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="645.3125,101.82499885559 700,162.5 700,200 645.3125,200" style="fill: url(#gradient_690d05592c7a3)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:04:00</span>
+                        <span>56TSS</span>
+                        <span>IF: 0.73</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/strength-endurance-4">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Strength Endurance #4
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="117.49999821186" width="43.75" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="43.75" y="102.50000357628" width="32.8125" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="76.5625" y="79.999998211861" width="21.875" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="98.4375" y="65.000003576279" width="21.875" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="120.3125" y="116.82500243187" width="43.75" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="164.0625" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="218.75" y="50" width="10.9375" height="150" class="pz pz-4" /><rect  rx="2" x="229.6875" y="65.000003576279" width="21.875" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="251.5625" y="117.49999821186" width="43.75" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="295.3125" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="350" y="50" width="10.9375" height="150" class="pz pz-4" /><rect  rx="2" x="360.9375" y="65.000003576279" width="21.875" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="382.8125" y="116.82500243187" width="43.75" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="426.5625" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="481.25" y="65.000003576279" width="21.875" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="503.125" y="50" width="10.9375" height="150" class="pz pz-4" /><rect  rx="2" x="514.0625" y="124.32500422001" width="43.75" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="557.8125" y="88.999998569489" width="54.6875" height="111.00000143051" class="pz pz-2" /><rect  rx="2" x="612.5" y="65.000003576279" width="21.875" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="634.375" y="50" width="10.9375" height="150" class="pz pz-4" /><linearGradient id="gradient_690d05592d051" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="645.3125,101.82499885559 700,162.5 700,200 645.3125,200" style="fill: url(#gradient_690d05592d051)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:04:00</span>
+                        <span>59TSS</span>
+                        <span>IF: 0.74</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/strength-endurance-w-20sec-2">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Strength Endurance w/20sec #2
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d05592df31" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,131.13890141249 60.869565217391,94.324997067451 60.869565217391,200 0,200" style="fill: url(#gradient_690d05592df31)" /><rect  rx="2" x="60.869565217391" y="124.32500422001" width="10.144927536232" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="71.014492753623" y="35.825008153915" width="10.144927536232" height="164.17499184608" class="pz pz-5" /><rect  rx="2" x="81.159420289855" y="124.32500422001" width="20.289855072464" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="101.44927536232" y="64.324998855591" width="40.579710144928" height="135.67500114441" class="pz pz-4" /><rect  rx="2" x="142.02898550725" y="124.32500422001" width="30.434782608696" height="75.674995779991" class="pz pz-1" /><path class="pz pz-0" d="M172.46376811594,125 L176.26811594203,127.2699524987 L180.07246376812,129.04508497187 L183.8768115942,129.93844170298 L187.68115942029,129.75528258148 L191.48550724638,128.53553390593 L195.28985507246,126.54508497187 L199.09420289855,124.2178276748 L202.89855072464,122.06107373854 L206.70289855072,120.54496737906 L210.50724637681,120 L214.3115942029,120.54496737906 L218.11594202899,122.06107373854 L221.92028985507,124.2178276748 L225.72463768116,126.54508497187 L229.52898550725,128.53553390593 L233.33333333333,129.75528258148 L237.13768115942,129.93844170298 L240.94202898551,129.04508497187 L244.74637681159,127.2699524987 L248.55072463768,125 L252.35507246377,122.7300475013 L256.15942028986,120.95491502813 L259.96376811594,120.06155829702 L263.76811594203,120.24471741852 L267.57246376812,121.46446609407 L271.3768115942,123.45491502813 L275.18115942029,125.7821723252 L278.98550724638,127.93892626146 L282.78985507246,129.45503262094 L286.59420289855,130 L290.39855072464,129.45503262094 L294.20289855072,127.93892626146 L298.00724637681,125.7821723252 L301.8115942029,123.45491502813 L305.61594202899,121.46446609407 L309.42028985507,120.24471741852 L313.22463768116,120.06155829702 L317.02898550725,120.95491502813 L320.83333333333,122.7300475013 L324.63768115942,125 L324.63768115942,200 L172.46376811594,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="324.63768115942" y="79.32500243187" width="81.159420289855" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="405.79710144928" y="125" width="3.3816425120773" height="75" class="pz pz-1" /><rect  rx="2" x="409.17874396135" y="34.999996423721" width="3.3816425120773" height="165.00000357628" class="pz pz-5" /><rect  rx="2" x="412.56038647343" y="125" width="30.434782608696" height="75" class="pz pz-1" /><rect  rx="2" x="442.99516908213" y="79.32500243187" width="81.159420289855" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="524.15458937198" y="125" width="3.3816425120773" height="75" class="pz pz-1" /><rect  rx="2" x="527.53623188406" y="34.999996423721" width="3.3816425120773" height="165.00000357628" class="pz pz-5" /><rect  rx="2" x="530.91787439614" y="125" width="30.434782608696" height="75" class="pz pz-1" /><rect  rx="2" x="561.35265700483" y="79.32500243187" width="81.159420289855" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="642.51207729469" y="125" width="3.3816425120773" height="75" class="pz pz-1" /><rect  rx="2" x="645.89371980676" y="34.999996423721" width="3.3816425120773" height="165.00000357628" class="pz pz-5" /><rect  rx="2" x="649.27536231884" y="124.32500422001" width="50.724637681159" height="75.674995779991" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:09:00</span>
+                        <span>63TSS</span>
+                        <span>IF: 0.74</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/tempo-with-target-rpm-3">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Tempo with Target rpm #3
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d05592e6db" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 30.434782608696,109.99999642372 30.434782608696,200 0,200" style="fill: url(#gradient_690d05592e6db)" /><rect  rx="2" x="30.434782608696" y="109.99999642372" width="10.144927536232" height="90.000003576279" class="pz pz-2" /><rect  rx="2" x="40.579710144928" y="102.50000357628" width="10.144927536232" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="50.724637681159" y="78.499999642372" width="10.144927536232" height="121.50000035763" class="pz pz-3" /><rect  rx="2" x="60.869565217391" y="36.49999499321" width="10.144927536232" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="71.014492753623" y="125" width="20.289855072464" height="75" class="pz pz-1" /><rect  rx="2" x="91.304347826087" y="65.000003576279" width="30.434782608696" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="121.73913043478" y="125" width="30.434782608696" height="75" class="pz pz-1" /><linearGradient id="gradient_690d05592e6ff" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="152.17391304348,86.000001430511 202.89855072464,66.500002145767 202.89855072464,200 152.17391304348,200" style="fill: url(#gradient_690d05592e6ff)" /><linearGradient id="gradient_690d05592e70a" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="202.89855072464,86.000001430511 253.6231884058,66.500002145767 253.6231884058,200 202.89855072464,200" style="fill: url(#gradient_690d05592e70a)" /><linearGradient id="gradient_690d05592e712" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="253.6231884058,86.000001430511 304.34782608696,66.500002145767 304.34782608696,200 253.6231884058,200" style="fill: url(#gradient_690d05592e712)" /><rect  rx="2" x="304.34782608696" y="125" width="20.289855072464" height="75" class="pz pz-1" /><linearGradient id="gradient_690d05592e71c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="324.63768115942,86.000001430511 375.36231884058,66.500002145767 375.36231884058,200 324.63768115942,200" style="fill: url(#gradient_690d05592e71c)" /><linearGradient id="gradient_690d05592e724" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="375.36231884058,86.000001430511 426.08695652174,66.500002145767 426.08695652174,200 375.36231884058,200" style="fill: url(#gradient_690d05592e724)" /><linearGradient id="gradient_690d05592e72c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="426.08695652174,86.000001430511 476.8115942029,66.500002145767 476.8115942029,200 426.08695652174,200" style="fill: url(#gradient_690d05592e72c)" /><rect  rx="2" x="476.8115942029" y="125" width="20.289855072464" height="75" class="pz pz-1" /><linearGradient id="gradient_690d05592e736" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="497.10144927536,86.000001430511 547.82608695652,66.500002145767 547.82608695652,200 497.10144927536,200" style="fill: url(#gradient_690d05592e736)" /><linearGradient id="gradient_690d05592e73e" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="547.82608695652,86.000001430511 598.55072463768,66.500002145767 598.55072463768,200 547.82608695652,200" style="fill: url(#gradient_690d05592e73e)" /><linearGradient id="gradient_690d05592e746" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="598.55072463768,86.000001430511 649.27536231884,66.500002145767 649.27536231884,200 598.55072463768,200" style="fill: url(#gradient_690d05592e746)" /><linearGradient id="gradient_690d05592e74e" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="649.27536231884,87.5 700,132.50000178814 700,200 649.27536231884,200" style="fill: url(#gradient_690d05592e74e)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:09:00</span>
+                        <span>70TSS</span>
+                        <span>IF: 0.78</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/12min-over-under-s">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        12min Over-Under's
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d05592f03c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="0,147.50000089407 101.44927536232,117.49999821186 101.44927536232,200 0,200" style="fill: url(#gradient_690d05592f03c)" /><rect  rx="2" x="101.44927536232" y="89.825001358986" width="50.724637681159" height="110.17499864101" class="pz pz-2" /><rect  rx="2" x="152.17391304348" y="116.82500243187" width="50.724637681159" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="202.89855072464" y="44.824999570847" width="20.289855072464" height="155.17500042915" class="pz pz-4" /><rect  rx="2" x="223.1884057971" y="65.710851550102" width="20.289855072464" height="134.2891484499" class="pz pz-3" /><rect  rx="2" x="243.47826086957" y="44.824999570847" width="20.289855072464" height="155.17500042915" class="pz pz-4" /><rect  rx="2" x="263.76811594203" y="65.710851550102" width="20.289855072464" height="134.2891484499" class="pz pz-3" /><rect  rx="2" x="284.05797101449" y="44.824999570847" width="20.289855072464" height="155.17500042915" class="pz pz-4" /><rect  rx="2" x="304.34782608696" y="65.710851550102" width="20.289855072464" height="134.2891484499" class="pz pz-3" /><rect  rx="2" x="324.63768115942" y="116.82500243187" width="101.44927536232" height="83.17499756813" class="pz pz-1" /><rect  rx="2" x="426.08695652174" y="44.824999570847" width="20.289855072464" height="155.17500042915" class="pz pz-4" /><rect  rx="2" x="446.3768115942" y="65.710851550102" width="20.289855072464" height="134.2891484499" class="pz pz-3" /><rect  rx="2" x="466.66666666667" y="44.824999570847" width="20.289855072464" height="155.17500042915" class="pz pz-4" /><rect  rx="2" x="486.95652173913" y="65.710851550102" width="20.289855072464" height="134.2891484499" class="pz pz-3" /><rect  rx="2" x="507.24637681159" y="44.824999570847" width="20.289855072464" height="155.17500042915" class="pz pz-4" /><rect  rx="2" x="527.53623188406" y="65.710851550102" width="20.289855072464" height="134.2891484499" class="pz pz-3" /><rect  rx="2" x="547.82608695652" y="117.49999821186" width="50.724637681159" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d05592f06d" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="598.55072463768,117.49999821186 700,147.50000089407 700,200 598.55072463768,200" style="fill: url(#gradient_690d05592f06d)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:09:00</span>
+                        <span>69TSS</span>
+                        <span>IF: 0.78</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+</div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <footer class="mt-4">
+                            Contact us: mywhooshinfo<span>(at)</span>gmail.com
+                            <br/>
+                            <a target="_blank" href="https://www.instagram.com/mywhooshinfo/"><img class="social-icon" src="/images/instagram.webp" alt="instagram" /> mywhooshinfo</a>
+                            <br/>
+                            <a target="_blank" href="https://www.mywhoosh.com/privacy-policy/" rel="nofollow">Privacy policy</a>
+                            <br/>
+                            &copy; 2024-2025 MyWhooshInfo.com. All rights reserved.
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</main>
+
+    <script src="https://mywhooshinfo.com/assets/main-BI-KlKk2.js" type="module" crossorigin></script>
+
+
+
+</body>
+</html>

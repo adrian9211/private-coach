@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+        <link rel="stylesheet" href="https://mywhooshinfo.com/assets/main-D4Fjgi-M.css" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCX851PXQ8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-GCX851PXQ8');
+        </script>
+
+    <script>
+        // Function to read cookies
+        function getCookie(name) {
+            let value = "; " + document.cookie;
+            let parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        // Function to detect preferred theme
+        function detectPreferredTheme() {
+            return 'dark';
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // Immediately set the theme to avoid a flash of the wrong theme
+        (function () {
+            let theme = getCookie('theme'); // Check if the theme cookie is set
+            if (!theme) {
+                theme = detectPreferredTheme(); // Fallback to system theme if no cookie
+            }
+            document.documentElement.setAttribute('data-bs-theme', theme); // Set the theme on <html>
+        })();
+    </script>
+
+    <meta charset="utf-8">
+	<title>Power Starts and Torque End.. | MyWhooshInfo</title>
+    <meta name="description" content="Power Starts and Torque End.. - MyWhoosh workout - The start in gravel racing is…">
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyWhooshInfo.com">
+    <meta property="og:title" content="Power Starts and Torque End.. | MyWhooshInfo">
+    <meta property="og:description" content="Power Starts and Torque End.. - MyWhoosh workout - The start in gravel racing is…">
+    <meta property="og:image" content="https://mywhooshinfo.com/og.webp">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mywhooshinfo.com">
+    <meta name="twitter:title" content="Power Starts and Torque End.. | MyWhooshInfo">
+    <meta name="twitter:description" content="Power Starts and Torque End.. - MyWhoosh workout - The start in gravel racing is…">
+    <meta name="twitter:image" content="https://mywhooshinfo.com/og.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<div id="snippet--flash">
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+    </div>
+</div>
+
+<main>
+    <div class="border-end sidebar p-3 overflow-scroll">
+        <div class="text-center py-lg-3 logo-header">
+            <a href="/">
+                <img src="/favicon.svg" alt="" style="height: 15px; width: 15px;"/> MyWhooshInfo
+            </a>
+            <a class="burger-menu" data-bs-toggle="collapse" href="#collapseMenu">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+        <div id="collapseMenu" class="collapse">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="/workouts/workout/power-starts-and-torque-end?do=loginRedirect" data-bs-toggle="tooltip" data-bs-title="You will be redirected to mywhoosh.com to authorize. In case you click on Authorize and nothing happens, please logout and login to mywhoosh.com and retry." class="nav-link">
+                            <i class="material-icons">person</i> Log in
+                        </a>
+                    </li>
+                </ul>
+            <form action="/workouts/workout/power-starts-and-torque-end" method="post" class="menu-search" id="frm-search">
+                <input type="text" name="name" placeholder="Search riders" class="form-control my-3 form-control" id="frm-search-name" />
+            <input type="hidden" name="_do" value="search-submit"></form>
+
+
+
+            <ul class="nav nav-pills mb-auto flex-column flex-nowrap">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="material-icons">dashboard</i> Homepage
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/" class="nav-link">
+                            <i class="material-icons">calendar_month</i> Events and Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/riders/riders" class="nav-link">
+                            <i class="material-icons">directions_bike</i> Riders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">
+                            <i class="material-icons">article</i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/leagues/" class="nav-link">
+                            <i class="material-icons">groups</i> Leagues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/clubs/" class="nav-link">
+                            <i class="material-icons">workspaces</i> Clubs
+                        </a>
+                    </li>
+                <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#workoutsCollapse" role="button">
+                            <i class="material-icons">show_chart</i> Workouts & Plans <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="show collapse"
+                                id="workoutsCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/workouts/" class="active nav-link">
+                                        <i class="material-icons">show_chart</i> Workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/video-workouts" class="nav-link">
+                                        <i class="material-icons">videocam</i> Video workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/training-plans" class="nav-link">
+                                        <i class="material-icons">calendar_month</i> Training plans
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/live-coaching" class="nav-link">
+                                        <i class="material-icons">live_tv</i> Live coaching
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#worldCollapse" role="button">
+                        <i class="material-icons">public</i> Worlds & Segments <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="worldCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/routes/worlds" class="nav-link">
+                                    <i class="material-icons">map</i> Worlds
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/routes/" class="nav-link">
+                                    <i class="material-icons">edit_road</i> Routes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/world-schedule" class="nav-link">
+                                    <i class="material-icons">language</i> World schedule
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/segments/" class="nav-link">
+                                    <i class="material-icons">route</i> Segments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/statistics/leaderboards" class="nav-link">
+                                    <i class="material-icons">query_stats</i> Overall leaderboards
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#achievementsCollapse" role="button">
+                        <i class="material-icons">emoji_events</i> Achievements <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="achievementsCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/achievements/" class="nav-link">
+                                    <i class="material-icons">emoji_events</i> All achievements
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/achievements/ranking" class="nav-link">
+                                    <i class="material-icons">bar_chart</i> Ranking
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#srcCollapse" role="button">
+                            <i class="material-icons">sports_score</i> Sunday Race Club <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="collapse"
+                                id="srcCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/statistics/categories" class="nav-link">
+                                        <i class="material-icons">bar_chart</i> Statistics
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/events/updowngrades" class="nav-link">
+                                        <i class="material-icons">swap_vert</i> SRC Up/Down grades
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-ranking" class="nav-link">
+                                        <i class="material-icons">star</i> SRC ranking
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-finals" class="nav-link">
+                                        <i class="material-icons">event</i> SRC Finals riders
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-top" class="nav-link">
+                                        <i class="material-icons">emoji_events</i> SRC Hall of Fame
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+
+            <div class="d-flex justify-content-between align-items-end">
+                <div class="list-group list-group-horizontal">
+                    <button data-power-display="w" class="active list-group-item fw-bold">
+                        watts
+                    </button>
+                    <button data-power-display="wkg" class="list-group-item fw-bold">
+                        w/kg
+                    </button>
+                </div>
+
+                <div class="light-switcher p-2 mt-3">
+                    <i data-light-mode="light" class="material-icons light-mode-button">light_mode</i>
+                    <i data-light-mode="dark" class="material-icons dark-mode-button">dark_mode</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div class="content">
+
+        <div class="py-lg-4 py-sm-2 px-lg-2 px-sm-1">
+            <div class="container-fluid">
+                <div class="min-vh-90">
+
+<nav aria-label="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/" itemprop="item">
+                <span itemprop="name">Workouts</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/category/1000" itemprop="item">
+                <span itemprop="name">All training plan workouts</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+            <span itemprop="name">Power Starts and Torque End..</span>
+            <meta itemprop="position" content="3"/>
+        </li>
+    </ol>
+</nav>
+
+<div class="float-end">
+    <a href="/workouts/workout/power-starts-and-torque-end?do=exportZwo" data-track-event-name="workoutDownload" data-track-event-data="&#123;&quot;workout&quot;:11178}" class="btn-material-icon btn btn-primary btn-sm"><i class="material-icons">download</i> Download</a>
+</div>
+<h1>Power Starts and Torque End..</h1>
+
+<span class="badge bg-info">Duration 45:00</span>
+<span class="badge bg-info">TSS 37</span>
+<span class="badge bg-info">IF 0.71</span>
+    <span class="badge bg-info">Has instructions</span>
+<div class="row flex-lg-row flex-column-reverse">
+    <div class="col-lg-3">
+        <div class="vstack mt-3 workout-step-list gap-1 mb-2 fw-bold">
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        03:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z2)">
+                        
+                        
+                        
+                        02:00 @
+                        65%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        02:00 @
+                        84%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z4)">
+                        
+                        
+                        
+                        01:30 @
+                        100%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        03:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:10 @
+                        200%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        00:50 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z6)">
+                        
+                        
+                        
+                        00:10 @
+                        200%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        00:50 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        02:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        02:30 @
+                        81%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        00:10 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        03:00 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        03:00 @
+                        81%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        00:10 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z2)">
+                        
+                        
+                        
+                        02:30 @
+                        60%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        00:30 @
+                        50%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        02:30 @
+                        81%
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background: linear-gradient(to right, var(--power-z0), var(--power-z0)">
+                        
+                        
+                        
+                        00:10 @
+                        Free ride
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        03:00 @
+                        50%
+                        
+                    </div>
+                    <div class="vstack position-relative">
+                        <span class="step badge bg-secondary fs-5 position-absolute z-1" style="left: 10px; top: 10px;">6x</span>
+                        <div>
+                            <div class="workout-step rounded-top-2 text-right" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z2)">
+                                01:00 @ 70%
+                            </div><div class="workout-step rounded-bottom-2 text-right" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                                00:30 @ 77%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        03:00 @
+                        50%
+                        
+                    </div>
+        </div>
+            <button data-ftp-set class="btn btn-outline-primary">Enter FTP</button>
+    </div>
+    <div class="col-lg-9">
+        <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="125" width="46.666666666667" height="75" class="pz pz-1" /><rect  rx="2" x="46.666666666667" y="102.50000357628" width="31.111111111111" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="77.777777777778" y="74.000003933907" width="31.111111111111" height="125.99999606609" class="pz pz-3" /><rect  rx="2" x="108.88888888889" y="50" width="23.333333333333" height="150" class="pz pz-4" /><rect  rx="2" x="132.22222222222" y="125" width="46.666666666667" height="75" class="pz pz-1" /><rect  rx="2" x="178.88888888889" y="-100" width="2.5925925925926" height="300" class="pz pz-6" /><rect  rx="2" x="181.48148148148" y="125" width="12.962962962963" height="75" class="pz pz-1" /><rect  rx="2" x="194.44444444444" y="-100" width="2.5925925925926" height="300" class="pz pz-6" /><rect  rx="2" x="197.03703703704" y="125" width="12.962962962963" height="75" class="pz pz-1" /><rect  rx="2" x="210" y="125" width="31.111111111111" height="75" class="pz pz-1" /><rect  rx="2" x="241.11111111111" y="77.825003862381" width="38.888888888889" height="122.17499613762" class="pz pz-3" /><path class="pz pz-0" d="M280,125 L280.06481481481,127.2699524987 L280.12962962963,129.04508497187 L280.19444444444,129.93844170298 L280.25925925926,129.75528258148 L280.32407407407,128.53553390593 L280.38888888889,126.54508497187 L280.4537037037,124.2178276748 L280.51851851852,122.06107373854 L280.58333333333,120.54496737906 L280.64814814815,120 L280.71296296296,120.54496737906 L280.77777777778,122.06107373854 L280.84259259259,124.2178276748 L280.90740740741,126.54508497187 L280.97222222222,128.53553390593 L281.03703703704,129.75528258148 L281.10185185185,129.93844170298 L281.16666666667,129.04508497187 L281.23148148148,127.2699524987 L281.2962962963,125 L281.36111111111,122.7300475013 L281.42592592593,120.95491502813 L281.49074074074,120.06155829702 L281.55555555556,120.24471741852 L281.62037037037,121.46446609407 L281.68518518519,123.45491502813 L281.75,125.7821723252 L281.81481481481,127.93892626146 L281.87962962963,129.45503262094 L281.94444444444,130 L282.00925925926,129.45503262094 L282.07407407407,127.93892626146 L282.13888888889,125.7821723252 L282.2037037037,123.45491502813 L282.26851851852,121.46446609407 L282.33333333333,120.24471741852 L282.39814814815,120.06155829702 L282.46296296296,120.95491502813 L282.52777777778,122.7300475013 L282.59259259259,125 L282.59259259259,200 L280,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="282.59259259259" y="124.32500422001" width="46.666666666667" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="329.25925925926" y="77.825003862381" width="46.666666666667" height="122.17499613762" class="pz pz-3" /><path class="pz pz-0" d="M375.92592592593,125 L375.99074074074,127.2699524987 L376.05555555556,129.04508497187 L376.12037037037,129.93844170298 L376.18518518519,129.75528258148 L376.25,128.53553390593 L376.31481481481,126.54508497187 L376.37962962963,124.2178276748 L376.44444444444,122.06107373854 L376.50925925926,120.54496737906 L376.57407407407,120 L376.63888888889,120.54496737906 L376.7037037037,122.06107373854 L376.76851851852,124.2178276748 L376.83333333333,126.54508497187 L376.89814814815,128.53553390593 L376.96296296296,129.75528258148 L377.02777777778,129.93844170298 L377.09259259259,129.04508497187 L377.15740740741,127.2699524987 L377.22222222222,125 L377.28703703704,122.7300475013 L377.35185185185,120.95491502813 L377.41666666667,120.06155829702 L377.48148148148,120.24471741852 L377.5462962963,121.46446609407 L377.61111111111,123.45491502813 L377.67592592593,125.7821723252 L377.74074074074,127.93892626146 L377.80555555556,129.45503262094 L377.87037037037,130 L377.93518518519,129.45503262094 L378,127.93892626146 L378.06481481481,125.7821723252 L378.12962962963,123.45491502813 L378.19444444444,121.46446609407 L378.25925925926,120.24471741852 L378.32407407407,120.06155829702 L378.38888888889,120.95491502813 L378.4537037037,122.7300475013 L378.51851851852,125 L378.51851851852,200 L375.92592592593,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="378.51851851852" y="109.32500958443" width="38.888888888889" height="90.674990415573" class="pz pz-2" /><rect  rx="2" x="417.40740740741" y="124.32500422001" width="7.7777777777778" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="425.18518518519" y="77.825003862381" width="38.888888888889" height="122.17499613762" class="pz pz-3" /><path class="pz pz-0" d="M464.07407407407,125 L464.13888888889,127.2699524987 L464.2037037037,129.04508497187 L464.26851851852,129.93844170298 L464.33333333333,129.75528258148 L464.39814814815,128.53553390593 L464.46296296296,126.54508497187 L464.52777777778,124.2178276748 L464.59259259259,122.06107373854 L464.65740740741,120.54496737906 L464.72222222222,120 L464.78703703704,120.54496737906 L464.85185185185,122.06107373854 L464.91666666667,124.2178276748 L464.98148148148,126.54508497187 L465.0462962963,128.53553390593 L465.11111111111,129.75528258148 L465.17592592593,129.93844170298 L465.24074074074,129.04508497187 L465.30555555556,127.2699524987 L465.37037037037,125 L465.43518518519,122.7300475013 L465.5,120.95491502813 L465.56481481481,120.06155829702 L465.62962962963,120.24471741852 L465.69444444444,121.46446609407 L465.75925925926,123.45491502813 L465.82407407407,125.7821723252 L465.88888888889,127.93892626146 L465.9537037037,129.45503262094 L466.01851851852,130 L466.08333333333,129.45503262094 L466.14814814815,127.93892626146 L466.21296296296,125.7821723252 L466.27777777778,123.45491502813 L466.34259259259,121.46446609407 L466.40740740741,120.24471741852 L466.47222222222,120.06155829702 L466.53703703704,120.95491502813 L466.60185185185,122.7300475013 L466.66666666667,125 L466.66666666667,200 L464.07407407407,200 Z" class="freeride"><title>Free Ride</title></path><rect  rx="2" x="466.66666666667" y="124.32500422001" width="46.666666666667" height="75.674995779991" class="pz pz-1" /><rect  rx="2" x="513.33333333333" y="94.325006008148" width="15.555555555556" height="105.67499399185" class="pz pz-2" /><rect  rx="2" x="528.88888888889" y="83.825007081032" width="7.7777777777778" height="116.17499291897" class="pz pz-3" /><rect  rx="2" x="536.66666666667" y="94.325006008148" width="15.555555555556" height="105.67499399185" class="pz pz-2" /><rect  rx="2" x="552.22222222222" y="83.825007081032" width="7.7777777777778" height="116.17499291897" class="pz pz-3" /><rect  rx="2" x="560" y="94.325006008148" width="15.555555555556" height="105.67499399185" class="pz pz-2" /><rect  rx="2" x="575.55555555556" y="83.825007081032" width="7.7777777777778" height="116.17499291897" class="pz pz-3" /><rect  rx="2" x="583.33333333333" y="94.325006008148" width="15.555555555556" height="105.67499399185" class="pz pz-2" /><rect  rx="2" x="598.88888888889" y="83.825007081032" width="7.7777777777778" height="116.17499291897" class="pz pz-3" /><rect  rx="2" x="606.66666666667" y="94.325006008148" width="15.555555555556" height="105.67499399185" class="pz pz-2" /><rect  rx="2" x="622.22222222222" y="83.825007081032" width="7.7777777777778" height="116.17499291897" class="pz pz-3" /><rect  rx="2" x="630" y="94.325006008148" width="15.555555555556" height="105.67499399185" class="pz pz-2" /><rect  rx="2" x="645.55555555556" y="83.825007081032" width="7.7777777777778" height="116.17499291897" class="pz pz-3" /><rect  rx="2" x="653.33333333333" y="124.32500422001" width="46.666666666667" height="75.674995779991" class="pz pz-1" /></svg>
+        <div class="mt-2"></div>
+        The start in gravel racing is imperative to success. It can get you out of danger in the initial rush. It can solidify your placement to take the best line and settle into the race. High torque and power starts are crucial. Today we include a torque endurance effort AFTER the sprints.
+    </div>
+</div>
+
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <footer class="mt-4">
+                            Contact us: mywhooshinfo<span>(at)</span>gmail.com
+                            <br/>
+                            <a target="_blank" href="https://www.instagram.com/mywhooshinfo/"><img class="social-icon" src="/images/instagram.webp" alt="instagram" /> mywhooshinfo</a>
+                            <br/>
+                            <a target="_blank" href="https://www.mywhoosh.com/privacy-policy/" rel="nofollow">Privacy policy</a>
+                            <br/>
+                            &copy; 2024-2025 MyWhooshInfo.com. All rights reserved.
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</main>
+
+    <script src="https://mywhooshinfo.com/assets/main-BI-KlKk2.js" type="module" crossorigin></script>
+
+
+
+</body>
+</html>

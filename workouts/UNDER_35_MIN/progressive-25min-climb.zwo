@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+        <link rel="stylesheet" href="https://mywhooshinfo.com/assets/main-D4Fjgi-M.css" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCX851PXQ8"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-GCX851PXQ8');
+        </script>
+
+    <script>
+        // Function to read cookies
+        function getCookie(name) {
+            let value = "; " + document.cookie;
+            let parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        // Function to detect preferred theme
+        function detectPreferredTheme() {
+            return 'dark';
+            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // Immediately set the theme to avoid a flash of the wrong theme
+        (function () {
+            let theme = getCookie('theme'); // Check if the theme cookie is set
+            if (!theme) {
+                theme = detectPreferredTheme(); // Fallback to system theme if no cookie
+            }
+            document.documentElement.setAttribute('data-bs-theme', theme); // Set the theme on <html>
+        })();
+    </script>
+
+    <meta charset="utf-8">
+	<title>Progressive 25min Climb | MyWhooshInfo</title>
+    <meta name="description" content="Progressive 25min Climb - MyWhoosh workout - Big day in the mountains today! 1 climb…">
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MyWhooshInfo.com">
+    <meta property="og:title" content="Progressive 25min Climb | MyWhooshInfo">
+    <meta property="og:description" content="Progressive 25min Climb - MyWhoosh workout - Big day in the mountains today! 1 climb…">
+    <meta property="og:image" content="https://mywhooshinfo.com/og.webp">
+
+<!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mywhooshinfo.com">
+    <meta name="twitter:title" content="Progressive 25min Climb | MyWhooshInfo">
+    <meta name="twitter:description" content="Progressive 25min Climb - MyWhoosh workout - Big day in the mountains today! 1 climb…">
+    <meta name="twitter:image" content="https://mywhooshinfo.com/og.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<div id="snippet--flash">
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+    </div>
+</div>
+
+<main>
+    <div class="border-end sidebar p-3 overflow-scroll">
+        <div class="text-center py-lg-3 logo-header">
+            <a href="/">
+                <img src="/favicon.svg" alt="" style="height: 15px; width: 15px;"/> MyWhooshInfo
+            </a>
+            <a class="burger-menu" data-bs-toggle="collapse" href="#collapseMenu">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+        <div id="collapseMenu" class="collapse">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="/workouts/workout/progressive-25min-climb?do=loginRedirect" data-bs-toggle="tooltip" data-bs-title="You will be redirected to mywhoosh.com to authorize. In case you click on Authorize and nothing happens, please logout and login to mywhoosh.com and retry." class="nav-link">
+                            <i class="material-icons">person</i> Log in
+                        </a>
+                    </li>
+                </ul>
+            <form action="/workouts/workout/progressive-25min-climb" method="post" class="menu-search" id="frm-search">
+                <input type="text" name="name" placeholder="Search riders" class="form-control my-3 form-control" id="frm-search-name" />
+            <input type="hidden" name="_do" value="search-submit"></form>
+
+
+
+            <ul class="nav nav-pills mb-auto flex-column flex-nowrap">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="material-icons">dashboard</i> Homepage
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/" class="nav-link">
+                            <i class="material-icons">calendar_month</i> Events and Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/riders/riders" class="nav-link">
+                            <i class="material-icons">directions_bike</i> Riders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">
+                            <i class="material-icons">article</i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/leagues/" class="nav-link">
+                            <i class="material-icons">groups</i> Leagues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/clubs/" class="nav-link">
+                            <i class="material-icons">workspaces</i> Clubs
+                        </a>
+                    </li>
+                <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#workoutsCollapse" role="button">
+                            <i class="material-icons">show_chart</i> Workouts & Plans <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="show collapse"
+                                id="workoutsCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/workouts/" class="active nav-link">
+                                        <i class="material-icons">show_chart</i> Workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/video-workouts" class="nav-link">
+                                        <i class="material-icons">videocam</i> Video workouts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/workouts/training-plans" class="nav-link">
+                                        <i class="material-icons">calendar_month</i> Training plans
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/live-coaching" class="nav-link">
+                                        <i class="material-icons">live_tv</i> Live coaching
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#worldCollapse" role="button">
+                        <i class="material-icons">public</i> Worlds & Segments <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="worldCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/routes/worlds" class="nav-link">
+                                    <i class="material-icons">map</i> Worlds
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/routes/" class="nav-link">
+                                    <i class="material-icons">edit_road</i> Routes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/world-schedule" class="nav-link">
+                                    <i class="material-icons">language</i> World schedule
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/segments/" class="nav-link">
+                                    <i class="material-icons">route</i> Segments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/statistics/leaderboards" class="nav-link">
+                                    <i class="material-icons">query_stats</i> Overall leaderboards
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex" data-bs-toggle="collapse" href="#achievementsCollapse" role="button">
+                        <i class="material-icons">emoji_events</i> Achievements <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                    </a>
+                    <div class="collapse"
+                            id="achievementsCollapse" style="padding-left: 20px">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="/achievements/" class="nav-link">
+                                    <i class="material-icons">emoji_events</i> All achievements
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/achievements/ranking" class="nav-link">
+                                    <i class="material-icons">bar_chart</i> Ranking
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" data-bs-toggle="collapse" href="#srcCollapse" role="button">
+                            <i class="material-icons">sports_score</i> Sunday Race Club <i class="material-icons ms-auto">keyboard_arrow_down</i>
+                        </a>
+                        <div class="collapse"
+                                id="srcCollapse" style="padding-left: 20px">
+                            <ul class="nav nav-pills flex-column">
+                                <li class="nav-item">
+                                    <a href="/statistics/categories" class="nav-link">
+                                        <i class="material-icons">bar_chart</i> Statistics
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/events/updowngrades" class="nav-link">
+                                        <i class="material-icons">swap_vert</i> SRC Up/Down grades
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-ranking" class="nav-link">
+                                        <i class="material-icons">star</i> SRC ranking
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-finals" class="nav-link">
+                                        <i class="material-icons">event</i> SRC Finals riders
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/statistics/src-top" class="nav-link">
+                                        <i class="material-icons">emoji_events</i> SRC Hall of Fame
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+
+            <div class="d-flex justify-content-between align-items-end">
+                <div class="list-group list-group-horizontal">
+                    <button data-power-display="w" class="active list-group-item fw-bold">
+                        watts
+                    </button>
+                    <button data-power-display="wkg" class="list-group-item fw-bold">
+                        w/kg
+                    </button>
+                </div>
+
+                <div class="light-switcher p-2 mt-3">
+                    <i data-light-mode="light" class="material-icons light-mode-button">light_mode</i>
+                    <i data-light-mode="dark" class="material-icons dark-mode-button">dark_mode</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div class="content">
+
+        <div class="py-lg-4 py-sm-2 px-lg-2 px-sm-1">
+            <div class="container-fluid">
+                <div class="min-vh-90">
+
+<nav aria-label="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/" itemprop="item">
+                <span itemprop="name">Workouts</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/workouts/category/3" itemprop="item">
+                <span itemprop="name">Under 35 min</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+            <span itemprop="name">Progressive 25min Climb</span>
+            <meta itemprop="position" content="3"/>
+        </li>
+    </ol>
+</nav>
+
+<div class="float-end">
+    <a href="/workouts/workout/progressive-25min-climb?do=exportZwo" data-track-event-name="workoutDownload" data-track-event-data="&#123;&quot;workout&quot;:97}" class="btn-material-icon btn btn-primary btn-sm"><i class="material-icons">download</i> Download</a>
+</div>
+<h1>Progressive 25min Climb</h1>
+
+<span class="badge bg-info">Duration 34:00</span>
+<span class="badge bg-info">TSS 39</span>
+<span class="badge bg-info">IF 0.84</span>
+    <span class="badge bg-info">Has RPM target</span>
+<div class="row flex-lg-row flex-column-reverse">
+    <div class="col-lg-3">
+        <div class="vstack mt-3 workout-step-list gap-1 mb-2 fw-bold">
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background: linear-gradient(to right, var(--power-z1), var(--power-z2)">
+                        warmup 
+                        
+                        
+                        04:00 @
+                        51% FTP - 75% FTP
+                        
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z3)">
+                        
+                        
+                        
+                        15:00 @
+                        82%
+                         @ 85RPM
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z4)">
+                        
+                        
+                        
+                        08:00 @
+                        94%
+                         @ 85RPM
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: black; background-color: var(--power-z4)">
+                        
+                        
+                        
+                        02:00 @
+                        105%
+                         @ 85RPM
+                    </div>
+                    <div class="workout-step d-flex flex-row-reverse rounded-2" style="font-size: 0.9rem; padding: 3px; color: white; background-color: var(--power-z1)">
+                        
+                        
+                        
+                        05:00 @
+                        55%
+                        
+                    </div>
+        </div>
+            <button data-ftp-set class="btn btn-outline-primary">Enter FTP</button>
+    </div>
+    <div class="col-lg-9">
+        <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df84c83" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,123.50000143051 82.352941176471,87.5 82.352941176471,200 0,200" style="fill: url(#gradient_690d03df84c83)" /><rect  rx="2" x="82.352941176471" y="77.000001072884" width="308.82352941176" height="122.99999892712" class="pz pz-3" /><rect  rx="2" x="391.17647058824" y="59.000000357628" width="164.70588235294" height="140.99999964237" class="pz pz-4" /><rect  rx="2" x="555.88235294118" y="42.500007152557" width="41.176470588235" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="597.05882352941" y="117.49999821186" width="102.94117647059" height="82.500001788139" class="pz pz-1" /></svg>
+        <div class="mt-2"></div>
+        Big day in the mountains today! 1 climb of 25 minutes in duration. Like a climb outdoors, the required power will increase throughout the 25min.
+    </div>
+</div>
+
+    <h2 class="mt-2">Similar workouts</h2>
+<div class="row">
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/progressive-11min-climb">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Progressive 11min Climb
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df89cc3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,125 118.64406779661,87.5 118.64406779661,200 0,200" style="fill: url(#gradient_690d03df89cc3)" /><rect  rx="2" x="118.64406779661" y="117.49999821186" width="11.864406779661" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="130.50847457627" y="79.999998211861" width="71.186440677966" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="201.69491525424" y="57.500001788139" width="47.457627118644" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="249.15254237288" y="42.500007152557" width="11.864406779661" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="261.01694915254" y="117.49999821186" width="59.322033898305" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="320.33898305085" y="79.999998211861" width="71.186440677966" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="391.52542372881" y="57.500001788139" width="47.457627118644" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="438.98305084746" y="42.500007152557" width="11.864406779661" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="450.84745762712" y="117.49999821186" width="59.322033898305" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="510.16949152542" y="79.32500243187" width="71.186440677966" height="120.67499756813" class="pz pz-3" /><rect  rx="2" x="581.35593220339" y="57.500001788139" width="47.457627118644" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="628.81355932203" y="42.500007152557" width="11.864406779661" height="157.49999284744" class="pz pz-4" /><linearGradient id="gradient_690d03df89d2e" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="640.6779661017,87.5 700,125 700,200 640.6779661017,200" style="fill: url(#gradient_690d03df89d2e)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>59:00</span>
+                        <span>62TSS</span>
+                        <span>IF: 0.8</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/progressive-13min-climb">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Progressive 13min Climb
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df8b218" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="0,132.50000178814 33.333333333333,117.49999821186 33.333333333333,200 0,200" style="fill: url(#gradient_690d03df8b218)" /><rect  rx="2" x="33.333333333333" y="12.5" width="3.7037037037037" height="187.5" class="pz pz-6" /><linearGradient id="gradient_690d03df8b243" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="37.037037037037,115.99999964237 70.37037037037,102.50000357628 70.37037037037,200 37.037037037037,200" style="fill: url(#gradient_690d03df8b243)" /><rect  rx="2" x="70.37037037037" y="12.5" width="3.7037037037037" height="187.5" class="pz pz-6" /><linearGradient id="gradient_690d03df8b262" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="74.074074074074,100.99999606609 107.40740740741,87.5 107.40740740741,200 74.074074074074,200" style="fill: url(#gradient_690d03df8b262)" /><rect  rx="2" x="107.40740740741" y="12.5" width="3.7037037037037" height="187.5" class="pz pz-6" /><rect  rx="2" x="111.11111111111" y="117.49999821186" width="11.111111111111" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df8b284" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="122.22222222222,108.49999785423 133.33333333333,81.499996781349 133.33333333333,200 122.22222222222,200" style="fill: url(#gradient_690d03df8b284)" /><rect  rx="2" x="133.33333333333" y="79.999998211861" width="55.555555555556" height="120.00000178814" class="pz pz-3" /><linearGradient id="gradient_690d03df8b29f" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="188.88888888889,78.499999642372 200,59.000000357628 200,200 188.88888888889,200" style="fill: url(#gradient_690d03df8b29f)" /><rect  rx="2" x="200" y="57.500001788139" width="44.444444444444" height="142.49999821186" class="pz pz-4" /><linearGradient id="gradient_690d03df8b2bb" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="244.44444444444,56.000003218651 255.55555555556,44.000005722046 255.55555555556,200 244.44444444444,200" style="fill: url(#gradient_690d03df8b2bb)" /><rect  rx="2" x="255.55555555556" y="42.500007152557" width="11.111111111111" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="266.66666666667" y="117.49999821186" width="44.444444444444" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df8b2db" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="311.11111111111,108.49999785423 322.22222222222,81.499996781349 322.22222222222,200 311.11111111111,200" style="fill: url(#gradient_690d03df8b2db)" /><rect  rx="2" x="322.22222222222" y="79.999998211861" width="55.555555555556" height="120.00000178814" class="pz pz-3" /><linearGradient id="gradient_690d03df8b2f5" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="377.77777777778,78.499999642372 388.88888888889,59.000000357628 388.88888888889,200 377.77777777778,200" style="fill: url(#gradient_690d03df8b2f5)" /><rect  rx="2" x="388.88888888889" y="57.500001788139" width="44.444444444444" height="142.49999821186" class="pz pz-4" /><linearGradient id="gradient_690d03df8b310" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="433.33333333333,56.000003218651 444.44444444444,44.000005722046 444.44444444444,200 433.33333333333,200" style="fill: url(#gradient_690d03df8b310)" /><rect  rx="2" x="444.44444444444" y="42.500007152557" width="11.111111111111" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="455.55555555556" y="117.49999821186" width="44.444444444444" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df8b32f" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="500,108.49999785423 511.11111111111,81.499996781349 511.11111111111,200 500,200" style="fill: url(#gradient_690d03df8b32f)" /><rect  rx="2" x="511.11111111111" y="79.999998211861" width="55.555555555556" height="120.00000178814" class="pz pz-3" /><linearGradient id="gradient_690d03df8b34a" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="566.66666666667,78.499999642372 577.77777777778,59.000000357628 577.77777777778,200 566.66666666667,200" style="fill: url(#gradient_690d03df8b34a)" /><rect  rx="2" x="577.77777777778" y="57.500001788139" width="44.444444444444" height="142.49999821186" class="pz pz-4" /><linearGradient id="gradient_690d03df8b364" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="622.22222222222,56.000003218651 633.33333333333,44.000005722046 633.33333333333,200 622.22222222222,200" style="fill: url(#gradient_690d03df8b364)" /><rect  rx="2" x="633.33333333333" y="42.500007152557" width="11.111111111111" height="157.49999284744" class="pz pz-4" /><linearGradient id="gradient_690d03df8b37d" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="644.44444444444,102.50000357628 700,132.50000178814 700,200 644.44444444444,200" style="fill: url(#gradient_690d03df8b37d)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:03:00</span>
+                        <span>71TSS</span>
+                        <span>IF: 0.82</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/progressive-25min-climb-l474">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Progressive 25min Climb
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df8c8c2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,124.17125105858 100,87.5 100,200 0,200" style="fill: url(#gradient_690d03df8c8c2)" /><rect  rx="2" x="100" y="85.324996709824" width="150" height="114.67500329018" class="pz pz-3" /><rect  rx="2" x="250" y="62.825000286102" width="80" height="137.1749997139" class="pz pz-4" /><rect  rx="2" x="330" y="41.82500243187" width="20" height="158.17499756813" class="pz pz-5" /><rect  rx="2" x="350" y="117.49999821186" width="50" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="400" y="85.324996709824" width="150" height="114.67500329018" class="pz pz-3" /><rect  rx="2" x="550" y="62.825000286102" width="80" height="137.1749997139" class="pz pz-4" /><rect  rx="2" x="630" y="41.82500243187" width="20" height="158.17499756813" class="pz pz-5" /><linearGradient id="gradient_690d03df8c90d" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="650,86.825004220009 700,124.32500422001 700,200 650,200" style="fill: url(#gradient_690d03df8c90d)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:10:00</span>
+                        <span>75TSS</span>
+                        <span>IF: 0.8</span>
+
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/progressive-26min-climb">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Progressive 26min Climb
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df8e0f9" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="0,132.50000178814 20.89552238806,117.49999821186 20.89552238806,200 0,200" style="fill: url(#gradient_690d03df8e0f9)" /><rect  rx="2" x="20.89552238806" y="12.5" width="3.4825870646766" height="187.5" class="pz pz-6" /><linearGradient id="gradient_690d03df8e122" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="24.378109452736,115.99999964237 45.273631840796,102.50000357628 45.273631840796,200 24.378109452736,200" style="fill: url(#gradient_690d03df8e122)" /><rect  rx="2" x="45.273631840796" y="12.5" width="3.4825870646766" height="187.5" class="pz pz-6" /><linearGradient id="gradient_690d03df8e140" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="48.756218905473,100.99999606609 69.651741293532,87.5 69.651741293532,200 48.756218905473,200" style="fill: url(#gradient_690d03df8e140)" /><rect  rx="2" x="69.651741293532" y="12.5" width="3.4825870646766" height="187.5" class="pz pz-6" /><rect  rx="2" x="73.134328358209" y="117.49999821186" width="10.44776119403" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df8e161" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="83.582089552239,108.49999785423 94.029850746269,81.499996781349 94.029850746269,200 83.582089552239,200" style="fill: url(#gradient_690d03df8e161)" /><rect  rx="2" x="94.029850746269" y="79.999998211861" width="52.238805970149" height="120.00000178814" class="pz pz-3" /><linearGradient id="gradient_690d03df8e17c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="146.26865671642,78.499999642372 156.71641791045,59.000000357628 156.71641791045,200 146.26865671642,200" style="fill: url(#gradient_690d03df8e17c)" /><rect  rx="2" x="156.71641791045" y="57.500001788139" width="41.791044776119" height="142.49999821186" class="pz pz-4" /><linearGradient id="gradient_690d03df8e197" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="198.50746268657,56.000003218651 208.9552238806,44.000005722046 208.9552238806,200 198.50746268657,200" style="fill: url(#gradient_690d03df8e197)" /><rect  rx="2" x="208.9552238806" y="42.500007152557" width="10.44776119403" height="157.49999284744" class="pz pz-4" /><linearGradient id="gradient_690d03df8e1b1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="219.40298507463,50 229.85074626866,81.499996781349 229.85074626866,200 219.40298507463,200" style="fill: url(#gradient_690d03df8e1b1)" /><rect  rx="2" x="229.85074626866" y="79.999998211861" width="52.238805970149" height="120.00000178814" class="pz pz-3" /><linearGradient id="gradient_690d03df8e1ca" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="282.08955223881,78.499999642372 292.53731343284,59.000000357628 292.53731343284,200 282.08955223881,200" style="fill: url(#gradient_690d03df8e1ca)" /><rect  rx="2" x="292.53731343284" y="57.500001788139" width="41.791044776119" height="142.49999821186" class="pz pz-4" /><linearGradient id="gradient_690d03df8e1e4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="334.32835820896,56.000003218651 344.77611940299,44.000005722046 344.77611940299,200 334.32835820896,200" style="fill: url(#gradient_690d03df8e1e4)" /><rect  rx="2" x="344.77611940299" y="42.500007152557" width="10.44776119403" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="355.22388059701" y="117.49999821186" width="31.34328358209" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df8e20c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="386.5671641791,108.49999785423 397.01492537313,81.499996781349 397.01492537313,200 386.5671641791,200" style="fill: url(#gradient_690d03df8e20c)" /><rect  rx="2" x="397.01492537313" y="79.999998211861" width="52.238805970149" height="120.00000178814" class="pz pz-3" /><linearGradient id="gradient_690d03df8e226" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="449.25373134328,78.499999642372 459.70149253731,59.000000357628 459.70149253731,200 449.25373134328,200" style="fill: url(#gradient_690d03df8e226)" /><rect  rx="2" x="459.70149253731" y="57.500001788139" width="41.791044776119" height="142.49999821186" class="pz pz-4" /><linearGradient id="gradient_690d03df8e241" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="501.49253731343,56.000003218651 511.94029850746,44.000005722046 511.94029850746,200 501.49253731343,200" style="fill: url(#gradient_690d03df8e241)" /><rect  rx="2" x="511.94029850746" y="42.500007152557" width="10.44776119403" height="157.49999284744" class="pz pz-4" /><linearGradient id="gradient_690d03df8e25b" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="522.38805970149,50 532.83582089552,81.499996781349 532.83582089552,200 522.38805970149,200" style="fill: url(#gradient_690d03df8e25b)" /><rect  rx="2" x="532.83582089552" y="79.999998211861" width="52.238805970149" height="120.00000178814" class="pz pz-3" /><linearGradient id="gradient_690d03df8e274" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="585.07462686567,78.499999642372 595.5223880597,59.000000357628 595.5223880597,200 585.07462686567,200" style="fill: url(#gradient_690d03df8e274)" /><rect  rx="2" x="595.5223880597" y="57.500001788139" width="41.791044776119" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="637.31343283582" y="42.500007152557" width="10.44776119403" height="157.49999284744" class="pz pz-4" /><linearGradient id="gradient_690d03df8e294" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="647.76119402985,102.50000357628 700,132.50000178814 700,200 647.76119402985,200" style="fill: url(#gradient_690d03df8e294)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>01:07:00</span>
+                        <span>82TSS</span>
+                        <span>IF: 0.86</span>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has instructions" class="material-icons">chat</i>
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/30-15-s-4">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        30/15's #4
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df90b91" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 103.7037037037,87.5 103.7037037037,200 0,200" style="fill: url(#gradient_690d03df90b91)" /><rect  rx="2" x="103.7037037037" y="102.50000357628" width="10.37037037037" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="114.07407407407" y="65.000003576279" width="10.37037037037" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="124.44444444444" y="102.50000357628" width="10.37037037037" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="134.81481481481" y="65.000003576279" width="10.37037037037" height="134.99999642372" class="pz pz-3" /><linearGradient id="gradient_690d03df90bcb" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="145.18518518519,87.5 207.40740740741,44.000005722046 207.40740740741,200 145.18518518519,200" style="fill: url(#gradient_690d03df90bcb)" /><rect  rx="2" x="207.40740740741" y="87.5" width="207.40740740741" height="112.5" class="pz pz-2" /><linearGradient id="gradient_690d03df90be9" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="414.81481481481,87.5 477.03703703704,44.000005722046 477.03703703704,200 414.81481481481,200" style="fill: url(#gradient_690d03df90be9)" /><rect  rx="2" x="477.03703703704" y="12.5" width="10.37037037037" height="187.5" class="pz pz-6" /><rect  rx="2" x="487.40740740741" y="102.50000357628" width="5.1851851851852" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="492.59259259259" y="12.5" width="10.37037037037" height="187.5" class="pz pz-6" /><rect  rx="2" x="502.96296296296" y="102.50000357628" width="5.1851851851852" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="508.14814814815" y="12.5" width="10.37037037037" height="187.5" class="pz pz-6" /><rect  rx="2" x="518.51851851852" y="102.50000357628" width="5.1851851851852" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="523.7037037037" y="12.5" width="10.37037037037" height="187.5" class="pz pz-6" /><rect  rx="2" x="534.07407407407" y="102.50000357628" width="5.1851851851852" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="539.25925925926" y="12.5" width="10.37037037037" height="187.5" class="pz pz-6" /><rect  rx="2" x="549.62962962963" y="102.50000357628" width="5.1851851851852" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="554.81481481481" y="117.49999821186" width="41.481481481481" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df90c35" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="596.2962962963,94.324997067451 700,131.8250015378 700,200 596.2962962963,200" style="fill: url(#gradient_690d03df90c35)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>33:45</span>
+                        <span>36TSS</span>
+                        <span>IF: 0.81</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/3min-max-aerobic-power">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        3min Max Aerobic Power
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="125" width="61.764705882353" height="75" class="pz pz-1" /><rect  rx="2" x="61.764705882353" y="-100" width="3.4313725490196" height="300" class="pz pz-6" /><rect  rx="2" x="65.196078431373" y="125" width="17.156862745098" height="75" class="pz pz-1" /><rect  rx="2" x="82.352941176471" y="-100" width="3.4313725490196" height="300" class="pz pz-6" /><rect  rx="2" x="85.78431372549" y="125" width="17.156862745098" height="75" class="pz pz-1" /><rect  rx="2" x="102.94117647059" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="144.11764705882" y="36.49999499321" width="20.588235294118" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="164.70588235294" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="205.88235294118" y="36.49999499321" width="61.764705882353" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="267.64705882353" y="125" width="61.764705882353" height="75" class="pz pz-1" /><rect  rx="2" x="329.41176470588" y="36.49999499321" width="61.764705882353" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="391.17647058824" y="125" width="61.764705882353" height="75" class="pz pz-1" /><rect  rx="2" x="452.94117647059" y="36.49999499321" width="61.764705882353" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="514.70588235294" y="125" width="61.764705882353" height="75" class="pz pz-1" /><rect  rx="2" x="576.47058823529" y="36.49999499321" width="61.764705882353" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="638.23529411765" y="125" width="61.764705882353" height="75" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>43TSS</span>
+                        <span>IF: 0.87</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/5min-max-aerobic">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        5min Max Aerobic
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="41.176470588235" y="114.50000107288" width="20.588235294118" height="85.499998927116" class="pz pz-1" /><rect  rx="2" x="61.764705882353" y="105.50000071526" width="20.588235294118" height="94.499999284744" class="pz pz-2" /><rect  rx="2" x="82.352941176471" y="95.000001788139" width="20.588235294118" height="104.99999821186" class="pz pz-2" /><rect  rx="2" x="102.94117647059" y="79.999998211861" width="20.588235294118" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="123.52941176471" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="144.11764705882" y="36.49999499321" width="102.94117647059" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="247.05882352941" y="117.49999821186" width="82.352941176471" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="329.41176470588" y="36.49999499321" width="102.94117647059" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="432.35294117647" y="117.49999821186" width="82.352941176471" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="514.70588235294" y="36.49999499321" width="102.94117647059" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="617.64705882353" y="117.49999821186" width="82.352941176471" height="82.500001788139" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>46TSS</span>
+                        <span>IF: 0.91</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/depleting-session-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Depleting Session #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df931c4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 82.352941176471,95.000001788139 82.352941176471,200 0,200" style="fill: url(#gradient_690d03df931c4)" /><rect  rx="2" x="82.352941176471" y="125" width="20.588235294118" height="75" class="pz pz-1" /><rect  rx="2" x="102.94117647059" y="63.499996066093" width="82.352941176471" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="185.29411764706" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="226.47058823529" y="63.499996066093" width="82.352941176471" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="308.82352941176" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="350" y="63.499996066093" width="82.352941176471" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="432.35294117647" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="473.52941176471" y="83.000004291534" width="164.70588235294" height="116.99999570847" class="pz pz-3" /><rect  rx="2" x="638.23529411765" y="125" width="61.764705882353" height="75" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>33TSS</span>
+                        <span>IF: 0.77</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/intensive-capacity-2">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Intensive Capacity #2
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df93e12" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 61.764705882353,109.99999642372 61.764705882353,200 0,200" style="fill: url(#gradient_690d03df93e12)" /><rect  rx="2" x="61.764705882353" y="109.99999642372" width="20.588235294118" height="90.000003576279" class="pz pz-2" /><rect  rx="2" x="82.352941176471" y="102.50000357628" width="20.588235294118" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="102.94117647059" y="78.499999642372" width="20.588235294118" height="121.50000035763" class="pz pz-3" /><rect  rx="2" x="123.52941176471" y="36.49999499321" width="20.588235294118" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="144.11764705882" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="164.70588235294" y="65.000003576279" width="41.176470588235" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="205.88235294118" y="87.5" width="205.88235294118" height="112.5" class="pz pz-2" /><linearGradient id="gradient_690d03df93e53" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="80%" class="pz pz-5" /><stop offset="80%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="100%" class="pz pz-6" /></linearGradient><polygon  class="pz" points="411.76470588235,68.000000715256 427.20588235294,5.0000071525574 427.20588235294,200 411.76470588235,200" style="fill: url(#gradient_690d03df93e53)" /><rect  rx="2" x="427.20588235294" y="117.49999821186" width="41.176470588235" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df93e70" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="80%" class="pz pz-5" /><stop offset="80%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="100%" class="pz pz-6" /></linearGradient><polygon  class="pz" points="468.38235294118,68.000000715256 483.82352941176,5.0000071525574 483.82352941176,200 468.38235294118,200" style="fill: url(#gradient_690d03df93e70)" /><rect  rx="2" x="483.82352941176" y="117.49999821186" width="41.176470588235" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df93e8d" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="80%" class="pz pz-5" /><stop offset="80%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="100%" class="pz pz-6" /></linearGradient><polygon  class="pz" points="525,68.000000715256 540.44117647059,5.0000071525574 540.44117647059,200 525,200" style="fill: url(#gradient_690d03df93e8d)" /><rect  rx="2" x="540.44117647059" y="117.49999821186" width="41.176470588235" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df93ea6" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="60%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="70%" class="pz pz-5" /><stop offset="80%" class="pz pz-5" /><stop offset="80%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="100%" class="pz pz-6" /></linearGradient><polygon  class="pz" points="581.61764705882,68.000000715256 597.05882352941,5.0000071525574 597.05882352941,200 581.61764705882,200" style="fill: url(#gradient_690d03df93ea6)" /><rect  rx="2" x="597.05882352941" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df93ebe" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="617.64705882353,95.000001788139 700,132.50000178814 700,200 617.64705882353,200" style="fill: url(#gradient_690d03df93ebe)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>32TSS</span>
+                        <span>IF: 0.76</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/lactate-threshold-2">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Lactate Threshold #2
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df94a66" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 61.764705882353,102.50000357628 61.764705882353,200 0,200" style="fill: url(#gradient_690d03df94a66)" /><rect  rx="2" x="61.764705882353" y="33.499997854233" width="10.294117647059" height="166.50000214577" class="pz pz-5" /><rect  rx="2" x="72.058823529412" y="95.000001788139" width="10.294117647059" height="104.99999821186" class="pz pz-2" /><rect  rx="2" x="82.352941176471" y="33.499997854233" width="10.294117647059" height="166.50000214577" class="pz pz-5" /><rect  rx="2" x="92.647058823529" y="95.000001788139" width="10.294117647059" height="104.99999821186" class="pz pz-2" /><rect  rx="2" x="102.94117647059" y="33.499997854233" width="10.294117647059" height="166.50000214577" class="pz pz-5" /><rect  rx="2" x="113.23529411765" y="95.000001788139" width="10.294117647059" height="104.99999821186" class="pz pz-2" /><rect  rx="2" x="123.52941176471" y="33.499997854233" width="10.294117647059" height="166.50000214577" class="pz pz-5" /><rect  rx="2" x="133.82352941176" y="95.000001788139" width="10.294117647059" height="104.99999821186" class="pz pz-2" /><rect  rx="2" x="144.11764705882" y="87.5" width="164.70588235294" height="112.5" class="pz pz-2" /><rect  rx="2" x="308.82352941176" y="65.000003576279" width="20.588235294118" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="329.41176470588" y="57.500001788139" width="20.588235294118" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="350" y="51.499998569489" width="20.588235294118" height="148.50000143051" class="pz pz-4" /><rect  rx="2" x="370.58823529412" y="44.000005722046" width="20.588235294118" height="155.99999427795" class="pz pz-4" /><rect  rx="2" x="391.17647058824" y="44.000005722046" width="20.588235294118" height="155.99999427795" class="pz pz-4" /><rect  rx="2" x="411.76470588235" y="51.499998569489" width="20.588235294118" height="148.50000143051" class="pz pz-4" /><rect  rx="2" x="432.35294117647" y="57.500001788139" width="20.588235294118" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="452.94117647059" y="65.000003576279" width="20.588235294118" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="473.52941176471" y="65.000003576279" width="20.588235294118" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="494.11764705882" y="57.500001788139" width="20.588235294118" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="514.70588235294" y="51.499998569489" width="20.588235294118" height="148.50000143051" class="pz pz-4" /><rect  rx="2" x="535.29411764706" y="44.000005722046" width="20.588235294118" height="155.99999427795" class="pz pz-4" /><rect  rx="2" x="555.88235294118" y="44.000005722046" width="20.588235294118" height="155.99999427795" class="pz pz-4" /><rect  rx="2" x="576.47058823529" y="51.499998569489" width="20.588235294118" height="148.50000143051" class="pz pz-4" /><rect  rx="2" x="597.05882352941" y="57.500001788139" width="20.588235294118" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="617.64705882353" y="65.000003576279" width="20.588235294118" height="134.99999642372" class="pz pz-3" /><linearGradient id="gradient_690d03df94b03" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="638.23529411765,132.50000178814 700,102.50000357628 700,200 638.23529411765,200" style="fill: url(#gradient_690d03df94b03)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>44TSS</span>
+                        <span>IF: 0.88</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/progressive-climb-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Progressive Climb #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df9567f" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,125 102.94117647059,87.5 102.94117647059,200 0,200" style="fill: url(#gradient_690d03df9567f)" /><rect  rx="2" x="102.94117647059" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="123.52941176471" y="79.999998211861" width="102.94117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="226.47058823529" y="57.500001788139" width="82.352941176471" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="308.82352941176" y="42.500007152557" width="20.588235294118" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="329.41176470588" y="117.49999821186" width="82.352941176471" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="411.76470588235" y="79.999998211861" width="102.94117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="514.70588235294" y="57.500001788139" width="82.352941176471" height="142.49999821186" class="pz pz-4" /><rect  rx="2" x="597.05882352941" y="42.500007152557" width="20.588235294118" height="157.49999284744" class="pz pz-4" /><rect  rx="2" x="617.64705882353" y="117.49999821186" width="82.352941176471" height="82.500001788139" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>37TSS</span>
+                        <span>IF: 0.81</span>
+
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/race-attacks-2">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Race Attacks #2
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df9619d" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,125 123.52941176471,87.5 123.52941176471,200 0,200" style="fill: url(#gradient_690d03df9619d)" /><rect  rx="2" x="123.52941176471" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="144.11764705882" y="33.499997854233" width="20.588235294118" height="166.50000214577" class="pz pz-5" /><rect  rx="2" x="164.70588235294" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="185.29411764706" y="87.5" width="205.88235294118" height="112.5" class="pz pz-2" /><linearGradient id="gradient_690d03df961cd" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="391.17647058824,68.000000715256 473.52941176471,59.000000357628 473.52941176471,200 391.17647058824,200" style="fill: url(#gradient_690d03df961cd)" /><rect  rx="2" x="473.52941176471" y="36.49999499321" width="41.176470588235" height="163.50000500679" class="pz pz-5" /><linearGradient id="gradient_690d03df961ec" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="514.70588235294,68.000000715256 597.05882352941,59.000000357628 597.05882352941,200 514.70588235294,200" style="fill: url(#gradient_690d03df961ec)" /><rect  rx="2" x="597.05882352941" y="117.49999821186" width="102.94117647059" height="82.500001788139" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>36TSS</span>
+                        <span>IF: 0.81</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/race-attacks-3">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Race Attacks #3
+                            <span class="badge bg-secondary">by coach <strong>Si Bradeley</strong></span>
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df96d02" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,125 102.94117647059,87.5 102.94117647059,200 0,200" style="fill: url(#gradient_690d03df96d02)" /><rect  rx="2" x="102.94117647059" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="123.52941176471" y="33.499997854233" width="20.588235294118" height="166.50000214577" class="pz pz-5" /><rect  rx="2" x="144.11764705882" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="164.70588235294" y="87.5" width="205.88235294118" height="112.5" class="pz pz-2" /><linearGradient id="gradient_690d03df96d32" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-6" /><stop offset="10%" class="pz pz-6" /><stop offset="10%" class="pz pz-6" /><stop offset="20%" class="pz pz-6" /><stop offset="20%" class="pz pz-6" /><stop offset="30%" class="pz pz-6" /><stop offset="30%" class="pz pz-6" /><stop offset="40%" class="pz pz-6" /><stop offset="40%" class="pz pz-6" /><stop offset="50%" class="pz pz-6" /><stop offset="50%" class="pz pz-6" /><stop offset="60%" class="pz pz-6" /><stop offset="60%" class="pz pz-6" /><stop offset="70%" class="pz pz-6" /><stop offset="70%" class="pz pz-6" /><stop offset="80%" class="pz pz-6" /><stop offset="80%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="100%" class="pz pz-6" /></linearGradient><polygon  class="pz" points="370.58823529412,-17.500007152557 391.17647058824,-2.5000035762787 391.17647058824,200 370.58823529412,200" style="fill: url(#gradient_690d03df96d32)" /><linearGradient id="gradient_690d03df96d4b" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="391.17647058824,44.000005722046 473.52941176471,65.000003576279 473.52941176471,200 391.17647058824,200" style="fill: url(#gradient_690d03df96d4b)" /><rect  rx="2" x="473.52941176471" y="117.49999821186" width="61.764705882353" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df96d67" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-6" /><stop offset="10%" class="pz pz-6" /><stop offset="10%" class="pz pz-6" /><stop offset="20%" class="pz pz-6" /><stop offset="20%" class="pz pz-6" /><stop offset="30%" class="pz pz-6" /><stop offset="30%" class="pz pz-6" /><stop offset="40%" class="pz pz-6" /><stop offset="40%" class="pz pz-6" /><stop offset="50%" class="pz pz-6" /><stop offset="50%" class="pz pz-6" /><stop offset="60%" class="pz pz-6" /><stop offset="60%" class="pz pz-6" /><stop offset="70%" class="pz pz-6" /><stop offset="70%" class="pz pz-6" /><stop offset="80%" class="pz pz-6" /><stop offset="80%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="90%" class="pz pz-6" /><stop offset="100%" class="pz pz-6" /></linearGradient><polygon  class="pz" points="535.29411764706,-17.500007152557 555.88235294118,-2.5000035762787 555.88235294118,200 535.29411764706,200" style="fill: url(#gradient_690d03df96d67)" /><linearGradient id="gradient_690d03df96d7c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="555.88235294118,44.000005722046 638.23529411765,65.000003576279 638.23529411765,200 555.88235294118,200" style="fill: url(#gradient_690d03df96d7c)" /><rect  rx="2" x="638.23529411765" y="117.49999821186" width="61.764705882353" height="82.500001788139" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>43TSS</span>
+                        <span>IF: 0.88</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/sprints-into-zone-3-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Sprints into Zone 3 #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="117.49999821186" width="62.068965517241" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="62.068965517241" y="-69.999992847443" width="3.448275862069" height="269.99999284744" class="pz pz-6" /><rect  rx="2" x="65.51724137931" y="117.49999821186" width="15.51724137931" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="81.034482758621" y="-69.999992847443" width="3.448275862069" height="269.99999284744" class="pz pz-6" /><rect  rx="2" x="84.48275862069" y="117.49999821186" width="15.51724137931" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df978c5" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="100,87.5 141.37931034483,57.500001788139 141.37931034483,200 100,200" style="fill: url(#gradient_690d03df978c5)" /><rect  rx="2" x="141.37931034483" y="117.49999821186" width="41.379310344828" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="182.75862068966" y="87.5" width="206.89655172414" height="112.5" class="pz pz-2" /><rect  rx="2" x="389.65517241379" y="117.49999821186" width="41.379310344828" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="431.03448275862" y="12.5" width="20.689655172414" height="187.5" class="pz pz-6" /><rect  rx="2" x="451.72413793103" y="117.49999821186" width="20.689655172414" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="472.41379310345" y="-25" width="10.344827586207" height="225" class="pz pz-6" /><rect  rx="2" x="482.75862068966" y="117.49999821186" width="10.344827586207" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="493.10344827586" y="-47.499996423721" width="5.1724137931034" height="247.49999642372" class="pz pz-6" /><rect  rx="2" x="498.27586206897" y="117.49999821186" width="15.51724137931" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="513.79310344828" y="-77.500003576279" width="3.448275862069" height="277.50000357628" class="pz pz-6" /><rect  rx="2" x="517.24137931034" y="117.49999821186" width="17.241379310345" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="534.48275862069" y="78.499999642372" width="103.44827586207" height="121.50000035763" class="pz pz-3" /><rect  rx="2" x="637.93103448276" y="117.49999821186" width="62.068965517241" height="82.500001788139" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>33:50</span>
+                        <span>35TSS</span>
+                        <span>IF: 0.79</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/steady-climbing-2">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Steady Climbing #2
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df98388" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 82.352941176471,87.5 82.352941176471,200 0,200" style="fill: url(#gradient_690d03df98388)" /><rect  rx="2" x="82.352941176471" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df983aa" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="102.94117647059,102.50000357628 164.70588235294,65.000003576279 164.70588235294,200 102.94117647059,200" style="fill: url(#gradient_690d03df983aa)" /><rect  rx="2" x="164.70588235294" y="52.999997138977" width="41.176470588235" height="147.00000286102" class="pz pz-4" /><rect  rx="2" x="205.88235294118" y="87.5" width="164.70588235294" height="112.5" class="pz pz-2" /><linearGradient id="gradient_690d03df983ca" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="370.58823529412,85.324996709824 576.47058823529,43.325001001358 576.47058823529,200 370.58823529412,200" style="fill: url(#gradient_690d03df983ca)" /><rect  rx="2" x="576.47058823529" y="117.49999821186" width="41.176470588235" height="82.500001788139" class="pz pz-1" /><linearGradient id="gradient_690d03df983e4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="617.64705882353,102.35390365124 700,131.92249983549 700,200 617.64705882353,200" style="fill: url(#gradient_690d03df983e4)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>35TSS</span>
+                        <span>IF: 0.79</span>
+
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/sub-threshold-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Sub Threshold #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df98f0c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,124.37824606895 102.94117647059,86.980250477791 102.94117647059,200 0,200" style="fill: url(#gradient_690d03df98f0c)" /><rect  rx="2" x="102.94117647059" y="87.5" width="164.70588235294" height="112.5" class="pz pz-2" /><linearGradient id="gradient_690d03df98f30" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="267.64705882353,86.000001430511 350,66.500002145767 350,200 267.64705882353,200" style="fill: url(#gradient_690d03df98f30)" /><linearGradient id="gradient_690d03df98f48" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="350,65.824997425079 432.35294117647,85.324996709824 432.35294117647,200 350,200" style="fill: url(#gradient_690d03df98f48)" /><linearGradient id="gradient_690d03df98f5b" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="432.35294117647,86.000001430511 514.70588235294,66.500002145767 514.70588235294,200 432.35294117647,200" style="fill: url(#gradient_690d03df98f5b)" /><linearGradient id="gradient_690d03df98f6f" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="514.70588235294,66.500002145767 597.05882352941,86.000001430511 597.05882352941,200 514.70588235294,200" style="fill: url(#gradient_690d03df98f6f)" /><rect  rx="2" x="597.05882352941" y="117.49999821186" width="102.94117647059" height="82.500001788139" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>32TSS</span>
+                        <span>IF: 0.76</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/sub-threshold-xx-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Sub Threshold XX #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="41.176470588235" y="79.999998211861" width="10.294117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="51.470588235294" y="102.50000357628" width="10.294117647059" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="61.764705882353" y="79.999998211861" width="10.294117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="72.058823529412" y="102.50000357628" width="10.294117647059" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="82.352941176471" y="79.999998211861" width="10.294117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="92.647058823529" y="102.50000357628" width="10.294117647059" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="102.94117647059" y="79.999998211861" width="10.294117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="113.23529411765" y="102.50000357628" width="10.294117647059" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="123.52941176471" y="125" width="20.588235294118" height="75" class="pz pz-1" /><rect  rx="2" x="144.11764705882" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="154.41176470588" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="205.88235294118" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="216.17647058824" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="267.64705882353" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="277.94117647059" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="329.41176470588" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="339.70588235294" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="391.17647058824" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="401.47058823529" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="452.94117647059" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="463.23529411765" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="514.70588235294" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="525" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="576.47058823529" y="19.999992847443" width="10.294117647059" height="180.00000715256" class="pz pz-6" /><rect  rx="2" x="586.76470588235" y="63.499996066093" width="51.470588235294" height="136.50000393391" class="pz pz-4" /><rect  rx="2" x="638.23529411765" y="125" width="61.764705882353" height="75" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>46TSS</span>
+                        <span>IF: 0.91</span>
+
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/tempo-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Tempo #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df9a81f" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,132.50000178814 82.352941176471,95.000001788139 82.352941176471,200 0,200" style="fill: url(#gradient_690d03df9a81f)" /><rect  rx="2" x="82.352941176471" y="125" width="20.588235294118" height="75" class="pz pz-1" /><rect  rx="2" x="102.94117647059" y="-62.5" width="3.4313725490196" height="262.5" class="pz pz-6" /><rect  rx="2" x="106.37254901961" y="125" width="17.156862745098" height="75" class="pz pz-1" /><rect  rx="2" x="123.52941176471" y="-62.5" width="3.4313725490196" height="262.5" class="pz pz-6" /><rect  rx="2" x="126.96078431373" y="125" width="17.156862745098" height="75" class="pz pz-1" /><rect  rx="2" x="144.11764705882" y="79.999998211861" width="102.94117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="247.05882352941" y="108.49999785423" width="20.588235294118" height="91.500002145767" class="pz pz-2" /><rect  rx="2" x="267.64705882353" y="79.999998211861" width="102.94117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="370.58823529412" y="108.49999785423" width="20.588235294118" height="91.500002145767" class="pz pz-2" /><rect  rx="2" x="391.17647058824" y="79.999998211861" width="102.94117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="494.11764705882" y="108.49999785423" width="20.588235294118" height="91.500002145767" class="pz pz-2" /><rect  rx="2" x="514.70588235294" y="79.999998211861" width="102.94117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="617.64705882353" y="108.49999785423" width="20.588235294118" height="91.500002145767" class="pz pz-2" /><rect  rx="2" x="638.23529411765" y="125" width="61.764705882353" height="75" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>30TSS</span>
+                        <span>IF: 0.74</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/tempo-surges-1">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Tempo Surges #1
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><rect  rx="2" x="0" y="125" width="61.764705882353" height="75" class="pz pz-1" /><rect  rx="2" x="61.764705882353" y="87.5" width="20.588235294118" height="112.5" class="pz pz-2" /><rect  rx="2" x="82.352941176471" y="125" width="20.588235294118" height="75" class="pz pz-1" /><rect  rx="2" x="102.94117647059" y="87.5" width="20.588235294118" height="112.5" class="pz pz-2" /><rect  rx="2" x="123.52941176471" y="125" width="20.588235294118" height="75" class="pz pz-1" /><rect  rx="2" x="144.11764705882" y="65.000003576279" width="20.588235294118" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="164.70588235294" y="125" width="20.588235294118" height="75" class="pz pz-1" /><rect  rx="2" x="185.29411764706" y="65.000003576279" width="20.588235294118" height="134.99999642372" class="pz pz-3" /><rect  rx="2" x="205.88235294118" y="125" width="20.588235294118" height="75" class="pz pz-1" /><rect  rx="2" x="226.47058823529" y="12.5" width="6.8627450980392" height="187.5" class="pz pz-6" /><linearGradient id="gradient_690d03df9b3ab" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="233.33333333333,87.5 336.27450980392,68.000000715256 336.27450980392,200 233.33333333333,200" style="fill: url(#gradient_690d03df9b3ab)" /><rect  rx="2" x="336.27450980392" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="377.45098039216" y="12.5" width="6.8627450980392" height="187.5" class="pz pz-6" /><linearGradient id="gradient_690d03df9b3cc" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="384.3137254902,87.5 487.25490196078,68.000000715256 487.25490196078,200 384.3137254902,200" style="fill: url(#gradient_690d03df9b3cc)" /><rect  rx="2" x="487.25490196078" y="125" width="41.176470588235" height="75" class="pz pz-1" /><rect  rx="2" x="528.43137254902" y="12.5" width="6.8627450980392" height="187.5" class="pz pz-6" /><linearGradient id="gradient_690d03df9b3e6" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="20%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="30%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="40%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="50%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="60%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="70%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="80%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="90%" class="pz pz-3" /><stop offset="100%" class="pz pz-3" /></linearGradient><polygon  class="pz" points="535.29411764706,87.5 638.23529411765,68.000000715256 638.23529411765,200 535.29411764706,200" style="fill: url(#gradient_690d03df9b3e6)" /><rect  rx="2" x="638.23529411765" y="125" width="61.764705882353" height="75" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>31TSS</span>
+                        <span>IF: 0.75</span>
+
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/threshold-block-3">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Threshold Block #3
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df9be4c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,123.76010417938 123.52941176471,86.531901359558 123.52941176471,200 0,200" style="fill: url(#gradient_690d03df9be4c)" /><rect  rx="2" x="123.52941176471" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="144.11764705882" y="36.49999499321" width="20.588235294118" height="163.50000500679" class="pz pz-5" /><rect  rx="2" x="164.70588235294" y="117.49999821186" width="20.588235294118" height="82.500001788139" class="pz pz-1" /><rect  rx="2" x="185.29411764706" y="87.5" width="164.70588235294" height="112.5" class="pz pz-2" /><linearGradient id="gradient_690d03df9be79" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="350,64.825400710106 411.76470588235,42.795658111572 411.76470588235,200 350,200" style="fill: url(#gradient_690d03df9be79)" /><rect  rx="2" x="411.76470588235" y="102.50000357628" width="20.588235294118" height="97.499996423721" class="pz pz-2" /><linearGradient id="gradient_690d03df9be91" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="432.35294117647,64.295449852943 514.70588235294,43.638050556183 514.70588235294,200 432.35294117647,200" style="fill: url(#gradient_690d03df9be91)" /><rect  rx="2" x="514.70588235294" y="102.50000357628" width="20.588235294118" height="97.499996423721" class="pz pz-2" /><linearGradient id="gradient_690d03df9bea8" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="10%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="20%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="30%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="40%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="50%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="60%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="70%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="80%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="90%" class="pz pz-4" /><stop offset="100%" class="pz pz-4" /></linearGradient><polygon  class="pz" points="535.29411764706,64.324998855591 638.23529411765,44.824999570847 638.23529411765,200 535.29411764706,200" style="fill: url(#gradient_690d03df9bea8)" /><rect  rx="2" x="638.23529411765" y="117.49999821186" width="61.764705882353" height="82.500001788139" class="pz pz-1" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>39TSS</span>
+                        <span>IF: 0.83</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/endurance-with-30-30-s">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Endurance with 30/30's
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df9c934" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="50%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="60%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,124.32500422001 102.94117647059,94.324997067451 102.94117647059,200 0,200" style="fill: url(#gradient_690d03df9c934)" /><rect  rx="2" x="102.94117647059" y="102.50000357628" width="10.294117647059" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="113.23529411765" y="79.999998211861" width="10.294117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="123.52941176471" y="102.50000357628" width="10.294117647059" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="133.82352941176" y="79.999998211861" width="10.294117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="144.11764705882" y="102.50000357628" width="10.294117647059" height="97.499996423721" class="pz pz-2" /><rect  rx="2" x="154.41176470588" y="79.999998211861" width="10.294117647059" height="120.00000178814" class="pz pz-3" /><rect  rx="2" x="164.70588235294" y="101.82499885559" width="308.82352941176" height="98.175001144409" class="pz pz-2" /><rect  rx="2" x="473.52941176471" y="29.824995994568" width="10.294117647059" height="170.17500400543" class="pz pz-5" /><rect  rx="2" x="483.82352941176" y="85.324996709824" width="10.294117647059" height="114.67500329018" class="pz pz-3" /><rect  rx="2" x="494.11764705882" y="29.824995994568" width="10.294117647059" height="170.17500400543" class="pz pz-5" /><rect  rx="2" x="504.41176470588" y="85.324996709824" width="10.294117647059" height="114.67500329018" class="pz pz-3" /><rect  rx="2" x="514.70588235294" y="29.824995994568" width="10.294117647059" height="170.17500400543" class="pz pz-5" /><rect  rx="2" x="525" y="85.324996709824" width="10.294117647059" height="114.67500329018" class="pz pz-3" /><rect  rx="2" x="535.29411764706" y="29.824995994568" width="10.294117647059" height="170.17500400543" class="pz pz-5" /><rect  rx="2" x="545.58823529412" y="85.324996709824" width="10.294117647059" height="114.67500329018" class="pz pz-3" /><rect  rx="2" x="555.88235294118" y="29.824995994568" width="10.294117647059" height="170.17500400543" class="pz pz-5" /><rect  rx="2" x="566.17647058824" y="85.324996709824" width="10.294117647059" height="114.67500329018" class="pz pz-3" /><rect  rx="2" x="576.47058823529" y="29.824995994568" width="10.294117647059" height="170.17500400543" class="pz pz-5" /><rect  rx="2" x="586.76470588235" y="85.324996709824" width="10.294117647059" height="114.67500329018" class="pz pz-3" /><linearGradient id="gradient_690d03df9c9a7" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="10%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="20%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="30%" class="pz pz-2" /><stop offset="40%" class="pz pz-2" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="597.05882352941,109.32500064373 700,124.32500422001 700,200 597.05882352941,200" style="fill: url(#gradient_690d03df9c9a7)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>30TSS</span>
+                        <span>IF: 0.74</span>
+
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 g-2 remove-a-underline">
+            <a href="/workouts/workout/tadej-s-criss-cross-tempo">
+                <div class="card p-3 h-100">
+                    <div class="card-title">
+                        Tadej's Criss-cross Tempo
+                    </div>
+                    <svg viewBox="0 0 700 200" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><linearGradient id="gradient_690d03df9d55c" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="80%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="90%" class="pz pz-2" /><stop offset="100%" class="pz pz-2" /></linearGradient><polygon  class="pz" points="0,139.3250075 61.764705882353,101.8250075 61.764705882353,200 0,200" style="fill: url(#gradient_690d03df9d55c)" /><rect  rx="2" x="61.764705882353" y="94.325006" width="20.588235294118" height="105.674994" class="pz pz-2" /><rect  rx="2" x="82.352941176471" y="79.325012" width="20.588235294118" height="120.674988" class="pz pz-3" /><rect  rx="2" x="102.94117647059" y="64.3250075" width="20.588235294118" height="135.6749925" class="pz pz-4" /><rect  rx="2" x="123.52941176471" y="124.3250045" width="61.764705882353" height="75.6749955" class="pz pz-1" /><rect  rx="2" x="185.29411764706" y="56.825006" width="20.588235294118" height="143.174994" class="pz pz-4" /><rect  rx="2" x="205.88235294118" y="79.325012" width="61.764705882353" height="120.674988" class="pz pz-3" /><rect  rx="2" x="267.64705882353" y="56.825006" width="20.588235294118" height="143.174994" class="pz pz-4" /><rect  rx="2" x="288.23529411765" y="79.325012" width="61.764705882353" height="120.674988" class="pz pz-3" /><rect  rx="2" x="350" y="124.3250045" width="82.352941176471" height="75.6749955" class="pz pz-1" /><rect  rx="2" x="432.35294117647" y="56.825006" width="20.588235294118" height="143.174994" class="pz pz-4" /><rect  rx="2" x="452.94117647059" y="79.325012" width="61.764705882353" height="120.674988" class="pz pz-3" /><rect  rx="2" x="514.70588235294" y="56.825006" width="20.588235294118" height="143.174994" class="pz pz-4" /><rect  rx="2" x="535.29411764706" y="79.325012" width="61.764705882353" height="120.674988" class="pz pz-3" /><linearGradient id="gradient_690d03df9d5dd" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="10%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="20%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="30%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="40%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="50%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="60%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="70%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="80%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="90%" class="pz pz-1" /><stop offset="100%" class="pz pz-1" /></linearGradient><polygon  class="pz" points="597.05882352941,116.825003 700,139.325003 700,200 597.05882352941,200" style="fill: url(#gradient_690d03df9d5dd)" /></svg>
+                    <div class="small d-flex justify-content-between align-items-center">
+                        <span>34:00</span>
+                        <span>31TSS</span>
+                        <span>IF: 0.75</span>
+
+                        <i style="font-size: 16px;" data-bs-toggle="tooltip" data-bs-title="Has RPM" class="material-icons">cached</i>
+                    </div>
+                </div>
+            </a>
+        </div>
+</div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <footer class="mt-4">
+                            Contact us: mywhooshinfo<span>(at)</span>gmail.com
+                            <br/>
+                            <a target="_blank" href="https://www.instagram.com/mywhooshinfo/"><img class="social-icon" src="/images/instagram.webp" alt="instagram" /> mywhooshinfo</a>
+                            <br/>
+                            <a target="_blank" href="https://www.mywhoosh.com/privacy-policy/" rel="nofollow">Privacy policy</a>
+                            <br/>
+                            &copy; 2024-2025 MyWhooshInfo.com. All rights reserved.
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</main>
+
+    <script src="https://mywhooshinfo.com/assets/main-BI-KlKk2.js" type="module" crossorigin></script>
+
+
+
+</body>
+</html>
