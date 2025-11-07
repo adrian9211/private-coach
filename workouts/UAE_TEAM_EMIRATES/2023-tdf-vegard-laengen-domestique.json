@@ -1,0 +1,69 @@
+{
+  "filename": "2023-tdf-vegard-laengen-domestique.zwo",
+  "slug": "2023-tdf-vegard-laengen-domestique",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/2023-tdf-vegard-laengen-domestique?do=exportZwo",
+  "name": "2023 TDF Vegard Laengen - Domestique",
+  "description": "Vegard Laengen is the trusty workhorse of UAE Team Emirates. Throughout a Grand Tour, Laengen will spend countless hours riding at the head of the peloton, controlling the speed for his team leader. \n\r\n\n\r\nThere is no getting away from the benefits of completing long steady Tempo efforts. The best professionals spend countless hours training this way, and Laengen spends much of his training toiling away in this zone 3 power. \n\r\n\n\r\nBy completing some 1-minute near FTP efforts in the warm-up, you will be ready for the following 15-minute Tempo efforts.",
+  "duration": "53:00",
+  "tss": 58,
+  "intensityFactor": 0.81,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

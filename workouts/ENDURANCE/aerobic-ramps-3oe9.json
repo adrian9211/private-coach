@@ -1,0 +1,157 @@
+{
+  "filename": "aerobic-ramps-3oe9.zwo",
+  "slug": "aerobic-ramps-3oe9",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/aerobic-ramps-3oe9?do=exportZwo",
+  "name": "Aerobic Ramps",
+  "description": "Not every session needs to involve high-intensity efforts. Today's session is a low-intensity workout focussing on your aerobic fitness. \n\n\n\nOne of the most important aspects of cycling is your aerobic fitness. This allows you to preserve vital glycogen stores and power up the day's final climb.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Aerobic Ramps\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        53:00\n                        44TSS\n                        IF: 0.71\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic Ramps\n                    \n                    \n                    \n                        33:00\n                        27TSS\n                        IF: 0.7\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 into 2min Anaerobic\n                    \n                    \n                    \n                        53:00\n                        44TSS\n                        IF: 0.71\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Maintenance #2\n                    \n                    \n                    \n                        53:00\n                        44TSS\n                        IF: 0.71\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing into sprints\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        53:00\n                        55TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Preparation - Time Trial\n                    \n                    \n                    \n                        53:00\n                        38TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #7\n                    \n                    \n                    \n                        53:00\n                        54TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Train like Tadej - Short climbs\n                    \n                    \n                    \n                        53:00\n                        56TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Mikkel Bjerg - ITT\n                    \n                    \n                    \n                        53:00\n                        38TSS\n                        IF: 0.66\n                        chat",
+  "duration": "53:00",
+  "tss": 44,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 45,
+      "powerHigh": 60,
+      "powerFormatted": "45% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 61,
+      "powerHigh": 80,
+      "powerFormatted": "61% FTP - 80% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 61,
+      "powerHigh": 80,
+      "powerFormatted": "61% FTP - 80% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 61,
+      "powerHigh": 80,
+      "powerFormatted": "61% FTP - 80% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 61,
+      "powerHigh": 80,
+      "powerFormatted": "61% FTP - 80% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 61,
+      "powerHigh": 80,
+      "powerFormatted": "61% FTP - 80% FTP"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 50,
+      "powerFormatted": "75% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,213 @@
+{
+  "filename": "quicksilver.zwo",
+  "slug": "quicksilver",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/quicksilver?do=exportZwo",
+  "name": "Quicksilver",
+  "description": "A challenging session that requires completing race-like efforts.",
+  "duration": "41:45",
+  "tss": 54,
+  "intensityFactor": 0.88,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 64,
+      "powerHigh": 64,
+      "powerFormatted": "64%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 94,
+      "powerHigh": 94,
+      "powerFormatted": "94%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 94,
+      "powerHigh": 94,
+      "powerFormatted": "94%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 94,
+      "powerHigh": 94,
+      "powerFormatted": "94%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 64,
+      "powerHigh": 64,
+      "powerFormatted": "64%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    }
+  ],
+  "isValid": true
+}

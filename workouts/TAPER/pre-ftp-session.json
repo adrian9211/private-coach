@@ -1,0 +1,157 @@
+{
+  "filename": "pre-ftp-session.zwo",
+  "slug": "pre-ftp-session",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/pre-ftp-session?do=exportZwo",
+  "name": "Pre-FTP Session",
+  "description": "This workout aims to activate the fast-twitch muscles and prepare the body and mind for peak performance the following day. The intervals are short enough to allow for activation without producing any residual fatigue. \n\n\n\nAfter this workout, you will be primed for a significant effort tomorrow!\n            \n\n\n            This workout is also available as Video workout by a MyWhoosh coach Si Bradeley",
+  "duration": "46:20",
+  "tss": 40,
+  "intensityFactor": 0.73,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 70,
+      "powerFormatted": "50% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 80,
+      "powerHigh": 95,
+      "powerFormatted": "80% FTP - 95% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 35,
+      "powerFormatted": "55% FTP - 35% FTP"
+    }
+  ],
+  "isValid": true
+}

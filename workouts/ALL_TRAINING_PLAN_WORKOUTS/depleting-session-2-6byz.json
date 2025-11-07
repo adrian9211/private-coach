@@ -1,0 +1,93 @@
+{
+  "filename": "depleting-session-2-6byz.zwo",
+  "slug": "depleting-session-2-6byz",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/depleting-session-2-6byz?do=exportZwo",
+  "name": "Depleting Session #2",
+  "description": "Large amounts of tempo work in today's session, but the focus here is on fuel. To produce zone 3 power and above requires a significant amount of glycogen. But what happens when this fuel source has been depleted? In today's workout we begin with a steady-state zone 3 effort, followed by a series of bottom end, zone 4 intervals. All of this is followed by the same opening zone 3 interval. Take note and compare your sensations and heart rate response in the two steady-state tempo efforts. Is the final tempo effort as comfortable as the first?\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Depleting Session #1\n                    \n                    \n                    \n                        34:00\n                        33TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting Session #1\n                    \n                    \n                    \n                        01:20:00\n                        72TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting Session #2\n                    \n                    \n                    \n                        01:32:00\n                        85TSS\n                        IF: 0.75\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting Session #3\n                    \n                    \n                    \n                        01:40:00\n                        92TSS\n                        IF: 0.75\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Tempo #5\n                    \n                    \n                    \n                        01:32:00\n                        97TSS\n                        IF: 0.8",
+  "duration": "01:32:00",
+  "tss": 85,
+  "intensityFactor": 0.75,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 720,
+      "durationFormatted": "12:00",
+      "powerLow": 78,
+      "powerHigh": 78,
+      "powerFormatted": "78%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 720,
+      "durationFormatted": "12:00",
+      "powerLow": 78,
+      "powerHigh": 78,
+      "powerFormatted": "78%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

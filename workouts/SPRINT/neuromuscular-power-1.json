@@ -1,0 +1,109 @@
+{
+  "filename": "neuromuscular-power-1.zwo",
+  "slug": "neuromuscular-power-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/neuromuscular-power-1?do=exportZwo",
+  "name": "Neuromuscular Power #1",
+  "description": "After warming up, set your pace at a lower end Tempo effort for the next 30 minutes. Within these 30 minutes, you will be performing a 10 second out of the saddle sprint every 5 minutes. Aim for a high cadence in sprints with 1 - 2 gear changes into a harder gear during the effort. \n\n\n\nCan you hit the same Peak Power for all six sprints?\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Neuromuscular Power #2\n                    \n                    \n                    \n                        01:15:00\n                        75TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power #3\n                    \n                    \n                    \n                        59:50\n                        60TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive 25sec\n                    \n                    \n                    \n                        56:05\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Hills #1\n                    \n                    \n                    \n                        56:00\n                        48TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #1\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Target rpm #1\n                    \n                    \n                    \n                        56:00\n                        56TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        10min Best effort!\n                    \n                    Free Ride\n                    \n                        56:00\n                        49TSS\n                        IF: 0.73\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive 25sec\n                    \n                    \n                    \n                        56:05\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Spin up #1\n                            by coach Zelmaré Viljoen\n                    \n                    \n                    \n                        56:00\n                        57TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power\n                    \n                    \n                    \n                        56:00\n                        46TSS\n                        IF: 0.71\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Hills #1\n                    \n                    \n                    \n                        56:00\n                        48TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #1\n                    \n                    \n                    \n                        56:00\n                        59TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pyramid cadence efforts #1\n                    \n                    \n                    \n                        56:00\n                        51TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #1\n                    \n                    \n                    \n                        56:00\n                        46TSS\n                        IF: 0.71\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #2\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #1\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #4\n                    \n                    \n                    \n                        56:00\n                        57TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Target rpm #1\n                    \n                    \n                    \n                        56:00\n                        56TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        10min Best effort!\n                    \n                    Free Ride\n                    \n                        56:00\n                        49TSS\n                        IF: 0.73\n                        chat",
+  "duration": "56:00",
+  "tss": 53,
+  "intensityFactor": 0.76,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 290,
+      "durationFormatted": "04:50",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 50,
+      "powerFormatted": "65% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

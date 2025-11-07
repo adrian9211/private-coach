@@ -1,0 +1,93 @@
+{
+  "filename": "sprint-technique-1.zwo",
+  "slug": "sprint-technique-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sprint-technique-1?do=exportZwo",
+  "name": "Sprint Technique #1",
+  "description": "Welcome to the first workout of this sprint focused plan. Today we will introduce you to some technique-specific drills related to sprinting. You might not hit your best power today. But hopefully, with the skills you pick up from today, you will become a faster sprinter! \n\n\n\nFollow along with the instructions throughout the workout and enjoy this tough session. \n\n\n\n**This session is best completed with ERG mode turned off**\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sprint Technique #2\n                    \n                    \n                    \n                        57:27\n                        73TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Technique #3\n                    \n                    \n                    \n                        01:02:34\n                        80TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity 1min &amp; 2min\n                    \n                    \n                    \n                        54:00\n                        67TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Descending Anaerobic\n                    \n                    \n                    \n                        54:00\n                        55TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #1\n                    \n                    \n                    \n                        54:00\n                        61TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold CX 2min\n                    \n                    \n                    \n                        54:00\n                        73TSS\n                        IF: 0.91\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #5\n                    \n                    \n                    \n                        54:00\n                        55TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike #1\n                    \n                    \n                    \n                        54:00\n                        57TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Fartlek #3\n                    \n                    \n                    \n                        54:00\n                        69TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF George Bennett - Climbing\n                    \n                    \n                    \n                        54:00\n                        57TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 4min #1\n                    \n                    \n                    \n                        54:00\n                        56TSS\n                        IF: 0.79",
+  "duration": "54:10",
+  "tss": 68,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 25,
+      "powerHigh": 75,
+      "powerFormatted": "25% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 55,
+      "durationFormatted": "00:55",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 7,
+      "durationFormatted": "00:07",
+      "powerLow": 300,
+      "powerHigh": 300,
+      "powerFormatted": "300%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 17,
+      "durationFormatted": "00:17",
+      "powerLow": 250,
+      "powerHigh": 250,
+      "powerFormatted": "250%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 200,
+      "durationFormatted": "03:20",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    }
+  ],
+  "isValid": true
+}

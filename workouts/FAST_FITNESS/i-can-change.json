@@ -1,0 +1,157 @@
+{
+  "filename": "i-can-change.zwo",
+  "slug": "i-can-change",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/i-can-change?do=exportZwo",
+  "name": "I can change",
+  "description": "Today we simulate a race situation with multiple short climbs. Today is the day to push yourself and show us what you have got!",
+  "duration": "40:00",
+  "tss": 56,
+  "intensityFactor": 0.92,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 105,
+      "powerHigh": 105,
+      "powerFormatted": "105%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 112,
+      "powerHigh": 112,
+      "powerFormatted": "112%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 112,
+      "powerHigh": 112,
+      "powerFormatted": "112%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

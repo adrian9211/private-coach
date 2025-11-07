@@ -1,0 +1,109 @@
+{
+  "filename": "30min-sub-threshold.zwo",
+  "slug": "30min-sub-threshold",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/30min-sub-threshold?do=exportZwo",
+  "name": "30min Sub-Threshold",
+  "description": "Sub-threshold intervals are an integral part of building aerobic endurance. By training at an intensity slightly lower than threshold, you can complete large volumes of work with minimal anaerobic impact. \n\n\n\nCompleting sub-threshold intervals results in high oxygen consumption, boosting your aerobic system. This is an essential aspect of your preparation.",
+  "duration": "58:00",
+  "tss": 64,
+  "intensityFactor": 0.81,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 65,
+      "powerFormatted": "45% FTP - 65% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 84,
+      "powerHigh": 96,
+      "powerFormatted": "84% FTP - 96% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 84,
+      "powerHigh": 96,
+      "powerFormatted": "84% FTP - 96% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 84,
+      "powerHigh": 96,
+      "powerFormatted": "84% FTP - 96% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

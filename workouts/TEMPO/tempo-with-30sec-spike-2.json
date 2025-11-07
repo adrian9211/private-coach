@@ -1,0 +1,213 @@
+{
+  "filename": "tempo-with-30sec-spike-2.zwo",
+  "slug": "tempo-with-30sec-spike-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tempo-with-30sec-spike-2?do=exportZwo",
+  "name": "Tempo with 30sec spike #2",
+  "description": "Steady Tempo efforts on their own are effective training. But by incorporating 30-second high-intensity efforts into them, you will improve your body's ability to work aerobically for long periods. \n\n\n\nToday's session consists of 2 x 16-minute Tempo efforts with a 30-second surge every 3.5 minutes.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tempo with 30sec spike\n                    \n                    \n                    \n                        34:30\n                        36TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike #1\n                    \n                    \n                    \n                        54:00\n                        57TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 10 #2\n                    \n                    \n                    \n                        01:01:46\n                        56TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #2\n                    \n                    \n                    \n                        01:02:00\n                        75TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 12's #2\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular with AC #3\n                    \n                    \n                    \n                        01:02:15\n                        81TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Higher and Faster\n                    \n                    \n                    \n                        01:02:00\n                        62TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweet Spot 15\n                    \n                    \n                    \n                        01:02:00\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #3\n                    \n                    \n                    \n                        01:02:00\n                        56TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5min Max Aerobic\n                    \n                    \n                    \n                        01:02:00\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max Extending Climbs\n                    \n                    \n                    \n                        01:02:00\n                        81TSS\n                        IF: 0.89\n                        chat\n                        cached",
+  "duration": "01:02:00",
+  "tss": 68,
+  "intensityFactor": 0.81,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 60,
+      "powerHigh": 75,
+      "powerFormatted": "60% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 106,
+      "powerHigh": 120,
+      "powerFormatted": "106% FTP - 120% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

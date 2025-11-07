@@ -1,0 +1,133 @@
+{
+  "filename": "tadej-s-criss-cross-tempo.zwo",
+  "slug": "tadej-s-criss-cross-tempo",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tadej-s-criss-cross-tempo?do=exportZwo",
+  "name": "Tadej's Criss-cross Tempo",
+  "description": "Train Like Tadej for the Giro-Tour Double with Criss-cross Tempo. This is a challenging session that tests both your aerobic and anaerobic energy systems. Criss-cross Tempo is a great session that simulates the demands of racing by forcing you to recover at a high power output. This session consists of 2x8min Criss-cross Tempo (1min at 95% FTP followed by 3min at 80% FTP) with 4min recovery.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tadej's Criss-cross Tempo Long\n                    \n                    \n                    \n                        01:43:00\n                        115TSS\n                        IF: 0.82\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #4\n                    \n                    \n                    \n                        33:45\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting Session #1\n                    \n                    \n                    \n                        34:00\n                        33TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Capacity #2\n                    \n                    \n                    \n                        34:00\n                        32TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.84\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #1\n                    \n                    \n                    \n                        34:00\n                        37TSS\n                        IF: 0.81\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Attacks #2\n                    \n                    \n                    \n                        34:00\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                    \n                    \n                    \n                        33:50\n                        35TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #2\n                    \n                    \n                    \n                        34:00\n                        35TSS\n                        IF: 0.79\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #1\n                    \n                    \n                    \n                        34:00\n                        32TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #1\n                    \n                    \n                    \n                        34:00\n                        30TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo Surges #1\n                    \n                    \n                    \n                        34:00\n                        31TSS\n                        IF: 0.75\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Block #3\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 30/30's\n                    \n                    \n                    \n                        34:00\n                        30TSS\n                        IF: 0.74",
+  "duration": "34:00",
+  "tss": 31,
+  "intensityFactor": 0.75,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 40,
+      "powerHigh": 65,
+      "powerFormatted": "40% FTP - 65% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 40,
+      "powerFormatted": "55% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

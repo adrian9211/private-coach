@@ -1,0 +1,229 @@
+{
+  "filename": "details.zwo",
+  "slug": "details",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/details?do=exportZwo",
+  "name": "Details",
+  "description": "It's all in the finer details! We produce a short hard effort in this session and then settle into an increasing endurance interval.",
+  "duration": "41:55",
+  "tss": 44,
+  "intensityFactor": 0.8,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 51,
+      "powerHigh": 51,
+      "powerFormatted": "51%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 57,
+      "powerHigh": 57,
+      "powerFormatted": "57%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 61,
+      "powerHigh": 61,
+      "powerFormatted": "61%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 69,
+      "powerHigh": 69,
+      "powerFormatted": "69%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 79,
+      "powerHigh": 79,
+      "powerFormatted": "79%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 86,
+      "powerHigh": 86,
+      "powerFormatted": "86%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 79,
+      "powerHigh": 79,
+      "powerFormatted": "79%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 86,
+      "powerHigh": 86,
+      "powerFormatted": "86%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 66,
+      "powerHigh": 66,
+      "powerFormatted": "66%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 59,
+      "powerHigh": 59,
+      "powerFormatted": "59%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

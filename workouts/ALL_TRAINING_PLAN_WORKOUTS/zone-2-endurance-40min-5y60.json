@@ -1,0 +1,69 @@
+{
+  "filename": "zone-2-endurance-40min-5y60.zwo",
+  "slug": "zone-2-endurance-40min-5y60",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/zone-2-endurance-40min-5y60?do=exportZwo",
+  "name": "Zone 2 Endurance 40min",
+  "description": "Zone 2 training is one of the most important aspects of any training plan. We don't always get faster by training faster. In Zone 2 training we are stimulating your type 1 muscle fibers (slow-twitch). Spending time in Zone 2 is absolutely essential to improving performance.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Zone 2 Endurance 30min\n                    \n                    \n                    \n                        59:00\n                        42TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 Endurance 40min\n                    \n                    \n                    \n                        01:02:00\n                        44TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 10 #2\n                    \n                    \n                    \n                        01:01:46\n                        56TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 10 Sprints\"\n                    \n                    \n                    \n                        01:02:00\n                        46TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 12's #2\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 10 Sprints\"\n                    \n                    \n                    \n                        01:02:00\n                        46TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #3\n                    \n                    \n                    \n                        01:02:00\n                        56TSS\n                        IF: 0.74\n                        chat\n                        cached",
+  "duration": "01:02:00",
+  "tss": 44,
+  "intensityFactor": 0.66,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 56,
+      "powerHigh": 75,
+      "powerFormatted": "56% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 2400,
+      "durationFormatted": "40:00",
+      "powerLow": 67,
+      "powerHigh": 67,
+      "powerFormatted": "67%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

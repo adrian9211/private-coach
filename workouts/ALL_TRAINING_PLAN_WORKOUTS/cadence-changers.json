@@ -1,0 +1,237 @@
+{
+  "filename": "cadence-changers.zwo",
+  "slug": "cadence-changers",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/cadence-changers?do=exportZwo",
+  "name": "Cadence Changers",
+  "description": "This session will help improve your pedalling efficiency and increase your cardiovascular capacity. The majority of the workout should be carried out at Zone 2 - roughly the power you would maintain on a steady road ride. Not too hard, not too easy. Carry out 3 x 8 minute blocks with 3 mins recovery. Each 8 minute block should follow: 1 minute at 90 rpm, followed by 1 minute at 120 rpm, repeated for the duration of the interval.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Cadence Changers #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        42:00\n                        28TSS\n                        IF: 0.64\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cadence Changers #2\n                    \n                    \n                    \n                        48:00\n                        33TSS\n                        IF: 0.65\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        42:00\n                        30TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        42:00\n                        30TSS\n                        IF: 0.66\n                        chat",
+  "duration": "42:00",
+  "tss": 28,
+  "intensityFactor": 0.64,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 40,
+      "powerHigh": 60,
+      "powerFormatted": "40% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

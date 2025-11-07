@@ -1,0 +1,117 @@
+{
+  "filename": "2023-tdf-alena-amialiusik-taper.zwo",
+  "slug": "2023-tdf-alena-amialiusik-taper",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/2023-tdf-alena-amialiusik-taper?do=exportZwo",
+  "name": "2023 TDF Alena Amialiusik - Taper",
+  "description": "In her rich career, Alena Amialiusik boasts numerous victories and results, including a gold medal at European Games Road Race, a bronze medal in the Road European Championship, countless National titles, and the TTT World Championships. \n\r\n\n\r\nA significant part of this success is knowing how to taper effectively, leading into an important block of racing. \n\r\n\n\r\nIn today's workout, we look at the training Amialiusik would complete before a major stage race.",
+  "duration": "58:00",
+  "tss": 38,
+  "intensityFactor": 0.63,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 70,
+      "powerFormatted": "50% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

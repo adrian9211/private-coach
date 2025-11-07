@@ -1,0 +1,101 @@
+{
+  "filename": "zone-2-endurance-2-swim.zwo",
+  "slug": "zone-2-endurance-2-swim",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/zone-2-endurance-2-swim?do=exportZwo",
+  "name": "Zone 2 Endurance #2 + Swim",
+  "description": "An endurance-focused session featuring intermittent 15sec surges. These surges are low intensity, where high cadence is the key. The majority of the workout is low intensity, with no residual fatigue expected from such a workout.\n\n\n\nFor your swim session, complete 750 meters total, incorporating one set of 300 meters at a steady effort.",
+  "duration": "01:00:00",
+  "tss": 46,
+  "intensityFactor": 0.68,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 42,
+      "powerHigh": 70,
+      "powerFormatted": "42% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 135,
+      "powerHigh": 135,
+      "powerFormatted": "135%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 106,
+      "powerHigh": 106,
+      "powerFormatted": "106%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 225,
+      "durationFormatted": "03:45",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

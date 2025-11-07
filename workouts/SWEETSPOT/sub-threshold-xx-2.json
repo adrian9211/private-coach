@@ -1,0 +1,69 @@
+{
+  "filename": "sub-threshold-xx-2.zwo",
+  "slug": "sub-threshold-xx-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sub-threshold-xx-2?do=exportZwo",
+  "name": "Sub Threshold XX #2",
+  "description": "Building upon the previous Sub-Threshold XX session, this time, we are decreasing the time between surges and increasing the number of surges. By challenging your ability to process lactate at near-threshold power, you will increase your exhaustion time and endurance. \n\n\n\nAll this is achieved with a 30min steady state effort that dips briefly into the realms of VO2max.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sub Threshold #2\n                    \n                    \n                    \n                        01:04:00\n                        67TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #2\n                            by coach Jonathan Brownlee\n                    \n                    \n                    \n                        32:00\n                        37TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold XX #1\n                    \n                    \n                    \n                        50:00\n                        64TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold XX #1\n                    \n                    \n                    \n                        34:00\n                        46TSS\n                        IF: 0.91\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Metal\n                    \n                    \n                    \n                        48:00\n                        57TSS\n                        IF: 0.85\n\n                        cached",
+  "duration": "48:00",
+  "tss": 63,
+  "intensityFactor": 0.89,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

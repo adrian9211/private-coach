@@ -1,0 +1,93 @@
+{
+  "filename": "endurance-into-max-aerobic-9hsb.zwo",
+  "slug": "endurance-into-max-aerobic-9hsb",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-into-max-aerobic-9hsb?do=exportZwo",
+  "name": "Endurance into Max Aerobic",
+  "description": "After a good warm up, we are going to build some endurance and fatigue, before preparing yourself for a Max Aerobic interval. We can't always start the intervals with fresh legs. By including Zone 2 endurance before the high intensity work, the session provides a different training stimulus.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance into Max Aerobic\n                    \n                    \n                    \n                        38:00\n                        35TSS\n                        IF: 0.75\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Closedown\n                    \n                    \n                    \n                        38:00\n                        41TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Too much fun\n                    \n                    \n                    \n                        38:00\n                        44TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 into Max Aerobic\n                    \n                    \n                    \n                        38:00\n                        35TSS\n                        IF: 0.75\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 into Max Aerobic\n                    \n                    \n                    \n                        38:00\n                        35TSS\n                        IF: 0.75\n                        chat",
+  "duration": "38:00",
+  "tss": 35,
+  "intensityFactor": 0.75,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 45,
+      "powerFormatted": "70% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

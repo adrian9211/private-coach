@@ -1,0 +1,53 @@
+{
+  "filename": "tempo-intensive-zone-6-2.zwo",
+  "slug": "tempo-intensive-zone-6-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tempo-intensive-zone-6-2?do=exportZwo",
+  "name": "Tempo, Intensive Zone 6 #2",
+  "description": "It's always easier to produce high power when fresh. Today's session requires you to build up some fatigue through a 30-minute tempo effort before completing 5 x 45-second increasing power efforts. \n\n\n\nBreak up the opening Tempo effort by alternating between standing and seated pedalling.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tempo, Intensive Zone 6 #1\n                    \n                    \n                    \n                        01:07:00\n                        66TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Capacity #2\n                    \n                    \n                    \n                        59:00\n                        82TSS\n                        IF: 0.92\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Intervals #2\n                    \n                    \n                    \n                        59:00\n                        82TSS\n                        IF: 0.92\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Lead Outs\n                    \n                    \n                    \n                        59:00\n                        74TSS\n                        IF: 0.87\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Sustained Threshold #2\n                    \n                    \n                    \n                        59:00\n                        81TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #4\n                    \n                    \n                    \n                        59:00\n                        76TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power / Climb 5\n                    \n                    \n                    \n                        58:38\n                        72TSS\n                        IF: 0.86\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hard Starts #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        58:30\n                        71TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #5\n                    \n                    \n                    \n                        59:00\n                        72TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Controlled 30/30's #2\n                    \n                    \n                    \n                        59:00\n                        68TSS\n                        IF: 0.84\n                        chat",
+  "duration": "58:45",
+  "tss": 84,
+  "intensityFactor": 0.93,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1800,
+      "durationFormatted": "30:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 180,
+      "powerHigh": 180,
+      "powerFormatted": "180%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 45,
+      "powerFormatted": "70% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

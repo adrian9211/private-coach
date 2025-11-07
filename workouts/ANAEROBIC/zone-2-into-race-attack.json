@@ -1,0 +1,133 @@
+{
+  "filename": "zone-2-into-race-attack.zwo",
+  "slug": "zone-2-into-race-attack",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/zone-2-into-race-attack?do=exportZwo",
+  "name": "Zone 2 into Race Attack",
+  "description": "This is your day to finish the race strongly! But first, we will complete some Zone 2 endurance work to build up some fatigue. After all, racing is about producing maximal efforts when the legs have already completed some hard work. \n\n\n\nWhile performing these efforts, visualise yourself attacking the winning break of the day!",
+  "duration": "52:40",
+  "tss": 64,
+  "intensityFactor": 0.86,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1500,
+      "durationFormatted": "25:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 50,
+      "powerFormatted": "55% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

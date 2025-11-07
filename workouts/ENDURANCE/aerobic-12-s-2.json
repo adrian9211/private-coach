@@ -1,0 +1,117 @@
+{
+  "filename": "aerobic-12-s-2.zwo",
+  "slug": "aerobic-12-s-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/aerobic-12-s-2?do=exportZwo",
+  "name": "Aerobic 12's #2",
+  "description": "The primary goal of endurance training is to improve your ability to preserve glycogen. The more efficient you are in your fuel source, the more energy you will have for the finale. \n\n\n\nAerobic Endurance workouts are aimed at improving your efficiency at lower intensity levels. You are training your muscles to access fat as its primary fuel source and preserve your precious glycogen stores for the finale. \n\n\n\nAfter warming up, you will be completing 3 x 12min aerobic efforts with 2min recovery.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Aerobic 12's #1\n                    \n                    \n                    \n                        01:03:00\n                        55TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 12's #1\n                    \n                    \n                    \n                        01:03:00\n                        55TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 12's #3\n                    \n                    \n                    \n                        01:00:00\n                        54TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 10 #2\n                    \n                    \n                    \n                        01:01:46\n                        56TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 10 Sprints\"\n                    \n                    \n                    \n                        01:02:00\n                        46TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 Endurance 40min\n                    \n                    \n                    \n                        01:02:00\n                        44TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 10 Sprints\"\n                    \n                    \n                    \n                        01:02:00\n                        46TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Higher and Faster\n                    \n                    \n                    \n                        01:02:00\n                        62TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #3\n                    \n                    \n                    \n                        01:02:00\n                        56TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike #2\n                    \n                    \n                    \n                        01:02:00\n                        68TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat",
+  "duration": "01:02:00",
+  "tss": 55,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 63,
+      "powerHigh": 63,
+      "powerFormatted": "63%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 69,
+      "powerHigh": 69,
+      "powerFormatted": "69%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 720,
+      "durationFormatted": "12:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

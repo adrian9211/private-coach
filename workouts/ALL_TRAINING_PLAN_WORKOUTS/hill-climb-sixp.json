@@ -1,0 +1,229 @@
+{
+  "filename": "hill-climb-sixp.zwo",
+  "slug": "hill-climb-sixp",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/hill-climb-sixp?do=exportZwo",
+  "name": "Hill Climb",
+  "description": "This group workout takes you through another race simulation. Taking you through a short, sharp stage with an uphill start! Follow along as you go through a similar warm-up to the pro's - Then hit the stage hard as we climb right from the gun.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Hill Climb\n                    \n                    Free Ride\n                    \n                        01:01:00\n                        79TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #1\n                    \n                    \n                    \n                        01:01:00\n                        76TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic 2min #1\n                    \n                    \n                    \n                        01:01:00\n                        80TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low 60's\n                    \n                    \n                    \n                        01:01:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #6\n                    \n                    \n                    \n                        01:01:00\n                        63TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                    \n                    \n                    \n                        01:01:00\n                        65TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #2\n                    \n                    \n                    \n                        01:00:50\n                        68TSS\n                        IF: 0.82\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance w/Sprints into Zone 3 #2\n                    \n                    Free Ride\n                    \n                        01:01:00\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 2min Capacity\n                    \n                    \n                    \n                        01:01:00\n                        66TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Torque Changers #3\n                    \n                    \n                    \n                        01:01:06\n                        70TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate shuttle #1\n                    \n                    \n                    \n                        01:01:00\n                        76TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #1\n                    \n                    \n                    \n                        01:01:00\n                        76TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold 20\n                    \n                    \n                    \n                        01:01:00\n                        79TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic Climb #3\n                    \n                    \n                    \n                        01:01:00\n                        70TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Milano-Sanremo\n                    \n                    Free Ride\n                    \n                        01:00:55\n                        64TSS\n                        IF: 0.8\n                        chat\n                        cached",
+  "duration": "01:01:00",
+  "tss": 79,
+  "intensityFactor": 0.88,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 118,
+      "powerHigh": 118,
+      "powerFormatted": "118%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 13,
+      "durationFormatted": "00:13",
+      "powerLow": 185,
+      "powerHigh": 185,
+      "powerFormatted": "185%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 287,
+      "durationFormatted": "04:47",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

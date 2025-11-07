@@ -1,0 +1,53 @@
+{
+  "filename": "extensive-anaerobic.zwo",
+  "slug": "extensive-anaerobic",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/extensive-anaerobic?do=exportZwo",
+  "name": "Extensive Anaerobic",
+  "description": "The aim today is to produce repeatable, high power intervals. Extensive Anaerobic efforts will improve your ability to recover from high-intensity efforts and repeat them repeatedly. \n\n\n\nRecovery is crucial with 4 x 2.5-minute quality efforts ahead of you!",
+  "duration": "01:07:00",
+  "tss": 89,
+  "intensityFactor": 0.9,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 150,
+      "durationFormatted": "02:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 50,
+      "powerFormatted": "75% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

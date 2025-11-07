@@ -1,0 +1,133 @@
+{
+  "filename": "sprints-into-zone-4-1.zwo",
+  "slug": "sprints-into-zone-4-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sprints-into-zone-4-1?do=exportZwo",
+  "name": "Sprints into Zone 4 #1",
+  "description": "After a good warmup, the session consists of 10 minutes at Zone 2 Endurance, followed by varying sprints leading into a 4-minute threshold effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                    \n                    \n                    \n                        01:01:00\n                        65TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                            by coach Tim Don\n                    \n                    Free Ride\n                    \n                        33:00\n                        35TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                    \n                    \n                    \n                        33:50\n                        35TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        01:07:00\n                        81TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        34:50\n                        40TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 4\n                    \n                    \n                    \n                        56:00\n                        95TSS\n                        IF: 1.01\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #1\n                    \n                    \n                    \n                        32:00\n                        38TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Descending Anaerobic\n                    \n                    \n                    \n                        32:00\n                        34TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #1\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        32:00\n                        42TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #1\n                    \n                    \n                    \n                        32:00\n                        33TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #2\n                            by coach Jonathan Brownlee\n                    \n                    \n                    \n                        32:00\n                        37TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Accelerations #3\n                    \n                    \n                    \n                        32:10\n                        43TSS\n                        IF: 0.9\n                        chat",
+  "duration": "32:00",
+  "tss": 43,
+  "intensityFactor": 0.9,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 180,
+      "powerHigh": 180,
+      "powerFormatted": "180%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 60,
+      "powerHigh": 75,
+      "powerFormatted": "60% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 180,
+      "powerHigh": 180,
+      "powerFormatted": "180%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 180,
+      "powerHigh": 180,
+      "powerFormatted": "180%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 185,
+      "powerHigh": 185,
+      "powerFormatted": "185%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 45,
+      "powerFormatted": "65% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

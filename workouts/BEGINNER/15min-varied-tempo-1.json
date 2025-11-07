@@ -1,0 +1,125 @@
+{
+  "filename": "15min-varied-tempo-1.zwo",
+  "slug": "15min-varied-tempo-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/15min-varied-tempo-1?do=exportZwo",
+  "name": "15min Varied Tempo #1",
+  "description": "Today, working in your Zone 3 Tempo, we vary the cadence and power. Observe your Heart Rate during the 15-minute interval and look for changes in your Heart Rate when the cadence varies. \n\r\n\n\r\nWe are working at the lower end of the training Zone today. The added stress comes from the target cadence.\n            \n\n\n            This workout is also available as Video workout by a MyWhoosh coach Si Bradeley\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        15min Varied Tempo #1\n                    \n                    \n                    \n                        48:20\n                        45TSS\n                        IF: 0.75\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        15min Varied Tempo #2\n                    \n                    \n                    \n                        59:45\n                        60TSS\n                        IF: 0.78\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        15min Varied Tempo #3\n                    \n                    \n                    \n                        59:45\n                        71TSS\n                        IF: 0.85\n\n                        cached",
+  "duration": "48:20",
+  "tss": 45,
+  "intensityFactor": 0.75,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 180,
+      "powerHigh": 180,
+      "powerFormatted": "180%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 57,
+      "powerHigh": 57,
+      "powerFormatted": "57%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 86,
+      "powerHigh": 86,
+      "powerFormatted": "86%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 93,
+      "powerHigh": 93,
+      "powerFormatted": "93%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

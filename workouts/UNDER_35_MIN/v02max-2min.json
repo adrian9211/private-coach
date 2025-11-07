@@ -1,0 +1,125 @@
+{
+  "filename": "v02max-2min.zwo",
+  "slug": "v02max-2min",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/v02max-2min?do=exportZwo",
+  "name": "V02max 2min",
+  "description": "Big session today! We open with 2 x 2min VO2 efforts. However, the target power steadily decreases from 'very hard' to just 'hard'. The workout concludes with a 6min effort featuring the same steady decrease in target power.",
+  "duration": "35:00",
+  "tss": 54,
+  "intensityFactor": 0.97,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 45,
+      "powerHigh": 65,
+      "powerFormatted": "45% FTP - 65% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 79,
+      "powerHigh": 79,
+      "powerFormatted": "79%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 94,
+      "powerHigh": 94,
+      "powerFormatted": "94%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 139,
+      "powerHigh": 124,
+      "powerFormatted": "139% FTP - 124% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 139,
+      "powerHigh": 124,
+      "powerFormatted": "139% FTP - 124% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 129,
+      "powerHigh": 113,
+      "powerFormatted": "129% FTP - 113% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

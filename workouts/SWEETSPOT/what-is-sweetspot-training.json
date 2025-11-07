@@ -1,0 +1,53 @@
+{
+  "filename": "what-is-sweetspot-training.zwo",
+  "slug": "what-is-sweetspot-training",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/what-is-sweetspot-training?do=exportZwo",
+  "name": "What is Sweetspot Training?",
+  "description": "Sweetspot Training (SST) is the area that typically provides the Most Bang for your buck! It targets many key physiological regions at once in a short amount of time. SST training falls between Upper Zone 3 and Lower Zone 4. \n\n\n\nIt is a balanced amount of intensity and duration that improves your FTP. Sweetspot intervals can generally be completed up to twice a week. Interval duration is typically long, between 5-20 minutes, with similar recovery periods.",
+  "duration": "41:00",
+  "tss": 34,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 86,
+      "powerHigh": 86,
+      "powerFormatted": "86%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 40,
+      "powerFormatted": "70% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

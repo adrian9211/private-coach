@@ -1,0 +1,117 @@
+{
+  "filename": "tri-endurance-5.zwo",
+  "slug": "tri-endurance-5",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tri-endurance-5?do=exportZwo",
+  "name": "Tri Endurance #5",
+  "description": "To achieve a successful cycling performance, you need good endurance. Endurance training is about improving your capacity to endure sustained exercise. \n\n\n\nThis endurance (or ability to endure) then helps form a solid base of fitness to build more race-specific training. By implementing carefully structured intensity into your endurance training, your ability to become more fatigue resistant is enhanced.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tri Endurance #1\n                    \n                    \n                    \n                        01:56:00\n                        108TSS\n                        IF: 0.75\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #2\n                    \n                    \n                    \n                        01:49:00\n                        105TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #3\n                    \n                    \n                    \n                        01:04:06\n                        56TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #4\n                    \n                    \n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #6\n                    \n                    \n                    \n                        01:48:00\n                        114TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #7\n                    \n                    \n                    \n                        01:38:00\n                        108TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        3min Max Aerobic Power\n                    \n                    Free Ride\n                    \n                        01:33:00\n                        107TSS\n                        IF: 0.83\n                        chat",
+  "duration": "01:33:00",
+  "tss": 96,
+  "intensityFactor": 0.79,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 110,
+      "durationFormatted": "01:50",
+      "powerLow": 72,
+      "powerHigh": 72,
+      "powerFormatted": "72%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 88,
+      "powerHigh": 94,
+      "powerFormatted": "88% FTP - 94% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 1200,
+      "durationFormatted": "20:00",
+      "powerLow": 76,
+      "powerHigh": 94,
+      "powerFormatted": "76% FTP - 94% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 1200,
+      "durationFormatted": "20:00",
+      "powerLow": 76,
+      "powerHigh": 94,
+      "powerFormatted": "76% FTP - 94% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

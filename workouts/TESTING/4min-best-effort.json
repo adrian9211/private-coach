@@ -1,0 +1,157 @@
+{
+  "filename": "4min-best-effort.zwo",
+  "slug": "4min-best-effort",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/4min-best-effort?do=exportZwo",
+  "name": "4min Best effort!",
+  "description": "As the name suggests, Maximal Aerobic intervals are high-intensity efforts where the majority (not all) of the power produced comes from aerobic energy pathways. Generally, athletes who excel in this area can climb and Time Trial well. \n\n\n\nOn its own, Max Aerobic interval training is an effective method to increase fitness. However, Max Aerobic power is also a good indication of an athlete's potential. \n\n\n\nIn today's session, we focus on 4min Max Aerobic efforts. You will be guided through the early intervals before completing a 4min 'best effort' to complete the set.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        10min Best effort!\n                    \n                    Free Ride\n                    \n                        56:00\n                        49TSS\n                        IF: 0.73\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        10min Best effort!\n                    \n                    Free Ride\n                    \n                        56:00\n                        49TSS\n                        IF: 0.73\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min Best effort!\n                    \n                    Free Ride\n                    \n                        56:30\n                        48TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        6min Best effort!\n                    \n                    Free Ride\n                    \n                        01:00:00\n                        62TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        6min Best effort!\n                    \n                    Free Ride\n                    \n                        01:00:00\n                        62TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive x 3 #1\n                    \n                    \n                    \n                        56:20\n                        40TSS\n                        IF: 0.66\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive x 3 #1\n                    \n                    \n                    \n                        56:20\n                        40TSS\n                        IF: 0.66\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power into Tempo #2\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive power into Z3\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #2\n                    \n                    \n                    \n                        56:30\n                        57TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power, flat 10\n                    \n                    \n                    \n                        56:25\n                        60TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 into 30/15's\n                    \n                    \n                    \n                        56:30\n                        54TSS\n                        IF: 0.76\n                        chat",
+  "duration": "56:30",
+  "tss": 48,
+  "intensityFactor": 0.72,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 45,
+      "powerHigh": 60,
+      "powerFormatted": "45% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 106,
+      "powerHigh": 106,
+      "powerFormatted": "106%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 210,
+      "durationFormatted": "03:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 80,
+      "powerHigh": 95,
+      "powerFormatted": "80% FTP - 95% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 95,
+      "powerHigh": 107,
+      "powerFormatted": "95% FTP - 107% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 45,
+      "powerFormatted": "55% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

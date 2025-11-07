@@ -1,0 +1,205 @@
+{
+  "filename": "tempo-surges-4-0pie.zwo",
+  "slug": "tempo-surges-4-0pie",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tempo-surges-4-0pie?do=exportZwo",
+  "name": "Tempo-Surges #4",
+  "description": "In addition to the standard completion of long tempo intervals, adding in some high-power bursts or surges throughout will help in several ways. Your Heart rate will remain elevated for longer, and your blood lactate will go above threshold levels for short periods. This session replicates the burst of power you need to ascend punchy climbs, get through a technical uphill section or move past another rider on a climb.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tempo-Surges #1\n                    \n                    \n                    \n                        59:20\n                        54TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #2\n                    \n                    \n                    \n                        01:04:00\n                        67TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #3\n                    \n                    \n                    \n                        01:01:20\n                        73TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #4\n                    \n                    \n                    \n                        01:06:00\n                        76TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #5\n                    \n                    \n                    \n                        01:05:00\n                        77TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #6\n                    \n                    \n                    \n                        55:00\n                        72TSS\n                        IF: 0.89\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Tempo #4\n                    \n                    \n                    \n                        01:06:00\n                        59TSS\n                        IF: 0.74\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Target rpm #2\n                    \n                    \n                    \n                        01:06:00\n                        67TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #1\n                    \n                    \n                    \n                        01:06:00\n                        74TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #2\n                    \n                    \n                    \n                        01:06:00\n                        84TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Pushing #2\n                    \n                    \n                    \n                        01:06:00\n                        76TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence, Reloaded #2\n                    \n                    \n                    \n                        01:05:55\n                        82TSS\n                        IF: 0.87\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence, Reloaded #3\n                    \n                    \n                    \n                        01:05:55\n                        84TSS\n                        IF: 0.87\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence, Reloaded #4\n                    \n                    \n                    \n                        01:05:55\n                        85TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #1\n                    \n                    \n                    \n                        01:06:00\n                        74TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max #4\n                    \n                    \n                    \n                        01:06:00\n                        82TSS\n                        IF: 0.87\n                        chat\n                        cached",
+  "duration": "01:06:00",
+  "tss": 76,
+  "intensityFactor": 0.84,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

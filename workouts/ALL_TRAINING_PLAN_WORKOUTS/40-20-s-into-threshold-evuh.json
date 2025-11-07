@@ -1,0 +1,109 @@
+{
+  "filename": "40-20-s-into-threshold-evuh.zwo",
+  "slug": "40-20-s-into-threshold-evuh",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/40-20-s-into-threshold-evuh?do=exportZwo",
+  "name": "40/20's into Threshold",
+  "description": "By building up some lactate prior to completing a sub-threshold effort, you will be training your body to clear lactate while improving the efficiency of your aerobic system. After warming up you will complete 4min of 40/20, leading straight into 10min sub-threshold.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        40/20's into Threshold\n                    \n                    \n                    \n                        57:20\n                        67TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Technique #2\n                    \n                    \n                    \n                        57:27\n                        73TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Under One's\n                    \n                    \n                    \n                        57:20\n                        55TSS\n                        IF: 0.76\n                        chat",
+  "duration": "57:20",
+  "tss": 67,
+  "intensityFactor": 0.84,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

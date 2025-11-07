@@ -1,0 +1,53 @@
+{
+  "filename": "anaerobic-capacity-maintenance-1.zwo",
+  "slug": "anaerobic-capacity-maintenance-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/anaerobic-capacity-maintenance-1?do=exportZwo",
+  "name": "Anaerobic Capacity Maintenance #1",
+  "description": "The focus today is on quality. With this in mind, the intensity is completed early in the session with 8 x 1 Min Anaerobic Capacity Intervals before finishing with a 25 Min zone 2 effort. \n\n\n\nObserve your Heart Rate response during the 25 Min effort. How much does it increase throughout the effort?",
+  "duration": "58:00",
+  "tss": 66,
+  "intensityFactor": 0.83,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 74,
+      "powerFormatted": "50% FTP - 74% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1500,
+      "durationFormatted": "25:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 51,
+      "powerFormatted": "65% FTP - 51% FTP"
+    }
+  ],
+  "isValid": true
+}

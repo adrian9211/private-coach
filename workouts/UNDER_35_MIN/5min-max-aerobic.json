@@ -1,0 +1,77 @@
+{
+  "filename": "5min-max-aerobic.zwo",
+  "slug": "5min-max-aerobic",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/5min-max-aerobic?do=exportZwo",
+  "name": "5min Max Aerobic",
+  "description": "By working just above Threshold in Zone 4 and into Zone 5, we can improve our VO2max abilities and increase our Threshold. \n\n\n\nThese are high-intensity efforts, so the intervals are broken down into shorter work periods.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        5min Max Aerobic\n                    \n                    \n                    \n                        01:02:00\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #4\n                    \n                    \n                    \n                        33:45\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        3min Max Aerobic Power\n                    \n                    \n                    \n                        34:00\n                        43TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Threshold #2\n                    \n                    \n                    \n                        34:00\n                        44TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.84\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #1\n                    \n                    \n                    \n                        34:00\n                        37TSS\n                        IF: 0.81\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Attacks #2\n                    \n                    \n                    \n                        34:00\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Attacks #3\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        34:00\n                        43TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold XX #1\n                    \n                    \n                    \n                        34:00\n                        46TSS\n                        IF: 0.91\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Block #3\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.83",
+  "duration": "34:00",
+  "tss": 46,
+  "intensityFactor": 0.91,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 57,
+      "powerHigh": 57,
+      "powerFormatted": "57%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 63,
+      "powerHigh": 63,
+      "powerFormatted": "63%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

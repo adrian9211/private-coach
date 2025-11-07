@@ -1,0 +1,69 @@
+{
+  "filename": "spiked-aerobic-1-oo9a.zwo",
+  "slug": "spiked-aerobic-1-oo9a",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/spiked-aerobic-1-oo9a?do=exportZwo",
+  "name": "Spiked Aerobic #1",
+  "description": "Interval training doesn't always need to have periods of low-intensity recovery. \n\n\n\nIn today's session, we are completing short Zone 3 efforts with a more extended rest period which has some intensity to it. The intensity is low enough that the interval can be completed comfortably yet creates enough stress to improve aerobic capabilities.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Spiked Aerobic #1\n                    \n                    \n                    \n                        45:00\n                        41TSS\n                        IF: 0.75\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Spiked Aerobic #2\n                    \n                    \n                    \n                        01:00:00\n                        54TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Taper #1\n                    \n                    \n                    \n                        45:00\n                        41TSS\n                        IF: 0.75\n                        chat",
+  "duration": "45:00",
+  "tss": 41,
+  "intensityFactor": 0.75,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 73,
+      "powerHigh": 73,
+      "powerFormatted": "73%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

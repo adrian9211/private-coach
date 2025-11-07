@@ -1,0 +1,133 @@
+{
+  "filename": "explosive-power-climb-5.zwo",
+  "slug": "explosive-power-climb-5",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/explosive-power-climb-5?do=exportZwo",
+  "name": "Explosive Power / Climb 5",
+  "description": "Like attacking a climb, this session requires you to produce a short, high power effort before settling into a 5-minute low cadence threshold effort. Alternate between standing and sitting every minute during the 5min efforts. \n\n\n\nThe session then finishes with a 10min, high cadence effort.",
+  "duration": "58:38",
+  "tss": 72,
+  "intensityFactor": 0.86,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 45,
+      "powerHigh": 71,
+      "powerFormatted": "45% FTP - 71% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 19,
+      "durationFormatted": "00:19",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 19,
+      "durationFormatted": "00:19",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

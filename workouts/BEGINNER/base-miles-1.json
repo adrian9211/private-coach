@@ -1,0 +1,61 @@
+{
+  "filename": "base-miles-1.zwo",
+  "slug": "base-miles-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/base-miles-1?do=exportZwo",
+  "name": "Base Miles #1",
+  "description": "Low-intensity Base Miles is a great way to build fitness. The effort is low enough that we can complete moderate duration frequently. To improve your response to this type of training, we also focus on your cadence. \n\n\n\nToday, we perform a long, steady base ride with varying cadence to improve your training response.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        33:00\n                        25TSS\n                        IF: 0.68\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        42:00\n                        30TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #2\n                    \n                    \n                    \n                        44:35\n                        32TSS\n                        IF: 0.66\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #2\n                    \n                    \n                    \n                        44:35\n                        32TSS\n                        IF: 0.66\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cadence Changers #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        42:00\n                        28TSS\n                        IF: 0.64\n                        chat\n                        cached",
+  "duration": "42:00",
+  "tss": 30,
+  "intensityFactor": 0.66,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 62,
+      "powerHigh": 62,
+      "powerFormatted": "62%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 66,
+      "powerHigh": 40,
+      "powerFormatted": "66% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

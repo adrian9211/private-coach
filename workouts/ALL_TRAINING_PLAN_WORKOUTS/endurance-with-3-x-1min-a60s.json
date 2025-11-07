@@ -1,0 +1,125 @@
+{
+  "filename": "endurance-with-3-x-1min-a60s.zwo",
+  "slug": "endurance-with-3-x-1min-a60s",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-with-3-x-1min-a60s?do=exportZwo",
+  "name": "Endurance with 3 x 1min",
+  "description": "In any training phase, it is essential also to give yourself an adequate amount of recovery. Today's session could be part of your recovery week, but still having some structure to it. After being guided through the warmup, the remaining session is primarily performed as a free-ride. However, you will be prompted to perform 3 x 1min 'hard' intervals throughout the ride. Choose a course today that doesn't include a large amount of elevation gain.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance with 3 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        50:00\n                        39TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 3 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        50:00\n                        39TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 4 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        01:01:00\n                        52TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #1\n                    \n                    \n                    \n                        50:00\n                        45TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #1\n                    \n                    \n                    \n                        50:00\n                        46TSS\n                        IF: 0.74\n                        chat",
+  "duration": "50:00",
+  "tss": 39,
+  "intensityFactor": 0.69,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 70,
+      "powerFormatted": "50% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 57,
+      "powerHigh": 57,
+      "powerFormatted": "57%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 57,
+      "powerHigh": 57,
+      "powerFormatted": "57%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "cooldown",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 60,
+      "powerHigh": 50,
+      "powerFormatted": "60% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

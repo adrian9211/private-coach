@@ -1,0 +1,101 @@
+{
+  "filename": "hiit-45sec-2.zwo",
+  "slug": "hiit-45sec-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/hiit-45sec-2?do=exportZwo",
+  "name": "HIIT 45sec #2",
+  "description": "Building upon your previous HIIT 45sec session, this time, we are extending the final sub-threshold interval to 8min. The same principles apply. The HIIT intervals use up vital carbohydrate stores before the last 8min sub-threshold effort. \n\n\n\nThis is where the adaptation occurs!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        HIIT 45sec #1\n                    \n                    \n                    \n                        57:00\n                        81TSS\n                        IF: 0.92\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity #2\n                    \n                    \n                    \n                        01:00:00\n                        77TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Power Development\n                    \n                    \n                    \n                        01:00:00\n                        72TSS\n                        IF: 0.85\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance 3min\n                    \n                    \n                    \n                        01:00:00\n                        74TSS\n                        IF: 0.86\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold into Anaerobic Capacity\n                    \n                    \n                    \n                        01:00:00\n                        78TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Champs-Elysees\n                    \n                    \n                    \n                        01:00:00\n                        74TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular with AC #1\n                    \n                    \n                    \n                        01:00:00\n                        77TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular with AC #2\n                    \n                    \n                    \n                        01:00:00\n                        80TSS\n                        IF: 0.9\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #2\n                    \n                    \n                    \n                        01:00:00\n                        74TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with Capacity into Sweetspot\n                    \n                    Free Ride\n                    \n                        01:00:00\n                        71TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        15min Varied Tempo #3\n                    \n                    \n                    \n                        59:45\n                        71TSS\n                        IF: 0.85\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Fartlek #2\n                    \n                    \n                    \n                        01:00:00\n                        74TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Stage\n                    \n                    \n                    \n                        01:00:00\n                        73TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Micro-VO2 #1\n                    \n                    \n                    \n                        01:00:00\n                        70TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Short Climb Race Simulation\n                    \n                    \n                    \n                        01:00:00\n                        81TSS\n                        IF: 0.91\n                        chat",
+  "duration": "01:00:00",
+  "tss": 85,
+  "intensityFactor": 0.93,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 255,
+      "durationFormatted": "04:15",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

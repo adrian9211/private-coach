@@ -1,0 +1,109 @@
+{
+  "filename": "stepped-intervals.zwo",
+  "slug": "stepped-intervals",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/stepped-intervals?do=exportZwo",
+  "name": "Stepped Intervals",
+  "description": "Interval training can also include more than 1 Training Zone. Stepped intervals require you to progress your way through the various Zones. Generally, the duration of each interval is decreased as the intensity increases. \n\n\n\nToday's session will you see step through Zones 2, 3, 4 and 5.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Stepped Intervals\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #1\n                    \n                    \n                    \n                        44:00\n                        37TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepping up\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat",
+  "duration": "44:00",
+  "tss": 43,
+  "intensityFactor": 0.77,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 71,
+      "powerHigh": 71,
+      "powerFormatted": "71%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 82,
+      "powerHigh": 82,
+      "powerFormatted": "82%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 82,
+      "powerHigh": 82,
+      "powerFormatted": "82%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 75,
+      "powerHigh": 42,
+      "powerFormatted": "75% FTP - 42% FTP"
+    }
+  ],
+  "isValid": true
+}

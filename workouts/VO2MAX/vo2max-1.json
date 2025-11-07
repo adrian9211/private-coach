@@ -1,0 +1,269 @@
+{
+  "filename": "vo2max-1.zwo",
+  "slug": "vo2max-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/vo2max-1?do=exportZwo",
+  "name": "VO2max #1",
+  "description": "By working just above Threshold in Zone 4 and into Zone 5, we can improve our VO2max abilities and increase our Threshold. These are high-intensity efforts, so the intervals are broken down into shorter work periods. \n\n\n\nA well developed VO2max system will allow you to recover from high-intensity efforts faster and increase endurance.",
+  "duration": "01:00:10",
+  "tss": 64,
+  "intensityFactor": 0.8,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 43,
+      "powerHigh": 63,
+      "powerFormatted": "43% FTP - 63% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 58,
+      "powerHigh": 58,
+      "powerFormatted": "58%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 63,
+      "powerHigh": 63,
+      "powerFormatted": "63%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 68,
+      "powerHigh": 68,
+      "powerFormatted": "68%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 73,
+      "powerHigh": 73,
+      "powerFormatted": "73%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 78,
+      "powerHigh": 78,
+      "powerFormatted": "78%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

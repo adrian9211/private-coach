@@ -1,0 +1,133 @@
+{
+  "filename": "fat-for-fuel.zwo",
+  "slug": "fat-for-fuel",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/fat-for-fuel?do=exportZwo",
+  "name": "Fat for Fuel",
+  "description": "This low-intensity session is designed to improve your ability to utilise fat as a fuel source. Riding at low powers uses fat oxidation more than carbohydrates. Although we recommend care to be taken with your nutrition, it is possible to do this session fasted. However, consume a meal immediately after the session and continue your daily dietary routine. IMPORTANT: This is not a session to lose weight but to improve your body's capability to use fat as a fuel source.",
+  "duration": "56:00",
+  "tss": 37,
+  "intensityFactor": 0.63,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 68,
+      "powerHigh": 68,
+      "powerFormatted": "68%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 72,
+      "powerHigh": 72,
+      "powerFormatted": "72%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 68,
+      "powerHigh": 68,
+      "powerFormatted": "68%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 72,
+      "powerHigh": 72,
+      "powerFormatted": "72%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 68,
+      "powerHigh": 68,
+      "powerFormatted": "68%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 72,
+      "powerHigh": 72,
+      "powerFormatted": "72%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 68,
+      "powerHigh": 68,
+      "powerFormatted": "68%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 72,
+      "powerHigh": 72,
+      "powerFormatted": "72%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 25,
+      "powerFormatted": "65% FTP - 25% FTP"
+    }
+  ],
+  "isValid": true
+}

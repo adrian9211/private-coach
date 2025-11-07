@@ -1,0 +1,93 @@
+{
+  "filename": "into-the-red-2weh.zwo",
+  "slug": "into-the-red-2weh",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/into-the-red-2weh?do=exportZwo",
+  "name": "Into the Red!",
+  "description": "Now that you have gained some experience with interval training, you're ready to hit the high-intensity efforts. These Zone 6, or Anaerobic Capacity intervals are generally 30sec to 3min in duration. These are high intensity, hard intervals that require some concentration. Zone 6 intervals are generally completed in 'sets'. A set is a group of consecutive intervals. When you then have a long recovery before beginning more successive intervals, you have another 'set'.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped Intervals\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #1\n                    \n                    \n                    \n                        44:00\n                        37TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped Intervals\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepping up\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat",
+  "duration": "44:00",
+  "tss": 32,
+  "intensityFactor": 0.67,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 75,
+      "powerFormatted": "40% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 70,
+      "powerHigh": 25,
+      "powerFormatted": "70% FTP - 25% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,141 @@
+{
+  "filename": "2023-tdf-erica-magnaldi-climbing.zwo",
+  "slug": "2023-tdf-erica-magnaldi-climbing",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/2023-tdf-erica-magnaldi-climbing?do=exportZwo",
+  "name": "2023 TDF Erica Magnaldi - Climbing",
+  "description": "Erica Magnaldi is a remarkable climber who has achieved impressive feats in her career. She has worked hard to earn an impressive third-place spot in the Mediterranean games a tenth-place standing on the General Classification at the Giro Donne and even snagged a stage win at the Tour de lArhe. \n\r\n\n\r\nTo be a fierce competitor in the GC Erica knows she must hone her climbing skills through rigorous training. In this particular workout we focus on the demands of climbing and sprinting for Queen of the Mountain (QOM) points. \n\r\n\n\r\nWe aim to replicate the climbing demands during the tempo effort by riding with a lower cadence. It's important to position yourself on the bike as you would during a long climb.",
+  "duration": "50:00",
+  "tss": 54,
+  "intensityFactor": 0.81,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 105,
+      "durationFormatted": "01:45",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 105,
+      "durationFormatted": "01:45",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 105,
+      "durationFormatted": "01:45",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

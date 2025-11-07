@@ -1,0 +1,221 @@
+{
+  "filename": "power-intervals-2.zwo",
+  "slug": "power-intervals-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/power-intervals-2?do=exportZwo",
+  "name": "Power Intervals #2",
+  "description": "Today's session focuses on improving your ability to produce power. To be able to turn a big gear faster. Completing high power intervals with slightly less cadence increases the torque applied to the crank, boosting muscular endurance power. \n\n\n\nTwo different sets of work today. The 1st set involves longer 5min steady efforts, while the 2nd set includes high power 2min efforts. However, both sets open up with a 30sec, 85rpm interval.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Power Intervals #1\n                    \n                    \n                    \n                        56:00\n                        88TSS\n                        IF: 0.98\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Intervals #1\n                    \n                    \n                    \n                        31:30\n                        48TSS\n                        IF: 0.96\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Intervals #3\n                    \n                    \n                    \n                        58:00\n                        99TSS\n                        IF: 1.02\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Capacity #2\n                    \n                    \n                    \n                        59:00\n                        82TSS\n                        IF: 0.92\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race simulation #1\n                    \n                    \n                    \n                        59:15\n                        72TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Lead Outs\n                    \n                    \n                    \n                        59:00\n                        74TSS\n                        IF: 0.87\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo, Intensive Zone 6 #2\n                    \n                    \n                    \n                        58:45\n                        84TSS\n                        IF: 0.93\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Accelerations #2\n                    \n                    \n                    \n                        59:10\n                        70TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Sustained Threshold #2\n                    \n                    \n                    \n                        59:00\n                        81TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #4\n                    \n                    \n                    \n                        59:00\n                        76TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #5\n                    \n                    \n                    \n                        59:00\n                        72TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Controlled 30/30's #2\n                    \n                    \n                    \n                        59:00\n                        68TSS\n                        IF: 0.84\n                        chat",
+  "duration": "59:00",
+  "tss": 82,
+  "intensityFactor": 0.92,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 60,
+      "powerHigh": 75,
+      "powerFormatted": "60% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 60,
+      "powerHigh": 75,
+      "powerFormatted": "60% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 45,
+      "powerFormatted": "75% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

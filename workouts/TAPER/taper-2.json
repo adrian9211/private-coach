@@ -1,0 +1,149 @@
+{
+  "filename": "taper-2.zwo",
+  "slug": "taper-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/taper-2?do=exportZwo",
+  "name": "Taper #2",
+  "description": "Performing high-intensity workouts leading into your peak race period can be an effective way to increase fitness. With adequate recovery before and after high-intensity workouts, this is the ideal way to finish your race preparation. \n\n\n\nIn this workout, you will be completing a series of 40/20 high-intensity efforts.",
+  "duration": "50:00",
+  "tss": 51,
+  "intensityFactor": 0.79,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 40,
+      "powerFormatted": "50% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

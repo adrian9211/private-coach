@@ -1,0 +1,77 @@
+{
+  "filename": "sprints-low-speed-start.zwo",
+  "slug": "sprints-low-speed-start",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sprints-low-speed-start?do=exportZwo",
+  "name": "Sprints - Low Speed Start",
+  "description": "After completing a structured warm-up, the session is conducted as a 'Free Ride'. However, throughout the session, you will be prompted to complete 6 x 12sec max sprints starting from LOW speed. \n\n\n\nBegin sprint in a gear that allows you to reach ~100rpm after 12sec. No gear changes during the sprint. \n\n\n\nAim to choose a course with a minimal elevation gain for this session.",
+  "duration": "55:00",
+  "tss": 50,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 2100,
+      "durationFormatted": "35:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    }
+  ],
+  "isValid": true
+}

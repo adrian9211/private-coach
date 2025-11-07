@@ -1,0 +1,125 @@
+{
+  "filename": "endurance-8-s-zho5.zwo",
+  "slug": "endurance-8-s-zho5",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-8-s-zho5?do=exportZwo",
+  "name": "Endurance 8's",
+  "description": "The primary goal of endurance training is to improve your ability to preserve glycogen. The more efficient you are in your fuel source, the more energy you will have for the finale. Aerobic Endurance workouts are aimed at improving your efficiency at lower intensity levels. You are training your muscles to access fat as its primary fuel source and preserve your precious glycogen stores for the finale. After warming up, you will be completing 3 x 8min aerobic efforts with 3min recovery.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance 8's\n                    \n                    \n                    \n                        51:00\n                        41TSS\n                        IF: 0.7\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance 8's\n                    \n                    \n                    \n                        51:00\n                        41TSS\n                        IF: 0.7\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Matteo Trentin - Rouleur\n                    \n                    \n                    \n                        51:00\n                        52TSS\n                        IF: 0.79\n                        chat",
+  "duration": "51:00",
+  "tss": 41,
+  "intensityFactor": 0.7,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 73,
+      "powerHigh": 73,
+      "powerFormatted": "73%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 64,
+      "powerHigh": 64,
+      "powerFormatted": "64%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    }
+  ],
+  "isValid": true
+}

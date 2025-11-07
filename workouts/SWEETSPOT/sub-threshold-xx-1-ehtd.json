@@ -1,0 +1,77 @@
+{
+  "filename": "sub-threshold-xx-1-ehtd.zwo",
+  "slug": "sub-threshold-xx-1-ehtd",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sub-threshold-xx-1-ehtd?do=exportZwo",
+  "name": "Sub Threshold XX #1",
+  "description": "This challenging session builds upon the earlier work of steady sub-threshold efforts. By challenging your ability to process lactate at near-threshold power, you will increase your exhaustion time and endurance. \n\n\n\nAll this is achieved with a 30min steady state effort that dips briefly into the realms of VO2max.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sub Threshold #1\n                    \n                    \n                    \n                        34:00\n                        32TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #1\n                    \n                    \n                    \n                        55:00\n                        59TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold XX #1\n                    \n                    \n                    \n                        34:00\n                        46TSS\n                        IF: 0.91\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold XX #2\n                    \n                    \n                    \n                        48:00\n                        63TSS\n                        IF: 0.89\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Halo\n                    \n                    \n                    \n                        50:00\n                        60TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Taper #2\n                    \n                    \n                    \n                        50:00\n                        51TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        High Intensity 5min\n                    \n                    \n                    \n                        50:00\n                        68TSS\n                        IF: 0.9\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Erica Magnaldi - Climbing\n                    \n                    \n                    \n                        50:00\n                        54TSS\n                        IF: 0.81\n                        chat\n                        cached",
+  "duration": "50:00",
+  "tss": 64,
+  "intensityFactor": 0.88,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 150,
+      "durationFormatted": "02:30",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 50,
+      "powerFormatted": "65% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

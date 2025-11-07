@@ -1,0 +1,125 @@
+{
+  "filename": "muscular-endurance-3-cz02.zwo",
+  "slug": "muscular-endurance-3-cz02",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/muscular-endurance-3-cz02?do=exportZwo",
+  "name": "Muscular Endurance #3",
+  "description": "The cadence selected for your intervals will determine the specific muscle fibres that are recruited. Today we are performing lower cadence intervals but with power closer to threshold. After warming up, the session consists of four Tempo intervals with cadence varying from 70rpm to 65rpm. The effort should feel like a weights session, not cardiovascular. Avoid gripping the bars tightly; relaxed hands.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Muscular Endurance #1\n                    \n                    \n                    \n                        58:00\n                        48TSS\n                        IF: 0.71\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #1\n                    \n                    \n                    \n                        58:00\n                        48TSS\n                        IF: 0.71\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #2\n                    \n                    \n                    \n                        01:06:00\n                        55TSS\n                        IF: 0.71\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #3\n                    \n                    \n                    \n                        01:10:00\n                        62TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #4\n                    \n                    \n                    \n                        01:05:00\n                        58TSS\n                        IF: 0.74\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 15's #1\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #4\n                    \n                    \n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5min Neuromuscular\n                    \n                    Free Ride\n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Clearance\n                    \n                    \n                    \n                        01:10:00\n                        64TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        01:10:00\n                        75TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #4\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #10\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 3min #1\n                    \n                    \n                    \n                        01:10:00\n                        74TSS\n                        IF: 0.8",
+  "duration": "01:10:00",
+  "tss": 62,
+  "intensityFactor": 0.73,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

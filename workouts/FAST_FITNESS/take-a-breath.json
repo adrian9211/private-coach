@@ -1,0 +1,133 @@
+{
+  "filename": "take-a-breath.zwo",
+  "slug": "take-a-breath",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/take-a-breath?do=exportZwo",
+  "name": "Take a breath",
+  "description": "Steady-state efforts under your threshold will soon have you accustomed to high-intensity efforts.",
+  "duration": "34:30",
+  "tss": 44,
+  "intensityFactor": 0.88,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 118,
+      "powerHigh": 118,
+      "powerFormatted": "118%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,93 @@
+{
+  "filename": "base-miles-3.zwo",
+  "slug": "base-miles-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/base-miles-3?do=exportZwo",
+  "name": "Base Miles #3",
+  "description": "Continuing our focus on building base fitness, in today's session, we are again aiming to build aerobic power and efficiency by riding within Zone 2 for an extended period. \n\n\n\nDuring the session, we also focus on pedalling mechanics by completing a variety of cadence drills.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        42:00\n                        30TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        33:00\n                        25TSS\n                        IF: 0.68\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        42:00\n                        30TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #2\n                    \n                    \n                    \n                        44:35\n                        32TSS\n                        IF: 0.66\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #2\n                    \n                    \n                    \n                        44:35\n                        32TSS\n                        IF: 0.66\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped Intervals\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #1\n                    \n                    \n                    \n                        44:00\n                        37TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped Intervals\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepping up\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat",
+  "duration": "43:50",
+  "tss": 34,
+  "intensityFactor": 0.68,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 42,
+      "powerHigh": 70,
+      "powerFormatted": "42% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 73,
+      "powerFormatted": "65% FTP - 73% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 73,
+      "powerHigh": 73,
+      "powerFormatted": "73%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 73,
+      "powerHigh": 68,
+      "powerFormatted": "73% FTP - 68% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 110,
+      "durationFormatted": "01:50",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 66,
+      "powerHigh": 75,
+      "powerFormatted": "66% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 73,
+      "powerHigh": 73,
+      "powerFormatted": "73%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 41,
+      "powerFormatted": "75% FTP - 41% FTP"
+    }
+  ],
+  "isValid": true
+}

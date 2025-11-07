@@ -1,0 +1,77 @@
+{
+  "filename": "endurance-2.zwo",
+  "slug": "endurance-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-2?do=exportZwo",
+  "name": "Endurance #2",
+  "description": "Long, low-intensity efforts aren't the only method to build endurance. Incorporating short surges into a steady effort will increase your oxygen uptake and training stimulus.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance #1\n                    \n                    \n                    \n                        01:00:00\n                        51TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #1\n                    \n                    \n                    \n                        01:00:00\n                        51TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #2\n                    \n                    \n                    \n                        01:02:30\n                        52TSS\n                        IF: 0.71\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #3\n                    \n                    \n                    \n                        01:06:20\n                        59TSS\n                        IF: 0.73\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #3\n                    \n                    \n                    \n                        32:20\n                        28TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #4\n                    \n                    \n                    \n                        01:03:00\n                        60TSS\n                        IF: 0.76\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #5\n                    \n                    \n                    \n                        49:05\n                        44TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #6\n                    \n                    \n                    \n                        59:35\n                        54TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #7\n                    \n                    \n                    \n                        58:00\n                        44TSS\n                        IF: 0.68\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #8\n                    \n                    \n                    \n                        01:24:00\n                        66TSS\n                        IF: 0.69\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        What are Training Zones?\n                    \n                    \n                    \n                        31:30\n                        22TSS\n                        IF: 0.65\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        What are Training Zones?\n                    \n                    \n                    \n                        31:30\n                        22TSS\n                        IF: 0.65\n                        chat",
+  "duration": "31:20",
+  "tss": 22,
+  "intensityFactor": 0.66,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 56,
+      "powerHigh": 75,
+      "powerFormatted": "56% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 45,
+      "powerFormatted": "75% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,197 @@
+{
+  "filename": "descending-anaerobic-zfmr.zwo",
+  "slug": "descending-anaerobic-zfmr",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/descending-anaerobic-zfmr?do=exportZwo",
+  "name": "Descending Anaerobic",
+  "description": "High power and high leg speed. This is an important characteristic to possess in racing and the ability to repeat these high-intensity efforts multiple times. \n\n\n\nWith a short recovery between intervals, today, we are replicating the demands of high-speed performance.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Descending Anaerobic\n                    \n                    \n                    \n                        32:00\n                        34TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity 1min &amp; 2min\n                    \n                    \n                    \n                        54:00\n                        67TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #1\n                    \n                    \n                    \n                        54:00\n                        61TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low 30's #1\n                    \n                    \n                    \n                        54:00\n                        46TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 30sec Surges\n                    \n                    \n                    \n                        54:00\n                        48TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Fuel\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #3\n                    \n                    \n                    \n                        54:00\n                        46TSS\n                        IF: 0.72\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Technique #1\n                    \n                    \n                    \n                        54:10\n                        68TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Fuel\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #1\n                    \n                    \n                    \n                        54:00\n                        50TSS\n                        IF: 0.75\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #2\n                    \n                    \n                    \n                        54:00\n                        51TSS\n                        IF: 0.75\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #5\n                    \n                    \n                    \n                        54:00\n                        55TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #8\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike #1\n                    \n                    \n                    \n                        54:00\n                        57TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Fartlek #3\n                    \n                    \n                    \n                        54:00\n                        69TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF George Bennett - Climbing\n                    \n                    \n                    \n                        54:00\n                        57TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 4min #1\n                    \n                    \n                    \n                        54:00\n                        56TSS\n                        IF: 0.79",
+  "duration": "54:00",
+  "tss": 55,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,125 @@
+{
+  "filename": "30-30-s-anaerobic-4.zwo",
+  "slug": "30-30-s-anaerobic-4",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/30-30-s-anaerobic-4?do=exportZwo",
+  "name": "30/30's Anaerobic #4",
+  "description": "After completing a warm-up that includes a 2-minute threshold effort, today's principal sets include 20 x 30sec efforts @ 115%FTP with 30sec recovery. \n\n\n\nBy completing short efforts above threshold, you can accumulate more time in this area than if completed in more prolonged efforts. The short recovery periods also increase oxygen uptake. Particularly towards the end of the set!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        30/30's Anaerobic #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        52:00\n                        51TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/30's Anaerobic #2\n                    \n                    \n                    \n                        01:00:00\n                        64TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/30's Anaerobic #3\n                    \n                    \n                    \n                        01:08:00\n                        74TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic\n                    \n                    \n                    \n                        01:07:00\n                        89TSS\n                        IF: 0.9\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Season Base #2\n                    \n                    \n                    \n                        01:07:00\n                        77TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        01:07:00\n                        81TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive zones climb #1\n                    \n                    \n                    \n                        01:07:00\n                        83TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pyramid cadence efforts #2\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        01:07:00\n                        65TSS\n                        IF: 0.76\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #5\n                    \n                    \n                    \n                        01:07:00\n                        64TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #9\n                    \n                    \n                    \n                        01:07:00\n                        73TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo, Intensive Zone 6 #1\n                    \n                    \n                    \n                        01:07:00\n                        66TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Torque Changers #2\n                    \n                    \n                    \n                        01:07:06\n                        77TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 26min Climb\n                    \n                    \n                    \n                        01:07:00\n                        82TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #3\n                    \n                    \n                    \n                        01:07:00\n                        74TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #1\n                    \n                    \n                    \n                        01:07:00\n                        71TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #2\n                    \n                    \n                    \n                        01:06:45\n                        87TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        8min 30/30's\n                    \n                    \n                    \n                        01:07:00\n                        66TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 5min #1\n                    \n                    \n                    \n                        01:07:00\n                        76TSS\n                        IF: 0.83",
+  "duration": "01:07:00",
+  "tss": 72,
+  "intensityFactor": 0.81,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 85,
+      "powerFormatted": "50% FTP - 85% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 45,
+      "powerFormatted": "70% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

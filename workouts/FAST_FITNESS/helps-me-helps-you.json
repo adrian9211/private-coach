@@ -1,0 +1,109 @@
+{
+  "filename": "helps-me-helps-you.zwo",
+  "slug": "helps-me-helps-you",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/helps-me-helps-you?do=exportZwo",
+  "name": "Helps me helps you",
+  "description": "These Controlled 30/30 efforts are completed at a power just below your Maximal Aerobic Power (MAP).",
+  "duration": "30:00",
+  "tss": 31,
+  "intensityFactor": 0.79,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 80,
+      "powerFormatted": "50% FTP - 80% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 40,
+      "powerFormatted": "50% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

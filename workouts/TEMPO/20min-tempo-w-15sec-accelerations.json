@@ -1,0 +1,69 @@
+{
+  "filename": "20min-tempo-w-15sec-accelerations.zwo",
+  "slug": "20min-tempo-w-15sec-accelerations",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/20min-tempo-w-15sec-accelerations?do=exportZwo",
+  "name": "20min Tempo w/15sec Accelerations",
+  "description": "Completing long tempo efforts with short, high-intensity surges is another way to increase threshold power. The body must process the lactate produced from the above threshold surges with the constant high power. \n\n\n\nA practical session without the lung burning effect of a sustained threshold effort.",
+  "duration": "55:00",
+  "tss": 68,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 65,
+      "powerFormatted": "45% FTP - 65% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 285,
+      "durationFormatted": "04:45",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 285,
+      "durationFormatted": "04:45",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

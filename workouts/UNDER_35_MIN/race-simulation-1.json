@@ -1,0 +1,149 @@
+{
+  "filename": "race-simulation-1.zwo",
+  "slug": "race-simulation-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/race-simulation-1?do=exportZwo",
+  "name": "Race simulation #1",
+  "description": "Racing places the rider under some extreme circumstances. High power with low cadence and long threshold efforts are just some examples of what you will experience racing.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Race simulation #1\n                    \n                    \n                    \n                        59:15\n                        72TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race simulation #2\n                    \n                    \n                    \n                        55:00\n                        65TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #5\n                    \n                    \n                    \n                        34:30\n                        41TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's into Threshold #3\n                    \n                    \n                    \n                        34:45\n                        37TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Climb #1\n                    \n                    \n                    \n                        34:40\n                        43TSS\n                        IF: 0.86\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power into Tempo #2\n                    \n                    \n                    \n                        34:30\n                        47TSS\n                        IF: 0.91\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power into Tempo #3\n                    \n                    \n                    \n                        34:45\n                        41TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Attacks #1\n                    \n                    \n                    \n                        34:30\n                        51TSS\n                        IF: 0.95\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike\n                    \n                    \n                    \n                        34:30\n                        36TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Take a breath\n                    \n                    \n                    \n                        34:30\n                        44TSS\n                        IF: 0.88",
+  "duration": "34:30",
+  "tss": 43,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "ramp",
+      "duration": 255,
+      "durationFormatted": "04:15",
+      "powerLow": 106,
+      "powerHigh": 88,
+      "powerFormatted": "106% FTP - 88% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 88,
+      "powerHigh": 106,
+      "powerFormatted": "88% FTP - 106% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 80,
+      "powerHigh": 98,
+      "powerFormatted": "80% FTP - 98% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

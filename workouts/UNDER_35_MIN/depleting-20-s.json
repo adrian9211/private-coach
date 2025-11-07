@@ -1,0 +1,101 @@
+{
+  "filename": "depleting-20-s.zwo",
+  "slug": "depleting-20-s",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/depleting-20-s?do=exportZwo",
+  "name": "Depleting 20's",
+  "description": "We are completing 2 x 5min Sub-threshold intervals and 6 x 20sec accelerations. However, with the 20sec accelerations coming after the first 5min Sub-threshold interval, we aim to deplete your intramuscular glycogen stores and see what effect this has on the second 5min interval.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Depleting 20's\n                    \n                    \n                    \n                        59:00\n                        62TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #3\n                    \n                    \n                    \n                        32:20\n                        28TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Just a normal day\n                    \n                    \n                    \n                        32:30\n                        34TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intermittent 30/15's #2\n                    \n                    \n                    \n                        32:15\n                        32TSS\n                        IF: 0.78\n                        chat",
+  "duration": "32:30",
+  "tss": 34,
+  "intensityFactor": 0.8,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 90,
+      "powerFormatted": "65% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 90,
+      "powerFormatted": "65% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,77 @@
+{
+  "filename": "depleting-20sec-w-tempo.zwo",
+  "slug": "depleting-20sec-w-tempo",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/depleting-20sec-w-tempo?do=exportZwo",
+  "name": "Depleting 20sec w/Tempo",
+  "description": "The focus of the session is the final 10-minute threshold effort. But first, we want to use some of your readily available carbohydrate stores by performing 6 x 20sec high-intensity efforts. Another 10 minutes of endurance before completing 10 minutes at threshold.",
+  "duration": "01:07:00",
+  "tss": 56,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 280,
+      "durationFormatted": "04:40",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 63,
+      "powerHigh": 80,
+      "powerFormatted": "63% FTP - 80% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

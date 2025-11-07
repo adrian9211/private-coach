@@ -1,0 +1,133 @@
+{
+  "filename": "high-torque-hills-3.zwo",
+  "slug": "high-torque-hills-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/high-torque-hills-3?do=exportZwo",
+  "name": "High Torque Hills #3",
+  "description": "Quite often, climbing is characterised by a low cadence and a high force production, increasing crank torque. This high crank torque puts specific demands on the muscles and neuromuscular recruitment. \n\n\n\nWe hit this area by completing three sets of 3min efforts at a low rpm in this session.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        High Torque Hills #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        55:00\n                        52TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        High Torque Hills #1\n                    \n                    \n                    \n                        55:00\n                        52TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        High Torque Hills #2\n                    \n                    \n                    \n                        01:00:00\n                        62TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Endurance #2\n                    \n                    \n                    \n                        01:04:00\n                        55TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Endurance #3\n                    \n                    \n                    \n                        01:04:00\n                        56TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Endurance #4\n                    \n                    \n                    \n                        01:04:00\n                        59TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #3\n                    \n                    \n                    \n                        01:04:06\n                        56TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #3\n                    \n                    \n                    \n                        01:04:00\n                        75TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #4\n                    \n                    \n                    \n                        01:04:00\n                        72TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #2\n                    \n                    \n                    \n                        01:04:00\n                        67TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #2\n                    \n                    \n                    \n                        01:04:00\n                        67TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #2\n                    \n                    \n                    \n                        01:04:00\n                        65TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #3\n                    \n                    \n                    \n                        01:04:00\n                        70TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        7min 30/30's\n                    \n                    \n                    \n                        01:04:00\n                        59TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic Climb #2\n                    \n                    \n                    \n                        01:04:00\n                        72TSS\n                        IF: 0.82\n                        chat",
+  "duration": "01:04:00",
+  "tss": 58,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 82,
+      "powerHigh": 82,
+      "powerFormatted": "82%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

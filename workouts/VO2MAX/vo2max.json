@@ -1,0 +1,69 @@
+{
+  "filename": "vo2max.zwo",
+  "slug": "vo2max",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/vo2max?do=exportZwo",
+  "name": "VO2max!",
+  "description": "Training in Zone 5 allows you to extend your aerobic system. Into the higher intensity of Zone 5, VO2 Max today! Interval duration in Zone 5 is typically 3 to 8 minutes. But don't worry, you will get plenty of rest between intervals. \n\n\n\nToday we are performing 3min VO2 Max intervals. That's when your aerobic system is performing close to its maximum. The initial 30sec may feel comfortable, but it soon gets more challenging.",
+  "duration": "39:30",
+  "tss": 38,
+  "intensityFactor": 0.76,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 41,
+      "powerHigh": 70,
+      "powerFormatted": "41% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 105,
+      "powerHigh": 105,
+      "powerFormatted": "105%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 40,
+      "powerFormatted": "65% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

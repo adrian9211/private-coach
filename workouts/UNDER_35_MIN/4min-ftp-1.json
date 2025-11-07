@@ -1,0 +1,61 @@
+{
+  "filename": "4min-ftp-1.zwo",
+  "slug": "4min-ftp-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/4min-ftp-1?do=exportZwo",
+  "name": "4min FTP #1",
+  "description": "Improving your FTP allows you to ride faster and more efficiently. By targeting shorter FTP efforts of 4min @ Threshold with 90sec recovery, athletes can focus and remain engaged in their training.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        4min FTP #1\n                    \n                    Free Ride\n                    \n                        01:17:00\n                        90TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min FTP #2\n                    \n                    Free Ride\n                    \n                        01:22:30\n                        98TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min FTP #3\n                    \n                    Free Ride\n                    \n                        01:23:30\n                        102TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min FTP #4\n                    \n                    Free Ride\n                    \n                        01:29:00\n                        110TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #2\n                    \n                    \n                    \n                        30:15\n                        32TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #3\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        30:00\n                        33TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Ain't nobody but me\n                    \n                    \n                    \n                        30:00\n                        34TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Helps me helps you\n                    \n                    \n                    \n                        30:00\n                        31TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Unclaimed prize\n                    \n                    \n                    \n                        30:00\n                        37TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2min Anaerobic Capacity\n                            by coach Liz Smithson\n                    \n                    \n                    \n                        30:00\n                        29TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #1\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        30:00\n                        34TSS\n                        IF: 0.83\n                        chat",
+  "duration": "30:00",
+  "tss": 35,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 96,
+      "powerHigh": 96,
+      "powerFormatted": "96%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

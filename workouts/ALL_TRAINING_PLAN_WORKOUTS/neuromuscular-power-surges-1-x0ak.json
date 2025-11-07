@@ -1,0 +1,125 @@
+{
+  "filename": "neuromuscular-power-surges-1-x0ak.zwo",
+  "slug": "neuromuscular-power-surges-1-x0ak",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/neuromuscular-power-surges-1-x0ak?do=exportZwo",
+  "name": "Neuromuscular Power Surges #1",
+  "description": "Training the neuromuscular system is one of the most effective ways to improve your efficiency. This system includes all the muscles in the body, along with the nerves that serve them. In this workout, we are aiming to recruit the maximal amount of muscle fibres. We do this by completing a series of short, high powered efforts with little recovery. As the muscles tire, more are recruited to produce the power. With 2 sets of 10 surges, by the last interval, you will be calling upon every fibre you have to produce the power!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Neuromuscular Power Surges #1\n                    \n                    \n                    \n                        44:00\n                        37TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #2\n                    \n                    \n                    \n                        59:00\n                        49TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #3\n                    \n                    \n                    \n                        54:00\n                        46TSS\n                        IF: 0.72\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Descending Anaerobic\n                    \n                    \n                    \n                        54:00\n                        55TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low 30's #1\n                    \n                    \n                    \n                        54:00\n                        46TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 30sec Surges\n                    \n                    \n                    \n                        54:00\n                        48TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Fuel\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Fuel\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #1\n                    \n                    \n                    \n                        54:00\n                        50TSS\n                        IF: 0.75\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #2\n                    \n                    \n                    \n                        54:00\n                        51TSS\n                        IF: 0.75\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #5\n                    \n                    \n                    \n                        54:00\n                        55TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #8\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 4min #1\n                    \n                    \n                    \n                        54:00\n                        56TSS\n                        IF: 0.79",
+  "duration": "54:00",
+  "tss": 43,
+  "intensityFactor": 0.7,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50% FTP - 50% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 93,
+      "powerHigh": 93,
+      "powerFormatted": "93%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

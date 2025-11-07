@@ -1,0 +1,53 @@
+{
+  "filename": "sweetspot-training-2q9r.zwo",
+  "slug": "sweetspot-training-2q9r",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sweetspot-training-2q9r?do=exportZwo",
+  "name": "Sweetspot Training",
+  "description": "Sweetspot Training (SST) is the area that typically provides the Most Bang for your buck! It targets many key physiological regions at once in a short amount of time. It is a balanced amount of intensity and duration that improves your FTP. SST training falls between Upper Zone 3 and Lower Zone 4. \n\n\n\nSweetspot intervals can generally be completed up to twice a week. Interval duration is typically long, between 5-20 minutes, with similar recovery periods.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sweetspot Training\n                    \n                    \n                    \n                        41:00\n                        33TSS\n                        IF: 0.7\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Learning to fly\n                    \n                    Free Ride\n                    \n                        41:15\n                        34TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        What is Sweetspot Training?\n                    \n                    \n                    \n                        41:00\n                        34TSS\n                        IF: 0.71\n                        chat",
+  "duration": "41:00",
+  "tss": 34,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 86,
+      "powerHigh": 86,
+      "powerFormatted": "86%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 40,
+      "powerFormatted": "70% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

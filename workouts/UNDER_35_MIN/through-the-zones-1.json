@@ -1,0 +1,117 @@
+{
+  "filename": "through-the-zones-1.zwo",
+  "slug": "through-the-zones-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/through-the-zones-1?do=exportZwo",
+  "name": "Through the Zones #1",
+  "description": "After warming up, complete a 5 minute 'Through the zones' interval. The 5-minute effort features a 20-second surge before moving into the next level of intensity.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Through the Zones #1\n                    \n                    \n                    \n                        55:20\n                        64TSS\n                        IF: 0.84\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Through the Zones #2\n                    \n                    \n                    \n                        31:40\n                        46TSS\n                        IF: 0.94\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Through the Zones #3\n                    \n                    \n                    \n                        33:40\n                        49TSS\n                        IF: 0.94\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #6\n                    \n                    \n                    \n                        35:00\n                        42TSS\n                        IF: 0.86\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's into Threshold #3\n                    \n                    \n                    \n                        34:45\n                        37TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity into Sweetspot #2\n                    \n                    \n                    \n                        35:00\n                        37TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power into Tempo #3\n                    \n                    \n                    \n                        34:45\n                        41TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        34:50\n                        40TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Suprathreshold #1\n                    \n                    \n                    \n                        35:00\n                        43TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        V02max 3min and 2min\n                    \n                    \n                    \n                        35:00\n                        44TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Can't carry on\n                    \n                    \n                    \n                        35:18\n                        37TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Quiet\n                    \n                    \n                    \n                        35:00\n                        31TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intermittent 30/15's #3\n                    \n                    \n                    \n                        35:15\n                        39TSS\n                        IF: 0.82\n                        chat",
+  "duration": "35:00",
+  "tss": 36,
+  "intensityFactor": 0.8,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 76,
+      "powerHigh": 90,
+      "powerFormatted": "76% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 91,
+      "powerHigh": 110,
+      "powerFormatted": "91% FTP - 110% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    }
+  ],
+  "isValid": true
+}

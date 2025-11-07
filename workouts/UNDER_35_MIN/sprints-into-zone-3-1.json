@@ -1,0 +1,149 @@
+{
+  "filename": "sprints-into-zone-3-1.zwo",
+  "slug": "sprints-into-zone-3-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sprints-into-zone-3-1?do=exportZwo",
+  "name": "Sprints into Zone 3 #1",
+  "description": "We often need to perform a series of hard accelerations to position ourselves for a critical part of the race. These above threshold efforts result in lactate accumulation, which becomes the preferred fuel source. \n\n\n\nBut there's no time to rest! Once you have fought for position, you will need to keep the pressure on the pedals to stay at the front of the race.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                    \n                    \n                    \n                        01:01:00\n                        65TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                            by coach Tim Don\n                    \n                    Free Ride\n                    \n                        33:00\n                        35TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        01:07:00\n                        81TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        34:50\n                        40TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 4 #1\n                    \n                    \n                    \n                        32:00\n                        43TSS\n                        IF: 0.9\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #4\n                    \n                    \n                    \n                        33:45\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        3min Max Aerobic Power\n                    \n                    \n                    \n                        34:00\n                        43TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting Session #1\n                    \n                    \n                    \n                        34:00\n                        33TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Capacity #2\n                    \n                    \n                    \n                        34:00\n                        32TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Threshold #2\n                    \n                    \n                    \n                        34:00\n                        44TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.84\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #1\n                    \n                    \n                    \n                        34:00\n                        37TSS\n                        IF: 0.81\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Attacks #2\n                    \n                    \n                    \n                        34:00\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Attacks #3\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        34:00\n                        43TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #2\n                    \n                    \n                    \n                        34:00\n                        35TSS\n                        IF: 0.79\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #1\n                    \n                    \n                    \n                        34:00\n                        32TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #1\n                    \n                    \n                    \n                        34:00\n                        30TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo Surges #1\n                    \n                    \n                    \n                        34:00\n                        31TSS\n                        IF: 0.75\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Block #3\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 30/30's\n                    \n                    \n                    \n                        34:00\n                        30TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tadej's Criss-cross Tempo\n                    \n                    \n                    \n                        34:00\n                        31TSS\n                        IF: 0.75\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Prologue\n                    \n                    Free Ride\n                    \n                        33:40\n                        44TSS\n                        IF: 0.89\n                        chat\n                        cached",
+  "duration": "33:50",
+  "tss": 35,
+  "intensityFactor": 0.79,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 180,
+      "powerHigh": 180,
+      "powerFormatted": "180%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 75,
+      "powerHigh": 95,
+      "powerFormatted": "75% FTP - 95% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 165,
+      "powerHigh": 165,
+      "powerFormatted": "165%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 185,
+      "powerHigh": 185,
+      "powerFormatted": "185%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,77 @@
+{
+  "filename": "strength-tempo-6.zwo",
+  "slug": "strength-tempo-6",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/strength-tempo-6?do=exportZwo",
+  "name": "Strength Tempo #6",
+  "description": "The cadence selected for your intervals will determine the specific muscle fibres that are recruited. Today we are performing lower cadence intervals but with power @ tempo. \n\n\n\nAfter warming up, the session consists of 3 x 10min intervals with a low cadence. All this before a near-threshold finale!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Strength Tempo #1\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #1\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #2\n                    \n                    \n                    \n                        56:30\n                        57TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #3\n                    \n                    \n                    \n                        01:03:00\n                        58TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #4\n                    \n                    \n                    \n                        56:00\n                        57TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #5\n                    \n                    \n                    \n                        01:07:00\n                        64TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #7\n                    \n                    \n                    \n                        01:19:00\n                        76TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #1\n                    \n                    \n                    \n                        01:05:00\n                        63TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity #1\n                    \n                    \n                    \n                        01:05:00\n                        70TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Steps #2\n                    \n                    \n                    \n                        01:05:00\n                        66TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #4\n                    \n                    \n                    \n                        01:05:00\n                        58TSS\n                        IF: 0.74\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #5\n                    \n                    \n                    \n                        01:05:00\n                        77TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5 minute strength #1\n                    \n                    \n                    \n                        01:05:00\n                        56TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #2\n                    \n                    \n                    \n                        01:05:15\n                        74TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #1\n                    \n                    \n                    \n                        01:05:00\n                        63TSS\n                        IF: 0.77",
+  "duration": "01:05:00",
+  "tss": 62,
+  "intensityFactor": 0.76,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

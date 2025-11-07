@@ -1,0 +1,93 @@
+{
+  "filename": "climbing-sustained-threshold-1.zwo",
+  "slug": "climbing-sustained-threshold-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/climbing-sustained-threshold-1?do=exportZwo",
+  "name": "Climbing Sustained Threshold #1",
+  "description": "Today's session focuses on simulating the demands of extended climbing. Riding at the lower end of your Zone 4 threshold power, you will be targeting a cadence similar to climbing. \n\n\n\nWhen performing the 4 x 5min intervals, position yourself on the bike as you would climbing seated?sitting towards the back of the saddle, with hands lightly gripping the bars.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Climbing Sustained Threshold #2\n                    \n                    \n                    \n                        59:00\n                        81TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Sustained Threshold #3\n                    \n                    \n                    \n                        01:20:00\n                        91TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mean to me\n                    \n                    \n                    \n                        52:00\n                        55TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/30's Anaerobic #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        52:00\n                        51TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic 50sec #1\n                    \n                    \n                    \n                        52:00\n                        50TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Accelerations #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        52:10\n                        62TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #3\n                    \n                    \n                    \n                        52:10\n                        62TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #1\n                    \n                    \n                    \n                        52:00\n                        47TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Accelerations #1\n                    \n                    \n                    \n                        52:10\n                        62TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        40/20's #1\n                    \n                    \n                    \n                        52:00\n                        55TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Escalating 3min VO2max\n                    \n                    \n                    \n                        52:00\n                        60TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Chiara Consonni - Sprint\n                    \n                    \n                    \n                        52:00\n                        53TSS\n                        IF: 0.79\n                        chat",
+  "duration": "52:00",
+  "tss": 49,
+  "intensityFactor": 0.76,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 65,
+      "powerHigh": 50,
+      "powerFormatted": "65% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,85 @@
+{
+  "filename": "intervals-what-are-they-y1b5.zwo",
+  "slug": "intervals-what-are-they-y1b5",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/intervals-what-are-they-y1b5?do=exportZwo",
+  "name": "Intervals - What are they?",
+  "description": "In cycling, we use the word 'Intervals' to define periods of higher intensity work alternating with low-intensity periods of recovery. Intervals play an essential part in your training. They increase fitness and allow you to burn more calories over a shorter period than steady-state riding. Today we look at different ways of completing interval workouts and why we need them.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Intervals - What are they?\n                    \n                    \n                    \n                        30:00\n                        22TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intervals - What are they?\n                            by coach Liz Smithson\n                    \n                    \n                    \n                        30:00\n                        21TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intervals - What are they?\n                    \n                    \n                    \n                        30:00\n                        22TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Jangling Jack\n                    \n                    \n                    \n                        30:15\n                        25TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        What are Intervals?\n                    \n                    \n                    \n                        30:00\n                        22TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intermittent 30/15's #1\n                    \n                    \n                    \n                        30:00\n                        27TSS\n                        IF: 0.74\n                        chat",
+  "duration": "30:00",
+  "tss": 22,
+  "intensityFactor": 0.66,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 40,
+      "powerFormatted": "70% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

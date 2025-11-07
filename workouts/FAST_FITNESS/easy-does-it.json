@@ -1,0 +1,165 @@
+{
+  "filename": "easy-does-it.zwo",
+  "slug": "easy-does-it",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/easy-does-it?do=exportZwo",
+  "name": "Easy does it",
+  "description": "Like attacking a climb, this session requires you to produce a short, high power effort before settling into the higher slopes.",
+  "duration": "31:40",
+  "tss": 35,
+  "intensityFactor": 0.82,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 69,
+      "powerHigh": 69,
+      "powerFormatted": "69%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 94,
+      "powerHigh": 94,
+      "powerFormatted": "94%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 101,
+      "powerHigh": 101,
+      "powerFormatted": "101%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 104,
+      "powerHigh": 104,
+      "powerFormatted": "104%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 66,
+      "powerHigh": 66,
+      "powerFormatted": "66%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 59,
+      "powerHigh": 59,
+      "powerFormatted": "59%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

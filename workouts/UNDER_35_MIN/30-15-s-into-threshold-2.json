@@ -1,0 +1,93 @@
+{
+  "filename": "30-15-s-into-threshold-2.zwo",
+  "slug": "30-15-s-into-threshold-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/30-15-s-into-threshold-2?do=exportZwo",
+  "name": "30/15's into Threshold #2",
+  "description": "After warming up, complete 10 minutes at Zone 2 Endurance, followed by 3 x 30sec on / 15sec off, leading into 5 minutes at threshold.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        30/15's into Threshold #1\n                    \n                    \n                    \n                        33:15\n                        33TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's into Threshold #3\n                    \n                    \n                    \n                        34:45\n                        37TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's into Threshold #4\n                    \n                    \n                    \n                        33:30\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        8min Rolling TT\n                    \n                    \n                    \n                        33:30\n                        40TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic Ramps\n                    \n                    \n                    \n                        33:00\n                        27TSS\n                        IF: 0.7\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        33:00\n                        25TSS\n                        IF: 0.68\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity into Sweetspot #1\n                    \n                    \n                    \n                        33:00\n                        34TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power into Tempo #1\n                    \n                    \n                    \n                        33:00\n                        34TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Capacity #1\n                    \n                    \n                    \n                        33:15\n                        32TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic\n                    \n                    \n                    \n                        33:00\n                        36TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power into Tempo #1\n                    \n                    \n                    \n                        33:15\n                        40TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                            by coach Tim Don\n                    \n                    Free Ride\n                    \n                        33:00\n                        35TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #1\n                    \n                    \n                    \n                        33:00\n                        35TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Block #1\n                    \n                    \n                    \n                        33:00\n                        34TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Block #2\n                    \n                    \n                    \n                        33:00\n                        36TSS\n                        IF: 0.82",
+  "duration": "33:15",
+  "tss": 33,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 85,
+      "powerHigh": 100,
+      "powerFormatted": "85% FTP - 100% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 70,
+      "powerHigh": 45,
+      "powerFormatted": "70% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

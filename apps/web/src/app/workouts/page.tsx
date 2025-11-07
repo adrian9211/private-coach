@@ -34,6 +34,7 @@ export default function WorkoutsPage() {
   const [workouts, setWorkouts] = useState<WorkoutWithMeta[]>([])
   const [loading, setLoading] = useState(false)
   const [categories, setCategories] = useState<string[]>([])
+  const [workoutInfo, setWorkoutInfo] = useState<{ totalFiles?: number; htmlFiles?: number; needsAuthentication?: boolean } | null>(null)
 
   useEffect(() => {
     // Load categories
@@ -50,15 +51,24 @@ export default function WorkoutsPage() {
   useEffect(() => {
     if (!selectedCategory) {
       setWorkouts([])
+      setWorkoutInfo(null)
       return
     }
 
     setLoading(true)
+    setWorkoutInfo(null)
     fetch(`/api/workouts?category=${selectedCategory}`)
       .then(res => res.json())
       .then(data => {
         if (data.workouts) {
           setWorkouts(data.workouts)
+        }
+        if (data.totalFiles !== undefined) {
+          setWorkoutInfo({
+            totalFiles: data.totalFiles,
+            htmlFiles: data.htmlFiles,
+            needsAuthentication: data.needsAuthentication,
+          })
         }
       })
       .catch(console.error)
@@ -85,21 +95,20 @@ export default function WorkoutsPage() {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {CATEGORIES.map((cat) => {
-              const isAvailable = categories.includes(cat.id)
+              const isAvailable = categories.length === 0 || categories.includes(cat.id)
               const isSelected = selectedCategory === cat.id
               
               return (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(isSelected ? null : cat.id)}
-                  disabled={!isAvailable}
                   className={`
                     p-4 rounded-lg border-2 text-left transition-all
                     ${isSelected 
                       ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
-                      : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300'
+                      : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300 hover:shadow-md'
                     }
-                    ${!isAvailable ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+                    cursor-pointer
                   `}
                 >
                   <h3 className="font-semibold text-sm text-gray-900 dark:text-white mb-1">
@@ -133,8 +142,39 @@ export default function WorkoutsPage() {
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
               </div>
             ) : workouts.length === 0 ? (
-              <div className="text-center py-12 text-gray-500 dark:text-gray-400">
-                No workouts available in this category.
+              <div className="text-center py-12">
+                {workoutInfo?.needsAuthentication ? (
+                  <div className="max-w-md mx-auto">
+                    <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6">
+                      <h3 className="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+                        Workouts Require Authentication
+                      </h3>
+                      <p className="text-sm text-yellow-700 dark:text-yellow-300 mb-4">
+                        Found {workoutInfo.totalFiles} workout file{workoutInfo.totalFiles !== 1 ? 's' : ''} in this category, but they need to be downloaded while logged in to MyWhooshInfo.com.
+                      </p>
+                      <p className="text-xs text-yellow-600 dark:text-yellow-400">
+                        To use these workouts, please visit{' '}
+                        <a 
+                          href="https://mywhooshinfo.com/workouts/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="underline hover:text-yellow-800 dark:hover:text-yellow-200"
+                        >
+                          MyWhooshInfo.com
+                        </a>
+                        {' '}and download the .zwo files manually, then place them in the{' '}
+                        <code className="bg-yellow-100 dark:bg-yellow-900/30 px-1 rounded">
+                          workouts/{selectedCategory}/
+                        </code>
+                        {' '}directory.
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="text-gray-500 dark:text-gray-400">
+                    No workouts available in this category.
+                  </div>
+                )}
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

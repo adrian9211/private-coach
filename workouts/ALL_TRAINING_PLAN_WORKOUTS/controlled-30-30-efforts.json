@@ -1,0 +1,109 @@
+{
+  "filename": "controlled-30-30-efforts.zwo",
+  "slug": "controlled-30-30-efforts",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/controlled-30-30-efforts?do=exportZwo",
+  "name": "Controlled 30/30 Efforts",
+  "description": "These Controlled 30/30 efforts are completed at a power just below your Maximal Aerobic Power (MAP). By splitting up into 30 seconds, with 30 seconds recovery, you can accumulate more time at this intensity than you would if doing it as a continuous effort.",
+  "duration": "51:00",
+  "tss": 55,
+  "intensityFactor": 0.81,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 85,
+      "powerFormatted": "50% FTP - 85% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 50,
+      "powerHigh": 30,
+      "powerFormatted": "50% FTP - 30% FTP"
+    }
+  ],
+  "isValid": true
+}

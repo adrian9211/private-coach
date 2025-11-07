@@ -1,0 +1,77 @@
+{
+  "filename": "peak-power-yifo.zwo",
+  "slug": "peak-power-yifo",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/peak-power-yifo?do=exportZwo",
+  "name": "Peak Power!",
+  "description": "After completing a structured warm-up, the session is completed as a 'Free Ride'. However, throughout the session, you will be prompted to perform 6 x 3-5sec max sprints. The aim is to hit your Pmax values. Sprints are very short @ 3-5sec, generally needing only 6-10 pedal strokes. Use any gear necessary to produce high power. Aim to choose a course with minimal elevation gain for this session.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Peak Power!\n                    \n                    Free Ride\n                    \n                        01:06:00\n                        43TSS\n                        IF: 0.63\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Peak Power!\n                    \n                    Free Ride\n                    \n                        01:06:00\n                        43TSS\n                        IF: 0.63\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Peak Power!\n                    \n                    Free Ride\n                    \n                        01:06:00\n                        43TSS\n                        IF: 0.63\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #2\n                    \n                    \n                    \n                        01:06:00\n                        55TSS\n                        IF: 0.71\n\n                        cached",
+  "duration": "01:06:00",
+  "tss": 43,
+  "intensityFactor": 0.63,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 42,
+      "powerHigh": 70,
+      "powerFormatted": "42% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 2700,
+      "durationFormatted": "45:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

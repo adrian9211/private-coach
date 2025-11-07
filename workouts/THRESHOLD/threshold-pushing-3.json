@@ -1,0 +1,101 @@
+{
+  "filename": "threshold-pushing-3.zwo",
+  "slug": "threshold-pushing-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/threshold-pushing-3?do=exportZwo",
+  "name": "Threshold Pushing #3",
+  "description": "This session is designed to increase your FTP from below, working predominantly on your aerobic metabolism. Your body will become more comfortable at these powers in time, and your FTP will increase. \n\n\n\nYou should be tired and struggling to hold power by the end of the final interval, but not at your absolute limit Building on Last week's session, extending the time of each interval. \n\n\n\nThis is one of the most extended sessions in the Climbing Focussed Plan. If you are short on time, repeat last week's Threshold Pushing 2 Workout.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Threshold Pushing #1\n                    \n                    \n                    \n                        01:00:00\n                        68TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Pushing #2\n                    \n                    \n                    \n                        01:06:00\n                        76TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #2\n                    \n                    \n                    \n                        01:12:00\n                        82TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #2\n                    \n                    \n                    \n                        01:12:00\n                        82TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #3\n                    \n                    \n                    \n                        01:12:00\n                        89TSS\n                        IF: 0.86\n                        chat\n                        cached",
+  "duration": "01:12:00",
+  "tss": 85,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 840,
+      "durationFormatted": "14:00",
+      "powerLow": 93,
+      "powerHigh": 93,
+      "powerFormatted": "93%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 840,
+      "durationFormatted": "14:00",
+      "powerLow": 93,
+      "powerHigh": 93,
+      "powerFormatted": "93%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 840,
+      "durationFormatted": "14:00",
+      "powerLow": 93,
+      "powerHigh": 93,
+      "powerFormatted": "93%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

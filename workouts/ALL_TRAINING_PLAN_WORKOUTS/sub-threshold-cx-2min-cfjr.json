@@ -1,0 +1,101 @@
+{
+  "filename": "sub-threshold-cx-2min-cfjr.zwo",
+  "slug": "sub-threshold-cx-2min-cfjr",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sub-threshold-cx-2min-cfjr?do=exportZwo",
+  "name": "Sub Threshold CX 2min",
+  "description": "This is a challenging session that builds upon the earlier work of steady sub-threshold efforts. By challenging your ability to process lactate at near-threshold power, you will increase your time to exhaustion and increase endurance. All this is achieved with a 30min steady state effort that dips briefly into the realms of VO2max.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sub Threshold CX 2min\n                    \n                    \n                    \n                        54:00\n                        73TSS\n                        IF: 0.91\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity 1min &amp; 2min\n                    \n                    \n                    \n                        54:00\n                        67TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #1\n                    \n                    \n                    \n                        54:00\n                        61TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Technique #1\n                    \n                    \n                    \n                        54:05\n                        84TSS\n                        IF: 0.97\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Technique #2\n                    \n                    \n                    \n                        54:05\n                        87TSS\n                        IF: 0.98\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Technique #1\n                    \n                    \n                    \n                        54:10\n                        68TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Fartlek #3\n                    \n                    \n                    \n                        54:00\n                        69TSS\n                        IF: 0.88\n                        chat\n                        cached",
+  "duration": "54:00",
+  "tss": 73,
+  "intensityFactor": 0.91,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 60,
+      "powerFormatted": "40% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 185,
+      "powerHigh": 185,
+      "powerFormatted": "185%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 114,
+      "powerHigh": 114,
+      "powerFormatted": "114%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

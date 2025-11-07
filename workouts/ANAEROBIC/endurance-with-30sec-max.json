@@ -1,0 +1,117 @@
+{
+  "filename": "endurance-with-30sec-max.zwo",
+  "slug": "endurance-with-30sec-max",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-with-30sec-max?do=exportZwo",
+  "name": "Endurance with 30sec Max",
+  "description": "This session will help improve your pedalling efficiency and increase your cardiovascular capacity. You are introducing the body to some climbing focussed changes in cadence. \n\n\n\nCarry out 3 x 10-minute blocks of alternating high/low cadence. At the end of each block, finish with a 30-second maximal effort. Including 30-second maximal efforts within an endurance ride will prolong the training effect into the future.",
+  "duration": "51:30",
+  "tss": 38,
+  "intensityFactor": 0.67,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 40,
+      "powerHigh": 60,
+      "powerFormatted": "40% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,141 @@
+{
+  "filename": "8min-30-30-s-pwp8.zwo",
+  "slug": "8min-30-30-s-pwp8",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/8min-30-30-s-pwp8?do=exportZwo",
+  "name": "8min 30/30's",
+  "description": "Another session of intermittent training, performing 30/30s for an accumulated time of 12 min above threshold. After warming up, we complete three sets of 8-minute blocks of 30 seconds above FTP, followed by 30 seconds of recovery. The rest period mustn't be too easy to train the muscle fibres to use the lactate produced as a fuel.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        4min 30/30's\n                    \n                    \n                    \n                        57:00\n                        57TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5min 30/30's\n                    \n                    \n                    \n                        01:00:00\n                        50TSS\n                        IF: 0.71\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        6min 30/30's\n                    \n                    \n                    \n                        01:03:00\n                        54TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        7min 30/30's\n                    \n                    \n                    \n                        01:04:00\n                        59TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        8min 30/30's\n                    \n                    \n                    \n                        01:07:00\n                        66TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/30's Anaerobic #4\n                    \n                    \n                    \n                        01:07:00\n                        72TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Season Base #2\n                    \n                    \n                    \n                        01:07:00\n                        77TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        01:07:00\n                        81TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pyramid cadence efforts #2\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        01:07:00\n                        65TSS\n                        IF: 0.76\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting 20sec w/Tempo\n                    \n                    \n                    \n                        01:07:00\n                        56TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #5\n                    \n                    \n                    \n                        01:07:00\n                        64TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #9\n                    \n                    \n                    \n                        01:07:00\n                        73TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo, Intensive Zone 6 #1\n                    \n                    \n                    \n                        01:07:00\n                        66TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Torque Changers #2\n                    \n                    \n                    \n                        01:07:06\n                        77TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 26min Climb\n                    \n                    \n                    \n                        01:07:00\n                        82TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #3\n                    \n                    \n                    \n                        01:07:00\n                        74TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #1\n                    \n                    \n                    \n                        01:07:00\n                        71TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 5min #1\n                    \n                    \n                    \n                        01:07:00\n                        76TSS\n                        IF: 0.83",
+  "duration": "01:07:00",
+  "tss": 66,
+  "intensityFactor": 0.77,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 45,
+      "powerHigh": 65,
+      "powerFormatted": "45% FTP - 65% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 120,
+      "powerHigh": 120,
+      "powerFormatted": "120%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 35,
+      "powerFormatted": "55% FTP - 35% FTP"
+    }
+  ],
+  "isValid": true
+}

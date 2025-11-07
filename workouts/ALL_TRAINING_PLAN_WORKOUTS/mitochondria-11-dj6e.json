@@ -1,0 +1,101 @@
+{
+  "filename": "mitochondria-11-dj6e.zwo",
+  "slug": "mitochondria-11-dj6e",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/mitochondria-11-dj6e?do=exportZwo",
+  "name": "Mitochondria #11",
+  "description": "One of the main aims of our 'Base' training phase is to increase mitochondrial density. In basic terms, these are the power stations in your muscles. Recent studies have shown that the right amount of high-intensity training can provide the same benefits as traditional Long Slow Distance training. By implementing structured intervals of high-intensity power, coupled with the right amount of recovery time, we can boost the density of mitochondria.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Mitochondria #1\n                    \n                    \n                    \n                        01:00:00\n                        65TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #1\n                    \n                    \n                    \n                        31:00\n                        34TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #10\n                    \n                    \n                    \n                        01:19:00\n                        87TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #11\n                    \n                    \n                    \n                        01:08:00\n                        84TSS\n                        IF: 0.86\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #12\n                    \n                    \n                    \n                        58:00\n                        77TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #13\n                    \n                    \n                    \n                        01:33:00\n                        117TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #2\n                    \n                    \n                    \n                        01:00:00\n                        69TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #3\n                    \n                    \n                    \n                        01:21:00\n                        66TSS\n                        IF: 0.7\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #4\n                    \n                    \n                    \n                        01:11:00\n                        64TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #5\n                    \n                    \n                    \n                        01:11:00\n                        69TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #6\n                    \n                    \n                    \n                        01:01:00\n                        63TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #7\n                    \n                    \n                    \n                        01:18:00\n                        78TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #8\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        01:03:00\n                        69TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #9\n                    \n                    \n                    \n                        01:38:00\n                        100TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/30's Anaerobic #3\n                    \n                    \n                    \n                        01:08:00\n                        74TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #3\n                    \n                    \n                    \n                        01:08:00\n                        76TSS\n                        IF: 0.82",
+  "duration": "01:08:00",
+  "tss": 84,
+  "intensityFactor": 0.86,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 113,
+      "powerHigh": 113,
+      "powerFormatted": "113%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,85 @@
+{
+  "filename": "intensive-pmax-into-tempo.zwo",
+  "slug": "intensive-pmax-into-tempo",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/intensive-pmax-into-tempo?do=exportZwo",
+  "name": "Intensive Pmax into Tempo",
+  "description": "After warming up, complete a block of Zone 2 Endurance before a set of Intensive Pmax work. The second set consists of 3 x 15sec efforts performed throughout a 9-minute Tempo effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Intensive Pmax into Tempo #1\n                    \n                    \n                    \n                        52:50\n                        61TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Pmax into Tempo #2\n                    \n                    \n                    \n                        01:01:40\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2min Capacity\n                    \n                    \n                    \n                        31:00\n                        28TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #1\n                    \n                    \n                    \n                        30:30\n                        32TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        40/20s #1\n                            by coach Katie Zaferes\n                    \n                    \n                    \n                        31:00\n                        34TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min 3030's\n                            by coach Vincent Luis\n                    \n                    \n                    \n                        31:00\n                        31TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 8's\n                    \n                    \n                    \n                        31:00\n                        27TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity #1\n                    \n                    \n                    \n                        30:30\n                        39TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #1\n                    \n                    \n                    \n                        31:00\n                        34TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #1\n                    \n                    \n                    \n                        31:00\n                        30TSS\n                        IF: 0.77",
+  "duration": "30:45",
+  "tss": 33,
+  "intensityFactor": 0.81,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 45,
+      "powerHigh": 60,
+      "powerFormatted": "45% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 84,
+      "powerHigh": 84,
+      "powerFormatted": "84%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 70,
+      "powerHigh": 45,
+      "powerFormatted": "70% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

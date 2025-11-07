@@ -1,0 +1,109 @@
+{
+  "filename": "30sec-endurance-1-347o.zwo",
+  "slug": "30sec-endurance-1-347o",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/30sec-endurance-1-347o?do=exportZwo",
+  "name": "30sec + Endurance #1",
+  "description": "Today we are going to burn up the intramuscular glycogen early in the session and then continue with an endurance ride. By depleting this energy source early, the body is forced to adapt by becoming more efficient at utilising fats to produce the power. In this workout the 30 second efforts also act as part of your warm up. We quickly get into the action today! The remaining endurance ride is completed as a free-ride. Aim to keep your effort within zone 2 and 3 for the majority of your ride.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        20sec + Endurance #1\n                    \n                    Free Ride\n                    \n                        01:24:10\n                        56TSS\n                        IF: 0.63\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        20sec + Endurance #1\n                    \n                    Free Ride\n                    \n                        01:24:10\n                        56TSS\n                        IF: 0.63\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30sec + Endurance #1\n                    \n                    Free Ride\n                    \n                        01:25:00\n                        71TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30sec + Endurance #1\n                    \n                    Free Ride\n                    \n                        01:25:00\n                        71TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30sec + Endurance #2\n                    \n                    Free Ride\n                    \n                        01:29:30\n                        77TSS\n                        IF: 0.72",
+  "duration": "01:25:00",
+  "tss": 71,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 330,
+      "durationFormatted": "05:30",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 135,
+      "powerHigh": 135,
+      "powerFormatted": "135%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 140,
+      "powerHigh": 140,
+      "powerFormatted": "140%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 145,
+      "powerHigh": 145,
+      "powerFormatted": "145%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 3600,
+      "durationFormatted": "01:00:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    }
+  ],
+  "isValid": true
+}

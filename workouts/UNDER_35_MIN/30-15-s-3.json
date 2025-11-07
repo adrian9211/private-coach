@@ -1,0 +1,85 @@
+{
+  "filename": "30-15-s-3.zwo",
+  "slug": "30-15-s-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/30-15-s-3?do=exportZwo",
+  "name": "30/15's #3",
+  "description": "After warming up, complete 10 minutes at Zone 2 Endurance, followed by 8 x 30sec on / 15sec off. Recovery power is 65% of FTP.\n            \n\n\n            This workout is also available as Video workout by a MyWhoosh coach Si Bradeley\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        30/15's #1\n                    \n                    \n                    \n                        30:30\n                        32TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #2\n                    \n                    \n                    \n                        30:15\n                        32TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #4\n                    \n                    \n                    \n                        33:45\n                        36TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #5\n                    \n                    \n                    \n                        34:30\n                        41TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #6\n                    \n                    \n                    \n                        35:00\n                        42TSS\n                        IF: 0.86\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min FTP #1\n                    \n                    \n                    \n                        30:00\n                        35TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Ain't nobody but me\n                    \n                    \n                    \n                        30:00\n                        34TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Helps me helps you\n                    \n                    \n                    \n                        30:00\n                        31TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Unclaimed prize\n                    \n                    \n                    \n                        30:00\n                        37TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2min Anaerobic Capacity\n                            by coach Liz Smithson\n                    \n                    \n                    \n                        30:00\n                        29TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #1\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        30:00\n                        34TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intermittent 30/15's #1\n                    \n                    \n                    \n                        30:00\n                        27TSS\n                        IF: 0.74\n                        chat",
+  "duration": "30:00",
+  "tss": 33,
+  "intensityFactor": 0.82,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 50,
+      "powerFormatted": "70% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

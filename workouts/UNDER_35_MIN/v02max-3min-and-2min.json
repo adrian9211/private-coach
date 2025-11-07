@@ -1,0 +1,85 @@
+{
+  "filename": "v02max-3min-and-2min.zwo",
+  "slug": "v02max-3min-and-2min",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/v02max-3min-and-2min?do=exportZwo",
+  "name": "V02max 3min and 2min",
+  "description": "Working through the range of Zone 5 today. The opening 3-minute intervals are at the lower end of Zone 5. In contrast, the final intervals are 2 minutes in duration at the top end of Zone 5.",
+  "duration": "35:00",
+  "tss": 44,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 70,
+      "powerFormatted": "50% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 106,
+      "powerHigh": 106,
+      "powerFormatted": "106%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 118,
+      "powerHigh": 118,
+      "powerFormatted": "118%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

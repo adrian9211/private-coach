@@ -1,0 +1,85 @@
+{
+  "filename": "22min-intensive-aerobic-ihwq.zwo",
+  "slug": "22min-intensive-aerobic-ihwq",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/22min-intensive-aerobic-ihwq?do=exportZwo",
+  "name": "22min Intensive Aerobic",
+  "description": "There's no getting away from the benefits of long aerobic efforts. This Intensive Aerobic duration is the point where the majority of the energy comes from aerobic pathways. After completing a good warm-up, we perform 3 x 22-minute Intensive Aerobic intervals.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        11min Intensive Aerobic\n                    \n                    \n                    \n                        01:17:00\n                        87TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        22min Intensive Aerobic\n                    \n                    \n                    \n                        01:28:00\n                        110TSS\n                        IF: 0.87",
+  "duration": "01:28:00",
+  "tss": 110,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 57,
+      "powerHigh": 75,
+      "powerFormatted": "57% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1320,
+      "durationFormatted": "22:00",
+      "powerLow": 96,
+      "powerHigh": 96,
+      "powerFormatted": "96%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1320,
+      "durationFormatted": "22:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1320,
+      "durationFormatted": "22:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    }
+  ],
+  "isValid": true
+}

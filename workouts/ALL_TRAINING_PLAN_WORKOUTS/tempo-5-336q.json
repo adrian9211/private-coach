@@ -1,0 +1,77 @@
+{
+  "filename": "tempo-5-336q.zwo",
+  "slug": "tempo-5-336q",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tempo-5-336q?do=exportZwo",
+  "name": "Tempo #5",
+  "description": "Tempo work is the basis of many training programs and is an area of great necessity. The key benefit to completing Tempo work indoors is the lack of interruptions to the effort, and ERG mode makes things much more straightforward. After first completing a solid 20min high-end tempo effort, the session finishes with 2 x 5min sub-threshold efforts.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tempo #5\n                    \n                    \n                    \n                        54:00\n                        55TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity 1min &amp; 2min\n                    \n                    \n                    \n                        54:00\n                        67TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Descending Anaerobic\n                    \n                    \n                    \n                        54:00\n                        55TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #1\n                    \n                    \n                    \n                        54:00\n                        61TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low 30's #1\n                    \n                    \n                    \n                        54:00\n                        46TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 30sec Surges\n                    \n                    \n                    \n                        54:00\n                        48TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Fuel\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #3\n                    \n                    \n                    \n                        54:00\n                        46TSS\n                        IF: 0.72\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Technique #1\n                    \n                    \n                    \n                        54:10\n                        68TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Fuel\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #1\n                    \n                    \n                    \n                        54:00\n                        50TSS\n                        IF: 0.75\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #2\n                    \n                    \n                    \n                        54:00\n                        51TSS\n                        IF: 0.75\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #8\n                    \n                    \n                    \n                        54:00\n                        52TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike #1\n                    \n                    \n                    \n                        54:00\n                        57TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Fartlek #3\n                    \n                    \n                    \n                        54:00\n                        69TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF George Bennett - Climbing\n                    \n                    \n                    \n                        54:00\n                        57TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 4min #1\n                    \n                    \n                    \n                        54:00\n                        56TSS\n                        IF: 0.79",
+  "duration": "54:00",
+  "tss": 55,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1200,
+      "durationFormatted": "20:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 96,
+      "powerHigh": 96,
+      "powerFormatted": "96%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,101 @@
+{
+  "filename": "2023-tdf-chiara-consonni-sprint.zwo",
+  "slug": "2023-tdf-chiara-consonni-sprint",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/2023-tdf-chiara-consonni-sprint?do=exportZwo",
+  "name": "2023 TDF Chiara Consonni - Sprint",
+  "description": "Chiara is a pure sprinter. She is the new arrow for the sprints at UAE Team ADQ. A multiple European and world champion on the track, she has already achieved several career victories on the road, including a stage at the Giro d'Italia. \n\r\n\n\r\nTo target peak 5-sec power, Chiara will perform multiple maximal sprints in a single workout. In today's workout, we ride at a lower-end Tempo effort for 30 minutes. However, within these 30 minutes, you will perform a 10-second sprint every 5 minutes. \n\r\n\n\r\nCan you hit the same Peak Power for all six sprints?",
+  "duration": "52:00",
+  "tss": 53,
+  "intensityFactor": 0.79,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 290,
+      "durationFormatted": "04:50",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 190,
+      "powerHigh": 190,
+      "powerFormatted": "190%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

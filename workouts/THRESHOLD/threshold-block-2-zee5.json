@@ -1,0 +1,141 @@
+{
+  "filename": "threshold-block-2-zee5.zwo",
+  "slug": "threshold-block-2-zee5",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/threshold-block-2-zee5?do=exportZwo",
+  "name": "Threshold block #2",
+  "description": "A long threshold effort broken up by 1min recovery periods. However, the target cadence will change for the 5min threshold interval after each recovery period. \n\n\n\nHow does the change in cadence affect your perceived effort for the same power?\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Threshold Block #2\n                    \n                    \n                    \n                        33:00\n                        36TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with 30sec Spiked Tempo #1\n                    \n                    Free Ride\n                    \n                        57:00\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic 50sec #2\n                    \n                    \n                    \n                        56:50\n                        57TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic 6 x 1min\n                    \n                    \n                    \n                        57:00\n                        78TSS\n                        IF: 0.91\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        HIIT 45sec #1\n                    \n                    \n                    \n                        57:00\n                        81TSS\n                        IF: 0.92\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Maintenance #1\n                    \n                    \n                    \n                        57:00\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with 6 x 1min\n                    \n                    \n                    \n                        57:00\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #3\n                    \n                    \n                    \n                        57:00\n                        60TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power into Tempo #2\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive power into Z3\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Tempo #1\n                    \n                    \n                    \n                        57:00\n                        59TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with 30sec Spiked Tempo #1\n                    \n                    Free Ride\n                    \n                        57:00\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate shuttle #2\n                    \n                    \n                    \n                        57:00\n                        70TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Micro into Threshold\n                    \n                    \n                    \n                        57:00\n                        66TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min 30/30's\n                    \n                    \n                    \n                        57:00\n                        57TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting 4's\n                    \n                    \n                    \n                        57:00\n                        64TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        V02max Increase #1\n                    \n                    \n                    \n                        57:00\n                        75TSS\n                        IF: 0.89\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max Descending\n                    \n                    \n                    \n                        57:00\n                        72TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Train Like Tadej-4x3min VO2 Max\n                    \n                    \n                    \n                        57:00\n                        60TSS\n                        IF: 0.8\n\n                        cached",
+  "duration": "57:00",
+  "tss": 70,
+  "intensityFactor": 0.86,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 50,
+      "powerFormatted": "65% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,85 @@
+{
+  "filename": "progressive-25min-climb-91gm.zwo",
+  "slug": "progressive-25min-climb-91gm",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/progressive-25min-climb-91gm?do=exportZwo",
+  "name": "Progressive 25min Climb",
+  "description": "Big day in the mountains today! 2 climbs of 25 minutes in duration, but each one is climbed using a different cadence. Just like a climb outdoors, the required power will increase throughout the 25min.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Progressive 11min Climb\n                    \n                    \n                    \n                        59:00\n                        62TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 13min Climb\n                    \n                    \n                    \n                        01:03:00\n                        71TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        01:10:00\n                        75TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.84\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 26min Climb\n                    \n                    \n                    \n                        01:07:00\n                        82TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity Pyramid #1\n                    \n                    \n                    \n                        01:10:00\n                        83TSS\n                        IF: 0.85\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity Pyramid #2\n                    \n                    \n                    \n                        01:10:00\n                        85TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity Pyramid #3\n                    \n                    \n                    \n                        01:10:00\n                        90TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 15's #1\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #4\n                    \n                    \n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5min Neuromuscular\n                    \n                    Free Ride\n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Clearance\n                    \n                    \n                    \n                        01:10:00\n                        64TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #4\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #3\n                    \n                    \n                    \n                        01:10:00\n                        62TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #10\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic Climb #1\n                    \n                    \n                    \n                        01:10:00\n                        81TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Over Ones\n                    \n                    \n                    \n                        01:10:00\n                        93TSS\n                        IF: 0.89\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 3min #1\n                    \n                    \n                    \n                        01:10:00\n                        74TSS\n                        IF: 0.8",
+  "duration": "01:10:00",
+  "tss": 75,
+  "intensityFactor": 0.8,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 51,
+      "powerHigh": 75,
+      "powerFormatted": "51% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 105,
+      "powerHigh": 105,
+      "powerFormatted": "105%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 105,
+      "powerHigh": 105,
+      "powerFormatted": "105%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 50,
+      "powerFormatted": "75% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

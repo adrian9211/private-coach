@@ -1,0 +1,85 @@
+{
+  "filename": "endurance-with-30sec-surges.zwo",
+  "slug": "endurance-with-30sec-surges",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-with-30sec-surges?do=exportZwo",
+  "name": "Endurance with 30sec Surges",
+  "description": "A lower-intensity endurance session today that incorporates 30-second surges. However, it would be best if you were hitting each effort fully recovered and refreshed with ample recovery.",
+  "duration": "54:00",
+  "tss": 48,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 76,
+      "powerHigh": 89,
+      "powerFormatted": "76% FTP - 89% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 126,
+      "powerHigh": 126,
+      "powerFormatted": "126%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 270,
+      "durationFormatted": "04:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,93 @@
+{
+  "filename": "intermittent-30-15-s-2.zwo",
+  "slug": "intermittent-30-15-s-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/intermittent-30-15-s-2?do=exportZwo",
+  "name": "Intermittent 30/15's #2",
+  "description": "After warming up, the session will focus on completing a series of intermittent style intervals. This type of training is ideal for maximizing adaptations to Max Aerobic fitness. \n\n\n\nIntermittent intervals allow you to complete a more significant amount of work at your Max Aerobic intensity than continuous intervals would allow. \n\n\n\nThe main set consists of completing 8 x 30/15's.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Intermittent 30/15's #1\n                    \n                    \n                    \n                        30:00\n                        27TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intermittent 30/15's #3\n                    \n                    \n                    \n                        35:15\n                        39TSS\n                        IF: 0.82\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #1\n                    \n                    \n                    \n                        32:00\n                        38TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting 20's\n                    \n                    \n                    \n                        32:30\n                        34TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Descending Anaerobic\n                    \n                    \n                    \n                        32:00\n                        34TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #3\n                    \n                    \n                    \n                        32:20\n                        28TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Threshold #1\n                    \n                    \n                    \n                        32:00\n                        31TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #1\n                    \n                    \n                    \n                        32:00\n                        33TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #2\n                            by coach Jonathan Brownlee\n                    \n                    \n                    \n                        32:00\n                        37TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        V02max x 3min\n                    \n                    \n                    \n                        32:00\n                        33TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Just a normal day\n                    \n                    \n                    \n                        32:30\n                        34TSS\n                        IF: 0.8\n\n                        cached",
+  "duration": "32:15",
+  "tss": 32,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 135,
+      "durationFormatted": "02:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 61,
+      "powerHigh": 50,
+      "powerFormatted": "61% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

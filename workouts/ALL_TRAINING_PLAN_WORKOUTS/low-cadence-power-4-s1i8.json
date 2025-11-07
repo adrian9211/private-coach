@@ -1,0 +1,125 @@
+{
+  "filename": "low-cadence-power-4-s1i8.zwo",
+  "slug": "low-cadence-power-4-s1i8",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/low-cadence-power-4-s1i8?do=exportZwo",
+  "name": "Low Cadence Power 4",
+  "description": "The final week of the Early Base Phase of this Climb Focus Program. And today we take on the final low cadence power session. A session you should know well by now. Today we mix it up with some intensity towards the end of each interval!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Low Cadence Power\n                    \n                    \n                    \n                        56:00\n                        46TSS\n                        IF: 0.71\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #1\n                    \n                    \n                    \n                        56:00\n                        46TSS\n                        IF: 0.71\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #2\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #3\n                    \n                    \n                    \n                        01:02:00\n                        56TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #4\n                    \n                    \n                    \n                        01:00:30\n                        58TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo Climbing #1\n                    \n                    \n                    \n                        01:00:30\n                        70TSS\n                        IF: 0.83\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo Climbing #2\n                    \n                    \n                    \n                        01:00:30\n                        68TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #2\n                    \n                    \n                    \n                        01:00:30\n                        71TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Position, Position!\n                    \n                    \n                    \n                        01:00:30\n                        69TSS\n                        IF: 0.83\n                        chat",
+  "duration": "01:00:30",
+  "tss": 58,
+  "intensityFactor": 0.76,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

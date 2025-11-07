@@ -1,0 +1,69 @@
+{
+  "filename": "race-ready-src.zwo",
+  "slug": "race-ready-src",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/race-ready-src?do=exportZwo",
+  "name": "Race Ready + SRC",
+  "description": "SRC is here! Make sure you have everything you need a couple of hours before the race. That includes laying out your race kit, water bottles, nutrition, towels, headphones, and anything else you need for SRC. 45-60min before the race, it's time to get ready. Once you are kitted up, you can begin your warmup. Aim to finish your warmup 10-20min before the start of the race so that you have plenty of time to refuel, rehydrate, and grab anything else you might need. If you've done your homework during the week, you will know the key points to look out for. SRC offers hard racing from start to finish, so you will need to be ready for anything. Dig deep and give it your best effort today!",
+  "duration": "25:00",
+  "tss": 23,
+  "intensityFactor": 0.75,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 60,
+      "powerHigh": 103,
+      "powerFormatted": "60% FTP - 103% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 63,
+      "powerHigh": 63,
+      "powerFormatted": "63%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 54,
+      "durationFormatted": "00:54",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 6,
+      "durationFormatted": "00:06",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

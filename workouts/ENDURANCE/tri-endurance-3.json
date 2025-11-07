@@ -1,0 +1,85 @@
+{
+  "filename": "tri-endurance-3.zwo",
+  "slug": "tri-endurance-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tri-endurance-3?do=exportZwo",
+  "name": "Tri Endurance #3",
+  "description": "To achieve a successful cycling performance, you need good endurance. Endurance training is about improving your capacity to endure sustained exercise. \n\n\n\nThis endurance (or ability to endure) then helps form a solid base of fitness to build more race-specific training. By implementing carefully structured intensity into your endurance training, your ability to become more fatigue resistant is enhanced.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tri Endurance #1\n                    \n                    \n                    \n                        01:56:00\n                        108TSS\n                        IF: 0.75\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #2\n                    \n                    \n                    \n                        01:49:00\n                        105TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #4\n                    \n                    \n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #5\n                    \n                    \n                    \n                        01:33:00\n                        96TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #6\n                    \n                    \n                    \n                        01:48:00\n                        114TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #7\n                    \n                    \n                    \n                        01:38:00\n                        108TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Endurance #2\n                    \n                    \n                    \n                        01:04:00\n                        55TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Endurance #3\n                    \n                    \n                    \n                        01:04:00\n                        56TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Endurance #4\n                    \n                    \n                    \n                        01:04:00\n                        59TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #4\n                    \n                    \n                    \n                        01:04:00\n                        72TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #2\n                    \n                    \n                    \n                        01:04:00\n                        67TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        High Torque Hills #3\n                    \n                    \n                    \n                        01:04:00\n                        58TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #2\n                    \n                    \n                    \n                        01:04:00\n                        67TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #2\n                    \n                    \n                    \n                        01:04:00\n                        65TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #3\n                    \n                    \n                    \n                        01:04:00\n                        70TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        7min 30/30's\n                    \n                    \n                    \n                        01:04:00\n                        59TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic Climb #2\n                    \n                    \n                    \n                        01:04:00\n                        72TSS\n                        IF: 0.82\n                        chat",
+  "duration": "01:04:06",
+  "tss": 56,
+  "intensityFactor": 0.73,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 8,
+      "durationFormatted": "00:08",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 72,
+      "powerHigh": 72,
+      "powerFormatted": "72%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 450,
+      "durationFormatted": "07:30",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

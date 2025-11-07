@@ -1,0 +1,133 @@
+{
+  "filename": "through-the-zones-3.zwo",
+  "slug": "through-the-zones-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/through-the-zones-3?do=exportZwo",
+  "name": "Through the Zones #3",
+  "description": "After warming up, complete a 20 minute 'Through the zones' interval. The 20-minute effort features a 20-second surge before and after a 5-minute tempo effort, a 3-minute threshold effort and a 2 minute VO2 effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Through the Zones #1\n                    \n                    \n                    \n                        55:20\n                        64TSS\n                        IF: 0.84\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Through the Zones #1\n                    \n                    \n                    \n                        35:00\n                        36TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Through the Zones #2\n                    \n                    \n                    \n                        31:40\n                        46TSS\n                        IF: 0.94\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        8min Rolling TT\n                    \n                    \n                    \n                        33:30\n                        40TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Prologue\n                    \n                    Free Ride\n                    \n                        33:40\n                        44TSS\n                        IF: 0.89\n                        chat\n                        cached",
+  "duration": "33:40",
+  "tss": 49,
+  "intensityFactor": 0.94,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 90,
+      "powerFormatted": "81% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 96,
+      "powerHigh": 103,
+      "powerFormatted": "96% FTP - 103% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 105,
+      "powerHigh": 117,
+      "powerFormatted": "105% FTP - 117% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 90,
+      "powerFormatted": "81% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 96,
+      "powerHigh": 103,
+      "powerFormatted": "96% FTP - 103% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 105,
+      "powerHigh": 117,
+      "powerFormatted": "105% FTP - 117% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

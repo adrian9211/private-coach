@@ -1,0 +1,93 @@
+{
+  "filename": "pre-test-ride.zwo",
+  "slug": "pre-test-ride",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/pre-test-ride?do=exportZwo",
+  "name": "Pre Test Ride",
+  "description": "This is a perfect session before a test day or race. It is tough enough to keep the muscles activated and to give you the subjective feeling of a good workload. Whilst being relatively easy to leave you energized ahead of a particular goal.",
+  "duration": "45:00",
+  "tss": 42,
+  "intensityFactor": 0.75,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 84,
+      "powerHigh": 84,
+      "powerFormatted": "84%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 140,
+      "powerHigh": 140,
+      "powerFormatted": "140%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 150,
+      "durationFormatted": "02:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 5,
+      "durationFormatted": "00:05",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 55,
+      "durationFormatted": "00:55",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 60,
+      "powerHigh": 40,
+      "powerFormatted": "60% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

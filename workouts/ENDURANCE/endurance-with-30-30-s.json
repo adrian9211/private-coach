@@ -1,0 +1,69 @@
+{
+  "filename": "endurance-with-30-30-s.zwo",
+  "slug": "endurance-with-30-30-s",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-with-30-30-s?do=exportZwo",
+  "name": "Endurance with 30/30's",
+  "description": "We don't always have the luxury of beginning the high-intensity work wholly fresh and fully recovered?the ability to hit our best numbers when fatigued is crucial to our racing performance. \n\n\n\nBy completing a period of Zone 2 Endurance, we build fatigue in the legs before performing 6 x 30sec efforts @ Z5 Power with 30sec recovery.",
+  "duration": "34:00",
+  "tss": 30,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 70,
+      "powerFormatted": "50% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 113,
+      "powerHigh": 113,
+      "powerFormatted": "113%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 60,
+      "powerHigh": 50,
+      "powerFormatted": "60% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

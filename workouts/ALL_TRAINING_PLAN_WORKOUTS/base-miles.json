@@ -1,0 +1,61 @@
+{
+  "filename": "base-miles.zwo",
+  "slug": "base-miles",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/base-miles?do=exportZwo",
+  "name": "Base Miles",
+  "description": "Low intensity Base Miles are a great way to build fitness. The effort is low enough that sessions of moderate duration can be completed frequently. To improve your response to this type of training we also focus on your cadence. Today we are performing a long, steady base ride with varying cadence to improve your training response.",
+  "duration": "42:00",
+  "tss": 30,
+  "intensityFactor": 0.66,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 62,
+      "powerHigh": 62,
+      "powerFormatted": "62%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 66,
+      "powerHigh": 40,
+      "powerFormatted": "66% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,117 @@
+{
+  "filename": "endurance-with-30-max.zwo",
+  "slug": "endurance-with-30-max",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-with-30-max?do=exportZwo",
+  "name": "Endurance with 30 Max\"",
+  "description": "This session will help improve your pedalling efficiency and increase your cardiovascular capacity. Introducing the body to some sprint focussed efforts. Including 30 second maximal efforts within an endurance ride will prolong the training effect into the future. As well as give you an opportunity to put into practice a lot of the sprint technique stuff we have been working on. Carry out 3 x 10 minute blocks of alternating high/low cadence. At the end of each block, finish with a 30 second maximal effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance with 30sec Max\n                    \n                    \n                    \n                        51:30\n                        38TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hill Reps\n                    \n                    \n                    \n                        51:30\n                        50TSS\n                        IF: 0.77\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hill Reps\n                    \n                    \n                    \n                        51:30\n                        50TSS\n                        IF: 0.77\n                        chat\n                        cached",
+  "duration": "51:30",
+  "tss": 38,
+  "intensityFactor": 0.67,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 40,
+      "powerHigh": 60,
+      "powerFormatted": "40% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    }
+  ],
+  "isValid": true
+}

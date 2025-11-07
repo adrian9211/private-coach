@@ -1,0 +1,93 @@
+{
+  "filename": "threshold-1.zwo",
+  "slug": "threshold-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/threshold-1?do=exportZwo",
+  "name": "Threshold #1",
+  "description": "The lactate threshold is one aspect of performance that can be improved the most through the correct application of interval training. Training to enhance Threshold power is typically performed either just below or, ideally, just above the Threshold for extended periods.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Threshold #1\n                    \n                    \n                    \n                        58:00\n                        67TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #2\n                    \n                    \n                    \n                        01:06:00\n                        84TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #3\n                    \n                    \n                    \n                        58:00\n                        72TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #4\n                    \n                    \n                    \n                        58:00\n                        64TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #5\n                    \n                    \n                    \n                        59:00\n                        72TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #6\n                    \n                    \n                    \n                        01:04:00\n                        80TSS\n                        IF: 0.87\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold 15\n                    \n                    \n                    \n                        58:00\n                        70TSS\n                        IF: 0.86\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hey you\n                    \n                    \n                    \n                        28:00\n                        38TSS\n                        IF: 0.91",
+  "duration": "28:00",
+  "tss": 35,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 175,
+      "powerHigh": 175,
+      "powerFormatted": "175%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

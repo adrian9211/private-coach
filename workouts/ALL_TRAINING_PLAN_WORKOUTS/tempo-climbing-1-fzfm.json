@@ -1,0 +1,93 @@
+{
+  "filename": "tempo-climbing-1-fzfm.zwo",
+  "slug": "tempo-climbing-1-fzfm",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tempo-climbing-1-fzfm?do=exportZwo",
+  "name": "Tempo Climbing #1",
+  "description": "The basis of today's session is to simulate long tempo climbs. However, each interval is completed with a different high-intensity effort, with the tempo portion of each interval completed at a low climbing cadence. Settle in for some extended climbing with a fast finish!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tempo Climbing #1\n                    \n                    \n                    \n                        01:00:30\n                        70TSS\n                        IF: 0.83\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo Climbing #2\n                    \n                    \n                    \n                        01:00:30\n                        68TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #4\n                    \n                    \n                    \n                        01:00:30\n                        58TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #2\n                    \n                    \n                    \n                        01:00:30\n                        71TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Position, Position!\n                    \n                    \n                    \n                        01:00:30\n                        69TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max #6\n                    \n                    \n                    \n                        01:00:30\n                        74TSS\n                        IF: 0.86\n                        chat",
+  "duration": "01:00:30",
+  "tss": 70,
+  "intensityFactor": 0.83,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 105,
+      "powerHigh": 105,
+      "powerFormatted": "105%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 50,
+      "powerFormatted": "75% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

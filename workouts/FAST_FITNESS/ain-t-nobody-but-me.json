@@ -1,0 +1,53 @@
+{
+  "filename": "ain-t-nobody-but-me.zwo",
+  "slug": "ain-t-nobody-but-me",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/ain-t-nobody-but-me?do=exportZwo",
+  "name": "Ain't nobody but me",
+  "description": "There's no getting away from the benefits of long aerobic efforts. This Intensive Aerobic duration is the point where most of the energy comes from aerobic pathways.",
+  "duration": "30:00",
+  "tss": 34,
+  "intensityFactor": 0.83,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 57,
+      "powerHigh": 75,
+      "powerFormatted": "57% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 96,
+      "powerHigh": 96,
+      "powerFormatted": "96%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

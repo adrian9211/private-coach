@@ -1,0 +1,93 @@
+{
+  "filename": "intermittent-30-15-s-1.zwo",
+  "slug": "intermittent-30-15-s-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/intermittent-30-15-s-1?do=exportZwo",
+  "name": "Intermittent 30/15's #1",
+  "description": "After warming up, the session will focus on completing a series of intermittent style intervals. This type of training is ideal for maximizing adaptations to Max Aerobic fitness. \n\n\n\nIntermittent intervals allow you to complete a more significant amount of work at your Max Aerobic intensity than continuous intervals would allow. \n\n\n\nThe main set consists of completing 5 x 30/15s.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Intermittent 30/15's #2\n                    \n                    \n                    \n                        32:15\n                        32TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intermittent 30/15's #3\n                    \n                    \n                    \n                        35:15\n                        39TSS\n                        IF: 0.82\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intervals - What are they?\n                            by coach Liz Smithson\n                    \n                    \n                    \n                        30:00\n                        21TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #2\n                    \n                    \n                    \n                        30:15\n                        32TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #3\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        30:00\n                        33TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Ain't nobody but me\n                    \n                    \n                    \n                        30:00\n                        34TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Helps me helps you\n                    \n                    \n                    \n                        30:00\n                        31TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Jangling Jack\n                    \n                    \n                    \n                        30:15\n                        25TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2min Anaerobic Capacity\n                            by coach Liz Smithson\n                    \n                    \n                    \n                        30:00\n                        29TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        What are Intervals?\n                    \n                    \n                    \n                        30:00\n                        22TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #1\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        30:00\n                        34TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intervals - What are they?\n                    \n                    \n                    \n                        30:00\n                        22TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intervals - What are they?\n                    \n                    \n                    \n                        30:00\n                        22TSS\n                        IF: 0.66\n                        chat",
+  "duration": "30:00",
+  "tss": 27,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 135,
+      "durationFormatted": "02:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 61,
+      "powerHigh": 50,
+      "powerFormatted": "61% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,101 @@
+{
+  "filename": "low-cadence-power-jghw.zwo",
+  "slug": "low-cadence-power-jghw",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/low-cadence-power-jghw?do=exportZwo",
+  "name": "Low Cadence Power",
+  "description": "The first, targeted session of the Early Base Phase of this Climb Focus Program. The aim is to introduce you to some intensity and at cadences typically experienced when climbing. We will talk you through the intervals, explaining the rationale of the session and how you can begin to become a better climber!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Low Cadence Power\n                    \n                    \n                    \n                        56:00\n                        46TSS\n                        IF: 0.71\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #1\n                    \n                    \n                    \n                        56:00\n                        46TSS\n                        IF: 0.71\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #2\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #3\n                    \n                    \n                    \n                        01:02:00\n                        56TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #4\n                    \n                    \n                    \n                        01:00:30\n                        58TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive 25sec\n                    \n                    \n                    \n                        56:05\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Hills #1\n                    \n                    \n                    \n                        56:00\n                        48TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #1\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Target rpm #1\n                    \n                    \n                    \n                        56:00\n                        56TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        10min Best effort!\n                    \n                    Free Ride\n                    \n                        56:00\n                        49TSS\n                        IF: 0.73\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive 25sec\n                    \n                    \n                    \n                        56:05\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Spin up #1\n                            by coach Zelmaré Viljoen\n                    \n                    \n                    \n                        56:00\n                        57TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Hills #1\n                    \n                    \n                    \n                        56:00\n                        48TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power #1\n                    \n                    \n                    \n                        56:00\n                        53TSS\n                        IF: 0.76\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #1\n                    \n                    \n                    \n                        56:00\n                        59TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pyramid cadence efforts #1\n                    \n                    \n                    \n                        56:00\n                        51TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #1\n                    \n                    \n                    \n                        56:00\n                        50TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #4\n                    \n                    \n                    \n                        56:00\n                        57TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Target rpm #1\n                    \n                    \n                    \n                        56:00\n                        56TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        10min Best effort!\n                    \n                    Free Ride\n                    \n                        56:00\n                        49TSS\n                        IF: 0.73\n                        chat",
+  "duration": "56:00",
+  "tss": 46,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 77,
+      "powerHigh": 77,
+      "powerFormatted": "77%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

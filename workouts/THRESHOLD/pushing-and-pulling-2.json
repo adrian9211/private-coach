@@ -1,0 +1,109 @@
+{
+  "filename": "pushing-and-pulling-2.zwo",
+  "slug": "pushing-and-pulling-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/pushing-and-pulling-2?do=exportZwo",
+  "name": "Pushing and Pulling #2",
+  "description": "You are progressing from the threshold pushing efforts you are familiar with but introducing some pulling intervals. These are completed at a power above your FTP. \n\n\n\nIf the pushing intervals are designed to push your threshold up from below, these effectively pull your threshold up from above.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Pushing and Pulling #1\n                    \n                    \n                    \n                        01:06:00\n                        74TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #1\n                    \n                    \n                    \n                        01:06:00\n                        74TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #2\n                    \n                    \n                    \n                        01:12:00\n                        82TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pushing and Pulling #3\n                    \n                    \n                    \n                        01:12:00\n                        89TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Pushing #3\n                    \n                    \n                    \n                        01:12:00\n                        85TSS\n                        IF: 0.85\n                        chat\n                        cached",
+  "duration": "01:12:00",
+  "tss": 82,
+  "intensityFactor": 0.83,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 105,
+      "powerHigh": 105,
+      "powerFormatted": "105%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 25,
+      "powerFormatted": "50% FTP - 25% FTP"
+    }
+  ],
+  "isValid": true
+}

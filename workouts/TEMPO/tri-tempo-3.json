@@ -1,0 +1,109 @@
+{
+  "filename": "tri-tempo-3.zwo",
+  "slug": "tri-tempo-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tri-tempo-3?do=exportZwo",
+  "name": "Tri Tempo #3",
+  "description": "There is no escaping the benefits of completing long, steady tempo intervals. These efforts aren't high intensity, but they elicit a feeling of sustainable discomfort when performed for an extended period! \n\n\n\nThe intensity is well below threshold; however, it is hard enough that you will be generating a significant amount of lactate and forcing your body to process it. \n\n\n\nThese workouts are also the ideal opportunity to ride in your race position, simulating the demands of racing.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tri Tempo #1\n                    \n                    \n                    \n                        57:00\n                        59TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Tempo #2\n                    \n                    \n                    \n                        01:22:00\n                        85TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Tempo #4\n                    \n                    \n                    \n                        01:37:40\n                        118TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Tempo #5\n                    \n                    \n                    \n                        01:32:00\n                        97TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance 12's #2\n                    \n                    \n                    \n                        01:11:00\n                        62TSS\n                        IF: 0.73\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #4\n                    \n                    \n                    \n                        01:11:00\n                        64TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #5\n                    \n                    \n                    \n                        01:11:00\n                        69TSS\n                        IF: 0.76",
+  "duration": "01:11:00",
+  "tss": 70,
+  "intensityFactor": 0.77,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 70,
+      "powerFormatted": "55% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 75,
+      "powerHigh": 95,
+      "powerFormatted": "75% FTP - 95% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 1500,
+      "durationFormatted": "25:00",
+      "powerLow": 76,
+      "powerHigh": 89,
+      "powerFormatted": "76% FTP - 89% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,237 @@
+{
+  "filename": "mywhoosh-powertest-by-aerotune.zwo",
+  "slug": "mywhoosh-powertest-by-aerotune",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/mywhoosh-powertest-by-aerotune?do=exportZwo",
+  "name": "MyWhoosh Powertest by Aerotune",
+  "description": "Powertest by aerotune.com takes the guesswork out of your training. \n\n\n\nThe Powertest is a high-performance testing tool developed for pro cycling. The Powertest tells you way more than your threshold; it tells you how it is composed! The system will calculate your VO2max and VLamax. Combined with your body weight, body fat and gender, the Powertest shows you how your threshold is composed and which training suits you best. \n\n\n\nProtocol: \n\n- Warm-up for 20 minutes (easy) \n\n- 10-second seated sprint \n\n- Ride easy for 10 minutes \n\n- Start the ramp test till exhaustion \n\n- Ride easy for 30 minutes \n\n- Ride a constant all-out effort for 12 minutes. \n\n- Cool down for 6 minutes \n\n- Save the data and upload it to https://aerotune.com/powertest",
+  "duration": "01:40:12",
+  "tss": 249,
+  "intensityFactor": 1.22,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 1200,
+      "durationFormatted": "20:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 12,
+      "durationFormatted": "00:12",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 52,
+      "powerHigh": 52,
+      "powerFormatted": "52%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 58,
+      "powerHigh": 58,
+      "powerFormatted": "58%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 64,
+      "powerHigh": 64,
+      "powerFormatted": "64%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 82,
+      "powerHigh": 82,
+      "powerFormatted": "82%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 94,
+      "powerHigh": 94,
+      "powerFormatted": "94%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 106,
+      "powerHigh": 106,
+      "powerFormatted": "106%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 112,
+      "powerHigh": 112,
+      "powerFormatted": "112%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 118,
+      "powerHigh": 118,
+      "powerFormatted": "118%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 124,
+      "powerHigh": 124,
+      "powerFormatted": "124%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 136,
+      "powerHigh": 136,
+      "powerFormatted": "136%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 140,
+      "powerHigh": 140,
+      "powerFormatted": "140%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 146,
+      "powerHigh": 146,
+      "powerFormatted": "146%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 152,
+      "powerHigh": 152,
+      "powerFormatted": "152%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 158,
+      "powerHigh": 158,
+      "powerFormatted": "158%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 164,
+      "powerHigh": 164,
+      "powerFormatted": "164%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 176,
+      "powerHigh": 176,
+      "powerFormatted": "176%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1800,
+      "durationFormatted": "30:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 720,
+      "durationFormatted": "12:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    }
+  ],
+  "isValid": true
+}

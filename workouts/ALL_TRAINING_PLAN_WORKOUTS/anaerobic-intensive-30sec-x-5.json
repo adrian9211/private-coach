@@ -1,0 +1,101 @@
+{
+  "filename": "anaerobic-intensive-30sec-x-5.zwo",
+  "slug": "anaerobic-intensive-30sec-x-5",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/anaerobic-intensive-30sec-x-5?do=exportZwo",
+  "name": "Anaerobic Intensive 30sec x 5",
+  "description": "Today we step up the effort, but only briefly. By completing 5 x 30-second high-intensity efforts we will be tapping into our anaerobic reserves while recruiting a large number of fast-twitch fibres. With plenty of recovery between efforts, you should be hitting each interval fully recovered.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Anaerobic Intensive 30sec #1\n                    \n                    \n                    \n                        56:30\n                        72TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive 30sec #2\n                    \n                    \n                    \n                        55:30\n                        59TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Intensive 30sec #3\n                    \n                    \n                    \n                        01:04:00\n                        83TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Increasing Anaerobic Capacity\n                    \n                    \n                    \n                        56:30\n                        70TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Capacity #2\n                    \n                    Free RideFree RideFree Ride\n                    \n                        56:17\n                        77TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Capacity #1\n                    \n                    \n                    \n                        56:17\n                        73TSS\n                        IF: 0.89\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power into Tempo #2\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive power into Z3\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #2\n                    \n                    \n                    \n                        56:30\n                        57TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power, flat 10\n                    \n                    \n                    \n                        56:25\n                        60TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint/MAP/Sprint\n                    \n                    \n                    \n                        56:30\n                        78TSS\n                        IF: 0.91\n                        chat\n                        cached",
+  "duration": "56:30",
+  "tss": 71,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 63,
+      "powerHigh": 63,
+      "powerFormatted": "63%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

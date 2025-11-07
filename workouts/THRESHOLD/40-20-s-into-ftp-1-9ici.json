@@ -1,0 +1,109 @@
+{
+  "filename": "40-20-s-into-ftp-1-9ici.zwo",
+  "slug": "40-20-s-into-ftp-1-9ici",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/40-20-s-into-ftp-1-9ici?do=exportZwo",
+  "name": "40/20's into FTP #1",
+  "description": "40/20s are an effective workout on its own. Complement these by finishing with a 10-minute Threshold effort, and you are in for a big session! \n\n\n\nThe opening 40/20s target your VO2max system, but the accumulated lactate will influence the fuel source for the culminating Threshold effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        40/20's into FTP #1\n                    \n                    \n                    \n                        25:00\n                        31TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Endurance 12's\n                    \n                    \n                    \n                        52:50\n                        61TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing into sprints\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        53:00\n                        55TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Pmax into Tempo #1\n                    \n                    \n                    \n                        52:50\n                        61TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #7\n                    \n                    \n                    \n                        53:00\n                        54TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Train like Tadej - Short climbs\n                    \n                    \n                    \n                        53:00\n                        56TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Vegard Laengen - Domestique\n                    \n                    \n                    \n                        53:00\n                        58TSS\n                        IF: 0.81\n                        chat",
+  "duration": "53:00",
+  "tss": 64,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 40,
+      "powerHigh": 60,
+      "powerFormatted": "40% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 150,
+      "durationFormatted": "02:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

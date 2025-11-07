@@ -1,0 +1,133 @@
+{
+  "filename": "explosive-power-climb-5-qrp2.zwo",
+  "slug": "explosive-power-climb-5-qrp2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/explosive-power-climb-5-qrp2?do=exportZwo",
+  "name": "Explosive Power / Climb 5",
+  "description": "Just like attacking on a climb, this session requires you to produce a short, high power effort before settling into a 5-minute low cadence, threshold effort. Alternate between standing and sitting every minute during the 5min efforts. The session then finishes with a 10min, high cadence effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Explosive Power / Climb 5\n                    \n                    \n                    \n                        58:38\n                        72TSS\n                        IF: 0.86\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo / 15sec sprint #1\n                    \n                    \n                    \n                        58:30\n                        62TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo, Intensive Zone 6 #2\n                    \n                    \n                    \n                        58:45\n                        84TSS\n                        IF: 0.93\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Torque Changers #1\n                    \n                    \n                    \n                        58:57\n                        63TSS\n                        IF: 0.81\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Climb #1\n                    \n                    \n                    \n                        58:40\n                        65TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hard Starts #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        58:30\n                        71TSS\n                        IF: 0.86\n                        chat",
+  "duration": "58:38",
+  "tss": 72,
+  "intensityFactor": 0.86,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 45,
+      "powerHigh": 71,
+      "powerFormatted": "45% FTP - 71% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 19,
+      "durationFormatted": "00:19",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 19,
+      "durationFormatted": "00:19",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

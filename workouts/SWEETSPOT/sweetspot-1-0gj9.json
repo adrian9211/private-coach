@@ -1,0 +1,53 @@
+{
+  "filename": "sweetspot-1-0gj9.zwo",
+  "slug": "sweetspot-1-0gj9",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sweetspot-1-0gj9?do=exportZwo",
+  "name": "Sweetspot #1",
+  "description": "Sweet Spot Training (SST) is the area that typically provides the Most Bang for your buck! It targets many key physiological regions at once in a short amount of time. \n\n\n\nBuilding upon your previous SST session, today, we are extending the length of the SST interval and reducing the recovery interval. SST training falls between Upper Zone 3 and Lower Zone4. \n\n\n\nIt is a balanced amount of intensity and duration that improves your FTP.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sweetspot #1\n                    \n                    \n                    \n                        50:00\n                        45TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #1\n                    \n                    \n                    \n                        31:00\n                        30TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #2\n                    \n                    \n                    \n                        55:00\n                        52TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #3\n                    \n                    \n                    \n                        52:10\n                        62TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #4\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #5\n                    \n                    \n                    \n                        01:00:00\n                        63TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #6\n                    \n                    \n                    \n                        01:00:00\n                        63TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 3 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        50:00\n                        39TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 3 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        50:00\n                        39TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Taper #2\n                    \n                    \n                    \n                        50:00\n                        51TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Erica Magnaldi - Climbing\n                    \n                    \n                    \n                        50:00\n                        54TSS\n                        IF: 0.81\n                        chat\n                        cached",
+  "duration": "50:00",
+  "tss": 46,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 86,
+      "powerHigh": 86,
+      "powerFormatted": "86%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 40,
+      "powerFormatted": "70% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

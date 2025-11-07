@@ -1,0 +1,149 @@
+{
+  "filename": "race-pace-5.zwo",
+  "slug": "race-pace-5",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/race-pace-5?do=exportZwo",
+  "name": "Race Pace #5",
+  "description": "Today's session consists of 5 x 9-minute race pace intervals. However, the target power will ramp up throughout the interval just as under race conditions. \n\n\n\nFocus on controlled breathing and pedalling at a cadence similar to your race cadence during the intervals.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Race Pace #1\n                    \n                    \n                    \n                        01:01:00\n                        76TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #1\n                    \n                    \n                    \n                        01:01:00\n                        76TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #2\n                    \n                    \n                    \n                        01:06:45\n                        87TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #3\n                    \n                    \n                    \n                        01:11:00\n                        93TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #4\n                    \n                    \n                    \n                        01:14:45\n                        101TSS\n                        IF: 0.9\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #6\n                    \n                    \n                    \n                        01:22:45\n                        114TSS\n                        IF: 0.91",
+  "duration": "01:21:00",
+  "tss": 110,
+  "intensityFactor": 0.91,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 540,
+      "durationFormatted": "09:00",
+      "powerLow": 95,
+      "powerHigh": 105,
+      "powerFormatted": "95% FTP - 105% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 540,
+      "durationFormatted": "09:00",
+      "powerLow": 95,
+      "powerHigh": 105,
+      "powerFormatted": "95% FTP - 105% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 540,
+      "durationFormatted": "09:00",
+      "powerLow": 95,
+      "powerHigh": 105,
+      "powerFormatted": "95% FTP - 105% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 540,
+      "durationFormatted": "09:00",
+      "powerLow": 95,
+      "powerHigh": 105,
+      "powerFormatted": "95% FTP - 105% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 540,
+      "durationFormatted": "09:00",
+      "powerLow": 95,
+      "powerHigh": 105,
+      "powerFormatted": "95% FTP - 105% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

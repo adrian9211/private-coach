@@ -1,0 +1,109 @@
+{
+  "filename": "neuromuscular-power-surges-1.zwo",
+  "slug": "neuromuscular-power-surges-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/neuromuscular-power-surges-1?do=exportZwo",
+  "name": "Neuromuscular Power Surges #1",
+  "description": "Training the neuromuscular system is one of the most effective ways to improve your efficiency. This system includes all the muscles in the body and the nerves that serve them. In this workout, we aim to recruit the maximal amount of muscle fibres. \n\n\n\nWe do this by completing a series of short, high powered efforts with slight recovery. As the muscles tire, more are recruited to produce the power. \n\n\n\nWith two sets of 10 surges, you will be calling upon every fibre you have to produce the power by the last interval!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Neuromuscular Power Surges #2\n                    \n                    \n                    \n                        59:00\n                        49TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #3\n                    \n                    \n                    \n                        54:00\n                        46TSS\n                        IF: 0.72\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped Intervals\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Into the Red!\n                    \n                    \n                    \n                        44:00\n                        33TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped Intervals\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepping up\n                    \n                    \n                    \n                        44:00\n                        43TSS\n                        IF: 0.77\n                        chat",
+  "duration": "44:00",
+  "tss": 37,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50% FTP - 50% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 93,
+      "powerHigh": 93,
+      "powerFormatted": "93%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 122,
+      "powerHigh": 122,
+      "powerFormatted": "122%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 45,
+      "durationFormatted": "00:45",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 50,
+      "powerFormatted": "65% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

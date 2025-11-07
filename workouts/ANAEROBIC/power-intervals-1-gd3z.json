@@ -1,0 +1,221 @@
+{
+  "filename": "power-intervals-1-gd3z.zwo",
+  "slug": "power-intervals-1-gd3z",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/power-intervals-1-gd3z?do=exportZwo",
+  "name": "Power Intervals #1",
+  "description": "Today's session focuses on improving your ability to produce power. To be able to turn a big gear faster. Completing high power intervals with slightly less cadence increases the torque applied to the crank, boosting muscular endurance power. \n\n\n\nTwo sets of (3 x 2.5min) with 3min recovery. However, the initial high power 30sec effort has a target cadence of 85rpm before completing the remaining 2min at a self-selected cadence.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Power Intervals #1\n                    \n                    \n                    \n                        31:30\n                        48TSS\n                        IF: 0.96\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Intervals #2\n                    \n                    \n                    \n                        59:00\n                        82TSS\n                        IF: 0.92\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Intervals #3\n                    \n                    \n                    \n                        58:00\n                        99TSS\n                        IF: 1.02\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Capacity #2\n                    \n                    Free RideFree RideFree Ride\n                    \n                        56:17\n                        77TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Capacity #1\n                    \n                    \n                    \n                        56:17\n                        73TSS\n                        IF: 0.89\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 4\n                    \n                    \n                    \n                        56:00\n                        95TSS\n                        IF: 1.01\n                        chat",
+  "duration": "56:00",
+  "tss": 88,
+  "intensityFactor": 0.98,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 150,
+      "powerFormatted": "121% FTP - 150% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 55,
+      "powerHigh": 45,
+      "powerFormatted": "55% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

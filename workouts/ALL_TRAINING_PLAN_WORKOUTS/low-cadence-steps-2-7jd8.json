@@ -1,0 +1,141 @@
+{
+  "filename": "low-cadence-steps-2-7jd8.zwo",
+  "slug": "low-cadence-steps-2-7jd8",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/low-cadence-steps-2-7jd8?do=exportZwo",
+  "name": "Low Cadence Steps #2",
+  "description": "This session builds upon similar workouts we have completed (like the power efforts). But we adjust the duration of the intervals within the session. See how your body adapts during each interval! A session that's great to develop as you improve (increase the number or duration of the intervals) and is great to transfer to the road IRL, too.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Low Cadence Steps #1\n                    \n                    \n                    \n                        01:01:00\n                        61TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Steps #2\n                    \n                    \n                    \n                        01:05:00\n                        66TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #1\n                    \n                    \n                    \n                        01:05:00\n                        63TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity #1\n                    \n                    \n                    \n                        01:05:00\n                        70TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #4\n                    \n                    \n                    \n                        01:05:00\n                        58TSS\n                        IF: 0.74\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #6\n                    \n                    \n                    \n                        01:05:00\n                        62TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #5\n                    \n                    \n                    \n                        01:05:00\n                        77TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5 minute strength #1\n                    \n                    \n                    \n                        01:05:00\n                        56TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #2\n                    \n                    \n                    \n                        01:05:15\n                        74TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #1\n                    \n                    \n                    \n                        01:05:00\n                        63TSS\n                        IF: 0.77",
+  "duration": "01:05:00",
+  "tss": 66,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

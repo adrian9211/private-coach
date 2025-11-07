@@ -1,0 +1,117 @@
+{
+  "filename": "lactate-tolerance-2-gomb.zwo",
+  "slug": "lactate-tolerance-2-gomb",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/lactate-tolerance-2-gomb?do=exportZwo",
+  "name": "Lactate Tolerance #2",
+  "description": "Riding at threshold power for sustained periods will require a significant amount of lactate production. To reach this level of lactate in a shorter workout requires brief periods of work above threshold, with minimal recovery. With each interval, the lactate levels will rise.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Lactate Tolerance #1\n                    \n                    \n                    \n                        54:00\n                        61TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #1\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        32:00\n                        42TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #2\n                    \n                    \n                    \n                        01:02:00\n                        75TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #3\n                    \n                    \n                    \n                        01:08:00\n                        76TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular with AC #3\n                    \n                    \n                    \n                        01:02:15\n                        81TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        AC + Sweetspot #1\n                    \n                    \n                    \n                        01:02:00\n                        90TSS\n                        IF: 0.94\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        AC + Sweetspot #2\n                    \n                    \n                    \n                        01:02:00\n                        92TSS\n                        IF: 0.95\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity with Sweetspot #1\n                    \n                    \n                    \n                        01:02:00\n                        90TSS\n                        IF: 0.94\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity with Sweetspot #2\n                    \n                    \n                    \n                        01:02:00\n                        92TSS\n                        IF: 0.95\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Higher and Faster\n                    \n                    \n                    \n                        01:02:00\n                        62TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweet Spot 15\n                    \n                    \n                    \n                        01:02:00\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike #2\n                    \n                    \n                    \n                        01:02:00\n                        68TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5min Max Aerobic\n                    \n                    \n                    \n                        01:02:00\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max Extending Climbs\n                    \n                    \n                    \n                        01:02:00\n                        81TSS\n                        IF: 0.89\n                        chat\n                        cached",
+  "duration": "01:02:00",
+  "tss": 75,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 44,
+      "powerHigh": 75,
+      "powerFormatted": "44% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 111,
+      "powerHigh": 111,
+      "powerFormatted": "111%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

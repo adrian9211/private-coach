@@ -1,0 +1,109 @@
+{
+  "filename": "controlled-30-30-s-2.zwo",
+  "slug": "controlled-30-30-s-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/controlled-30-30-s-2?do=exportZwo",
+  "name": "Controlled 30/30's #2",
+  "description": "These Controlled 30/30 efforts are completed at a power just below your Maximal Aerobic Power (MAP). By splitting up into 30 seconds, with 30 seconds of recovery, you can accumulate more time at this intensity than you would if doing it as a continuous effort. \n\n\n\nEight repetitions this week, building on last week's great session!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Controlled 30/30's #1\n                    \n                    \n                    \n                        51:00\n                        55TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Endurance #1\n                    \n                    \n                    \n                        59:00\n                        61TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Capacity #2\n                    \n                    \n                    \n                        59:00\n                        82TSS\n                        IF: 0.92\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Intervals #2\n                    \n                    \n                    \n                        59:00\n                        82TSS\n                        IF: 0.92\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race simulation #1\n                    \n                    \n                    \n                        59:15\n                        72TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Spin up #2\n                    \n                    \n                    \n                        59:00\n                        62TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprint Lead Outs\n                    \n                    \n                    \n                        59:00\n                        74TSS\n                        IF: 0.87\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting 20's\n                    \n                    \n                    \n                        59:00\n                        62TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 11min Climb\n                    \n                    \n                    \n                        59:00\n                        62TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot 20 minute\n                    \n                    \n                    \n                        59:00\n                        63TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo, Intensive Zone 6 #2\n                    \n                    \n                    \n                        58:45\n                        84TSS\n                        IF: 0.93\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with Accelerations #2\n                    \n                    \n                    \n                        59:10\n                        70TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Torque Changers #1\n                    \n                    \n                    \n                        58:57\n                        63TSS\n                        IF: 0.81\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        10min Ramps\n                    \n                    \n                    \n                        59:00\n                        63TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Sustained Threshold #2\n                    \n                    \n                    \n                        59:00\n                        81TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #4\n                    \n                    \n                    \n                        59:00\n                        76TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Threshold #2\n                    \n                    \n                    \n                        59:00\n                        61TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold #5\n                    \n                    \n                    \n                        59:00\n                        72TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 4min #2\n                    \n                    \n                    \n                        59:00\n                        65TSS\n                        IF: 0.82",
+  "duration": "59:00",
+  "tss": 68,
+  "intensityFactor": 0.84,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 85,
+      "powerFormatted": "50% FTP - 85% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 50,
+      "powerHigh": 30,
+      "powerFormatted": "50% FTP - 30% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,85 @@
+{
+  "filename": "zone-2-into-threshold-gx81.zwo",
+  "slug": "zone-2-into-threshold-gx81",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/zone-2-into-threshold-gx81?do=exportZwo",
+  "name": "Zone 2 into Threshold",
+  "description": "After a good warmup complete 2 x 5min Threshold efforts. However, the threshold effort ramps up from low to high threshold over the 5min. Recovery time is 1min @ 65% FTP. This is the level at which lactate is cleared at it's highest rate.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Zone 2 into Threshold\n                    \n                    \n                    \n                        36:00\n                        37TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 into Threshold\n                    \n                    \n                    \n                        36:00\n                        37TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        What is FTP?\n                    \n                    \n                    \n                        36:00\n                        30TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        You know I'm right\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        36:00\n                        47TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        What is FTP?\n                    \n                    \n                    \n                        36:00\n                        30TSS\n                        IF: 0.72\n                        chat",
+  "duration": "36:00",
+  "tss": 37,
+  "intensityFactor": 0.79,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 107,
+      "powerHigh": 107,
+      "powerFormatted": "107%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

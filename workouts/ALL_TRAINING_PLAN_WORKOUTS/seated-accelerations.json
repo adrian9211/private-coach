@@ -1,0 +1,93 @@
+{
+  "filename": "seated-accelerations.zwo",
+  "slug": "seated-accelerations",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/seated-accelerations?do=exportZwo",
+  "name": "Seated Accelerations",
+  "description": "Changes in pace often occur in gravel racing. Today's workout replicates those pace changes and gives you some management tips. Follow along with the instructions and enjoy the session!",
+  "duration": "53:35",
+  "tss": 54,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 25,
+      "powerHigh": 75,
+      "powerFormatted": "25% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 55,
+      "durationFormatted": "00:55",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 7,
+      "durationFormatted": "00:07",
+      "powerLow": 300,
+      "powerHigh": 300,
+      "powerFormatted": "300%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 250,
+      "powerHigh": 250,
+      "powerFormatted": "250%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 200,
+      "durationFormatted": "03:20",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    }
+  ],
+  "isValid": true
+}

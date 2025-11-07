@@ -1,0 +1,117 @@
+{
+  "filename": "endurance-with-10-sprints.zwo",
+  "slug": "endurance-with-10-sprints",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-with-10-sprints?do=exportZwo",
+  "name": "Endurance with 10 Sprints\"",
+  "description": "This session will help improve your endurance capacity and peak power efforts with a climbing focus, including 10-second maximal efforts throughout the ride and a mix of torque, power, and cadence. Carry out 4 x 9m30s minute blocks with the 10 seconds coming after every 3 minutes. \n\n\n\nNOTE. This session is best completed with erg. Mode turned OFF.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance with 10 Sprints\"\n                    \n                    \n                    \n                        01:02:00\n                        46TSS\n                        IF: 0.67\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 15 Sprints\"\n                    \n                    \n                    \n                        01:03:00\n                        68TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 10 #2\n                    \n                    \n                    \n                        01:01:46\n                        56TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pure Strength #1\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 12's #2\n                    \n                    \n                    \n                        01:02:00\n                        55TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 Endurance 40min\n                    \n                    \n                    \n                        01:02:00\n                        44TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Power #3\n                    \n                    \n                    \n                        01:02:00\n                        56TSS\n                        IF: 0.74\n                        chat\n                        cached",
+  "duration": "01:02:00",
+  "tss": 46,
+  "intensityFactor": 0.67,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 40,
+      "powerHigh": 60,
+      "powerFormatted": "40% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 250,
+      "powerHigh": 250,
+      "powerFormatted": "250%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 250,
+      "powerHigh": 250,
+      "powerFormatted": "250%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 250,
+      "powerHigh": 250,
+      "powerFormatted": "250%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 250,
+      "powerHigh": 250,
+      "powerFormatted": "250%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 40,
+      "powerFormatted": "40%"
+    }
+  ],
+  "isValid": true
+}

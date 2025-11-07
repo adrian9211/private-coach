@@ -1,0 +1,109 @@
+{
+  "filename": "40-20-efforts-22sx.zwo",
+  "slug": "40-20-efforts-22sx",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/40-20-efforts-22sx?do=exportZwo",
+  "name": "40/20 Efforts",
+  "description": "40/20 efforts are completed at a power just below your Maximal Aerobic Power (MAP). By splitting up into 40 seconds, with 20 seconds recovery, you can accumulate more time at this intensity than you would if doing it as a continuous effort. This is a development of the previous weeks 30/30 session - higher workload this week!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        40/20 Efforts\n                    \n                    \n                    \n                        51:00\n                        66TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Fartlek #1\n                    \n                    \n                    \n                        51:00\n                        60TSS\n                        IF: 0.85\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Matteo Trentin - Rouleur\n                    \n                    \n                    \n                        51:00\n                        52TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Controlled 30/30's #1\n                    \n                    \n                    \n                        51:00\n                        55TSS\n                        IF: 0.81\n                        chat",
+  "duration": "51:00",
+  "tss": 66,
+  "intensityFactor": 0.88,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 85,
+      "powerFormatted": "50% FTP - 85% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 92,
+      "powerHigh": 92,
+      "powerFormatted": "92%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 45,
+      "powerHigh": 45,
+      "powerFormatted": "45%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 50,
+      "powerHigh": 30,
+      "powerFormatted": "50% FTP - 30% FTP"
+    }
+  ],
+  "isValid": true
+}

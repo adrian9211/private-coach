@@ -1,0 +1,117 @@
+{
+  "filename": "unclaimed-prize.zwo",
+  "slug": "unclaimed-prize",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/unclaimed-prize?do=exportZwo",
+  "name": "Unclaimed prize",
+  "description": "Short on paper, but certainly not short on intensity!",
+  "duration": "30:00",
+  "tss": 37,
+  "intensityFactor": 0.87,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 69,
+      "powerHigh": 69,
+      "powerFormatted": "69%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 100,
+      "durationFormatted": "01:40",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 150,
+      "durationFormatted": "02:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 66,
+      "powerHigh": 66,
+      "powerFormatted": "66%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 59,
+      "powerHigh": 59,
+      "powerFormatted": "59%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 75,
+      "durationFormatted": "01:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

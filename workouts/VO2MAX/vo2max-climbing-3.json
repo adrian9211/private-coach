@@ -1,0 +1,93 @@
+{
+  "filename": "vo2max-climbing-3.zwo",
+  "slug": "vo2max-climbing-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/vo2max-climbing-3?do=exportZwo",
+  "name": "VO2max Climbing #3",
+  "description": "There will be moments when you need to produce quality, sustained efforts above your threshold while climbing. \n\n\n\nToday we target this power area while using a different cadence for each effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        VO2max Climbing #1\n                    \n                    \n                    \n                        01:00:00\n                        68TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max Climbing #2\n                    \n                    \n                    \n                        01:20:00\n                        90TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic Best 1min\n                    \n                    Free RideFree Ride\n                    \n                        01:03:00\n                        70TSS\n                        IF: 0.82\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 15 Sprints\"\n                    \n                    \n                    \n                        01:03:00\n                        68TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic Best 1min\n                    \n                    Free RideFree Ride\n                    \n                        01:03:00\n                        70TSS\n                        IF: 0.82\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hard Starts #2\n                    \n                    \n                    \n                        01:03:00\n                        77TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #4\n                    \n                    \n                    \n                        01:03:00\n                        60TSS\n                        IF: 0.76\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #8\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        01:03:00\n                        69TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria Maintenance #1\n                    \n                    \n                    \n                        01:03:00\n                        65TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Fatigued Sprints\n                    \n                    \n                    \n                        01:03:00\n                        86TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Long Sprints #1\n                    \n                    \n                    \n                        01:03:00\n                        86TSS\n                        IF: 0.91\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot 12 minute\n                    \n                    \n                    \n                        01:03:00\n                        65TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot 15 minute\n                    \n                    \n                    \n                        01:03:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #6\n                    \n                    \n                    \n                        01:03:00\n                        74TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        13min Progressive Climb\n                    \n                    \n                    \n                        01:03:00\n                        71TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 13min Climb\n                    \n                    \n                    \n                        01:03:00\n                        71TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Micro-VO2 #2\n                    \n                    \n                    \n                        01:03:00\n                        76TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Supra-Threshold #1\n                    \n                    \n                    \n                        01:03:00\n                        74TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Supra-Threshold into VO2 #2\n                    \n                    \n                    \n                        01:03:15\n                        70TSS\n                        IF: 0.82\n                        chat",
+  "duration": "01:03:00",
+  "tss": 76,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 51,
+      "powerHigh": 75,
+      "powerFormatted": "51% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 110,
+      "powerHigh": 110,
+      "powerFormatted": "110%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 50,
+      "powerFormatted": "55% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

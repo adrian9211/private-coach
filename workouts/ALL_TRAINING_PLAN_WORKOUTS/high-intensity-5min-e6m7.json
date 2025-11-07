@@ -1,0 +1,133 @@
+{
+  "filename": "high-intensity-5min-e6m7.zwo",
+  "slug": "high-intensity-5min-e6m7",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/high-intensity-5min-e6m7?do=exportZwo",
+  "name": "High Intensity 5min",
+  "description": "High intensity efforts focusing on the ability to produce anaerobic power, from an already threshold power. The intervals simulate the demands of flat, fast efforts, as well as climbing efforts with a lower cadence.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        High Intensity 5min\n                    \n                    \n                    \n                        50:00\n                        68TSS\n                        IF: 0.9\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Halo\n                    \n                    \n                    \n                        50:00\n                        60TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold XX #1\n                    \n                    \n                    \n                        50:00\n                        64TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Erica Magnaldi - Climbing\n                    \n                    \n                    \n                        50:00\n                        54TSS\n                        IF: 0.81\n                        chat\n                        cached",
+  "duration": "50:00",
+  "tss": 68,
+  "intensityFactor": 0.9,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 104,
+      "powerFormatted": "75% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 104,
+      "powerHigh": 104,
+      "powerFormatted": "104%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 140,
+      "powerHigh": 140,
+      "powerFormatted": "140%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 104,
+      "powerFormatted": "75% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 104,
+      "powerHigh": 104,
+      "powerFormatted": "104%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 121,
+      "powerHigh": 121,
+      "powerFormatted": "121%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 140,
+      "powerHigh": 140,
+      "powerFormatted": "140%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 40,
+      "durationFormatted": "00:40",
+      "powerLow": 91,
+      "powerHigh": 91,
+      "powerFormatted": "91%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

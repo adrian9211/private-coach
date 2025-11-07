@@ -1,0 +1,93 @@
+{
+  "filename": "pre-race-session-2.zwo",
+  "slug": "pre-race-session-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/pre-race-session-2?do=exportZwo",
+  "name": "Pre-Race Session #2",
+  "description": "The 'Pre-Race' session is an essential aspect of your taper. Generally, your taper will involve a period of reduced volume and low-intensity training. But it's necessary to have that final workout of high intensity before your event. \n\n\n\nThe 'Pre-Race' session serves to activate the muscles and prepare you for the high intensity of racing. Ideally, you have had two days of light training before completing this session.",
+  "duration": "46:00",
+  "tss": 42,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 1200,
+      "durationFormatted": "20:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 40,
+      "powerHigh": 60,
+      "powerFormatted": "40% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": 60,
+      "powerHigh": 40,
+      "powerFormatted": "60% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

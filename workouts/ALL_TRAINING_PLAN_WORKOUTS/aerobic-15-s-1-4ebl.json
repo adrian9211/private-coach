@@ -1,0 +1,69 @@
+{
+  "filename": "aerobic-15-s-1-4ebl.zwo",
+  "slug": "aerobic-15-s-1-4ebl",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/aerobic-15-s-1-4ebl?do=exportZwo",
+  "name": "Aerobic 15's #1",
+  "description": "The primary goal of endurance training is to improve your ability to preserve glycogen. The more efficient you are in your fuel source, the more energy you will have for the finale. Aerobic Endurance workouts are aimed at improving your efficiency at lower intensity levels. You are training your muscles to access fat as its primary fuel source and preserve your precious glycogen stores for the finale. After warming up, you will be completing 3 x 15min aerobic efforts with 2min recovery.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Aerobic 12's #1\n                    \n                    \n                    \n                        01:03:00\n                        55TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 12's #1\n                    \n                    \n                    \n                        01:03:00\n                        55TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic 15's #1\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #4\n                    \n                    \n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5min Neuromuscular\n                    \n                    Free Ride\n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Clearance\n                    \n                    \n                    \n                        01:10:00\n                        64TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        01:10:00\n                        75TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #4\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #3\n                    \n                    \n                    \n                        01:10:00\n                        62TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #10\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic Climb #1\n                    \n                    \n                    \n                        01:10:00\n                        81TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 3min #1\n                    \n                    \n                    \n                        01:10:00\n                        74TSS\n                        IF: 0.8",
+  "duration": "01:10:00",
+  "tss": 63,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

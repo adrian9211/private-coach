@@ -1,0 +1,85 @@
+{
+  "filename": "12min-over-under-s.zwo",
+  "slug": "12min-over-under-s",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/12min-over-under-s?do=exportZwo",
+  "name": "12min Over-Under's",
+  "description": "Today's workout focuses on developing threshold power. We complete 2 x 12-minute intervals with the target power moving just above and below your FTP. \n\n\n\nThis is a high-intensity workout requiring you to concentrate on the changes in target power and the increased fatigue as the interval progresses.",
+  "duration": "01:09:00",
+  "tss": 69,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 35,
+      "powerHigh": 55,
+      "powerFormatted": "35% FTP - 55% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 73,
+      "powerHigh": 73,
+      "powerFormatted": "73%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 55,
+      "powerHigh": 35,
+      "powerFormatted": "55% FTP - 35% FTP"
+    }
+  ],
+  "isValid": true
+}

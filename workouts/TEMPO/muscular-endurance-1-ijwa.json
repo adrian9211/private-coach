@@ -1,0 +1,125 @@
+{
+  "filename": "muscular-endurance-1-ijwa.zwo",
+  "slug": "muscular-endurance-1-ijwa",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/muscular-endurance-1-ijwa?do=exportZwo",
+  "name": "Muscular Endurance #1",
+  "description": "The cadence selected for your intervals will determine the specific muscle fibres that are recruited. \n\n\n\nToday we are performing lower cadence intervals but with power closer to threshold. After warming up, the session consists of 4 Tempo intervals with cadence varying from 70rpm to 65rpm. \n\n\n\nThe effort should feel like a weights session, not cardiovascular. Avoid gripping the bars tightly; relax your hands.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Muscular Endurance #1\n                    \n                    \n                    \n                        58:00\n                        48TSS\n                        IF: 0.71\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #2\n                    \n                    \n                    \n                        01:06:00\n                        55TSS\n                        IF: 0.71\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #3\n                    \n                    \n                    \n                        01:10:00\n                        62TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #4\n                    \n                    \n                    \n                        01:05:00\n                        58TSS\n                        IF: 0.74\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Leg Speed #1\n                    \n                    \n                    \n                        58:00\n                        54TSS\n                        IF: 0.75\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #1\n                    \n                    \n                    \n                        58:00\n                        58TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Tempo #1\n                    \n                    \n                    \n                        58:00\n                        50TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 10 #1\n                    \n                    \n                    \n                        58:00\n                        52TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 8 #1\n                    \n                    \n                    \n                        58:00\n                        51TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #7\n                    \n                    \n                    \n                        58:00\n                        44TSS\n                        IF: 0.68\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Leg Speed #1\n                    \n                    \n                    \n                        58:00\n                        54TSS\n                        IF: 0.75\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Leg Speed #2\n                    \n                    \n                    \n                        58:00\n                        56TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #1\n                    \n                    \n                    \n                        58:00\n                        58TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Phosphate 6\n                    \n                    \n                    \n                        58:00\n                        50TSS\n                        IF: 0.72\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #2\n                    \n                    \n                    \n                        58:00\n                        59TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance w/Sprints into Zone 3 #1\n                    \n                    Free Ride\n                    \n                        58:00\n                        59TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #1\n                    \n                    \n                    \n                        58:00\n                        58TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Tempo #1\n                    \n                    \n                    \n                        58:00\n                        50TSS\n                        IF: 0.73\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2023 TDF Alena Amialiusik - Taper\n                    \n                    \n                    \n                        58:00\n                        38TSS\n                        IF: 0.63\n                        chat",
+  "duration": "58:00",
+  "tss": 48,
+  "intensityFactor": 0.71,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 83,
+      "powerHigh": 83,
+      "powerFormatted": "83%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,101 @@
+{
+  "filename": "endurance-6.zwo",
+  "slug": "endurance-6",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-6?do=exportZwo",
+  "name": "Endurance #6",
+  "description": "In between higher intensity sessions, it's essential to allow for recovery while still maintaining your training volume. Base training (or Zone 2) will enable you to work on your aerobic fitness while still allowing you to recover for the next higher intensity session. \n\n\n\nTraining is flexible. It's also ok to miss a day if you have to. Just complete the missed session the next day.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance #1\n                    \n                    \n                    \n                        01:00:00\n                        51TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #1\n                    \n                    \n                    \n                        01:00:00\n                        51TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #2\n                    \n                    \n                    \n                        31:20\n                        22TSS\n                        IF: 0.66\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #2\n                    \n                    \n                    \n                        01:02:30\n                        52TSS\n                        IF: 0.71\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #3\n                    \n                    \n                    \n                        01:06:20\n                        59TSS\n                        IF: 0.73\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #3\n                    \n                    \n                    \n                        32:20\n                        28TSS\n                        IF: 0.73\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #4\n                    \n                    \n                    \n                        01:03:00\n                        60TSS\n                        IF: 0.76\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #5\n                    \n                    \n                    \n                        49:05\n                        44TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #7\n                    \n                    \n                    \n                        58:00\n                        44TSS\n                        IF: 0.68\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance #8\n                    \n                    \n                    \n                        01:24:00\n                        66TSS\n                        IF: 0.69\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Accelerations #2\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        59:20\n                        48TSS\n                        IF: 0.7\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power #3\n                    \n                    \n                    \n                        59:50\n                        60TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        15min Varied Tempo #2\n                    \n                    \n                    \n                        59:45\n                        60TSS\n                        IF: 0.78\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #1\n                    \n                    \n                    \n                        59:20\n                        54TSS\n                        IF: 0.74\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Supra-Threshold into VO2 #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        59:30\n                        65TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max #2\n                    \n                    \n                    \n                        59:45\n                        63TSS\n                        IF: 0.8\n                        chat",
+  "duration": "59:35",
+  "tss": 54,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 75,
+      "powerFormatted": "40% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 64,
+      "powerHigh": 71,
+      "powerFormatted": "64% FTP - 71% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 62,
+      "powerHigh": 71,
+      "powerFormatted": "62% FTP - 71% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 62,
+      "powerHigh": 71,
+      "powerFormatted": "62% FTP - 71% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 74,
+      "powerHigh": 74,
+      "powerFormatted": "74%"
+    },
+    {
+      "type": "ramp",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 64,
+      "powerHigh": 71,
+      "powerFormatted": "64% FTP - 71% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 395,
+      "durationFormatted": "06:35",
+      "powerLow": 64,
+      "powerHigh": 50,
+      "powerFormatted": "64% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

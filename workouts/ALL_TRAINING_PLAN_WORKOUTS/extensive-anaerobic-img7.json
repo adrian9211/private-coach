@@ -1,0 +1,53 @@
+{
+  "filename": "extensive-anaerobic-img7.zwo",
+  "slug": "extensive-anaerobic-img7",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/extensive-anaerobic-img7?do=exportZwo",
+  "name": "Extensive Anaerobic",
+  "description": "The aim today is to produce repeatable, high power intervals. Extensive Anaerobic efforts will improve your ability to recover from high-intensity efforts and repeat them again and again. With 4 x 2.5 minute quality efforts ahead of you, recovery is crucial!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Extensive Anaerobic\n                    \n                    \n                    \n                        01:07:00\n                        89TSS\n                        IF: 0.9\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/30's Anaerobic #4\n                    \n                    \n                    \n                        01:07:00\n                        72TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Season Base #2\n                    \n                    \n                    \n                        01:07:00\n                        77TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #2\n                    \n                    \n                    \n                        01:07:00\n                        81TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive zones climb #1\n                    \n                    \n                    \n                        01:07:00\n                        83TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #9\n                    \n                    \n                    \n                        01:07:00\n                        73TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Torque Changers #2\n                    \n                    \n                    \n                        01:07:06\n                        77TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 26min Climb\n                    \n                    \n                    \n                        01:07:00\n                        82TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #3\n                    \n                    \n                    \n                        01:07:00\n                        74TSS\n                        IF: 0.82\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #1\n                    \n                    \n                    \n                        01:07:00\n                        71TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #2\n                    \n                    \n                    \n                        01:06:45\n                        87TSS\n                        IF: 0.89\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 5min #1\n                    \n                    \n                    \n                        01:07:00\n                        76TSS\n                        IF: 0.83",
+  "duration": "01:07:00",
+  "tss": 89,
+  "intensityFactor": 0.9,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 150,
+      "durationFormatted": "02:30",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 50,
+      "powerFormatted": "75% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

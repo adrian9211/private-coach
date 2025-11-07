@@ -1,0 +1,213 @@
+{
+  "filename": "capacity-pyramid-1-faiu.zwo",
+  "slug": "capacity-pyramid-1-faiu",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/capacity-pyramid-1-faiu?do=exportZwo",
+  "name": "Capacity Pyramid 1",
+  "description": "Developing from the solid foundation you have created. Think of this session as a progressive pushing workout. The main intervals are 7 x 5 minutes with 3 minutes easy spinning between efforts, starting just above threshold then settling into high Zone 3...comfortably hard, but hardly comfortable. This is pushing your threshold up. Working up the pyramid is not too difficult, it is the return-leg when it starts to bite! Hang in and try and keep the power where it needs to be.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Capacity Pyramid #1\n                    \n                    \n                    \n                        01:10:00\n                        83TSS\n                        IF: 0.85\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity Pyramid #2\n                    \n                    \n                    \n                        01:10:00\n                        85TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity Pyramid #3\n                    \n                    \n                    \n                        01:10:00\n                        90TSS\n                        IF: 0.88\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Endurance #4\n                    \n                    \n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5min Neuromuscular\n                    \n                    Free Ride\n                    \n                        01:10:00\n                        70TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive 25min Climb\n                    \n                    \n                    \n                        01:10:00\n                        75TSS\n                        IF: 0.8\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic Climb #1\n                    \n                    \n                    \n                        01:10:00\n                        81TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Over Ones\n                    \n                    \n                    \n                        01:10:00\n                        93TSS\n                        IF: 0.89\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max 3min #1\n                    \n                    \n                    \n                        01:10:00\n                        74TSS\n                        IF: 0.8",
+  "duration": "01:10:00",
+  "tss": 83,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 108,
+      "powerHigh": 108,
+      "powerFormatted": "108%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 87,
+      "powerHigh": 87,
+      "powerFormatted": "87%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

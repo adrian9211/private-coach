@@ -1,0 +1,85 @@
+{
+  "filename": "tt-speed-1-lkpx.zwo",
+  "slug": "tt-speed-1-lkpx",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tt-speed-1-lkpx?do=exportZwo",
+  "name": "TT Speed #1",
+  "description": "TT Speed sessions are all about becoming accustomed to the sensations of a TT effort. We aim to spend brief periods just below your current FTP setting with minimal recovery. \n\n\n\nThe steady-state nature of these intervals will also introduce you to the feeling of laying down a consistent power. We achieve an excellent TT volume by completing the workload at shorter intervals with minimal fatigue.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        TT Speed #1\n                    \n                    \n                    \n                        01:05:00\n                        63TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #2\n                    \n                    \n                    \n                        01:04:00\n                        65TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #3\n                    \n                    \n                    \n                        01:04:00\n                        70TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        TT Speed #4\n                    \n                    \n                    \n                        01:00:00\n                        64TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity #1\n                    \n                    \n                    \n                        01:05:00\n                        70TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Steps #2\n                    \n                    \n                    \n                        01:05:00\n                        66TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Muscular Endurance #4\n                    \n                    \n                    \n                        01:05:00\n                        58TSS\n                        IF: 0.74\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Strength Tempo #6\n                    \n                    \n                    \n                        01:05:00\n                        62TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #5\n                    \n                    \n                    \n                        01:05:00\n                        77TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5 minute strength #1\n                    \n                    \n                    \n                        01:05:00\n                        56TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Climbing Threshold #2\n                    \n                    \n                    \n                        01:05:15\n                        74TSS\n                        IF: 0.83\n                        chat\n                        cached",
+  "duration": "01:05:00",
+  "tss": 63,
+  "intensityFactor": 0.77,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 76,
+      "powerHigh": 94,
+      "powerFormatted": "76% FTP - 94% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 45,
+      "powerFormatted": "55% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

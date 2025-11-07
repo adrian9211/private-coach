@@ -1,0 +1,149 @@
+{
+  "filename": "explosive-power-into-tempo-1-a5y4.zwo",
+  "slug": "explosive-power-into-tempo-1-a5y4",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/explosive-power-into-tempo-1-a5y4?do=exportZwo",
+  "name": "Explosive Power into Tempo #1",
+  "description": "Not all Tempo work is equal. The intensity immediately before the Tempo work influences the fuel used to produce this effort. \n\n\n\nIn this session, we focus on your ability to ride at a tempo effort after first producing a short, high powered acceleration. However, the target power of the tempo interval descends throughout the effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Explosive Power into Tempo #1\n                    \n                    \n                    \n                        33:00\n                        34TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power into Tempo #2\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        High Torque Hills #1\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        55:00\n                        52TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        25sec Intensive Anaerobic\n                    \n                    Free RideFree Ride\n                    \n                        55:05\n                        44TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race simulation #2\n                    \n                    \n                    \n                        55:00\n                        65TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Aerobic Development\n                    \n                    \n                    \n                        55:00\n                        46TSS\n                        IF: 0.71\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        25sec Intensive Anaerobic\n                    \n                    Free RideFree Ride\n                    \n                        55:05\n                        44TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Phosphate 20\n                    \n                    \n                    \n                        55:00\n                        57TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints - High Speed Start\n                    \n                    Free Ride\n                    \n                        55:00\n                        50TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints - Low Speed Start\n                    \n                    Free Ride\n                    \n                        55:00\n                        50TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #1\n                    \n                    \n                    \n                        55:00\n                        59TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #3\n                    \n                    \n                    \n                        55:00\n                        58TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #2\n                    \n                    \n                    \n                        55:00\n                        52TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot 6 minute\n                    \n                    \n                    \n                        55:00\n                        58TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweet Spot 6\n                    \n                    \n                    \n                        55:00\n                        58TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        20min Tempo w/15sec Accelerations\n                    \n                    \n                    \n                        55:00\n                        68TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        40min Tempo w/15sec surge\n                    \n                    \n                    \n                        55:00\n                        71TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Descending Tempo #1\n                    \n                    \n                    \n                        55:00\n                        56TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        High Torque Hills #1\n                    \n                    \n                    \n                        55:00\n                        52TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive power into Z4\n                    \n                    \n                    \n                        55:00\n                        65TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped down VO2max\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        54:55\n                        69TSS\n                        IF: 0.87",
+  "duration": "55:00",
+  "tss": 56,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 76,
+      "powerFormatted": "90% FTP - 76% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "ramp",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 90,
+      "powerHigh": 76,
+      "powerFormatted": "90% FTP - 76% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "ramp",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 90,
+      "powerHigh": 76,
+      "powerFormatted": "90% FTP - 76% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,53 @@
+{
+  "filename": "50sec-extensive-anaerobic-1-ithf.zwo",
+  "slug": "50sec-extensive-anaerobic-1-ithf",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/50sec-extensive-anaerobic-1-ithf?do=exportZwo",
+  "name": "50sec Extensive Anaerobic #1",
+  "description": "The aim today is to produce repeatable, high power intervals. Extensive Anaerobic efforts will improve your ability to recover from high-intensity efforts and repeat them again and again. With 6 x 50 second quality efforts ahead of you, recovery is crucial!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        50sec Extensive Anaerobic #1\n                    \n                    \n                    \n                        01:01:00\n                        53TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hills #1\n                    \n                    \n                    \n                        01:01:00\n                        53TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 4 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        01:01:00\n                        52TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low 60's\n                    \n                    \n                    \n                        01:01:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #6\n                    \n                    \n                    \n                        01:01:00\n                        63TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                    \n                    \n                    \n                        01:01:00\n                        65TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Crank Torque\n                    \n                    \n                    \n                        01:01:00\n                        62TSS\n                        IF: 0.78\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Steps #1\n                    \n                    \n                    \n                        01:01:00\n                        61TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #2\n                    \n                    \n                    \n                        01:00:50\n                        68TSS\n                        IF: 0.82\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Long Tempo Climb #1\n                    \n                    \n                    \n                        01:01:00\n                        61TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 2min Capacity\n                    \n                    \n                    \n                        01:01:00\n                        66TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Torque Changers #3\n                    \n                    \n                    \n                        01:01:06\n                        70TSS\n                        IF: 0.83\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hills #1\n                    \n                    \n                    \n                        01:01:00\n                        53TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Threshold #1\n                    \n                    \n                    \n                        01:01:00\n                        59TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with Threshold #1\n                    \n                    Free Ride\n                    \n                        01:01:00\n                        60TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic Climb #3\n                    \n                    \n                    \n                        01:01:00\n                        70TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Milano-Sanremo\n                    \n                    Free Ride\n                    \n                        01:00:55\n                        64TSS\n                        IF: 0.8\n                        chat\n                        cached",
+  "duration": "01:01:00",
+  "tss": 53,
+  "intensityFactor": 0.73,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 65,
+      "powerHigh": 45,
+      "powerFormatted": "65% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

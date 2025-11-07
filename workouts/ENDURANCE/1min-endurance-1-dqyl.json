@@ -1,0 +1,109 @@
+{
+  "filename": "1min-endurance-1-dqyl.zwo",
+  "slug": "1min-endurance-1-dqyl",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/1min-endurance-1-dqyl?do=exportZwo",
+  "name": "1min + Endurance #1",
+  "description": "Today, we will burn up the intramuscular glycogen early in the session and then continue with an endurance ride. By depleting this energy source prematurely, the body is forced to adapt by becoming more efficient at utilising fats to produce the power. \n\n\n\nWe quickly get into the action today! The remaining endurance ride is completed as a free ride. In this workout, the 1min efforts also act as part of your warm-up. \n\n\n\nAim to keep your effort within zone 2 and 3 for most of your ride.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        1min + Endurance #1\n                    \n                    Free Ride\n                    \n                        01:27:30\n                        78TSS\n                        IF: 0.74",
+  "duration": "01:27:30",
+  "tss": 78,
+  "intensityFactor": 0.74,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 330,
+      "durationFormatted": "05:30",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 106,
+      "powerHigh": 106,
+      "powerFormatted": "106%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 112,
+      "powerHigh": 112,
+      "powerFormatted": "112%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 115,
+      "powerHigh": 115,
+      "powerFormatted": "115%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 3600,
+      "durationFormatted": "01:00:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    }
+  ],
+  "isValid": true
+}

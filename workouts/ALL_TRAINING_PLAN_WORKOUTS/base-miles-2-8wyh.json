@@ -1,0 +1,77 @@
+{
+  "filename": "base-miles-2-8wyh.zwo",
+  "slug": "base-miles-2-8wyh",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/base-miles-2-8wyh?do=exportZwo",
+  "name": "Base Miles #2",
+  "description": "In between sessions of higher intensity, it is essential to allow for recovery, while still maintaining your training volume. Base training (or Zone 2), allows you to work on your aerobic fitness while still enabling you to recover for the next higher intensity session.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        42:00\n                        30TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        33:00\n                        25TSS\n                        IF: 0.68\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #1\n                    \n                    \n                    \n                        42:00\n                        30TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #2\n                    \n                    \n                    \n                        44:35\n                        32TSS\n                        IF: 0.66\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #2\n                    \n                    \n                    \n                        44:35\n                        32TSS\n                        IF: 0.66\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Base Miles #3\n                    \n                    \n                    \n                        43:50\n                        34TSS\n                        IF: 0.68\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Accuracy\n                    \n                    \n                    \n                        44:20\n                        42TSS\n                        IF: 0.75",
+  "duration": "44:35",
+  "tss": 32,
+  "intensityFactor": 0.66,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 75,
+      "powerFormatted": "40% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 64,
+      "powerHigh": 71,
+      "powerFormatted": "64% FTP - 71% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 71,
+      "powerHigh": 62,
+      "powerFormatted": "71% FTP - 62% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 62,
+      "powerHigh": 71,
+      "powerFormatted": "62% FTP - 71% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 74,
+      "powerHigh": 74,
+      "powerFormatted": "74%"
+    },
+    {
+      "type": "ramp",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 71,
+      "powerHigh": 64,
+      "powerFormatted": "71% FTP - 64% FTP"
+    },
+    {
+      "type": "cooldown",
+      "duration": 395,
+      "durationFormatted": "06:35",
+      "powerLow": 64,
+      "powerHigh": 50,
+      "powerFormatted": "64% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

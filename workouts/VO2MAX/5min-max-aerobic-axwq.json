@@ -1,0 +1,85 @@
+{
+  "filename": "5min-max-aerobic-axwq.zwo",
+  "slug": "5min-max-aerobic-axwq",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/5min-max-aerobic-axwq?do=exportZwo",
+  "name": "5min Max Aerobic",
+  "description": "By working just above Threshold in Zone 4 and into Zone 5, we can improve our VO2max abilities and increase our Threshold. These are high-intensity efforts, so the intervals are broken down into shorter work periods. \n\n\n\nA well developed VO2max system will allow you to recover from high-intensity efforts faster and increase endurance.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        5min Max Aerobic\n                    \n                    \n                    \n                        34:00\n                        46TSS\n                        IF: 0.91\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Tolerance #2\n                    \n                    \n                    \n                        01:02:00\n                        75TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular with AC #3\n                    \n                    \n                    \n                        01:02:15\n                        81TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        AC + Sweetspot #1\n                    \n                    \n                    \n                        01:02:00\n                        90TSS\n                        IF: 0.94\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        AC + Sweetspot #2\n                    \n                    \n                    \n                        01:02:00\n                        92TSS\n                        IF: 0.95\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity with Sweetspot #1\n                    \n                    \n                    \n                        01:02:00\n                        90TSS\n                        IF: 0.94\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity with Sweetspot #2\n                    \n                    \n                    \n                        01:02:00\n                        92TSS\n                        IF: 0.95\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Higher and Faster\n                    \n                    \n                    \n                        01:02:00\n                        62TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweet Spot 15\n                    \n                    \n                    \n                        01:02:00\n                        74TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Pacing #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Rolling Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo #3\n                    \n                    \n                    \n                        01:02:00\n                        63TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 30sec spike #2\n                    \n                    \n                    \n                        01:02:00\n                        68TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max #5\n                    \n                    \n                    \n                        01:02:00\n                        72TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max Extending Climbs\n                    \n                    \n                    \n                        01:02:00\n                        81TSS\n                        IF: 0.89\n                        chat\n                        cached",
+  "duration": "01:02:00",
+  "tss": 74,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 57,
+      "powerHigh": 57,
+      "powerFormatted": "57%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 63,
+      "powerHigh": 63,
+      "powerFormatted": "63%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 80,
+      "powerHigh": 80,
+      "powerFormatted": "80%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 71,
+      "powerHigh": 45,
+      "powerFormatted": "71% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,125 @@
+{
+  "filename": "intensive-pmax-into-tempo-2.zwo",
+  "slug": "intensive-pmax-into-tempo-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/intensive-pmax-into-tempo-2?do=exportZwo",
+  "name": "Intensive Pmax into Tempo #2",
+  "description": "After warming up, complete two sets of Intensive Pmax work. The first set consists of 5 x 20sec efforts with a recovery period of 2 minutes in Zone 2. \n\n\n\nThe second set consists of 8 x 15sec efforts performed throughout a tempo effort. The accelerations are shorter in the 2nd set, but the pressure kept on the pedals during the recovery period will challenge your ability to recover.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Intensive Pmax into Tempo\n                    \n                    \n                    \n                        30:45\n                        33TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Pmax into Tempo #1\n                    \n                    \n                    \n                        52:50\n                        61TSS\n                        IF: 0.84\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Cruise Intervals #3\n                    \n                    \n                    \n                        01:01:30\n                        76TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        V02max Declining 6min\n                    \n                    \n                    \n                        01:01:30\n                        80TSS\n                        IF: 0.89\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max Declining\n                    \n                    \n                    \n                        01:01:30\n                        80TSS\n                        IF: 0.89\n                        chat",
+  "duration": "01:01:40",
+  "tss": 74,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 45,
+      "powerHigh": 60,
+      "powerFormatted": "45% FTP - 60% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 160,
+      "powerHigh": 160,
+      "powerFormatted": "160%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 84,
+      "powerHigh": 84,
+      "powerFormatted": "84%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 65,
+      "powerHigh": 45,
+      "powerFormatted": "65% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

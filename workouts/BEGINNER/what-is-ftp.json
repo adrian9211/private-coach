@@ -1,0 +1,85 @@
+{
+  "filename": "what-is-ftp.zwo",
+  "slug": "what-is-ftp",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/what-is-ftp?do=exportZwo",
+  "name": "What is FTP?",
+  "description": "Functional Threshold Power (FTP) represents your ability to maintain the highest possible power for 1 hour. Regular assessment of FTP provides you with an indication of whether you are improving your fitness. \n\n\n\nYour training zones are based on a percentage of FTP, ensuring that each workout is personalised for your needs. If you don't yet know your FTP, use the FTP Bias button on the Whoosh Mobile App to adjust the intensity while completing workouts.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        What is FTP?\n                    \n                    \n                    \n                        36:00\n                        30TSS\n                        IF: 0.72\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 into Threshold\n                    \n                    \n                    \n                        36:00\n                        37TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 into Threshold\n                    \n                    \n                    \n                        36:00\n                        37TSS\n                        IF: 0.79",
+  "duration": "36:00",
+  "tss": 30,
+  "intensityFactor": 0.72,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 40,
+      "powerHigh": 70,
+      "powerFormatted": "40% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 70,
+      "powerHigh": 40,
+      "powerFormatted": "70% FTP - 40% FTP"
+    }
+  ],
+  "isValid": true
+}

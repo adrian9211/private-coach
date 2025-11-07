@@ -1,0 +1,77 @@
+{
+  "filename": "zone-2-endurance-30min.zwo",
+  "slug": "zone-2-endurance-30min",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/zone-2-endurance-30min?do=exportZwo",
+  "name": "Zone 2 Endurance 30min",
+  "description": "Zone 2 training is one of the most important aspects of any training plan. We don't always get faster by training faster. In Zone 2 training, we stimulate your type 1 muscle fibres (slow-twitch). \n\n\n\nSpending time in Zone 2 is essential to improving performance.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Zone 2 Endurance 40min\n                    \n                    \n                    \n                        01:02:00\n                        44TSS\n                        IF: 0.66\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Speed Sprints\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        59:00\n                        46TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power Surges #2\n                    \n                    \n                    \n                        59:00\n                        49TSS\n                        IF: 0.71\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Speed Sprints\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        59:00\n                        46TSS\n                        IF: 0.69\n                        chat",
+  "duration": "59:00",
+  "tss": 42,
+  "intensityFactor": 0.66,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 75,
+      "powerFormatted": "50% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 78,
+      "powerHigh": 78,
+      "powerFormatted": "78%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "ramp",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 56,
+      "powerHigh": 75,
+      "powerFormatted": "56% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1800,
+      "durationFormatted": "30:00",
+      "powerLow": 67,
+      "powerHigh": 67,
+      "powerFormatted": "67%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

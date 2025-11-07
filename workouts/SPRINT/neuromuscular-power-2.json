@@ -1,0 +1,101 @@
+{
+  "filename": "neuromuscular-power-2.zwo",
+  "slug": "neuromuscular-power-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/neuromuscular-power-2?do=exportZwo",
+  "name": "Neuromuscular Power #2",
+  "description": "After warming up, set your pace at a lower end Tempo effort for the next 50 minutes. Within these 50 minutes, you will be performing a 10 second out of the saddle sprint every 5 minutes. Aim for a high cadence in sprints with 1 - 2 gear changes into a harder gear during the effort. \n\n\n\nCan you hit the same Peak Power for all ten sprints?\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Neuromuscular Power #1\n                    \n                    \n                    \n                        56:00\n                        53TSS\n                        IF: 0.76\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Neuromuscular Power #3\n                    \n                    \n                    \n                        59:50\n                        60TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        5 minute strength #2\n                    \n                    \n                    \n                        01:15:00\n                        67TSS\n                        IF: 0.73\n                        chat\n                        cached",
+  "duration": "01:15:00",
+  "tss": 75,
+  "intensityFactor": 0.77,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 200,
+      "powerHigh": 200,
+      "powerFormatted": "200%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 50,
+      "durationFormatted": "00:50",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 290,
+      "durationFormatted": "04:50",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 10,
+      "durationFormatted": "00:10",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,53 @@
+{
+  "filename": "sweetspot-1-j0dz.zwo",
+  "slug": "sweetspot-1-j0dz",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sweetspot-1-j0dz?do=exportZwo",
+  "name": "Sweetspot #1",
+  "description": "Sweet Spot Training (SST) is the area that typically provides the Most Bang for your buck! It targets many key physiological regions at once in a short amount of time.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Sweetspot #1\n                    \n                    \n                    \n                        50:00\n                        46TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #1\n                    \n                    \n                    \n                        50:00\n                        45TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #2\n                    \n                    \n                    \n                        55:00\n                        52TSS\n                        IF: 0.76\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #3\n                    \n                    \n                    \n                        52:10\n                        62TSS\n                        IF: 0.85\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #4\n                    \n                    \n                    \n                        01:10:00\n                        63TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #5\n                    \n                    \n                    \n                        01:00:00\n                        63TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot #6\n                    \n                    \n                    \n                        01:00:00\n                        63TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        2min Capacity\n                    \n                    \n                    \n                        31:00\n                        28TSS\n                        IF: 0.74\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        40/20s #1\n                            by coach Katie Zaferes\n                    \n                    \n                    \n                        31:00\n                        34TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min 3030's\n                            by coach Vincent Luis\n                    \n                    \n                    \n                        31:00\n                        31TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic 8's\n                    \n                    \n                    \n                        31:00\n                        27TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Pmax into Tempo\n                    \n                    \n                    \n                        30:45\n                        33TSS\n                        IF: 0.81\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #1\n                    \n                    \n                    \n                        31:00\n                        34TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Another round\n                    \n                    \n                    \n                        31:00\n                        25TSS\n                        IF: 0.71",
+  "duration": "31:00",
+  "tss": 30,
+  "intensityFactor": 0.77,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 70,
+      "powerFormatted": "50% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 86,
+      "powerHigh": 86,
+      "powerFormatted": "86%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

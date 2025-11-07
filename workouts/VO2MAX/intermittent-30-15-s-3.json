@@ -1,0 +1,93 @@
+{
+  "filename": "intermittent-30-15-s-3.zwo",
+  "slug": "intermittent-30-15-s-3",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/intermittent-30-15-s-3?do=exportZwo",
+  "name": "Intermittent 30/15's #3",
+  "description": "After warming up, the session will focus on completing a series of intermittent style intervals. This type of training is ideal for maximizing adaptations to Max Aerobic fitness. \n\n\n\nIntermittent intervals allow you to complete a more significant amount of work at your Max Aerobic intensity than continuous intervals would allow. \n\n\n\nThe main set consists of completing 12 x 30/15's.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Intermittent 30/15's #1\n                    \n                    \n                    \n                        30:00\n                        27TSS\n                        IF: 0.74\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intermittent 30/15's #2\n                    \n                    \n                    \n                        32:15\n                        32TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's #6\n                    \n                    \n                    \n                        35:00\n                        42TSS\n                        IF: 0.86\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity into Sweetspot #2\n                    \n                    \n                    \n                        35:00\n                        37TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Suprathreshold #1\n                    \n                    \n                    \n                        35:00\n                        43TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Through the Zones #1\n                    \n                    \n                    \n                        35:00\n                        36TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        V02max 3min and 2min\n                    \n                    \n                    \n                        35:00\n                        44TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Best of you\n                    \n                    \n                    \n                        35:30\n                        40TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Can't carry on\n                    \n                    \n                    \n                        35:18\n                        37TSS\n                        IF: 0.79\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Quiet\n                    \n                    \n                    \n                        35:00\n                        31TSS\n                        IF: 0.74",
+  "duration": "35:15",
+  "tss": 39,
+  "intensityFactor": 0.82,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 135,
+      "durationFormatted": "02:15",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 61,
+      "powerHigh": 50,
+      "powerFormatted": "61% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

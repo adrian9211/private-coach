@@ -1,0 +1,205 @@
+{
+  "filename": "mywhoosh-ramp-test.zwo",
+  "slug": "mywhoosh-ramp-test",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/mywhoosh-ramp-test?do=exportZwo",
+  "name": "MyWhoosh Ramp Test",
+  "description": "Welcome to the Whoosh Ramp test! Today we measure your Maximal Aerobic Power by ramping up the power every minute until exhaustion. From this effort, we use your peak 1min power to calculate your FTP. This method of testing takes less time to complete than the traditional 20min FTP test, and it also removes the component of pacing from the effort. After completing a low-intensity 5min warmup, the power will then increase each minute until you reach failure. It's not necessary to complete each step. Your FTP will be calculated from your peak 1min power produced. It is important to remain seated for this test to provide accurate results. Be prepared... the test starts comfortably, but quickly changes! NOTE: ERG mode MUST be on.",
+  "duration": "37:00",
+  "tss": 80,
+  "intensityFactor": 1.14,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 46,
+      "powerHigh": 46,
+      "powerFormatted": "46%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 52,
+      "powerHigh": 52,
+      "powerFormatted": "52%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 58,
+      "powerHigh": 58,
+      "powerFormatted": "58%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 64,
+      "powerHigh": 64,
+      "powerFormatted": "64%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 76,
+      "powerHigh": 76,
+      "powerFormatted": "76%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 82,
+      "powerHigh": 82,
+      "powerFormatted": "82%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 94,
+      "powerHigh": 94,
+      "powerFormatted": "94%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 100,
+      "powerHigh": 100,
+      "powerFormatted": "100%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 106,
+      "powerHigh": 106,
+      "powerFormatted": "106%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 112,
+      "powerHigh": 112,
+      "powerFormatted": "112%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 118,
+      "powerHigh": 118,
+      "powerFormatted": "118%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 124,
+      "powerHigh": 124,
+      "powerFormatted": "124%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 130,
+      "powerHigh": 130,
+      "powerFormatted": "130%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 136,
+      "powerHigh": 136,
+      "powerFormatted": "136%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 140,
+      "powerHigh": 140,
+      "powerFormatted": "140%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 146,
+      "powerHigh": 146,
+      "powerFormatted": "146%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 152,
+      "powerHigh": 152,
+      "powerFormatted": "152%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 158,
+      "powerHigh": 158,
+      "powerFormatted": "158%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 164,
+      "powerHigh": 164,
+      "powerFormatted": "164%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 176,
+      "powerHigh": 176,
+      "powerFormatted": "176%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 46,
+      "powerHigh": 46,
+      "powerFormatted": "46%"
+    }
+  ],
+  "isValid": true
+}

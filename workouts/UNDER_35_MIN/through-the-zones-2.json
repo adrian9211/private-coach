@@ -1,0 +1,133 @@
+{
+  "filename": "through-the-zones-2.zwo",
+  "slug": "through-the-zones-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/through-the-zones-2?do=exportZwo",
+  "name": "Through the Zones #2",
+  "description": "After warming up, complete an 18 minute 'Through the zones' interval. The 18-minute effort features a 20-second surge before moving into the next level of intensity.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Through the Zones #1\n                    \n                    \n                    \n                        55:20\n                        64TSS\n                        IF: 0.84\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Through the Zones #1\n                    \n                    \n                    \n                        35:00\n                        36TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Through the Zones #3\n                    \n                    \n                    \n                        33:40\n                        49TSS\n                        IF: 0.94\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power Intervals #1\n                    \n                    \n                    \n                        31:30\n                        48TSS\n                        IF: 0.96\n\n                        cached",
+  "duration": "31:40",
+  "tss": 46,
+  "intensityFactor": 0.94,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 81,
+      "powerHigh": 90,
+      "powerFormatted": "81% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 96,
+      "powerHigh": 103,
+      "powerFormatted": "96% FTP - 103% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 105,
+      "powerHigh": 117,
+      "powerFormatted": "105% FTP - 117% FTP"
+    },
+    {
+      "type": "ramp",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 90,
+      "powerFormatted": "81% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 96,
+      "powerHigh": 103,
+      "powerFormatted": "96% FTP - 103% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 20,
+      "durationFormatted": "00:20",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "ramp",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 105,
+      "powerHigh": 117,
+      "powerFormatted": "105% FTP - 117% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,77 @@
+{
+  "filename": "tri-endurance-2-swim.zwo",
+  "slug": "tri-endurance-2-swim",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tri-endurance-2-swim?do=exportZwo",
+  "name": "Tri Endurance #2 + Swim",
+  "description": "To achieve a successful cycling performance, you need good endurance. Endurance training is about improving your capacity to endure sustained exercise. This endurance (or ability to endure) then helps to form a solid base of fitness upon which to build more race-specific training. By implementing carefully structured intensity into your endurance training, your ability to become more fatigue resistant is enhanced.\n\n\n\nFor your swim session, complete 800 meters total, incorporating one set of 400 meters at a steady effort.",
+  "duration": "01:49:00",
+  "tss": 105,
+  "intensityFactor": 0.76,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 70,
+      "powerFormatted": "45% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 89,
+      "powerHigh": 89,
+      "powerFormatted": "89%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 900,
+      "durationFormatted": "15:00",
+      "powerLow": 70,
+      "powerHigh": 70,
+      "powerFormatted": "70%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 72,
+      "powerHigh": 72,
+      "powerFormatted": "72%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

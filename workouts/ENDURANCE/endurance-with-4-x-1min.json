@@ -1,0 +1,141 @@
+{
+  "filename": "endurance-with-4-x-1min.zwo",
+  "slug": "endurance-with-4-x-1min",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/endurance-with-4-x-1min?do=exportZwo",
+  "name": "Endurance with 4 x 1min",
+  "description": "It is also essential to give yourself an adequate amount of recovery in any training phase. Today's session could be part of your recovery week but still have some structure. \n\n\n\nAfter guided through the warmup, the remaining session is primarily performed as a free ride. However, you will be prompted to complete 4 x 1min 'hard' intervals throughout the ride. \n\n\n\nChoose a course today that doesn't include a large amount of elevation gain.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Endurance with 3 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        50:00\n                        39TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Endurance with 3 x 1min\n                    \n                    Free RideFree RideFree RideFree RideFree RideFree RideFree Ride\n                    \n                        50:00\n                        39TSS\n                        IF: 0.69\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hills #1\n                    \n                    \n                    \n                        01:01:00\n                        53TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        50sec Extensive Anaerobic #1\n                    \n                    \n                    \n                        01:01:00\n                        53TSS\n                        IF: 0.73\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low 60's\n                    \n                    \n                    \n                        01:01:00\n                        64TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Mitochondria #6\n                    \n                    \n                    \n                        01:01:00\n                        63TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                    \n                    \n                    \n                        01:01:00\n                        65TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Crank Torque\n                    \n                    \n                    \n                        01:01:00\n                        62TSS\n                        IF: 0.78\n\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Low Cadence Steps #1\n                    \n                    \n                    \n                        01:01:00\n                        61TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Progressive Climb #2\n                    \n                    \n                    \n                        01:00:50\n                        68TSS\n                        IF: 0.82\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Long Tempo Climb #1\n                    \n                    \n                    \n                        01:01:00\n                        61TSS\n                        IF: 0.78\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo with 2min Capacity\n                    \n                    \n                    \n                        01:01:00\n                        66TSS\n                        IF: 0.81\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Hills #1\n                    \n                    \n                    \n                        01:01:00\n                        53TSS\n                        IF: 0.72\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate Threshold #1\n                    \n                    \n                    \n                        01:01:00\n                        59TSS\n                        IF: 0.77\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with Threshold #1\n                    \n                    Free Ride\n                    \n                        01:01:00\n                        60TSS\n                        IF: 0.77\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Milano-Sanremo\n                    \n                    Free Ride\n                    \n                        01:00:55\n                        64TSS\n                        IF: 0.8\n                        chat\n                        cached",
+  "duration": "01:01:00",
+  "tss": 52,
+  "intensityFactor": 0.72,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 46,
+      "powerHigh": 70,
+      "powerFormatted": "46% FTP - 70% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 57,
+      "powerHigh": 57,
+      "powerFormatted": "57%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 480,
+      "durationFormatted": "08:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "cooldown",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 60,
+      "powerHigh": 50,
+      "powerFormatted": "60% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

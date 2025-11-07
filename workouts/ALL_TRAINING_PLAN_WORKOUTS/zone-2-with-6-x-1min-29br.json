@@ -1,0 +1,173 @@
+{
+  "filename": "zone-2-with-6-x-1min-29br.zwo",
+  "slug": "zone-2-with-6-x-1min-29br",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/zone-2-with-6-x-1min-29br?do=exportZwo",
+  "name": "Zone 2 with 6 x 1min",
+  "description": "This session will allow you to maintain your base fitness by touching on some short, high-intensity intervals. By completing 6 x 1min intervals with functional recovery, you will keep those fast-twitch muscle fibres in check for when the intensity begins.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Zone 2 with 6 x 1min\n                    \n                    \n                    \n                        57:00\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with 30sec Spiked Tempo #1\n                    \n                    Free Ride\n                    \n                        57:00\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Extensive Anaerobic 50sec #2\n                    \n                    \n                    \n                        56:50\n                        57TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Maintenance #1\n                    \n                    \n                    \n                        57:00\n                        57TSS\n                        IF: 0.78\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #3\n                    \n                    \n                    \n                        57:00\n                        60TSS\n                        IF: 0.8\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power into Tempo #2\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive power into Z3\n                    \n                    \n                    \n                        56:45\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tri Tempo #1\n                    \n                    \n                    \n                        57:00\n                        59TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Zone 2 with 30sec Spiked Tempo #1\n                    \n                    Free Ride\n                    \n                        57:00\n                        59TSS\n                        IF: 0.79\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Lactate shuttle #2\n                    \n                    \n                    \n                        57:00\n                        70TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Micro into Threshold\n                    \n                    \n                    \n                        57:00\n                        66TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold block #2\n                    \n                    \n                    \n                        57:00\n                        70TSS\n                        IF: 0.86\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min 30/30's\n                    \n                    \n                    \n                        57:00\n                        57TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Depleting 4's\n                    \n                    \n                    \n                        57:00\n                        64TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        VO2max Descending\n                    \n                    \n                    \n                        57:00\n                        72TSS\n                        IF: 0.88\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Train Like Tadej-4x3min VO2 Max\n                    \n                    \n                    \n                        57:00\n                        60TSS\n                        IF: 0.8\n\n                        cached",
+  "duration": "57:00",
+  "tss": 57,
+  "intensityFactor": 0.78,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 75,
+      "powerHigh": 120,
+      "powerFormatted": "75% FTP - 120% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 75,
+      "powerHigh": 120,
+      "powerFormatted": "75% FTP - 120% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 75,
+      "powerHigh": 120,
+      "powerFormatted": "75% FTP - 120% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 75,
+      "powerHigh": 120,
+      "powerFormatted": "75% FTP - 120% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 75,
+      "powerHigh": 120,
+      "powerFormatted": "75% FTP - 120% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 75,
+      "powerHigh": 120,
+      "powerFormatted": "75% FTP - 120% FTP"
+    },
+    {
+      "type": "cooldown",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 75,
+      "powerHigh": 45,
+      "powerFormatted": "75% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

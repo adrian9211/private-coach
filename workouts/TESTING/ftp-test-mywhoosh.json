@@ -1,0 +1,101 @@
+{
+  "filename": "ftp-test-mywhoosh.zwo",
+  "slug": "ftp-test-mywhoosh",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/ftp-test-mywhoosh?do=exportZwo",
+  "name": "FTP Test - MyWhoosh",
+  "description": "Welcome to the MyWhoosh 20min FTP test! \n\n\n\nRegular testing is essential to maintain accurate training zones and evaluate your training response. It requires maximal focus and effort from you to ensure you are capturing a precise measure of your current fitness. \n\n\n\nToday's workout will take you through a long warmup before completing a high-intensity 5min 'primer' effort, followed by the 20min test effort. Once you have completed the workout, you will be notified of any changes to your current FTP. \n\n\n\nNOTE: ERG mode MUST be on. It will automatically turn off for free-ride intervals.",
+  "duration": "01:15:00",
+  "tss": 46,
+  "intensityFactor": 0.61,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 1200,
+      "durationFormatted": "20:00",
+      "powerLow": 45,
+      "powerHigh": 65,
+      "powerFormatted": "45% FTP - 65% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 103,
+      "powerHigh": 103,
+      "powerFormatted": "103%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 60,
+      "powerHigh": 60,
+      "powerFormatted": "60%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1200,
+      "durationFormatted": "20:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    }
+  ],
+  "isValid": true
+}

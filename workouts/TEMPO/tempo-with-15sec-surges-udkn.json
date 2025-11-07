@@ -1,0 +1,85 @@
+{
+  "filename": "tempo-with-15sec-surges-udkn.zwo",
+  "slug": "tempo-with-15sec-surges-udkn",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/tempo-with-15sec-surges-udkn?do=exportZwo",
+  "name": "Tempo with 15sec surges",
+  "description": "Completing long tempo efforts with short, high-intensity surges is another way to increase threshold power. The body must process the lactate produced from the above threshold surges with the constant high power. \n\n\n\nA practical session without the lung burning effect of a sustained threshold effort. Complete the 15-second surges out of the seat before settling back into the Tempo effort.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Tempo with 15sec surges\n                    \n                    \n                    \n                        40:00\n                        38TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Targeting FTP\n                            by coach Zelmaré Viljoen\n                    \n                    \n                    \n                        40:00\n                        38TSS\n                        IF: 0.76\n                        chat",
+  "duration": "40:00",
+  "tss": 38,
+  "intensityFactor": 0.76,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 71,
+      "powerFormatted": "50% FTP - 71% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 285,
+      "durationFormatted": "04:45",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 285,
+      "durationFormatted": "04:45",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 285,
+      "durationFormatted": "04:45",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 150,
+      "powerHigh": 150,
+      "powerFormatted": "150%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 60,
+      "powerHigh": 50,
+      "powerFormatted": "60% FTP - 50% FTP"
+    }
+  ],
+  "isValid": true
+}

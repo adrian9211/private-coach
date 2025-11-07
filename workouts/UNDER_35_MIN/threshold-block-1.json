@@ -1,0 +1,93 @@
+{
+  "filename": "threshold-block-1.zwo",
+  "slug": "threshold-block-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/threshold-block-1?do=exportZwo",
+  "name": "Threshold Block #1",
+  "description": "After a good warmup, complete 2 x 4min Threshold efforts. However, the threshold effort ramps are ramping up or down over the 4min. \n\n\n\nRecovery time is 1min @ 65% FTP. This is the level at which lactate is cleared at its highest rate.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Threshold Block #2\n                    \n                    \n                    \n                        33:00\n                        36TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Threshold Block #3\n                    \n                    \n                    \n                        34:00\n                        39TSS\n                        IF: 0.83\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's into Threshold #1\n                    \n                    \n                    \n                        33:15\n                        33TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        30/15's into Threshold #2\n                    \n                    \n                    \n                        33:15\n                        33TSS\n                        IF: 0.78\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Capacity into Sweetspot #1\n                    \n                    \n                    \n                        33:00\n                        34TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive Power into Tempo #1\n                    \n                    \n                    \n                        33:00\n                        34TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Intensive Capacity #1\n                    \n                    \n                    \n                        33:15\n                        32TSS\n                        IF: 0.76\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Max Aerobic\n                    \n                    \n                    \n                        33:00\n                        36TSS\n                        IF: 0.82\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Power into Tempo #1\n                    \n                    \n                    \n                        33:15\n                        40TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sprints into Zone 3 #1\n                            by coach Tim Don\n                    \n                    Free Ride\n                    \n                        33:00\n                        35TSS\n                        IF: 0.8\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Steady Climbing #1\n                    \n                    \n                    \n                        33:00\n                        35TSS\n                        IF: 0.8\n\n                        cached",
+  "duration": "33:00",
+  "tss": 34,
+  "intensityFactor": 0.8,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 46,
+      "powerHigh": 75,
+      "powerFormatted": "46% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 90,
+      "powerHigh": 104,
+      "powerFormatted": "90% FTP - 104% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "ramp",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 104,
+      "powerHigh": 90,
+      "powerFormatted": "104% FTP - 90% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 55,
+      "powerHigh": 55,
+      "powerFormatted": "55%"
+    }
+  ],
+  "isValid": true
+}

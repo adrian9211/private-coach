@@ -1,0 +1,109 @@
+{
+  "filename": "anaerobic-capacity-into-sweetspot-1.zwo",
+  "slug": "anaerobic-capacity-into-sweetspot-1",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/anaerobic-capacity-into-sweetspot-1?do=exportZwo",
+  "name": "Anaerobic Capacity into Sweetspot #1",
+  "description": "We finish the session with a steady 5min Sweetspot interval in today's workout. However, with the effort preceded by a series of 1min Anaerobic Capacity efforts, it may not be as comfortable as expected!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #1\n                            by coach Lisa Hermansson\n                    \n                    \n                    \n                        30:00\n                        34TSS\n                        IF: 0.83\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #2\n                    \n                    \n                    \n                        01:00:00\n                        74TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity into Sweetspot #3\n                    \n                    \n                    \n                        01:04:00\n                        75TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity with Sweetspot #1\n                    \n                    \n                    \n                        01:02:00\n                        90TSS\n                        IF: 0.94\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Anaerobic Capacity with Sweetspot #2\n                    \n                    \n                    \n                        01:02:00\n                        92TSS\n                        IF: 0.95\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Darling it hurts\n                    \n                    \n                    \n                        23:21\n                        25TSS\n                        IF: 0.81",
+  "duration": "23:30",
+  "tss": 28,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 45,
+      "powerHigh": 75,
+      "powerFormatted": "45% FTP - 75% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 95,
+      "powerHigh": 95,
+      "powerFormatted": "95%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 109,
+      "powerHigh": 109,
+      "powerFormatted": "109%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 81,
+      "powerHigh": 81,
+      "powerFormatted": "81%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 60,
+      "powerHigh": 45,
+      "powerFormatted": "60% FTP - 45% FTP"
+    }
+  ],
+  "isValid": true
+}

@@ -1,0 +1,141 @@
+{
+  "filename": "sweet-spot-6.zwo",
+  "slug": "sweet-spot-6",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/sweet-spot-6?do=exportZwo",
+  "name": "Sweet Spot 6",
+  "description": "Sweet spot work is a great way to stress your body without accumulating large amounts of fatigue. This type of work is ideal for maintaining the gains in fitness you have made. \n\n\n\nIt's medium intensity, but the efforts are short, with good recovery.",
+  "duration": "55:00",
+  "tss": 58,
+  "intensityFactor": 0.8,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 65,
+      "powerHigh": 65,
+      "powerFormatted": "65%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 85,
+      "powerHigh": 85,
+      "powerFormatted": "85%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 102,
+      "powerHigh": 102,
+      "powerFormatted": "102%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 88,
+      "powerHigh": 95,
+      "powerFormatted": "88% FTP - 95% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 95,
+      "powerHigh": 88,
+      "powerFormatted": "95% FTP - 88% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 88,
+      "powerHigh": 95,
+      "powerFormatted": "88% FTP - 95% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "ramp",
+      "duration": 360,
+      "durationFormatted": "06:00",
+      "powerLow": 95,
+      "powerHigh": 88,
+      "powerFormatted": "95% FTP - 88% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

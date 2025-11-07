@@ -1,0 +1,45 @@
+{
+  "filename": "40min-tempo-w-15sec-surge-wo.zwo",
+  "slug": "40min-tempo-w-15sec-surge-wo",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/40min-tempo-w-15sec-surge-wo?do=exportZwo",
+  "name": "40min Tempo w/15sec surge wo",
+  "description": "Steady endurance work trains your body to utilise oxygen to metabolise fat as its fuel source. By incorporating sprint efforts into a steady-state interval, you will recruit additional muscle fibres and extend their ability to work aerobically. This is a long day in the breakaway today!\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        40min Tempo w/15sec surge\n                    \n                    \n                    \n                        55:00\n                        71TSS\n                        IF: 0.88\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race simulation #2\n                    \n                    \n                    \n                        55:00\n                        65TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Phosphate 20\n                    \n                    \n                    \n                        55:00\n                        57TSS\n                        IF: 0.79\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #1\n                    \n                    \n                    \n                        55:00\n                        59TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sub Threshold #3\n                    \n                    \n                    \n                        55:00\n                        58TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweetspot 6 minute\n                    \n                    \n                    \n                        55:00\n                        58TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Sweet Spot 6\n                    \n                    \n                    \n                        55:00\n                        58TSS\n                        IF: 0.8\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        20min Tempo w/15sec Accelerations\n                    \n                    \n                    \n                        55:00\n                        68TSS\n                        IF: 0.87\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Tempo-Surges #6\n                    \n                    \n                    \n                        55:00\n                        72TSS\n                        IF: 0.89\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Explosive power into Z4\n                    \n                    \n                    \n                        55:00\n                        65TSS\n                        IF: 0.84\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Stepped down VO2max\n                            by coach Si Bradeley\n                    \n                    \n                    \n                        54:55\n                        69TSS\n                        IF: 0.87",
+  "duration": "55:00",
+  "tss": 71,
+  "intensityFactor": 0.88,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 45,
+      "powerHigh": 65,
+      "powerFormatted": "45% FTP - 65% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 285,
+      "durationFormatted": "04:45",
+      "powerLow": 88,
+      "powerHigh": 88,
+      "powerFormatted": "88%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 15,
+      "durationFormatted": "00:15",
+      "powerLow": 170,
+      "powerHigh": 170,
+      "powerFormatted": "170%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}

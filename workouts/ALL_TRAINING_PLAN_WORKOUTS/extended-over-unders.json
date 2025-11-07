@@ -1,0 +1,165 @@
+{
+  "filename": "extended-over-unders.zwo",
+  "slug": "extended-over-unders",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/extended-over-unders?do=exportZwo",
+  "name": "Extended Over Unders",
+  "description": "Minhas",
+  "duration": "01:05:00",
+  "tss": 92,
+  "intensityFactor": 0.92,
+  "steps": [
+    {
+      "type": "warmup",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 49,
+      "powerHigh": 92,
+      "powerFormatted": "49% FTP - 92% FTP"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 51,
+      "powerHigh": 51,
+      "powerFormatted": "51%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 30,
+      "durationFormatted": "00:30",
+      "powerLow": 125,
+      "powerHigh": 125,
+      "powerFormatted": "125%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 49,
+      "powerHigh": 49,
+      "powerFormatted": "49%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 51,
+      "powerHigh": 51,
+      "powerFormatted": "51%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 111,
+      "powerHigh": 111,
+      "powerFormatted": "111%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 122,
+      "powerHigh": 122,
+      "powerFormatted": "122%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 122,
+      "powerHigh": 122,
+      "powerFormatted": "122%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 600,
+      "durationFormatted": "10:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 111,
+      "powerHigh": 111,
+      "powerFormatted": "111%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 122,
+      "powerHigh": 122,
+      "powerFormatted": "122%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 97,
+      "powerHigh": 97,
+      "powerFormatted": "97%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 120,
+      "durationFormatted": "02:00",
+      "powerLow": 122,
+      "powerHigh": 122,
+      "powerFormatted": "122%"
+    },
+    {
+      "type": "cooldown",
+      "duration": 420,
+      "durationFormatted": "07:00",
+      "powerLow": 63,
+      "powerHigh": 49,
+      "powerFormatted": "63% FTP - 49% FTP"
+    }
+  ],
+  "isValid": true
+}

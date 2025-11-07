@@ -1,0 +1,93 @@
+{
+  "filename": "4min-ftp-2.zwo",
+  "slug": "4min-ftp-2",
+  "downloadUrl": "https://mywhooshinfo.com/workouts/workout/4min-ftp-2?do=exportZwo",
+  "name": "4min FTP #2",
+  "description": "Improving your FTP allows you to ride faster and more efficiently. However, not all FTP work needs to focus on long intervals of over 20 minutes. \n\n\n\nBy targeting shorter FTP efforts of 7 x 4min @ Threshold with 90sec recovery, athletes can focus and remain engaged in their training. The shorter intervals also allow you to analyse changes to your heart rate, cadence and power from each effort. The brief recovery period is enough to allow you to accumulate a good volume of quality work at threshold power. Yet, the fatigue will gradually build throughout the set intervals. \n\n\n\nComplete 25 minutes of zone 2 after your threshold work to build endurance.\n    \n\n\n    Similar workouts\n\n        \n            \n                \n                    \n                        4min FTP #1\n                    \n                    \n                    \n                        30:00\n                        35TSS\n                        IF: 0.85\n\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min FTP #1\n                    \n                    Free Ride\n                    \n                        01:17:00\n                        90TSS\n                        IF: 0.84\n                        chat\n                        cached\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min FTP #3\n                    \n                    Free Ride\n                    \n                        01:23:30\n                        102TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        4min FTP #4\n                    \n                    Free Ride\n                    \n                        01:29:00\n                        110TSS\n                        IF: 0.86\n                        chat\n\n                    \n                \n            \n        \n        \n            \n                \n                    \n                        Race Pace #6\n                    \n                    \n                    \n                        01:22:45\n                        114TSS\n                        IF: 0.91",
+  "duration": "01:22:30",
+  "tss": 98,
+  "intensityFactor": 0.85,
+  "steps": [
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 75,
+      "powerHigh": 75,
+      "powerFormatted": "75%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 90,
+      "powerHigh": 90,
+      "powerFormatted": "90%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 60,
+      "durationFormatted": "01:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 180,
+      "durationFormatted": "03:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 240,
+      "durationFormatted": "04:00",
+      "powerLow": 98,
+      "powerHigh": 98,
+      "powerFormatted": "98%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 90,
+      "durationFormatted": "01:30",
+      "powerLow": 56,
+      "powerHigh": 56,
+      "powerFormatted": "56%"
+    },
+    {
+      "type": "steadystate",
+      "duration": 1500,
+      "durationFormatted": "25:00",
+      "powerLow": null,
+      "powerHigh": null,
+      "powerFormatted": null
+    },
+    {
+      "type": "steadystate",
+      "duration": 300,
+      "durationFormatted": "05:00",
+      "powerLow": 50,
+      "powerHigh": 50,
+      "powerFormatted": "50%"
+    }
+  ],
+  "isValid": true
+}
