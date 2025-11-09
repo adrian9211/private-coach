@@ -17,7 +17,9 @@
     "supabase:functions:serve": "supabase functions serve",
     "supabase:functions:deploy": "supabase functions deploy",
     "workouts:download": "node scripts/download-workouts.js",
-    "workouts:parse": "node scripts/parse-zwo.js"
+    "workouts:parse": "node scripts/parse-zwo.js",
+    "workouts:extract": "node scripts/extract-workout-from-html.js",
+    "workouts:import": "node scripts/import-workouts-to-db.js"
   },
   "keywords": [
     "cycling",

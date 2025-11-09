@@ -311,6 +311,39 @@ ${Object.entries(powerZoneDistribution)
   .join('\n')}
 ` : ''}
 
+**AVAILABLE WORKOUT LIBRARY:**
+${availableWorkouts.length > 0 ? `
+You have access to a comprehensive workout library with ${availableWorkouts.length} structured workouts organized by category:
+${Object.entries(
+  availableWorkouts.reduce((acc: Record<string, any[]>, w: any) => {
+    if (!acc[w.category]) acc[w.category] = []
+    acc[w.category].push(w)
+    return acc
+  }, {})
+).map(([category, workouts]) => 
+  `- ${category}: ${workouts.length} workouts`
+).join('\n')}
+
+Sample workouts (you can reference these by name when making recommendations):
+${availableWorkouts.slice(0, 20).map((w: any) => 
+  `  • "${w.name}" (${w.category}) - ${w.duration || 'N/A'} | TSS: ${w.tss || 'N/A'} | IF: ${w.intensity_factor || 'N/A'} | Zones: ${w.power_zones?.join(', ') || 'N/A'}`
+).join('\n')}
+${availableWorkouts.length > 20 ? `  ... and ${availableWorkouts.length - 20} more workouts available` : ''}
+
+**IMPORTANT**: When making workout recommendations, you MUST reference specific workouts by their exact name from the library above. You can search for workouts by:
+- Category (e.g., VO2MAX, THRESHOLD, TEMPO, ENDURANCE, ANAEROBIC)
+- Duration (duration_seconds)
+- TSS (training stress score)
+- Power zones (power_zones array)
+- Intensity Factor (IF)
+
+When suggesting workouts, provide:
+1. The exact workout name
+2. The category it belongs to
+3. Why this workout fits the athlete's current needs
+4. How it aligns with their training goals and available time
+` : 'No workout library available - provide general training recommendations without specific workout names.'}
+
 **ANALYSIS REQUIREMENTS:**
 1. **Training Load Assessment**: Analyze current fitness, fatigue, and form. Is the athlete undertrained, optimally trained, or overtrained?
 2. **Power Zone Analysis**: Evaluate zone distribution. Is training polarized, pyramidal, threshold-focused, or mixed?
@@ -321,6 +354,7 @@ ${Object.entries(powerZoneDistribution)
    - Recovery needs
    - Periodization strategy
    - Next training focus areas
+   ${availableWorkouts.length > 0 ? '**- SPECIFIC WORKOUT SUGGESTIONS**: Reference exact workout names from the library above that match the athlete\'s needs, goals, and available time. Explain why each suggested workout is appropriate.' : ''}
 6. **FTP/kg Analysis**: ${ftpPerKg ? `Analyze ${ftpPerKg} W/kg performance level and provide context (amateur, competitive, elite, etc.)` : 'N/A - FTP or weight not set'}
 7. **VO2 Max Context**: ${vo2Max ? `Analyze ${vo2Max} ml/kg/min and its relationship to training capacity` : 'N/A - VO2 Max not set'}
 8. **Subjective Feedback Trends (MANDATORY)**: Explicitly analyze trends in RPE and Feeling (all-time vs last 30 days). If RPE is rising and Feeling is declining, flag fatigue/overreaching. If the user has provided notes, quote and incorporate them into long-term recommendations.
@@ -341,9 +375,11 @@ Provide comprehensive insights in the following structure:
 
 ## Recommendations
 [Specific, actionable recommendations organized by category]
+${availableWorkouts.length > 0 ? '\n**Include specific workout suggestions from the library above, referencing workouts by their exact names.**' : ''}
 
 ## Periodization Strategy
 [How to structure training going forward]
+${availableWorkouts.length > 0 ? '\n**Reference specific workouts from the library that fit into the periodization plan.**' : ''}
 
 **IMPORTANT:**
 - Be specific and data-driven

@@ -254,6 +254,16 @@ serve(async (req) => {
     // Calculate activity classification BEFORE building the prompt
     const activityClassification = calculateActivityClassification(activity, ftp)
 
+    // Query available workouts from database for recommendations
+    const { data: workouts, error: workoutsError } = await supabaseClient
+      .from('workouts')
+      .select('id, name, category, duration, duration_seconds, tss, intensity_factor, power_zones, description')
+      .order('category')
+      .order('name')
+
+    const availableWorkouts = workouts || []
+    console.log(`Found ${availableWorkouts.length} workouts available for recommendations`)
+
     // Get user's activity history for context and trend analysis
     const { data: recentActivities, error: historyError } = await supabaseClient
       .from('activities')
@@ -724,7 +734,26 @@ ${activityClassification ? `
 ${trainingGoals ? `- Direct connection to achieving: "${trainingGoals}"` : ''}
 ${ftpPerKg && vo2Max ? `- Specific FTP/kg and VO2 max development recommendations based on current levels` : ''}
 ${activityClassification ? `- Training periodization: How does this ${activityClassification.name} session fit into weekly/monthly plan?` : ''}
-- Reference cycling training science: Seiler's polarized model, periodization principles, training zones research]
+- Reference cycling training science: Seiler's polarized model, periodization principles, training zones research
+${availableWorkouts.length > 0 ? `
+- **SPECIFIC WORKOUT SUGGESTIONS**: You have access to a workout library with ${availableWorkouts.length} structured workouts. When recommending next training sessions, reference specific workouts by their exact name from the library below. Consider:
+  - Workout duration vs available time
+  - TSS (Training Stress Score) appropriate for recovery/fatigue level
+  - Power zones that complement this activity's classification
+  - Category alignment (VO2MAX, THRESHOLD, TEMPO, ENDURANCE, ANAEROBIC, etc.)
+  
+  **Available Workout Library (sample - reference by exact name):**
+  ${availableWorkouts.slice(0, 30).map((w: any) => 
+    `  • "${w.name}" (${w.category}) - ${w.duration || 'N/A'} | TSS: ${w.tss || 'N/A'} | IF: ${w.intensity_factor || 'N/A'} | Zones: ${w.power_zones?.join(', ') || 'N/A'}`
+  ).join('\n')}
+  ${availableWorkouts.length > 30 ? `  ... and ${availableWorkouts.length - 30} more workouts available` : ''}
+  
+  **When suggesting workouts, provide:**
+  1. The exact workout name from the library
+  2. Why this workout fits the athlete's current needs
+  3. How it complements the activity just completed
+  4. How it aligns with training goals and available time
+` : ''}]
 
 **CRITICAL REQUIREMENTS FOR YOUR RESPONSE:**
 1. **MUST be COMPREHENSIVE** - Your analysis should be 1000+ words minimum. Short, generic responses are unacceptable.
