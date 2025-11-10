@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { UserMenu } from '@/components/auth/user-menu'
 import { DashboardTabs } from '@/components/dashboard/dashboard-tabs'
+import { WeekPlanGenerator } from '@/components/workouts/week-plan-generator'
 import { Database } from '@/lib/supabase' // Corrected import path
 
 export default async function DashboardPage() {
@@ -15,6 +16,13 @@ export default async function DashboardPage() {
   if (!session) {
     redirect('/auth/signin')
   }
+
+  // Fetch user data for weekly hours
+  const { data: user } = await supabase
+    .from('users')
+    .select('weekly_training_hours')
+    .eq('id', session.user.id)
+    .maybeSingle()
 
   // Fetch summary data (snake_case) - handle case where view doesn't exist or has no data
   const { data: summaryData, error: summaryError } = await supabase
@@ -89,6 +97,14 @@ export default async function DashboardPage() {
           recentActivities={(recentActivities || []) as any}
           userId={session.user.id}
         />
+
+        {/* Week Plan Generator */}
+        <div className="mt-8">
+          <WeekPlanGenerator 
+            userId={session.user.id}
+            defaultWeeklyHours={user?.weekly_training_hours || null}
+          />
+        </div>
 
         {/* Quick Actions */}
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-5 gap-6">

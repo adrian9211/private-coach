@@ -35,6 +35,77 @@ function getExpectedRPE(avgPower: number, reportedRPE: number): number {
   return 9
 }
 
+// Extract workout recommendations from AI analysis text
+function extractWorkoutRecommendations(analysisText: string, availableWorkouts: any[]): Array<{ name: string; reasoning?: string }> {
+  const recommendations: Array<{ name: string; reasoning?: string }> = []
+  
+  // Look for workout names in quotes or after specific patterns
+  // Patterns: "workout name", 'workout name', **workout name**, or after "I recommend", "try", etc.
+  const workoutNames = availableWorkouts.map(w => w.name)
+  
+  // Find section about next session recommendations
+  const nextSessionMatch = analysisText.match(/##\s*Next\s+Session\s+Recommendations[^\#]*/i)
+  if (!nextSessionMatch) {
+    // Try alternative section titles
+    const altMatch = analysisText.match(/##\s*(?:Next\s+Training|Recommended\s+Workouts?|Future\s+Recommendations)[^\#]*/i)
+    if (altMatch) {
+      return extractFromSection(altMatch[0], workoutNames)
+    }
+    return recommendations
+  }
+  
+  return extractFromSection(nextSessionMatch[0], workoutNames)
+}
+
+function extractFromSection(sectionText: string, workoutNames: string[]): Array<{ name: string; reasoning?: string }> {
+  const recommendations: Array<{ name: string; reasoning?: string }> = []
+  
+  // Try to find workout names in various formats
+  for (const workoutName of workoutNames) {
+    // Look for exact match in quotes, bold, or after recommendation keywords
+    const patterns = [
+      new RegExp(`['"]([^'"]*${escapeRegex(workoutName)}[^'"]*)['"]`, 'i'),
+      new RegExp(`\\*\\*([^*]*${escapeRegex(workoutName)}[^*]*)\\*\\*`, 'i'),
+      new RegExp(`(?:recommend|suggest|try|use|do)\\s+['"]?([^'"]*${escapeRegex(workoutName)}[^'"]*)['"]?`, 'i'),
+    ]
+    
+    for (const pattern of patterns) {
+      const match = sectionText.match(pattern)
+      if (match) {
+        // Check if this is actually the workout name (not just containing it)
+        const matchedText = match[1] || match[0]
+        if (matchedText.includes(workoutName) && matchedText.length < workoutName.length + 20) {
+          // Extract context around the match for reasoning
+          const startIndex = Math.max(0, sectionText.indexOf(matchedText) - 100)
+          const endIndex = Math.min(sectionText.length, sectionText.indexOf(matchedText) + matchedText.length + 200)
+          const context = sectionText.substring(startIndex, endIndex)
+          
+          if (!recommendations.find(r => r.name === workoutName)) {
+            recommendations.push({
+              name: workoutName,
+              reasoning: context.trim(),
+            })
+          }
+          break
+        }
+      }
+    }
+  }
+  
+  // Sort by order of appearance in text
+  recommendations.sort((a, b) => {
+    const indexA = sectionText.indexOf(a.name)
+    const indexB = sectionText.indexOf(b.name)
+    return indexA - indexB
+  })
+  
+  return recommendations.slice(0, 3) // Return top 3 recommendations
+}
+
+function escapeRegex(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
 // Calculate activity classification from power zone distribution
 function calculateActivityClassification(
   activity: any,
@@ -770,6 +841,19 @@ ${availableWorkouts.length > 0 ? `
 - Use specific numbers and comparisons
 - Be thorough - this athlete needs comprehensive coaching feedback
 
+**MANDATORY SECTION - Next Session Recommendations:**
+You MUST include a section titled "## Next Session Recommendations 🎯" at the end of your analysis. In this section:
+1. Recommend 1-3 specific workouts from the library above by their EXACT name
+2. For each recommended workout, provide:
+   - The exact workout name (must match exactly from the library)
+   - Why this workout fits the athlete's current needs
+   - When to do it (e.g., "tomorrow", "in 2 days", "next week")
+   - Expected training stress and recovery needs
+3. Format workout names clearly, for example:
+   - "I recommend the **'12min 30/30's #2'** workout from the VO2MAX category..."
+   - "For your next threshold session, try **'Threshold 20'**..."
+4. If you recommend multiple workouts, prioritize them (e.g., "Primary recommendation:", "Alternative option:")
+
 **DO NOT:** Give short responses, skip sections, use generic language, or provide vague recommendations.
 
 **REMEMBER:** Be CRITICAL but CONSTRUCTIVE. The athlete has limited time - help them optimize every minute. Provide a COMPREHENSIVE analysis that demonstrates deep understanding of their training data and history.`
@@ -823,6 +907,62 @@ ${availableWorkouts.length > 0 ? `
       console.log('Response completed normally (STOP)')
     } else {
       console.log(`Response finish reason: ${finishReason}`)
+    }
+
+    // Extract workout recommendations from analysis and schedule them
+    const suggestedWorkouts = extractWorkoutRecommendations(analysis, availableWorkouts)
+    console.log(`Extracted ${suggestedWorkouts.length} workout recommendations from analysis`)
+    
+    // Schedule the primary recommended workout for tomorrow (or next available day)
+    if (suggestedWorkouts.length > 0) {
+      const primaryWorkout = suggestedWorkouts[0]
+      const activityDate = activity.start_time ? new Date(activity.start_time) : new Date()
+      const tomorrow = new Date(activityDate)
+      tomorrow.setDate(tomorrow.getDate() + 1)
+      tomorrow.setHours(0, 0, 0, 0) // Reset to start of day
+      
+      // Find the workout in the database
+      const { data: workoutMatch } = await supabaseClient
+        .from('workouts')
+        .select('id, name, category')
+        .eq('name', primaryWorkout.name)
+        .maybeSingle()
+      
+      if (workoutMatch) {
+        // Check if already scheduled for this date
+        const { data: existing } = await supabaseClient
+          .from('scheduled_workouts')
+          .select('id')
+          .eq('user_id', activity.user_id)
+          .eq('scheduled_date', tomorrow.toISOString().split('T')[0])
+          .eq('workout_name', primaryWorkout.name)
+          .maybeSingle()
+        
+        if (!existing) {
+          // Schedule the workout
+          const { error: scheduleError } = await supabaseClient
+            .from('scheduled_workouts')
+            .insert({
+              user_id: activity.user_id,
+              workout_id: workoutMatch.id,
+              workout_name: primaryWorkout.name,
+              workout_category: workoutMatch.category,
+              scheduled_date: tomorrow.toISOString().split('T')[0],
+              source: 'ai_recommendation',
+              notes: primaryWorkout.reasoning || `Recommended after activity analysis on ${activityDate.toISOString().split('T')[0]}`,
+            })
+          
+          if (scheduleError) {
+            console.error('Error scheduling workout:', scheduleError)
+          } else {
+            console.log(`Successfully scheduled workout "${primaryWorkout.name}" for ${tomorrow.toISOString().split('T')[0]}`)
+          }
+        } else {
+          console.log(`Workout "${primaryWorkout.name}" already scheduled for ${tomorrow.toISOString().split('T')[0]}`)
+        }
+      } else {
+        console.warn(`Could not find workout "${primaryWorkout.name}" in database to schedule`)
+      }
     }
 
     // Parse the analysis and structure it
@@ -884,7 +1024,8 @@ ${availableWorkouts.length > 0 ? `
     return new Response(
       JSON.stringify({ 
         success: true, 
-        analysis: analysisData 
+        analysis: analysisData,
+        scheduledWorkouts: suggestedWorkouts.length > 0 ? suggestedWorkouts.map(w => w.name) : []
       }),
       { 
         status: 200, 

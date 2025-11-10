@@ -12,11 +12,10 @@ interface WorkoutCardProps {
 }
 
 export function WorkoutCard({ workout, category, slug, compact = false }: WorkoutCardProps) {
-  const workoutUrl = slug ? `/workouts/${category}/${slug}` : '#'
-
-  return (
-    <Link href={workoutUrl}>
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 cursor-pointer h-full flex flex-col">
+  const workoutUrl = slug && category ? `/workouts/${category}/${slug}` : '#'
+  const isLink = workoutUrl !== '#'
+  const CardContent = (
+    <div className={`bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 h-full flex flex-col ${isLink ? 'cursor-pointer' : ''}`}>
         {/* Title */}
         <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
           {workout.name}
@@ -38,7 +37,16 @@ export function WorkoutCard({ workout, category, slug, compact = false }: Workou
           )}
         </div>
       </div>
-    </Link>
   )
+
+  if (workoutUrl !== '#') {
+    return (
+      <Link href={workoutUrl}>
+        {CardContent}
+      </Link>
+    )
+  }
+
+  return CardContent
 }
 
