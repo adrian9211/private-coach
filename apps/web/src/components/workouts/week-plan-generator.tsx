@@ -45,7 +45,15 @@ export function WeekPlanGenerator({ userId, defaultWeeklyHours }: WeekPlanGenera
         .order('scheduled_date')
         .order('scheduled_time')
 
-      if (error) throw error
+      if (error) {
+        // Handle table not found (404) gracefully
+        if (error.code === '42P01' || error.message?.includes('does not exist') || error.message?.includes('404')) {
+          console.warn('scheduled_workouts table does not exist yet. Please apply migration 20250101000018_create_scheduled_workouts.sql')
+          setScheduledWorkouts({})
+          return
+        }
+        throw error
+      }
 
       // Group by date
       const grouped: Record<string, ScheduledWorkout[]> = {}
@@ -62,6 +70,8 @@ export function WeekPlanGenerator({ userId, defaultWeeklyHours }: WeekPlanGenera
       setScheduledWorkouts(grouped)
     } catch (err) {
       console.error('Error fetching scheduled workouts:', err)
+      // Set empty state on error to prevent UI issues
+      setScheduledWorkouts({})
     }
   }
 
@@ -134,15 +144,24 @@ export function WeekPlanGenerator({ userId, defaultWeeklyHours }: WeekPlanGenera
 
       if (invokeError) {
         console.error('Function invoke error:', invokeError)
+        // Check if function doesn't exist
+        if (invokeError.message?.includes('404') || invokeError.message?.includes('not found')) {
+          throw new Error('Week plan generation function is not deployed. Please contact support or check Supabase functions.')
+        }
         throw new Error(invokeError.message || 'Failed to invoke week plan function')
       }
 
       if (!data) {
-        throw new Error('No response from week plan function')
+        throw new Error('No response from week plan function. The function may not be deployed.')
       }
 
       if (data.error) {
-        throw new Error(data.error || 'Failed to generate week plan')
+        // Provide more helpful error messages
+        const errorMsg = data.error || 'Failed to generate week plan'
+        if (errorMsg.includes('scheduled_workouts') || errorMsg.includes('does not exist')) {
+          throw new Error('Database table missing. Please apply the scheduled_workouts migration to your database.')
+        }
+        throw new Error(errorMsg)
       }
 
       setScheduledCount(data.scheduledWorkouts || 0)

@@ -295,76 +295,160 @@ async function parseAndScheduleWorkouts(
   const scheduled: Array<{ date: string; workoutName: string }> = []
   const workoutNames = availableWorkouts.map(w => w.name)
 
-  // Extract day-by-day schedule - look for "Day X - DayName" pattern
-  const dayMatches = weekPlan.matchAll(/###\s*Day\s+(\d+)\s*-\s*([^\n(]+)[^\#]*?Workout[:"\s]*["']?([^"'\n]+)["']?/gi)
+  console.log(`parseAndScheduleWorkouts: Starting with ${availableWorkouts.length} available workouts`)
+  console.log(`parseAndScheduleWorkouts: Week plan length: ${weekPlan.length} chars`)
+  
+  if (availableWorkouts.length === 0) {
+    console.warn('parseAndScheduleWorkouts: No workouts available in database!')
+    return scheduled
+  }
+
+  // Try multiple regex patterns to match different AI output formats
+  const patterns = [
+    // Pattern 1: ### Day X - DayName ... Workout: "Name"
+    /###\s*Day\s+(\d+)\s*-\s*([^\n(]+)[^\#]*?Workout[:"\s]*["']?([^"'\n]+)["']?/gi,
+    // Pattern 2: Day X: ... Workout: Name
+    /Day\s+(\d+)[:\-]\s*([^\n]+?)(?:Workout|workout)[:"\s]*["']?([^"'\n]+)["']?/gi,
+    // Pattern 3: **Day X** ... Workout: Name
+    /\*\*Day\s+(\d+)\*\*[^\#]*?Workout[:"\s]*["']?([^"'\n]+)["']?/gi,
+    // Pattern 4: Just look for workout names mentioned after day numbers
+    /(?:Day|day)\s+(\d+)[^\n]*?["']([^"']{5,50})["']/gi,
+  ]
+
+  let dayMatches: RegExpMatchArray[] = []
+  for (const pattern of patterns) {
+    const matches = Array.from(weekPlan.matchAll(pattern))
+    if (matches.length > 0) {
+      console.log(`parseAndScheduleWorkouts: Found ${matches.length} matches with pattern ${pattern}`)
+      dayMatches = matches
+      break
+    }
+  }
+
+  if (dayMatches.length === 0) {
+    console.warn('parseAndScheduleWorkouts: No day matches found in week plan')
+    console.log('parseAndScheduleWorkouts: First 500 chars of plan:', weekPlan.substring(0, 500))
+    return scheduled
+  }
+
+  console.log(`parseAndScheduleWorkouts: Processing ${dayMatches.length} day matches`)
+  console.log(`parseAndScheduleWorkouts: Available workout names (first 10): ${workoutNames.slice(0, 10).join(', ')}`)
   
   for (const match of dayMatches) {
     const dayNumber = parseInt(match[1])
-    const dayName = match[2]?.trim()
-    const workoutNameMatch = match[3]?.trim()
+    const workoutNameMatch = match[3] || match[2] // Try both capture groups
     
-    if (!workoutNameMatch || workoutNameMatch.toLowerCase().includes('rest')) continue
+    console.log(`parseAndScheduleWorkouts: Processing match ${dayNumber}, raw match:`, {
+      match1: match[1],
+      match2: match[2],
+      match3: match[3],
+      fullMatch: match[0]?.substring(0, 100)
+    })
+    
+    if (!workoutNameMatch) {
+      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - No workout name found in match`)
+      continue
+    }
+    
+    const trimmedName = workoutNameMatch.trim()
+    
+    if (!trimmedName || trimmedName.toLowerCase().includes('rest') || trimmedName.length < 3) {
+      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - invalid workout name: "${trimmedName}"`)
+      continue
+    }
+
+    console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - looking for workout: "${trimmedName}"`)
 
     // Find exact workout match
     const workoutMatch = workoutNames.find(name => {
       const normalizedName = name.toLowerCase().trim()
-      const normalizedMatch = workoutNameMatch.toLowerCase().trim()
+      const normalizedMatch = trimmedName.toLowerCase().trim()
       return normalizedMatch.includes(normalizedName) || normalizedName.includes(normalizedMatch)
     })
 
-    if (workoutMatch) {
-      const scheduledDate = new Date(weekStart)
-      scheduledDate.setDate(weekStart.getDate() + (dayNumber - 1))
-      
-      // Check if this day is available
-      const dayOfWeek = scheduledDate.getDay()
-      if (!availableDays.includes(dayOfWeek)) {
-        console.log(`Skipping Day ${dayNumber} - not in available days`)
-        continue
-      }
-      
-      // Find workout in database
-      const { data: workout } = await supabaseClient
-        .from('workouts')
-        .select('id, name, category')
-        .eq('name', workoutMatch)
-        .maybeSingle()
+    if (!workoutMatch) {
+      console.warn(`parseAndScheduleWorkouts: Day ${dayNumber} - No match found for "${trimmedName}"`)
+      console.log(`parseAndScheduleWorkouts: Available workouts: ${workoutNames.slice(0, 5).join(', ')}...`)
+      continue
+    }
 
-      if (workout) {
-        // Check if already scheduled
-        const { data: existing } = await supabaseClient
-          .from('scheduled_workouts')
-          .select('id')
-          .eq('user_id', userId)
-          .eq('scheduled_date', scheduledDate.toISOString().split('T')[0])
-          .eq('workout_name', workoutMatch)
-          .maybeSingle()
+    console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Matched "${trimmedName}" to "${workoutMatch}"`)
 
-        if (!existing) {
-          const { error } = await supabaseClient
-            .from('scheduled_workouts')
-            .insert({
-              user_id: userId,
-              workout_id: workout.id,
-              workout_name: workout.name,
-              workout_category: workout.category,
-              scheduled_date: scheduledDate.toISOString().split('T')[0],
-              source: 'week_plan',
-              notes: `Part of weekly training plan generated on ${new Date().toISOString().split('T')[0]}`,
-            })
+    const scheduledDate = new Date(weekStart)
+    scheduledDate.setDate(weekStart.getDate() + (dayNumber - 1))
+    
+    // Check if this day is available
+    const dayOfWeek = scheduledDate.getDay()
+    if (!availableDays.includes(dayOfWeek)) {
+      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - day ${dayOfWeek} not in available days ${availableDays.join(',')}`)
+      continue
+    }
+    
+    // Find workout in database
+    const { data: workout, error: workoutError } = await supabaseClient
+      .from('workouts')
+      .select('id, name, category')
+      .eq('name', workoutMatch)
+      .maybeSingle()
 
-          if (!error) {
-            scheduled.push({
-              date: scheduledDate.toISOString().split('T')[0],
-              workoutName: workoutMatch,
-            })
-            console.log(`Scheduled "${workoutMatch}" for ${scheduledDate.toISOString().split('T')[0]}`)
-          }
-        }
-      }
+    if (workoutError) {
+      console.error(`parseAndScheduleWorkouts: Error fetching workout "${workoutMatch}":`, workoutError)
+      continue
+    }
+
+    if (!workout) {
+      console.warn(`parseAndScheduleWorkouts: Workout "${workoutMatch}" not found in database`)
+      continue
+    }
+
+    // Check if already scheduled
+    const { data: existing, error: checkError } = await supabaseClient
+      .from('scheduled_workouts')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('scheduled_date', scheduledDate.toISOString().split('T')[0])
+      .eq('workout_name', workoutMatch)
+      .maybeSingle()
+
+    if (checkError) {
+      console.error(`parseAndScheduleWorkouts: Error checking existing scheduled workout:`, checkError)
+    }
+
+    if (existing) {
+      console.log(`parseAndScheduleWorkouts: Workout "${workoutMatch}" already scheduled for ${scheduledDate.toISOString().split('T')[0]}`)
+      continue
+    }
+
+    const { error: insertError } = await supabaseClient
+      .from('scheduled_workouts')
+      .insert({
+        user_id: userId,
+        workout_id: workout.id,
+        workout_name: workout.name,
+        workout_category: workout.category,
+        scheduled_date: scheduledDate.toISOString().split('T')[0],
+        source: 'week_plan',
+        notes: `Part of weekly training plan generated on ${new Date().toISOString().split('T')[0]}`,
+      })
+
+    if (insertError) {
+      console.error(`parseAndScheduleWorkouts: Error inserting scheduled workout:`, insertError)
+      console.error(`parseAndScheduleWorkouts: Insert data:`, {
+        user_id: userId,
+        workout_id: workout.id,
+        workout_name: workout.name,
+        scheduled_date: scheduledDate.toISOString().split('T')[0],
+      })
+    } else {
+      scheduled.push({
+        date: scheduledDate.toISOString().split('T')[0],
+        workoutName: workoutMatch,
+      })
+      console.log(`parseAndScheduleWorkouts: ✓ Scheduled "${workoutMatch}" for ${scheduledDate.toISOString().split('T')[0]}`)
     }
   }
 
+  console.log(`parseAndScheduleWorkouts: Completed - scheduled ${scheduled.length} workouts`)
   return scheduled
 }
 
