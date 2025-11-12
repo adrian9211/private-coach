@@ -76,11 +76,19 @@ serve(async (req) => {
     console.log(`Fetching activities since ${oldest}...`)
     
     // Fetch activities from Intervals.icu
+    // API keys use Basic auth, OAuth tokens use Bearer
+    const isApiKey = !connection.access_token.startsWith('ey') // OAuth tokens start with 'ey'
+    const authHeader = isApiKey 
+      ? `Basic ${btoa(`API_KEY:${connection.access_token}`)}`
+      : `Bearer ${connection.access_token}`
+    
+    console.log(`Using ${isApiKey ? 'API Key' : 'OAuth'} authentication`)
+    
     const activitiesResponse = await fetch(
       `https://intervals.icu/api/v1/athlete/${connection.athlete_id}/activities?oldest=${oldest}`,
       {
         headers: {
-          'Authorization': `Bearer ${connection.access_token}`,
+          'Authorization': authHeader,
         },
       }
     )
