@@ -19,7 +19,8 @@
     "workouts:download": "node scripts/download-workouts.js",
     "workouts:parse": "node scripts/parse-zwo.js",
     "workouts:extract": "node scripts/extract-workout-from-html.js",
-    "workouts:import": "node scripts/import-workouts-to-db.js"
+    "workouts:import": "node scripts/import-workouts-to-db.js",
+    "test:intervals": "tsx scripts/test-intervals-connection.ts"
   },
   "keywords": [
     "cycling",
@@ -57,6 +58,8 @@
     "dotenv": "^17.2.3"
   },
   "devDependencies": {
-    "supabase": "^2.54.11"
+    "supabase": "^2.54.11",
+    "tsx": "^4.7.0",
+    "@types/node": "^20.11.0"
   }
 }
