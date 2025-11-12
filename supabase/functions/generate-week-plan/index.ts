@@ -110,17 +110,25 @@ ${recentActivities.slice(0, 5).map((a: any) =>
 ).join('\n')}
 ` : 'No recent activities'}
 
-**AVAILABLE WORKOUT LIBRARY:**
-You have access to ${availableWorkouts.length} structured workouts organized by category:
+**AVAILABLE WORKOUT LIBRARY (${availableWorkouts.length} total workouts):**
+
+**CRITICAL: You MUST select workouts from this list by their EXACT name. Do NOT invent or modify workout names.**
+
 ${Object.entries(
   availableWorkouts.reduce((acc: Record<string, any[]>, w: any) => {
     if (!acc[w.category]) acc[w.category] = []
     acc[w.category].push(w)
     return acc
   }, {})
-).map(([category, workouts]) => 
-  `- ${category}: ${workouts.length} workouts`
-).join('\n')}
+).map(([category, workouts]) => {
+  // Show first 15 workouts from each category with full details
+  const sampleWorkouts = workouts.slice(0, 15)
+  const remaining = workouts.length - sampleWorkouts.length
+  return `**${category}** (${workouts.length} workouts):
+${sampleWorkouts.map((w: any) => 
+  `  - "${w.name}"${w.duration ? ` (${Math.round(w.duration)}min)` : ''}${w.tss ? ` [TSS: ${Math.round(w.tss)}]` : ''}`
+).join('\n')}${remaining > 0 ? `\n  ... and ${remaining} more ${category} workouts` : ''}`
+}).join('\n\n')}
 
 **TASK:**
 Create a comprehensive 7-day training plan starting ${weekStart.toLocaleDateString()}. The plan should:
@@ -140,7 +148,10 @@ Create a comprehensive 7-day training plan starting ${weekStart.toLocaleDateStri
    - Include rest days on non-available days
 
 3. **Select Specific Workouts:**
-   - Reference workouts by their EXACT name from the library
+   - You MUST use the EXACT workout names from the library above
+   - DO NOT create, invent, or modify workout names
+   - DO NOT use names like "Tempo Bursts 2x15" or "Endurance Builder 75" - these are NOT in the library
+   - Use names EXACTLY as shown: "Tempo 2x15", "Sweetspot 3x8", "10min Ramps", etc.
    - Choose workouts that align with training goals
    - Vary workout types throughout the week
    - Match workout duration to available time
@@ -186,7 +197,9 @@ ${isAvailable ? `**Workout:** "[EXACT WORKOUT NAME FROM LIBRARY]"
 - Category: [Category]
 - Duration: [Duration]
 - TSS: [TSS if available]
-- Rationale: [Why this workout fits]` : '**REST DAY** (Not available for training)'}`
+- Rationale: [Why this workout fits]
+
+**CRITICAL:** The workout name MUST be in quotes on the same line as **Workout:**. Do NOT put any other text on that line.` : '**REST DAY** (Not available for training)'}`
 }).join('\n\n')}
 
 **Weekly Progression:**
@@ -200,11 +213,24 @@ ${isAvailable ? `**Workout:** "[EXACT WORKOUT NAME FROM LIBRARY]"
 - Align with training goals
 
 **CRITICAL REQUIREMENTS:**
-1. **MUST reference workouts by EXACT name** - The workout names must match exactly from the library
-2. **MUST provide a workout for each day** (or explicitly mark rest days)
-3. **MUST explain the training structure** - Why this plan works
-4. **MUST respect time constraints** - Don't exceed available training hours
-5. **MUST follow training science** - Use proven periodization principles`
+1. **MUST use EXACT workout names from the library** - Copy names EXACTLY as shown, including quotes and special characters
+2. **DO NOT invent workout names** - Only use names from the list above
+3. **MUST provide a workout for each available day** (or explicitly mark rest days)
+4. **MUST explain the training structure** - Why this plan works
+5. **MUST respect time constraints** - Don't exceed available training hours
+6. **MUST follow training science** - Use proven periodization principles
+
+**EXAMPLE OF CORRECT FORMAT:**
+### Day 1 - Friday (11/14/2025)
+**Workout:** "Tempo 2x15"
+- Category: TEMPO
+- Duration: 60 minutes
+- TSS: 58
+- Rationale: [Your explanation]
+
+**WRONG - DO NOT DO THIS:**
+**Workout:** "Tempo Bursts 2x15" ❌ (This name is not in the library!)
+**Workout:** "Endurance Builder 75" ❌ (This name is not in the library!)`
 
     // Call Gemini API
     const geminiModel = 'gemini-2.5-pro'
@@ -303,30 +329,89 @@ async function parseAndScheduleWorkouts(
     return scheduled
   }
 
-  // Try multiple regex patterns to match different AI output formats
-  const patterns = [
-    // Pattern 1: ### Day X - DayName ... Workout: "Name"
-    /###\s*Day\s+(\d+)\s*-\s*([^\n(]+)[^\#]*?Workout[:"\s]*["']?([^"'\n]+)["']?/gi,
-    // Pattern 2: Day X: ... Workout: Name
-    /Day\s+(\d+)[:\-]\s*([^\n]+?)(?:Workout|workout)[:"\s]*["']?([^"'\n]+)["']?/gi,
-    // Pattern 3: **Day X** ... Workout: Name
-    /\*\*Day\s+(\d+)\*\*[^\#]*?Workout[:"\s]*["']?([^"'\n]+)["']?/gi,
-    // Pattern 4: Just look for workout names mentioned after day numbers
-    /(?:Day|day)\s+(\d+)[^\n]*?["']([^"']{5,50})["']/gi,
-  ]
-
-  let dayMatches: RegExpMatchArray[] = []
-  for (const pattern of patterns) {
-    const matches = Array.from(weekPlan.matchAll(pattern))
-    if (matches.length > 0) {
-      console.log(`parseAndScheduleWorkouts: Found ${matches.length} matches with pattern ${pattern}`)
-      dayMatches = matches
-      break
+  // Extract workout names from the week plan
+  // The AI generates format: **Workout:** "Name" on a single line, followed by - Category on next line
+  const daySections = weekPlan.split(/###\s*Day\s+(\d+)/gi)
+  const dayWorkoutMap: Record<number, string> = {}
+  
+  // Process each day section to find workout names
+  for (let i = 1; i < daySections.length; i += 2) {
+    if (i + 1 >= daySections.length) break
+    const dayNumber = parseInt(daySections[i])
+    const dayContent = daySections[i + 1]
+    
+    console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - First 200 chars of content:`, dayContent.substring(0, 200))
+    
+    // Debug: Find **Workout:** and show character codes
+    const workoutIdx = dayContent.indexOf('**Workout:**')
+    if (workoutIdx !== -1) {
+      const snippet = dayContent.substring(workoutIdx, workoutIdx + 50)
+      const charCodes = Array.from(snippet.substring(0, 30)).map((c, i) => `${c}(${c.charCodeAt(0)})`).join(' ')
+      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Character codes:`, charCodes)
+    }
+    
+    // Look for the workout line - it should be: **Workout:** "Name" followed by newline
+    // Try multiple quote formats explicitly
+    let workoutName: string | null = null
+    
+    // Pattern 1: Straight double quotes "Name" (charCode 34)
+    let match = dayContent.match(/\*\*Workout\*\*:\s*"([^"\n]+)"/i)
+    if (match) {
+      workoutName = match[1].trim()
+      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with straight quotes: "${workoutName}"`)
+    }
+    
+    // Pattern 2: Curly/smart double quotes "Name"
+    if (!workoutName) {
+      match = dayContent.match(/\*\*Workout\*\*:\s*"([^"\n]+)"/i)
+      if (match) {
+        workoutName = match[1].trim()
+        console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with curly quotes: "${workoutName}"`)
+      }
+    }
+    
+    // Pattern 3: Single quotes 'Name'
+    if (!workoutName) {
+      match = dayContent.match(/\*\*Workout\*\*:\s*'([^'\n]+)'/i)
+      if (match) {
+        workoutName = match[1].trim()
+        console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with single quotes: "${workoutName}"`)
+      }
+    }
+    
+    // Pattern 4: Curly single quotes 'Name'
+    if (!workoutName) {
+      match = dayContent.match(/\*\*Workout\*\*:\s*'([^'\n]+)'/i)
+      if (match) {
+        workoutName = match[1].trim()
+        console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with curly single quotes: "${workoutName}"`)
+      }
+    }
+    
+    if (workoutName && workoutName.length > 2 && !workoutName.toLowerCase().includes('rest')) {
+      dayWorkoutMap[dayNumber] = workoutName
+      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Added to map: "${workoutName}"`)
+      continue
+    } else if (workoutName) {
+      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Skipped: "${workoutName}" (length=${workoutName.length}, isRest=${workoutName.toLowerCase().includes('rest')})`)
+    } else {
+      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - No workout name found`)
+    }
+    
+    // If no workout found yet, skip this day
+    if (!dayWorkoutMap[dayNumber]) {
+      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - No valid workout found, skipping`)
     }
   }
+  
+  // Convert to array format for processing
+  const dayMatches: Array<{dayNumber: number, workoutName: string}> = Object.entries(dayWorkoutMap).map(([day, name]) => ({
+    dayNumber: parseInt(day),
+    workoutName: name
+  }))
 
   if (dayMatches.length === 0) {
-    console.warn('parseAndScheduleWorkouts: No day matches found in week plan')
+    console.warn('parseAndScheduleWorkouts: No workout names found in week plan')
     console.log('parseAndScheduleWorkouts: First 500 chars of plan:', weekPlan.substring(0, 500))
     return scheduled
   }
@@ -334,26 +419,22 @@ async function parseAndScheduleWorkouts(
   console.log(`parseAndScheduleWorkouts: Processing ${dayMatches.length} day matches`)
   console.log(`parseAndScheduleWorkouts: Available workout names (first 10): ${workoutNames.slice(0, 10).join(', ')}`)
   
-  for (const match of dayMatches) {
-    const dayNumber = parseInt(match[1])
-    const workoutNameMatch = match[3] || match[2] // Try both capture groups
+  for (const { dayNumber, workoutName: workoutNameMatch } of dayMatches) {
+    // Clean up the workout name - remove markdown formatting, extra spaces, etc.
+    let trimmedName = workoutNameMatch
+      .trim()
+      .replace(/^\*\*|\*\*$/g, '') // Remove leading/trailing **
+      .replace(/^["']|["']$/g, '') // Remove leading/trailing quotes
+      .trim()
     
-    console.log(`parseAndScheduleWorkouts: Processing match ${dayNumber}, raw match:`, {
-      match1: match[1],
-      match2: match[2],
-      match3: match[3],
-      fullMatch: match[0]?.substring(0, 100)
-    })
-    
-    if (!workoutNameMatch) {
-      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - No workout name found in match`)
+    // Skip if it's just markdown formatting or too short
+    if (!trimmedName || trimmedName === '**' || trimmedName === '*' || trimmedName.length < 3) {
+      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - invalid workout name: "${trimmedName}"`)
       continue
     }
     
-    const trimmedName = workoutNameMatch.trim()
-    
-    if (!trimmedName || trimmedName.toLowerCase().includes('rest') || trimmedName.length < 3) {
-      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - invalid workout name: "${trimmedName}"`)
+    if (trimmedName.toLowerCase().includes('rest')) {
+      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - rest day: "${trimmedName}"`)
       continue
     }
 
