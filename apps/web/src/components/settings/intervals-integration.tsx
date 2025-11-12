@@ -158,6 +158,14 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
     setSuccess(null)
 
     try {
+      // Debug: Check which auth method we're using
+      console.log('🔍 Sync Debug:', {
+        hasApiKey,
+        apiKey: apiKey ? 'present' : 'missing',
+        athleteId,
+        connectionExists: !!connection
+      })
+
       // For API key method, sync directly from browser
       if (hasApiKey && apiKey && athleteId) {
         console.log(`🔄 ${fullSync ? 'Full' : 'Incremental'} sync using API key...`)
@@ -188,6 +196,12 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
 
         const activities = await response.json()
         console.log(`📥 Fetched ${activities.length} activities`)
+        
+        // Log first activity to see ALL available fields
+        if (activities.length > 0) {
+          console.log('🔍 Sample Activity Data (first activity):', activities[0])
+          console.log('📋 Available fields:', Object.keys(activities[0]).sort())
+        }
 
         if (activities.length === 0) {
           setSuccess('No new activities to sync')
@@ -221,6 +235,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
             const activityData = {
               user_id: userId,
               file_name: `intervals-${activity.id}.fit`,
+              file_size: 0, // Placeholder for imported activities (no actual file)
               upload_date: new Date().toISOString(),
               start_time: activity.start_date_local,
               status: 'processed',
@@ -230,35 +245,241 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                 type: activity.type,
                 name: activity.name,
                 description: activity.description || null,
-                trainer: activity.trainer || false,
               },
-              // Summary fields (convert units as needed)
+              
+              // Basic metrics
               total_distance: activity.distance ? activity.distance / 1000 : null, // m to km
               total_timer_time: activity.moving_time || null,
+              elapsed_time: activity.elapsed_time || null,
+              trainer: activity.trainer || false,
+              device_name: activity.device_name || null,
+              strava_id: activity.strava_id || null,
+              
+              // Power metrics
               avg_power: activity.icu_average_watts || activity.average_watts || null,
+              max_power: activity.max_watts || null,
+              normalized_power: activity.icu_weighted_avg_watts || null,
+              intensity_factor: activity.icu_intensity || null,
+              variability_index: activity.icu_variability_index || null,
+              tss: activity.icu_training_load || null,
+              work_kj: activity.icu_joules ? activity.icu_joules / 1000 : null,
+              work_above_ftp_kj: activity.icu_joules_above_ftp ? activity.icu_joules_above_ftp / 1000 : null,
+              max_wbal_depletion: activity.icu_max_wbal_depletion || null,
+              
+              // Power model
+              cp: activity.icu_pm_cp || null,
+              w_prime: activity.icu_pm_w_prime || null,
+              p_max: activity.icu_pm_p_max || null,
+              estimated_ftp: activity.icu_pm_ftp || null,
+              ftp_at_time: activity.icu_ftp || null,
+              
+              // Rolling power
+              rolling_cp: activity.icu_rolling_cp || null,
+              rolling_w_prime: activity.icu_rolling_w_prime || null,
+              rolling_p_max: activity.icu_rolling_p_max || null,
+              rolling_ftp: activity.icu_rolling_ftp || null,
+              rolling_ftp_delta: activity.icu_rolling_ftp_delta || null,
+              
+              // Heart rate
               avg_heart_rate: activity.average_heartrate || null,
+              max_heart_rate: activity.max_heartrate || null,
+              lthr: activity.lthr || null,
+              resting_hr: activity.icu_resting_hr || null,
+              hr_recovery: activity.icu_hrr || null,
+              
+              // Zone times
+              power_zone_times: activity.icu_zone_times ? activity.icu_zone_times.map((z: any) => z.secs) : null,
+              hr_zone_times: activity.icu_hr_zone_times || null,
+              power_zones: activity.icu_power_zones || null,
+              hr_zones: activity.icu_hr_zones || null,
+              
+              // Speed/pace
               avg_speed: activity.average_speed || null,
-              // Full activity data
+              max_speed: activity.max_speed || null,
+              pace: activity.pace || null,
+              gap: activity.gap || null,
+              avg_stride: activity.average_stride || null,
+              
+              // Elevation
+              elevation_gain: activity.total_elevation_gain || null,
+              elevation_loss: activity.total_elevation_loss || null,
+              avg_altitude: activity.average_altitude || null,
+              min_altitude: activity.min_altitude || null,
+              max_altitude: activity.max_altitude || null,
+              
+              // Training load
+              hr_load: activity.hr_load || null,
+              power_load: activity.power_load || null,
+              trimp: activity.trimp || null,
+              strain_score: activity.strain_score || null,
+              
+              // RPE & Feel
+              rpe: activity.icu_rpe || null,
+              feel: activity.feel || null,
+              session_rpe: activity.session_rpe || null,
+              
+              // Fitness tracking
+              ctl: activity.icu_ctl || null,
+              atl: activity.icu_atl || null,
+              weight_kg: activity.icu_weight || null,
+              
+              // Intervals
+              interval_summary: activity.interval_summary || null,
+              lap_count: activity.icu_lap_count || null,
+              warmup_time: activity.icu_warmup_time || null,
+              cooldown_time: activity.icu_cooldown_time || null,
+              
+              // Training quality
+              polarization_index: activity.polarization_index || null,
+              decoupling: activity.decoupling || null,
+              power_hr_ratio: activity.icu_power_hr || null,
+              power_hr_z2: activity.icu_power_hr_z2 || null,
+              efficiency_factor: activity.icu_efficiency_factor || null,
+              
+              // Energy
+              calories: activity.calories || null,
+              carbs_used: activity.carbs_used || null,
+              carbs_ingested: activity.carbs_ingested || null,
+              
+              // Cadence
+              avg_cadence: activity.average_cadence || null,
+              
+              // Weather
+              weather_temp: activity.average_weather_temp || null,
+              feels_like: activity.average_feels_like || null,
+              wind_speed: activity.average_wind_speed || null,
+              wind_direction: activity.prevailing_wind_deg || null,
+              headwind_percent: activity.headwind_percent || null,
+              tailwind_percent: activity.tailwind_percent || null,
+              // Full activity data - store EVERYTHING from Intervals.icu
               data: {
                 summary: {
+                  // Basic info
                   totalDistance: activity.distance ? activity.distance / 1000 : null,
                   duration: activity.moving_time || null,
-                  avgPower: activity.icu_average_watts || activity.average_watts || null,
-                  avgHeartRate: activity.average_heartrate || null,
-                  avgSpeed: activity.average_speed || null,
-                  maxPower: activity.max_watts || null,
-                  maxHeartRate: activity.max_heartrate || null,
-                  normalizedPower: activity.icu_weighted_avg_watts || null,
-                  intensityFactor: activity.icu_intensity || null,
-                  tss: activity.icu_training_load || null,
-                  calories: activity.calories || null,
-                  elevation: activity.total_elevation_gain || null,
-                  averageCadence: activity.average_cadence || null,
-                  maxSpeed: activity.max_speed || null,
+                  elapsedTime: activity.elapsed_time || null,
                   type: activity.type,
                   trainer: activity.trainer || false,
                   name: activity.name,
                   description: activity.description || null,
+                  source: activity.source || null,
+                  deviceName: activity.device_name || null,
+                  
+                  // Power metrics
+                  avgPower: activity.icu_average_watts || activity.average_watts || null,
+                  maxPower: activity.max_watts || null,
+                  normalizedPower: activity.icu_weighted_avg_watts || null,
+                  intensityFactor: activity.icu_intensity || null,
+                  variabilityIndex: activity.icu_variability_index || null,
+                  tss: activity.icu_training_load || null,
+                  work: activity.icu_joules || null,
+                  workAboveFTP: activity.icu_joules_above_ftp || null,
+                  maxWbalDepletion: activity.icu_max_wbal_depletion || null,
+                  
+                  // Power Model (Critical Power, W', FTP estimates)
+                  powerModel: {
+                    criticalPower: activity.icu_pm_cp || null,
+                    wPrime: activity.icu_pm_w_prime || null,
+                    pMax: activity.icu_pm_p_max || null,
+                    estimatedFTP: activity.icu_pm_ftp || null,
+                    ftpSecs: activity.icu_pm_ftp_secs || null,
+                    ftpWatts: activity.icu_pm_ftp_watts || null,
+                  },
+                  
+                  // Rolling Power Curve
+                  rollingPower: {
+                    cp: activity.icu_rolling_cp || null,
+                    wPrime: activity.icu_rolling_w_prime || null,
+                    pMax: activity.icu_rolling_p_max || null,
+                    ftp: activity.icu_rolling_ftp || null,
+                    ftpDelta: activity.icu_rolling_ftp_delta || null,
+                  },
+                  
+                  // Heart rate metrics
+                  avgHeartRate: activity.average_heartrate || null,
+                  maxHeartRate: activity.max_heartrate || null,
+                  lthr: activity.lthr || null,
+                  restingHR: activity.icu_resting_hr || null,
+                  hrRecovery: activity.icu_hrr || null,
+                  
+                  // Zone Times (CRITICAL for training analysis!)
+                  powerZoneTimes: activity.icu_zone_times || null,
+                  hrZoneTimes: activity.icu_hr_zone_times || null,
+                  powerZones: activity.icu_power_zones || null,
+                  hrZones: activity.icu_hr_zones || null,
+                  
+                  // Speed/pace metrics
+                  avgSpeed: activity.average_speed || null,
+                  maxSpeed: activity.max_speed || null,
+                  pace: activity.pace || null,
+                  gap: activity.gap || null,
+                  avgStride: activity.average_stride || null,
+                  
+                  // Other metrics
+                  averageCadence: activity.average_cadence || null,
+                  calories: activity.calories || null,
+                  elevation: activity.total_elevation_gain || null,
+                  elevationLoss: activity.total_elevation_loss || null,
+                  avgAltitude: activity.average_altitude || null,
+                  minAltitude: activity.min_altitude || null,
+                  maxAltitude: activity.max_altitude || null,
+                  
+                  // Training Load
+                  hrLoad: activity.hr_load || null,
+                  powerLoad: activity.power_load || null,
+                  trimp: activity.trimp || null,
+                  strainScore: activity.strain_score || null,
+                  
+                  // RPE & Feel
+                  rpe: activity.icu_rpe || null,
+                  feel: activity.feel || null,
+                  sessionRPE: activity.session_rpe || null,
+                  
+                  // Fitness data
+                  ctl: activity.icu_ctl || null,
+                  atl: activity.icu_atl || null,
+                  weight: activity.icu_weight || null,
+                  ftp: activity.icu_ftp || null,
+                  
+                  // Interval Summary
+                  intervalSummary: activity.interval_summary || null,
+                  lapCount: activity.icu_lap_count || null,
+                  
+                  // Training Quality
+                  polarizationIndex: activity.polarization_index || null,
+                  decoupling: activity.decoupling || null,
+                  powerHR: activity.icu_power_hr || null,
+                  powerHRZ2: activity.icu_power_hr_z2 || null,
+                  efficiencyFactor: activity.icu_efficiency_factor || null,
+                  
+                  // Warm up / Cool down
+                  warmupTime: activity.icu_warmup_time || null,
+                  cooldownTime: activity.icu_cooldown_time || null,
+                  
+                  // Carbs & Energy
+                  carbsUsed: activity.carbs_used || null,
+                  carbsIngested: activity.carbs_ingested || null,
+                  
+                  // Weather (when available)
+                  weather: {
+                    avgTemp: activity.average_weather_temp || null,
+                    avgFeelsLike: activity.average_feels_like || null,
+                    avgWindSpeed: activity.average_wind_speed || null,
+                    avgWindGust: activity.average_wind_gust || null,
+                    windDirection: activity.prevailing_wind_deg || null,
+                    headwindPercent: activity.headwind_percent || null,
+                    tailwindPercent: activity.tailwind_percent || null,
+                    clouds: activity.average_clouds || null,
+                  },
+                  
+                  // Strava integration
+                  stravaId: activity.strava_id || null,
+                  
+                  // Available stream types
+                  streamTypes: activity.stream_types || null,
+                  
+                  // Keep the ENTIRE activity object for reference
+                  _raw: activity,
                 },
               },
             }
@@ -290,6 +511,37 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
           await loadConnection()
         }
 
+        // Now fetch wellness data (sleep, HRV, etc.)
+        console.log('\n🏥 Fetching wellness data (sleep, HRV, etc.)...')
+        try {
+          const wellnessResponse = await fetch(
+            `https://intervals.icu/api/v1/athlete/${athleteId}/wellness?oldest=${oldest}`,
+            {
+              headers: {
+                'Authorization': `Basic ${btoa(`API_KEY:${apiKey}`)}`,
+              },
+            }
+          )
+
+          if (wellnessResponse.ok) {
+            const wellnessData = await wellnessResponse.json()
+            console.log(`📊 Fetched ${wellnessData.length} wellness records`)
+            
+            // Log first wellness record to see ALL available fields
+            if (wellnessData.length > 0) {
+              console.log('🔍 Sample Wellness Data:', wellnessData[0])
+              console.log('📋 Wellness fields:', Object.keys(wellnessData[0]).sort())
+            }
+
+            // TODO: Store wellness data in database
+            // For now just log it so you can see what's available
+          } else {
+            console.warn('⚠️ Could not fetch wellness data:', wellnessResponse.status)
+          }
+        } catch (wellnessError) {
+          console.error('❌ Error fetching wellness data:', wellnessError)
+        }
+
         // Show results
         const resultParts = []
         if (imported > 0) resultParts.push(`${imported} imported`)
@@ -300,11 +552,18 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
         console.log(`✨ Import complete: ${resultParts.join(', ')}`)
       } else {
         // OAuth method - use edge function
+        console.warn('⚠️ Using OAuth/edge function path. API key not detected.')
+        console.warn('Environment check:', {
+          NEXT_PUBLIC_INTERVALS_API_KEY: !!process.env.NEXT_PUBLIC_INTERVALS_API_KEY,
+          NEXT_PUBLIC_INTERVALS_ATHLETE_ID: !!process.env.NEXT_PUBLIC_INTERVALS_ATHLETE_ID,
+        })
+        
         const { data: { session } } = await supabase.auth.getSession()
         if (!session) {
           throw new Error('Not authenticated')
         }
 
+        console.log('📡 Calling intervals-sync-activities edge function...')
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/intervals-sync-activities`,
           {
@@ -318,6 +577,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
 
         if (!response.ok) {
           const errorData = await response.json()
+          console.error('❌ Edge function error:', errorData)
           throw new Error(errorData.error || 'Sync failed')
         }
 
