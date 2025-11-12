@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import { generateWorkoutProfile, getZoneColor, type WorkoutData } from '@/lib/workout-parser'
+import type { WorkoutData } from '@/lib/workout-parser'
 
 interface WorkoutProfileChartProps {
   workout: WorkoutData
@@ -9,65 +9,141 @@ interface WorkoutProfileChartProps {
   compact?: boolean
 }
 
-export function WorkoutProfileChart({ workout, height = 60, compact = false }: WorkoutProfileChartProps) {
-  const profileData = useMemo(() => {
-    // Use lower resolution for compact view, higher for detailed
-    const resolution = compact ? 2 : 1
-    return generateWorkoutProfile(workout, resolution)
-  }, [workout, compact])
+// Get color based on power zone (as decimal: 0.45 = 45% FTP)
+function getPowerZoneColor(power: number): string {
+  if (power >= 1.50) return '#EF4444' // Z7 Neuromuscular - Red
+  if (power >= 1.20) return '#F97316' // Z6 Anaerobic - Orange  
+  if (power >= 1.05) return '#F59E0B' // Z5 VO2Max - Amber
+  if (power >= 0.90) return '#EAB308' // Z4 Threshold - Yellow
+  if (power >= 0.76) return '#84CC16' // Z3 Tempo - Lime
+  if (power >= 0.56) return '#3B82F6' // Z2 Endurance - Blue
+  return '#9CA3AF' // Z1 Active Recovery - Gray
+}
 
-  if (profileData.length === 0) {
+export function WorkoutProfileChart({ workout, height = 60, compact = false }: WorkoutProfileChartProps) {
+  // Create bars directly from segments
+  const bars = useMemo(() => {
+    const result: Array<{ duration: number; power: number; color: string; type: string }> = []
+    
+    for (const segment of workout.segments) {
+      if (segment.type === 'warmup' || segment.type === 'ramp') {
+        // For warmup/ramp, create gradual steps
+        const powerLow = segment.powerLow || 0.5
+        const powerHigh = segment.powerHigh || 0.5
+        const steps = Math.ceil(segment.duration / 10) // 10-second slices
+        const stepDuration = segment.duration / steps
+        
+        for (let i = 0; i < steps; i++) {
+          const progress = i / (steps - 1 || 1)
+          const power = powerLow + (powerHigh - powerLow) * progress
+          result.push({
+            duration: stepDuration,
+            power,
+            color: getPowerZoneColor(power),
+            type: segment.type
+          })
+        }
+      } else if (segment.type === 'steadystate') {
+        const power = segment.power || segment.powerLow || 0.5
+        // Break into 5-second slices for visual continuity
+        const slices = Math.ceil(segment.duration / 5)
+        const sliceDuration = segment.duration / slices
+        
+        for (let i = 0; i < slices; i++) {
+          result.push({
+            duration: sliceDuration,
+            power,
+            color: getPowerZoneColor(power),
+            type: segment.type
+          })
+        }
+      } else if (segment.type === 'interval' && segment.repeat) {
+        // For intervals, alternate on/off
+        for (let r = 0; r < segment.repeat; r++) {
+          // On interval
+          if (segment.onDuration && segment.onPower) {
+            const onSlices = Math.ceil(segment.onDuration / 5)
+            const onSliceDuration = segment.onDuration / onSlices
+            for (let i = 0; i < onSlices; i++) {
+              result.push({
+                duration: onSliceDuration,
+                power: segment.onPower,
+                color: getPowerZoneColor(segment.onPower),
+                type: 'interval-on'
+              })
+            }
+          }
+          
+          // Off interval
+          if (segment.offDuration && segment.offPower !== undefined) {
+            const offSlices = Math.ceil(segment.offDuration / 5)
+            const offSliceDuration = segment.offDuration / offSlices
+            for (let i = 0; i < offSlices; i++) {
+              result.push({
+                duration: offSliceDuration,
+                power: segment.offPower,
+                color: getPowerZoneColor(segment.offPower),
+                type: 'interval-off'
+              })
+            }
+          }
+        }
+      } else if (segment.type === 'cooldown') {
+        const powerLow = segment.powerLow || 0.5
+        const powerHigh = segment.powerHigh || powerLow
+        const steps = Math.ceil(segment.duration / 10)
+        const stepDuration = segment.duration / steps
+        
+        for (let i = 0; i < steps; i++) {
+          const progress = i / (steps - 1 || 1)
+          const power = powerLow + (powerHigh - powerLow) * progress
+          result.push({
+            duration: stepDuration,
+            power,
+            color: getPowerZoneColor(power),
+            type: segment.type
+          })
+        }
+      }
+    }
+    
+    return result
+  }, [workout.segments])
+
+  if (bars.length === 0) {
     return (
       <div 
-        className="w-full bg-gray-200 rounded"
+        className="w-full bg-gray-800 rounded"
         style={{ height: `${height}px` }}
       />
     )
   }
 
-  const maxTime = Math.max(...profileData.map(d => d.time))
-  const maxPower = Math.max(...profileData.map(d => d.power))
-
-  // Group consecutive points with same zone for better rendering
-  const groupedData: Array<{ start: number; end: number; zone: number; color: string; power: number }> = []
-  let currentGroup = { start: profileData[0].time, end: profileData[0].time, zone: profileData[0].zone, color: profileData[0].color, power: profileData[0].power }
-
-  for (let i = 1; i < profileData.length; i++) {
-    const point = profileData[i]
-    if (point.zone === currentGroup.zone && Math.abs(point.power - currentGroup.power) < 0.05) {
-      currentGroup.end = point.time
-    } else {
-      groupedData.push(currentGroup)
-      currentGroup = { start: point.time, end: point.time, zone: point.zone, color: point.color, power: point.power }
-    }
-  }
-  groupedData.push(currentGroup)
+  const totalDuration = bars.reduce((sum, bar) => sum + bar.duration, 0)
 
   return (
-    <div className="w-full relative" style={{ height: `${height}px` }}>
-      <svg width="100%" height={height} className="rounded overflow-hidden">
-        {groupedData.map((group, idx) => {
-          const x1 = (group.start / maxTime) * 100
-          const x2 = (group.end / maxTime) * 100
-          const width = x2 - x1
-          
-          // Height based on power (normalized to chart height)
-          const powerHeight = (group.power / maxPower) * height
-          const y = height - powerHeight
-
-          return (
-            <rect
-              key={idx}
-              x={`${x1}%`}
-              y={y}
-              width={`${width}%`}
-              height={powerHeight}
-              fill={group.color}
-              className="transition-all"
-            />
-          )
-        })}
-      </svg>
+    <div 
+      className="w-full bg-gray-800 rounded overflow-hidden flex items-end gap-[1px]" 
+      style={{ height: `${height}px` }}
+    >
+      {bars.map((bar, idx) => {
+        const widthPercent = (bar.duration / totalDuration) * 100
+        const heightPercent = Math.max(bar.power * 100, 10) // Min 10% height for visibility
+        
+        return (
+          <div
+            key={idx}
+            className="flex-shrink-0 transition-all"
+            style={{
+              width: `${widthPercent}%`,
+              height: `${Math.min(heightPercent, 100)}%`,
+              backgroundColor: bar.color,
+              minWidth: compact ? '1px' : '2px'
+            }}
+            title={`${Math.round(bar.power * 100)}% FTP`}
+          />
+        )
+      })}
     </div>
   )
 }

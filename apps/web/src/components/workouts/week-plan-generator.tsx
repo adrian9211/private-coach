@@ -39,7 +39,7 @@ export function WeekPlanGenerator({ userId, defaultWeeklyHours }: WeekPlanGenera
         .from('scheduled_workouts')
         .select('*')
         .eq('user_id', userId)
-        .eq('source', 'week_plan')
+        // Show ALL scheduled workouts, not just week_plan
         .gte('scheduled_date', start.toISOString().split('T')[0])
         .lte('scheduled_date', end.toISOString().split('T')[0])
         .order('scheduled_date')
@@ -75,25 +75,22 @@ export function WeekPlanGenerator({ userId, defaultWeeklyHours }: WeekPlanGenera
     }
   }
 
-  // Load existing scheduled workouts on mount
+  // Load existing scheduled workouts on mount - default to current week starting Monday
   useEffect(() => {
     const loadExistingWorkouts = async () => {
       try {
-        // Get the most recent week plan start date
-        const { data: recentPlan } = await supabase
-          .from('scheduled_workouts')
-          .select('scheduled_date')
-          .eq('user_id', userId)
-          .eq('source', 'week_plan')
-          .order('scheduled_date', { ascending: false })
-          .limit(1)
-          .maybeSingle()
+        // Calculate the start of the current week (Monday)
+        const today = new Date()
+        const dayOfWeek = today.getDay() // 0 = Sunday, 1 = Monday, ...
+        const daysFromMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1 // If Sunday, go back 6 days
+        const monday = new Date(today)
+        monday.setDate(today.getDate() - daysFromMonday)
+        monday.setHours(0, 0, 0, 0)
+        const currentWeekStart = monday.toISOString().split('T')[0]
 
-        if (recentPlan) {
-          const startDate = recentPlan.scheduled_date
-          setWeekStartDate(startDate)
-          await fetchScheduledWorkouts(startDate)
-        }
+        // Set to current week by default
+        setWeekStartDate(currentWeekStart)
+        await fetchScheduledWorkouts(currentWeekStart)
       } catch (err) {
         console.error('Error loading existing workouts:', err)
       }
@@ -239,9 +236,68 @@ export function WeekPlanGenerator({ userId, defaultWeeklyHours }: WeekPlanGenera
           </div>
         )}
 
-        {weekStartDate && Object.keys(scheduledWorkouts).length > 0 && (
+        {weekStartDate && (
           <div className="mt-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Your Weekly Schedule</h3>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-semibold text-gray-900">Your Weekly Schedule</h3>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const currentStart = new Date(weekStartDate)
+                    currentStart.setDate(currentStart.getDate() - 7)
+                    const newStart = currentStart.toISOString().split('T')[0]
+                    setWeekStartDate(newStart)
+                    fetchScheduledWorkouts(newStart)
+                  }}
+                  className="px-3 py-1.5 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md transition-colors"
+                  title="Previous Week"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const today = new Date()
+                    const dayOfWeek = today.getDay()
+                    const daysFromMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1
+                    const monday = new Date(today)
+                    monday.setDate(today.getDate() - daysFromMonday)
+                    monday.setHours(0, 0, 0, 0)
+                    const currentWeekStart = monday.toISOString().split('T')[0]
+                    setWeekStartDate(currentWeekStart)
+                    fetchScheduledWorkouts(currentWeekStart)
+                  }}
+                  className="px-3 py-1.5 text-xs bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-md transition-colors font-medium"
+                  title="Jump to current week"
+                >
+                  This Week
+                </button>
+                <span className="text-sm text-gray-600 font-medium px-2">
+                  {new Date(weekStartDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                  {' - '}
+                  {(() => {
+                    const end = new Date(weekStartDate)
+                    end.setDate(end.getDate() + 6)
+                    return end.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                  })()}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const currentStart = new Date(weekStartDate)
+                    currentStart.setDate(currentStart.getDate() + 7)
+                    const newStart = currentStart.toISOString().split('T')[0]
+                    setWeekStartDate(newStart)
+                    fetchScheduledWorkouts(newStart)
+                  }}
+                  className="px-3 py-1.5 text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md transition-colors"
+                  title="Next Week"
+                >
+                  →
+                </button>
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-4">
               {getWeekDays().map((date) => (
                 <ScheduledWorkoutDay

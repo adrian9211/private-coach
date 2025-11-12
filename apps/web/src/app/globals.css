@@ -61,7 +61,7 @@
   }
 }
 
-/* Ensure navigation stays above Leaflet maps */
+/* Ensure navigation stays above Leaflet maps but below modals */
 nav[class*="shadow-sm"] {
   z-index: 100 !important;
   position: relative !important;
@@ -74,6 +74,11 @@ nav[class*="shadow-sm"] {
 
 .leaflet-control-container {
   z-index: 2 !important;
+}
+
+/* Ensure modals are always on top */
+[class*="fixed"][class*="z-[9999]"] {
+  isolation: isolate;
 }
 
 

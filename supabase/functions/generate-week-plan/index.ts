@@ -87,9 +87,22 @@ serve(async (req) => {
 
     const availableWorkouts = workouts || []
 
-    // Calculate start date (default to tomorrow if not provided)
+    // Calculate start date (default to today if not provided)
     const weekStart = startDate ? new Date(startDate) : new Date()
-    weekStart.setDate(weekStart.getDate() + 1)
+    // If no explicit start date provided, start from the next available training day (usually tomorrow or Monday)
+    if (!startDate) {
+      const today = weekStart.getDay()
+      // If today is not an available training day, move to the next available day
+      if (!trainingDays.includes(today)) {
+        // Find next available day
+        let daysToAdd = 1
+        while (daysToAdd < 7 && !trainingDays.includes((today + daysToAdd) % 7)) {
+          daysToAdd++
+        }
+        weekStart.setDate(weekStart.getDate() + daysToAdd)
+      }
+      // Otherwise start today
+    }
     weekStart.setHours(0, 0, 0, 0)
 
     // Build AI prompt for week plan generation
@@ -172,65 +185,68 @@ Create a comprehensive 7-day training plan starting ${weekStart.toLocaleDateStri
    - Explain how it progresses toward goals
 
 **OUTPUT FORMAT:**
-Provide your response in this exact format:
+Return your response as a valid JSON object with this structure:
 
-## Weekly Training Plan
-
-**Training Philosophy:** [Brief explanation of the training approach]
-
-**Week Overview:**
-- Total Training Time: ${weeklyHours} hours
-- Available Training Days: ${trainingDays.length} days (${trainingDays.map((d: number) => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][d]).join(', ')})
-- Rest Days: ${7 - trainingDays.length} days
-- Intensity Distribution: [X]% low, [X]% moderate, [X]% high
-
-**Daily Schedule:**
-
+{
+  "trainingPhilosophy": "Brief explanation of the training approach (1-2 sentences)",
+  "weekOverview": {
+    "totalTime": ${weeklyHours},
+    "availableDays": ${trainingDays.length},
+    "intensityDistribution": "e.g., 75% low, 20% moderate, 5% high"
+  },
+  "dailySchedule": [
 ${Array.from({ length: 7 }, (_, i) => {
   const date = new Date(weekStart)
   date.setDate(weekStart.getDate() + i)
   const dayNum = date.getDay()
   const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayNum]
   const isAvailable = trainingDays.includes(dayNum)
-  return `### Day ${i + 1} - ${dayName} (${date.toLocaleDateString()})
-${isAvailable ? `**Workout:** "[EXACT WORKOUT NAME FROM LIBRARY]"
-- Category: [Category]
-- Duration: [Duration]
-- TSS: [TSS if available]
-- Rationale: [Why this workout fits]
-
-**CRITICAL:** The workout name MUST be in quotes on the same line as **Workout:**. Do NOT put any other text on that line.` : '**REST DAY** (Not available for training)'}`
-}).join('\n\n')}
-
-**Weekly Progression:**
-[Explain how the week builds fitness and progresses toward goals]
-
-**IMPORTANT:**
-- Use EXACT workout names from the library
-- Ensure workouts exist in the library
-- Provide specific, actionable plan
-- Consider recovery between sessions
-- Align with training goals
+  return `    {
+      "day": ${i + 1},
+      "date": "${date.toISOString().split('T')[0]}",
+      "dayName": "${dayName}",
+      "isRestDay": ${!isAvailable}${isAvailable ? `,
+      "workoutName": "[EXACT NAME FROM LIBRARY]",
+      "category": "[Category from library]",
+      "rationale": "Why this workout fits (1 sentence)"` : ''}
+    }`
+}).join(',\n')}
+  ]
+}
 
 **CRITICAL REQUIREMENTS:**
-1. **MUST use EXACT workout names from the library** - Copy names EXACTLY as shown, including quotes and special characters
-2. **DO NOT invent workout names** - Only use names from the list above
-3. **MUST provide a workout for each available day** (or explicitly mark rest days)
-4. **MUST explain the training structure** - Why this plan works
-5. **MUST respect time constraints** - Don't exceed available training hours
-6. **MUST follow training science** - Use proven periodization principles
+1. Return ONLY valid JSON - no markdown, no extra text
+2. Use EXACT workout names from the library (copy-paste from above)
+3. DO NOT invent or modify workout names
+4. For rest days, set "isRestDay": true and omit workoutName
+5. Keep rationales to ONE sentence each
 
-**EXAMPLE OF CORRECT FORMAT:**
-### Day 1 - Friday (11/14/2025)
-**Workout:** "Tempo 2x15"
-- Category: TEMPO
-- Duration: 60 minutes
-- TSS: 58
-- Rationale: [Your explanation]
-
-**WRONG - DO NOT DO THIS:**
-**Workout:** "Tempo Bursts 2x15" ❌ (This name is not in the library!)
-**Workout:** "Endurance Builder 75" ❌ (This name is not in the library!)`
+**EXAMPLE:**
+{
+  "trainingPhilosophy": "Pyramidal model focusing on aerobic base with targeted intensity.",
+  "weekOverview": {
+    "totalTime": 4,
+    "availableDays": 4,
+    "intensityDistribution": "75% low, 20% moderate, 5% high"
+  },
+  "dailySchedule": [
+    {
+      "day": 1,
+      "date": "2025-11-14",
+      "dayName": "Friday",
+      "isRestDay": false,
+      "workoutName": "10min Ramps",
+      "category": "THRESHOLD",
+      "rationale": "Builds FTP with short high-intensity efforts."
+    },
+    {
+      "day": 2,
+      "date": "2025-11-15",
+      "dayName": "Saturday",
+      "isRestDay": true
+    }
+  ]
+}`
 
     // Call Gemini API
     const geminiModel = 'gemini-2.5-pro'
@@ -273,10 +289,27 @@ ${isAvailable ? `**Workout:** "[EXACT WORKOUT NAME FROM LIBRARY]"
       throw new Error('Invalid response from Gemini API')
     }
 
-    const weekPlan = data.candidates[0].content.parts[0].text
+    let weekPlanText = data.candidates[0].content.parts[0].text
+    
+    // Extract JSON from the response (AI might wrap it in markdown code blocks)
+    let weekPlan: any
+    try {
+      // Try to extract JSON from code blocks first
+      const jsonMatch = weekPlanText.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/)
+      if (jsonMatch) {
+        weekPlan = JSON.parse(jsonMatch[1])
+      } else {
+        // Try to parse directly
+        weekPlan = JSON.parse(weekPlanText)
+      }
+    } catch (error) {
+      console.error('Failed to parse AI response as JSON:', error)
+      console.log('AI response:', weekPlanText.substring(0, 500))
+      throw new Error('AI did not return valid JSON. Please try again.')
+    }
 
     // Parse workout recommendations and schedule them
-    const scheduledWorkouts = await parseAndScheduleWorkouts(
+    const scheduledWorkouts = await scheduleWorkoutsFromJSON(
       weekPlan,
       availableWorkouts,
       userId,
@@ -288,7 +321,8 @@ ${isAvailable ? `**Workout:** "[EXACT WORKOUT NAME FROM LIBRARY]"
     return new Response(
       JSON.stringify({
         success: true,
-        weekPlan,
+        weekPlan: weekPlan,
+        weekPlanText: JSON.stringify(weekPlan, null, 2), // Pretty-printed for display
         scheduledWorkouts: scheduledWorkouts.length,
         startDate: weekStart.toISOString().split('T')[0],
       }),
@@ -309,9 +343,9 @@ ${isAvailable ? `**Workout:** "[EXACT WORKOUT NAME FROM LIBRARY]"
   }
 })
 
-// Parse workout names from week plan and schedule them
-async function parseAndScheduleWorkouts(
-  weekPlan: string,
+// Schedule workouts from JSON response
+async function scheduleWorkoutsFromJSON(
+  weekPlan: any,
   availableWorkouts: any[],
   userId: string,
   weekStart: Date,
@@ -321,185 +355,102 @@ async function parseAndScheduleWorkouts(
   const scheduled: Array<{ date: string; workoutName: string }> = []
   const workoutNames = availableWorkouts.map(w => w.name)
 
-  console.log(`parseAndScheduleWorkouts: Starting with ${availableWorkouts.length} available workouts`)
-  console.log(`parseAndScheduleWorkouts: Week plan length: ${weekPlan.length} chars`)
+  console.log(`scheduleWorkoutsFromJSON: Starting with ${availableWorkouts.length} available workouts`)
   
   if (availableWorkouts.length === 0) {
-    console.warn('parseAndScheduleWorkouts: No workouts available in database!')
+    console.warn('scheduleWorkoutsFromJSON: No workouts available in database!')
     return scheduled
   }
 
-  // Extract workout names from the week plan
-  // The AI generates format: **Workout:** "Name" on a single line, followed by - Category on next line
-  const daySections = weekPlan.split(/###\s*Day\s+(\d+)/gi)
-  const dayWorkoutMap: Record<number, string> = {}
-  
-  // Process each day section to find workout names
-  for (let i = 1; i < daySections.length; i += 2) {
-    if (i + 1 >= daySections.length) break
-    const dayNumber = parseInt(daySections[i])
-    const dayContent = daySections[i + 1]
-    
-    console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - First 200 chars of content:`, dayContent.substring(0, 200))
-    
-    // Debug: Find **Workout:** and show character codes
-    const workoutIdx = dayContent.indexOf('**Workout:**')
-    if (workoutIdx !== -1) {
-      const snippet = dayContent.substring(workoutIdx, workoutIdx + 50)
-      const charCodes = Array.from(snippet.substring(0, 30)).map((c, i) => `${c}(${c.charCodeAt(0)})`).join(' ')
-      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Character codes:`, charCodes)
-    }
-    
-    // Look for the workout line - it should be: **Workout:** "Name" followed by newline
-    // Try multiple quote formats explicitly
-    let workoutName: string | null = null
-    
-    // Pattern 1: Straight double quotes "Name" (charCode 34)
-    let match = dayContent.match(/\*\*Workout\*\*:\s*"([^"\n]+)"/i)
-    if (match) {
-      workoutName = match[1].trim()
-      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with straight quotes: "${workoutName}"`)
-    }
-    
-    // Pattern 2: Curly/smart double quotes "Name"
-    if (!workoutName) {
-      match = dayContent.match(/\*\*Workout\*\*:\s*"([^"\n]+)"/i)
-      if (match) {
-        workoutName = match[1].trim()
-        console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with curly quotes: "${workoutName}"`)
-      }
-    }
-    
-    // Pattern 3: Single quotes 'Name'
-    if (!workoutName) {
-      match = dayContent.match(/\*\*Workout\*\*:\s*'([^'\n]+)'/i)
-      if (match) {
-        workoutName = match[1].trim()
-        console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with single quotes: "${workoutName}"`)
-      }
-    }
-    
-    // Pattern 4: Curly single quotes 'Name'
-    if (!workoutName) {
-      match = dayContent.match(/\*\*Workout\*\*:\s*'([^'\n]+)'/i)
-      if (match) {
-        workoutName = match[1].trim()
-        console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Found with curly single quotes: "${workoutName}"`)
-      }
-    }
-    
-    if (workoutName && workoutName.length > 2 && !workoutName.toLowerCase().includes('rest')) {
-      dayWorkoutMap[dayNumber] = workoutName
-      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Added to map: "${workoutName}"`)
-      continue
-    } else if (workoutName) {
-      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Skipped: "${workoutName}" (length=${workoutName.length}, isRest=${workoutName.toLowerCase().includes('rest')})`)
-    } else {
-      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - No workout name found`)
-    }
-    
-    // If no workout found yet, skip this day
-    if (!dayWorkoutMap[dayNumber]) {
-      console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - No valid workout found, skipping`)
-    }
-  }
-  
-  // Convert to array format for processing
-  const dayMatches: Array<{dayNumber: number, workoutName: string}> = Object.entries(dayWorkoutMap).map(([day, name]) => ({
-    dayNumber: parseInt(day),
-    workoutName: name
-  }))
-
-  if (dayMatches.length === 0) {
-    console.warn('parseAndScheduleWorkouts: No workout names found in week plan')
-    console.log('parseAndScheduleWorkouts: First 500 chars of plan:', weekPlan.substring(0, 500))
+  if (!weekPlan.dailySchedule || !Array.isArray(weekPlan.dailySchedule)) {
+    console.error('scheduleWorkoutsFromJSON: Invalid week plan structure')
     return scheduled
   }
 
-  console.log(`parseAndScheduleWorkouts: Processing ${dayMatches.length} day matches`)
-  console.log(`parseAndScheduleWorkouts: Available workout names (first 10): ${workoutNames.slice(0, 10).join(', ')}`)
+  console.log(`scheduleWorkoutsFromJSON: Processing ${weekPlan.dailySchedule.length} days`)
   
-  for (const { dayNumber, workoutName: workoutNameMatch } of dayMatches) {
-    // Clean up the workout name - remove markdown formatting, extra spaces, etc.
-    let trimmedName = workoutNameMatch
-      .trim()
-      .replace(/^\*\*|\*\*$/g, '') // Remove leading/trailing **
-      .replace(/^["']|["']$/g, '') // Remove leading/trailing quotes
-      .trim()
-    
-    // Skip if it's just markdown formatting or too short
-    if (!trimmedName || trimmedName === '**' || trimmedName === '*' || trimmedName.length < 3) {
-      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - invalid workout name: "${trimmedName}"`)
-      continue
-    }
-    
-    if (trimmedName.toLowerCase().includes('rest')) {
-      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - rest day: "${trimmedName}"`)
+  for (const day of weekPlan.dailySchedule) {
+    if (day.isRestDay) {
+      console.log(`scheduleWorkoutsFromJSON: Day ${day.day} - Rest day, skipping`)
       continue
     }
 
-    console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - looking for workout: "${trimmedName}"`)
+    if (!day.workoutName) {
+      console.warn(`scheduleWorkoutsFromJSON: Day ${day.day} - No workout name provided`)
+      continue
+    }
+
+    const workoutName = day.workoutName.trim()
+    console.log(`scheduleWorkoutsFromJSON: Day ${day.day} - Processing workout: "${workoutName}"`)
 
     // Find exact workout match
-    const workoutMatch = workoutNames.find(name => {
-      const normalizedName = name.toLowerCase().trim()
-      const normalizedMatch = trimmedName.toLowerCase().trim()
-      return normalizedMatch.includes(normalizedName) || normalizedName.includes(normalizedMatch)
-    })
+    const workoutMatch = workoutNames.find(name => name === workoutName)
 
     if (!workoutMatch) {
-      console.warn(`parseAndScheduleWorkouts: Day ${dayNumber} - No match found for "${trimmedName}"`)
-      console.log(`parseAndScheduleWorkouts: Available workouts: ${workoutNames.slice(0, 5).join(', ')}...`)
-      continue
+      console.warn(`scheduleWorkoutsFromJSON: Day ${day.day} - Exact match not found for "${workoutName}", trying fuzzy match`)
+      // Try fuzzy match
+      const fuzzyMatch = workoutNames.find(name => {
+        const normalizedName = name.toLowerCase().trim()
+        const normalizedSearch = workoutName.toLowerCase().trim()
+        return normalizedName === normalizedSearch || 
+               normalizedName.includes(normalizedSearch) || 
+               normalizedSearch.includes(normalizedName)
+      })
+      
+      if (!fuzzyMatch) {
+        console.error(`scheduleWorkoutsFromJSON: Day ${day.day} - No match found for "${workoutName}"`)
+        console.log(`scheduleWorkoutsFromJSON: Available workouts sample: ${workoutNames.slice(0, 5).join(', ')}...`)
+        continue
+      }
+      
+      console.log(`scheduleWorkoutsFromJSON: Day ${day.day} - Fuzzy matched "${workoutName}" to "${fuzzyMatch}"`)
+      day.workoutName = fuzzyMatch
     }
 
-    console.log(`parseAndScheduleWorkouts: Day ${dayNumber} - Matched "${trimmedName}" to "${workoutMatch}"`)
-
-    const scheduledDate = new Date(weekStart)
-    scheduledDate.setDate(weekStart.getDate() + (dayNumber - 1))
-    
-    // Check if this day is available
+    const scheduledDate = new Date(day.date)
     const dayOfWeek = scheduledDate.getDay()
+    
+    // Verify this day is available
     if (!availableDays.includes(dayOfWeek)) {
-      console.log(`parseAndScheduleWorkouts: Skipping Day ${dayNumber} - day ${dayOfWeek} not in available days ${availableDays.join(',')}`)
+      console.warn(`scheduleWorkoutsFromJSON: Day ${day.day} - ${day.dayName} (${dayOfWeek}) not in available days ${availableDays.join(',')}`)
       continue
     }
     
-    // Find workout in database
-    const { data: workout, error: workoutError } = await supabaseClient
+    // Find workout in database (take first match if there are duplicates)
+    const { data: workouts, error: workoutError } = await supabaseClient
       .from('workouts')
       .select('id, name, category')
-      .eq('name', workoutMatch)
-      .maybeSingle()
+      .eq('name', day.workoutName)
+      .limit(1)
 
     if (workoutError) {
-      console.error(`parseAndScheduleWorkouts: Error fetching workout "${workoutMatch}":`, workoutError)
+      console.error(`scheduleWorkoutsFromJSON: Error fetching workout "${day.workoutName}":`, workoutError)
       continue
     }
 
-    if (!workout) {
-      console.warn(`parseAndScheduleWorkouts: Workout "${workoutMatch}" not found in database`)
+    if (!workouts || workouts.length === 0) {
+      console.error(`scheduleWorkoutsFromJSON: Workout "${day.workoutName}" not found in database`)
       continue
     }
+
+    const workout = workouts[0]
+    console.log(`scheduleWorkoutsFromJSON: Day ${day.day} - Found workout: ${workout.name} (${workout.category})`)
 
     // Check if already scheduled
-    const { data: existing, error: checkError } = await supabaseClient
+    const { data: existing } = await supabaseClient
       .from('scheduled_workouts')
       .select('id')
       .eq('user_id', userId)
-      .eq('scheduled_date', scheduledDate.toISOString().split('T')[0])
-      .eq('workout_name', workoutMatch)
+      .eq('scheduled_date', day.date)
+      .eq('workout_name', day.workoutName)
       .maybeSingle()
 
-    if (checkError) {
-      console.error(`parseAndScheduleWorkouts: Error checking existing scheduled workout:`, checkError)
-    }
-
     if (existing) {
-      console.log(`parseAndScheduleWorkouts: Workout "${workoutMatch}" already scheduled for ${scheduledDate.toISOString().split('T')[0]}`)
+      console.log(`scheduleWorkoutsFromJSON: Workout "${day.workoutName}" already scheduled for ${day.date}`)
       continue
     }
 
+    // Insert scheduled workout
     const { error: insertError } = await supabaseClient
       .from('scheduled_workouts')
       .insert({
@@ -507,29 +458,23 @@ async function parseAndScheduleWorkouts(
         workout_id: workout.id,
         workout_name: workout.name,
         workout_category: workout.category,
-        scheduled_date: scheduledDate.toISOString().split('T')[0],
+        scheduled_date: day.date,
         source: 'week_plan',
-        notes: `Part of weekly training plan generated on ${new Date().toISOString().split('T')[0]}`,
+        notes: day.rationale || `Part of weekly training plan generated on ${new Date().toISOString().split('T')[0]}`,
       })
 
     if (insertError) {
-      console.error(`parseAndScheduleWorkouts: Error inserting scheduled workout:`, insertError)
-      console.error(`parseAndScheduleWorkouts: Insert data:`, {
-        user_id: userId,
-        workout_id: workout.id,
-        workout_name: workout.name,
-        scheduled_date: scheduledDate.toISOString().split('T')[0],
-      })
+      console.error(`scheduleWorkoutsFromJSON: Error inserting workout:`, insertError)
     } else {
       scheduled.push({
-        date: scheduledDate.toISOString().split('T')[0],
-        workoutName: workoutMatch,
+        date: day.date,
+        workoutName: day.workoutName,
       })
-      console.log(`parseAndScheduleWorkouts: ✓ Scheduled "${workoutMatch}" for ${scheduledDate.toISOString().split('T')[0]}`)
+      console.log(`scheduleWorkoutsFromJSON: ✓ Scheduled "${day.workoutName}" for ${day.date}`)
     }
   }
 
-  console.log(`parseAndScheduleWorkouts: Completed - scheduled ${scheduled.length} workouts`)
+  console.log(`scheduleWorkoutsFromJSON: Completed - scheduled ${scheduled.length} workouts`)
   return scheduled
 }
 

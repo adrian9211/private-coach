@@ -6,11 +6,22 @@ import { supabase } from '@/lib/supabase'
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, addMonths, subMonths, startOfWeek, endOfWeek } from 'date-fns'
 import { Database } from '@/lib/supabase-types'
 import { WeeklySummary } from './weekly-summary'
+import { WorkoutDetailModal } from '@/components/workouts/workout-detail-modal'
+import type { WorkoutData } from '@/lib/workout-parser'
 
 type Activity = Database['public']['Tables']['activities']['Row']
+type ScheduledWorkout = Database['public']['Tables']['scheduled_workouts']['Row']
+
+interface WorkoutDetails {
+  [workoutId: string]: WorkoutData
+}
 
 interface ActivityByDate {
   [dateKey: string]: Activity[]
+}
+
+interface ScheduledWorkoutsByDate {
+  [dateKey: string]: ScheduledWorkout[]
 }
 
 interface CalendarViewProps {
@@ -21,8 +32,11 @@ export function CalendarView({ userId }: CalendarViewProps) {
   const router = useRouter()
   const [currentMonth, setCurrentMonth] = useState(new Date())
   const [activities, setActivities] = useState<Activity[]>([])
+  const [scheduledWorkouts, setScheduledWorkouts] = useState<ScheduledWorkout[]>([])
+  const [workoutDetails, setWorkoutDetails] = useState<WorkoutDetails>({})
   const [loading, setLoading] = useState(true)
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const [selectedWorkout, setSelectedWorkout] = useState<{workout: ScheduledWorkout, data: WorkoutData} | null>(null)
   const [isMobile, setIsMobile] = useState(false)
   const [userFtp, setUserFtp] = useState<number | null>(null)
 
@@ -136,6 +150,92 @@ export function CalendarView({ userId }: CalendarViewProps) {
     fetchActivities()
   }, [userId, currentMonth])
 
+  // Fetch scheduled workouts for the current month view
+  useEffect(() => {
+    const fetchScheduledWorkouts = async () => {
+      try {
+        const monthStart = startOfMonth(currentMonth)
+        const monthEnd = endOfMonth(currentMonth)
+        
+        const rangeStart = startOfWeek(monthStart, { weekStartsOn: 1 })
+        const rangeEnd = endOfWeek(monthEnd, { weekStartsOn: 1 })
+
+        const { data, error } = await supabase
+          .from('scheduled_workouts')
+          .select('*')
+          .eq('user_id', userId)
+          .gte('scheduled_date', format(rangeStart, 'yyyy-MM-dd'))
+          .lte('scheduled_date', format(rangeEnd, 'yyyy-MM-dd'))
+
+        if (error) {
+          if (error.code === '42P01' || error.message?.includes('does not exist')) {
+            console.warn('scheduled_workouts table does not exist yet')
+            setScheduledWorkouts([])
+            return
+          }
+          throw error
+        }
+
+        setScheduledWorkouts(data || [])
+        
+        // Fetch workout details for all scheduled workouts
+        if (data && data.length > 0) {
+          const workoutIds = [...new Set(data.map(w => w.workout_id).filter(Boolean))]
+          if (workoutIds.length > 0) {
+            const { data: workouts } = await supabase
+              .from('workouts')
+              .select('*')
+              .in('id', workoutIds)
+            
+            if (workouts) {
+              const details: WorkoutDetails = {}
+              workouts.forEach((workout: any) => {
+                const steps = (workout.steps as any[]) || []
+                const totalDuration = workout.duration_seconds || 0
+                
+                // Convert steps to segments format
+                const segments = steps.map((step: any) => {
+                  const segment: any = {
+                    type: (step.type || 'steadystate') as 'warmup' | 'steadystate' | 'interval' | 'cooldown' | 'ramp',
+                    duration: step.duration || 0,
+                  }
+                  
+                  // Convert power values: if > 2, they're percentages (45, 75) - divide by 100 to get decimals (0.45, 0.75)
+                  if (step.power !== null && step.power !== undefined) {
+                    segment.power = step.power > 2 ? step.power / 100 : step.power
+                  }
+                  if (step.powerLow !== null && step.powerLow !== undefined) {
+                    segment.powerLow = step.powerLow > 2 ? step.powerLow / 100 : step.powerLow
+                  }
+                  if (step.powerHigh !== null && step.powerHigh !== undefined) {
+                    segment.powerHigh = step.powerHigh > 2 ? step.powerHigh / 100 : step.powerHigh
+                  }
+                  
+                  return segment
+                })
+                
+                details[workout.id] = {
+                  name: workout.name,
+                  description: workout.description || '',
+                  totalDuration,
+                  segments,
+                  estimatedTSS: workout.tss ? Math.round(workout.tss) : undefined,
+                  estimatedIF: workout.intensity_factor ? parseFloat(workout.intensity_factor.toFixed(2)) : undefined,
+                }
+              })
+              setWorkoutDetails(details)
+            }
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching scheduled workouts:', err)
+        setScheduledWorkouts([])
+      }
+    }
+
+    fetchScheduledWorkouts()
+  }, [userId, currentMonth])
+
   // Group activities by date
   const activitiesByDate = useMemo(() => {
     const grouped: ActivityByDate = {}
@@ -155,6 +255,19 @@ export function CalendarView({ userId }: CalendarViewProps) {
     })
     return grouped
   }, [activities])
+
+  // Group scheduled workouts by date
+  const scheduledWorkoutsByDate = useMemo(() => {
+    const grouped: ScheduledWorkoutsByDate = {}
+    scheduledWorkouts.forEach((workout) => {
+      const dateKey = workout.scheduled_date
+      if (!grouped[dateKey]) {
+        grouped[dateKey] = []
+      }
+      grouped[dateKey].push(workout)
+    })
+    return grouped
+  }, [scheduledWorkouts])
 
   // Get calendar days for current month
   const calendarDays = useMemo(() => {
@@ -177,6 +290,11 @@ export function CalendarView({ userId }: CalendarViewProps) {
   const getDayActivities = (date: Date): Activity[] => {
     const dateKey = format(date, 'yyyy-MM-dd')
     return activitiesByDate[dateKey] || []
+  }
+
+  const getDayScheduledWorkouts = (date: Date): ScheduledWorkout[] => {
+    const dateKey = format(date, 'yyyy-MM-dd')
+    return scheduledWorkoutsByDate[dateKey] || []
   }
 
   // Type guard for data with summary
@@ -225,14 +343,33 @@ export function CalendarView({ userId }: CalendarViewProps) {
 
   const handleDateClick = (date: Date) => {
     const dayActivities = getDayActivities(date)
-    if (dayActivities.length > 0) {
-      // If there's exactly one activity, go to it
-      if (dayActivities.length === 1) {
+    const dayScheduledWorkouts = getDayScheduledWorkouts(date)
+    
+    // If there are activities or scheduled workouts, show details
+    if (dayActivities.length > 0 || dayScheduledWorkouts.length > 0) {
+      // If there's exactly one activity and no scheduled workouts, go to it
+      if (dayActivities.length === 1 && dayScheduledWorkouts.length === 0) {
         router.push(`/activities/${dayActivities[0].id}`)
+      } else if (dayScheduledWorkouts.length === 1 && dayActivities.length === 0) {
+        // If there's exactly one scheduled workout and no activities, open modal
+        const workout = dayScheduledWorkouts[0]
+        const data = workout.workout_id ? workoutDetails[workout.workout_id] : null
+        if (data) {
+          setSelectedWorkout({ workout, data })
+        } else {
+          setSelectedDate(date)
+        }
       } else {
-        // If multiple, show them or set selected date for detail view
+        // If multiple activities or workouts, show details view
         setSelectedDate(date)
       }
+    }
+  }
+
+  const handleWorkoutClick = (workout: ScheduledWorkout) => {
+    const data = workout.workout_id ? workoutDetails[workout.workout_id] : null
+    if (data) {
+      setSelectedWorkout({ workout, data })
     }
   }
 
@@ -300,10 +437,12 @@ export function CalendarView({ userId }: CalendarViewProps) {
         {/* Calendar days */}
         {calendarDays.map((day, idx) => {
           const dayActivities = getDayActivities(day)
+          const dayScheduledWorkouts = getDayScheduledWorkouts(day)
           const isCurrentMonth = isSameMonth(day, currentMonth)
           const isToday = isSameDay(day, new Date())
           const isSelected = selectedDate && isSameDay(day, selectedDate)
           const hasActivities = dayActivities.length > 0
+          const hasScheduledWorkouts = dayScheduledWorkouts.length > 0
           const totalDistance = getTotalDistance(dayActivities)
           const totalDuration = getTotalDuration(dayActivities)
           const avgPower = getAvgPower(dayActivities)
@@ -313,12 +452,12 @@ export function CalendarView({ userId }: CalendarViewProps) {
               key={idx}
               onClick={() => handleDateClick(day)}
               className={`
-                min-h-[60px] sm:min-h-[80px] p-1 sm:p-2 border rounded-lg transition-all cursor-pointer
+                min-h-[60px] sm:min-h-[80px] p-1 sm:p-2 border rounded-lg transition-all cursor-pointer relative
                 ${isCurrentMonth ? 'bg-white' : 'bg-gray-50'}
                 ${isToday ? 'ring-2 ring-blue-500' : ''}
                 ${isSelected ? 'ring-2 ring-purple-500 bg-purple-50' : ''}
-                ${hasActivities ? 'hover:bg-blue-50 hover:shadow-md' : 'hover:bg-gray-100'}
-                ${hasActivities ? 'border-blue-200' : 'border-gray-200'}
+                ${hasActivities ? 'hover:bg-blue-50 hover:shadow-md' : hasScheduledWorkouts ? 'hover:bg-purple-50 hover:shadow-md' : 'hover:bg-gray-100'}
+                ${hasActivities ? 'border-blue-200' : hasScheduledWorkouts ? 'border-purple-200' : 'border-gray-200'}
               `}
             >
               {/* Day number */}
@@ -329,6 +468,33 @@ export function CalendarView({ userId }: CalendarViewProps) {
               `}>
                 {format(day, 'd')}
               </div>
+
+              {/* Scheduled workout indicator - show first if no activities */}
+              {hasScheduledWorkouts && !hasActivities && (
+                <div className="space-y-1">
+                  {/* Scheduled workout badge */}
+                  <div className="bg-purple-600 text-white text-[10px] sm:text-xs font-bold px-1 sm:px-1.5 py-0.5 rounded mb-1 flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                      <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                    </svg>
+                    {dayScheduledWorkouts.length}
+                  </div>
+                  {/* Show workout names on hover or selected */}
+                  {(isSelected || !isMobile) && (
+                    <div className="text-[9px] sm:text-xs space-y-0.5">
+                      {dayScheduledWorkouts.slice(0, 2).map((workout, i) => (
+                        <div key={i} className="text-purple-700 font-medium truncate">
+                          {workout.workout_name}
+                        </div>
+                      ))}
+                      {dayScheduledWorkouts.length > 2 && (
+                        <div className="text-purple-600 text-[8px]">+{dayScheduledWorkouts.length - 2} more</div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Activity indicators */}
               {hasActivities && (
@@ -358,6 +524,12 @@ export function CalendarView({ userId }: CalendarViewProps) {
                       )}
                     </div>
                   )}
+                  {/* Show scheduled workouts indicator if there are also scheduled workouts */}
+                  {hasScheduledWorkouts && (
+                    <div className="text-[8px] text-purple-600 font-medium">
+                      +{dayScheduledWorkouts.length} planned
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -366,7 +538,7 @@ export function CalendarView({ userId }: CalendarViewProps) {
       </div>
 
       {/* Selected Date Details */}
-      {selectedDate && getDayActivities(selectedDate).length > 0 && (
+      {selectedDate && (getDayActivities(selectedDate).length > 0 || getDayScheduledWorkouts(selectedDate).length > 0) && (
         <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-gray-900">
@@ -384,7 +556,81 @@ export function CalendarView({ userId }: CalendarViewProps) {
           </div>
           
           <div className="space-y-3">
-            {getDayActivities(selectedDate).map((activity) => {
+            {/* Scheduled Workouts */}
+            {getDayScheduledWorkouts(selectedDate).length > 0 && (
+              <>
+                <h4 className="text-sm font-semibold text-purple-900 uppercase tracking-wide mb-3">Scheduled Workouts</h4>
+                {getDayScheduledWorkouts(selectedDate).map((workout) => {
+                  const workoutData = workout.workout_id ? workoutDetails[workout.workout_id] : null
+                  
+                  return (
+                    <div
+                      key={workout.id}
+                      onClick={() => workoutData && handleWorkoutClick(workout)}
+                      className={`bg-white rounded-lg border border-purple-200 overflow-hidden ${workoutData ? 'cursor-pointer hover:border-purple-400 hover:shadow-lg transition-all' : ''}`}
+                    >
+                      {/* Status Bar */}
+                      <div className="bg-purple-50 px-4 py-2 border-b border-purple-100">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                              <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                            </svg>
+                            {workout.workout_category && (
+                              <span className="text-xs text-purple-700 font-semibold uppercase">
+                                {workout.workout_category}
+                              </span>
+                            )}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            {workout.scheduled_time && (
+                              <span className="text-xs text-purple-600">
+                                {workout.scheduled_time}
+                              </span>
+                            )}
+                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                              workout.status === 'completed' ? 'bg-green-100 text-green-700' :
+                              workout.status === 'skipped' ? 'bg-gray-100 text-gray-700' :
+                              'bg-purple-100 text-purple-700'
+                            }`}>
+                              {workout.status === 'scheduled' ? 'Planned' : workout.status}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Workout Preview */}
+                      <div className="p-4">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                          {workout.workout_name}
+                        </h3>
+                        {workout.notes && (
+                          <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+                            {workout.notes}
+                          </p>
+                        )}
+                        {workoutData && (
+                          <div className="text-sm text-purple-600 font-medium flex items-center gap-2">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            Click to view full workout details
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )
+                })}
+              </>
+            )}
+
+            {/* Completed Activities */}
+            {getDayActivities(selectedDate).length > 0 && (
+              <>
+                <h4 className="text-sm font-semibold text-blue-900 uppercase tracking-wide mt-4">Completed Activities</h4>
+                {getDayActivities(selectedDate).map((activity) => {
               const summary = getSummary(activity.data)
               const safeSummary = summary && typeof summary === 'object' ? summary : {}
               const totalDistance = (safeSummary as any)?.totalDistance
@@ -440,6 +686,8 @@ export function CalendarView({ userId }: CalendarViewProps) {
                 </div>
               )
             })}
+              </>
+            )}
           </div>
         </div>
       )}
@@ -471,6 +719,43 @@ export function CalendarView({ userId }: CalendarViewProps) {
           </div>
         )}
       </div>
+
+      {/* Workout Detail Modal */}
+      {selectedWorkout && (
+        <WorkoutDetailModal
+          workout={selectedWorkout.data}
+          category={selectedWorkout.workout.workout_category || undefined}
+          notes={selectedWorkout.workout.notes || undefined}
+          status={selectedWorkout.workout.status}
+          scheduledTime={selectedWorkout.workout.scheduled_time}
+          onClose={() => setSelectedWorkout(null)}
+          onRemove={async () => {
+            try {
+              const { error } = await supabase
+                .from('scheduled_workouts')
+                .delete()
+                .eq('id', selectedWorkout.workout.id)
+              
+              if (error) {
+                console.error('Error removing workout:', error)
+                alert(`Failed to remove workout: ${error.message}`)
+                return
+              }
+              
+              // Success - update local state
+              setScheduledWorkouts(prev => prev.filter(w => w.id !== selectedWorkout.workout.id))
+              setSelectedWorkout(null)
+              setSelectedDate(null)
+              
+              // Optional: Show success message
+              console.log('Workout removed successfully')
+            } catch (err) {
+              console.error('Unexpected error removing workout:', err)
+              alert('Failed to remove workout. Please try again.')
+            }
+          }}
+        />
+      )}
     </div>
   )
 }
