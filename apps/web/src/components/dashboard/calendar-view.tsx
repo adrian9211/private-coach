@@ -180,7 +180,7 @@ export function CalendarView({ userId }: CalendarViewProps) {
         
         // Fetch workout details for all scheduled workouts
         if (data && data.length > 0) {
-          const workoutIds = [...new Set(data.map(w => w.workout_id).filter(Boolean))]
+          const workoutIds = Array.from(new Set(data.map(w => w.workout_id).filter(Boolean)))
           if (workoutIds.length > 0) {
             const { data: workouts } = await supabase
               .from('workouts')
@@ -216,7 +216,9 @@ export function CalendarView({ userId }: CalendarViewProps) {
                 
                 details[workout.id] = {
                   name: workout.name,
+                  author: workout.author || '',
                   description: workout.description || '',
+                  sportType: workout.sport_type || 'bike',
                   totalDuration,
                   segments,
                   estimatedTSS: workout.tss ? Math.round(workout.tss) : undefined,
@@ -726,8 +728,8 @@ export function CalendarView({ userId }: CalendarViewProps) {
           workout={selectedWorkout.data}
           category={selectedWorkout.workout.workout_category || undefined}
           notes={selectedWorkout.workout.notes || undefined}
-          status={selectedWorkout.workout.status}
-          scheduledTime={selectedWorkout.workout.scheduled_time}
+          status={selectedWorkout.workout.status || undefined}
+          scheduledTime={selectedWorkout.workout.scheduled_time || undefined}
           onClose={() => setSelectedWorkout(null)}
           onRemove={async () => {
             try {
