@@ -352,6 +352,27 @@ export default function ActivityDetailPage() {
   }
 
   const { summary, powerZones, heartRateZones } = activity.data || {}
+  
+  // Add safe defaults for Intervals.icu imports and handle missing data
+  const safeSummary = summary ? {
+    totalDistance: summary.totalDistance || activity.total_distance || 0,
+    duration: summary.duration || activity.total_timer_time || activity.elapsed_time || 0,
+    avgSpeed: summary.avgSpeed || activity.avg_speed || 0,
+    totalCalories: summary.totalCalories || summary.calories || activity.total_calories || activity.calories || 0,
+    avgHeartRate: summary.avgHeartRate || activity.avg_heart_rate || 0,
+    maxHeartRate: summary.maxHeartRate || activity.max_heart_rate || 0,
+    avgPower: summary.avgPower || activity.avg_power || 0,
+    maxPower: summary.maxPower || activity.max_power || 0,
+    avgCadence: summary.avgCadence || summary.averageCadence || activity.avg_cadence || 0,
+    maxCadence: summary.maxCadence || activity.max_cadence || 0,
+    normalizedPower: summary.normalizedPower || activity.normalized_power || 0,
+    tss: summary.tss || activity.tss || 0,
+    intensityFactor: summary.intensityFactor || activity.intensity_factor || 0,
+    elevation: summary.elevation || activity.elevation_gain || activity.total_ascent || 0,
+    name: summary.name || activity.metadata?.name || activity.file_name,
+    type: summary.type || activity.metadata?.type || activity.sport || 'Unknown',
+    trainer: summary.trainer !== undefined ? summary.trainer : (activity.trainer || false),
+  } : null
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -379,7 +400,25 @@ export default function ActivityDetailPage() {
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-600">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                {safeSummary?.name || activity.file_name}
+              </h2>
+              <div className="flex items-center gap-4">
+                <p className="text-gray-600">
+                  {new Date(activity.start_time || activity.created_at).toLocaleDateString()}
+                </p>
+                {safeSummary?.type && (
+                  <span className="inline-block px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800">
+                    {safeSummary.type}
+                  </span>
+                )}
+                {safeSummary?.trainer && (
+                  <span className="inline-block px-2 py-1 rounded text-xs font-medium bg-purple-100 text-purple-800">
+                    Indoor
+                  </span>
+                )}
+              </div>
+              <p className="text-sm text-gray-500 mt-2">
                 Uploaded on {new Date(activity.created_at).toLocaleDateString()}
               </p>
               <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mt-2 ${
@@ -391,11 +430,16 @@ export default function ActivityDetailPage() {
               }`}>
                 {activity.status.charAt(0).toUpperCase() + activity.status.slice(1)}
               </span>
+              {activity.metadata?.source === 'intervals.icu' && (
+                <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mt-2 ml-2 bg-indigo-100 text-indigo-800">
+                  Synced from Intervals.icu
+                </span>
+              )}
             </div>
           </div>
         </div>
 
-        {activity.status === 'processed' && summary && (
+        {activity.status === 'processed' && safeSummary && (
           <>
             {/* Tabs */}
             <div className="bg-white rounded-lg shadow-lg mb-6">
@@ -432,28 +476,28 @@ export default function ActivityDetailPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="text-3xl font-bold text-blue-600 mb-2">
-                  {formatDistance(summary.totalDistance)}
+                  {formatDistance(safeSummary.totalDistance)}
                 </div>
                 <div className="text-gray-600">Distance</div>
               </div>
               
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="text-3xl font-bold text-green-600 mb-2">
-                  {formatDuration(summary.duration)}
+                  {formatDuration(safeSummary.duration)}
                 </div>
                 <div className="text-gray-600">Duration</div>
               </div>
               
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="text-3xl font-bold text-purple-600 mb-2">
-                  {formatSpeed(summary.avgSpeed)}
+                  {formatSpeed(safeSummary.avgSpeed)}
                 </div>
                 <div className="text-gray-600">Avg Speed</div>
               </div>
               
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="text-3xl font-bold text-red-600 mb-2">
-                  {summary.totalCalories}
+                  {safeSummary.totalCalories}
                 </div>
                 <div className="text-gray-600">Calories</div>
               </div>
@@ -467,13 +511,13 @@ export default function ActivityDetailPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-orange-600 mb-1">
-                      {formatPower(summary.avgPower)}
+                      {formatPower(safeSummary.avgPower)}
                     </div>
                     <div className="text-sm text-gray-600">Avg Power</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-orange-600 mb-1">
-                      {formatPower(summary.maxPower)}
+                      {formatPower(safeSummary.maxPower)}
                     </div>
                     <div className="text-sm text-gray-600">Max Power</div>
                   </div>
@@ -503,13 +547,13 @@ export default function ActivityDetailPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-red-600 mb-1">
-                      {formatHeartRate(summary.avgHeartRate)}
+                      {formatHeartRate(safeSummary.avgHeartRate)}
                     </div>
                     <div className="text-sm text-gray-600">Avg HR</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-red-600 mb-1">
-                      {formatHeartRate(summary.maxHeartRate)}
+                      {formatHeartRate(safeSummary.maxHeartRate)}
                     </div>
                     <div className="text-sm text-gray-600">Max HR</div>
                   </div>
@@ -540,13 +584,13 @@ export default function ActivityDetailPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-indigo-600 mb-1">
-                    {summary.avgCadence}
+                    {safeSummary.avgCadence}
                   </div>
                   <div className="text-sm text-gray-600">Avg Cadence</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-indigo-600 mb-1">
-                    {summary.maxCadence}
+                    {safeSummary.maxCadence}
                   </div>
                   <div className="text-sm text-gray-600">Max Cadence</div>
                 </div>
