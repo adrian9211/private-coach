@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { UserMenu } from '@/components/auth/user-menu'
 import { ChangePasswordForm } from '@/components/auth/change-password-form'
+import { IntervalsIntegration } from '@/components/settings/intervals-integration'
 import { supabase } from '@/lib/supabase'
 
 export default function SettingsPage() {
@@ -612,6 +613,9 @@ export default function SettingsPage() {
               </div>
             </div>
           </div>
+
+          {/* Intervals.icu Integration */}
+          {user && <IntervalsIntegration userId={user.id} />}
 
           {/* Preferences */}
           <div className="bg-white rounded-lg shadow-lg p-6">
