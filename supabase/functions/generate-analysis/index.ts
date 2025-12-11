@@ -38,11 +38,11 @@ function getExpectedRPE(avgPower: number, reportedRPE: number): number {
 // Extract workout recommendations from AI analysis text
 function extractWorkoutRecommendations(analysisText: string, availableWorkouts: any[]): Array<{ name: string; reasoning?: string }> {
   const recommendations: Array<{ name: string; reasoning?: string }> = []
-  
+
   // Look for workout names in quotes or after specific patterns
   // Patterns: "workout name", 'workout name', **workout name**, or after "I recommend", "try", etc.
   const workoutNames = availableWorkouts.map(w => w.name)
-  
+
   // Find section about next session recommendations
   const nextSessionMatch = analysisText.match(/##\s*Next\s+Session\s+Recommendations[^\#]*/i)
   if (!nextSessionMatch) {
@@ -53,13 +53,13 @@ function extractWorkoutRecommendations(analysisText: string, availableWorkouts: 
     }
     return recommendations
   }
-  
+
   return extractFromSection(nextSessionMatch[0], workoutNames)
 }
 
 function extractFromSection(sectionText: string, workoutNames: string[]): Array<{ name: string; reasoning?: string }> {
   const recommendations: Array<{ name: string; reasoning?: string }> = []
-  
+
   // Try to find workout names in various formats
   for (const workoutName of workoutNames) {
     // Look for exact match in quotes, bold, or after recommendation keywords
@@ -68,7 +68,7 @@ function extractFromSection(sectionText: string, workoutNames: string[]): Array<
       new RegExp(`\\*\\*([^*]*${escapeRegex(workoutName)}[^*]*)\\*\\*`, 'i'),
       new RegExp(`(?:recommend|suggest|try|use|do)\\s+['"]?([^'"]*${escapeRegex(workoutName)}[^'"]*)['"]?`, 'i'),
     ]
-    
+
     for (const pattern of patterns) {
       const match = sectionText.match(pattern)
       if (match) {
@@ -79,7 +79,7 @@ function extractFromSection(sectionText: string, workoutNames: string[]): Array<
           const startIndex = Math.max(0, sectionText.indexOf(matchedText) - 100)
           const endIndex = Math.min(sectionText.length, sectionText.indexOf(matchedText) + matchedText.length + 200)
           const context = sectionText.substring(startIndex, endIndex)
-          
+
           if (!recommendations.find(r => r.name === workoutName)) {
             recommendations.push({
               name: workoutName,
@@ -91,14 +91,14 @@ function extractFromSection(sectionText: string, workoutNames: string[]): Array<
       }
     }
   }
-  
+
   // Sort by order of appearance in text
   recommendations.sort((a, b) => {
     const indexA = sectionText.indexOf(a.name)
     const indexB = sectionText.indexOf(b.name)
     return indexA - indexB
   })
-  
+
   return recommendations.slice(0, 3) // Return top 3 recommendations
 }
 
@@ -144,22 +144,22 @@ function calculateActivityClassification(
     const curr = track[i]
     const prevTime = prev.timestamp || prev.time
     const currTime = curr.timestamp || curr.time
-    
+
     if (!prevTime || !currTime) continue
-    
+
     const dt = (new Date(currTime).getTime() - new Date(prevTime).getTime()) / 1000
-    
+
     if (!isFinite(dt) || dt <= 0 || dt > 300) continue
-    
+
     const power = typeof prev.power === 'number' && prev.power > 0 ? prev.power : 0
-    
+
     if (power > 0) {
       const zone = powerZones.find(z => {
         const minWatts = Math.round(ftp * z.minPercent / 100)
         const maxWatts = z.maxPercent >= 300 ? Infinity : Math.round(ftp * z.maxPercent / 100)
         return power >= minWatts && power <= maxWatts
       })
-      
+
       if (zone) {
         zoneTotals[zone.key] += dt
         totalTime += dt
@@ -177,7 +177,7 @@ function calculateActivityClassification(
   const z1z2 = zoneTimes.filter(z => z.zone === 'Z1' || z.zone === 'Z2').reduce((sum, z) => sum + z.percentage, 0)
   const z3z4 = zoneTimes.filter(z => z.zone === 'Z3' || z.zone === 'Z4').reduce((sum, z) => sum + z.percentage, 0)
   const z5plus = zoneTimes.filter(z => ['Z5', 'Z6', 'Z7'].includes(z.zone)).reduce((sum, z) => sum + z.percentage, 0)
-  
+
   const distribution = { z1z2, z3z4, z5plus }
   const base = (z3z4 + z5plus) > 0 ? (z1z2 / (z3z4 + z5plus)) : (z1z2 > 0 ? 999 : 0)
 
@@ -197,9 +197,9 @@ function calculateActivityClassification(
       Math.pow(distribution.z3z4 - classification.distribution.z3z4, 2) +
       Math.pow(distribution.z5plus - classification.distribution.z5plus, 2)
     )
-    
+
     const match = Math.max(0, 100 - (distance * 2))
-    
+
     if (match > bestMatch.match) {
       bestMatch = { name: classification.name, match: Math.round(match) }
     }
@@ -232,11 +232,11 @@ serve(async (req) => {
 
     // Initialize Gemini API
     const googleApiKey = Deno.env.get('GOOGLE_API_KEY')
-    // Use gemini-2.5-pro (confirmed available) for best analysis quality with deep reasoning capability
-    const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-2.5-pro'
-    const validModels = ['gemini-2.5-pro', 'gemini-1.5-pro', 'gemini-pro']
-    const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-2.5-pro'
-    
+    // Use gemini-3-pro-preview as requested
+    const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-3-pro-preview'
+    const validModels = ['gemini-3-pro-preview', 'gemini-2.0-flash-exp', 'gemini-1.5-flash', 'gemini-1.5-pro']
+    const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-3-pro-preview'
+
     if (requestedModel !== geminiModel) {
       console.warn(`Invalid model "${requestedModel}", using "${geminiModel}" instead`)
     }
@@ -244,9 +244,9 @@ serve(async (req) => {
     if (!googleApiKey) {
       return new Response(
         JSON.stringify({ error: 'GOOGLE_API_KEY environment variable is not set' }),
-        { 
-          status: 500, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       )
     }
@@ -256,9 +256,9 @@ serve(async (req) => {
     if (!activityId) {
       return new Response(
         JSON.stringify({ error: 'Activity ID is required' }),
-        { 
-          status: 400, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       )
     }
@@ -269,7 +269,7 @@ serve(async (req) => {
         .from('activity_analyses')
         .delete()
         .eq('activity_id', activityId)
-      
+
       if (deleteError) {
         console.log('Note: Could not delete existing analysis (may not exist):', deleteError)
       } else {
@@ -287,9 +287,9 @@ serve(async (req) => {
     if (activityError || !activity) {
       return new Response(
         JSON.stringify({ error: 'Activity not found' }),
-        { 
-          status: 404, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        {
+          status: 404,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       )
     }
@@ -304,9 +304,9 @@ serve(async (req) => {
     if (userError || !user) {
       return new Response(
         JSON.stringify({ error: 'User not found' }),
-        { 
-          status: 404, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        {
+          status: 404,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       )
     }
@@ -314,7 +314,7 @@ serve(async (req) => {
     // Calculate FTP/kg (power-to-weight ratio) - critical cycling performance metric
     const ftp = typeof user.preferences?.ftp === 'number' ? user.preferences.ftp : null
     const weightKg = typeof user.weight_kg === 'number' ? user.weight_kg : null
-    const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0) 
+    const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0)
       ? Number((ftp / weightKg).toFixed(2))
       : null
     const ftpPerKgString = ftpPerKg ? ftpPerKg.toFixed(2) : null
@@ -360,9 +360,9 @@ serve(async (req) => {
       avgFeeling: activityHistory.filter(a => a.feeling).reduce((sum, a) => sum + (a.feeling || 0), 0) / Math.max(1, activityHistory.filter(a => a.feeling).length),
       recentRPEs: activityHistory.filter(a => a.rpe).slice(0, 10).map(a => ({ date: a.start_time, rpe: a.rpe })),
       recentFeelings: activityHistory.filter(a => a.feeling).slice(0, 10).map(a => ({ date: a.start_time, feeling: a.feeling })),
-      powerTrend: activityHistory.filter(a => a.avg_power > 0).length > 1 ? 
-        (activityHistory.filter(a => a.avg_power > 0).slice(0, 5).reduce((sum, a) => sum + (a.avg_power || 0), 0) / 
-         activityHistory.filter(a => a.avg_power > 0).slice(5, 10).reduce((sum, a) => sum + (a.avg_power || 0), 1)) : null,
+      powerTrend: activityHistory.filter(a => a.avg_power > 0).length > 1 ?
+        (activityHistory.filter(a => a.avg_power > 0).slice(0, 5).reduce((sum, a) => sum + (a.avg_power || 0), 0) /
+          activityHistory.filter(a => a.avg_power > 0).slice(5, 10).reduce((sum, a) => sum + (a.avg_power || 0), 1)) : null,
     } : null
 
     // Prepare data for AI analysis
@@ -384,12 +384,12 @@ serve(async (req) => {
     }
 
     // Generate AI analysis using Gemini API
-    // Gemini 2.5 Pro uses v1 endpoint, older models use v1beta
-    const useV1Endpoint = geminiModel === 'gemini-2.5-pro' || geminiModel.startsWith('gemini-2.')
-    const apiVersion = useV1Endpoint ? 'v1' : 'v1beta'
+    // Gemini 2.0 Flash Exp usually works best on v1beta
+    const useV1Endpoint = !geminiModel.includes('-exp') && (geminiModel === 'gemini-2.5-pro' || geminiModel.startsWith('gemini-2.'))
+    const apiVersion = 'v1beta' // Safest default for newer/experimental models like 1.5-flash and 2.0-flash-exp
     const geminiUrl = `https://generativelanguage.googleapis.com/${apiVersion}/models/${geminiModel}:generateContent?key=${googleApiKey}`
     console.log(`Calling Gemini API with model: ${geminiModel} (${apiVersion})`)
-    
+
     const geminiResponse = await fetch(
       geminiUrl,
       {
@@ -622,29 +622,29 @@ ${activity.personal_notes ? `
 
 **CURRENT WORKOUT DATA:**
 ${JSON.stringify({
-  duration: activity.data?.summary?.duration ? `${Math.round(activity.data.summary.duration / 60)} minutes` : 'Unknown',
-  distance: activity.data?.summary?.totalDistance ? `${activity.data.summary.totalDistance.toFixed(2)} km` : 'Unknown',
-  avgPower: activity.data?.summary?.avgPower ? `${activity.data.summary.avgPower}W${ftp ? ` (${Math.round((activity.data.summary.avgPower / ftp) * 100)}% of FTP)` : ''}` : 'No power meter',
-  avgPowerPerKg: (activity.data?.summary?.avgPower && weightKg) ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg${ftpPerKg ? ` (${Math.round((activity.data.summary.avgPower / weightKg / ftpPerKg) * 100)}% of FTP/kg)` : ''}` : 'N/A',
-  avgHR: activity.data?.summary?.avgHeartRate ? `${activity.data.summary.avgHeartRate} bpm${vo2Max ? ` (compare to VO2 max capacity: ${vo2Max} ml/kg/min)` : ''}` : 'Unknown',
-  maxPower: activity.data?.summary?.maxPower ? `${activity.data.summary.maxPower}W${ftp ? ` (${Math.round((activity.data.summary.maxPower / ftp) * 100)}% of FTP)` : ''}` : 'N/A',
-  maxHR: activity.data?.summary?.maxHeartRate ? `${activity.data.summary.maxHeartRate} bpm` : 'N/A',
-  powerZones: activity.data?.powerZones ? Object.keys(activity.data.powerZones).length + ' zones' : 'No power zones',
-  rpe: activity.rpe || 'Not provided',
-  feeling: activity.feeling || 'Not provided',
-  personalNotes: activity.personal_notes || 'Not provided',
-  date: activity.start_time || activity.created_at
-}, null, 2)}
+                duration: activity.data?.summary?.duration ? `${Math.round(activity.data.summary.duration / 60)} minutes` : 'Unknown',
+                distance: activity.data?.summary?.totalDistance ? `${activity.data.summary.totalDistance.toFixed(2)} km` : 'Unknown',
+                avgPower: activity.data?.summary?.avgPower ? `${activity.data.summary.avgPower}W${ftp ? ` (${Math.round((activity.data.summary.avgPower / ftp) * 100)}% of FTP)` : ''}` : 'No power meter',
+                avgPowerPerKg: (activity.data?.summary?.avgPower && weightKg) ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg${ftpPerKg ? ` (${Math.round((activity.data.summary.avgPower / weightKg / ftpPerKg) * 100)}% of FTP/kg)` : ''}` : 'N/A',
+                avgHR: activity.data?.summary?.avgHeartRate ? `${activity.data.summary.avgHeartRate} bpm${vo2Max ? ` (compare to VO2 max capacity: ${vo2Max} ml/kg/min)` : ''}` : 'Unknown',
+                maxPower: activity.data?.summary?.maxPower ? `${activity.data.summary.maxPower}W${ftp ? ` (${Math.round((activity.data.summary.maxPower / ftp) * 100)}% of FTP)` : ''}` : 'N/A',
+                maxHR: activity.data?.summary?.maxHeartRate ? `${activity.data.summary.maxHeartRate} bpm` : 'N/A',
+                powerZones: activity.data?.powerZones ? Object.keys(activity.data.powerZones).length + ' zones' : 'No power zones',
+                rpe: activity.rpe || 'Not provided',
+                feeling: activity.feeling || 'Not provided',
+                personalNotes: activity.personal_notes || 'Not provided',
+                date: activity.start_time || activity.created_at
+              }, null, 2)}
 
 **TRAINING HISTORY CONTEXT (Last ${activityHistory.length} activities):**
 ${historyContext ? JSON.stringify({
-  averageDuration: `${Math.round(historyContext.avgDuration / 60)} minutes`,
-  averageDistance: `${historyContext.avgDistance.toFixed(2)} km`,
-  averagePower: historyContext.avgPower > 0 ? `${Math.round(historyContext.avgPower)}W` : 'No power data',
-  averageRPE: historyContext.avgRPE > 0 ? `${historyContext.avgRPE.toFixed(1)}/10` : 'No RPE history',
-  recentRPEs: historyContext.recentRPEs,
-  powerTrend: historyContext.powerTrend ? (historyContext.powerTrend > 1.05 ? 'INCREASING' : historyContext.powerTrend < 0.95 ? 'DECREASING' : 'STABLE') : 'N/A'
-}, null, 2) : 'No historical data available - this appears to be an early workout'}
+                averageDuration: `${Math.round(historyContext.avgDuration / 60)} minutes`,
+                averageDistance: `${historyContext.avgDistance.toFixed(2)} km`,
+                averagePower: historyContext.avgPower > 0 ? `${Math.round(historyContext.avgPower)}W` : 'No power data',
+                averageRPE: historyContext.avgRPE > 0 ? `${historyContext.avgRPE.toFixed(1)}/10` : 'No RPE history',
+                recentRPEs: historyContext.recentRPEs,
+                powerTrend: historyContext.powerTrend ? (historyContext.powerTrend > 1.05 ? 'INCREASING' : historyContext.powerTrend < 0.95 ? 'DECREASING' : 'STABLE') : 'N/A'
+              }, null, 2) : 'No historical data available - this appears to be an early workout'}
 
 **COMPARISON ANALYSIS REQUIRED:**
 - How does this workout compare to recent averages?
@@ -814,9 +814,9 @@ ${availableWorkouts.length > 0 ? `
   - Category alignment (VO2MAX, THRESHOLD, TEMPO, ENDURANCE, ANAEROBIC, etc.)
   
   **Available Workout Library (sample - reference by exact name):**
-  ${availableWorkouts.slice(0, 30).map((w: any) => 
-    `  • "${w.name}" (${w.category}) - ${w.duration || 'N/A'} | TSS: ${w.tss || 'N/A'} | IF: ${w.intensity_factor || 'N/A'} | Zones: ${w.power_zones?.join(', ') || 'N/A'}`
-  ).join('\n')}
+  ${availableWorkouts.slice(0, 30).map((w: any) =>
+                `  • "${w.name}" (${w.category}) - ${w.duration || 'N/A'} | TSS: ${w.tss || 'N/A'} | IF: ${w.intensity_factor || 'N/A'} | Zones: ${w.power_zones?.join(', ') || 'N/A'}`
+              ).join('\n')}
   ${availableWorkouts.length > 30 ? `  ... and ${availableWorkouts.length - 30} more workouts available` : ''}
   
   **When suggesting workouts, provide:**
@@ -876,33 +876,33 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
     }
 
     const geminiData = await geminiResponse.json()
-    
+
     // Check for Gemini API errors in response
     if (geminiData.error) {
       console.error('Gemini API response error:', geminiData.error)
       throw new Error(`Gemini API error: ${geminiData.error.message || JSON.stringify(geminiData.error)}`)
     }
-    
+
     const analysis = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || 'Analysis could not be generated'
     const finishReason = geminiData.candidates?.[0]?.finishReason
     const tokenCount = analysis.length
-    
+
     console.log(`Analysis received: ${tokenCount} characters, finishReason: ${finishReason}`)
-    
+
     if (!analysis || analysis === 'Analysis could not be generated') {
       console.error('No analysis text in Gemini response:', JSON.stringify(geminiData))
       throw new Error('Gemini API returned empty analysis')
     }
-    
+
     // Warn if response seems too short or was truncated
     if (tokenCount < 500) {
       console.warn(`WARNING: Analysis is very short (${tokenCount} chars). This may indicate an issue.`)
     }
-    
+
     if (finishReason === 'MAX_TOKENS' || finishReason === 'LENGTH') {
       console.warn(`WARNING: Response was truncated due to ${finishReason}. Consider increasing maxOutputTokens.`)
     }
-    
+
     if (finishReason === 'STOP') {
       console.log('Response completed normally (STOP)')
     } else {
@@ -912,7 +912,7 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
     // Extract workout recommendations from analysis and schedule them
     const suggestedWorkouts = extractWorkoutRecommendations(analysis, availableWorkouts)
     console.log(`Extracted ${suggestedWorkouts.length} workout recommendations from analysis`)
-    
+
     // Schedule the primary recommended workout for tomorrow (or next available day)
     if (suggestedWorkouts.length > 0) {
       const primaryWorkout = suggestedWorkouts[0]
@@ -920,14 +920,14 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
       const tomorrow = new Date(activityDate)
       tomorrow.setDate(tomorrow.getDate() + 1)
       tomorrow.setHours(0, 0, 0, 0) // Reset to start of day
-      
+
       // Find the workout in the database
       const { data: workoutMatch } = await supabaseClient
         .from('workouts')
         .select('id, name, category')
         .eq('name', primaryWorkout.name)
         .maybeSingle()
-      
+
       if (workoutMatch) {
         // Check if already scheduled for this date
         const { data: existing } = await supabaseClient
@@ -937,7 +937,7 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
           .eq('scheduled_date', tomorrow.toISOString().split('T')[0])
           .eq('workout_name', primaryWorkout.name)
           .maybeSingle()
-        
+
         if (!existing) {
           // Schedule the workout
           const { error: scheduleError } = await supabaseClient
@@ -951,7 +951,7 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
               source: 'ai_recommendation',
               notes: primaryWorkout.reasoning || `Recommended after activity analysis on ${activityDate.toISOString().split('T')[0]}`,
             })
-          
+
           if (scheduleError) {
             console.error('Error scheduling workout:', scheduleError)
           } else {
@@ -1003,14 +1003,14 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
     } else {
       // Insert new analysis
       const { error: insertError } = await supabaseClient
-      .from('activity_analyses')
-      .insert({
-        activity_id: activityId,
-        summary: analysisData.summary,
-        insights: analysisData.insights,
-        recommendations: analysisData.recommendations,
-        trends: analysisData.trends,
-        performance_metrics: analysisData.performanceMetrics,
+        .from('activity_analyses')
+        .insert({
+          activity_id: activityId,
+          summary: analysisData.summary,
+          insights: analysisData.insights,
+          recommendations: analysisData.recommendations,
+          trends: analysisData.trends,
+          performance_metrics: analysisData.performanceMetrics,
           generated_at: new Date().toISOString(),
         })
 
@@ -1022,14 +1022,14 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
     }
 
     return new Response(
-      JSON.stringify({ 
-        success: true, 
+      JSON.stringify({
+        success: true,
         analysis: analysisData,
         scheduledWorkouts: suggestedWorkouts.length > 0 ? suggestedWorkouts.map(w => w.name) : []
       }),
-      { 
-        status: 200, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      {
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       }
     )
 
@@ -1037,21 +1037,21 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
     console.error('Error generating analysis:', error)
     const errorMessage = error instanceof Error ? error.message : String(error)
     const errorDetails = error instanceof Error ? error.stack : undefined
-    
+
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         error: 'Failed to generate analysis',
         message: errorMessage,
         details: errorDetails,
-        hint: errorMessage.includes('GOOGLE_API_KEY') 
+        hint: errorMessage.includes('GOOGLE_API_KEY')
           ? 'Please set GOOGLE_API_KEY in Supabase Edge Function secrets'
           : errorMessage.includes('Gemini API')
-          ? 'Check your Gemini API key and quota'
-          : 'Check function logs for more details'
+            ? 'Check your Gemini API key and quota'
+            : 'Check function logs for more details'
       }),
-      { 
-        status: 500, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       }
     )
   }

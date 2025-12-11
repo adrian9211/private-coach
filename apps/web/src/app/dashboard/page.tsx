@@ -49,8 +49,7 @@ export default async function DashboardPage() {
       avg_power,
       avg_heart_rate,
       avg_speed,
-      rpe,
-      data
+      rpe
     `)
     .eq('user_id', session.user.id)
     .eq('status', 'processed')

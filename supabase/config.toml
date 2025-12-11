@@ -109,6 +109,11 @@ enable_confirmations = false
 # [auth.sms.test_otp]
 # # 4152127777 = "123456"
 
+# Multi-Factor Authentication (MFA) Configuration
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+
 # Configure one of the supported captcha providers: `hcaptcha`, `turnstile`.
 # [auth.captcha]
 # provider = "hcaptcha"

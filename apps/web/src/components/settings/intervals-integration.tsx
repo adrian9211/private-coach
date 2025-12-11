@@ -22,15 +22,15 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
   const [disconnecting, setDisconnecting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<string | null>(null)
-  
+
   // Check if API key is configured (simpler method for personal use)
   const apiKey = process.env.NEXT_PUBLIC_INTERVALS_API_KEY
   const athleteId = process.env.NEXT_PUBLIC_INTERVALS_ATHLETE_ID
   const hasApiKey = !!(apiKey && athleteId)
-  
+
   // Check if OAuth is configured (for multi-user)
   const hasOAuth = !!(process.env.NEXT_PUBLIC_INTERVALS_CLIENT_ID && process.env.NEXT_PUBLIC_INTERVALS_REDIRECT_URI)
-  
+
   // Debug logging
   console.log('🔍 Intervals.icu Debug:')
   console.log('  API Key present:', !!apiKey)
@@ -41,7 +41,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
 
   useEffect(() => {
     loadConnection()
-    
+
     // Check for OAuth callback success
     const params = new URLSearchParams(window.location.search)
     if (params.get('intervals') === 'connected') {
@@ -66,7 +66,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
       }
 
       setConnection(data)
-      
+
       // If using API key and no connection exists, auto-connect
       if (!data && hasApiKey) {
         console.log('API key found, auto-connecting...')
@@ -79,27 +79,27 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
       setLoading(false)
     }
   }
-  
+
   const handleApiKeyConnect = async () => {
     if (!apiKey || !athleteId) return
-    
+
     try {
       setLoading(true)
       setError(null)
-      
+
       // Verify API key works by fetching athlete info
       const athleteResponse = await fetch(`https://intervals.icu/api/v1/athlete/${athleteId}`, {
         headers: {
           'Authorization': `Basic ${btoa(`API_KEY:${apiKey}`)}`,
         },
       })
-      
+
       if (!athleteResponse.ok) {
         throw new Error('Invalid API key or athlete ID')
       }
-      
+
       const athlete = await athleteResponse.json()
-      
+
       // Store connection in database
       const { data, error: dbError } = await supabase
         .from('intervals_connections')
@@ -116,11 +116,11 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
         })
         .select()
         .single()
-      
+
       if (dbError) {
         throw dbError
       }
-      
+
       setConnection(data)
       setSuccess(`Connected as ${athlete.name || athleteId}!`)
     } catch (err: any) {
@@ -169,16 +169,16 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
       // For API key method, sync directly from browser
       if (hasApiKey && apiKey && athleteId) {
         console.log(`🔄 ${fullSync ? 'Full' : 'Incremental'} sync using API key...`)
-        
+
         // Get last sync date or default to 5 years ago (to fetch all historical data)
         // If fullSync is true, always fetch from 5 years ago
         const lastSync = (fullSync || !connection?.last_sync_at)
           ? new Date(Date.now() - 5 * 365 * 24 * 60 * 60 * 1000) // 5 years
           : new Date(connection.last_sync_at)
-        
+
         const oldest = lastSync.toISOString().split('T')[0]
         console.log(`📅 Fetching activities since ${oldest}`)
-        
+
         // Fetch activities from Intervals.icu
         const response = await fetch(
           `https://intervals.icu/api/v1/athlete/${athleteId}/activities?oldest=${oldest}`,
@@ -196,7 +196,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
 
         const activities = await response.json()
         console.log(`📥 Fetched ${activities.length} activities`)
-        
+
         // Log first activity to see ALL available fields
         if (activities.length > 0) {
           console.log('🔍 Sample Activity Data (first activity):', activities[0])
@@ -246,7 +246,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                 name: activity.name,
                 description: activity.description || null,
               },
-              
+
               // Basic metrics
               total_distance: activity.distance ? activity.distance / 1000 : null, // m to km
               total_timer_time: activity.moving_time || null,
@@ -254,7 +254,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
               trainer: activity.trainer || false,
               device_name: activity.device_name || null,
               strava_id: activity.strava_id || null,
-              
+
               // Power metrics
               avg_power: activity.icu_average_watts || activity.average_watts || null,
               max_power: activity.max_watts || null,
@@ -265,85 +265,85 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
               work_kj: activity.icu_joules ? activity.icu_joules / 1000 : null,
               work_above_ftp_kj: activity.icu_joules_above_ftp ? activity.icu_joules_above_ftp / 1000 : null,
               max_wbal_depletion: activity.icu_max_wbal_depletion || null,
-              
+
               // Power model
               cp: activity.icu_pm_cp || null,
               w_prime: activity.icu_pm_w_prime || null,
               p_max: activity.icu_pm_p_max || null,
               estimated_ftp: activity.icu_pm_ftp || null,
               ftp_at_time: activity.icu_ftp || null,
-              
+
               // Rolling power
               rolling_cp: activity.icu_rolling_cp || null,
               rolling_w_prime: activity.icu_rolling_w_prime || null,
               rolling_p_max: activity.icu_rolling_p_max || null,
               rolling_ftp: activity.icu_rolling_ftp || null,
               rolling_ftp_delta: activity.icu_rolling_ftp_delta || null,
-              
+
               // Heart rate
               avg_heart_rate: activity.average_heartrate || null,
               max_heart_rate: activity.max_heartrate || null,
               lthr: activity.lthr || null,
               resting_hr: activity.icu_resting_hr || null,
               hr_recovery: activity.icu_hrr || null,
-              
+
               // Zone times
               power_zone_times: activity.icu_zone_times ? activity.icu_zone_times.map((z: any) => z.secs) : null,
               hr_zone_times: activity.icu_hr_zone_times || null,
               power_zones: activity.icu_power_zones || null,
               hr_zones: activity.icu_hr_zones || null,
-              
+
               // Speed/pace
               avg_speed: activity.average_speed || null,
               max_speed: activity.max_speed || null,
               pace: activity.pace || null,
               gap: activity.gap || null,
               avg_stride: activity.average_stride || null,
-              
+
               // Elevation
               elevation_gain: activity.total_elevation_gain || null,
               elevation_loss: activity.total_elevation_loss || null,
               avg_altitude: activity.average_altitude || null,
               min_altitude: activity.min_altitude || null,
               max_altitude: activity.max_altitude || null,
-              
+
               // Training load
               hr_load: activity.hr_load || null,
               power_load: activity.power_load || null,
               trimp: activity.trimp || null,
               strain_score: activity.strain_score || null,
-              
+
               // RPE & Feel
               rpe: activity.icu_rpe || null,
               feel: activity.feel || null,
               session_rpe: activity.session_rpe || null,
-              
+
               // Fitness tracking
               ctl: activity.icu_ctl || null,
               atl: activity.icu_atl || null,
               weight_kg: activity.icu_weight || null,
-              
+
               // Intervals
               interval_summary: activity.interval_summary || null,
               lap_count: activity.icu_lap_count || null,
               warmup_time: activity.icu_warmup_time || null,
               cooldown_time: activity.icu_cooldown_time || null,
-              
+
               // Training quality
               polarization_index: activity.polarization_index || null,
               decoupling: activity.decoupling || null,
               power_hr_ratio: activity.icu_power_hr || null,
               power_hr_z2: activity.icu_power_hr_z2 || null,
               efficiency_factor: activity.icu_efficiency_factor || null,
-              
+
               // Energy
               calories: activity.calories || null,
               carbs_used: activity.carbs_used || null,
               carbs_ingested: activity.carbs_ingested || null,
-              
+
               // Cadence
               avg_cadence: activity.average_cadence || null,
-              
+
               // Weather
               weather_temp: activity.average_weather_temp || null,
               feels_like: activity.average_feels_like || null,
@@ -364,7 +364,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                   description: activity.description || null,
                   source: activity.source || null,
                   deviceName: activity.device_name || null,
-                  
+
                   // Power metrics
                   avgPower: activity.icu_average_watts || activity.average_watts || null,
                   maxPower: activity.max_watts || null,
@@ -375,7 +375,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                   work: activity.icu_joules || null,
                   workAboveFTP: activity.icu_joules_above_ftp || null,
                   maxWbalDepletion: activity.icu_max_wbal_depletion || null,
-                  
+
                   // Power Model (Critical Power, W', FTP estimates)
                   powerModel: {
                     criticalPower: activity.icu_pm_cp || null,
@@ -385,7 +385,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                     ftpSecs: activity.icu_pm_ftp_secs || null,
                     ftpWatts: activity.icu_pm_ftp_watts || null,
                   },
-                  
+
                   // Rolling Power Curve
                   rollingPower: {
                     cp: activity.icu_rolling_cp || null,
@@ -394,27 +394,27 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                     ftp: activity.icu_rolling_ftp || null,
                     ftpDelta: activity.icu_rolling_ftp_delta || null,
                   },
-                  
+
                   // Heart rate metrics
                   avgHeartRate: activity.average_heartrate || null,
                   maxHeartRate: activity.max_heartrate || null,
                   lthr: activity.lthr || null,
                   restingHR: activity.icu_resting_hr || null,
                   hrRecovery: activity.icu_hrr || null,
-                  
+
                   // Zone Times (CRITICAL for training analysis!)
                   powerZoneTimes: activity.icu_zone_times || null,
                   hrZoneTimes: activity.icu_hr_zone_times || null,
                   powerZones: activity.icu_power_zones || null,
                   hrZones: activity.icu_hr_zones || null,
-                  
+
                   // Speed/pace metrics
                   avgSpeed: activity.average_speed || null,
                   maxSpeed: activity.max_speed || null,
                   pace: activity.pace || null,
                   gap: activity.gap || null,
                   avgStride: activity.average_stride || null,
-                  
+
                   // Other metrics
                   averageCadence: activity.average_cadence || null,
                   calories: activity.calories || null,
@@ -423,43 +423,43 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                   avgAltitude: activity.average_altitude || null,
                   minAltitude: activity.min_altitude || null,
                   maxAltitude: activity.max_altitude || null,
-                  
+
                   // Training Load
                   hrLoad: activity.hr_load || null,
                   powerLoad: activity.power_load || null,
                   trimp: activity.trimp || null,
                   strainScore: activity.strain_score || null,
-                  
+
                   // RPE & Feel
                   rpe: activity.icu_rpe || null,
                   feel: activity.feel || null,
                   sessionRPE: activity.session_rpe || null,
-                  
+
                   // Fitness data
                   ctl: activity.icu_ctl || null,
                   atl: activity.icu_atl || null,
                   weight: activity.icu_weight || null,
                   ftp: activity.icu_ftp || null,
-                  
+
                   // Interval Summary
                   intervalSummary: activity.interval_summary || null,
                   lapCount: activity.icu_lap_count || null,
-                  
+
                   // Training Quality
                   polarizationIndex: activity.polarization_index || null,
                   decoupling: activity.decoupling || null,
                   powerHR: activity.icu_power_hr || null,
                   powerHRZ2: activity.icu_power_hr_z2 || null,
                   efficiencyFactor: activity.icu_efficiency_factor || null,
-                  
+
                   // Warm up / Cool down
                   warmupTime: activity.icu_warmup_time || null,
                   cooldownTime: activity.icu_cooldown_time || null,
-                  
+
                   // Carbs & Energy
                   carbsUsed: activity.carbs_used || null,
                   carbsIngested: activity.carbs_ingested || null,
-                  
+
                   // Weather (when available)
                   weather: {
                     avgTemp: activity.average_weather_temp || null,
@@ -471,13 +471,13 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
                     tailwindPercent: activity.tailwind_percent || null,
                     clouds: activity.average_clouds || null,
                   },
-                  
+
                   // Strava integration
                   stravaId: activity.strava_id || null,
-                  
+
                   // Available stream types
                   streamTypes: activity.stream_types || null,
-                  
+
                   // Keep the ENTIRE activity object for reference
                   _raw: activity,
                 },
@@ -526,7 +526,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
           if (wellnessResponse.ok) {
             const wellnessData = await wellnessResponse.json()
             console.log(`📊 Fetched ${wellnessData.length} wellness records`)
-            
+
             // Log first wellness record to see ALL available fields
             if (wellnessData.length > 0) {
               console.log('🔍 Sample Wellness Data:', wellnessData[0])
@@ -547,7 +547,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
         if (imported > 0) resultParts.push(`${imported} imported`)
         if (skipped > 0) resultParts.push(`${skipped} skipped`)
         if (errors > 0) resultParts.push(`${errors} errors`)
-        
+
         setSuccess(`✅ Sync complete! ${resultParts.join(', ')}`)
         console.log(`✨ Import complete: ${resultParts.join(', ')}`)
       } else {
@@ -557,7 +557,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
           NEXT_PUBLIC_INTERVALS_API_KEY: !!process.env.NEXT_PUBLIC_INTERVALS_API_KEY,
           NEXT_PUBLIC_INTERVALS_ATHLETE_ID: !!process.env.NEXT_PUBLIC_INTERVALS_ATHLETE_ID,
         })
-        
+
         const { data: { session } } = await supabase.auth.getSession()
         if (!session) {
           throw new Error('Not authenticated')
@@ -583,7 +583,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
 
         const result = await response.json()
         setSuccess(`Synced ${result.synced} of ${result.total} activities`)
-        
+
         await loadConnection()
       }
     } catch (err: any) {
@@ -627,6 +627,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
         <div className="animate-pulse">
           <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
           <div className="h-20 bg-gray-200 rounded"></div>
+          <div className="mt-4 text-xs text-gray-500">Loading connection status...</div>
         </div>
       </div>
     )
@@ -641,9 +642,9 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
             Automatically sync your activities and training data
           </p>
         </div>
-        <img 
-          src="https://intervals.icu/logo192.png" 
-          alt="Intervals.icu" 
+        <img
+          src="https://intervals.icu/logo192.png"
+          alt="Intervals.icu"
           className="w-12 h-12"
         />
       </div>
@@ -702,7 +703,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
               <p className="text-sm text-gray-600 mb-4 max-w-md mx-auto">
                 Intervals.icu integration is not configured. Add your API key to <code className="bg-gray-100 px-2 py-1 rounded text-xs">env.local</code> or set up OAuth credentials.
               </p>
-              <a 
+              <a
                 href="https://github.com/your-repo/docs/intervals-icu-setup.md"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -739,7 +740,7 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
             <div className="flex justify-between text-sm">
               <span className="text-gray-600">Last Sync:</span>
               <span className="font-medium text-gray-900">
-                {connection.last_sync_at 
+                {connection.last_sync_at
                   ? new Date(connection.last_sync_at).toLocaleString()
                   : 'Never'}
               </span>

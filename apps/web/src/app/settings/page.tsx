@@ -43,7 +43,7 @@ export default function SettingsPage() {
           .select('preferences, weight_kg, vo2_max, training_goals, weekly_training_hours')
           .eq('id', user.id)
           .maybeSingle()
-        
+
         if (error) {
           // If error mentions missing columns, try without them
           if (error.message.includes('weight_kg') || error.message.includes('vo2_max') || error.code === '42703') {
@@ -62,15 +62,19 @@ export default function SettingsPage() {
           }
           throw error
         }
-        
+
         const prefs = data?.preferences || {}
         setPreferences(prefs)
-        if (prefs.ftp) setFtp(String(prefs.ftp))
+        if (prefs.ftp !== undefined && prefs.ftp !== null) setFtp(String(prefs.ftp))
+
         // Safely access weight_kg, vo2_max, goals, and hours (they might not exist in the response)
-        if (data && 'weight_kg' in data && data.weight_kg) setWeight(String(data.weight_kg))
-        if (data && 'vo2_max' in data && data.vo2_max) setVo2Max(String(data.vo2_max))
-        if (data && 'training_goals' in data && data.training_goals) setTrainingGoals(data.training_goals)
-        if (data && 'weekly_training_hours' in data && data.weekly_training_hours) setWeeklyHours(String(data.weekly_training_hours))
+        // Use explicit null checks to allow 0 values
+        if (data) {
+          if ('weight_kg' in data && data.weight_kg !== null) setWeight(String(data.weight_kg))
+          if ('vo2_max' in data && data.vo2_max !== null) setVo2Max(String(data.vo2_max))
+          if ('training_goals' in data && data.training_goals !== null) setTrainingGoals(data.training_goals)
+          if ('weekly_training_hours' in data && data.weekly_training_hours !== null) setWeeklyHours(String(data.weekly_training_hours))
+        }
       } catch (err: any) {
         console.error('Error loading preferences:', err)
         setLoadError(err.message || 'Failed to load preferences')
@@ -103,7 +107,7 @@ export default function SettingsPage() {
         .from('users')
         .update({ preferences: nextPrefs })
         .eq('id', user.id)
-      
+
       console.log('Update response - error:', error)
       if (error) {
         console.error('Error saving FTP:', error)
@@ -150,7 +154,7 @@ export default function SettingsPage() {
         .from('users')
         .update({ weight_kg: weightNum })
         .eq('id', user.id)
-      
+
       console.log('Update response - error:', error)
       if (error) {
         console.error('Error saving weight:', error)
@@ -203,7 +207,7 @@ export default function SettingsPage() {
         .from('users')
         .update({ vo2_max: vo2Num })
         .eq('id', user.id)
-      
+
       console.log('Update response - error:', error)
       if (error) {
         console.error('Error saving VO2 max:', error)
@@ -248,7 +252,7 @@ export default function SettingsPage() {
         .from('users')
         .update({ training_goals: trainingGoals || null })
         .eq('id', user.id)
-      
+
       console.log('Update response - error:', error)
       if (error) {
         console.error('Error saving goals:', error)
@@ -297,7 +301,7 @@ export default function SettingsPage() {
         .from('users')
         .update({ weekly_training_hours: hoursNum || null })
         .eq('id', user.id)
-      
+
       console.log('Update response - error:', error)
       if (error) {
         console.error('Error saving weekly hours:', error)
