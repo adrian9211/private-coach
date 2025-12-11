@@ -7,7 +7,8 @@ import { WeekPlanGenerator } from '@/components/workouts/week-plan-generator'
 import { Database } from '@/lib/supabase' // Corrected import path
 
 export default async function DashboardPage() {
-  const supabase = createServerComponentClient<Database>({ cookies })
+  const cookieStore = await cookies()
+  const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore as any })
 
   const {
     data: { session },
@@ -100,9 +101,9 @@ export default async function DashboardPage() {
 
         {/* Week Plan Generator */}
         <div className="mt-8">
-          <WeekPlanGenerator 
+          <WeekPlanGenerator
             userId={session.user.id}
-            defaultWeeklyHours={user?.weekly_training_hours || null}
+            defaultWeeklyHours={(user as any)?.weekly_training_hours || null}
           />
         </div>
 

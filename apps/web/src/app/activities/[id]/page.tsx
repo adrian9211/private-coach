@@ -29,6 +29,15 @@ interface ActivityData {
       maxPower: number
       avgCadence: number
       maxCadence: number
+      calories?: number
+      averageCadence?: number
+      normalizedPower?: number
+      tss?: number
+      intensityFactor?: number
+      elevation?: number
+      name?: string
+      type?: string
+      trainer?: boolean
     }
     powerZones: any
     heartRateZones: any
@@ -39,6 +48,27 @@ interface ActivityData {
   rpe?: number | null
   feeling?: number | null
   personal_notes?: string | null
+  // Fields from Supabase that were missing in type definition
+  total_distance?: number
+  total_timer_time?: number
+  elapsed_time?: number
+  avg_speed?: number
+  total_calories?: number
+  calories?: number
+  avg_heart_rate?: number
+  max_heart_rate?: number
+  avg_power?: number
+  max_power?: number
+  avg_cadence?: number
+  max_cadence?: number
+  normalized_power?: number
+  tss?: number
+  intensity_factor?: number
+  elevation_gain?: number
+  total_ascent?: number
+  sport?: string
+  start_time?: string
+  trainer?: boolean
 }
 
 export default function ActivityDetailPage() {
@@ -64,7 +94,7 @@ export default function ActivityDetailPage() {
       console.log('Fetch already in progress, skipping...')
       return
     }
-    
+
     try {
       fetchingRef.current = true
       setLoadingActivity(true)
@@ -81,7 +111,7 @@ export default function ActivityDetailPage() {
         console.error('Error fetching activity:', error)
         throw error
       }
-      
+
       if (!data) {
         console.error('No activity data returned')
         setActivity(null)
@@ -109,7 +139,7 @@ export default function ActivityDetailPage() {
   // Refetch on tab focus ONLY if we don't have activity data
   useEffect(() => {
     if (!user || !id || activity) return // Don't refetch if we have activity
-    
+
     const onFocus = () => {
       // Only refetch if we don't have activity and we're not already fetching
       if (!fetchingRef.current && !loadingActivity && !activity) {
@@ -145,7 +175,7 @@ export default function ActivityDetailPage() {
       router.push('/auth/signin')
       return
     }
-    
+
     // If auth is done loading and we have an id, fetch the activity
     // Only fetch if not already fetching AND we don't already have the activity
     if (!loading && id && !fetchingRef.current && !activity) {
@@ -195,11 +225,11 @@ export default function ActivityDetailPage() {
       e.preventDefault()
       e.stopPropagation()
     }
-    
+
     if (isNavigating) return // Prevent multiple clicks
-    
+
     setIsNavigating(true)
-    
+
     try {
       // Try router.push first (preferred for Next.js)
       router.push('/activities')
@@ -213,15 +243,15 @@ export default function ActivityDetailPage() {
   const formatDuration = (seconds: number) => {
     // Ensure we have a valid number and round to nearest second
     const totalSeconds = Math.round(Number(seconds))
-    
+
     if (isNaN(totalSeconds) || totalSeconds < 0) {
       return '0:00'
     }
-    
+
     const hours = Math.floor(totalSeconds / 3600)
     const minutes = Math.floor((totalSeconds % 3600) / 60)
     const secs = totalSeconds % 60
-    
+
     if (hours > 0) {
       return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
     }
@@ -235,20 +265,20 @@ export default function ActivityDetailPage() {
   const formatSpeed = (speed: number) => {
     // Ensure we have a valid number
     const speedValue = Number(speed)
-    
+
     if (isNaN(speedValue) || speedValue < 0) {
       return '0.0 km/h'
     }
-    
+
     // Normal cycling speeds are typically 10-80 km/h
     // If speed > 100, there's likely a unit conversion issue
     let kmh = speedValue
-    
+
     // If value is unreasonably high (>100), it might be:
     // 1. Already in m/s but stored incorrectly (needs * 3.6)
     // 2. Double-converted (needs / 3.6)
     // 3. Data error
-    
+
     if (speedValue > 100) {
       // Try dividing first (in case it was double-converted: m/s -> km/h -> km/h again)
       const divided = speedValue / 3.6
@@ -272,7 +302,7 @@ export default function ActivityDetailPage() {
       // Keep as-is
       kmh = speedValue
     }
-    
+
     // Final safety check - cap at reasonable maximum
     if (kmh > 100) {
       console.error('Speed value still too high after correction:', kmh, 'km/h - using calculated value from distance/duration')
@@ -293,7 +323,7 @@ export default function ActivityDetailPage() {
         kmh = Math.min(kmh, 100)
       }
     }
-    
+
     return `${kmh.toFixed(1)} km/h`
   }
 
@@ -352,7 +382,7 @@ export default function ActivityDetailPage() {
   }
 
   const { summary, powerZones, heartRateZones } = activity.data || {}
-  
+
   // Add safe defaults for Intervals.icu imports and handle missing data
   const safeSummary = summary ? {
     totalDistance: summary.totalDistance || activity.total_distance || 0,
@@ -421,13 +451,12 @@ export default function ActivityDetailPage() {
               <p className="text-sm text-gray-500 mt-2">
                 Uploaded on {new Date(activity.created_at).toLocaleDateString()}
               </p>
-              <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mt-2 ${
-                activity.status === 'processed' 
-                  ? 'bg-green-100 text-green-800' 
-                  : activity.status === 'processing'
+              <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mt-2 ${activity.status === 'processed'
+                ? 'bg-green-100 text-green-800'
+                : activity.status === 'processing'
                   ? 'bg-yellow-100 text-yellow-800'
                   : 'bg-gray-100 text-gray-800'
-              }`}>
+                }`}>
                 {activity.status.charAt(0).toUpperCase() + activity.status.slice(1)}
               </span>
               {activity.metadata?.source === 'intervals.icu' && (
@@ -447,21 +476,19 @@ export default function ActivityDetailPage() {
                 <nav className="flex -mb-px">
                   <button
                     onClick={() => setActiveTab('overview')}
-                    className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
-                      activeTab === 'overview'
-                        ? 'border-blue-600 text-blue-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                    }`}
+                    className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${activeTab === 'overview'
+                      ? 'border-blue-600 text-blue-600'
+                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      }`}
                   >
                     Overview
                   </button>
                   <button
                     onClick={() => setActiveTab('analysis')}
-                    className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
-                      activeTab === 'analysis'
-                        ? 'border-blue-600 text-blue-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                    }`}
+                    className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${activeTab === 'analysis'
+                      ? 'border-blue-600 text-blue-600'
+                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      }`}
                   >
                     AI Coach Analysis
                   </button>
@@ -472,165 +499,165 @@ export default function ActivityDetailPage() {
             {/* Tab Content */}
             {activeTab === 'overview' && (
               <>
-            {/* Key Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">
-                  {formatDistance(safeSummary.totalDistance)}
-                </div>
-                <div className="text-gray-600">Distance</div>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">
-                  {formatDuration(safeSummary.duration)}
-                </div>
-                <div className="text-gray-600">Duration</div>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="text-3xl font-bold text-purple-600 mb-2">
-                  {formatSpeed(safeSummary.avgSpeed)}
-                </div>
-                <div className="text-gray-600">Avg Speed</div>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="text-3xl font-bold text-red-600 mb-2">
-                  {safeSummary.totalCalories}
-                </div>
-                <div className="text-gray-600">Calories</div>
-              </div>
-            </div>
+                {/* Key Metrics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                  <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-blue-600 mb-2">
+                      {formatDistance(safeSummary.totalDistance)}
+                    </div>
+                    <div className="text-gray-600">Distance</div>
+                  </div>
 
-            {/* Power and Heart Rate Metrics */}
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {/* Power Metrics */}
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Power Metrics</h2>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-600 mb-1">
-                      {formatPower(safeSummary.avgPower)}
+                  <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-green-600 mb-2">
+                      {formatDuration(safeSummary.duration)}
                     </div>
-                    <div className="text-sm text-gray-600">Avg Power</div>
+                    <div className="text-gray-600">Duration</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-600 mb-1">
-                      {formatPower(safeSummary.maxPower)}
+
+                  <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-purple-600 mb-2">
+                      {formatSpeed(safeSummary.avgSpeed)}
                     </div>
-                    <div className="text-sm text-gray-600">Max Power</div>
+                    <div className="text-gray-600">Avg Speed</div>
+                  </div>
+
+                  <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-red-600 mb-2">
+                      {safeSummary.totalCalories}
+                    </div>
+                    <div className="text-gray-600">Calories</div>
                   </div>
                 </div>
-                
-                {/* Power Zones */}
-                {powerZones && (
-                  <div className="mt-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Power Zones</h3>
-                    <div className="space-y-2">
-                      {Object.entries(powerZones).map(([zone, data]: [string, any]) => (
-                        <div key={zone} className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-gray-700">{data.label}</span>
-                          <span className="text-sm text-gray-600">
-                            {Math.round(data.min)}-{data.max === Infinity ? '∞' : Math.round(data.max)}W
-                          </span>
+
+                {/* Power and Heart Rate Metrics */}
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  {/* Power Metrics */}
+                  <div className="bg-white rounded-lg shadow-lg p-6">
+                    <h2 className="text-xl font-bold text-gray-900 mb-4">Power Metrics</h2>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-orange-600 mb-1">
+                          {formatPower(safeSummary.avgPower)}
                         </div>
-                      ))}
+                        <div className="text-sm text-gray-600">Avg Power</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-orange-600 mb-1">
+                          {formatPower(safeSummary.maxPower)}
+                        </div>
+                        <div className="text-sm text-gray-600">Max Power</div>
+                      </div>
                     </div>
+
+                    {/* Power Zones */}
+                    {powerZones && (
+                      <div className="mt-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Power Zones</h3>
+                        <div className="space-y-2">
+                          {Object.entries(powerZones).map(([zone, data]: [string, any]) => (
+                            <div key={zone} className="flex items-center justify-between">
+                              <span className="text-sm font-medium text-gray-700">{data.label}</span>
+                              <span className="text-sm text-gray-600">
+                                {Math.round(data.min)}-{data.max === Infinity ? '∞' : Math.round(data.max)}W
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Heart Rate Metrics */}
+                  <div className="bg-white rounded-lg shadow-lg p-6">
+                    <h2 className="text-xl font-bold text-gray-900 mb-4">Heart Rate Metrics</h2>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600 mb-1">
+                          {formatHeartRate(safeSummary.avgHeartRate)}
+                        </div>
+                        <div className="text-sm text-gray-600">Avg HR</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600 mb-1">
+                          {formatHeartRate(safeSummary.maxHeartRate)}
+                        </div>
+                        <div className="text-sm text-gray-600">Max HR</div>
+                      </div>
+                    </div>
+
+                    {/* Heart Rate Zones */}
+                    {heartRateZones && (
+                      <div className="mt-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Heart Rate Zones</h3>
+                        <div className="space-y-2">
+                          {Object.entries(heartRateZones).map(([zone, data]: [string, any]) => (
+                            <div key={zone} className="flex items-center justify-between">
+                              <span className="text-sm font-medium text-gray-700">{data.label}</span>
+                              <span className="text-sm text-gray-600">
+                                {Math.round(data.min)}-{Math.round(data.max)} bpm
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Cadence Metrics */}
+                <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+                  <h2 className="text-xl font-bold text-gray-900 mb-4">Cadence Metrics</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-indigo-600 mb-1">
+                        {safeSummary.avgCadence}
+                      </div>
+                      <div className="text-sm text-gray-600">Avg Cadence</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-indigo-600 mb-1">
+                        {safeSummary.maxCadence}
+                      </div>
+                      <div className="text-sm text-gray-600">Max Cadence</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Power Zone Analysis */}
+                {activity.status === 'processed' && (activity.gps_track || activity.data?.gps_track || activity.data?.records) && (
+                  <div className="mb-8">
+                    <PowerZoneAnalysis activity={activity as any} ftp={ftp} />
                   </div>
                 )}
-              </div>
 
-              {/* Heart Rate Metrics */}
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Heart Rate Metrics</h2>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-red-600 mb-1">
-                      {formatHeartRate(safeSummary.avgHeartRate)}
-                    </div>
-                    <div className="text-sm text-gray-600">Avg HR</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-red-600 mb-1">
-                      {formatHeartRate(safeSummary.maxHeartRate)}
-                    </div>
-                    <div className="text-sm text-gray-600">Max HR</div>
-                  </div>
-                </div>
-                
-                {/* Heart Rate Zones */}
-                {heartRateZones && (
-                  <div className="mt-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Heart Rate Zones</h3>
-                    <div className="space-y-2">
-                      {Object.entries(heartRateZones).map(([zone, data]: [string, any]) => (
-                        <div key={zone} className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-gray-700">{data.label}</span>
-                          <span className="text-sm text-gray-600">
-                            {Math.round(data.min)}-{Math.round(data.max)} bpm
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                {/* RPE Feedback */}
+                {activity.status === 'processed' && (
+                  <div className="mb-8">
+                    <RPEFeedback
+                      activityId={activity.id}
+                      initialRPE={activity.rpe}
+                    />
                   </div>
                 )}
-              </div>
-            </div>
 
-            {/* Cadence Metrics */}
-            <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Cadence Metrics</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-indigo-600 mb-1">
-                    {safeSummary.avgCadence}
+                {/* Activity Feedback (Feeling + Personal Notes) */}
+                {activity.status === 'processed' && (
+                  <div className="mb-8">
+                    <ActivityFeedback
+                      activityId={activity.id}
+                      initialFeeling={activity.feeling}
+                      initialNotes={activity.personal_notes}
+                    />
                   </div>
-                  <div className="text-sm text-gray-600">Avg Cadence</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-indigo-600 mb-1">
-                    {safeSummary.maxCadence}
+                )}
+
+                {/* GPS Track Viewer */}
+                {activity.status === 'processed' && (
+                  <div className="mt-8">
+                    <GPSViewer activityId={activity.id} />
                   </div>
-                  <div className="text-sm text-gray-600">Max Cadence</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Power Zone Analysis */}
-            {activity.status === 'processed' && (activity.gps_track || activity.data?.gps_track || activity.data?.records) && (
-              <div className="mb-8">
-                <PowerZoneAnalysis activity={activity as any} ftp={ftp} />
-              </div>
-            )}
-
-            {/* RPE Feedback */}
-            {activity.status === 'processed' && (
-              <div className="mb-8">
-                <RPEFeedback 
-                  activityId={activity.id} 
-                  initialRPE={activity.rpe}
-                />
-              </div>
-            )}
-
-            {/* Activity Feedback (Feeling + Personal Notes) */}
-            {activity.status === 'processed' && (
-              <div className="mb-8">
-                <ActivityFeedback 
-                  activityId={activity.id}
-                  initialFeeling={activity.feeling}
-                  initialNotes={activity.personal_notes}
-                />
-              </div>
-            )}
-
-            {/* GPS Track Viewer */}
-            {activity.status === 'processed' && (
-              <div className="mt-8">
-                <GPSViewer activityId={activity.id} />
-              </div>
-            )}
+                )}
               </>
             )}
 

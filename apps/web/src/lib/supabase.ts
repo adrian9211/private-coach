@@ -93,6 +93,7 @@ export type Database = {
           email: string
           name: string | null
           preferences: any
+          weekly_training_hours: number | null
           created_at: string
           updated_at: string
         }
@@ -101,6 +102,7 @@ export type Database = {
           email: string
           name?: string | null
           preferences?: any
+          weekly_training_hours?: number | null
           created_at?: string
           updated_at?: string
         }
@@ -109,6 +111,7 @@ export type Database = {
           email?: string
           name?: string | null
           preferences?: any
+          weekly_training_hours?: number | null
           created_at?: string
           updated_at?: string
         }

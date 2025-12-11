@@ -6,7 +6,8 @@ import { ActivitiesList } from '@/components/activities/activities-list' // New 
 import { Database } from '@/lib/supabase'
 
 export default async function ActivitiesPage() {
-  const supabase = createServerComponentClient<Database>({ cookies })
+  const cookieStore = await cookies()
+  const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore as any })
   const {
     data: { session },
   } = await supabase.auth.getSession()
