@@ -232,9 +232,10 @@ serve(async (req) => {
 
     // Initialize Gemini API
     const googleApiKey = Deno.env.get('GOOGLE_API_KEY')
-    // Use gemini-3-pro-preview as requested
+    // Use gemini-3-pro-preview as requested by user (verified model)
     const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-3-pro-preview'
-    const validModels = ['gemini-3-pro-preview', 'gemini-2.0-flash-exp', 'gemini-1.5-flash', 'gemini-1.5-pro']
+    // validModels supports user requested model + fallbacks
+    const validModels = ['gemini-3-pro-preview', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash-exp']
     const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-3-pro-preview'
 
     if (requestedModel !== geminiModel) {
@@ -872,7 +873,30 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
     if (!geminiResponse.ok) {
       const errorText = await geminiResponse.text()
       console.error('Gemini API error:', geminiResponse.status, errorText)
-      throw new Error(`Gemini API error (${geminiResponse.status}): ${geminiResponse.statusText}. ${errorText.substring(0, 200)}`)
+
+      let additionalInfo = ''
+
+      // If model not found (404), try to list available models to help validation
+      if (geminiResponse.status === 404) {
+        try {
+          const listModelsUrl = `https://generativelanguage.googleapis.com/${apiVersion}/models?key=${googleApiKey}`
+          const listResponse = await fetch(listModelsUrl)
+          if (listResponse.ok) {
+            const listData = await listResponse.json()
+            const models = listData.models
+              ? listData.models
+                .map((m: any) => m.name.replace('models/', ''))
+                .filter((n: string) => n.includes('gemini'))
+                .join(', ')
+              : 'No models found'
+            additionalInfo = ` Available models for your key: [${models}]`
+          }
+        } catch (e) {
+          console.warn('Failed to list models:', e)
+        }
+      }
+
+      throw new Error(`Gemini API error (${geminiResponse.status}): ${geminiResponse.statusText}. ${additionalInfo} ${errorText.substring(0, 200)}`)
     }
 
     const geminiData = await geminiResponse.json()
@@ -1050,7 +1074,7 @@ You MUST include a section titled "## Next Session Recommendations 🎯" at the 
             : 'Check function logs for more details'
       }),
       {
-        status: 500,
+        status: 200, // Return 200 to ensure client receives the error details
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       }
     )

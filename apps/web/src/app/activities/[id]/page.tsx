@@ -105,6 +105,12 @@ export default function ActivityDetailPage() {
         .eq('id', id)
         .single()
 
+      console.log('Supabase fetch response:', {
+        id,
+        hasData: !!data,
+        error: error ? { code: error.code, message: error.message, details: error.details } : null
+      })
+
       console.log('Activity fetch result:', { hasData: !!data, error })
 
       if (error) {
@@ -112,8 +118,11 @@ export default function ActivityDetailPage() {
         throw error
       }
 
+      // Check if data is null (single() returns data: null if not found when using maybeSingle, but throws if single() finds 0)
+      // Since we use .single(), it should have thrown PG error if not found. 
+      // But if we change to maybeSingle() later, this check is good.
       if (!data) {
-        console.error('No activity data returned')
+        console.error('No activity data returned for ID:', id)
         setActivity(null)
       } else {
         console.log('Activity data set successfully:', { id: data.id, status: data.status, hasRpe: !!data.rpe, hasFeeling: !!data.feeling, hasNotes: !!data.personal_notes })

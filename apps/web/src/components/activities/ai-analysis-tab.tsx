@@ -34,7 +34,7 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
           .select('role, content, created_at')
           .eq('activity_id', activityId)
           .order('created_at', { ascending: true })
-          
+
         if (!error && Array.isArray(data)) {
           const msgs = data.map((m: any) => ({
             role: m.role === 'assistant' ? 'assistant' : 'user',
@@ -107,6 +107,10 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
 
       if (invokeError) {
         console.error('Function invoke error:', invokeError)
+        // Check for non-2xx status code
+        if (invokeError.message?.includes('non-2xx status code')) {
+          throw new Error('Edge Function Error: The function crashed or returned an error. This is usually due to a missing GOOGLE_API_KEY in Supabase secrets. Please check the Edge Function logs in the Supabase Dashboard.')
+        }
         throw new Error(invokeError.message || 'Failed to invoke analysis function')
       }
 
@@ -138,20 +142,20 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
     } catch (err: any) {
       console.error('Error generating analysis:', err)
       let errorMessage = 'Failed to generate AI analysis. Please try again.'
-      
+
       if (err.message) {
         errorMessage = err.message
       } else if (err.error) {
         errorMessage = err.error
       }
-      
+
       // Add helpful hints
       if (errorMessage.includes('GOOGLE_API_KEY')) {
         errorMessage += '\n\nPlease ensure GOOGLE_API_KEY is set in Supabase Edge Function secrets.'
       } else if (errorMessage.includes('Gemini')) {
         errorMessage += '\n\nPlease check your Gemini API key and quota.'
       }
-      
+
       setError(errorMessage)
     } finally {
       setIsGenerating(false)
@@ -196,7 +200,7 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
       }))
 
       const { data, error: invokeError } = await supabase.functions.invoke('ai-coach-chat', {
-        body: { 
+        body: {
           activityId,
           message: userMessage,
           conversationHistory: history
@@ -298,7 +302,7 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
                     </h3>
                   )
                 }
-                
+
                 // Format lists
                 if (paragraph.includes('\n') && (paragraph.includes('- ') || paragraph.includes('• ') || paragraph.match(/^\d+\./m))) {
                   const lines = paragraph.split('\n').filter(l => l.trim())
@@ -315,23 +319,23 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
                     </ul>
                   )
                 }
-                
+
                 // Format regular paragraphs
                 const formatted = paragraph
                   .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
                   .replace(/⚠️/g, '<span class="text-orange-600">⚠️</span>')
                   .replace(/✅/g, '<span class="text-green-600">✅</span>')
                   .replace(/🎯/g, '<span class="text-blue-600">🎯</span>')
-                
+
                 if (!paragraph.trim()) return null
-                
+
                 return (
                   <p key={idx} className="mb-3 text-gray-800" dangerouslySetInnerHTML={{ __html: formatted }} />
                 )
               }).filter(Boolean)}
             </div>
           </div>
-          
+
           <div className="mt-4 flex gap-3 flex-wrap">
             <button
               onClick={generateAnalysis}
@@ -369,11 +373,10 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
                     className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
-                      className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                        msg.role === 'user'
+                      className={`max-w-[80%] rounded-lg px-4 py-2 ${msg.role === 'user'
                           ? 'bg-blue-600 text-white'
                           : 'bg-white text-gray-800 border border-gray-200'
-                      }`}
+                        }`}
                     >
                       <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
                     </div>
