@@ -233,7 +233,7 @@ serve(async (req) => {
     // Initialize Gemini API
     const googleApiKey = Deno.env.get('GOOGLE_API_KEY')
     // Use gemini-3-pro-preview as requested by user (verified model)
-    const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-3-pro-preview'
+    const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-flash-latest'
     // validModels supports user requested model + fallbacks
     const validModels = ['gemini-3-pro-preview', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash-exp', 'gemini-flash-latest']
     const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-flash-latest'
