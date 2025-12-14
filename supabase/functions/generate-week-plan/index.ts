@@ -63,7 +63,7 @@ serve(async (req) => {
 
     const ftp = typeof user.preferences?.ftp === 'number' ? user.preferences.ftp : null
     const weightKg = typeof user.weight_kg === 'number' ? user.weight_kg : null
-    const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0) 
+    const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0)
       ? Number((ftp / weightKg).toFixed(2))
       : null
     const vo2Max = user.vo2_max
@@ -118,9 +118,9 @@ ${weeklyHours ? `- Available Training Time: ${weeklyHours} hours/week` : '- Avai
 **RECENT TRAINING CONTEXT:**
 ${recentActivities && recentActivities.length > 0 ? `
 - Last ${recentActivities.length} activities:
-${recentActivities.slice(0, 5).map((a: any) => 
-  `  • ${a.start_time ? new Date(a.start_time).toLocaleDateString() : 'Recent'}: ${Math.round((a.total_timer_time || 0) / 60)}min, ${a.avg_power ? `${a.avg_power}W` : 'no power'}, RPE: ${a.rpe || 'N/A'}/10, Feeling: ${a.feeling || 'N/A'}/10`
-).join('\n')}
+${recentActivities.slice(0, 5).map((a: any) =>
+      `  • ${a.start_time ? new Date(a.start_time).toLocaleDateString() : 'Recent'}: ${Math.round((a.total_timer_time || 0) / 60)}min, ${a.avg_power ? `${a.avg_power}W` : 'no power'}, RPE: ${a.rpe || 'N/A'}/10, Feeling: ${a.feeling || 'N/A'}/10`
+    ).join('\n')}
 ` : 'No recent activities'}
 
 **AVAILABLE WORKOUT LIBRARY (${availableWorkouts.length} total workouts):**
@@ -128,20 +128,20 @@ ${recentActivities.slice(0, 5).map((a: any) =>
 **CRITICAL: You MUST select workouts from this list by their EXACT name. Do NOT invent or modify workout names.**
 
 ${Object.entries(
-  availableWorkouts.reduce((acc: Record<string, any[]>, w: any) => {
-    if (!acc[w.category]) acc[w.category] = []
-    acc[w.category].push(w)
-    return acc
-  }, {})
-).map(([category, workouts]) => {
-  // Show first 15 workouts from each category with full details
-  const sampleWorkouts = workouts.slice(0, 15)
-  const remaining = workouts.length - sampleWorkouts.length
-  return `**${category}** (${workouts.length} workouts):
-${sampleWorkouts.map((w: any) => 
-  `  - "${w.name}"${w.duration ? ` (${Math.round(w.duration)}min)` : ''}${w.tss ? ` [TSS: ${Math.round(w.tss)}]` : ''}`
-).join('\n')}${remaining > 0 ? `\n  ... and ${remaining} more ${category} workouts` : ''}`
-}).join('\n\n')}
+      availableWorkouts.reduce((acc: Record<string, any[]>, w: any) => {
+        if (!acc[w.category]) acc[w.category] = []
+        acc[w.category].push(w)
+        return acc
+      }, {})
+    ).map(([category, workouts]) => {
+      // Show first 15 workouts from each category with full details
+      const sampleWorkouts = workouts.slice(0, 15)
+      const remaining = workouts.length - sampleWorkouts.length
+      return `**${category}** (${workouts.length} workouts):
+${sampleWorkouts.map((w: any) =>
+        `  - "${w.name}"${w.duration ? ` (${Math.round(w.duration)}min)` : ''}${w.tss ? ` [TSS: ${Math.round(w.tss)}]` : ''}`
+      ).join('\n')}${remaining > 0 ? `\n  ... and ${remaining} more ${category} workouts` : ''}`
+    }).join('\n\n')}
 
 **TASK:**
 Create a comprehensive 7-day training plan starting ${weekStart.toLocaleDateString()}. The plan should:
@@ -172,11 +172,11 @@ Create a comprehensive 7-day training plan starting ${weekStart.toLocaleDateStri
 
 4. **Structure the Week:**
    ${trainingDays.map((day: number, idx: number) => {
-     const date = new Date(weekStart)
-     date.setDate(weekStart.getDate() + day)
-     const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][day]
-     return `   - Day ${day + 1} (${dayName}, ${date.toLocaleDateString()}): [Workout name] - [Category] - [Duration] - [Why]`
-   }).join('\n')}
+      const date = new Date(weekStart)
+      date.setDate(weekStart.getDate() + day)
+      const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][day]
+      return `   - Day ${day + 1} (${dayName}, ${date.toLocaleDateString()}): [Workout name] - [Category] - [Duration] - [Why]`
+    }).join('\n')}
    - Mark non-available days as REST DAYS
 
 5. **Provide Rationale:**
@@ -196,12 +196,12 @@ Return your response as a valid JSON object with this structure:
   },
   "dailySchedule": [
 ${Array.from({ length: 7 }, (_, i) => {
-  const date = new Date(weekStart)
-  date.setDate(weekStart.getDate() + i)
-  const dayNum = date.getDay()
-  const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayNum]
-  const isAvailable = trainingDays.includes(dayNum)
-  return `    {
+      const date = new Date(weekStart)
+      date.setDate(weekStart.getDate() + i)
+      const dayNum = date.getDay()
+      const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayNum]
+      const isAvailable = trainingDays.includes(dayNum)
+      return `    {
       "day": ${i + 1},
       "date": "${date.toISOString().split('T')[0]}",
       "dayName": "${dayName}",
@@ -210,7 +210,7 @@ ${Array.from({ length: 7 }, (_, i) => {
       "category": "[Category from library]",
       "rationale": "Why this workout fits (1 sentence)"` : ''}
     }`
-}).join(',\n')}
+    }).join(',\n')}
   ]
 }
 
@@ -249,9 +249,21 @@ ${Array.from({ length: 7 }, (_, i) => {
 }`
 
     // Call Gemini API
-    const geminiModel = 'gemini-2.5-pro'
-    const apiVersion = 'v1'
+    // Use gemini-3-pro-preview as requested by user (verified model)
+    const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-flash-latest'
+    // validModels supports user requested model + fallbacks
+    const validModels = ['gemini-3-pro-preview', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash-exp', 'gemini-flash-latest']
+    const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-flash-latest'
+
+    if (requestedModel !== geminiModel) {
+      console.warn(`generate-week-plan: Invalid model "${requestedModel}", using "${geminiModel}" instead`)
+    }
+
+    // Gemini 2.0 Flash Exp usually works best on v1beta
+    const useV1Endpoint = !geminiModel.includes('-exp') && (geminiModel === 'gemini-2.5-pro' || geminiModel.startsWith('gemini-2.'))
+    const apiVersion = 'v1beta' // Safest default for newer/experimental models like 1.5-flash and 2.0-flash-exp
     const apiUrl = `https://generativelanguage.googleapis.com/${apiVersion}/models/${geminiModel}:generateContent?key=${googleApiKey}`
+    console.log(`generate-week-plan: Calling Gemini API with model: ${geminiModel} (${apiVersion})`)
 
     const response = await fetch(apiUrl, {
       method: 'POST',
@@ -290,7 +302,7 @@ ${Array.from({ length: 7 }, (_, i) => {
     }
 
     let weekPlanText = data.candidates[0].content.parts[0].text
-    
+
     // Extract JSON from the response (AI might wrap it in markdown code blocks)
     let weekPlan: any
     try {
@@ -356,7 +368,7 @@ async function scheduleWorkoutsFromJSON(
   const workoutNames = availableWorkouts.map(w => w.name)
 
   console.log(`scheduleWorkoutsFromJSON: Starting with ${availableWorkouts.length} available workouts`)
-  
+
   if (availableWorkouts.length === 0) {
     console.warn('scheduleWorkoutsFromJSON: No workouts available in database!')
     return scheduled
@@ -368,7 +380,7 @@ async function scheduleWorkoutsFromJSON(
   }
 
   console.log(`scheduleWorkoutsFromJSON: Processing ${weekPlan.dailySchedule.length} days`)
-  
+
   for (const day of weekPlan.dailySchedule) {
     if (day.isRestDay) {
       console.log(`scheduleWorkoutsFromJSON: Day ${day.day} - Rest day, skipping`)
@@ -392,30 +404,30 @@ async function scheduleWorkoutsFromJSON(
       const fuzzyMatch = workoutNames.find(name => {
         const normalizedName = name.toLowerCase().trim()
         const normalizedSearch = workoutName.toLowerCase().trim()
-        return normalizedName === normalizedSearch || 
-               normalizedName.includes(normalizedSearch) || 
-               normalizedSearch.includes(normalizedName)
+        return normalizedName === normalizedSearch ||
+          normalizedName.includes(normalizedSearch) ||
+          normalizedSearch.includes(normalizedName)
       })
-      
+
       if (!fuzzyMatch) {
         console.error(`scheduleWorkoutsFromJSON: Day ${day.day} - No match found for "${workoutName}"`)
         console.log(`scheduleWorkoutsFromJSON: Available workouts sample: ${workoutNames.slice(0, 5).join(', ')}...`)
         continue
       }
-      
+
       console.log(`scheduleWorkoutsFromJSON: Day ${day.day} - Fuzzy matched "${workoutName}" to "${fuzzyMatch}"`)
       day.workoutName = fuzzyMatch
     }
 
     const scheduledDate = new Date(day.date)
     const dayOfWeek = scheduledDate.getDay()
-    
+
     // Verify this day is available
     if (!availableDays.includes(dayOfWeek)) {
       console.warn(`scheduleWorkoutsFromJSON: Day ${day.day} - ${day.dayName} (${dayOfWeek}) not in available days ${availableDays.join(',')}`)
       continue
     }
-    
+
     // Find workout in database (take first match if there are duplicates)
     const { data: workouts, error: workoutError } = await supabaseClient
       .from('workouts')

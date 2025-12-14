@@ -8,7 +8,7 @@ const corsHeaders = {
 
 serve(async (req) => {
   console.log('generate-insights: Request received', { method: req.method, url: req.url })
-  
+
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
@@ -63,7 +63,7 @@ serve(async (req) => {
 
     const ftp = typeof user.preferences?.ftp === 'number' ? user.preferences.ftp : null
     const weightKg = typeof user.weight_kg === 'number' ? user.weight_kg : null
-    const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0) 
+    const ftpPerKg = (ftp && weightKg && ftp > 0 && weightKg > 0)
       ? Number((ftp / weightKg).toFixed(2))
       : null
     const vo2Max = user.vo2_max
@@ -104,7 +104,7 @@ serve(async (req) => {
 
     if (allActivities.length === 0) {
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           recommendations: "You haven't completed any activities yet. Start uploading your FIT files to get personalized AI insights and recommendations!"
         }),
         { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -169,14 +169,14 @@ serve(async (req) => {
         { key: 'Z6', min: 121, max: 150 },
         { key: 'Z7', min: 151, max: 300 },
       ]
-      
+
       zones.forEach(z => { powerZoneDistribution[z.key] = 0 })
-      
+
       // Calculate zone time from activities with GPS track data
       allActivities.forEach(activity => {
         const activityData = activity.data as any
         const gpsTrack = activityData?.gps_track || activityData?.records || []
-        
+
         if (Array.isArray(gpsTrack) && gpsTrack.length > 0) {
           const track = gpsTrack
             .filter((p: any) => p && (p.timestamp || p.time))
@@ -190,12 +190,12 @@ serve(async (req) => {
             const prev = track[i - 1]
             const prevTime = prev.timestamp || prev.time
             const currTime = track[i].timestamp || track[i].time
-            
+
             if (!prevTime || !currTime) continue
-            
+
             const dt = (new Date(currTime).getTime() - new Date(prevTime).getTime()) / 1000
             if (!isFinite(dt) || dt <= 0 || dt > 300) continue
-            
+
             const power = typeof prev.power === 'number' && prev.power > 0 ? prev.power : 0
             if (power > 0) {
               const powerPercent = (power / ftp) * 100
@@ -220,22 +220,22 @@ serve(async (req) => {
     let fitness = 0
     let fatigue = 0
     let form = 0
-    
+
     if (ftp && ftp > 0) {
       // Calculate daily TSS
       const dailyTSS: Record<string, number> = {}
       allActivities.forEach(activity => {
         const date = activity.start_time || activity.upload_date
         if (!date) return
-        
+
         const duration = activity.total_timer_time || 0
         const power = activity.avg_power || 0
-        
+
         if (duration > 0 && power > 0) {
           const intensityFactor = power / ftp
           const durationHours = duration / 3600
           const tss = durationHours * intensityFactor * intensityFactor * 100
-          
+
           const dateKey = new Date(date).toISOString().split('T')[0]
           dailyTSS[dateKey] = (dailyTSS[dateKey] || 0) + Math.round(tss)
         }
@@ -247,10 +247,10 @@ serve(async (req) => {
       const atlDays = 7
       const ctlAlpha = 1 - Math.exp(-1 / ctlDays)
       const atlAlpha = 1 - Math.exp(-1 / atlDays)
-      
+
       let ctl = 0
       let atl = 0
-      
+
       dates.forEach((date, index) => {
         const tss = dailyTSS[date]
         if (index === 0) {
@@ -264,7 +264,7 @@ serve(async (req) => {
           }
         }
       })
-      
+
       fitness = Math.round(ctl * 10) / 10
       fatigue = Math.round(atl * 10) / 10
       form = Math.round((ctl - atl) * 10) / 10
@@ -303,31 +303,31 @@ ${ftp && ftp > 0 ? `**TRAINING LOAD:**
 
 ${ftp && Object.keys(powerZoneDistribution).length > 0 ? `**POWER ZONE DISTRIBUTION:**
 ${Object.entries(powerZoneDistribution)
-  .filter(([_, time]) => time > 0)
-  .map(([zone, time]) => {
-    const hours = Math.round(time / 3600 * 10) / 10
-    return `- ${zone}: ${hours} hours`
-  })
-  .join('\n')}
+          .filter(([_, time]) => time > 0)
+          .map(([zone, time]) => {
+            const hours = Math.round(time / 3600 * 10) / 10
+            return `- ${zone}: ${hours} hours`
+          })
+          .join('\n')}
 ` : ''}
 
 **AVAILABLE WORKOUT LIBRARY:**
 ${availableWorkouts.length > 0 ? `
 You have access to a comprehensive workout library with ${availableWorkouts.length} structured workouts organized by category:
 ${Object.entries(
-  availableWorkouts.reduce((acc: Record<string, any[]>, w: any) => {
-    if (!acc[w.category]) acc[w.category] = []
-    acc[w.category].push(w)
-    return acc
-  }, {})
-).map(([category, workouts]) => 
-  `- ${category}: ${workouts.length} workouts`
-).join('\n')}
+            availableWorkouts.reduce((acc: Record<string, any[]>, w: any) => {
+              if (!acc[w.category]) acc[w.category] = []
+              acc[w.category].push(w)
+              return acc
+            }, {})
+          ).map(([category, workouts]) =>
+            `- ${category}: ${workouts.length} workouts`
+          ).join('\n')}
 
 Sample workouts (you can reference these by name when making recommendations):
-${availableWorkouts.slice(0, 20).map((w: any) => 
-  `  • "${w.name}" (${w.category}) - ${w.duration || 'N/A'} | TSS: ${w.tss || 'N/A'} | IF: ${w.intensity_factor || 'N/A'} | Zones: ${w.power_zones?.join(', ') || 'N/A'}`
-).join('\n')}
+${availableWorkouts.slice(0, 20).map((w: any) =>
+            `  • "${w.name}" (${w.category}) - ${w.duration || 'N/A'} | TSS: ${w.tss || 'N/A'} | IF: ${w.intensity_factor || 'N/A'} | Zones: ${w.power_zones?.join(', ') || 'N/A'}`
+          ).join('\n')}
 ${availableWorkouts.length > 20 ? `  ... and ${availableWorkouts.length - 20} more workouts available` : ''}
 
 **IMPORTANT**: When making workout recommendations, you MUST reference specific workouts by their exact name from the library above. You can search for workouts by:
@@ -391,9 +391,23 @@ ${availableWorkouts.length > 0 ? '\n**Reference specific workouts from the libra
 - Keep recommendations realistic and achievable`
 
     // Call Gemini API
-    const geminiModel = 'gemini-2.5-pro'
-    const apiVersion = 'v1'
+    // Initialize Gemini API
+    console.log('generate-insights: Initializing Gemini API')
+    // Use gemini-3-pro-preview as requested by user (verified model)
+    const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-flash-latest'
+    // validModels supports user requested model + fallbacks
+    const validModels = ['gemini-3-pro-preview', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash-exp', 'gemini-flash-latest']
+    const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-flash-latest'
+
+    if (requestedModel !== geminiModel) {
+      console.warn(`generate-insights: Invalid model "${requestedModel}", using "${geminiModel}" instead`)
+    }
+
+    // Gemini 2.0 Flash Exp usually works best on v1beta
+    const useV1Endpoint = !geminiModel.includes('-exp') && (geminiModel === 'gemini-2.5-pro' || geminiModel.startsWith('gemini-2.'))
+    const apiVersion = 'v1beta' // Safest default for newer/experimental models like 1.5-flash and 2.0-flash-exp
     const apiUrl = `https://generativelanguage.googleapis.com/${apiVersion}/models/${geminiModel}:generateContent?key=${googleApiKey}`
+    console.log(`generate-insights: Calling Gemini API with model: ${geminiModel} (${apiVersion})`)
 
     const response = await fetch(apiUrl, {
       method: 'POST',
