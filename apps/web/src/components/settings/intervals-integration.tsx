@@ -6,6 +6,7 @@ import { supabase } from '@/lib/supabase'
 interface IntervalsConnection {
   id: string
   athlete_id: string
+  access_token: string
   connected_at: string
   last_sync_at: string | null
   sync_enabled: boolean
@@ -158,17 +159,29 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
     setSuccess(null)
 
     try {
+      // Determine which credentials to use
+      // Prioritize stored connection, then environment variables
+      const syncApiKey = connection?.access_token || apiKey
+      const syncAthleteId = connection?.athlete_id || athleteId
+
+      // Check if we have valid credentials for client-side sync
+      // API Key auth uses "API_KEY" as username, invalid if token starts with "ey" (OAuth JWT)
+      const isApiKeyAuth = syncApiKey && !syncApiKey.startsWith('ey')
+      const canSyncClientSide = isApiKeyAuth && syncAthleteId
+
       // Debug: Check which auth method we're using
       console.log('🔍 Sync Debug:', {
         hasApiKey,
-        apiKey: apiKey ? 'present' : 'missing',
-        athleteId,
-        connectionExists: !!connection
+        hasStoredConnection: !!connection,
+        usingStoredCredentials: !!connection?.access_token,
+        syncAthleteId,
+        isApiKeyAuth,
+        canSyncClientSide
       })
 
       // For API key method, sync directly from browser
-      if (hasApiKey && apiKey && athleteId) {
-        console.log(`🔄 ${fullSync ? 'Full' : 'Incremental'} sync using API key...`)
+      if (canSyncClientSide) {
+        console.log(`🔄 ${fullSync ? 'Full' : 'Incremental'} sync using saved credentials...`)
 
         // Get last sync date or default to 5 years ago (to fetch all historical data)
         // If fullSync is true, always fetch from 5 years ago
@@ -181,10 +194,10 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
 
         // Fetch activities from Intervals.icu
         const response = await fetch(
-          `https://intervals.icu/api/v1/athlete/${athleteId}/activities?oldest=${oldest}`,
+          `https://intervals.icu/api/v1/athlete/${syncAthleteId}/activities?oldest=${oldest}`,
           {
             headers: {
-              'Authorization': `Basic ${btoa(`API_KEY:${apiKey}`)}`,
+              'Authorization': `Basic ${btoa(`API_KEY:${syncApiKey}`)}`,
             },
           }
         )
@@ -515,10 +528,10 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
         console.log('\n🏥 Fetching wellness data (sleep, HRV, etc.)...')
         try {
           const wellnessResponse = await fetch(
-            `https://intervals.icu/api/v1/athlete/${athleteId}/wellness?oldest=${oldest}`,
+            `https://intervals.icu/api/v1/athlete/${syncAthleteId}/wellness?oldest=${oldest}`,
             {
               headers: {
-                'Authorization': `Basic ${btoa(`API_KEY:${apiKey}`)}`,
+                'Authorization': `Basic ${btoa(`API_KEY:${syncApiKey}`)}`,
               },
             }
           )
