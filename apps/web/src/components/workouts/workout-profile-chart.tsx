@@ -24,15 +24,15 @@ export function WorkoutProfileChart({ workout, height = 60, compact = false }: W
   // Create bars directly from segments
   const bars = useMemo(() => {
     const result: Array<{ duration: number; power: number; color: string; type: string }> = []
-    
+
     for (const segment of workout.segments) {
       if (segment.type === 'warmup' || segment.type === 'ramp') {
-        // For warmup/ramp, create gradual steps
+        // For warmup/ramp, create gradual steps - keep slicing for visual "stairs"
         const powerLow = segment.powerLow || 0.5
         const powerHigh = segment.powerHigh || 0.5
-        const steps = Math.ceil(segment.duration / 10) // 10-second slices
+        const steps = Math.ceil(segment.duration / 10) // 10-second slices approximation
         const stepDuration = segment.duration / steps
-        
+
         for (let i = 0; i < steps; i++) {
           const progress = i / (steps - 1 || 1)
           const power = powerLow + (powerHigh - powerLow) * progress
@@ -45,55 +45,43 @@ export function WorkoutProfileChart({ workout, height = 60, compact = false }: W
         }
       } else if (segment.type === 'steadystate') {
         const power = segment.power || segment.powerLow || 0.5
-        // Break into 5-second slices for visual continuity
-        const slices = Math.ceil(segment.duration / 5)
-        const sliceDuration = segment.duration / slices
-        
-        for (let i = 0; i < slices; i++) {
-          result.push({
-            duration: sliceDuration,
-            power,
-            color: getPowerZoneColor(power),
-            type: segment.type
-          })
-        }
+        // Single bar for steady state to ensure correct width scaling
+        result.push({
+          duration: segment.duration,
+          power,
+          color: getPowerZoneColor(power),
+          type: segment.type
+        })
       } else if (segment.type === 'interval' && segment.repeat) {
-        // For intervals, alternate on/off
+        // For intervals, one bar for ON and one bar for OFF
         for (let r = 0; r < segment.repeat; r++) {
           // On interval
           if (segment.onDuration && segment.onPower) {
-            const onSlices = Math.ceil(segment.onDuration / 5)
-            const onSliceDuration = segment.onDuration / onSlices
-            for (let i = 0; i < onSlices; i++) {
-              result.push({
-                duration: onSliceDuration,
-                power: segment.onPower,
-                color: getPowerZoneColor(segment.onPower),
-                type: 'interval-on'
-              })
-            }
+            result.push({
+              duration: segment.onDuration,
+              power: segment.onPower,
+              color: getPowerZoneColor(segment.onPower),
+              type: 'interval-on'
+            })
           }
-          
+
           // Off interval
           if (segment.offDuration && segment.offPower !== undefined) {
-            const offSlices = Math.ceil(segment.offDuration / 5)
-            const offSliceDuration = segment.offDuration / offSlices
-            for (let i = 0; i < offSlices; i++) {
-              result.push({
-                duration: offSliceDuration,
-                power: segment.offPower,
-                color: getPowerZoneColor(segment.offPower),
-                type: 'interval-off'
-              })
-            }
+            result.push({
+              duration: segment.offDuration,
+              power: segment.offPower,
+              color: getPowerZoneColor(segment.offPower),
+              type: 'interval-off'
+            })
           }
         }
       } else if (segment.type === 'cooldown') {
+        // Stairs for cooldown
         const powerLow = segment.powerLow || 0.5
         const powerHigh = segment.powerHigh || powerLow
         const steps = Math.ceil(segment.duration / 10)
         const stepDuration = segment.duration / steps
-        
+
         for (let i = 0; i < steps; i++) {
           const progress = i / (steps - 1 || 1)
           const power = powerLow + (powerHigh - powerLow) * progress
@@ -106,13 +94,13 @@ export function WorkoutProfileChart({ workout, height = 60, compact = false }: W
         }
       }
     }
-    
+
     return result
   }, [workout.segments])
 
   if (bars.length === 0) {
     return (
-      <div 
+      <div
         className="w-full bg-gray-800 rounded"
         style={{ height: `${height}px` }}
       />
@@ -122,29 +110,37 @@ export function WorkoutProfileChart({ workout, height = 60, compact = false }: W
   const totalDuration = bars.reduce((sum, bar) => sum + bar.duration, 0)
 
   return (
-    <div 
-      className="w-full bg-gray-800 rounded overflow-hidden flex items-end gap-[1px]" 
+    <div
+      className="w-full bg-gray-100 dark:bg-gray-800 rounded overflow-hidden flex items-end relative"
       style={{ height: `${height}px` }}
     >
       {bars.map((bar, idx) => {
         const widthPercent = (bar.duration / totalDuration) * 100
         const heightPercent = Math.max(bar.power * 100, 10) // Min 10% height for visibility
-        
+
         return (
           <div
             key={idx}
-            className="flex-shrink-0 transition-all"
+            className="flex-shrink-0 transition-none"
             style={{
               width: `${widthPercent}%`,
               height: `${Math.min(heightPercent, 100)}%`,
               backgroundColor: bar.color,
-              minWidth: compact ? '1px' : '2px'
+              // Optional: Add a tiny border to separate blocks if they are same color, 
+              // but purely distinct blocks is usually better for "profile" view
+              boxShadow: compact ? 'none' : 'inset -1px 0 0 0 rgba(0,0,0,0.1)'
             }}
-            title={`${Math.round(bar.power * 100)}% FTP`}
+            title={`${formatDuration(bar.duration)} @ ${Math.round(bar.power * 100)}% FTP`}
           />
         )
       })}
     </div>
   )
+}
+
+function formatDuration(seconds: number): string {
+  const m = Math.floor(seconds / 60)
+  const s = seconds % 60
+  return `${m}:${s.toString().padStart(2, '0')}`
 }
 
