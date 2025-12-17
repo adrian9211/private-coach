@@ -124,6 +124,15 @@ serve(async (req) => {
       ? activitiesWithHR.reduce((sum, a) => sum + (a.avg_heart_rate || 0), 0) / activitiesWithHR.length
       : 0
 
+    // Get available workouts
+    const { data: workouts } = await supabaseClient
+      .from('workouts')
+      .select('id, name, category, duration, duration_seconds, tss, intensity_factor, power_zones, description')
+      .order('category')
+      .order('name')
+
+    const availableWorkouts = workouts || []
+
     // Calculate recent activity (last 30 days)
     const thirtyDaysAgo = new Date()
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
