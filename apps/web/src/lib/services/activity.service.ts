@@ -121,8 +121,8 @@ export class ActivityService {
         hr_zones: activity.icu_hr_zones || null,
 
         // Speed/pace
-        avg_speed: activity.average_speed || null,
-        max_speed: activity.max_speed || null,
+        avg_speed: activity.average_speed ? activity.average_speed * 3.6 : null,
+        max_speed: activity.max_speed ? activity.max_speed * 3.6 : null,
         pace: activity.pace || null,
         gap: activity.gap || null,
         avg_stride: activity.average_stride || null,
@@ -236,8 +236,8 @@ export class ActivityService {
             hrZones: activity.icu_hr_zones || null,
 
             // Speed/pace metrics
-            avgSpeed: activity.average_speed || null,
-            maxSpeed: activity.max_speed || null,
+            avgSpeed: activity.average_speed ? activity.average_speed * 3.6 : null,
+            maxSpeed: activity.max_speed ? activity.max_speed * 3.6 : null,
             pace: activity.pace || null,
             gap: activity.gap || null,
             avgStride: activity.average_stride || null,

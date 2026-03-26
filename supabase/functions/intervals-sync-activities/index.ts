@@ -263,8 +263,8 @@ serve(async (req: Request) => {
           hr_zones: act.icu_hr_zones || null,
 
           // Speed/pace
-          avg_speed: act.average_speed || null,
-          max_speed: act.max_speed || null,
+          avg_speed: act.average_speed ? act.average_speed * 3.6 : null,
+          max_speed: act.max_speed ? act.max_speed * 3.6 : null,
           pace: act.pace || null,
           gap: act.gap || null,
           avg_stride: act.average_stride || null,
@@ -371,8 +371,8 @@ serve(async (req: Request) => {
               powerZones: act.icu_power_zones || null,
               hrZones: act.icu_hr_zones || null,
 
-              avgSpeed: act.average_speed || null,
-              maxSpeed: act.max_speed || null,
+              avgSpeed: act.average_speed ? act.average_speed * 3.6 : null,
+              maxSpeed: act.max_speed ? act.max_speed * 3.6 : null,
               pace: act.pace || null,
               gap: act.gap || null,
               avgStride: act.average_stride || null,

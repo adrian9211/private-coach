@@ -38,6 +38,11 @@ interface ActivityData {
       name?: string
       type?: string
       trainer?: boolean
+      _raw?: any
+      decoupling?: number
+      powerModel?: any
+      variabilityIndex?: number
+      efficiencyFactor?: number
     }
     powerZones: any
     heartRateZones: any
@@ -62,6 +67,8 @@ interface ActivityData {
   avg_cadence?: number
   max_cadence?: number
   normalized_power?: number
+  variability_index?: number
+  efficiency_factor?: number
   tss?: number
   intensity_factor?: number
   elevation_gain?: number
@@ -629,6 +636,70 @@ export default function ActivityDetailPage() {
                         {safeSummary.maxCadence}
                       </div>
                       <div className="text-sm text-gray-600">Max Cadence</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Advanced Metrics */}
+                <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+                  <h2 className="text-xl font-bold text-gray-900 mb-4">Advanced Analysis & Physics Model</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    {/* IF */}
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-gray-800 mb-1">
+                         {safeSummary.intensityFactor ? Number(safeSummary.intensityFactor).toFixed(2) : '-'}
+                      </div>
+                      <div className="text-sm text-gray-600">Intensity Factor (IF)</div>
+                    </div>
+                    {/* TSS */}
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-gray-800 mb-1">
+                         {safeSummary.tss ? Math.round(Number(safeSummary.tss)) : '-'}
+                      </div>
+                      <div className="text-sm text-gray-600">Training Stress Score</div>
+                    </div>
+                    {/* VI */}
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-gray-800 mb-1">
+                         {activity.variability_index || (summary && summary.variabilityIndex) || '-'}
+                      </div>
+                      <div className="text-sm text-gray-600">Variability Index (VI)</div>
+                    </div>
+                    {/* EF */}
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-gray-800 mb-1">
+                         {activity.efficiency_factor || (summary && summary.efficiencyFactor) ? Number(activity.efficiency_factor || summary.efficiencyFactor).toFixed(2) : '-'}
+                      </div>
+                      <div className="text-sm text-gray-600">Efficiency Factor (EF)</div>
+                    </div>
+                    
+                    {/* pMax */}
+                    <div className="text-center">
+                      <div className="text-2xl font-bold mb-1" style={{color: '#ff4d4f'}}>
+                         {activity.data?.summary?._raw?.icu_pm_p_max || activity.max_power || safeSummary.maxPower || '-'}W
+                      </div>
+                      <div className="text-sm text-gray-600">Peak Power (pMax)</div>
+                    </div>
+                    {/* Normalized Power */}
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-orange-600 mb-1">
+                         {safeSummary.normalizedPower || '-'}W
+                      </div>
+                      <div className="text-sm text-gray-600">Normalized Power (NP)</div>
+                    </div>
+                    {/* Decoupling (Aerobic drift) */}
+                    <div className="text-center">
+                      <div className="text-2xl font-bold mb-1" style={{color: '#faad14'}}>
+                         {activity.data?.summary?.decoupling ? `${Number(activity.data.summary.decoupling).toFixed(1)}%` : '-'}
+                      </div>
+                      <div className="text-sm text-gray-600">Aerobic Decoupling</div>
+                    </div>
+                    {/* W' */}
+                     <div className="text-center">
+                      <div className="text-2xl font-bold mb-1" style={{color: '#1890ff'}}>
+                         {activity.data?.summary?.powerModel?.wPrime || '-'}J
+                      </div>
+                      <div className="text-sm text-gray-600">W' (FRC)</div>
                     </div>
                   </div>
                 </div>

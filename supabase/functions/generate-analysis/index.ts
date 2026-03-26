@@ -628,8 +628,15 @@ ${JSON.stringify({
                 avgPower: activity.data?.summary?.avgPower ? `${activity.data.summary.avgPower}W${ftp ? ` (${Math.round((activity.data.summary.avgPower / ftp) * 100)}% of FTP)` : ''}` : 'No power meter',
                 avgPowerPerKg: (activity.data?.summary?.avgPower && weightKg) ? `${(activity.data.summary.avgPower / weightKg).toFixed(2)} W/kg${ftpPerKg ? ` (${Math.round((activity.data.summary.avgPower / weightKg / ftpPerKg) * 100)}% of FTP/kg)` : ''}` : 'N/A',
                 avgHR: activity.data?.summary?.avgHeartRate ? `${activity.data.summary.avgHeartRate} bpm${vo2Max ? ` (compare to VO2 max capacity: ${vo2Max} ml/kg/min)` : ''}` : 'Unknown',
-                maxPower: activity.data?.summary?.maxPower ? `${activity.data.summary.maxPower}W${ftp ? ` (${Math.round((activity.data.summary.maxPower / ftp) * 100)}% of FTP)` : ''}` : 'N/A',
+                maxPower: activity.data?.summary?.maxPower || activity.max_power ? `${activity.data?.summary?.maxPower || activity.max_power}W${ftp ? ` (${Math.round(((activity.data?.summary?.maxPower || activity.max_power) / ftp) * 100)}% of FTP)` : ''}` : 'N/A',
                 maxHR: activity.data?.summary?.maxHeartRate ? `${activity.data.summary.maxHeartRate} bpm` : 'N/A',
+                tss: activity.data?.summary?.tss || activity.tss ? Math.round(activity.data?.summary?.tss || activity.tss) : 'N/A',
+                intensityFactor: activity.data?.summary?.intensityFactor || activity.intensity_factor ? Number(activity.data?.summary?.intensityFactor || activity.intensity_factor).toFixed(2) : 'N/A',
+                variabilityIndex: activity.variability_index || activity.data?.summary?.variabilityIndex || 'N/A',
+                efficiencyFactor: activity.efficiency_factor || activity.data?.summary?.efficiencyFactor || 'N/A',
+                decoupling: activity.data?.summary?.decoupling || activity.decoupling ? `${Number(activity.data?.summary?.decoupling || activity.decoupling).toFixed(1)}%` : 'N/A',
+                peakPower_pMax: activity.data?.summary?._raw?.icu_pm_p_max || activity.max_power || 'N/A',
+                wPrime: activity.icu_pm_w_prime || activity.data?.summary?.powerModel?.wPrime || 'N/A',
                 powerZones: activity.data?.powerZones ? Object.keys(activity.data.powerZones).length + ' zones' : 'No power zones',
                 rpe: activity.rpe || 'Not provided',
                 feeling: activity.feeling || 'Not provided',
@@ -681,6 +688,9 @@ ${activity.personal_notes ? `
 
 ## Training Efficiency Analysis 📈
 [Identify optimization opportunities based on training science:
+- Deep Physiology: Analyze the athlete's Efficiency Factor (EF), Intensity Factor (IF), and Variability Index (VI). What do these say about their pedaling smoothness and aerobic fitness?
+- Decoupling / Aerobic Drift: Explicitly mention their decoupling percentage (if available). A drift > 5% indicates they lost aerobic efficiency in this duration. Give feedback on this.
+- Power Models: Reference their Peak Power (pMax) and W' outputs in relation to the workout's demands. 
 - Power zone distribution: Are zones utilized optimally according to polarized/pyramidal training principles?
 - Training structure: Could intervals or session design be improved based on research?
 - Missing training stimuli: What key adaptations might be missing based on current training pattern?
