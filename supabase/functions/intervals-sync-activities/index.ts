@@ -137,7 +137,7 @@ serve(async (req: Request) => {
         }
 
         // Fetch detailed activity
-        let detailedActivity = activity;
+        let detailedActivity = null;
         try {
           const detailRes = await fetch(`https://intervals.icu/api/v1/activity/${activity.id}?intervals=true`, { headers: { 'Authorization': intervalsAuthHeader } });
           if (detailRes.ok) detailedActivity = await detailRes.json();
@@ -154,7 +154,8 @@ serve(async (req: Request) => {
           console.warn(`Failed to fetch streams for ${activity.id}`);
         }
 
-        const act = detailedActivity || activity;
+        // Merge them to ensure detailed data doesn't obliterate base summary metrics
+        const act = detailedActivity ? { ...activity, ...detailedActivity } : activity;
 
         // Prepare activity data (using fully detailed mapping like frontend)
         const activityData = {

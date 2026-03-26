@@ -8,7 +8,8 @@ export class ActivityService {
   static async importActivity(userId: string, activityInfo: any, detailedActivity: any, streams: any[]): Promise<boolean> {
     try {
       // Activity info represents the list, detailedActivity represents the single GET result.
-      const activity = detailedActivity || activityInfo;
+      // Merge them to ensure detailed data like intervals doesn't overwrite core fields like distance
+      const activity = detailedActivity ? { ...activityInfo, ...detailedActivity } : activityInfo;
 
       // Map Intervals.icu activity to our database schema
       const activityData = {
