@@ -57,6 +57,15 @@ export class ActivityService {
       // Merge them to ensure detailed data like intervals doesn't overwrite core fields like distance
       const activity = detailedActivity ? { ...activityInfo, ...detailedActivity } : activityInfo;
 
+      // Dynamically map missing max limits from streams
+      let computedMaxCadence = activity.max_cadence || null;
+      if (!computedMaxCadence && streams && streams.length > 0) {
+        const cadenceStream = streams.find(s => s.type === 'cadence')?.data;
+        if (cadenceStream && cadenceStream.length > 0) {
+          computedMaxCadence = Math.max(...cadenceStream);
+        }
+      }
+
       // Map Intervals.icu activity to our database schema
       const activityData = {
         user_id: userId,
@@ -170,6 +179,7 @@ export class ActivityService {
 
         // Cadence
         avg_cadence: activity.average_cadence || null,
+        max_cadence: computedMaxCadence,
 
         // Weather
         weather_temp: activity.average_weather_temp || null,
@@ -244,6 +254,7 @@ export class ActivityService {
 
             // Other metrics
             averageCadence: activity.average_cadence || null,
+            maxCadence: computedMaxCadence,
             calories: activity.calories || null,
             elevation: activity.total_elevation_gain || null,
             elevationLoss: activity.total_elevation_loss || null,

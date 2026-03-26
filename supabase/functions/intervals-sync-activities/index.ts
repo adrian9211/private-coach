@@ -199,6 +199,15 @@ serve(async (req: Request) => {
         // Merge them to ensure detailed data doesn't obliterate base summary metrics
         const act = detailedActivity ? { ...activity, ...detailedActivity } : activity;
 
+        // Dynamically compute missing max limits from streams
+        let computedMaxCadence = act.max_cadence || null;
+        if (!computedMaxCadence && streams && streams.length > 0) {
+          const cadenceStream = streams.find((s: any) => s.type === 'cadence')?.data;
+          if (cadenceStream && cadenceStream.length > 0) {
+            computedMaxCadence = Math.max(...cadenceStream);
+          }
+        }
+
         // Prepare activity data (using fully detailed mapping like frontend)
         const activityData = {
           user_id: userId,
@@ -312,6 +321,7 @@ serve(async (req: Request) => {
 
           // Cadence
           avg_cadence: act.average_cadence || null,
+          max_cadence: computedMaxCadence,
 
           // Weather
           weather_temp: act.average_weather_temp || null,

@@ -10,6 +10,7 @@ import { RPEFeedback } from '@/components/activities/rpe-feedback'
 import { ActivityFeedback } from '@/components/activities/activity-feedback'
 import { AIAnalysisTab } from '@/components/activities/ai-analysis-tab'
 import { PowerZoneAnalysis } from '@/components/activities/power-zone-analysis'
+import { PowerCurveChart } from '@/components/activities/power-curve-chart'
 
 interface ActivityData {
   id: string
@@ -706,7 +707,8 @@ export default function ActivityDetailPage() {
 
                 {/* Power Zone Analysis */}
                 {activity.status === 'processed' && (activity.gps_track || activity.data?.gps_track || activity.data?.records) && (
-                  <div className="mb-8">
+                  <div className="mb-8 space-y-8">
+                    <PowerCurveChart activity={activity as any} />
                     <PowerZoneAnalysis activity={activity as any} ftp={ftp} />
                   </div>
                 )}
