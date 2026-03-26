@@ -6,6 +6,48 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
+function transformStreamsToGpsTrack(streams: any[], startTimeStr: string): any[] | null {
+  if (!streams || !streams.length) return null;
+  
+  const timeStream = streams.find(s => s.type === 'time')?.data;
+  if (!timeStream) return null;
+
+  const latlngStream = streams.find(s => s.type === 'latlng')?.data;
+  const wattsStream = streams.find(s => s.type === 'watts')?.data;
+  const hrStream = streams.find(s => s.type === 'heartrate')?.data;
+  const cadenceStream = streams.find(s => s.type === 'cadence')?.data;
+  const distanceStream = streams.find(s => s.type === 'distance')?.data;
+  const altStream = streams.find(s => s.type === 'altitude')?.data;
+  const velStream = streams.find(s => s.type === 'velocity_smooth')?.data;
+  const tempStream = streams.find(s => s.type === 'temp')?.data;
+
+  const startTime = new Date(startTimeStr).getTime();
+  const track = [];
+
+  for (let i = 0; i < timeStream.length; i++) {
+    const latlng = latlngStream && latlngStream[i] ? latlngStream[i] : null;
+    
+    const point: any = {
+      timestamp: new Date(startTime + timeStream[i] * 1000).toISOString(),
+    };
+    
+    if (latlng) {
+      point.lat = latlng[0];
+      point.long = latlng[1];
+    }
+    if (wattsStream && wattsStream[i] != null) point.power = wattsStream[i];
+    if (hrStream && hrStream[i] != null) point.heartRate = hrStream[i];
+    if (cadenceStream && cadenceStream[i] != null) point.cadence = cadenceStream[i];
+    if (distanceStream && distanceStream[i] != null) point.distance = distanceStream[i];
+    if (altStream && altStream[i] != null) point.altitude = altStream[i];
+    if (velStream && velStream[i] != null) point.speed = velStream[i];
+    if (tempStream && tempStream[i] != null) point.temperature = tempStream[i];
+
+    track.push(point);
+  }
+  return track;
+}
+
 serve(async (req: Request) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -180,10 +222,11 @@ serve(async (req: Request) => {
           trainer: act.trainer || false,
           device_name: act.device_name || null,
           strava_id: act.strava_id || null,
+          gps_track: streams && streams.length > 0 ? transformStreamsToGpsTrack(streams, act.start_date_local) : null,
 
           // Power metrics
           avg_power: act.icu_average_watts || act.average_watts || null,
-          max_power: act.max_watts || null,
+          max_power: act.icu_pm_p_max || act.p_max || act.max_watts || null,
           normalized_power: act.icu_weighted_avg_watts || null,
           intensity_factor: act.icu_intensity || null,
           variability_index: act.icu_variability_index || null,
@@ -291,7 +334,7 @@ serve(async (req: Request) => {
               deviceName: act.device_name || null,
               
               avgPower: act.icu_average_watts || act.average_watts || null,
-              maxPower: act.max_watts || null,
+              maxPower: act.icu_pm_p_max || act.p_max || act.max_watts || null,
               normalizedPower: act.icu_weighted_avg_watts || null,
               intensityFactor: act.icu_intensity || null,
               variabilityIndex: act.icu_variability_index || null,

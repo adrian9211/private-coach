@@ -2,6 +2,52 @@ import { supabase } from '@/lib/supabase'
 
 export class ActivityService {
   /**
+   * Transforms separate metric streams from Intervals.icu into a single array of 
+   * GPSPoints to properly display maps and charts in the UI.
+   */
+  static transformStreamsToGpsTrack(streams: any[], startTimeStr: string): any[] | null {
+    if (!streams || !streams.length) return null;
+    
+    const timeStream = streams.find(s => s.type === 'time')?.data;
+    if (!timeStream) return null;
+
+    const latlngStream = streams.find(s => s.type === 'latlng')?.data;
+    const wattsStream = streams.find(s => s.type === 'watts')?.data;
+    const hrStream = streams.find(s => s.type === 'heartrate')?.data;
+    const cadenceStream = streams.find(s => s.type === 'cadence')?.data;
+    const distanceStream = streams.find(s => s.type === 'distance')?.data;
+    const altStream = streams.find(s => s.type === 'altitude')?.data;
+    const velStream = streams.find(s => s.type === 'velocity_smooth')?.data;
+    const tempStream = streams.find(s => s.type === 'temp')?.data;
+
+    const startTime = new Date(startTimeStr).getTime();
+    const track = [];
+
+    for (let i = 0; i < timeStream.length; i++) {
+      const latlng = latlngStream && latlngStream[i] ? latlngStream[i] : null;
+      
+      const point: any = {
+        timestamp: new Date(startTime + timeStream[i] * 1000).toISOString(),
+      };
+      
+      if (latlng) {
+        point.lat = latlng[0];
+        point.long = latlng[1];
+      }
+      if (wattsStream && wattsStream[i] != null) point.power = wattsStream[i];
+      if (hrStream && hrStream[i] != null) point.heartRate = hrStream[i];
+      if (cadenceStream && cadenceStream[i] != null) point.cadence = cadenceStream[i];
+      if (distanceStream && distanceStream[i] != null) point.distance = distanceStream[i];
+      if (altStream && altStream[i] != null) point.altitude = altStream[i];
+      if (velStream && velStream[i] != null) point.speed = velStream[i];
+      if (tempStream && tempStream[i] != null) point.temperature = tempStream[i];
+
+      track.push(point);
+    }
+    return track;
+  }
+
+  /**
    * Maps an Intervals.icu activity (with optionally attached detailed fields and streams)
    * to our local database schema and inserts it.
    */
@@ -34,10 +80,11 @@ export class ActivityService {
         trainer: activity.trainer || false,
         device_name: activity.device_name || null,
         strava_id: activity.strava_id || null,
+        gps_track: streams && streams.length > 0 ? this.transformStreamsToGpsTrack(streams, activity.start_date_local) : null,
 
         // Power metrics
         avg_power: activity.icu_average_watts || activity.average_watts || null,
-        max_power: activity.max_watts || null,
+        max_power: activity.icu_pm_p_max || activity.p_max || activity.max_watts || null,
         normalized_power: activity.icu_weighted_avg_watts || null,
         intensity_factor: activity.icu_intensity || null,
         variability_index: activity.icu_variability_index || null,
@@ -147,7 +194,7 @@ export class ActivityService {
             
             // Power metrics
             avgPower: activity.icu_average_watts || activity.average_watts || null,
-            maxPower: activity.max_watts || null,
+            maxPower: activity.icu_pm_p_max || activity.p_max || activity.max_watts || null,
             normalizedPower: activity.icu_weighted_avg_watts || null,
             intensityFactor: activity.icu_intensity || null,
             variabilityIndex: activity.icu_variability_index || null,
