@@ -336,35 +336,90 @@ serve(async (req) => {
     const availableWorkouts = workouts || []
     console.log(`Found ${availableWorkouts.length} workouts available for recommendations`)
 
-    // Get user's activity history for context and trend analysis
+    // Get user's activity history for context and trend analysis (Last 14 Days)
+    const fourteenDaysAgo = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString();
     const { data: recentActivities, error: historyError } = await supabaseClient
       .from('activities')
-      .select('id, start_time, data, rpe, feeling, total_distance, total_timer_time, avg_power, avg_heart_rate')
+      .select('id, start_time, data, rpe, feeling, total_distance, total_timer_time, avg_power, avg_heart_rate, tss, work_kj')
       .eq('user_id', activity.user_id)
       .eq('status', 'processed')
+      .gte('start_time', fourteenDaysAgo)
       .order('start_time', { ascending: false, nullsFirst: false })
-      .order('upload_date', { ascending: false })
-      .limit(20) // Last 20 activities for context
 
     if (historyError) {
       console.warn('Error fetching activity history:', historyError)
     }
 
-    // Calculate trends from history
+    // Build a strict Day-By-Day array of the last 14 days
     const activityHistory = recentActivities || []
-    const historyContext = activityHistory.length > 0 ? {
-      totalActivities: activityHistory.length,
-      avgDuration: activityHistory.reduce((sum, a) => sum + (a.total_timer_time || 0), 0) / activityHistory.length,
-      avgDistance: activityHistory.reduce((sum, a) => sum + (a.total_distance || 0), 0) / activityHistory.length,
-      avgPower: activityHistory.filter(a => a.avg_power > 0).reduce((sum, a) => sum + (a.avg_power || 0), 0) / Math.max(1, activityHistory.filter(a => a.avg_power > 0).length),
-      avgRPE: activityHistory.filter(a => a.rpe).reduce((sum, a) => sum + (a.rpe || 0), 0) / Math.max(1, activityHistory.filter(a => a.rpe).length),
-      avgFeeling: activityHistory.filter(a => a.feeling).reduce((sum, a) => sum + (a.feeling || 0), 0) / Math.max(1, activityHistory.filter(a => a.feeling).length),
-      recentRPEs: activityHistory.filter(a => a.rpe).slice(0, 10).map(a => ({ date: a.start_time, rpe: a.rpe })),
-      recentFeelings: activityHistory.filter(a => a.feeling).slice(0, 10).map(a => ({ date: a.start_time, feeling: a.feeling })),
-      powerTrend: activityHistory.filter(a => a.avg_power > 0).length > 1 ?
-        (activityHistory.filter(a => a.avg_power > 0).slice(0, 5).reduce((sum, a) => sum + (a.avg_power || 0), 0) /
-          activityHistory.filter(a => a.avg_power > 0).slice(5, 10).reduce((sum, a) => sum + (a.avg_power || 0), 1)) : null,
-    } : null
+    let groupedHistory: Record<string, any> = {};
+    
+    activityHistory.forEach(a => {
+      if (!a.start_time) return;
+      // Convert to strict YYYY-MM-DD local format based on string
+      const dateKey = a.start_time.split('T')[0];
+      
+      if (!groupedHistory[dateKey]) {
+        groupedHistory[dateKey] = {
+          date: dateKey,
+          activityCount: 0,
+          totalDurationSecs: 0,
+          totalDistanceKm: 0,
+          totalTSS: 0,
+          totalWorkKj: 0,
+          avgRpe: 0,
+          avgFeeling: 0,
+          rpeCount: 0,
+          feelingCount: 0
+        };
+      }
+      
+      const day = groupedHistory[dateKey];
+      day.activityCount += 1;
+      day.totalDurationSecs += (a.total_timer_time || 0);
+      day.totalDistanceKm += (a.total_distance || 0);
+      day.totalTSS += (a.tss || 0);
+      day.totalWorkKj += (a.work_kj || 0);
+      
+      if (typeof a.rpe === 'number') {
+        day.avgRpe += a.rpe;
+        day.rpeCount += 1;
+      }
+      if (typeof a.feeling === 'number') {
+        day.avgFeeling += a.feeling;
+        day.feelingCount += 1;
+      }
+    });
+
+    // Finalize averages
+    const dailyBreakdown = Object.values(groupedHistory)
+      .map((day: any) => {
+        day.avgRpe = day.rpeCount > 0 ? Number((day.avgRpe / day.rpeCount).toFixed(1)) : null;
+        day.avgFeeling = day.feelingCount > 0 ? Number((day.avgFeeling / day.feelingCount).toFixed(1)) : null;
+        day.totalDistanceKm = Number(day.totalDistanceKm.toFixed(1));
+        day.totalTSS = Number(day.totalTSS.toFixed(0));
+        day.totalWorkKj = Number(day.totalWorkKj.toFixed(0));
+        
+        // Format duration for the AI beautifully
+        const hours = Math.floor(day.totalDurationSecs / 3600);
+        const mins = Math.floor((day.totalDurationSecs % 3600) / 60);
+        day.totalDurationFormatted = `${hours}h ${mins}m`;
+        
+        // Clean up internal counters passed to AI
+        delete day.rpeCount;
+        delete day.feelingCount;
+        delete day.totalDurationSecs;
+        
+        return day;
+      })
+      .sort((a, b) => b.date.localeCompare(a.date)); // descending dates
+
+    const historyContext = dailyBreakdown.length > 0 ? {
+      totalActivitiesLast14Days: activityHistory.length,
+      activeDaysLast14Days: dailyBreakdown.length,
+      averageTSSPerActiveDay: Number((dailyBreakdown.reduce((sum, d) => sum + d.totalTSS, 0) / dailyBreakdown.length).toFixed(0)),
+      dayByDayLog: dailyBreakdown
+    } : null;
 
     // Prepare data for AI analysis
     const activityData = {
@@ -643,16 +698,6 @@ ${JSON.stringify({
                 personalNotes: activity.personal_notes || 'Not provided',
                 date: activity.start_time || activity.created_at
               }, null, 2)}
-
-**TRAINING HISTORY CONTEXT (Last ${activityHistory.length} activities):**
-${historyContext ? JSON.stringify({
-                averageDuration: `${Math.round(historyContext.avgDuration / 60)} minutes`,
-                averageDistance: `${historyContext.avgDistance.toFixed(2)} km`,
-                averagePower: historyContext.avgPower > 0 ? `${Math.round(historyContext.avgPower)}W` : 'No power data',
-                averageRPE: historyContext.avgRPE > 0 ? `${historyContext.avgRPE.toFixed(1)}/10` : 'No RPE history',
-                recentRPEs: historyContext.recentRPEs,
-                powerTrend: historyContext.powerTrend ? (historyContext.powerTrend > 1.05 ? 'INCREASING' : historyContext.powerTrend < 0.95 ? 'DECREASING' : 'STABLE') : 'N/A'
-              }, null, 2) : 'No historical data available - this appears to be an early workout'}
 
 **COMPARISON ANALYSIS REQUIRED:**
 - How does this workout compare to recent averages?
