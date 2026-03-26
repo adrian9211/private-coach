@@ -235,8 +235,8 @@ serve(async (req) => {
     // Use gemini-3-pro-preview as requested by user (verified model)
     const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-flash-latest'
     // validModels supports user requested model + fallbacks
-    const validModels = ['gemini-3-pro-preview', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash-exp', 'gemini-flash-latest']
-    const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-flash-latest'
+    const validModels = ['gemini-3.1-pro-preview', 'gemini-3-pro-preview', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-exp', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-flash-latest']
+    const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-2.0-flash'
 
     if (requestedModel !== geminiModel) {
       console.warn(`Invalid model "${requestedModel}", using "${geminiModel}" instead`)
