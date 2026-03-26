@@ -6,7 +6,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-serve(async (req) => {
+serve(async (req: Request) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
@@ -78,7 +78,7 @@ serve(async (req) => {
     // Fetch activities from Intervals.icu
     // API keys use Basic auth, OAuth tokens use Bearer
     const isApiKey = !connection.access_token.startsWith('ey') // OAuth tokens start with 'ey'
-    const authHeader = isApiKey 
+    const intervalsAuthHeader = isApiKey 
       ? `Basic ${btoa(`API_KEY:${connection.access_token}`)}`
       : `Bearer ${connection.access_token}`
     
@@ -88,7 +88,7 @@ serve(async (req) => {
       `https://intervals.icu/api/v1/athlete/${connection.athlete_id}/activities?oldest=${oldest}`,
       {
         headers: {
-          'Authorization': authHeader,
+          'Authorization': intervalsAuthHeader,
         },
       }
     )
@@ -128,7 +128,7 @@ serve(async (req) => {
           .from('activities')
           .select('id')
           .eq('user_id', userId)
-          .eq('metadata->>intervals_id', activity.id)
+          .eq('metadata->>intervals_id', activity.id.toString())
           .maybeSingle()
 
         if (existing) {
@@ -136,45 +136,257 @@ serve(async (req) => {
           continue
         }
 
-        // Prepare activity data (using correct Intervals.icu API field names)
+        // Fetch detailed activity
+        let detailedActivity = activity;
+        try {
+          const detailRes = await fetch(`https://intervals.icu/api/v1/activity/${activity.id}?intervals=true`, { headers: { 'Authorization': intervalsAuthHeader } });
+          if (detailRes.ok) detailedActivity = await detailRes.json();
+        } catch (e) {
+          console.warn(`Failed to fetch details for ${activity.id}`);
+        }
+
+        // Fetch streams
+        let streams = null;
+        try {
+          const streamsRes = await fetch(`https://intervals.icu/api/v1/activity/${activity.id}/streams`, { headers: { 'Authorization': intervalsAuthHeader } });
+          if (streamsRes.ok) streams = await streamsRes.json();
+        } catch (e) {
+          console.warn(`Failed to fetch streams for ${activity.id}`);
+        }
+
+        const act = detailedActivity || activity;
+
+        // Prepare activity data (using fully detailed mapping like frontend)
         const activityData = {
           user_id: userId,
-          file_name: `intervals-${activity.id}.fit`,
+          file_name: `intervals-${act.id}.fit`,
+          file_size: 0,
           upload_date: new Date().toISOString(),
-          start_time: activity.start_date_local,
-          status: 'processed', // Mark as processed since we have data
+          start_time: act.start_date_local,
+          status: 'processed',
           metadata: {
-            intervals_id: activity.id,
+            intervals_id: act.id,
             source: 'intervals.icu',
-            type: activity.type,
-            name: activity.name,
-            description: activity.description || null,
+            type: act.type,
+            name: act.name,
+            description: act.description || null,
           },
-          // Summary data (field names from OpenAPI spec)
-          total_distance: activity.distance ? activity.distance / 1000 : null, // Convert m to km
-          total_timer_time: activity.moving_time,
-          avg_power: activity.icu_average_watts || activity.average_watts || null,
-          avg_heart_rate: activity.average_heartrate || null,
-          avg_speed: activity.average_speed || null,
-          // Store full activity data with correct field names
+
+          // Basic metrics
+          total_distance: act.distance ? act.distance / 1000 : null,
+          total_timer_time: act.moving_time || null,
+          elapsed_time: act.elapsed_time || null,
+          trainer: act.trainer || false,
+          device_name: act.device_name || null,
+          strava_id: act.strava_id || null,
+
+          // Power metrics
+          avg_power: act.icu_average_watts || act.average_watts || null,
+          max_power: act.max_watts || null,
+          normalized_power: act.icu_weighted_avg_watts || null,
+          intensity_factor: act.icu_intensity || null,
+          variability_index: act.icu_variability_index || null,
+          tss: act.icu_training_load || null,
+          work_kj: act.icu_joules ? act.icu_joules / 1000 : null,
+          work_above_ftp_kj: act.icu_joules_above_ftp ? act.icu_joules_above_ftp / 1000 : null,
+          max_wbal_depletion: act.icu_max_wbal_depletion || null,
+
+          // Power model
+          cp: act.icu_pm_cp || null,
+          w_prime: act.icu_pm_w_prime || null,
+          p_max: act.icu_pm_p_max || null,
+          estimated_ftp: act.icu_pm_ftp || null,
+          ftp_at_time: act.icu_ftp || null,
+
+          // Rolling power
+          rolling_cp: act.icu_rolling_cp || null,
+          rolling_w_prime: act.icu_rolling_w_prime || null,
+          rolling_p_max: act.icu_rolling_p_max || null,
+          rolling_ftp: act.icu_rolling_ftp || null,
+          rolling_ftp_delta: act.icu_rolling_ftp_delta || null,
+
+          // Heart rate
+          avg_heart_rate: act.average_heartrate || null,
+          max_heart_rate: act.max_heartrate || null,
+          lthr: act.lthr || null,
+          resting_hr: act.icu_resting_hr || null,
+          hr_recovery: act.icu_hrr || null,
+
+          // Zone times
+          power_zone_times: act.icu_zone_times ? act.icu_zone_times.map((z: any) => z.secs) : null,
+          hr_zone_times: act.icu_hr_zone_times || null,
+          power_zones: act.icu_power_zones || null,
+          hr_zones: act.icu_hr_zones || null,
+
+          // Speed/pace
+          avg_speed: act.average_speed || null,
+          max_speed: act.max_speed || null,
+          pace: act.pace || null,
+          gap: act.gap || null,
+          avg_stride: act.average_stride || null,
+
+          // Elevation
+          elevation_gain: act.total_elevation_gain || null,
+          elevation_loss: act.total_elevation_loss || null,
+          avg_altitude: act.average_altitude || null,
+          min_altitude: act.min_altitude || null,
+          max_altitude: act.max_altitude || null,
+
+          // Training load
+          hr_load: act.hr_load || null,
+          power_load: act.power_load || null,
+          trimp: act.trimp || null,
+          strain_score: act.strain_score || null,
+
+          // RPE & Feel
+          rpe: act.icu_rpe || null,
+          feel: act.feel || null,
+          session_rpe: act.session_rpe || null,
+
+          // Fitness tracking
+          ctl: act.icu_ctl || null,
+          atl: act.icu_atl || null,
+          weight_kg: act.icu_weight || null,
+
+          // Intervals
+          interval_summary: act.interval_summary || null,
+          lap_count: act.icu_lap_count || null,
+          warmup_time: act.icu_warmup_time || null,
+          cooldown_time: act.icu_cooldown_time || null,
+
+          // Training quality
+          polarization_index: act.polarization_index || null,
+          decoupling: act.decoupling || null,
+          power_hr_ratio: act.icu_power_hr || null,
+          power_hr_z2: act.icu_power_hr_z2 || null,
+          efficiency_factor: act.icu_efficiency_factor || null,
+
+          // Energy
+          calories: act.calories || null,
+          carbs_used: act.carbs_used || null,
+          carbs_ingested: act.carbs_ingested || null,
+
+          // Cadence
+          avg_cadence: act.average_cadence || null,
+
+          // Weather
+          weather_temp: act.average_weather_temp || null,
+          feels_like: act.average_feels_like || null,
+          wind_speed: act.average_wind_speed || null,
+          wind_direction: act.prevailing_wind_deg || null,
+          headwind_percent: act.headwind_percent || null,
+          tailwind_percent: act.tailwind_percent || null,
+
           data: {
             summary: {
-              totalDistance: activity.distance ? activity.distance / 1000 : null,
-              duration: activity.moving_time,
-              avgPower: activity.icu_average_watts || activity.average_watts || null,
-              avgHeartRate: activity.average_heartrate || null,
-              avgSpeed: activity.average_speed || null,
-              maxPower: activity.max_watts || null,
-              maxHeartRate: activity.max_heartrate || null,
-              normalizedPower: activity.icu_weighted_avg_watts || null,
-              intensityFactor: activity.icu_intensity || null,
-              tss: activity.icu_training_load || null,
-              calories: activity.calories || null,
-              elevation: activity.total_elevation_gain || null,
-              averageCadence: activity.average_cadence || null,
-              maxSpeed: activity.max_speed || null,
-              type: activity.type,
-              trainer: activity.trainer || false,
+              totalDistance: act.distance ? act.distance / 1000 : null,
+              duration: act.moving_time || null,
+              elapsedTime: act.elapsed_time || null,
+              type: act.type,
+              trainer: act.trainer || false,
+              name: act.name,
+              description: act.description || null,
+              source: act.source || null,
+              deviceName: act.device_name || null,
+              
+              avgPower: act.icu_average_watts || act.average_watts || null,
+              maxPower: act.max_watts || null,
+              normalizedPower: act.icu_weighted_avg_watts || null,
+              intensityFactor: act.icu_intensity || null,
+              variabilityIndex: act.icu_variability_index || null,
+              tss: act.icu_training_load || null,
+              work: act.icu_joules || null,
+              workAboveFTP: act.icu_joules_above_ftp || null,
+              maxWbalDepletion: act.icu_max_wbal_depletion || null,
+
+              powerModel: {
+                criticalPower: act.icu_pm_cp || null,
+                wPrime: act.icu_pm_w_prime || null,
+                pMax: act.icu_pm_p_max || null,
+                estimatedFTP: act.icu_pm_ftp || null,
+                ftpSecs: act.icu_pm_ftp_secs || null,
+                ftpWatts: act.icu_pm_ftp_watts || null,
+              },
+
+              rollingPower: {
+                cp: act.icu_rolling_cp || null,
+                wPrime: act.icu_rolling_w_prime || null,
+                pMax: act.icu_rolling_p_max || null,
+                ftp: act.icu_rolling_ftp || null,
+                ftpDelta: act.icu_rolling_ftp_delta || null,
+              },
+
+              avgHeartRate: act.average_heartrate || null,
+              maxHeartRate: act.max_heartrate || null,
+              lthr: act.lthr || null,
+              restingHR: act.icu_resting_hr || null,
+              hrRecovery: act.icu_hrr || null,
+
+              powerZoneTimes: act.icu_zone_times || null,
+              hrZoneTimes: act.icu_hr_zone_times || null,
+              powerZones: act.icu_power_zones || null,
+              hrZones: act.icu_hr_zones || null,
+
+              avgSpeed: act.average_speed || null,
+              maxSpeed: act.max_speed || null,
+              pace: act.pace || null,
+              gap: act.gap || null,
+              avgStride: act.average_stride || null,
+
+              averageCadence: act.average_cadence || null,
+              calories: act.calories || null,
+              elevation: act.total_elevation_gain || null,
+              elevationLoss: act.total_elevation_loss || null,
+              avgAltitude: act.average_altitude || null,
+              minAltitude: act.min_altitude || null,
+              maxAltitude: act.max_altitude || null,
+
+              hrLoad: act.hr_load || null,
+              powerLoad: act.power_load || null,
+              trimp: act.trimp || null,
+              strainScore: act.strain_score || null,
+
+              rpe: act.icu_rpe || null,
+              feel: act.feel || null,
+              sessionRPE: act.session_rpe || null,
+
+              ctl: act.icu_ctl || null,
+              atl: act.icu_atl || null,
+              weight: act.icu_weight || null,
+              ftp: act.icu_ftp || null,
+
+              intervalSummary: act.interval_summary || null,
+              lapCount: act.icu_lap_count || null,
+
+              polarizationIndex: act.polarization_index || null,
+              decoupling: act.decoupling || null,
+              powerHR: act.icu_power_hr || null,
+              powerHRZ2: act.icu_power_hr_z2 || null,
+              efficiencyFactor: act.icu_efficiency_factor || null,
+
+              warmupTime: act.icu_warmup_time || null,
+              cooldownTime: act.icu_cooldown_time || null,
+
+              carbsUsed: act.carbs_used || null,
+              carbsIngested: act.carbs_ingested || null,
+
+              weather: {
+                avgTemp: act.average_weather_temp || null,
+                avgFeelsLike: act.average_feels_like || null,
+                avgWindSpeed: act.average_wind_speed || null,
+                avgWindGust: act.average_wind_gust || null,
+                windDirection: act.prevailing_wind_deg || null,
+                headwindPercent: act.headwind_percent || null,
+                tailwindPercent: act.tailwind_percent || null,
+                clouds: act.average_clouds || null,
+              },
+
+              stravaId: act.strava_id || null,
+              streamTypes: act.stream_types || null,
+              intervals: act.icu_intervals || null,
+              streams: streams && streams.length > 0 ? streams : null,
+
+              _raw: act,
             },
           },
         }
@@ -185,15 +397,15 @@ serve(async (req) => {
           .insert(activityData)
 
         if (insertError) {
-          console.error(`Failed to insert activity ${activity.id}:`, insertError)
-          errors.push(`Activity ${activity.id}: ${insertError.message}`)
+          console.error(`Failed to insert activity ${act.id}:`, insertError)
+          errors.push(`Activity ${act.id}: ${insertError.message}`)
         } else {
           syncedCount++
-          console.log(`Successfully synced activity ${activity.id}`)
+          console.log(`Successfully synced activity ${act.id}`)
         }
       } catch (error) {
         console.error(`Error processing activity ${activity.id}:`, error)
-        errors.push(`Activity ${activity.id}: ${error.message}`)
+        errors.push(`Activity ${activity.id}: ${error instanceof Error ? error.message : String(error)}`)
       }
     }
 
@@ -228,7 +440,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('Unexpected error:', error)
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: error instanceof Error ? error.message : String(error) }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
   }
