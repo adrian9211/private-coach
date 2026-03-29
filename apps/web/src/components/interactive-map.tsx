@@ -62,8 +62,14 @@ export function InteractiveMap({ activity }: InteractiveMapProps) {
         )
         
         if (validPoints.length > 0) {
+          // Performance Optimization: Downsample to ~1000 points max to prevent Leaflet mapping freeze
+          const targetPoints = 1000
+          const step = Math.max(1, Math.floor(validPoints.length / targetPoints))
+
           // Convert coordinates with validation
-          const convertedPoints = validPoints.map(point => {
+          const convertedPoints = validPoints
+            .filter((_, index) => index % step === 0)
+            .map(point => {
             const latDegrees = point.lat * (180 / Math.pow(2, 31))
             const longDegrees = point.long * (180 / Math.pow(2, 31))
             

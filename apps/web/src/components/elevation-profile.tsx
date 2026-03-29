@@ -100,17 +100,23 @@ export function ElevationProfile({ activity, ftp }: ElevationProfileProps) {
 
     if (validPoints.length === 0) return
 
+    // Performance Optimization: Limit to ~500 points to prevent Recharts SVG DOM freeze
+    const targetPoints = 500
+    const step = Math.max(1, Math.floor(validPoints.length / targetPoints))
+
     // Convert distance from meters to kilometers and prepare chart data
-    const data: ChartDataPoint[] = validPoints.map((point, index) => ({
-      distance: (point.distance || 0) / 1000, // Convert to km
-      altitude: point.altitude || 0,
-      speed: point.speed ? (point.speed * 3.6) : 0, // Convert to km/h
-      heartRate: point.heartRate || 0,
-      power: point.power || 0,
-      cadence: point.cadence || 0,
-      grade: point.grade || 0,
-      time: new Date(point.timestamp).toLocaleTimeString()
-    }))
+    const data: ChartDataPoint[] = validPoints
+      .filter((_, index) => index % step === 0)
+      .map((point) => ({
+        distance: (point.distance || 0) / 1000, // Convert to km
+        altitude: point.altitude || 0,
+        speed: point.speed ? (point.speed * 3.6) : 0, // Convert to km/h
+        heartRate: point.heartRate || 0,
+        power: point.power || 0,
+        cadence: point.cadence || 0,
+        grade: point.grade || 0,
+        time: new Date(point.timestamp).toLocaleTimeString()
+      }))
 
     setChartData(data)
 
