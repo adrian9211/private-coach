@@ -201,12 +201,6 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
 
         console.log(`📥 Fetched ${activities.length} activities summary`)
 
-        if (activities.length === 0) {
-          setSuccess('No new activities to sync')
-          setSyncing(false)
-          return
-        }
-
         // Fetch wellness data (sleep, HRV, weight, etc.)
         console.log('\n🏥 Fetching wellness data (sleep, HRV, etc.)...')
         let wellnessData: any[] = []
@@ -223,11 +217,48 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
           if (wellnessResponse.ok) {
             wellnessData = await wellnessResponse.json()
             console.log(`📊 Fetched ${wellnessData.length} wellness records`)
+            
+            // Immediately upsert standalone daily wellness metrics native records
+            if (wellnessData.length > 0) {
+              const wellnessPayload = wellnessData.map((w: any) => ({
+                user_id: userId,
+                date: w.id, // Intervals uses the date string as ID
+                data: w
+              }))
+
+              const { error: wellnessError } = await supabase
+                .from('daily_wellness')
+                .upsert(wellnessPayload, { onConflict: 'user_id, date' })
+
+              if (wellnessError) {
+                console.error('❌ Failed to upsert standalone daily_wellness records:', wellnessError)
+              } else {
+                console.log('✅ Successfully upserted standalone daily_wellness records')
+              }
+            }
           } else {
             console.warn('⚠️ Could not fetch wellness data:', wellnessResponse.status)
           }
         } catch (wellnessError) {
           console.error('❌ Error fetching wellness data:', wellnessError)
+        }
+
+        if (activities.length === 0) {
+          if (wellnessData.length > 0) {
+            setSuccess(`✅ Target sync complete. ${wellnessData.length} wellness days stored. (0 activities)`)
+          } else {
+            setSuccess('No new activities or wellness data to sync')
+          }
+          // Make sure to also update last sync time if we synced wellness
+          if (connection && wellnessData.length > 0) {
+            await supabase
+              .from('intervals_connections')
+              .update({ last_sync_at: new Date().toISOString() })
+              .eq('user_id', userId)
+            await loadConnection()
+          }
+          setSyncing(false)
+          return
         }
 
         // Import activities to database
@@ -288,11 +319,11 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
           await loadConnection()
         }
 
-        // Show results
         const resultParts = []
-        if (imported > 0) resultParts.push(`${imported} imported`)
-        if (skipped > 0) resultParts.push(`${skipped} skipped`)
-        if (errors > 0) resultParts.push(`${errors} errors`)
+        if (imported > 0) resultParts.push(`${imported} activities`)
+        if (wellnessData.length > 0) resultParts.push(`${wellnessData.length} wellness metrics`)
+        if (skipped > 0) resultParts.push(`(skipped ${skipped})`)
+        if (errors > 0) resultParts.push(`(${errors} errors)`)
 
         setSuccess(`✅ Sync complete! ${resultParts.join(', ')}`)
         console.log(`✨ Import complete: ${resultParts.join(', ')}`)
