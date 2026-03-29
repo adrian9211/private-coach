@@ -316,6 +316,7 @@ export class ActivityService {
             // Add the detailed icu_intervals and streams arrays specifically requested
             intervals: activity.icu_intervals || null,
             streams: streams && streams.length > 0 ? streams : null,
+            wellness: activity.wellness || null,
 
             _raw: activity,
           },

@@ -159,6 +159,24 @@ serve(async (req: Request) => {
     const activities = await activitiesResponse.json()
     console.log(`Fetched ${activities.length} activities`)
 
+    // Fetch wellness data
+    let wellnessData: any[] = []
+    try {
+      console.log(`Fetching wellness data since ${oldest}...`)
+      const wellnessResponse = await fetch(
+        `https://intervals.icu/api/v1/athlete/${connection.athlete_id}/wellness?oldest=${oldest}`,
+        { headers: { 'Authorization': intervalsAuthHeader } }
+      )
+      if (wellnessResponse.ok) {
+        wellnessData = await wellnessResponse.json()
+        console.log(`Fetched ${wellnessData.length} wellness records`)
+      } else {
+        console.warn('Failed to fetch wellness data:', await wellnessResponse.text())
+      }
+    } catch (e) {
+      console.error('Error fetching wellness data:', e)
+    }
+
     let syncedCount = 0
     let errors = []
 
@@ -198,6 +216,10 @@ serve(async (req: Request) => {
 
         // Merge them to ensure detailed data doesn't obliterate base summary metrics
         const act = detailedActivity ? { ...activity, ...detailedActivity } : activity;
+
+        // Find corresponding wellness data for the day
+        const activityDate = act.start_date_local ? act.start_date_local.split('T')[0] : null;
+        const dayWellness = activityDate ? wellnessData.find((w: any) => w.id === activityDate) : null;
 
         // Dynamically compute missing max limits from streams
         let computedMaxCadence = act.max_cadence || null;
@@ -439,6 +461,7 @@ serve(async (req: Request) => {
               streamTypes: act.stream_types || null,
               intervals: act.icu_intervals || null,
               streams: streams && streams.length > 0 ? streams : null,
+              wellness: dayWellness || null,
 
               _raw: act,
             },

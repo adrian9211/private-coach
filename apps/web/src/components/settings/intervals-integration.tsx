@@ -207,6 +207,29 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
           return
         }
 
+        // Fetch wellness data (sleep, HRV, weight, etc.)
+        console.log('\n🏥 Fetching wellness data (sleep, HRV, etc.)...')
+        let wellnessData: any[] = []
+        try {
+          const wellnessResponse = await fetch(
+            `https://intervals.icu/api/v1/athlete/${syncAthleteId}/wellness?oldest=${oldest}`,
+            {
+              headers: {
+                'Authorization': `Basic ${btoa(`API_KEY:${syncApiKey}`)}`,
+              },
+            }
+          )
+
+          if (wellnessResponse.ok) {
+            wellnessData = await wellnessResponse.json()
+            console.log(`📊 Fetched ${wellnessData.length} wellness records`)
+          } else {
+            console.warn('⚠️ Could not fetch wellness data:', wellnessResponse.status)
+          }
+        } catch (wellnessError) {
+          console.error('❌ Error fetching wellness data:', wellnessError)
+        }
+
         // Import activities to database
         console.log('💾 Fetching detailed activity data and importing to database...')
         let imported = 0
@@ -232,6 +255,15 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
               console.warn(`Could not fetch streams for activity ${activity.id}`);
             }
 
+            // Find corresponding wellness data for the day
+            const activityDate = activity.start_date_local ? activity.start_date_local.split('T')[0] : null;
+            const dayWellness = activityDate ? wellnessData.find((w: any) => w.id === activityDate) : null;
+            if (detailedActivity) {
+              detailedActivity.wellness = dayWellness;
+            } else if (dayWellness) {
+              activity.wellness = dayWellness;
+            }
+
             // Save to DB
             const success = await ActivityService.importActivity(userId, activity, detailedActivity, streams);
             if (success) {
@@ -254,37 +286,6 @@ export function IntervalsIntegration({ userId }: IntervalsIntegrationProps) {
             .eq('user_id', userId)
 
           await loadConnection()
-        }
-
-        // Now fetch wellness data (sleep, HRV, etc.)
-        console.log('\n🏥 Fetching wellness data (sleep, HRV, etc.)...')
-        try {
-          const wellnessResponse = await fetch(
-            `https://intervals.icu/api/v1/athlete/${syncAthleteId}/wellness?oldest=${oldest}`,
-            {
-              headers: {
-                'Authorization': `Basic ${btoa(`API_KEY:${syncApiKey}`)}`,
-              },
-            }
-          )
-
-          if (wellnessResponse.ok) {
-            const wellnessData = await wellnessResponse.json()
-            console.log(`📊 Fetched ${wellnessData.length} wellness records`)
-
-            // Log first wellness record to see ALL available fields
-            if (wellnessData.length > 0) {
-              console.log('🔍 Sample Wellness Data:', wellnessData[0])
-              console.log('📋 Wellness fields:', Object.keys(wellnessData[0]).sort())
-            }
-
-            // TODO: Store wellness data in database
-            // For now just log it so you can see what's available
-          } else {
-            console.warn('⚠️ Could not fetch wellness data:', wellnessResponse.status)
-          }
-        } catch (wellnessError) {
-          console.error('❌ Error fetching wellness data:', wellnessError)
         }
 
         // Show results

@@ -235,7 +235,7 @@ serve(async (req) => {
     // Use gemini-3-pro-preview as requested by user (verified model)
     const requestedModel = Deno.env.get('GEMINI_MODEL') || 'gemini-flash-latest'
     // validModels supports user requested model + fallbacks
-    const validModels = ['gemini-3.1-pro-preview', 'gemini-3-pro-preview', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-exp', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-flash-latest']
+    const validModels = ['gemini-3.1-pro-preview', 'gemini-3-pro-preview', 'gemini-3-flash', 'gemini-2.5-pro', 'gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-exp', 'gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-flash-latest']
     const geminiModel = validModels.includes(requestedModel) ? requestedModel : 'gemini-2.0-flash'
 
     if (requestedModel !== geminiModel) {
@@ -660,6 +660,16 @@ ${activity.rpe ? `
 - **MANDATORY:** Include feeling analysis in your "Recovery & Fatigue Assessment" section
 ` : '⚠️ NO FEELING PROVIDED - Encourage logging feeling for comprehensive recovery assessment'}
 
+**🔥 CRITICAL: DAILY WELLNESS & RECOVERY (MANDATORY IF PROVIDED):**
+${activity.data?.summary?.wellness ? `
+- **WELLNESS METRICS AVALIABLE FOR THIS DAY:** Weight: ${activity.data.summary.wellness.weight || 'N/A'}kg, Resting HR: ${activity.data.summary.wellness.restingHR || 'N/A'}bpm, HRV: ${activity.data.summary.wellness.hrv || 'N/A'}ms, Sleep Score: ${activity.data.summary.wellness.sleepScore || 'N/A'}/100.
+- **MANDATORY ANALYSIS REQUIRED:**
+  - **YOU MUST INCORPORATE** the wellness metrics into your "Recovery & Fatigue Assessment".
+  - Examine metrics like Sleep Score, HRV (rMSSD), and Resting HR to determine baseline readiness.
+  - Discuss how the current state of recovery might have impacted the day's performance and RPE.
+  - Provide actionable advice based on these metrics.
+` : 'No daily wellness metrics provided for this activity.'}
+
 **🔥 CRITICAL: PERSONAL NOTES & USER EXPERIENCE (MANDATORY IF PROVIDED):**
 ${activity.personal_notes ? `
 - **USER'S PERSONAL OBSERVATIONS (MUST BE ANALYZED):**
@@ -696,6 +706,17 @@ ${JSON.stringify({
                 rpe: activity.rpe || 'Not provided',
                 feeling: activity.feeling || 'Not provided',
                 personalNotes: activity.personal_notes || 'Not provided',
+                wellness: activity.data?.summary?.wellness ? {
+                  sleepQuality: activity.data.summary.wellness.sleepQuality,
+                  sleepScore: activity.data.summary.wellness.sleepScore,
+                  hrv: activity.data.summary.wellness.hrv,
+                  restingHR: activity.data.summary.wellness.restingHR,
+                  weight: activity.data.summary.wellness.weight,
+                  spO2: activity.data.summary.wellness.spO2,
+                  vo2max: activity.data.summary.wellness.vo2max,
+                  kcalConsumed: activity.data.summary.wellness.kcalConsumed,
+                  bodyFat: activity.data.summary.wellness.bodyFat,
+                } : 'Not provided',
                 date: activity.start_time || activity.created_at
               }, null, 2)}
 
@@ -705,6 +726,7 @@ ${JSON.stringify({
 - If RPE is provided: Is perceived effort increasing relative to power output? (fatigue indicator)
 - If Feeling is provided: Is well-being/energy level declining? (recovery indicator)
 - RPE vs Feeling: Are they diverging? (High RPE + Low Feeling = strong fatigue signal)
+- If Wellness data is provided: How do Sleep Score and HRV correlate with the performance and Feeling score?
 - Are there patterns suggesting overreaching or underreaching?
 - If personal notes provided: What patterns or concerns emerge from user observations?
 
