@@ -11,6 +11,7 @@ import { ActivityFeedback } from '@/components/activities/activity-feedback'
 import { AIAnalysisTab } from '@/components/activities/ai-analysis-tab'
 import { PowerZoneAnalysis } from '@/components/activities/power-zone-analysis'
 import { PowerCurveChart } from '@/components/activities/power-curve-chart'
+import { DailyWellnessCard } from '@/components/activities/daily-wellness-card'
 
 interface ActivityData {
   id: string
@@ -44,6 +45,7 @@ interface ActivityData {
       powerModel?: any
       variabilityIndex?: number
       efficiencyFactor?: number
+      wellness?: any
     }
     powerZones: any
     heartRateZones: any
@@ -704,6 +706,16 @@ export default function ActivityDetailPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Daily Wellness (Intervals.icu Integration) */}
+                {activity.data?.summary?.wellness && (
+                  <div className="mb-8">
+                    <DailyWellnessCard 
+                      wellness={activity.data.summary.wellness} 
+                      date={new Date(activity.start_time || activity.created_at).toLocaleDateString()}
+                    />
+                  </div>
+                )}
 
                 {/* Power Zone Analysis */}
                 {activity.status === 'processed' && (activity.gps_track || activity.data?.gps_track || activity.data?.records) && (

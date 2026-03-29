@@ -448,6 +448,7 @@ export function CalendarView({ userId }: CalendarViewProps) {
           const totalDistance = getTotalDistance(dayActivities)
           const totalDuration = getTotalDuration(dayActivities)
           const avgPower = getAvgPower(dayActivities)
+          const dayWellness = dayActivities.reduce((acc: any, act) => acc || getSummary(act.data)?.wellness, null)
 
           return (
             <div
@@ -501,9 +502,16 @@ export function CalendarView({ userId }: CalendarViewProps) {
               {/* Activity indicators */}
               {hasActivities && (
                 <div className="space-y-1">
-                  {/* Activity count badge */}
-                  <div className="bg-blue-600 text-white text-[10px] sm:text-xs font-bold px-1 sm:px-1.5 py-0.5 rounded mb-1">
-                    {dayActivities.length}
+                  {/* Activity count badge and Wellness indicator */}
+                  <div className="flex items-center justify-between mb-1">
+                    <div className="bg-blue-600 text-white text-[10px] sm:text-xs font-bold px-1 sm:px-1.5 py-0.5 rounded">
+                      {dayActivities.length}
+                    </div>
+                    {dayWellness && (
+                      <div className="text-[12px]" title="Daily Wellness data imported">
+                        ❤️
+                      </div>
+                    )}
                   </div>
                   
                   {/* Quick stats - only show on larger screens or if selected */}
@@ -631,6 +639,27 @@ export function CalendarView({ userId }: CalendarViewProps) {
             {/* Completed Activities */}
             {getDayActivities(selectedDate).length > 0 && (
               <>
+                {/* Wellness Summary for the day */}
+                {(() => {
+                  const wellness = getDayActivities(selectedDate).reduce((acc: any, act) => acc || getSummary(act.data)?.wellness, null);
+                  if (!wellness) return null;
+                  return (
+                    <div className="mb-4 bg-rose-50 rounded border border-rose-100 p-3">
+                      <div className="text-xs font-semibold text-rose-800 uppercase mb-2 flex items-center gap-1">
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        Morning Wellness
+                        {wellness.readiness && <span className="ml-auto bg-white px-2 py-0.5 rounded-full text-[10px] shadow-sm">{Math.round(wellness.readiness)} Readiness</span>}
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                        {wellness.restingHR && <div><span className="text-rose-600">Resting HR:</span> <span className="font-bold">{Math.round(wellness.restingHR)} bpm</span></div>}
+                        {wellness.hrv && <div><span className="text-rose-600">HRV:</span> <span className="font-bold">{Math.round(wellness.hrv)} ms</span></div>}
+                        {wellness.sleepScore && <div><span className="text-indigo-600">Sleep:</span> <span className="font-bold">{Math.round(wellness.sleepScore)}%</span></div>}
+                        {wellness.weight && <div><span className="text-teal-600">Weight:</span> <span className="font-bold">{wellness.weight} kg</span></div>}
+                      </div>
+                    </div>
+                  )
+                })()}
+
                 <h4 className="text-sm font-semibold text-blue-900 uppercase tracking-wide mt-4">Completed Activities</h4>
                 {getDayActivities(selectedDate).map((activity) => {
               const summary = getSummary(activity.data)
@@ -704,6 +733,10 @@ export function CalendarView({ userId }: CalendarViewProps) {
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 border-2 border-blue-500 rounded"></div>
                 <span>Today</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>❤️</span>
+                <span>Wellness Data</span>
               </div>
             </div>
           </div>
