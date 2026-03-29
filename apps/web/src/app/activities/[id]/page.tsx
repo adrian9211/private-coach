@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { useAuth } from '@/lib/auth-context'
 import { supabase } from '@/lib/supabase'
 import { UserMenu } from '@/components/auth/user-menu'
@@ -88,7 +89,6 @@ export default function ActivityDetailPage() {
   const { user, loading } = useAuth()
   const [activity, setActivity] = useState<ActivityData | null>(null)
   const [loadingActivity, setLoadingActivity] = useState(true)
-  const [isNavigating, setIsNavigating] = useState(false)
   const [activeTab, setActiveTab] = useState<'overview' | 'analysis'>('overview')
   const [ftp, setFtp] = useState<number | null>(null)
   const fetchingRef = useRef(false)
@@ -239,26 +239,6 @@ export default function ActivityDetailPage() {
     }
   }, [user])
 
-  const handleBackNavigation = useCallback((e?: React.MouseEvent) => {
-    if (e) {
-      e.preventDefault()
-      e.stopPropagation()
-    }
-
-    if (isNavigating) return // Prevent multiple clicks
-
-    setIsNavigating(true)
-
-    try {
-      // Try router.push first (preferred for Next.js)
-      router.push('/activities')
-    } catch (error) {
-      console.error('Router navigation failed, using window.location:', error)
-      // Fallback to window.location if router.push fails
-      window.location.href = '/activities'
-    }
-  }, [router, isNavigating])
-
   const formatDuration = (seconds: number) => {
     // Ensure we have a valid number and round to nearest second
     const totalSeconds = Math.round(Number(seconds))
@@ -362,12 +342,12 @@ export default function ActivityDetailPage() {
         {/* Keep navbar visible */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <button
-              onClick={handleBackNavigation}
+            <Link
+              href="/activities"
               className="text-blue-600 hover:text-blue-800 font-medium"
             >
               ← Home
-            </button>
+            </Link>
             <div className="text-sm text-gray-500">Loading activity…</div>
           </div>
         </div>
@@ -389,12 +369,12 @@ export default function ActivityDetailPage() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Activity Not Found</h1>
-          <button
-            onClick={handleBackNavigation}
+          <Link
+            href="/activities"
             className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700"
           >
             Back to Activities
-          </button>
+          </Link>
         </div>
       </div>
     )
@@ -429,15 +409,13 @@ export default function ActivityDetailPage() {
       <nav className="bg-white shadow-sm relative z-[100]" style={{ pointerEvents: 'auto' }}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <button
-              type="button"
-              onClick={handleBackNavigation}
+            <Link
+              href="/activities"
               className="text-blue-600 hover:text-blue-800 font-medium transition-colors relative z-[101] cursor-pointer"
               style={{ pointerEvents: 'auto' }}
-              disabled={isNavigating}
             >
-              {isNavigating ? 'Loading...' : '← Back to Activities'}
-            </button>
+              ← Back to Activities
+            </Link>
             <h1 className="text-xl font-bold text-gray-900">Activity Details</h1>
           </div>
           <UserMenu />
