@@ -177,8 +177,32 @@ serve(async (req: Request) => {
       console.error('Error fetching wellness data:', e)
     }
 
+    let errors: string[] = []
+
+    // Upsert wellness records to standalone daily_wellness table
+    if (wellnessData.length > 0) {
+      console.log(`Upserting ${wellnessData.length} standalone records to daily_wellness table...`)
+      
+      const wellnessPayload = wellnessData.map((w: any) => ({
+        user_id: userId,
+        date: w.id, // Intervals.icu wellness ID is the date string (e.g. '2023-10-15')
+        data: w
+      }))
+
+      // Batch upsert ignoring conflicts on the unique compound key
+      const { error: wellnessError } = await supabase
+        .from('daily_wellness')
+        .upsert(wellnessPayload, { onConflict: 'user_id, date' })
+
+      if (wellnessError) {
+        console.error('Failed to batch upsert daily_wellness records:', wellnessError)
+        errors.push(`Wellness Sync: ${wellnessError.message}`)
+      } else {
+        console.log('Successfully upserted standalone daily_wellness records natively.')
+      }
+    }
+
     let syncedCount = 0
-    let errors = []
 
     // Process each activity
     for (const activity of activities) {

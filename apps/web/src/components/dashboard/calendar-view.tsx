@@ -34,6 +34,7 @@ export function CalendarView({ userId }: CalendarViewProps) {
   const [activities, setActivities] = useState<Activity[]>([])
   const [scheduledWorkouts, setScheduledWorkouts] = useState<ScheduledWorkout[]>([])
   const [workoutDetails, setWorkoutDetails] = useState<WorkoutDetails>({})
+  const [wellnessData, setWellnessData] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [selectedWorkout, setSelectedWorkout] = useState<{workout: ScheduledWorkout, data: WorkoutData} | null>(null)
@@ -238,6 +239,35 @@ export function CalendarView({ userId }: CalendarViewProps) {
     fetchScheduledWorkouts()
   }, [userId, currentMonth])
 
+  // Fetch standalone wellness data for the current month view
+  useEffect(() => {
+    const fetchWellness = async () => {
+      try {
+        const monthStart = startOfMonth(currentMonth)
+        const monthEnd = endOfMonth(currentMonth)
+        const rangeStart = startOfWeek(monthStart, { weekStartsOn: 1 })
+        const rangeEnd = endOfWeek(monthEnd, { weekStartsOn: 1 })
+
+        const { data, error } = await supabase
+          .from('daily_wellness')
+          .select('*')
+          .eq('user_id', userId)
+          .gte('date', format(rangeStart, 'yyyy-MM-dd'))
+          .lte('date', format(rangeEnd, 'yyyy-MM-dd'))
+
+        if (error) {
+          if (error.code !== '42P01') console.error('Error fetching daily_wellness:', error)
+          return
+        }
+        setWellnessData(data || [])
+      } catch (err) {
+        console.error('Error in fetchWellness:', err)
+      }
+    }
+
+    fetchWellness()
+  }, [userId, currentMonth])
+
   // Group activities by date
   const activitiesByDate = useMemo(() => {
     const grouped: ActivityByDate = {}
@@ -271,6 +301,15 @@ export function CalendarView({ userId }: CalendarViewProps) {
     return grouped
   }, [scheduledWorkouts])
 
+  // Group wellness by date
+  const wellnessByDate = useMemo(() => {
+    const grouped: Record<string, any> = {}
+    wellnessData.forEach((w) => {
+      grouped[w.date] = w.data
+    })
+    return grouped
+  }, [wellnessData])
+
   // Get calendar days for current month
   const calendarDays = useMemo(() => {
     const monthStart = startOfMonth(currentMonth)
@@ -297,6 +336,13 @@ export function CalendarView({ userId }: CalendarViewProps) {
   const getDayScheduledWorkouts = (date: Date): ScheduledWorkout[] => {
     const dateKey = format(date, 'yyyy-MM-dd')
     return scheduledWorkoutsByDate[dateKey] || []
+  }
+
+  const getDayWellness = (date: Date) => {
+    const dateKey = format(date, 'yyyy-MM-dd')
+    // Support migrating users: prefer standalone table, fallback to legacy activity-embedded wellness
+    const legacyWellness = getDayActivities(date).reduce((acc: any, act) => acc || getSummary(act.data)?.wellness, null)
+    return wellnessByDate[dateKey] || legacyWellness
   }
 
   // Type guard for data with summary
@@ -448,7 +494,7 @@ export function CalendarView({ userId }: CalendarViewProps) {
           const totalDistance = getTotalDistance(dayActivities)
           const totalDuration = getTotalDuration(dayActivities)
           const avgPower = getAvgPower(dayActivities)
-          const dayWellness = dayActivities.reduce((acc: any, act) => acc || getSummary(act.data)?.wellness, null)
+          const dayWellness = getDayWellness(day)
 
           return (
             <div
@@ -641,7 +687,7 @@ export function CalendarView({ userId }: CalendarViewProps) {
               <>
                 {/* Wellness Summary for the day */}
                 {(() => {
-                  const wellness = getDayActivities(selectedDate).reduce((acc: any, act) => acc || getSummary(act.data)?.wellness, null);
+                  const wellness = getDayWellness(selectedDate);
                   if (!wellness) return null;
                   return (
                     <div className="mb-4 bg-rose-50 rounded border border-rose-100 p-3">
