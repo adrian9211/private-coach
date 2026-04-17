@@ -14,6 +14,9 @@ import { PowerZoneAnalysis } from '@/components/activities/power-zone-analysis'
 import { PowerCurveChart } from '@/components/activities/power-curve-chart'
 import { DailyWellnessCard } from '@/components/activities/daily-wellness-card'
 
+// Safari-safe sleep utility for retry backoff
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
 interface ActivityData {
   id: string
   file_name: string
@@ -92,8 +95,21 @@ export default function ActivityDetailPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'analysis'>('overview')
   const [ftp, setFtp] = useState<number | null>(null)
   const fetchingRef = useRef(false)
+  // Tracks whether an initial fetch has ever been kicked off for this mount
+  const didInitialFetch = useRef(false)
+  // Debounce timer for focus/visibility refetch
+  const refetchDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  const fetchActivity = useCallback(async () => {
+  /**
+   * Fetch the activity row from Supabase.
+   * Safari-hardened:
+   *  - Uses AbortController with a 15 s signal so the fetch never hangs silently
+   *  - Retries up to 2 times with exponential back-off on any network/auth error
+   *  - Calls supabase.auth.getSession() first so the Supabase client always has
+   *    a fresh token (bypasses the auth-context timing race on Safari)
+   *  - Uses maybeSingle() to avoid the PG "multiple rows" exception
+   */
+  const fetchActivity = useCallback(async (retryCount = 0): Promise<void> => {
     if (!id) {
       setLoadingActivity(false)
       return
@@ -108,113 +124,158 @@ export default function ActivityDetailPage() {
     try {
       fetchingRef.current = true
       setLoadingActivity(true)
+
+      // ── Safari fix: always refresh token before querying ──────────────────
+      // This bypasses the AuthProvider race condition where onAuthStateChange
+      // fires late (especially after bfcache restores).
+      const { data: sessionData } = await supabase.auth.getSession()
+      if (!sessionData?.session) {
+        console.warn('No active session found – redirecting to sign-in')
+        router.push('/auth/signin')
+        return
+      }
+      // ──────────────────────────────────────────────────────────────────────
+
       console.log('Fetching activity:', id)
-      const { data, error } = await supabase
-        .from('activities')
-        .select('*')
-        .eq('id', id)
-        .single()
+
+      // AbortController gives a hard 15 s timeout per attempt; prevents
+      // Safari from silently hanging on stalled connections.
+      const controller = new AbortController()
+      const abortTimer = setTimeout(() => controller.abort(), 15_000)
+
+      let data: any = null
+      let error: any = null
+
+      try {
+        const result = await supabase
+          .from('activities')
+          .select('*')
+          .eq('id', id)
+          .abortSignal(controller.signal)
+          .maybeSingle()        // maybeSingle() never throws on 0 rows
+        data = result.data
+        error = result.error
+      } finally {
+        clearTimeout(abortTimer)
+      }
 
       console.log('Supabase fetch response:', {
         id,
         hasData: !!data,
-        error: error ? { code: error.code, message: error.message, details: error.details } : null
+        error: error ? { code: error.code, message: error.message } : null,
       })
-
-      console.log('Activity fetch result:', { hasData: !!data, error })
 
       if (error) {
         console.error('Error fetching activity:', error)
+
+        // Retry on network errors (not on auth/permission errors)
+        const isRetryable =
+          error.code === 'PGRST000' ||        // connection error
+          error.message?.includes('fetch') || // network fetch failure
+          error.name === 'AbortError'         // our own timeout
+        if (isRetryable && retryCount < 2) {
+          const delay = 500 * Math.pow(2, retryCount) // 500 ms, 1 000 ms
+          console.warn(`Retrying fetch (attempt ${retryCount + 1}) in ${delay} ms…`)
+          fetchingRef.current = false
+          setLoadingActivity(false)
+          await sleep(delay)
+          return fetchActivity(retryCount + 1)
+        }
+
         throw error
       }
 
-      // Check if data is null (single() returns data: null if not found when using maybeSingle, but throws if single() finds 0)
-      // Since we use .single(), it should have thrown PG error if not found. 
-      // But if we change to maybeSingle() later, this check is good.
       if (!data) {
         console.error('No activity data returned for ID:', id)
         setActivity(null)
       } else {
-        console.log('Activity data set successfully:', { id: data.id, status: data.status, hasRpe: !!data.rpe, hasFeeling: !!data.feeling, hasNotes: !!data.personal_notes })
-        // Only update if activity changed or is null
+        console.log('Activity data set successfully:', {
+          id: data.id,
+          status: data.status,
+        })
         setActivity((prev) => {
-          if (prev?.id === data.id) {
-            console.log('Activity already set, skipping update')
-            return prev
-          }
+          if (prev?.id === data.id) return prev   // no-op if unchanged
           return data
         })
       }
-    } catch (error: any) {
-      console.error('Error fetching activity:', error)
+    } catch (err: any) {
+      console.error('Error fetching activity (final):', err)
       setActivity(null)
-      // Still clear loading to show error state
     } finally {
       setLoadingActivity(false)
       fetchingRef.current = false
     }
-  }, [id])
+  }, [id, router])
 
-  // Refetch on tab focus ONLY if we don't have activity data
+  // ── Initial fetch ──────────────────────────────────────────────────────────
+  // Runs once when `id` is known. Does NOT wait for the auth context to settle —
+  // fetchActivity() calls supabase.auth.getSession() itself, which is the
+  // Safari-safe approach. A 20 s global timeout prevents infinite loading.
   useEffect(() => {
-    if (!user || !id || activity) return // Don't refetch if we have activity
-
-    const onFocus = () => {
-      // Only refetch if we don't have activity and we're not already fetching
-      if (!fetchingRef.current && !loadingActivity && !activity) {
-        console.log('Tab focus - refetching activity (no activity found)')
-        fetchActivity()
-      }
-    }
-    window.addEventListener('focus', onFocus)
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible' && !activity) {
-        onFocus()
-      }
-    }
-    document.addEventListener('visibilitychange', handleVisibilityChange)
-    return () => {
-      window.removeEventListener('focus', onFocus)
-      document.removeEventListener('visibilitychange', handleVisibilityChange)
-    }
-  }, [user, id, fetchActivity, loadingActivity, activity])
-
-  useEffect(() => {
-    // Timeout fallback to prevent infinite loading
-    const timeoutId = setTimeout(() => {
-      if (loadingActivity) {
-        console.warn('Activity loading timeout - forcing loading to false')
-        setLoadingActivity(false)
-        fetchingRef.current = false
-      }
-    }, 10000) // 10 second timeout
-
-    if (!loading && !user) {
-      clearTimeout(timeoutId)
-      router.push('/auth/signin')
+    if (!id) {
+      setLoadingActivity(false)
       return
     }
 
-    // If auth is done loading and we have an id, fetch the activity
-    // Only fetch if not already fetching AND we don't already have the activity
-    if (!loading && id && !fetchingRef.current && !activity) {
-      if (user) {
-        console.log('Initial fetch triggered (no activity yet)')
-        fetchActivity()
-      } else {
-        // Auth finished but no user - clear loading
+    // Global loading timeout — 20 s is generous enough for slow Safari connections
+    const globalTimeout = setTimeout(() => {
+      if (loadingActivity && !activity) {
+        console.warn('Activity loading timeout (20 s) – forcing loading to false')
         setLoadingActivity(false)
+        fetchingRef.current = false
       }
+    }, 20_000)
+
+    if (!didInitialFetch.current) {
+      didInitialFetch.current = true
+      console.log('Initial fetch triggered')
+      fetchActivity()
     } else if (activity) {
-      // We have activity, clear loading just in case
+      // Already have the activity — just clear the spinner
       setLoadingActivity(false)
-      fetchingRef.current = false
     }
 
-    return () => {
-      clearTimeout(timeoutId)
+    return () => clearTimeout(globalTimeout)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id])
+
+  // ── Auth redirect (when auth context eventually resolves to no user) ────────
+  useEffect(() => {
+    if (!loading && !user && !loadingActivity) {
+      router.push('/auth/signin')
     }
-  }, [user, loading, router, id, fetchActivity, activity])
+  }, [loading, user, loadingActivity, router])
+
+  // ── Debounced focus / visibility refetch ───────────────────────────────────
+  // Safari fires both `visibilitychange` and `focus` almost simultaneously on
+  // tab switch. Debouncing to 250 ms ensures only one refetch is triggered.
+  // We only refetch if we still don't have activity data.
+  useEffect(() => {
+    const scheduleRefetch = () => {
+      if (refetchDebounceRef.current) clearTimeout(refetchDebounceRef.current)
+      refetchDebounceRef.current = setTimeout(() => {
+        if (!fetchingRef.current && !activity) {
+          console.log('Focus/visibility refetch — no activity data yet')
+          fetchActivity()
+        }
+      }, 250)
+    }
+
+    const onFocus = () => {
+      if (!activity) scheduleRefetch()
+    }
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible' && !activity) scheduleRefetch()
+    }
+
+    window.addEventListener('focus', onFocus)
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => {
+      window.removeEventListener('focus', onFocus)
+      document.removeEventListener('visibilitychange', onVisibility)
+      if (refetchDebounceRef.current) clearTimeout(refetchDebounceRef.current)
+    }
+  }, [activity, fetchActivity])
 
   useEffect(() => {
     const fetchFtp = async () => {
@@ -334,9 +395,9 @@ export default function ActivityDetailPage() {
     return `${bpm} bpm`
   }
 
-  // Only show loading if auth is loading OR activity is loading (and user exists)
-  // Don't get stuck if auth finished but user is null
-  if (loading || (loadingActivity && user)) {
+  // Show loading spinner while fetching. We no longer gate on auth-context's
+  // `user` because fetchActivity() resolves auth itself via getSession().
+  if (loadingActivity) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         {/* Keep navbar visible */}
@@ -355,9 +416,6 @@ export default function ActivityDetailPage() {
           <div className="text-center">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading activity...</p>
-            {!loading && !user && (
-              <p className="mt-2 text-sm text-red-600">Redirecting to sign in...</p>
-            )}
           </div>
         </div>
       </div>

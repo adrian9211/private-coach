@@ -72,7 +72,7 @@ export function AIRecommendations({
   useEffect(() => {
     const loadCachedInsights = async () => {
       console.log('AIRecommendations: useEffect triggered', { userId, userIdType: typeof userId, userIdLength: userId?.length })
-      
+
       if (!userId || userId === '' || userId.trim() === '') {
         console.log('AIRecommendations: No valid userId, skipping')
         return
@@ -80,7 +80,7 @@ export function AIRecommendations({
 
       try {
         console.log('AIRecommendations: Loading cached insights for userId:', userId)
-        
+
         // Add timeout wrapper - 20 second timeout (PostgREST cold starts can exceed 8s)
         const queryPromise = supabase
           .from('user_insights')
@@ -89,8 +89,8 @@ export function AIRecommendations({
           .maybeSingle()
 
         const TIMEOUT_MS = 20000
-        const timeoutPromise = new Promise((_, reject) => 
-          setTimeout(() => reject(new Error(`Query timeout after ${TIMEOUT_MS/1000}s`)), TIMEOUT_MS)
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error(`Query timeout after ${TIMEOUT_MS / 1000}s`)), TIMEOUT_MS)
         )
 
         let data: any = null
@@ -103,17 +103,17 @@ export function AIRecommendations({
           error = result.error
         } catch (timeoutErr: any) {
           // Timeout won - treat as error
-          console.warn(`AIRecommendations: Query timeout after ${TIMEOUT_MS/1000}s, generating new insights instead`)
+          console.warn(`AIRecommendations: Query timeout after ${TIMEOUT_MS / 1000}s, generating new insights instead`)
           error = { message: 'Query timeout', code: 'TIMEOUT' }
           data = null
         }
 
-        console.log('AIRecommendations: Query result', { 
-          hasData: !!data, 
+        console.log('AIRecommendations: Query result', {
+          hasData: !!data,
           hasRecommendations: !!data?.recommendations,
           generatedAt: data?.generated_at,
           error: error?.message || error?.code,
-          errorDetails: error 
+          errorDetails: error
         })
 
         if (error) {
@@ -140,13 +140,13 @@ export function AIRecommendations({
           console.log('AIRecommendations: Loaded cached insights from', data.generated_at)
           setRecommendations(data.recommendations)
           setIsCached(true)
-          
+
           // Check if insights are stale (older than 24 hours) and regenerate in background
           const generatedAt = new Date(data.generated_at)
           const hoursSinceGeneration = (Date.now() - generatedAt.getTime()) / (1000 * 60 * 60)
-          
+
           console.log('AIRecommendations: Insights age', hoursSinceGeneration, 'hours')
-          
+
           if (hoursSinceGeneration > 24) {
             console.log('AIRecommendations: Cached insights are stale (>24h), regenerating in background')
             generateRecommendations()

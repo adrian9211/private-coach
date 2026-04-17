@@ -24,12 +24,31 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
   const router = useRouter() // Get the router instance
 
   useEffect(() => {
-    // No need to fetch initial session, it's passed from the server
-    
+    // ── Safari fix: hydrate session immediately ───────────────────────────────
+    // On Safari, onAuthStateChange can fire after a delay (or not fire at all
+    // on bfcache restores). Calling getSession() here ensures the Supabase
+    // client's internal auth state is aligned with the cookie immediately.
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) {
+        setSession(data.session)
+        setUser(data.session.user)
+      }
+    }).catch((e) => console.warn('Initial getSession failed:', e))
+    // ─────────────────────────────────────────────────────────────────────────
+
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
       console.log('Auth state change:', event, session?.user?.id)
+
+      // INITIAL_SESSION fires immediately if a persisted session exists —
+      // handle it the same way as SIGNED_IN so user is set without delay.
+      if (event === 'INITIAL_SESSION') {
+        setSession(session)
+        setUser(session?.user ?? null)
+        return
+      }
+
       setSession(session)
       setUser(session?.user ?? null)
       
