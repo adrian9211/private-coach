@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { supabase } from '@/lib/supabase'
 
 interface AIAnalysisTabProps {
@@ -286,73 +286,119 @@ export function AIAnalysisTab({ activityId, activity }: AIAnalysisTabProps) {
         </div>
       )}
 
-      {analysis && (
-        <div className="prose prose-sm max-w-none">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 sm:p-6 border border-blue-200">
-            <div className="text-gray-800 leading-relaxed space-y-4">
-              {analysis.split('\n\n').map((paragraph, idx) => {
-                // Format headings
-                if (paragraph.match(/^#{1,3}\s/)) {
-                  const level = paragraph.match(/^#+/)?.[0].length || 0
-                  const text = paragraph.replace(/^#+\s/, '').trim()
-                  const headingClass = level === 1 ? 'text-2xl' : level === 2 ? 'text-xl' : 'text-lg'
-                  return (
-                    <h3 key={idx} className={`font-bold text-gray-900 mt-6 mb-3 ${headingClass} first:mt-0`}>
-                      {text}
-                    </h3>
-                  )
-                }
+      {analysis && (() => {
+          // Line-by-line markdown renderer
+          const renderInline = (text: string): React.ReactNode[] => {
+            const result: React.ReactNode[] = []
+            const pattern = /(\*\*([^*]+)\*\*|`([^`]+)`)/g
+            let lastIndex = 0
+            let match: RegExpExecArray | null
+            let key = 0
+            while ((match = pattern.exec(text)) !== null) {
+              if (match.index > lastIndex) result.push(<span key={key++}>{text.slice(lastIndex, match.index)}</span>)
+              if (match[2] !== undefined) result.push(<strong key={key++} className="font-semibold text-gray-900">{match[2]}</strong>)
+              else if (match[3] !== undefined) result.push(<code key={key++} className="bg-blue-50 text-blue-800 px-1.5 py-0.5 rounded text-sm font-mono">{match[3]}</code>)
+              lastIndex = pattern.lastIndex
+            }
+            if (lastIndex < text.length) result.push(<span key={key++}>{text.slice(lastIndex)}</span>)
+            return result
+          }
 
-                // Format lists
-                if (paragraph.includes('\n') && (paragraph.includes('- ') || paragraph.includes('• ') || paragraph.match(/^\d+\./m))) {
-                  const lines = paragraph.split('\n').filter(l => l.trim())
-                  return (
-                    <ul key={idx} className="list-disc list-inside space-y-2 ml-4">
-                      {lines.map((line, lineIdx) => {
-                        const cleanLine = line.replace(/^[-•]\s/, '').replace(/^\d+\.\s/, '').trim()
-                        // Format bold in list items
-                        const formatted = cleanLine.replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold">$1</strong>')
-                        return (
-                          <li key={lineIdx} className="text-gray-800" dangerouslySetInnerHTML={{ __html: formatted }} />
-                        )
-                      })}
-                    </ul>
-                  )
-                }
+          const lines = analysis.split('\n')
+          const elements: React.JSX.Element[] = []
+          let listItems: string[] = []
+          let elKey = 0
 
-                // Format regular paragraphs
-                const formatted = paragraph
-                  .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
-                  .replace(/⚠️/g, '<span class="text-orange-600">⚠️</span>')
-                  .replace(/✅/g, '<span class="text-green-600">✅</span>')
-                  .replace(/🎯/g, '<span class="text-blue-600">🎯</span>')
+          const flushList = () => {
+            if (listItems.length === 0) return
+            elements.push(
+              <ul key={elKey++} className="space-y-1.5 mb-3 ml-1">
+                {listItems.map((item, i) => (
+                  <li key={i} className="flex gap-2 text-gray-700">
+                    <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-blue-400 mt-[0.55rem]" />
+                    <span className="leading-relaxed">{renderInline(item)}</span>
+                  </li>
+                ))}
+              </ul>
+            )
+            listItems = []
+          }
 
-                if (!paragraph.trim()) return null
+          for (const raw of lines) {
+            const line = raw.trimEnd()
 
-                return (
-                  <p key={idx} className="mb-3 text-gray-800" dangerouslySetInnerHTML={{ __html: formatted }} />
-                )
-              }).filter(Boolean)}
+            if (/^##\s+/.test(line) && !/^###/.test(line)) {
+              flushList()
+              const heading = line.replace(/^##\s+/, '').replace(/[📊📈🎯]/g, '').trim()
+              elements.push(
+                <h3 key={elKey++} className="text-base font-semibold text-gray-900 mt-5 mb-2 pt-4 border-t border-blue-100 first:border-0 first:pt-0 first:mt-0">
+                  {heading}
+                </h3>
+              )
+              continue
+            }
+
+            if (/^###\s+/.test(line)) {
+              flushList()
+              const heading = line.replace(/^###\s+/, '')
+              elements.push(
+                <h4 key={elKey++} className="text-sm font-semibold text-blue-700 mt-3 mb-1.5 uppercase tracking-wide">
+                  {heading}
+                </h4>
+              )
+              continue
+            }
+
+            if (/^[-*•]\s+/.test(line)) {
+              listItems.push(line.replace(/^[-*•]\s+/, ''))
+              continue
+            }
+
+            if (/^-{3,}$/.test(line.trim())) {
+              flushList()
+              elements.push(<hr key={elKey++} className="my-4 border-blue-100" />)
+              continue
+            }
+
+            if (line.trim() === '') {
+              flushList()
+              continue
+            }
+
+            flushList()
+            elements.push(
+              <p key={elKey++} className="text-gray-700 leading-relaxed mb-2">
+                {renderInline(line.trim())}
+              </p>
+            )
+          }
+
+          flushList()
+
+          return (
+            <div>
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 sm:p-6 border border-blue-200">
+                <div className="space-y-0">{elements}</div>
+              </div>
+
+              <div className="mt-4 flex gap-3 flex-wrap">
+                <button
+                  onClick={generateAnalysis}
+                  disabled={isGenerating}
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium disabled:opacity-50"
+                >
+                  {isGenerating ? 'Regenerating...' : '↻ Regenerate Analysis'}
+                </button>
+                <button
+                  onClick={() => setShowChat(!showChat)}
+                  className="text-green-600 hover:text-green-800 text-sm font-medium"
+                >
+                  {showChat ? '✕ Close Chat' : '💬 Ask Follow-up Question'}
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div className="mt-4 flex gap-3 flex-wrap">
-            <button
-              onClick={generateAnalysis}
-              disabled={isGenerating}
-              className="text-blue-600 hover:text-blue-800 text-sm font-medium disabled:opacity-50"
-            >
-              {isGenerating ? 'Regenerating...' : '↻ Regenerate Analysis'}
-            </button>
-            <button
-              onClick={() => setShowChat(!showChat)}
-              className="text-green-600 hover:text-green-800 text-sm font-medium"
-            >
-              {showChat ? '✕ Close Chat' : '💬 Ask Follow-up Question'}
-            </button>
-          </div>
-        </div>
-      )}
+          )
+        })()}
 
       {/* Follow-up Chat Interface */}
       {showChat && analysis && (
