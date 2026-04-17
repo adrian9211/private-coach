@@ -24,16 +24,36 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
   const router = useRouter() // Get the router instance
 
   useEffect(() => {
-    // ── Safari fix: hydrate session immediately ───────────────────────────────
-    // On Safari, onAuthStateChange can fire after a delay (or not fire at all
-    // on bfcache restores). Calling getSession() here ensures the Supabase
-    // client's internal auth state is aligned with the cookie immediately.
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) {
-        setSession(data.session)
-        setUser(data.session.user)
-      }
-    }).catch((e) => console.warn('Initial getSession failed:', e))
+    // ── Safari fix: force server-side session refresh on mount ───────────────
+    // getSession() reads localStorage blindly without validating the token.
+    // In regular Safari, the localStorage token can be stale/expired while
+    // the server cookie belongs to a newer session — causing all Supabase
+    // queries to silently fail (RLS rejects the stale JWT).
+    // refreshSession() hits the Supabase server to get a fresh token, which
+    // aligns the client and server and fixes the regular vs. private mode gap.
+    supabase.auth.refreshSession()
+      .then(({ data, error }) => {
+        if (error) {
+          // Refresh failed (token truly expired / invalid): wipe stale storage
+          // so the next getSession() starts clean, then redirect to sign-in.
+          console.warn('Session refresh failed — clearing stale storage:', error.message)
+          if (typeof window !== 'undefined') {
+            Object.keys(localStorage).forEach((k) => {
+              if (k.startsWith('sb-')) localStorage.removeItem(k)
+            })
+            Object.keys(sessionStorage).forEach((k) => {
+              if (k.startsWith('sb-')) sessionStorage.removeItem(k)
+            })
+          }
+          // Don't redirect here — let the auth state change handler do it
+          return
+        }
+        if (data.session) {
+          setSession(data.session)
+          setUser(data.session.user)
+        }
+      })
+      .catch((e) => console.warn('Session refresh error:', e))
     // ─────────────────────────────────────────────────────────────────────────
 
     const {
@@ -68,16 +88,19 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
     return () => subscription.unsubscribe()
   }, [router])
 
-  // Refresh session and rehydrate when tab becomes visible to prevent stuck loading
+  // On tab focus / visibility restore: refresh the token server-side.
+  // Using getSession() here would return the stale localStorage value.
   useEffect(() => {
     const handleVisibility = async () => {
       if (document.visibilityState === 'visible') {
         try {
-          const { data: refreshed } = await supabase.auth.getSession()
-          setSession(refreshed.session)
-          setUser(refreshed.session?.user ?? null)
+          const { data } = await supabase.auth.refreshSession()
+          if (data.session) {
+            setSession(data.session)
+            setUser(data.session.user)
+          }
         } catch (e) {
-          console.warn('Failed to refresh session on visibilitychange', e)
+          console.warn('Failed to refresh session on visibility change', e)
         }
       }
     }

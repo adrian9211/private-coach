@@ -125,16 +125,23 @@ export default function ActivityDetailPage() {
       fetchingRef.current = true
       setLoadingActivity(true)
 
-      // ── Safari fix: always refresh token before querying ──────────────────
-      // This bypasses the AuthProvider race condition where onAuthStateChange
-      // fires late (especially after bfcache restores).
-      const { data: sessionData } = await supabase.auth.getSession()
-      if (!sessionData?.session) {
-        console.warn('No active session found – redirecting to sign-in')
-        router.push('/auth/signin')
-        return
+      // ── Safari fix: validate token server-side before querying ───────────
+      // getSession() returns the localStorage token without hitting the network
+      // — it will happily return a stale / expired JWT that RLS will reject.
+      // getUser() sends the token to Supabase for server-side validation.
+      // If it fails, we attempt refreshSession() once; if that also fails,
+      // we redirect to sign-in so the user gets a clean new session.
+      let { data: userData, error: userError } = await supabase.auth.getUser()
+      if (userError || !userData?.user) {
+        console.warn('getUser() failed, attempting session refresh:', userError?.message)
+        const { data: refreshed, error: refreshError } = await supabase.auth.refreshSession()
+        if (refreshError || !refreshed?.session) {
+          console.warn('Session refresh failed – redirecting to sign-in')
+          router.push('/auth/signin')
+          return
+        }
       }
-      // ──────────────────────────────────────────────────────────────────────
+      // ─────────────────────────────────────────────────────────────────────
 
       console.log('Fetching activity:', id)
 
