@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { supabase } from '@/lib/supabase'
 
 interface AIRecommendationsProps {
@@ -171,42 +171,116 @@ export function AIRecommendations({
     }
   }, [userId, generateRecommendations])
 
+  /**
+   * Renders inline markdown: **bold** and `code` within a text run.
+   */
+  const renderInline = (text: string): React.ReactNode[] => {
+    const result: React.ReactNode[] = []
+    // Match **bold** or `code`
+    const pattern = /(\*\*([^*]+)\*\*|`([^`]+)`)/g
+    let lastIndex = 0
+    let match: RegExpExecArray | null
+    let key = 0
+    while ((match = pattern.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        result.push(<span key={key++}>{text.slice(lastIndex, match.index)}</span>)
+      }
+      if (match[2] !== undefined) {
+        result.push(<strong key={key++} className="font-semibold text-gray-900">{match[2]}</strong>)
+      } else if (match[3] !== undefined) {
+        result.push(
+          <code key={key++} className="bg-purple-50 text-purple-800 px-1.5 py-0.5 rounded text-sm font-mono">
+            {match[3]}
+          </code>
+        )
+      }
+      lastIndex = pattern.lastIndex
+    }
+    if (lastIndex < text.length) {
+      result.push(<span key={key++}>{text.slice(lastIndex)}</span>)
+    }
+    return result
+  }
+
   const formatRecommendations = (text: string): JSX.Element => {
-    // Split by headings and format
-    const sections = text.split(/(?=##|\*\*)/g)
-    return (
-      <div className="prose prose-sm max-w-none">
-        {sections.map((section, index) => {
-          if (section.startsWith('##')) {
-            const heading = section.replace(/##\s*/, '').split('\n')[0]
-            const content = section.split('\n').slice(1).join('\n')
-            return (
-              <div key={index} className="mb-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{heading}</h3>
-                <div className="text-gray-700 whitespace-pre-line">{content.trim()}</div>
-              </div>
-            )
-          } else if (section.startsWith('**')) {
-            const parts = section.split('**')
-            return (
-              <div key={index} className="mb-2">
-                {parts.map((part, i) => {
-                  if (i % 2 === 1) {
-                    return <strong key={i}>{part}</strong>
-                  }
-                  return <span key={i}>{part}</span>
-                })}
-              </div>
-            )
-          }
-          return (
-            <div key={index} className="mb-2 text-gray-700 whitespace-pre-line">
-              {section}
-            </div>
-          )
-        })}
-      </div>
-    )
+    const lines = text.split('\n')
+    const elements: JSX.Element[] = []
+    let listItems: string[] = []
+    let elKey = 0
+
+    const flushList = () => {
+      if (listItems.length === 0) return
+      elements.push(
+        <ul key={elKey++} className="space-y-1.5 mb-4 ml-1">
+          {listItems.map((item, i) => (
+            <li key={i} className="flex gap-2 text-gray-700">
+              <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400 translate-y-[0.45rem]" />
+              <span className="leading-relaxed">{renderInline(item)}</span>
+            </li>
+          ))}
+        </ul>
+      )
+      listItems = []
+    }
+
+    for (const raw of lines) {
+      const line = raw.trimEnd()
+
+      // H2 heading: ## ...
+      if (/^##\s+/.test(line) && !/^###/.test(line)) {
+        flushList()
+        const heading = line.replace(/^##\s+/, '')
+        elements.push(
+          <h3 key={elKey++} className="text-base font-semibold text-gray-900 mt-5 mb-2 pt-4 border-t border-purple-100 first:border-0 first:pt-0 first:mt-0">
+            {heading}
+          </h3>
+        )
+        continue
+      }
+
+      // H3 sub-heading: ### ...
+      if (/^###\s+/.test(line)) {
+        flushList()
+        const heading = line.replace(/^###\s+/, '')
+        elements.push(
+          <h4 key={elKey++} className="text-sm font-semibold text-purple-700 mt-3 mb-1.5 uppercase tracking-wide">
+            {heading}
+          </h4>
+        )
+        continue
+      }
+
+      // Bullet: - item or * item
+      if (/^[-*]\s+/.test(line)) {
+        listItems.push(line.replace(/^[-*]\s+/, ''))
+        continue
+      }
+
+      // Horizontal rule
+      if (/^-{3,}$/.test(line.trim())) {
+        flushList()
+        elements.push(<hr key={elKey++} className="my-4 border-purple-100" />)
+        continue
+      }
+
+      // Blank line
+      if (line.trim() === '') {
+        flushList()
+        continue
+      }
+
+      // Regular paragraph
+      flushList()
+      elements.push(
+        <p key={elKey++} className="text-gray-700 leading-relaxed mb-2">
+          {renderInline(line.trim())}
+        </p>
+      )
+    }
+
+    flushList()
+
+    return <div className="space-y-0">{elements}</div>
   }
 
   return (
