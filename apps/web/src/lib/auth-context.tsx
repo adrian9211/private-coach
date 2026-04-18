@@ -73,10 +73,22 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
       setUser(session?.user ?? null)
       
       if (event === 'SIGNED_IN' && session?.user) {
-        await createUserProfile(session.user)
-        // Redirect to dashboard after successful sign-in
-        router.push('/dashboard')
-        router.refresh()
+        // Fire profile creation in the background — do NOT await it.
+        createUserProfile(session.user).catch((e) =>
+          console.warn('createUserProfile failed (non-blocking):', e)
+        )
+
+        // Only redirect to dashboard when the user is actively signing in
+        // (i.e., they're currently on the sign-in page). Guarding this prevents
+        // refreshSession() from bouncing the user to /dashboard mid-session when
+        // they're already navigating another page.
+        const isOnAuthPage = typeof window !== 'undefined' &&
+          (window.location.pathname.startsWith('/auth/signin') ||
+           window.location.pathname.startsWith('/auth/signup'))
+
+        if (isOnAuthPage) {
+          window.location.replace('/dashboard')
+        }
       } else if (event === 'SIGNED_OUT') {
         // Clear loading state and redirect
         setLoading(false)
