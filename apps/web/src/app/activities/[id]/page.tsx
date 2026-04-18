@@ -126,35 +126,22 @@ export default function ActivityDetailPage() {
       setLoadingActivity(true)
 
       // ── Safari fix: ensure a valid token before querying ─────────────────
-      // Add a 2000ms timeout race to getSession(). In Safari with strict tracking
-      // prevention, reading localStorage can sometimes hang the Promise indefinitely.
-      const getSessionPromise = supabase.auth.getSession()
-      const timeoutPromise = new Promise<{data: {session: null}}>((resolve) => 
-        setTimeout(() => resolve({ data: { session: null } }), 2000)
-      )
+      // Get the session locally first (fast, minimal network).
+      const { data: sessionData, error: sessionError } = await supabase.auth.getSession().catch(() => ({ data: { session: null }, error: null }))
       
-      const { data: { session: currentSession } } = await Promise.race([
-        getSessionPromise, 
-        timeoutPromise
-      ])
-
-      if (!currentSession) {
-        console.warn('No active session found (or timeout) – redirecting to sign-in')
-        router.push('/auth/signin')
-        return
-      }
+      const currentSession = sessionData?.session
       
-      const nowSec = Math.floor(Date.now() / 1000)
-      const expiresAt = currentSession.expires_at ?? 0
-      const isExpiringSoon = expiresAt - nowSec < 5 * 60
-      
-      if (isExpiringSoon) {
-        const { error: refreshError } = await supabase.auth.refreshSession()
-        if (refreshError) {
-          console.warn('Session refresh failed – redirecting to sign-in')
-          router.push('/auth/signin')
-          return
+      if (currentSession) {
+        const nowSec = Math.floor(Date.now() / 1000)
+        const expiresAt = currentSession.expires_at ?? 0
+        const isExpiringSoon = expiresAt - nowSec < 5 * 60
+        
+        if (isExpiringSoon) {
+          // Fire and forget the refresh, don't block the UI or redirect on failure
+          supabase.auth.refreshSession().catch(e => console.warn('Session refresh failed:', e))
         }
+      } else {
+        console.warn('No active session found during fetch, proceeding anyway to allow AuthProvider to handle redirects.')
       }
       // ─────────────────────────────────────────────────────────────────────
 
@@ -230,10 +217,14 @@ export default function ActivityDetailPage() {
   }, [id, router])
 
   // ── Initial fetch ──────────────────────────────────────────────────────────
-  // Runs once when `id` is known. Does NOT wait for the auth context to settle —
-  // fetchActivity() calls supabase.auth.getSession() itself, which is the
-  // Safari-safe approach. A 20 s global timeout prevents infinite loading.
+  // Runs once when `id` is known.
   useEffect(() => {
+    // If auth state resolved and no user, we redirect away.
+    if (!loading && !user) {
+      router.push('/auth/signin')
+      return
+    }
+
     if (!id) {
       setLoadingActivity(false)
       return
