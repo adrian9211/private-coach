@@ -24,19 +24,18 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
   const router = useRouter() // Get the router instance
 
   useEffect(() => {
-    // ── Safari fix: force server-side session refresh on mount ───────────────
-    // getSession() reads localStorage blindly without validating the token.
-    // In regular Safari, the localStorage token can be stale/expired while
-    // the server cookie belongs to a newer session — causing all Supabase
-    // queries to silently fail (RLS rejects the stale JWT).
-    // refreshSession() hits the Supabase server to get a fresh token, which
-    // aligns the client and server and fixes the regular vs. private mode gap.
-    supabase.auth.refreshSession()
-      .then(({ data, error }) => {
-        if (error) {
-          // Refresh failed (token truly expired / invalid): wipe stale storage
-          // so the next getSession() starts clean, then redirect to sign-in.
-          console.warn('Session refresh failed — clearing stale storage:', error.message)
+    // ── Safari fix: ensure a valid token on mount ─────────────────────────────
+    // Strategy: read the current session first (fast, no network).
+    // Only call refreshSession() if the token is absent or within 5 min of expiry.
+    // Calling refreshSession() unconditionally races against other components
+    // that fire Supabase queries on mount — during the refresh the client's
+    // internal JWT is briefly invalidated, causing RLS to reject those queries.
+    const ensureValidSession = async () => {
+      try {
+        const { data: { session: currentSession } } = await supabase.auth.getSession()
+
+        if (!currentSession) {
+          // No session at all — clear any stale storage and let middleware redirect
           if (typeof window !== 'undefined') {
             Object.keys(localStorage).forEach((k) => {
               if (k.startsWith('sb-')) localStorage.removeItem(k)
@@ -45,15 +44,43 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
               if (k.startsWith('sb-')) sessionStorage.removeItem(k)
             })
           }
-          // Don't redirect here — let the auth state change handler do it
           return
         }
-        if (data.session) {
-          setSession(data.session)
-          setUser(data.session.user)
+
+        // Check if token expires within the next 5 minutes
+        const expiresAt = currentSession.expires_at ?? 0   // Unix timestamp (seconds)
+        const nowSec = Math.floor(Date.now() / 1000)
+        const fiveMin = 5 * 60
+        const isExpiringSoon = expiresAt - nowSec < fiveMin
+
+        if (isExpiringSoon) {
+          // Token is stale or about to expire — refresh it
+          const { data, error } = await supabase.auth.refreshSession()
+          if (error) {
+            console.warn('Session refresh failed — clearing stale storage:', error.message)
+            if (typeof window !== 'undefined') {
+              Object.keys(localStorage).forEach((k) => {
+                if (k.startsWith('sb-')) localStorage.removeItem(k)
+              })
+              Object.keys(sessionStorage).forEach((k) => {
+                if (k.startsWith('sb-')) sessionStorage.removeItem(k)
+              })
+            }
+          } else if (data.session) {
+            setSession(data.session)
+            setUser(data.session.user)
+          }
+        } else {
+          // Token is still valid — just sync React state with it
+          setSession(currentSession)
+          setUser(currentSession.user)
         }
-      })
-      .catch((e) => console.warn('Session refresh error:', e))
+      } catch (e) {
+        console.warn('Session validation error:', e)
+      }
+    }
+
+    ensureValidSession()
     // ─────────────────────────────────────────────────────────────────────────
 
     const {
@@ -100,20 +127,32 @@ export function AuthProvider({ session: serverSession, children }: { session: Se
     return () => subscription.unsubscribe()
   }, [router])
 
-  // On tab focus / visibility restore: refresh the token server-side.
-  // Using getSession() here would return the stale localStorage value.
+  // On tab focus / visibility restore: check if a refresh is actually needed.
+  // Calling refreshSession() unconditionally races with component queries.
   useEffect(() => {
     const handleVisibility = async () => {
-      if (document.visibilityState === 'visible') {
-        try {
+      if (document.visibilityState !== 'visible') return
+      try {
+        const { data: { session: currentSession } } = await supabase.auth.getSession()
+        if (!currentSession) return
+
+        const expiresAt = currentSession.expires_at ?? 0
+        const nowSec = Math.floor(Date.now() / 1000)
+        const isExpiringSoon = expiresAt - nowSec < 5 * 60
+
+        if (isExpiringSoon) {
           const { data } = await supabase.auth.refreshSession()
           if (data.session) {
             setSession(data.session)
             setUser(data.session.user)
           }
-        } catch (e) {
-          console.warn('Failed to refresh session on visibility change', e)
+        } else {
+          // Token still valid — just sync state
+          setSession(currentSession)
+          setUser(currentSession.user)
         }
+      } catch (e) {
+        console.warn('Failed to check session on visibility change', e)
       }
     }
     document.addEventListener('visibilitychange', handleVisibility)

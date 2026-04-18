@@ -125,17 +125,24 @@ export default function ActivityDetailPage() {
       fetchingRef.current = true
       setLoadingActivity(true)
 
-      // ── Safari fix: validate token server-side before querying ───────────
-      // getSession() returns the localStorage token without hitting the network
-      // — it will happily return a stale / expired JWT that RLS will reject.
-      // getUser() sends the token to Supabase for server-side validation.
-      // If it fails, we attempt refreshSession() once; if that also fails,
-      // we redirect to sign-in so the user gets a clean new session.
-      let { data: userData, error: userError } = await supabase.auth.getUser()
-      if (userError || !userData?.user) {
-        console.warn('getUser() failed, attempting session refresh:', userError?.message)
-        const { data: refreshed, error: refreshError } = await supabase.auth.refreshSession()
-        if (refreshError || !refreshed?.session) {
+      // ── Safari fix: ensure a valid token before querying ─────────────────
+      // Use the same conditional pattern as auth-context: read the local session
+      // first (fast, no network) and only refresh if the token is actually
+      // missing or within 5 min of expiry. Avoid racing with auth-context.
+      const { data: { session: currentSession } } = await supabase.auth.getSession()
+      if (!currentSession) {
+        console.warn('No active session found – redirecting to sign-in')
+        router.push('/auth/signin')
+        return
+      }
+      
+      const nowSec = Math.floor(Date.now() / 1000)
+      const expiresAt = currentSession.expires_at ?? 0
+      const isExpiringSoon = expiresAt - nowSec < 5 * 60
+      
+      if (isExpiringSoon) {
+        const { error: refreshError } = await supabase.auth.refreshSession()
+        if (refreshError) {
           console.warn('Session refresh failed – redirecting to sign-in')
           router.push('/auth/signin')
           return
