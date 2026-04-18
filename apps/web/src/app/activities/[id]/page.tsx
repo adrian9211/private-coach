@@ -126,12 +126,20 @@ export default function ActivityDetailPage() {
       setLoadingActivity(true)
 
       // ── Safari fix: ensure a valid token before querying ─────────────────
-      // Use the same conditional pattern as auth-context: read the local session
-      // first (fast, no network) and only refresh if the token is actually
-      // missing or within 5 min of expiry. Avoid racing with auth-context.
-      const { data: { session: currentSession } } = await supabase.auth.getSession()
+      // Add a 2000ms timeout race to getSession(). In Safari with strict tracking
+      // prevention, reading localStorage can sometimes hang the Promise indefinitely.
+      const getSessionPromise = supabase.auth.getSession()
+      const timeoutPromise = new Promise<{data: {session: null}}>((resolve) => 
+        setTimeout(() => resolve({ data: { session: null } }), 2000)
+      )
+      
+      const { data: { session: currentSession } } = await Promise.race([
+        getSessionPromise, 
+        timeoutPromise
+      ])
+
       if (!currentSession) {
-        console.warn('No active session found – redirecting to sign-in')
+        console.warn('No active session found (or timeout) – redirecting to sign-in')
         router.push('/auth/signin')
         return
       }
@@ -423,7 +431,7 @@ export default function ActivityDetailPage() {
             >
               ← Home
             </Link>
-            <div className="text-sm text-gray-500">Loading activity…</div>
+            <div className="text-sm text-gray-500">Loading activity...</div>
           </div>
         </div>
         <div className="flex items-center justify-center py-16">
